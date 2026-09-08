@@ -143,8 +143,25 @@ class Encoder:
     ) -> None:
         from transformers import AutoModel, AutoProcessor
 
-        self.proc = AutoProcessor.from_pretrained(model_path)
-        self.model = AutoModel.from_pretrained(model_path).eval().to(device)
+        try:
+            self.proc = AutoProcessor.from_pretrained(model_path)
+            self.model = AutoModel.from_pretrained(model_path).eval().to(device)
+        except OSError as exc:
+            # On a server without internet, from_pretrained retries the hub five
+            # times per file with exponential backoff before raising, so this
+            # otherwise looks like a hang for several minutes. Say what to do.
+            raise SystemExit(
+                f"could not load {model_path!r}.\n\n"
+                "If this machine has no access to huggingface.co, either use a "
+                "mirror:\n"
+                "    export HF_ENDPOINT=https://hf-mirror.com\n"
+                "or pre-fetch the weights elsewhere and copy the cache over:\n"
+                "    rsync -a ~/.cache/huggingface/hub/models--openai--clip-vit-base-patch32 \\\n"
+                "          server:~/.cache/huggingface/hub/\n"
+                "then re-run with HF_HUB_OFFLINE=1.\n\n"
+                f"(underlying error: {exc})"
+            ) from exc
+
         self.device = device
         self.dim = self.model.config.projection_dim
         self.center = center

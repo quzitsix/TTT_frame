@@ -190,15 +190,32 @@ def test_binding_survives_write_read_with_adequate_perception():
     This test removes perception from the loop by writing the facts as text
     embeddings, then asks the memory the same question the benchmark asks. If
     it passes, the write/revoke/read chain is sound and any failure on the
-    fixture belongs to the encoder. It is skipped when CLIP is unavailable, so
-    the suite still runs offline.
+    fixture belongs to the encoder.
+
+    It skips when the weights are not already cached. The load is forced
+    OFFLINE to do that: `from_pretrained` otherwise retries the hub five times
+    with exponential backoff, per file, so on a server without internet it
+    takes over five minutes to raise — long enough that pytest-timeout kills
+    the test before the `except` can turn it into a skip. Measured on the
+    8x4090 box: 331 s and a hard failure instead of an instant skip.
     """
     transformers = pytest.importorskip("transformers")
     try:
-        model = transformers.AutoModel.from_pretrained("openai/clip-vit-base-patch32")
-        proc = transformers.AutoProcessor.from_pretrained("openai/clip-vit-base-patch32")
-    except Exception:  # noqa: BLE001 - offline or no cached weights
-        pytest.skip("CLIP weights unavailable")
+        model = transformers.AutoModel.from_pretrained(
+            "openai/clip-vit-base-patch32", local_files_only=True
+        )
+        proc = transformers.AutoProcessor.from_pretrained(
+            "openai/clip-vit-base-patch32", local_files_only=True
+        )
+    except Exception:  # noqa: BLE001 - not cached; see the docstring
+        pytest.skip(
+            "CLIP weights are not in the local cache. To run this test offline, "
+            "pre-fetch them on a machine with network access:\n"
+            "    HF_ENDPOINT=https://hf-mirror.com python -c \""
+            "from transformers import AutoModel, AutoProcessor; "
+            "AutoModel.from_pretrained('openai/clip-vit-base-patch32'); "
+            "AutoProcessor.from_pretrained('openai/clip-vit-base-patch32')\""
+        )
     model.eval()
 
     def encode(texts: list[str]) -> torch.Tensor:
