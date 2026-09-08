@@ -1,6 +1,18 @@
 # TTT 原型：第一轮结果与诊断
 
-日期 2026-09-08 · 代码在 `meowbench/ttt/lact.py`、`meowbench/adapters/ttt_lact.py`、`scripts/make_relocate_fixture.py`
+> ⚠️ **这是 2026-09-08 早期的诊断日志，部分内容已过时。当史料读，不当结论读。**
+>
+> 具体过时之处：
+> - 它引用 `fixtures/relocate`，那套视频 fixture 在两个仓库分离时留在了 `meowbench`。
+> - 它的 SAME/MOVED 结论**已被撤回** —— 后续发现那个 gap 的符号完全由中心化参考集
+>   决定，见 `../README.md` 和 `scripts/exp_centering_sensitivity.py`。
+> - 它说"CLIP 读不了渲染文字"是对的，但把这当成唯一障碍是不完整的：真正主导的是
+>   embedding 各向异性造成的 key 混叠。
+>
+> **当前结论以 `../README.md` 为准，来龙去脉见 `HANDOVER.md`。**
+
+日期 2026-09-08 · 代码在 `ttt_frame/lact.py`、`scripts/exp_scene_change.py`
+（原路径 `meowbench/ttt/lact.py` 等，已随仓库分离迁移）
 
 ---
 

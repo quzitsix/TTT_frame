@@ -13,6 +13,13 @@ This repo deliberately contains **no benchmark harness**. It answers one
 question — can fast weights hold a binding? — and it is meant to stay small
 enough to read in one sitting.
 
+**Picking this up cold?** Read [`docs/HANDOVER.md`](docs/HANDOVER.md) first: the
+design rationale, the nine defects worth not rediscovering, and the five times a
+plausible inference turned out to be wrong. [`docs/WORK_REPORT.md`](docs/WORK_REPORT.md)
+is the narrative of what was run and what it showed, with each number marked by
+whether it was verified first-hand. The sibling `meowbench` repo has its own pair
+of these covering the benchmark side.
+
 ---
 
 ## Install
@@ -207,6 +214,11 @@ about household video.
 ttt_frame/lact.py             the memory (write/read, fixed-size state)
 ttt_frame/_lact_upstream.py   upstream original, for diffing
 scripts/exp_scene_change.py   the binding-across-scene-change experiment
-tests/test_lact.py            14 tests, including the upstream-bug regression
-docs/TTT_PROTOTYPE.md         full diagnosis log
+scripts/exp_centering_sensitivity.py
+                              why the SAME/MOVED gap is not a finding
+scripts/fetch_weights.sh      fetch the encoder on a machine without hub access
+tests/test_lact.py            15 tests, including the upstream-bug regression
+docs/HANDOVER.md              start here if you are new to the project
+docs/WORK_REPORT.md           what was run, and what each number is worth
+docs/TTT_PROTOTYPE.md         early diagnosis log; partly superseded by this README
 ```
