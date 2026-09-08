@@ -248,3 +248,41 @@ def test_binding_survives_write_read_with_adequate_perception():
             q_vec @ option_vecs.T
         ).squeeze(0)
         assert people[int(scores.argmax())] == gold, f"{question} -> expected {gold}"
+
+
+def test_muon_makes_the_learning_rate_nearly_inert():
+    """Under Muon, base_lr barely affects the update — by construction.
+
+    Newton-Schulz orthogonalises the update, which discards its magnitude, and
+    the learning rate only scales the gradient that goes in. So the step size
+    is set by the orthogonalisation rather than by the rate: measured, |step|
+    stays at ~3.63 across lr from 1e-4 to 100, while with `use_muon=False` it
+    scales directly (0.03 -> 15.5).
+
+    This is worth pinning because it silently invalidates learning-rate sweeps:
+    a tuning run over base_lr with muon on is measuring nothing, which is
+    exactly what a sweep here found (retention flat across three orders of
+    magnitude). The residual few percent comes from bf16 and the five finite NS
+    iterations, so this asserts near-invariance rather than exact invariance.
+    """
+    torch.manual_seed(0)
+    heads, length, dim = 2, 16, 8
+    w0, w1, w2 = _fw(dim, heads)
+    k = torch.randn(heads, length, dim)
+    v = torch.randn(heads, length, dim)
+
+    def step_size(lr: float, use_muon: bool) -> float:
+        rates = [torch.full((heads, length, 1), lr) for _ in range(3)]
+        new0, _, _ = lact_update(
+            w0.clone(), w1.clone(), w2.clone(), k, v, *rates, use_muon=use_muon
+        )
+        return float((new0 - w0).norm())
+
+    with_muon = [step_size(lr, True) for lr in (1e-4, 1e-2, 1.0, 100.0)]
+    spread = (max(with_muon) - min(with_muon)) / max(with_muon)
+    assert spread < 0.05, f"muon step size varied {spread:.1%} with lr: {with_muon}"
+
+    without = [step_size(lr, False) for lr in (1e-4, 1e-2, 1.0)]
+    assert without[-1] > 10 * without[0], (
+        f"without muon the step should scale with lr, got {without}"
+    )

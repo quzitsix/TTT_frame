@@ -121,59 +121,80 @@ forgetful after two writes; with it, retention runs to 8+ writes. The collapse
 was a property of the *representation*, not of the update rule — reproduce it
 with `--no-center`.
 
-**The SAME/MOVED contrast is confounded, and the interaction matters more than
-either main effect.** Run `--full` for the 2×2; the diagonal view is kept only
-for continuity. At 20–30 trials per cell (`d` = distinct predictions out of 4):
+**The SAME/MOVED gap is not a real effect: its sign is set by an arbitrary
+preprocessing choice.** Mean-centring needs a reference set, and nothing in the
+problem specifies which. Four defensible choices, 40 trials each:
 
-| filler writes = 8 | query in A | query in B |
+| centring reference | filler-A/obj | filler-B/obj | gap @8 | gap @16 |
+|---|---|---|---|---|
+| narrow (only embeddings in play) | 0.262 | 0.456 | **+0.037** | **−0.038** |
+| broad (36 objects × 2 homes) | 0.145 | 0.316 | −0.019 | −0.181 |
+| home-A only (what an online system could compute) | 0.529 | 0.157 | −0.062 | −0.281 |
+| none | 0.861 | 0.850 | 0.000 | 0.000 |
+
+The gap flips sign *between* references, and under the narrow reference it flips
+*within* itself between 8 and 16 filler writes. An independent re-analysis using
+the narrow reference reported SAME 0.775 vs MOVED 0.631 (gap **+0.144**) and we
+reproduced those figures exactly; with the broad reference the same code gives
+SAME 0.944 vs MOVED 0.963. Both are correct computations of different things.
+
+What actually drives it is visible in the middle columns: centring changes how
+much each filler stream overlaps the stored keys, and *that* is what predicts
+retention. Under the home-A reference the overlap ordering reverses
+(filler A 0.529 > filler B 0.157) and so does the outcome. There is no residual
+"scene change" signal once key overlap is accounted for.
+
+So: **this fixture cannot answer whether relocation damages bindings.** Stimulus
+geometry dominates, and "the move" is not separable from it here.
+
+### The interaction, and a cell that fakes chance
+
+Two further reasons not to read the diagonal. Running the 2×2 (`--full`) at 8
+filler writes, broad centring, `d` = distinct predictions out of 4:
+
+| | query in A | query in B |
 |---|---|---|
 | **filler from A** | 0.925 ± 0.052  d=3.70 | 0.412 ± 0.054  d=1.65 |
 | **filler from B** | 0.975 ± 0.034  d=3.90 | 0.975 ± 0.034  d=3.90 |
 
 filler main effect +0.306 · query main effect −0.256 · **interaction +0.513**
 
-Read the rows, not the averages. Under filler B, moving the query to the new
-home is **free** (0.975 → 0.975). Under filler A it is **catastrophic**
-(0.925 → 0.412). A single averaged "cue drift costs 0.256" is therefore
-meaningless — the cost is entirely conditional on which filler stream
-intervened, and the interaction is larger than both main effects combined.
+Cue drift is *free* under filler B (0.975 → 0.975) and *catastrophic* under
+filler A (0.925 → 0.412), so an averaged "cue drift costs 0.256" is meaningless.
+And at 32 filler writes, (filler A, query B) returns `0.250 ± 0.000` with
+`d=1.00`: the memory has saturated and returns **the same person for all four
+objects**, every seed. That is numerically identical to guessing with zero
+variance, so accuracy alone cannot distinguish collapse from chance. `--full`
+now flags such cells instead of averaging them into an effect.
 
-**One cell is degenerate, and it scores exactly at chance.** At 32 filler
-writes, (filler A, query B) gives `0.250 ± 0.000` with `d=1.00`: the memory has
-saturated and returns *the same person for all four objects*, every seed. That
-is numerically identical to guessing, with zero variance — so accuracy alone
-cannot distinguish "collapsed" from "chance", and it initially read as a
-harmless floor effect. `run_trial` now returns a distinct-prediction count and
-`--full` flags such cells rather than averaging them into an effect.
+### What does survive
 
-The mechanism is geometric and specific to this stimulus set: repeated writes
-push the state along the mean filler direction, and the B-home cues happen to
-align with the filler-A direction more than the A-home cues do (−0.336 vs
-−0.144). So (filler A, query B) is exactly the combination where the query sits
-closest to the saturated direction. That is a property of these synthetic images,
-not a fact about relocation.
+1. **Anisotropy, not the update rule, sets the retention horizon.** This is the
+   largest and most robust effect in the experiment. Raw CLIP embeddings share
+   ~92% of their energy with a single mean direction, so a "neutral" room image
+   is a near-duplicate of every object key. The decisive control: random unit
+   vectors rotate the fast weights by the *same* amount as room images
+   (cos(W_bind, W_8) = 0.857 vs 0.880) yet retention stays at 1.000 out to 16
+   writes, while room filler collapses by 2 writes. Rotation magnitude is not
+   the mechanism; key aliasing is. Dose–response in key-space cosine is monotone
+   and the real images land exactly on the curve.
+2. **Damage requires the filler to act as a KEY.** `write(k=filler, v=zeros)`
+   retains 1.000 at every filler count; `k=random, v=filler` retains 0.958 at 8.
+   What the interference carries as a *value* is secondary.
+3. **The bindings are not erased — the readout collapses.** The four returned
+   vectors converge (pairwise cos 0.789 → 0.972) onto a shared direction while
+   `cos(read, correct person)` barely moves. Subtracting the mean of the reads
+   before argmax restores 1.000 at 2 writes (from 0.271); Hungarian assignment
+   gives 1.000 out to 4 and 0.750 at 8. **The information survives writes that
+   the shipped readout scores at chance.**
+4. Muon is load-bearing in the opposite direction to expectation: with
+   `use_muon=False` the update is ~470× smaller (|dW|/|W| = 0.00057 vs 0.269)
+   and nothing is written at all — 0.250 even at zero fillers.
+5. Learning rate (0.001–1.0) and capacity (head_dim 16–512) are both flat. No
+   hyperparameter buys retention; only the representation does.
 
-Three candidate explanations for the *filler* asymmetry were measured and
-**rejected**: overlap with the stored keys runs the wrong way (filler A 0.143 vs
-filler B 0.309 — the *more* overlapping stream does *less* damage); filler
-self-coherence is nearly identical (0.943 vs 0.919); and the input-dependent
-write rates differ by under 1% (0.0502 vs 0.0498). Overlap with the stored
-*values* has partial causal support: rescaling filler A's people-subspace
-component up to filler B's level moves accuracy from 0.658 to 0.754 against B's
-0.833, recovering about two thirds of the gap.
-
-### What actually survives
-
-1. **Bindings hold through tens of interfering writes** — at 32 filler writes
-   the healthy cells are still well above chance.
-2. **Embedding anisotropy, not the update rule, sets the retention horizon** —
-   the single largest effect in the whole experiment.
-3. Both reproduce across an RTX 4060 and an RTX 4090 to within noise.
-
-What this experiment **cannot** yet tell you is whether scene change *per se*
-damages bindings. The stimulus geometry dominates, so the honest next step is a
-design where filler identity and cue drift are varied independently of the
-embedding geometry — not more trials on this one.
+Results 1–3 reproduce across an RTX 4060 and an RTX 4090 and across two
+independent implementations.
 
 Treat these numbers as a mechanism probe on synthetic stimuli, not as a claim
 about household video.
