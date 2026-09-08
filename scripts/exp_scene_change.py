@@ -205,13 +205,20 @@ def run_trial(
     *,
     n_bindings: int,
     n_fillers: int,
-    moved: bool,
+    filler_home: str,
+    query_home: str,
     seed: int,
     base_lr: float,
     head_dim: int,
     use_muon: bool,
 ) -> float:
-    """One trial. Returns retrieval accuracy over the written bindings."""
+    """One trial. Returns retrieval accuracy over the written bindings.
+
+    `filler_home` and `query_home` are separate on purpose. "Moving house"
+    changes both at once, and they turn out to push in opposite directions, so
+    the diagonal (SAME = A/A, MOVED = B/B) confounds them — see the 2x2 in the
+    README. Bindings are always written in home A.
+    """
     generator = torch.Generator().manual_seed(seed)
 
     # Distinct objects and residents for this household.
@@ -235,15 +242,12 @@ def run_trial(
     # 1. Write the bindings, in home A.
     mem.write(objects, values=people[owner_of])
 
-    # 2. Intervening sessions. Same home, or the new one.
-    filler_home = "B" if moved else "A"
+    # 2. Intervening sessions, from whichever home.
     for step in range(n_fillers):
         mem.write(enc.images([filler_image(filler_home, step)]))
 
-    # 3. Query. The objects are re-photographed in whichever home we are now in,
-    #    because in a real relocation you would see your mug in the *new* room —
-    #    that is precisely what makes the retrieval cue shift.
-    query_home = "B" if moved else "A"
+    # 3. Query. Re-photographing the object in the new room is what a real
+    #    relocation does to the retrieval cue, and it costs accuracy on its own.
     cues = enc.images([object_image(c, s, query_home) for c, s in obj_specs])
     retrieved = mem.read(cues)
 
@@ -268,6 +272,12 @@ def main(argv: list[str] | None = None) -> int:
         "(chance after 2 filler writes) because raw CLIP filler sits at cosine "
         "~0.9 to the object keys; use this to reproduce that failure.",
     )
+    parser.add_argument(
+        "--full",
+        action="store_true",
+        help="run the 2x2 (filler home x query home) instead of the confounded "
+        "SAME/MOVED diagonal. Use this one.",
+    )
     parser.add_argument("--device", default=None)
     args = parser.parse_args(argv)
 
@@ -283,36 +293,72 @@ def main(argv: list[str] | None = None) -> int:
     print(f"memory       head_dim={args.head_dim} base_lr={args.base_lr} "
           f"muon={not args.no_muon}")
     print(f"trials       {args.trials} per cell\n")
+
+    def cell(n_fillers: int, filler_home: str, query_home: str) -> tuple[float, float]:
+        """Mean accuracy and a 95% half-width over `--trials` seeds."""
+        accs = [
+            run_trial(
+                enc,
+                n_bindings=args.bindings,
+                n_fillers=n_fillers,
+                filler_home=filler_home,
+                query_home=query_home,
+                seed=trial,
+                base_lr=args.base_lr,
+                head_dim=args.head_dim,
+                use_muon=not args.no_muon,
+            )
+            for trial in range(args.trials)
+        ]
+        mean = sum(accs) / len(accs)
+        if len(accs) < 2:
+            return mean, 0.0
+        var = sum((a - mean) ** 2 for a in accs) / (len(accs) - 1)
+        return mean, 1.96 * (var / len(accs)) ** 0.5
+
+    if args.full:
+        # The 2x2. Bindings are always written in home A, so "filler from B,
+        # query in A" is the cell that isolates the interference effect and
+        # "filler from A, query in B" the one that isolates cue drift.
+        print("Bindings are written in home A. Rows vary the intervening filler,")
+        print("columns vary where the object is re-photographed for the query.\n")
+        for n_fillers in args.fillers:
+            print(f"  filler writes = {n_fillers}")
+            print(f"    {'':16s}  {'query in A':>16s}  {'query in B':>16s}")
+            grid = {}
+            for fh in ("A", "B"):
+                row = []
+                for qh in ("A", "B"):
+                    mean, half = cell(n_fillers, fh, qh)
+                    grid[(fh, qh)] = mean
+                    row.append(f"{mean:.3f} +/-{half:.3f}")
+                print(f"    filler from {fh}   {row[0]:>16s}  {row[1]:>16s}")
+            f_eff = (grid[("B", "A")] + grid[("B", "B")]) / 2 - (
+                grid[("A", "A")] + grid[("A", "B")]
+            ) / 2
+            q_eff = (grid[("A", "B")] + grid[("B", "B")]) / 2 - (
+                grid[("A", "A")] + grid[("B", "A")]
+            ) / 2
+            print(f"    filler main effect (B-A) = {f_eff:+.3f}")
+            print(f"    query  main effect (B-A) = {q_eff:+.3f}")
+            print(f"    [diagonal-only view: SAME={grid[('A', 'A')]:.3f} "
+                  f"MOVED={grid[('B', 'B')]:.3f} gap={grid[('A', 'A')] - grid[('B', 'B')]:+.3f}]\n")
+        print(f"chance is {chance:.3f}. The two main effects point in opposite")
+        print("directions, so the diagonal SAME/MOVED contrast confounds them.")
+        return 0
+
     print(f"{'fillers':>8}  {'SAME home':>11}  {'MOVED home':>11}  {'gap':>7}")
     print("-" * 44)
-
-    rows = []
     for n_fillers in args.fillers:
-        cell = {}
-        for moved in (False, True):
-            accs = [
-                run_trial(
-                    enc,
-                    n_bindings=args.bindings,
-                    n_fillers=n_fillers,
-                    moved=moved,
-                    seed=trial,
-                    base_lr=args.base_lr,
-                    head_dim=args.head_dim,
-                    use_muon=not args.no_muon,
-                )
-                for trial in range(args.trials)
-            ]
-            cell[moved] = sum(accs) / len(accs)
-        gap = cell[False] - cell[True]
-        rows.append((n_fillers, cell[False], cell[True], gap))
-        print(f"{n_fillers:>8}  {cell[False]:>11.3f}  {cell[True]:>11.3f}  {gap:>+7.3f}")
-
+        same, _ = cell(n_fillers, "A", "A")
+        moved, _ = cell(n_fillers, "B", "B")
+        print(f"{n_fillers:>8}  {same:>11.3f}  {moved:>11.3f}  {same - moved:>+7.3f}")
     print("-" * 44)
-    print(f"\nchance is {chance:.3f}. Read the table as:")
-    print("  SAME high, MOVED low  -> context change specifically damages bindings")
-    print("  both fall together    -> ordinary forgetting, unrelated to the move")
-    print("  both stay high        -> fast weights do carry bindings across scenes")
+    print(f"\nchance is {chance:.3f}.")
+    print("WARNING: this diagonal view is CONFOUNDED. 'Moving' changes both the")
+    print("filler stream and the query cue, and measured separately those push in")
+    print("opposite directions (+0.316 and -0.166 at 16 fillers, n=100). Run with")
+    print("--full for the 2x2 that separates them.")
     return 0
 
 

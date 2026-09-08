@@ -121,22 +121,50 @@ forgetful after two writes; with it, retention runs to 8+ writes. The collapse
 was a property of the *representation*, not of the update rule — reproduce it
 with `--no-center`.
 
-**Bindings survive the move.** With centring on, 30 trials per cell:
+**The SAME/MOVED contrast is confounded — do not read it as a scene-change
+effect.** With centring on, 30 trials per cell, it looks like this:
 
 | filler writes | SAME | MOVED | gap |
 |---|---|---|---|
-| 8 | 0.942 | 0.983 | −0.042 |
-| 16 | 0.667 | 0.808 | −0.142 |
-| 24 | 0.425 | 0.642 | −0.217 |
-| 32 | 0.392 | 0.608 | −0.217 |
+| 8 | 0.933 | 0.967 | −0.033 |
+| 16 | 0.625 | 0.833 | −0.208 |
 
-The gap is *negative*: moving house is consistently **easier** than staying put,
-which is the opposite of the predicted failure. The likely mechanism is that
-same-home filler shares its background with the stored keys and therefore
-overlaps them more, so it overwrites more — i.e. what damages a fast-weight
-binding is representational overlap with the intervening data, not context
-change as such. Both arms decay with filler count, so this is interference
-rather than a context effect.
+(Reproduced independently on an RTX 4060 and an RTX 4090 to within noise.) The
+gap is *negative* — moving house looks easier than staying put. It is not. The
+arms vary two things at once, because "the move" changes both where the filler
+comes from and where the query is taken, and a 2×2 decomposition (n=100,
+16 filler writes) separates them:
+
+| | query in A | query in B |
+|---|---|---|
+| **filler from A** | 0.662 ± 0.033 | 0.362 ± 0.025 |
+| **filler from B** | 0.845 ± 0.027 | 0.812 ± 0.031 |
+
+- filler main effect (B − A): **+0.316**
+- query main effect (B − A): **−0.166**
+
+The original SAME cell is (filler A, query A) = 0.662 and MOVED is
+(filler B, query B) = 0.812. So the two effects point in *opposite* directions
+and the headline "+0.15 for moving" is what is left after they partly cancel.
+Cue drift from re-photographing an object in a new room genuinely hurts
+(−0.166); it is masked by the much larger fact that one filler stream happens
+to be less destructive than the other.
+
+Three candidate explanations for that filler asymmetry were measured and
+**rejected**: overlap with the stored keys runs the wrong way (filler A 0.143 vs
+filler B 0.309 — the *more* overlapping stream does *less* damage); filler
+self-coherence is nearly identical (0.943 vs 0.919); and the input-dependent
+write rates differ by under 1% (0.0502 vs 0.0498). What does have causal support
+is overlap with the stored *values*: rescaling filler A's people-subspace
+component up to filler B's level moves accuracy from 0.658 to 0.754 against
+B's 0.833, recovering about two thirds of the gap. Counter-intuitively, filler
+that writes *more* into the value subspace is *less* destructive here.
+
+So the honest summary is: **bindings survive tens of interfering writes, and
+what damages them is a property of the interfering stream that this experiment
+does not yet isolate.** The scene-change question needs a design where filler
+identity and query context are varied independently — the 2×2 above, not the
+diagonal.
 
 Treat these numbers as a mechanism probe on synthetic stimuli, not as a claim
 about household video.
