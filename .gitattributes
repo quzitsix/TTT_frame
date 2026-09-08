@@ -1,0 +1,6 @@
+# Shell scripts run on the Linux server, so CRLF would break the shebang.
+*.sh text eol=lf
+
+# Python is checked out with native line endings, which is fine here — nothing
+# in this repo is checksummed. (The benchmark repo needs stricter rules because
+# it hashes its suite files; this one does not.)

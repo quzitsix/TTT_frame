@@ -1,0 +1,38 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ttt-frame"
+version = "0.1.0"
+description = "Test-time-training fast-weight memory, and experiments on what it can retain"
+requires-python = ">=3.11"
+# Only torch. The memory itself is pure PyTorch with no CUDA extension and no
+# Triton, so it runs on Linux servers and Windows laptops alike; the experiment
+# scripts add an encoder on top (see the `exp` extra).
+dependencies = ["torch"]
+
+[project.optional-dependencies]
+# Running scripts/exp_scene_change.py: a frozen CLIP encoder plus image drawing.
+#   >=4.57  `dtype=` landed in 4.56, but qwen3_vl only enters the auto mappings
+#           in 4.57.0, so anything earlier fails on a Qwen3-VL checkpoint with a
+#           message that reads like a corrupt download.
+#   <5      transformers 5.x exists and `>=4.57` alone resolves to it, which
+#           flips huggingface-hub to 1.x and changes the from_pretrained default
+#           dtype to "auto". Untested here; widen deliberately.
+exp = ["transformers>=4.57,<5", "pillow>=10.1", "numpy>=1.24"]
+dev = ["pytest>=8.0", "pytest-timeout>=2.3", "transformers>=4.57,<5", "pillow>=10.1"]
+
+[tool.setuptools.packages.find]
+include = ["ttt_frame*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+timeout = 300
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM"]
