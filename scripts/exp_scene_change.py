@@ -211,13 +211,20 @@ def run_trial(
     base_lr: float,
     head_dim: int,
     use_muon: bool,
-) -> float:
-    """One trial. Returns retrieval accuracy over the written bindings.
+) -> tuple[float, int]:
+    """One trial. Returns (accuracy, number of distinct predictions).
+
+    The second value is a degeneracy check, and it is not optional. A memory
+    that has saturated returns the *same* vector for every cue, so argmax picks
+    one person for all N objects and scores exactly 1/N — numerically identical
+    to chance, with zero variance across seeds. Accuracy alone cannot tell that
+    apart from "guessing", and it showed up here as a clean `0.250 +/- 0.000`
+    that read as a floor effect. `distinct == 1` means collapsed.
 
     `filler_home` and `query_home` are separate on purpose. "Moving house"
     changes both at once, and they turn out to push in opposite directions, so
-    the diagonal (SAME = A/A, MOVED = B/B) confounds them — see the 2x2 in the
-    README. Bindings are always written in home A.
+    the diagonal (SAME = A/A, MOVED = B/B) confounds them — see the README.
+    Bindings are always written in home A.
     """
     generator = torch.Generator().manual_seed(seed)
 
@@ -253,7 +260,8 @@ def run_trial(
 
     scores = F.normalize(retrieved, dim=-1) @ people.T
     predicted = scores.argmax(dim=-1).cpu()
-    return float((predicted == owner_of).float().mean())
+    accuracy = float((predicted == owner_of).float().mean())
+    return accuracy, len(set(predicted.tolist()))
 
 
 def main(argv: list[str] | None = None) -> int:
@@ -294,9 +302,9 @@ def main(argv: list[str] | None = None) -> int:
           f"muon={not args.no_muon}")
     print(f"trials       {args.trials} per cell\n")
 
-    def cell(n_fillers: int, filler_home: str, query_home: str) -> tuple[float, float]:
-        """Mean accuracy and a 95% half-width over `--trials` seeds."""
-        accs = [
+    def cell(n_fillers: int, filler_home: str, query_home: str) -> tuple[float, float, float]:
+        """Mean accuracy, 95% half-width, and mean distinct-prediction count."""
+        results = [
             run_trial(
                 enc,
                 n_bindings=args.bindings,
@@ -310,54 +318,75 @@ def main(argv: list[str] | None = None) -> int:
             )
             for trial in range(args.trials)
         ]
+        accs = [a for a, _ in results]
+        distinct = sum(d for _, d in results) / len(results)
         mean = sum(accs) / len(accs)
         if len(accs) < 2:
-            return mean, 0.0
+            return mean, 0.0, distinct
         var = sum((a - mean) ** 2 for a in accs) / (len(accs) - 1)
-        return mean, 1.96 * (var / len(accs)) ** 0.5
+        return mean, 1.96 * (var / len(accs)) ** 0.5, distinct
 
     if args.full:
         # The 2x2. Bindings are always written in home A, so "filler from B,
         # query in A" is the cell that isolates the interference effect and
         # "filler from A, query in B" the one that isolates cue drift.
         print("Bindings are written in home A. Rows vary the intervening filler,")
-        print("columns vary where the object is re-photographed for the query.\n")
+        print("columns vary where the object is re-photographed for the query.")
+        print(f"'d' is distinct predictions out of {args.bindings}; d=1 means the")
+        print("memory returned one answer for every cue, which scores at chance.\n")
+        collapsed = []
         for n_fillers in args.fillers:
             print(f"  filler writes = {n_fillers}")
-            print(f"    {'':16s}  {'query in A':>16s}  {'query in B':>16s}")
+            print(f"    {'':16s}  {'query in A':>22s}  {'query in B':>22s}")
             grid = {}
             for fh in ("A", "B"):
                 row = []
                 for qh in ("A", "B"):
-                    mean, half = cell(n_fillers, fh, qh)
+                    mean, half, distinct = cell(n_fillers, fh, qh)
                     grid[(fh, qh)] = mean
-                    row.append(f"{mean:.3f} +/-{half:.3f}")
-                print(f"    filler from {fh}   {row[0]:>16s}  {row[1]:>16s}")
+                    mark = "!" if distinct < 1.6 else " "
+                    if distinct < 1.6:
+                        collapsed.append((n_fillers, fh, qh, distinct))
+                    row.append(f"{mean:.3f} +/-{half:.3f} d={distinct:.2f}{mark}")
+                print(f"    filler from {fh}   {row[0]:>22s}  {row[1]:>22s}")
             f_eff = (grid[("B", "A")] + grid[("B", "B")]) / 2 - (
                 grid[("A", "A")] + grid[("A", "B")]
             ) / 2
             q_eff = (grid[("A", "B")] + grid[("B", "B")]) / 2 - (
                 grid[("A", "A")] + grid[("B", "A")]
             ) / 2
+            # The interaction matters more than either main effect here: cue
+            # drift is nearly free under filler B and expensive under filler A,
+            # so a single averaged "query effect" hides the real structure.
+            interaction = (grid[("A", "A")] - grid[("A", "B")]) - (
+                grid[("B", "A")] - grid[("B", "B")]
+            )
             print(f"    filler main effect (B-A) = {f_eff:+.3f}")
             print(f"    query  main effect (B-A) = {q_eff:+.3f}")
+            print(f"    INTERACTION              = {interaction:+.3f}"
+                  f"   (cue-drift cost under filler A minus under filler B)")
             print(f"    [diagonal-only view: SAME={grid[('A', 'A')]:.3f} "
                   f"MOVED={grid[('B', 'B')]:.3f} gap={grid[('A', 'A')] - grid[('B', 'B')]:+.3f}]\n")
-        print(f"chance is {chance:.3f}. The two main effects point in opposite")
-        print("directions, so the diagonal SAME/MOVED contrast confounds them.")
+        print(f"chance is {chance:.3f}.")
+        if collapsed:
+            print("\nCOLLAPSED CELLS (marked !) — accuracy there is NOT a floor effect,")
+            print("the memory is saturated and returns a constant answer:")
+            for nf, fh, qh, d in collapsed:
+                print(f"  nf={nf} filler {fh} query {qh}: distinct={d:.2f}")
+            print("Do not average these into a main effect; they are geometry, not memory.")
         return 0
 
     print(f"{'fillers':>8}  {'SAME home':>11}  {'MOVED home':>11}  {'gap':>7}")
     print("-" * 44)
     for n_fillers in args.fillers:
-        same, _ = cell(n_fillers, "A", "A")
-        moved, _ = cell(n_fillers, "B", "B")
+        same, _, _ = cell(n_fillers, "A", "A")
+        moved, _, _ = cell(n_fillers, "B", "B")
         print(f"{n_fillers:>8}  {same:>11.3f}  {moved:>11.3f}  {same - moved:>+7.3f}")
     print("-" * 44)
     print(f"\nchance is {chance:.3f}.")
     print("WARNING: this diagonal view is CONFOUNDED. 'Moving' changes both the")
     print("filler stream and the query cue, and measured separately those push in")
-    print("opposite directions (+0.316 and -0.166 at 16 fillers, n=100). Run with")
+    print("opposite directions, with a large interaction between them. Run with")
     print("--full for the 2x2 that separates them.")
     return 0
 
