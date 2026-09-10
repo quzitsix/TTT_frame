@@ -1,7 +1,171 @@
 # TTT_frame
 
-A test-time-training (TTT) fast-weight memory, and experiments on **what it can
-actually retain**.
+A test-time-training (TTT) memory project, and experiments on **what it can
+actually retain**. Two separate baselines now live here: the original LaCT
+embedding memory and a generative video-to-LoRA parameter-memory interface.
+
+## VideoQA parameter-memory interface (2026-09-11)
+
+**Real video input is supported; useful long-term recall has not yet been
+established.** This new baseline uses test-time LoRA self-distillation, not the
+LaCT update and not a reproduction of Spatial-TTT. The original CLIP/LaCT
+experiment below is unchanged.
+
+```
+chronological video sessions
+  -> bounded RGB chunks (sequential PyAV decoding)
+  -> frozen VLM observations + temporary self-generated QA
+  -> assistant-token cross-entropy updates to language q_proj/v_proj LoRA
+  -> discard frames, observations, training examples, gradients and optimizer
+  -> question (+ options, if supplied) -> adapted VLM -> generated answer
+```
+
+Only LoRA parameters carry episodic content across the ingestion/query boundary.
+The teacher always disables the adapter; it never receives benchmark questions,
+options or gold labels. Video observations and QA are temporary training data,
+not a query-time retrieval store. This is a **visual-to-text bottleneck**: facts
+omitted or hallucinated by the teacher cannot be fixed by parameter storage.
+There is no face identification, cross-camera person tracking, or ownership
+inference module. Seeing someone hold an object is not proof they own it.
+
+### Install in the existing server conda environment
+
+```bash
+conda activate meowbench
+cd ~/TTT_frame
+python -m pip install -e ".[video]"
+```
+
+No separate conda environment is required. The `video` extra adds PEFT, PyAV,
+Accelerate and Safetensors while preserving `transformers>=4.57,<5`; the basic
+`ttt-frame` dependency remains just PyTorch. Locally tested with torch
+2.11.0+cu126, transformers 4.57.6, PEFT 0.14.0, Accelerate 1.13.0 and PyAV 17.0.0.
+These are observations, not a requirement to replace the server's working torch.
+Use one GPU with bf16 or float32; automatic CPU/disk offload, quantized training,
+DDP and custom `trust_remote_code` models are not implemented in this baseline.
+
+### Input videos, then answer from saved parameters
+
+Replace the video paths with chronological recordings of **one environment**.
+Use the same base model weights/revision for both commands.
+
+```bash
+MODEL=/data/quzitsix/models/Qwen3-VL-2B-Instruct
+python -m ttt_frame.videoqa ingest \
+  --model-path "$MODEL" --local-files-only \
+  --video /path/to/day1.mp4 /path/to/day2.mp4 \
+  --chunk-seconds 30 --frames-per-chunk 4 \
+  --steps-per-chunk 12 --teacher-max-new-tokens 512 \
+  --save memories/home1
+
+# Separate process: needs only base weights + memory, not the videos.
+python -m ttt_frame.videoqa ask \
+  --memory memories/home1 --model-path "$MODEL" --local-files-only \
+  --question "Who last handled the red mug, and where was it placed?"
+
+# Causal read control: same question and base, with LoRA disabled.
+python -m ttt_frame.videoqa ask \
+  --memory memories/home1 --model-path "$MODEL" --local-files-only \
+  --without-memory --question "Who last handled the red mug, and where was it placed?"
+```
+
+The save directory must be new. It contains only `adapter.safetensors` and
+`memory.json` (configuration + numeric counters); it contains no video paths,
+captions, frame embeddings, training samples or optimizer state. Architecture,
+adapter shape and finite tensors are checked at loading, but the loader does
+not hash all base weight files: the caller must supply the identical base checkpoint.
+
+Python API:
+
+```python
+from ttt_frame.videoqa import VideoTTTConfig, VideoTTTMemory
+
+memory = VideoTTTMemory(VideoTTTConfig(model_path=MODEL, local_files_only=True))
+memory.ingest_video("day1.mp4")
+memory.ingest_video("day2.mp4")
+stats = memory.finish_ingest()
+answer = memory.answer("Where was the mug last seen?")
+memory.save("memories/home1")
+memory.reset()  # required before the next household
+```
+
+### Evaluate on an existing MEOWBench release
+
+The bridge remains in the sibling repository's
+`meowbench/adapters/ttt_lact.py`; select **`--backend lora`** for generated answers.
+The default backend is still the old CLIP/LaCT experiment. The new backend uses
+the harness's standard question formatting and supports its multiple-choice,
+numeric and open answer payloads. Open answers still need a judge and must not
+be treated as zero before judging.
+
+```bash
+cd ~/meowbench  # the checkout whose remote is quzitsix/test_1
+SUITE=/path/to/prepared/egocentric_suite
+python scripts/run_ttt_pilot.py \
+  --suite "$SUITE" --model-path "$MODEL" --local-files-only \
+  --out runs/ttt_egovideo_pilot --limit 8 \
+  --arms blind memory base-read \
+  --chunk-seconds 30 --frames-per-chunk 4 \
+  --steps-per-chunk 12 --teacher-max-new-tokens 512
+```
+
+This reuses `manifest.json`, `envs.jsonl` and `items.jsonl` as prepared by
+MEOWBench. It does not download, mine or change annotations. It checks media
+paths before loading the model, then the harness stages and revokes the videos.
+Each arm sees the same selected items and chronological sessions:
+
+| Arm | Ingestion | Query |
+|---|---|---|
+| `blind` | receives no video; no updates | original VLM |
+| `memory` | video self-distillation into LoRA | question + LoRA parameters |
+| `base-read` | same video/training budget as memory | LoRA disabled |
+
+Outputs include per-arm predictions, protocol summary, score report, numeric
+`ttt_metrics.jsonl`, and paired `comparison.json`. Errors stay in the score
+denominator. The experiment directory must be new, so a pilot cannot silently
+reuse predictions from a different model/configuration. The runner pins UTF-8
+for subprocess pipes, including on Windows paths with Chinese characters.
+
+For direct use of the harness:
+
+```bash
+meowbench run --suite "$SUITE" --context-mode memory \
+  --run-id video_lora_first --limit 8 \
+  --system "python -m meowbench.adapters.ttt_lact --backend lora --model-path $MODEL --local-files-only --context-mode memory"
+```
+
+`--max-chunks 0` (default) consumes the whole input. A positive value caps each
+session to its first N sampled chunks and is **only a throughput smoke budget**;
+it can exclude required evidence. `--limit` selects questions, not shorter video
+history. Reduce frames, resolution, or selected environments first when memory
+is tight; `--gradient-checkpointing` applies to the text training pass.
+
+### What to measure next
+
+Start with real first-person clips from the already prepared suite, preferably
+an automatically scored subset. Inspect zero-frame sessions, malformed QA
+(`caption_only_chunks`), truncation, errors and video revocation before reading
+accuracy. Compare memory against blind and base-read; then add the existing
+`hf_vlm --context-mode memory` notes baseline and the video oracle. Their current
+frame-sampling and token budgets differ, so match budgets before making a method
+comparison. Report accuracy/paired gain, refusal rate, ingestion time, query
+latency and LoRA bytes. `ingest_peak_cuda_allocated_bytes` includes the base and
+activations; `memory_bytes` counts only episodic LoRA tensors, excluding the
+base, initial reference copy and temporary optimizer state.
+
+The default 4 frames per 30 seconds is coarse and can miss brief handovers.
+For the first human–object pilot, consider `--chunk-seconds 8 --frames-per-chunk 4`
+and inspect perception before increasing the sequence length. These are ordered
+RGB samples, not a full-frame-rate action-recognition pipeline.
+
+A fall in training loss only shows target fitting. Useful recall, retention
+across intervening chunks, and person–object binding after relocation require
+separate held-out questions. This baseline does not yet establish any of those.
+See the new dated entry in [WORK_REPORT.md](docs/WORK_REPORT.md) for actual checks.
+
+---
+
+## Original LaCT mechanism experiment
 
 The memory is a LaCT layer — large-chunk test-time training, from
 [*Test-Time Training Done Right*](https://arxiv.org/abs/2505.23884) (MIT

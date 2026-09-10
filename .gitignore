@@ -17,6 +17,8 @@ htmlcov/
 
 # Experiment scratch
 runs/
+memories/
+*.safetensors
 *.png
 *.json
 !pyproject.toml

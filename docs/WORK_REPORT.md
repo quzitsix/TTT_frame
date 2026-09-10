@@ -1,5 +1,102 @@
 # 工作报告 — TTT_frame
 
+## 2026-09-11：生成式参数记忆接口与 MEOWBench 接入
+
+本节记录新增实现与直接运行所得结果；下方原报告仍是 09-08 的 LaCT 实验历史。
+
+**本轮交付。** 新增 `VideoTTTMemory`，接受一个或多个按时间排序的视频路径；
+顺序 PyAV 解码、按 chunk 抽帧；冻结 VLM 生成观察和临时 QA；只更新语言注意力
+q_proj/v_proj 的 LoRA 参数。封存后清理优化器、梯度及生成位置缓存，支持在新进程
+加载 `adapter.safetensors` 回答选择、数值或开放问题。读取阶段不传入视频、caption
+或历史 QA。实现独立于 benchmark，不改原 LaCT 更新公式。
+
+这是 **LoRA 测试时自蒸馏基线**，有显式的临时文字训练目标和隐式的查询时参数
+存储；不是原生连续视觉表征记忆，也不是 LaCT/Spatial-TTT 的生成式复现。
+目前没有训练跨场景人物识别、关系保持 gate 或长期抗遗忘策略。
+
+**接入方式。** `meowbench.adapters.ttt_lact --backend lora` 复用既有协议；
+bench 侧新增 `scripts/run_ttt_pilot.py`，在同一组 suite items/sessions 上运行
+`blind / memory / base-read`，记录预测、撤销状态、逐环境计数、参数大小、耗时与
+成对分数差。`base-read` 仍执行训练，但回答时关闭 LoRA。训练核心不读取 suite
+标注；gold 仅由 benchmark scorer 消费。其他对话进行中的真实数据适配文件
+没有被搬入 TTT 仓库。
+
+### 本机直接验证
+
+硬件：RTX 4060 Laptop；环境：conda `claude`，torch 2.11.0+cu126、transformers
+4.57.6、PEFT 0.14.0、PyAV 17.0.0、Accelerate 1.13.0。模型来自本机完整缓存，
+未下载新权重。本轮没有访问服务器或完整真实第一人称 suite。
+
+| 检查 | 结果 | 能说明什么 |
+|---|---|---|
+| 原 LaCT + 新 VideoQA 单元测试首轮 | 24 passed | 原机制回归、assistant 标签掩码、LoRA 更新、基础权重不变、reset、封存、checkpoint、一段视频解码 |
+| bench 桥接/协议/staging/runner | 55 passed, 1 skipped | 桥接遵循生命周期及视频撤销协议；跳过项是已有平台条件测试 |
+| SmolVLM2-256M 实际模型摄入 | 1 chunk、2 个更新步骤、caption fallback | 图像到文字再到 LoRA 的真实路径可执行；不能推断感知质量 |
+| Qwen3-VL-2B 实际模型摄入 | 1 chunk、1 抽样帧、2 条临时 QA、2 更新步骤 | 已执行真实视觉 teacher 与文本梯度训练 |
+| Qwen 单独进程加载参数回答 | 加载与生成成功，但出现无视频拒答 | 证明持久化接口可用；**没有证明有效回忆** |
+
+随后新增了多 session 累积写入回归；最后一次 VideoQA 专项验证为 **10 passed**，
+产物为 `TTT_frame/runs/videoqa_final.xml`。原 LaCT 的 15 项已在前述联合验证中通过。
+
+Qwen 这一配置：bf16 基础模型、FP32 LoRA，rank=4、alpha=8、lr=0.0002、
+steps=2、max_side=224、teacher_new_tokens=256。临时训练的首次/末次步骤损失
+为 **5.4137 → 5.0884**；保存 **802,816 个 LoRA 参数，3,211,264 bytes**。
+计数中的 1 帧是因为 demo 只有约 2 秒，而抽样 chunk 为 30 秒，并非解码失败。
+默认真实任务使用 rank=16、steps=12；这个小配置仅用于本机链路检查。
+
+训练损失下降后，独立进程询问 “What objects were visible in the video?”，仍生成
+“I don't have access to any video content” 一类回答；输出受 48-token smoke 预算
+限制。应把它当作需要改进的行为证据，不能把损失下降当作记忆已建立。
+
+### MEOWBench 的三组端到端 smoke
+
+使用现成 `fixtures/demo`，每组同样的前 2 道合成问题；完整执行 handshake、
+env_begin、ingest、ingest_end、视频撤销、query、env_end。该 fixture 的问题
+和答案属于 harness 测试，不是有语义效度的真实视频能力评测。
+
+| 模式 | 协议成功 | 实际抽帧 | 更新步骤 | 回答 | fixture 分数 |
+|---|---:|---:|---:|---|---:|
+| blind | 2/2 | 0 | 0 | 两题均 E/信息不足 | 0/2 |
+| memory | 2/2 | 1 | 2 | 两题均 E/信息不足 | 0/2 |
+| base-read | 2/2 | 1 | 2 | 两题均 E/信息不足 | 0/2 |
+
+memory 的 `enforcement=revoked`，`revocation_contested=false`；源 fixture 视频
+仍存在且大小为 7,696 bytes。Windows 本次 `fd_audit_available=false`，因此不把
+“未发现打开句柄”表述为完整操作系统句柄审计已通过。单元测试另覆盖了删除输入
+后 checkpoint 恢复及解码器关闭文件的行为。
+
+本次 memory 摄入计时约 20.43 秒，两题端到端查询分别约 376/366 ms；base-read
+摄入约 58.08 秒，耗时变化很大。运行时有其他任务，且没有统一预热，**这些仅是
+运行日志，不构成吞吐或速度优劣结论**。新版额外提供峰值 CUDA allocated 字节
+计数；首轮 smoke 发生在该计数加入前，不能补写一个未测得的峰值。
+
+本地原始产物（被 `.gitignore` 排除，未上传视频/权重）：
+
+- `TTT_frame/runs/videoqa_qwen_smoke/memory/`：权重与配置、摄入计数。
+- `TTT_frame/runs/videoqa_smoke/memory/`：SmolVLM 参数快照。
+- `TTT_frame/runs/videoqa_validation.xml`：TTT 测试报告。
+- `meowbench/runs/ttt_bridge_validation.xml`：bridge/协议回归报告。
+- `meowbench/runs/ttt_qwen_smoke_20260911/`：每组 `predictions.jsonl`、
+  `summary.json`、`report.json`、`ttt_metrics.jsonl`，以及 `comparison.json`。
+
+### 运行中修正的问题与下一步
+
+1. `local_files_only=True` 在 processor 子组件路径上仍出现元数据请求。现在先将
+   repo ID 解析为已缓存 snapshot 目录，再加载，且不让 PEFT 保存逻辑探测远程
+   embedding 配置。离线验证时可额外设 `HF_HUB_OFFLINE=1`。
+2. 默认 pytest 临时目录受 Windows 沙箱权限限制；使用仓库 runs/ 下专属临时
+   目录重新验证。中文路径经过子进程默认编码会损坏；pilot 显式设 UTF-8，
+   同样环境重跑协议测试后通过。未通过回滚 staging 的方式掩盖问题。
+3. 增加 parameter-only query 的状态检查、失败摄入隔离、跨家庭恢复初始权重、
+   gradient-checkpointing 梯度检查，以及 Qwen 临时位置状态清理。
+4. 下一步提供已准备的真实 suite 路径，在服务器用 README 中的 pilot 命令
+   跑 8–30 道自动评分问题。先检查 teacher 是否观测到证据，再比较冻结模型、
+   参数记忆和笔记 baseline；不要用测试答案训练 LoRA。
+5. 搬家后人物–物品关系保持仍未被检验。应分别测感知正确率、即时参数读出、
+   干扰后保持、场景切换和人物重识别，避免把前一环节失败当成后者结论。
+
+---
+
 **期间** 2026-09-08（单日）· **仓库** github.com/quzitsix/TTT_frame
 **姊妹仓库** `meowbench`（quzitsix/test_1）有独立的 `docs/WORK_REPORT.md`，覆盖
 benchmark harness 侧。本报告只讲 TTT 侧。

@@ -1,5 +1,38 @@
 # HANDOVER — TTT_frame
 
+## 2026-09-11 接入更新（先读）
+
+当前新增目标是把真实第一人称视频送入 MEOWBench，并从 TTT 参数生成回答。
+`ttt_frame/videoqa.py` 实现 `VideoTTTMemory`；`ttt_frame/video.py` 实现有界、
+顺序解码的视频 chunk 采样。它们不依赖 meowbench。原 `lact.py` 保持不变。
+
+这次选择 **LoRA 测试时自蒸馏**作为可运行基线，不是把 LaCT 的向量输出直接
+解释成文字，也不声称复现 Spatial-TTT。冻结 VLM 看图生成 observation，再生成
+临时 QA；仅对语言 decoder 的 q_proj/v_proj LoRA 做交叉熵更新。query 时没有
+帧、笔记、训练样本、优化器或旧 KV cache，只有基础模型、LoRA 和当前问题。
+跨环境必须 reset；失败摄入不能进入 ready；query 不更新参数。
+
+接口生命周期：`reset -> ingest_video * N -> finish_ingest -> answer/save`。
+`load_memory` 在新实例中恢复已封存参数，只允许兼容的 adapter 和架构；使用者
+仍需保证基础权重相同。`answer(use_memory=False)` 是关闭 LoRA 的对照。
+Qwen3-VL 的临时 `rope_deltas` 在生成前后以及环境边界清空。
+
+唯一桥仍在 **meowbench/adapters/ttt_lact.py**，用 `--backend lora` 选择，
+默认 `lact` 不变。`scripts/run_ttt_pilot.py` 是 bench 仓库的实验入口，复用
+suite / Runner / Store / scorer；`blind/memory/base-read` 分别报告。
+另一个对话同时在修改 bench 的真实数据适配，不要将其文件夹或未提交改动
+打包到 TTT_frame，也不要回滚。所有安装及服务器命令在本仓库 README。
+
+不要把接口跑通写成性能成立：两步更新后，新进程 Qwen 的开放式回答仍出现
+“没有视频内容”的拒答。当前本地输入是 demo/合成视频，尚未测真实第一人称
+数据；需要服务器上已准备好的 suite 路径后运行。评测数据的 gold 只在 scorer
+侧使用，不能用来构造当前 test 环境的训练目标。
+
+以下章节保留 09-08 的 LaCT 实验历史；其中“仓库仅有 15 个测试”“尚无生成式
+接口”等时间相关描述应按本节更新理解，历史实验结论不因此被改写。
+
+---
+
 给接手这个项目、且对它如何走到今天毫无记忆的人（或模型）。
 
 **姊妹仓库 `meowbench`（GitHub: quzitsix/test_1）有自己的 `docs/HANDOVER.md` 和

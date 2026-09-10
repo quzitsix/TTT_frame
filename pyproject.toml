@@ -21,6 +21,8 @@ dependencies = ["torch"]
 #           flips huggingface-hub to 1.x and changes the from_pretrained default
 #           dtype to "auto". Untested here; widen deliberately.
 exp = ["transformers>=4.57,<5", "pillow>=10.1", "numpy>=1.24"]
+video = ["transformers>=4.57,<5", "peft>=0.14,<1", "accelerate>=1,<2",
+         "safetensors>=0.4", "av>=14", "pillow>=10.1"]
 dev = ["pytest>=8.0", "pytest-timeout>=2.3", "transformers>=4.57,<5", "pillow>=10.1"]
 
 [tool.setuptools.packages.find]
