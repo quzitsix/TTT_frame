@@ -1,0 +1,266 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>TTT 视频记忆评测</title><style>body{margin:0;background:#f4f6f9;color:#1d2d44;font:16px/1.75 system-ui,"Microsoft YaHei",sans-serif}main{max-width:1200px;margin:32px auto;background:white;padding:32px 40px;border-radius:12px}h1{font-size:30px;margin-top:0}h2{font-size:22px;margin-top:36px;border-top:1px solid #dce3ed;padding-top:24px}p,li{overflow-wrap:anywhere}code{background:#edf1f7;padding:2px 4px;font-size:.9em}.table-wrap{overflow-x:auto}table{border-collapse:collapse;width:100%;font-size:14px}th,td{padding:10px 12px;border-bottom:1px solid #dce3ed;text-align:left;vertical-align:top;min-width:60px}th{background:#183b59;color:white}tbody tr:nth-child(even){background:#f4f7fa}blockquote{border-left:3px solid #427a9b;margin-left:0;padding:12px 20px;background:#f4f7fa;overflow-wrap:anywhere}@media(max-width:700px){main{padding:20px;margin:0}h1{font-size:26px}}@media print{body{background:white}main{margin:0;padding:0}table{font-size:10px}tr{break-inside:avoid}}</style></head><body><main><h1>真实第一人称视频的 TTT 参数记忆评测</h1>
+<p>2026-09-11 · Qwen3-VL-2B-Instruct · EPIC 单视频诊断 + SuperMemory 小规模对照</p>
+<p><strong>结论：真实视频部署与评测链路已跑通，但还不能认定形成可靠的长期视觉记忆。</strong>
+两档 LoRA 在五题中均答对三题，比盲答多两题；EPIC 开放式回答仍会重复或编造内容。
+降低训练强度没有解决这一问题。以下为全部完成的实际运行结果。</p>
+<h2>这次测试了什么</h2>
+<p>当前实现是 <strong>冻结 VLM 生成临时观察和 QA，再对语言注意力的 LoRA 做自蒸馏</strong>。
+问答时只使用基础模型和 LoRA 参数，训练代码不读取 benchmark 的问题、选项或标准答案。
+它是可运行的参数记忆基线，不是 LaCT 或 Spatial-TTT 的生成式复现。</p>
+<p>在用户的 Linux 服务器直接执行了两类评测：</p>
+<ul>
+<li><strong>EPIC <code>P07_106.MP4</code></strong>：复用用户的原始 checkpoint，并分别重新训练 3 步版本和低学习率版本。
+每个版本比较启用参数、关闭参数、直接看帧三种读取方式；每种方式有 13 个固定问题，共 117 条输出。</li>
+<li><strong><code>supermemory-pilot-v2</code></strong>：使用已准备好的全部 5 道原始四选一题，比较盲答、12 步 LoRA、3 步 LoRA、显式文字笔记、直接看帧。
+每组完整摄入 5 份所需历史前缀，共 70 次片段摄入、累计 4124 秒。前缀大量重叠，涉及 38 个媒体文件，不能视为 69 分钟独立录像或 70 个样本。</li>
+</ul>
+<p>所有题的跨录制标记均为 false。因此，这次评测<strong>没有检验搬家、跨家庭人物识别或人物—物品关系保持</strong>。
+四个选项中包含原数据定义的“无法回答”选项；它的位置随题目变化。</p>
+<h2>有标准答案的结果</h2>
+<table>
+<thead>
+<tr>
+<th>方式</th>
+<th style="text-align:right">正确数</th>
+<th style="text-align:right">准确率</th>
+<th style="text-align:right">全组摄入耗时</th>
+<th style="text-align:right">查询 P50 / P95（秒）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>冻结模型盲答</td>
+<td style="text-align:right">1/5</td>
+<td style="text-align:right">20%</td>
+<td style="text-align:right">0.17 秒，无视频</td>
+<td style="text-align:right">0.065 / 0.490</td>
+</tr>
+<tr>
+<td>LoRA：12 步/块</td>
+<td style="text-align:right">3/5</td>
+<td style="text-align:right">60%</td>
+<td style="text-align:right">27.52 分钟</td>
+<td style="text-align:right">0.053 / 0.062</td>
+</tr>
+<tr>
+<td>LoRA：3 步/块</td>
+<td style="text-align:right">3/5</td>
+<td style="text-align:right">60%</td>
+<td style="text-align:right">23.39 分钟</td>
+<td style="text-align:right">0.055 / 0.065</td>
+</tr>
+<tr>
+<td>显式文字笔记</td>
+<td style="text-align:right">2/5</td>
+<td style="text-align:right">40%</td>
+<td style="text-align:right">22.03 分钟</td>
+<td style="text-align:right">0.299 / 0.406</td>
+</tr>
+<tr>
+<td>冻结模型直接看帧</td>
+<td style="text-align:right">1/5</td>
+<td style="text-align:right">20%</td>
+<td style="text-align:right">11.28 秒</td>
+<td style="text-align:right">179.019 / 234.474</td>
+</tr>
+</tbody>
+</table>
+<p>25/25 次作答均为 <code>ok</code>，无超时、崩溃或待判分；文字笔记在 Q19 选择了“无法回答”，按原标注计错。
+这里是模型常驻后的<strong>单选短答案</strong>查询耗时，不包含启动 CLI 加载基础模型的时间。
+Oracle 将视觉编码/推理成本放在查询阶段；这轮没有分解预处理、视觉编码和生成耗时，不能把其延迟全部归因于模型架构。</p>
+<table>
+<thead>
+<tr>
+<th>题号</th>
+<th>Gold</th>
+<th>盲答</th>
+<th>LoRA 12 步</th>
+<th>LoRA 3 步</th>
+<th>文字笔记</th>
+<th>看帧</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Q9：网袋丢弃位置</td>
+<td>A</td>
+<td>C</td>
+<td>C</td>
+<td>A</td>
+<td>C</td>
+<td>C</td>
+</tr>
+<tr>
+<td>Q14：手机食谱浸泡要求</td>
+<td>D</td>
+<td>C</td>
+<td>D</td>
+<td>C</td>
+<td>C</td>
+<td>C</td>
+</tr>
+<tr>
+<td>Q15：洋葱处理顺序</td>
+<td>C</td>
+<td>B</td>
+<td>C</td>
+<td>C</td>
+<td>C</td>
+<td>C</td>
+</tr>
+<tr>
+<td>Q19：盐是否加碘</td>
+<td>D</td>
+<td>C</td>
+<td>A</td>
+<td>C</td>
+<td>B</td>
+<td>A</td>
+</tr>
+<tr>
+<td>Q204：电池与盒子的先后</td>
+<td>C</td>
+<td>C</td>
+<td>C</td>
+<td>C</td>
+<td>C</td>
+<td>B</td>
+</tr>
+</tbody>
+</table>
+<p>两档参数组总分相同，答对的题却不完全相同；不能据此认定两档具有相同记忆能力。
+相对盲答的 +40 个百分点，在这里就是五题中净多答对两题。</p>
+<p>两档各写入 70 块、276 帧、280 条临时 QA；12 步组有 840 次更新，3 步组有 210 次更新，均无 caption-only fallback 或训练样本截断。
+减少 75% 更新步骤，只降低约 15% 总摄入时间；固定的教师生成/数据处理成本仍值得单独计时。
+每环境参数为 12.25 MiB，两档摄入峰值 CUDA allocated 均为 6.26 GiB。
+笔记/看帧各采样 280 帧；Oracle 上限 96 帧，本次最多每题 72 帧，未触发上限。
+原始统计中 blind 也分配了初始化 LoRA，但更新为零；Oracle 的 <code>memory_bytes=0</code> 是未统计帧字节数，不代表没有内存成本。</p>
+<p>严格使用原标准答案；错误计入分母，开放题未判分时保留 pending。这里全部是单选题，分数不等同于原数据的全部语义/排序指标。
+五题不足以证明方法整体优越，后续也不能继续把这五题同时用于调参和最终结论。</p>
+<h2>EPIC：重复减少，不代表记忆变准</h2>
+<p>该文件实际长 16.2 秒（1920×1080、50 fps），按 8 秒分块，每块至多 4 帧，实际写入 3 块、9 帧、12 条临时 QA。
+原设置共 36 个优化步骤，3,211,264 个 FP32 LoRA 参数，占 12,845,056 bytes（12.25 MiB）。
+用户原摄入耗时 51.95 秒，峰值 CUDA allocated 5.36 GiB。此处的显存指标不包含 CUDA reserved，也不是整台 GPU 的占用。</p>
+<table>
+<thead>
+<tr>
+<th>参数设置</th>
+<th style="text-align:right">总更新步数</th>
+<th style="text-align:right">自由视频问题重复/8</th>
+<th style="text-align:right">训练模板重复/3</th>
+<th style="text-align:right">两项指令控制</th>
+<th>主问题的参数回答</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>原设置：12 步/块，lr=2e-4</td>
+<td style="text-align:right">36</td>
+<td style="text-align:right">2/8</td>
+<td style="text-align:right">2/3</td>
+<td style="text-align:right">2/2</td>
+<td>不断重复“black coffee pot on a black coffee pot”</td>
+</tr>
+<tr>
+<td>3 步/块，lr=2e-4</td>
+<td style="text-align:right">9</td>
+<td style="text-align:right">2/8</td>
+<td style="text-align:right">0/3</td>
+<td style="text-align:right">2/2</td>
+<td>不断重复“white plastic bag”</td>
+</tr>
+<tr>
+<td>12 步/块，lr=5e-5</td>
+<td style="text-align:right">36</td>
+<td style="text-align:right">1/8</td>
+<td style="text-align:right">1/3</td>
+<td style="text-align:right">2/2</td>
+<td>描述红、蓝、绿三个球，缺少画面支持</td>
+</tr>
+</tbody>
+</table>
+<p>重复使用固定 4-gram 启发式：至少 20 个近似词/汉字，重复比例不低于 0.4，且某个 4-gram 出现至少 3 次。
+它会漏掉短答案中的重复，也可能标记合理的重复列举。视频问题没有独立人工答案，所以本表不是视频问答准确率。
+三个训练模板问题也不能当作未见问法泛化测试。</p>
+<p>关闭 LoRA 后，主问题回到缺少视觉输入的拒答，但其他问法仍可能生成没有依据的人、动物或活动。
+直接输入同样 9 帧时，主问题能描述厨房水槽、台面等内容；但物体列举仍有 1/8 重复，部分细节也错误。
+三个版本的冻结模型对照输出相同。基础 VLM 的感知和无图回答本身也存在限制。</p>
+<p>三档都正确回答了“2+3”和复制“blue triangle”，只说明这两个简单控制通过，不能据此认定通用能力完好。</p>
+<h2>失败线索与证据边界</h2>
+<p><strong>临时训练目标有错误。</strong> 重新训练的 EPIC 日志中，教师生成的问题是“搅拌液体用的是什么”，目标答案却是“深色液体”。
+对 9 张采样帧的检查还发现：黄色手套放在水槽里，教师却写成戴在手上。这些错误也会进入梯度更新。</p>
+<p><strong>低训练损失没有保证可用读出。</strong> 用户原设置三块损失分别为 2.8922→0.5915、2.8638→0.2178、2.8088→0.4019，但主问题仍循环。
+降低训练强度后，输出可以变得流畅，却转向与视频不符的内容。还没有通过独立的存储/寻址实验确定主因，不能直接断言参数容量不够或灾难性遗忘。</p>
+<p><strong>完整历史仍有采样缺口。</strong> suite 使用 60 秒分块、每块至多 4 帧、max_side=448；末尾短块可能不足 4 帧。
+TTT 从块起点采样，显式笔记/看帧对照采用 session 分桶中点，两者输入并不完全相同。
+Oracle 是有限采样视觉对照，不能视为完美上界。EPIC 使用 8 秒分块，与 suite 的采样预算不同。</p>
+<p>按实际 TTT 时间戳与原标注证据区间核对，得到以下覆盖情况；落入区间只说明取到该时刻，不保证细节可见或文字可读。</p>
+<table>
+<thead>
+<tr>
+<th>题号</th>
+<th style="text-align:right">至少有一张采样帧的证据区间/全部区间</th>
+<th>观察</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Q9：红色网袋的位置</td>
+<td style="text-align:right">1/1</td>
+<td>命中区间内的 15 秒</td>
+</tr>
+<tr>
+<td>Q14：手机上的浸泡要求</td>
+<td style="text-align:right">1/1</td>
+<td>命中 0、15 秒，仍须验证文字可读性</td>
+</tr>
+<tr>
+<td>Q15：洋葱处理顺序</td>
+<td style="text-align:right">4/5</td>
+<td>某片段末尾 54–60 秒区间未取帧</td>
+</tr>
+<tr>
+<td>Q19：盐是否加碘</td>
+<td style="text-align:right">3/3</td>
+<td>时间覆盖不等于标签被正确识别</td>
+</tr>
+<tr>
+<td>Q204：电池和盒子的先后</td>
+<td style="text-align:right">1/2</td>
+<td>最后短块只取 0、15 秒，未命中 5–13 秒证据区间</td>
+</tr>
+</tbody>
+</table>
+<p>Q14 的 12 步版本答对了，但该环境实际写入文字的关键词检查中没有发现 <code>lentil/soak/hour/overnight</code>。
+这是一项有限文本审计，尚不能确定正确答案来自何处；不能直接称为“记住并读出了浸泡时长”。
+两档参数组 70/70 块的观察、临时 QA 和时间戳完全一致，排除了这两组之间教师目标不同的解释。
+19/70 块观察触发重复启发式，其中可能包含合理的逐帧重复描述，不能全部判为错误训练数据。</p>
+<p><strong>查询隔离与日志。</strong> 记忆模式通过 harness 撤销暂存视频；参数模式的 <code>n_records=0</code> 表示不保存显式记录，不表示没有写入。
+这次主动保存 teacher 审计日志，便于核查训练目标；模型不回读这些文字。checkpoint 本身仍只有参数和配置/计数。
+文件撤销与日志核查不等于针对恶意模型的完整安全隔离。</p>
+<h2>下一步建议</h2>
+<p>先把这轮版本保留为失败基线，暂不根据五题得分选定最佳超参数。
+优先建立 10–20 个经过人工核对的简单视觉事实，把“看到了什么”“写入了什么”“能否读回”逐一对应：</p>
+<ol>
+<li>分别测试训练原问题、同义改写问题，以及没有选项提示的简答；只在评估时使用人工答案。</li>
+<li>加入错误视频记忆/打乱视频与问题对应的对照，检查增益是否依赖正确历史。</li>
+<li>在新的开发样本上修正教师 QA 的事实性与语义匹配，再验证参数更新；不靠重复惩罚掩盖循环。</li>
+<li>固定相同采样帧与预算后比较参数记忆、笔记和直接看帧；随后扩大独立录制与家庭，并单独建立跨场景关系保持测试。</li>
+</ol>
+<p>这轮已经解决“是否能部署和真实执行”的问题；“是否形成可靠长期视觉记忆”仍需要上述验证。</p>
+<h2>产物与复现</h2>
+<p>服务器原始产物：<code>/home/quzitsix/meowbench/runs/ttt_detailed_20260911</code>。
+本机副本：<code>MEOW/meowbench/runs/ttt_detailed_20260911</code>。
+逐题答案、采样时间戳、实际训练目标、配置和日志均保留在该目录；原视频和模型权重不提交到 Git。</p>
+<p>软件/硬件：服务器 conda <code>meowbench</code>，torch 2.9.1、transformers 4.57.6、PEFT 0.20.0、PyAV 18.1.0，
+GPU 型号由服务器报告为 NVIDIA GeForce RTX 4090 D，每卡 48,501 MiB。使用 GPU 0–3 并行，bf16 基础模型、FP32 LoRA、rank=16、alpha=32、seed=0。
+教师最多生成 512 tokens，回答最多 128 tokens；未添加重复惩罚。并行作业的计时没有经过统一预热/隔离，不作为严格硬件性能基准。</p>
+<p>启动时记录的模型仓库版本 <code>95368e4</code>，benchmark 版本 <code>43b07ba</code>；报告工具版本 <code>edc67bf</code>。
+Suite SHA256：<code>399d60edf1ce7e31964b5a9353644d90e11da35fccae1c074513735cdfa38e26</code>。
+记录了本地基础模型路径与配置，没有逐字节校验全部基础模型权重。</p>
+<p>复现命令见 benchmark 仓库的 <code>docs/TTT_EVALUATION.md</code>。
+本轮相关验证：VideoQA 测试 10 项通过、bridge 测试 3 项通过、报告/评分测试 44 项通过。</p>
+<p>详细自动报告位于原始产物目录的 <code>report/report.html</code>（另有 Markdown 和 <code>detailed.json</code>）。
+<code>audit.json</code> 记录逐题一致性、实际采样覆盖、教师目标一致性和关键文件 SHA256；<code>audit_artifacts.py</code> 可重算该审计。
+下载归档 <code>artifacts.zip</code> 的 SHA256 为 <code>d33796c0ecfa1039e3a3005e351f691745da4cbe993cf971ec0fdee854f6b87c</code>，本机已核对一致。</p>
+</main></body></html>

@@ -11,6 +11,12 @@ established.** This new baseline uses test-time LoRA self-distillation, not the
 LaCT update and not a reproduction of Spatial-TTT. The original CLIP/LaCT
 experiment below is unchanged.
 
+The [real-video pilot report](docs/REPORT_20260911_REAL_VIDEO.md) records the
+server evaluation: both LoRA update budgets scored 3/5 on a tiny SuperMemory
+subset versus 1/5 blind, while EPIC free-form readout still repeated or invented
+content. Those five overlapping-context questions do not establish reliable
+long-term recall or relocation robustness.
+
 ```
 chronological video sessions
   -> bounded RGB chunks (sequential PyAV decoding)
@@ -119,6 +125,21 @@ Each arm sees the same selected items and chronological sessions:
 | `blind` | receives no video; no updates | original VLM |
 | `memory` | video self-distillation into LoRA | question + LoRA parameters |
 | `base-read` | same video/training budget as memory | LoRA disabled |
+| `notes` | frozen VLM descriptions | question + retained text notes |
+| `oracle` | sampled frames retained | question + explicit frames |
+
+`notes` and `oracle` are frozen HF controls. They sample session midpoints while
+TTT samples chunk starts; frame counts can differ for short final chunks. They
+are diagnostic comparisons, not an identical-input ablation.
+
+Use `--trace-teacher` to persist observations and pseudo-QA in a separate
+**evaluator log**. The learner never reads this log; the saved memory remains
+parameter-only. With tracing enabled, text derived from the video does remain
+on disk outside the checkpoint, for auditing training-target quality.
+
+The benchmark repository's `docs/TTT_EVALUATION.md` gives complete commands for
+saved-memory/video controls, update-strength comparisons and standalone
+Markdown/HTML reports (`scripts/report_ttt_evaluation.py`).
 
 Outputs include per-arm predictions, protocol summary, score report, numeric
 `ttt_metrics.jsonl`, and paired `comparison.json`. Errors stay in the score

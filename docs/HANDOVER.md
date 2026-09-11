@@ -1,6 +1,24 @@
 # HANDOVER — TTT_frame
 
-## 2026-09-11 接入更新（先读）
+## 2026-09-11 真实视频评测后的状态（先读）
+
+已在服务器实际运行 EPIC 单视频和已准备好的 SuperMemory 五题 suite。
+先读 [真实视频评测报告](REPORT_20260911_REAL_VIDEO.md)，其中保留了问题输出、
+对照定义、采样限制及下一步建议。下面“尚未访问服务器/未测真实视频”等描述
+属于同日较早的接口开发记录，不能当作当前状态。
+
+12 步与 3 步 LoRA 均为 3/5，盲答为 1/5；但自由问答仍出现重复和无依据内容，
+教师的临时 QA 也存在语义错误。当前不能认定形成了可靠长期记忆，更未验证搬家。
+不要仅靠降低学习率或添加重复惩罚宣布问题解决；优先做可靠事实的原问/改写读回、
+错误历史对照，以及相同采样帧的机制比较。
+
+本轮新增的模型接口只有可选 evaluator `trace_file` 和冻结模型视觉诊断
+`answer_with_images`。trace 会将临时 teacher 文字写到独立日志，但模型不回读，
+checkpoint 本身仍只含权重和配置。评测脚本和报告工具继续放在 **meowbench**：
+`scripts/diagnose_ttt_video.py`、`scripts/report_ttt_evaluation.py`，
+完整命令见该仓库 `docs/TTT_EVALUATION.md`。
+
+## 2026-09-11 接入更新（早期记录）
 
 当前新增目标是把真实第一人称视频送入 MEOWBench，并从 TTT 参数生成回答。
 `ttt_frame/videoqa.py` 实现 `VideoTTTMemory`；`ttt_frame/video.py` 实现有界、

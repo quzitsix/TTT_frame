@@ -1,0 +1,68 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>TTT 视频记忆评测</title><style>body{margin:0;background:#f4f6f9;color:#1d2d44;font:16px/1.75 system-ui,"Microsoft YaHei",sans-serif}main{max-width:1200px;margin:32px auto;background:white;padding:32px 40px;border-radius:12px}h1{font-size:30px;margin-top:0}h2{font-size:22px;margin-top:36px;border-top:1px solid #dce3ed;padding-top:24px}p,li{overflow-wrap:anywhere}code{background:#edf1f7;padding:2px 4px;font-size:.9em}.table-wrap{overflow-x:auto}table{border-collapse:collapse;width:100%;font-size:14px}th,td{padding:10px 12px;border-bottom:1px solid #dce3ed;text-align:left;vertical-align:top;min-width:60px}th{background:#183b59;color:white}tbody tr:nth-child(even){background:#f4f7fa}blockquote{border-left:3px solid #427a9b;margin-left:0;padding:12px 20px;background:#f4f7fa;overflow-wrap:anywhere}@media(max-width:700px){main{padding:20px;margin:0}h1{font-size:26px}}@media print{body{background:white}main{margin:0;padding:0}table{font-size:10px}tr{break-inside:avoid}}</style></head><body><main><h1>TTT 真实视频评测简报</h1>
+<p>2026-09-11 · Qwen3-VL-2B-Instruct · 测试时 LoRA 自蒸馏</p>
+<p><strong>部署和评测链路已跑通，可靠长期记忆尚未得到验证。</strong> 在服务器完成了
+5 道 SuperMemory 原始选择题 × 5 组对照，以及 EPIC 单视频的 117 条诊断回答。
+选择题全部成功返回，无超时或崩溃。</p>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th style="text-align:right">正确数</th>
+<th style="text-align:right">摄入耗时</th>
+<th style="text-align:right">单题查询 P50</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>盲答，不看视频</td>
+<td style="text-align:right">1/5</td>
+<td style="text-align:right">无视频摄入</td>
+<td style="text-align:right">65 ms</td>
+</tr>
+<tr>
+<td>LoRA，每块 12 步</td>
+<td style="text-align:right">3/5</td>
+<td style="text-align:right">27.52 分钟</td>
+<td style="text-align:right">53 ms</td>
+</tr>
+<tr>
+<td>LoRA，每块 3 步</td>
+<td style="text-align:right">3/5</td>
+<td style="text-align:right">23.39 分钟</td>
+<td style="text-align:right">55 ms</td>
+</tr>
+<tr>
+<td>显式文字笔记</td>
+<td style="text-align:right">2/5</td>
+<td style="text-align:right">22.03 分钟</td>
+<td style="text-align:right">299 ms</td>
+</tr>
+<tr>
+<td>直接输入保留帧</td>
+<td style="text-align:right">1/5</td>
+<td style="text-align:right">11.28 秒</td>
+<td style="text-align:right">179 秒</td>
+</tr>
+</tbody>
+</table>
+<p>摄入时间累计了五份重叠历史前缀，共 68.7 分钟输入。查询计时针对常驻模型的
+单选短答案，不包含模型加载。直接看帧把视觉处理成本放在查询阶段；这些并行作业
+没有做严格硬件性能隔离，不能据此声称某个架构有固定加速比。</p>
+<p><strong>参数组的成绩较高，但证据仍有限。</strong> 两档 LoRA 都比盲答多答对两题，
+答对的题并不完全相同。样本只有五题，历史高度重叠，且没有跨录制题；
+这次没有测试搬家后的物品—人物关系保持。两档每环境参数大小为 12.25 MiB。</p>
+<p><strong>EPIC 的重复退化被复现。</strong> 原配置在 11 个视频问题中有 4 个触发重复，
+减少步数或降低学习率后均为 2 个。但低学习率模型把厨房描述成三个彩色球，
+说明“不重复”不代表“记对了”。这 11 个问题包含 3 个训练模板问题，
+没有独立标准答案，因此只用于退化诊断，不报告视频问答准确率。</p>
+<p><strong>目前的两个具体问题：</strong> 教师 QA 存在问答不匹配和视觉细节错误；
+60 秒取 4 帧会漏掉短动作区间。写入目标错误或缺失时，继续降低训练损失不能解决事实回忆。</p>
+<p>下一轮先用少量人工核对的视觉事实，测试原问、改写和无选项读回；
+加入错误历史对照，并统一各组采样帧。确认收益依赖正确历史后，再扩大独立视频/家庭，
+建立跨场景关系保持测试。</p>
+<p><a href="REPORT_20260911_REAL_VIDEO.html">完整技术报告</a> ·
+<a href="../../meowbench/runs/ttt_detailed_20260911/report/report.html">逐题结果与参数</a> ·
+<a href="../../meowbench/docs/TTT_EVALUATION.md">复现步骤</a></p>
+<p>服务器原始结果：<code>/home/quzitsix/meowbench/runs/ttt_detailed_20260911</code>。
+包括预测、教师目标、时间戳、配置、日志及审计；原视频和模型权重未提交到 Git。</p>
+</main></body></html>
