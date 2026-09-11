@@ -151,11 +151,13 @@ class VideoTTTMemory:
     the base architecture; the caller must also use identical base-model weights.
     """
 
-    def __init__(self, config: VideoTTTConfig, *, model=None, processor=None):
+    def __init__(self, config: VideoTTTConfig, *, model=None, processor=None, trace_file=None):
         from peft import LoraConfig, get_peft_model
         from transformers import AutoModelForImageTextToText, AutoProcessor
 
         self.config = config
+        self.trace_file = Path(trace_file) if trace_file else None
+        self.trace_context = {}
         self.device = torch.device(config.device)
         source = config.model_path
         if config.local_files_only and not Path(source).is_dir() and (model is None or processor is None):
@@ -211,6 +213,22 @@ class VideoTTTMemory:
     @property
     def memory_bytes(self) -> int:
         return sum(p.numel() * p.element_size() for p in self.trainable.values())
+
+    def set_trace_context(self, **fields):
+        """Evaluator metadata only; never interpolated into model prompts."""
+        self.trace_context = fields
+
+    def _trace(self, event, **fields):
+        """Optional audit output. The model never reads this file back.
+
+        With tracing enabled, temporary teacher text is persisted OUTSIDE the
+        parameter memory for the evaluator to inspect. It is not a retrieval store.
+        """
+        if self.trace_file is not None:
+            self.trace_file.parent.mkdir(parents=True, exist_ok=True)
+            with self.trace_file.open("a", encoding="utf-8") as stream:
+                stream.write(json.dumps({"event": event, **self.trace_context, **fields},
+                                        ensure_ascii=False) + "\n")
 
     def reset(self) -> None:
         if getattr(self, "optimizer", None) is not None:
@@ -355,6 +373,9 @@ class VideoTTTMemory:
                     pairs.append((f"What was observed in session {session}, "
                                   f"segment {chunk.index + 1}?", observation))
                     metrics = self._learn(pairs)
+                    self._trace("chunk", session=session, segment=chunk.index + 1,
+                                timestamps=chunk.timestamps, observation=observation,
+                                qa=pairs[:count], **metrics)
                     report.update(loss_first=metrics["loss_first"], loss_last=metrics["loss_last"])
                     for name in ("optimizer_steps", "truncated_examples"):
                         report[name] += metrics[name]
@@ -404,6 +425,10 @@ class VideoTTTMemory:
         if self.state != "ready":
             raise RuntimeError("call finish_ingest before asking questions")
         return self._generate(question, teacher=not use_memory)
+
+    def answer_with_images(self, question: str, images: list) -> str:
+        """Frozen visual baseline for evaluator diagnostics, not a memory query."""
+        return self._generate(question, images=images, teacher=True)
 
     def save(self, directory: str | Path) -> None:
         from peft import get_peft_model_state_dict

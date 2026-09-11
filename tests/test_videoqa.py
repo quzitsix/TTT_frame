@@ -176,6 +176,8 @@ def test_empty_video_failure_cannot_turn_into_valid_memory(tmp_path):
 
 def test_multiple_sessions_accumulate_until_sealed(tmp_path, monkeypatch):
     engine = tiny_engine(steps_per_chunk=1, max_chunks=1, qa_per_chunk=0)
+    engine.trace_file = tmp_path / "audit.jsonl"
+    engine.set_trace_context(env_id="home1")
     video = make_video(tmp_path / "day.mp4")
     monkeypatch.setattr(engine, "_generate", Mock(return_value="blue mug on shelf"))
     engine.ingest_video(video)
@@ -187,6 +189,12 @@ def test_multiple_sessions_accumulate_until_sealed(tmp_path, monkeypatch):
     assert (summary["sessions"], summary["frames"], summary["optimizer_steps"]) == (2, 4, 2)
     assert summary["last_chunk_loss_last"] > 0
     assert any(not torch.equal(p, after_first[n]) for n, p in engine.trainable.items())
+    import json
+    audit = [json.loads(line) for line in engine.trace_file.read_text().splitlines()]
+    assert len(audit) == 2 and audit[0]["env_id"] == "home1"
+    assert audit[0]["observation"] == "blue mug on shelf"
+    engine.save(tmp_path / "memory")
+    assert "blue mug" not in (tmp_path / "memory" / "memory.json").read_text()
 
 
 def test_pixels_cannot_be_silently_dropped():
