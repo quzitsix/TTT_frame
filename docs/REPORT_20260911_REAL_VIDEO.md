@@ -128,7 +128,7 @@ Q14 的 12 步版本答对了，但该环境实际写入文字的关键词检查
 逐题答案、采样时间戳、实际训练目标、配置和日志均保留在该目录；原视频和模型权重不提交到 Git。
 
 软件/硬件：服务器 conda `meowbench`，torch 2.9.1、transformers 4.57.6、PEFT 0.20.0、PyAV 18.1.0，
-GPU 型号由服务器报告为 NVIDIA GeForce RTX 4090 D，每卡 48,501 MiB。使用 GPU 0–3 并行，bf16 基础模型、FP32 LoRA、rank=16、alpha=32、seed=0。
+GPU 型号由服务器报告为 NVIDIA GeForce RTX 4090 D，每卡总量 49,140 MiB（以 `runtime_snapshot.json` 的 `memory.total` 为准）。使用 GPU 0–3 并行，bf16 基础模型、FP32 LoRA、rank=16、alpha=32、seed=0。
 教师最多生成 512 tokens，回答最多 128 tokens；未添加重复惩罚。并行作业的计时没有经过统一预热/隔离，不作为严格硬件性能基准。
 
 启动时记录的模型仓库版本 `95368e4`，benchmark 版本 `43b07ba`；报告工具版本 `edc67bf`。

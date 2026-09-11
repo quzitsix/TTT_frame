@@ -17,6 +17,10 @@ subset versus 1/5 blind, while EPIC free-form readout still repeated or invented
 content. Those five overlapping-context questions do not establish reliable
 long-term recall or relocation robustness.
 
+The [architecture and evaluation guide (Chinese)](docs/ARCHITECTURE_AND_EVALUATION.md)
+explains the implementation, memory lifecycle, complete pilot results, diagnostic
+limits, reproduction commands, and archived evidence for the next project owner.
+
 ```
 chronological video sessions
   -> bounded RGB chunks (sequential PyAV decoding)
