@@ -220,3 +220,42 @@ def test_mismatched_checkpoint_rejected_before_mutation(tmp_path):
     with pytest.raises(ValueError, match="incompatible"):
         other.load_memory(tmp_path / "saved")
     assert all(torch.equal(p, other._initial[n]) for n, p in other.trainable.items())
+
+
+def test_external_teacher_changes_only_lora_and_requires_matching_packet(tmp_path):
+    import json
+    from ttt_frame.teacher_bridge import ANALYSIS_SCHEMA, prepare_teacher_packet
+
+    video = make_video(tmp_path / "scene.mp4")
+    packet = prepare_teacher_packet(video, tmp_path / "packet", chunk_seconds=1,
+                                    frames_per_chunk=2, max_side=32, max_chunks=1)
+    chunk = packet["chunks"][0]
+    analysis = {"schema": ANALYSIS_SCHEMA,
+        "packet_manifest_sha256": packet["manifest_sha256"],
+        "source_sha256": packet["source_sha256"],
+        "segments": [{"chunk_index": chunk["chunk_index"],
+            "start_sec": chunk["start_sec"], "end_sec": chunk["end_sec"],
+            "frame_refs": [chunk["frames"][0]["file"]],
+            "summary": "A blue mug was seen on a shelf.",
+            "observations": ["0s: a blue mug is on a shelf."],
+            "entities": [], "events": [], "relations": [], "uncertainty": [],
+            "qa": [{"question": "Where is mug ?", "answer": "blue shelf"}] }],
+        "global_summary": "A blue mug was seen on a shelf."}
+    path = tmp_path / "analysis.json"
+    path.write_text(json.dumps(analysis), encoding="utf-8")
+    engine = tiny_engine(steps_per_chunk=2)
+    original = {n: p.detach().clone() for n, p in engine.trainable.items()}
+    analysis["packet_manifest_sha256"] = "wrong"
+    path.write_text(json.dumps(analysis), encoding="utf-8")
+    with pytest.raises(ValueError, match="manifest"):
+        engine.ingest_teacher_analysis(path, packet)
+    assert all(torch.equal(engine.trainable[n], p) for n, p in original.items())
+    analysis["packet_manifest_sha256"] = packet["manifest_sha256"]
+    path.write_text(json.dumps(analysis), encoding="utf-8")
+    report = engine.ingest_teacher_analysis(path, packet)
+    assert report["segments"] == 1 and report["qa_pairs"] == 1
+    assert engine.stats["external_teacher_segments"] == 1
+    assert any(not torch.equal(engine.trainable[n], p) for n, p in original.items())
+    engine.finish_ingest()
+    engine.save(tmp_path / "memory")
+    assert "blue mug" not in (tmp_path / "memory" / "memory.json").read_text()

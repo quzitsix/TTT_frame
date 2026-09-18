@@ -241,7 +241,8 @@ class VideoTTTMemory:
         self.state = "ingesting"
         self.stats = dict(sessions=0, chunks=0, frames=0, qa_pairs=0,
                           caption_only_chunks=0, optimizer_steps=0,
-                          truncated_examples=0, ingest_seconds=0.0)
+                          truncated_examples=0, ingest_seconds=0.0,
+                          external_teacher_segments=0)
         if self.device.type == "cuda":
             torch.cuda.reset_peak_memory_stats(self.device)
         self.model.eval()
@@ -402,6 +403,71 @@ class VideoTTTMemory:
         self.stats["last_chunk_loss_last"] = report["loss_last"]
         return report
 
+    def ingest_teacher_analysis(self, analysis: str | Path | dict,
+                                manifest: str | Path | dict) -> dict:
+        """Write validated Codex/ChatGPT scene data into the LoRA memory.
+
+        This path intentionally trains text-only pairs: the external teacher has
+        already converted sampled pixels into timestamped evidence. It never
+        changes the frozen vision tower and never stores the JSON in a checkpoint.
+        ``manifest`` must be the packet used to produce the analysis so the same
+        source hash and frame boundaries are checked before any adapter update.
+        """
+        if self.state != "ingesting":
+            raise RuntimeError("reset before teacher ingestion")
+        from ttt_frame.teacher_bridge import (canonicalize_analysis,
+                                               validate_teacher_analysis)
+        if isinstance(manifest, dict):
+            manifest_obj = manifest
+        else:
+            manifest_obj = json.loads(Path(manifest).read_text(encoding="utf-8"))
+        analysis_obj = validate_teacher_analysis(analysis, manifest_obj)
+        started = time.perf_counter()
+        total_qa = 0
+        aggregate = {"optimizer_steps": 0, "truncated_examples": 0}
+        first_loss = last_loss = None
+        caption_only = 0
+        try:
+            for segment in analysis_obj["segments"]:
+                idx = segment["chunk_index"] + 1
+                # Do not inject a packet-wide future summary into earlier writes.
+                evidence = canonicalize_analysis({**analysis_obj, "segments": [segment],
+                                                   "global_summary": segment["summary"]})
+                pairs = [(item["question"], item["answer"])
+                         for item in segment.get("qa", [])[:self.config.qa_per_chunk]]
+                count = len(pairs)
+                pairs.append((f"What was observed in session {self.stats['sessions'] + 1}, "
+                              f"segment {idx}?", evidence))
+                metrics = self._learn(pairs)
+                first_loss = metrics["loss_first"] if first_loss is None else first_loss
+                last_loss = metrics["loss_last"]
+                for name in aggregate:
+                    aggregate[name] += metrics[name]
+                total_qa += count
+                caption_only += int(count == 0)
+                self._trace("external_teacher", source="codex_cli_or_chatgpt",
+                            segment=idx, qa_pairs=count,
+                            manifest_sha256=manifest_obj["manifest_sha256"], **metrics)
+        except Exception:
+            self.state = "failed"
+            self.optimizer = None
+            self.model.zero_grad(set_to_none=True)
+            raise
+        self.stats["chunks"] += len(analysis_obj["segments"])
+        self.stats["sessions"] += 1
+        self.stats["frames"] += sum(len(c["frames"]) for c in manifest_obj["chunks"])
+        self.stats["qa_pairs"] += total_qa
+        self.stats["caption_only_chunks"] += caption_only
+        self.stats["external_teacher_segments"] += len(analysis_obj["segments"])
+        self.stats["optimizer_steps"] += aggregate["optimizer_steps"]
+        self.stats["truncated_examples"] += aggregate["truncated_examples"]
+        self.stats["ingest_seconds"] += time.perf_counter() - started
+        self.stats["last_chunk_loss_first"] = metrics["loss_first"]
+        self.stats["last_chunk_loss_last"] = last_loss
+        return {"source": "external_teacher", "segments": len(analysis_obj["segments"]),
+                "qa_pairs": total_qa, "loss_first": first_loss, "loss_last": last_loss,
+                **aggregate}
+
     def finish_ingest(self) -> dict:
         if self.state not in {"ingesting", "ready"}:
             raise RuntimeError("failed ingestion cannot be used as valid memory; reset first")
@@ -503,6 +569,14 @@ def main(argv=None) -> int:
     add_video_arguments(write)
     write.add_argument("--video", nargs="+", required=True, help="chronological session paths")
     write.add_argument("--save", required=True, help="new output directory (never overwritten)")
+    teacher_write = sub.add_parser("teacher-ingest",
+                                   help="write a validated external ChatGPT/Codex scene JSON into LoRA")
+    add_video_arguments(teacher_write)
+    teacher_write.add_argument("--packet", required=True,
+                               help="packet directory containing manifest.json")
+    teacher_write.add_argument("--analysis", required=True,
+                               help="teacher JSON returned by ChatGPT/Codex")
+    teacher_write.add_argument("--save", required=True, help="new output directory (never overwritten)")
     read = sub.add_parser("ask", help="load weights and answer without the source videos")
     read.add_argument("--memory", required=True)
     read.add_argument("--question", required=True)
@@ -520,6 +594,13 @@ def main(argv=None) -> int:
         summary = memory.finish_ingest()
         memory.save(args.save)
         print(json.dumps(summary))
+    elif args.command == "teacher-ingest":
+        memory = VideoTTTMemory(config_from_args(args))
+        packet = Path(args.packet)
+        manifest = packet / "manifest.json" if packet.is_dir() else packet
+        print(json.dumps(memory.ingest_teacher_analysis(args.analysis, manifest), ensure_ascii=False))
+        memory.finish_ingest()
+        memory.save(args.save)
     else:
         metadata = json.loads((Path(args.memory) / "memory.json").read_text(encoding="utf-8"))
         config = metadata["config"]

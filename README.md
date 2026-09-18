@@ -1,10 +1,76 @@
 # TTT_frame
 
 A test-time-training (TTT) memory project, and experiments on **what it can
-actually retain**. Two separate baselines now live here: the original LaCT
-embedding memory and a generative video-to-LoRA parameter-memory interface.
+actually retain**. Three separate paths now live here: the original LaCT
+embedding memory, a video-to-LoRA baseline, and a Spatial-TTT reference module
+that writes visual representations directly into recurrent fast weights.
+
+中文框架说明：[`当前项目框架与 LoRA-TTT 参数结构`](docs/ARCHITECTURE_LORA_TTT.md)，
+包含参数分布、A/B 与 attention 的连接、模型改动、记忆生命周期，以及本机
+`meowbench` 环境的核对结果（2026-09-14）。
+
+## Spatial-TTT direct visual parameter memory (2026-09-14)
+
+The new [`Spatial-TTT implementation guide`](docs/SPATIAL_TTT.md) explains the
+teacher-free route and its differences from the official complete model.
+
+```text
+video -> native Qwen visual tokens -> shared Q/K/V
+     -> spatial depthwise convolution -> SwiGLU fast-weight updates
+     -> discard video tokens and video KV
+question -> temporary text attention + stored fast weights -> answer
+     -> continue ingesting the next video without resetting memory
+```
+
+`ttt_frame/spatial_memory.py` implements differentiable chunked associative
+updates, learned update rates, momentum, Muon and row normalization in PyTorch.
+`spatial_model.py` integrates the branch in parallel with sliding-window
+attention in three of every four Qwen3-VL layers. `spatial_videoqa.py` provides
+video input, read-only questions, saving and continuation across processes.
+There is no caption teacher, pseudo-QA generation or online AdamW pass.
+
+For Qwen3-VL-2B, 21 layers contain **66,060,288 FP32 fast-weight values (252 MiB)**.
+Momentum adds another 252 MiB; these figures exclude the base and slow parameters.
+The attention implementation uses PyTorch SDPA, without FlashAttention or Triton
+extensions. The existing `meowbench` environment contains its dependencies; for a
+fresh installation the optional dependency group is `.[spatial]`.
+
+The core follows [the official implementation](https://github.com/THU-SI/Spatial-TTT)
+at commit `e2e33a62`. This project's parameter-only boundary clears video KV
+between clips and commits tail chunks. It does **not** reproduce the official
+hybrid model's full history KV cache or claim the paper's benchmark results.
+
+**A trained spatial checkpoint is needed for meaningful readout.** Fresh
+modules use the official zero-initialized output scale: inputs change fast
+weights, but that branch initially contributes zero to answers. The loader
+accepts the full official dense checkpoint, including its tuned language-model
+weights. No trained Spatial-TTT checkpoint is bundled or downloaded implicitly.
+
+```bash
+cd /home/quzitsix/TTT_frame
+conda run --no-capture-output -n meowbench python -m ttt_frame.spatial_videoqa ingest \
+  --model-path /data/quzitsix/models/Qwen3-VL-2B-Instruct \
+  --spatial-checkpoint /path/to/Spatial-TTT-nano/model.safetensors \
+  --video /path/to/day1.mp4 --save memories/spatial_day1
+
+conda run --no-capture-output -n meowbench python -m ttt_frame.spatial_videoqa ask \
+  --memory memories/spatial_day1 --question "Where was the cup last seen?"
+
+conda run --no-capture-output -n meowbench python -m ttt_frame.spatial_videoqa resume \
+  --memory memories/spatial_day1 --video /path/to/day2.mp4 \
+  --save memories/spatial_day2
+```
+
+The MEOWBench adapter's existing `lora` backend is unchanged; select the new
+standalone module above for Spatial-TTT. Source attribution and the upstream
+license are in [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
 
 ## VideoQA parameter-memory interface (2026-09-11)
+
+外部 teacher 的 Codex CLI、OpenAI-compatible API 与严格 JSON 导入流程见
+[`Teacher bridge`](docs/TEACHER_BRIDGE.md)。其中 API teacher 会记录服务端返回的
+token 用量；不把 token 写入代码或 checkpoint。已经完成的单片段对照见
+[`teacher pilot results`](docs/TEACHER_PILOT_RESULTS.md)。
 
 **Real video input is supported; useful long-term recall has not yet been
 established.** This new baseline uses test-time LoRA self-distillation, not the
