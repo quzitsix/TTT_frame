@@ -151,6 +151,25 @@ captions, frame embeddings, training samples or optimizer state. Architecture,
 adapter shape and finite tensors are checked at loading, but the loader does
 not hash all base weight files: the caller must supply the identical base checkpoint.
 
+### Compare methods on one question
+
+`scripts/compare_videoqa.py` sends one question to the frozen-base control,
+the local-teacher LoRA memory, the Codex-teacher LoRA memory, and the saved
+Spatial-TTT memory. Each method runs in a separate process so one model is
+released before the next is loaded:
+
+```bash
+conda run --no-capture-output -n meowbench \
+  python scripts/compare_videoqa.py \
+  --device cuda:2 \
+  --question 'Where was the red package or bag last seen?'
+```
+
+Without `--question`, the script prompts interactively. Override checkpoint
+locations with `--local-memory`, `--codex-memory`, or `--spatial-memory`.
+The current Spatial-TTT smoke checkpoint is an untrained mechanism test, so
+its answer should not be interpreted as a trained memory result.
+
 Python API:
 
 ```python
