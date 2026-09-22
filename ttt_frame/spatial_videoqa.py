@@ -240,6 +240,7 @@ class SpatialVideoMemory:
         self.model.eval()
         eos = self.model.generation_config.eos_token_id
         eos_ids = set(eos if isinstance(eos, list) else [eos])
+        stopped_on_eos = False
         try:
             with self.controller.context("read" if use_memory else "base"):
                 for step in range(budget):
@@ -254,12 +255,18 @@ class SpatialVideoMemory:
                     token = outputs.logits[:, -1].argmax(dim=-1, keepdim=True)
                     generated.append(token)
                     if int(token.item()) in eos_ids:
+                        stopped_on_eos = True
                         break
                     cache = outputs.past_key_values
                     input_ids = token
                     mask = torch.cat((mask, torch.ones_like(token)), dim=1)
         finally:
             self._clear_generation_state()
+        if generated and not stopped_on_eos and len(generated) >= budget:
+            log.warning(
+                "generation reached max_new_tokens=%d before EOS; output may be truncated",
+                budget,
+            )
         return self.processor.batch_decode(torch.cat(generated, dim=1), skip_special_tokens=True)[0].strip()
 
     def save(self, directory: str | Path):

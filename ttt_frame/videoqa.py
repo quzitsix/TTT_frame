@@ -487,10 +487,18 @@ class VideoTTTMemory:
                           "retained_text_records": 0, "retained_video_frames": 0,
                           "sampling_capped": bool(self.config.max_chunks)}}
 
-    def answer(self, question: str, *, use_memory: bool = True) -> str:
+    def answer(self, question: str, *, use_memory: bool = True,
+               max_new_tokens: int | None = None) -> str:
         if self.state != "ready":
             raise RuntimeError("call finish_ingest before asking questions")
-        return self._generate(question, teacher=not use_memory)
+        if max_new_tokens is not None and max_new_tokens <= 0:
+            raise ValueError("max_new_tokens must be positive")
+        # Preserve the historical call shape for callers and test doubles that
+        # inspect _generate kwargs when the optional override is unused.
+        if max_new_tokens is None:
+            return self._generate(question, teacher=not use_memory)
+        return self._generate(question, teacher=not use_memory,
+                              max_new_tokens=max_new_tokens)
 
     def answer_with_images(self, question: str, images: list) -> str:
         """Frozen visual baseline for evaluator diagnostics, not a memory query."""
@@ -584,6 +592,7 @@ def main(argv=None) -> int:
     read.add_argument("--device", default="cuda:0")
     read.add_argument("--dtype", choices=("float32", "bfloat16"), default="bfloat16")
     read.add_argument("--local-files-only", action="store_true")
+    read.add_argument("--max-new-tokens", type=int, help="generation budget for this question")
     read.add_argument("--without-memory", action="store_true", help="frozen-base control")
     args = parser.parse_args(argv)
     logging.basicConfig(level=logging.INFO, format="%(levelname)s %(message)s")
@@ -609,7 +618,8 @@ def main(argv=None) -> int:
             config["model_path"] = args.model_path
         memory = VideoTTTMemory(VideoTTTConfig(**config))
         memory.load_memory(args.memory)
-        print(memory.answer(args.question, use_memory=not args.without_memory))
+        print(memory.answer(args.question, use_memory=not args.without_memory,
+                            max_new_tokens=args.max_new_tokens))
     return 0
 
 

@@ -170,6 +170,27 @@ locations with `--local-memory`, `--codex-memory`, or `--spatial-memory`.
 The current Spatial-TTT smoke checkpoint is an untrained mechanism test, so
 its answer should not be interpreted as a trained memory result.
 
+The comparison also runs Spatial-TTT with the same checkpoint and
+`--without-memory` so that the fast-weight contribution is visible. Use
+`--skip-spatial-control` to omit that paired run. For open questions, use
+`--concise` and a budget such as 64 tokens to avoid repetitive, unfinished
+lists:
+
+```bash
+conda run --no-capture-output -n meowbench \
+  python scripts/compare_videoqa.py \
+  --device cuda:2 --max-new-tokens 64 --concise \
+  --local-memory runs/q9_full_history_lora_local_60s \
+  --codex-memory runs/q9_full_history_lora_codex_sol \
+  --spatial-memory runs/q9_full_history_spatial_official_16f \
+  --question 'What objects did I interact with in the kitchen?'
+```
+
+`--max-new-tokens` is a hard generation limit. If Spatial-TTT reaches that
+limit before emitting EOS, the CLI prints a warning that the answer may be
+truncated. The Spatial-TTT `--without-memory` control still loads the same
+official tuned checkpoint; it bypasses only the episode fast-weight branch.
+
 Python API:
 
 ```python
