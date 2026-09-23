@@ -211,6 +211,9 @@ The current Spatial run proves that frames update fast weights, but it is not an
 offline slow-weight training run. The diagnostic boundary and a concrete
 ground-truth/training protocol are documented in
 [`SPATIAL_MEMORY_ACCURACY_PLAN.md`](docs/SPATIAL_MEMORY_ACCURACY_PLAN.md).
+For experiments with already processed batches, the low-level differentiable
+trainer is [`ttt_frame/spatial_trainer.py`](ttt_frame/spatial_trainer.py); the
+regular video CLI remains inference-only.
 
 Python API:
 

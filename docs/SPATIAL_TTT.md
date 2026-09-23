@@ -152,7 +152,31 @@ conda run --no-capture-output -n meowbench python -m ttt_frame.spatial_videoqa r
 
 核心文件为 [`spatial_memory.py`](../ttt_frame/spatial_memory.py) 的矩阵更新与运行态、[`spatial_model.py`](../ttt_frame/spatial_model.py) 的 Qwen3-VL 连接/上下文控制，以及 [`spatial_videoqa.py`](../ttt_frame/spatial_videoqa.py) 的视频摄入与恢复问答。`SpatialQwenMemory` 提供 `context(mode="write"/"read"/"base")`、`reset()`、`detach()`、`flush()` 及 slow/fast state 的导出导入；`base` 模式调用原 attention，可用于机制对照。
 
-当前没有离线 `train`/`calibrate` 命令。模块保留可微前向，供后续离线训练使用；实际视频摄入在 `no_grad` 下完成。**有状态 write 不能开启 gradient checkpointing**，否则反向重算可能将同一次观察重复写入；控制器会拒绝这种组合。跨样本训练还需显式处理 reset、detach 和批次隔离，不能直接将持久摄入 API 当成通用训练器。
+当前没有面向视频路径的离线 `train`/`calibrate` CLI；实际在线视频摄入仍在
+`no_grad` 下完成。新增的 [`ttt_frame.spatial_trainer`](../ttt_frame/spatial_trainer.py)
+提供一个低层、teacher-forced 的 `SpatialOfflineTrainer.train_episode` API：调用方先
+准备按时间排序的 processor video batches 和带 `-100` prompt mask 的 QA batch，训练器
+再执行可微 write、text-only read、一次 QA 交叉熵反向传播和 slow-parameter 更新。
+它只训练 Spatial-TTT 新参数，不负责视频采样、teacher JSON 转换或 checkpoint 打包，
+因此还不能把它当成完整的端到端训练命令。**有状态 write 不能开启 gradient
+checkpointing**，否则反向重算可能将同一次观察重复写入；控制器会拒绝这种组合。跨
+样本训练还需显式处理 reset、detach 和批次隔离，不能直接将持久摄入 API 当成通用训练器。
+
+最小调用形态如下（`write_batches` 和 `qa_batch` 必须已经由同一 processor 构造）：
+
+```python
+from ttt_frame.spatial_trainer import SpatialOfflineTrainer, SpatialTrainerConfig
+
+trainer = SpatialOfflineTrainer(
+    memory,
+    SpatialTrainerConfig(learning_rate=1e-5, max_grad_norm=1.0),
+)
+metrics = trainer.train_episode(write_batches, qa_batch)
+print(metrics)  # loss, supervised_tokens, written_tokens, grad_norm
+```
+
+每个 episode 结束后 trainer 会清空 fast state；更新后的 slow 参数需要重新写入视频
+后才能评估。训练语言模型参数或保存完整官方模型仍需要额外的 checkpoint schema。
 
 当前默认每 4 秒采样最多 8 帧，输入缩略图最大边长 448；TTT chunk 和 SWA window 均为 2648 tokens。这些是不同单位的限制：视频秒数/抽样帧数决定进入模型的观察密度，token chunk 决定何时提交一次 fast-weight 更新。采用 PyTorch SDPA 和普通矩阵运算，未移植官方 FlashAttention/Triton 融合内核，吞吐量不能直接用论文结果估算。
 

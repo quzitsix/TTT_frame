@@ -122,9 +122,11 @@ python scripts/compare_videoqa.py \
 
 ## 真正需要训练的目标
 
-要让 Spatial-TTT 适配本项目的“视频输入后撤销视频，只靠参数回答”，需要新增独立
-的 offline trainer，不能复用带 `no_grad` 的在线 `ingest`。每个训练 episode 应按
-以下顺序执行：
+要让 Spatial-TTT 适配本项目的“视频输入后撤销视频，只靠参数回答”，不能复用带
+`no_grad` 的在线 `ingest`。仓库现在已经提供低层
+[`SpatialOfflineTrainer`](../ttt_frame/spatial_trainer.py)，它接收已经 processor 化的
+视频 batch 和 teacher-forced QA batch；视频采样、teacher JSON 转换和完整 checkpoint
+CLI 仍待补齐。每个训练 episode 按以下顺序执行：
 
 1. reset 当前 fast state；
 2. 按时间顺序写入一个或多个视频块，不保存视频 KV；
@@ -140,7 +142,7 @@ python scripts/compare_videoqa.py \
 与状态变化；QA 负责训练文字查询怎样读出对应事实。只用一条 1080 秒视频会严重
 过拟合，至少要按独立视频或独立事件划分 train/validation/test。
 
-实现时还有三个约束：
+实现和调用时还有三个约束：
 
 - `SpatialQwenMemory` 构造时默认冻结全部模型参数，训练器必须显式解冻 slow
   parameters 和计划训练的语言参数；
