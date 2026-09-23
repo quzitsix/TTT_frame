@@ -230,35 +230,39 @@ class SpatialOfflineTrainer:
         self.engine._clear_generation_state()
         self.optimizer.zero_grad(set_to_none=True)
         try:
-            written_tokens = 0
-            for index, batch in enumerate(batches):
-                written_tokens += self._write_one(batch, flush=index == len(batches) - 1)
-            if any(layer.state is None for layer in self.controller.layers.values()):
-                raise RuntimeError("Spatial-TTT write did not initialize every selected layer")
-            loss, supervised_tokens = self._read_loss(qa_batch)
-            if not torch.isfinite(loss):
-                raise RuntimeError("nonfinite Spatial-TTT QA loss")
-            loss.backward()
-            gradients = [parameter.grad for parameter in self._parameters if parameter.grad is not None]
-            if not gradients:
-                raise RuntimeError("teacher-forced loss produced no Spatial-TTT gradients")
-            if self.config.max_grad_norm is not None:
-                grad_norm = torch.nn.utils.clip_grad_norm_(
-                    self._parameters, self.config.max_grad_norm
-                )
-            else:
-                grad_norm = torch.linalg.vector_norm(
-                    torch.stack([gradient.detach().norm() for gradient in gradients])
-                )
-            if not torch.isfinite(grad_norm):
-                raise RuntimeError("nonfinite Spatial-TTT gradient norm")
-            self.optimizer.step()
-            return {
-                "loss": float(loss.detach().cpu()),
-                "supervised_tokens": supervised_tokens,
-                "written_tokens": written_tokens,
-                "grad_norm": float(grad_norm.detach().cpu()),
-            }
+            # The public video path is often called from an inference context;
+            # explicitly re-enable autograd for this separate training API.
+            with torch.enable_grad():
+                written_tokens = 0
+                for index, batch in enumerate(batches):
+                    written_tokens += self._write_one(batch, flush=index == len(batches) - 1)
+                if any(layer.state is None for layer in self.controller.layers.values()):
+                    raise RuntimeError("Spatial-TTT write did not initialize every selected layer")
+                loss, supervised_tokens = self._read_loss(qa_batch)
+                if not torch.isfinite(loss):
+                    raise RuntimeError("nonfinite Spatial-TTT QA loss")
+                loss.backward()
+                gradients = [parameter.grad for parameter in self._parameters
+                             if parameter.grad is not None]
+                if not gradients:
+                    raise RuntimeError("teacher-forced loss produced no Spatial-TTT gradients")
+                if self.config.max_grad_norm is not None:
+                    grad_norm = torch.nn.utils.clip_grad_norm_(
+                        self._parameters, self.config.max_grad_norm
+                    )
+                else:
+                    grad_norm = torch.linalg.vector_norm(
+                        torch.stack([gradient.detach().norm() for gradient in gradients])
+                    )
+                if not torch.isfinite(grad_norm):
+                    raise RuntimeError("nonfinite Spatial-TTT gradient norm")
+                self.optimizer.step()
+                return {
+                    "loss": float(loss.detach().cpu()),
+                    "supervised_tokens": supervised_tokens,
+                    "written_tokens": written_tokens,
+                    "grad_norm": float(grad_norm.detach().cpu()),
+                }
         finally:
             # Never leave a graph-bearing episode state behind, including on a
             # malformed batch or a failed backward pass.

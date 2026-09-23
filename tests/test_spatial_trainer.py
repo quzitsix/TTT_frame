@@ -48,7 +48,10 @@ def test_train_episode_updates_slow_parameters_and_resets_fast_state():
         for name, parameter in current.controller.layers[next(iter(current.controller.layers))].named_parameters()
         if not name.startswith("attn_layer.")
     }
-    report = trainer.train_episode([write], qa)
+    # The caller may be inside an inference context; the trainer must restore
+    # autograd for its stateful write/read graph explicitly.
+    with torch.no_grad():
+        report = trainer.train_episode([write], qa)
     assert report["supervised_tokens"] == 2
     assert report["written_tokens"] == 4
     assert report["loss"] > 0 and torch.isfinite(torch.tensor(report["loss"]))
