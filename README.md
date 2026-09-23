@@ -191,6 +191,27 @@ limit before emitting EOS, the CLI prints a warning that the answer may be
 truncated. The Spatial-TTT `--without-memory` control still loads the same
 official tuned checkpoint; it bypasses only the episode fast-weight branch.
 
+### Watch the 1080-second recording in order
+
+The release stores the recording as 18 clips. Their chronological order is in
+`media_index.json`; do not sort the files by filename. The helper below reads
+that manifest and can list, play, or concatenate the clips:
+
+```bash
+python scripts/watch_supermemory.py list
+python scripts/watch_supermemory.py play --fullscreen
+python scripts/watch_supermemory.py concat --output /tmp/q9-ordered.mp4
+```
+
+Use `--start 5 --end 5` to inspect only the 240--300 second clip (the clip
+that contains the red-mesh-bag evidence). `ffplay` controls are space to pause,
+arrow keys to seek, and `q` to quit.
+
+The current Spatial run proves that frames update fast weights, but it is not an
+offline slow-weight training run. The diagnostic boundary and a concrete
+ground-truth/training protocol are documented in
+[`SPATIAL_MEMORY_ACCURACY_PLAN.md`](docs/SPATIAL_MEMORY_ACCURACY_PLAN.md).
+
 Python API:
 
 ```python

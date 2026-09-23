@@ -29,11 +29,11 @@ sha256: 5cc68664bf1de0edc509d0596f654d9bed883c49aa2a85baafa4d51c1acdb947
 16 帧版本的摄入命令如下；18 个视频路径按 `media_index.json` 顺序展开：
 
 ```bash
-VIDEO_ARGS=$(tr '\n' ' ' < /tmp/supermemory_q9_ordered.txt)
+mapfile -t VIDEO_ARGS < <(python scripts/watch_supermemory.py paths)
 conda run --no-capture-output -n meowbench python -m ttt_frame.spatial_videoqa ingest \
   --model-path /data/quzitsix/models/Qwen3-VL-2B-Instruct \
   --spatial-checkpoint /data/quzitsix/models/Spatial-TTT-nano/model.safetensors \
-  --video $VIDEO_ARGS \
+  --video "${VIDEO_ARGS[@]}" \
   --save runs/q9_full_history_spatial_official_16f \
   --chunk-seconds 60 --frames-per-chunk 16 --max-side 448 \
   --device cuda:2 --dtype bfloat16
