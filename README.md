@@ -65,6 +65,12 @@ The MEOWBench adapter's existing `lora` backend is unchanged; select the new
 standalone module above for Spatial-TTT. Source attribution and the upstream
 license are in [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
 
+The complete local HomeSentinel/asuka evaluation is documented in
+[`HOMESENTINEL_SPATIAL_EVAL.md`](docs/HOMESENTINEL_SPATIAL_EVAL.md). Its runner
+ingests the 52 videos in chronological order, answers finite-cutoff questions
+before later videos are seen, and writes paired Spatial-memory and base-readout
+answers.
+
 ## VideoQA parameter-memory interface (2026-09-11)
 
 外部 teacher 的 Codex CLI、OpenAI-compatible API 与严格 JSON 导入流程见
