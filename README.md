@@ -235,6 +235,9 @@ conda run --no-capture-output -n meowbench python scripts/test_spatial_memory.py
   --question 'Where did I put the empty red mesh bag?'
 ```
 
+The completed Q9 run and the eight-GPU scheduling notes are recorded in
+[`SPATIAL_DENSE_4S8F_RUN.md`](docs/SPATIAL_DENSE_4S8F_RUN.md).
+
 The three conditions can run concurrently on separate GPUs:
 
 ```bash
