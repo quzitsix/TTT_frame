@@ -36,6 +36,46 @@ The run produced the following exact-MCQ scores:
 The raw answers and parsed letters are stored in the local output JSON under
 `runs/` (that directory is intentionally git-ignored).
 
+## Qwen3.5 frozen baseline
+
+The server also has `/data/hf_models/Qwen/Qwen3.5-35B-A3B`.  Its 35B-total,
+3B-active hybrid MoE architecture is not a drop-in replacement for the
+Qwen3-VL-2B model used by the saved memories: the checkpoint has
+`model_type=qwen3_5_moe`, while `SpatialQwenMemory` currently requires
+`qwen3_vl`.  The existing fast-weight and LoRA checkpoints therefore cannot
+be loaded into Qwen3.5.  The model README requires a recent Transformers main
+build; the server's separate `qwen35-env` provides that runtime and places the
+BF16 weights over four GPUs.
+
+For a capacity/control comparison, Qwen3.5 was served with reasoning disabled
+and received the same 19 text-only prompts as the other methods.  No video,
+gold answer, Codex evidence, or saved TTT memory was sent to it:
+
+```bash
+CUDA_VISIBLE_DEVICES=0,1,2,3 nohup \
+  /data/quzitsix/qwen35-env/bin/transformers serve \
+  /data/hf_models/Qwen/Qwen3.5-35B-A3B \
+  --host 127.0.0.1 --port 18000 --device auto --dtype bfloat16 \
+  --no-continuous-batching --reasoning off --log-level info \
+  >/tmp/qwen35-serve.log 2>&1 &
+
+conda run --no-capture-output -n meowbench python scripts/evaluate_mcq_api.py \
+  --items-path data/q9_codex_mcq.jsonl \
+  --base-url http://127.0.0.1:18000/v1 \
+  --model /data/hf_models/Qwen/Qwen3.5-35B-A3B \
+  --max-tokens 16 \
+  --output runs/q9_codex_mcq_qwen35.json
+```
+
+It scored **16/19 (84.2%)**: location 3/4, relation 4/5, placement 2/2,
+order 4/4, and long-range 3/4.  The Qwen3-VL-2B no-memory control scored
+12/19 (63.2%) on the same prompts.  This four-question improvement shows that
+the stronger model has a better text-side prior and answer selection ability,
+but it is not a memory result: the model never saw the recording.  A direct
+Qwen3.5 Spatial-TTT comparison requires a new adapter for its linear-attention
+and full-attention layers, plus a new checkpoint trained for its 2048-wide
+hidden states.
+
 ## Spatial paired controls
 
 For the same questions, adding the older Spatial memory and the official

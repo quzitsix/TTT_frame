@@ -254,6 +254,13 @@ conda run --no-capture-output -n meowbench python scripts/evaluate_codex_mcq.py 
 The question provenance, evidence spans, option balancing, and the current
 results are documented in [`CODEX_MCQ_EVAL.md`](docs/CODEX_MCQ_EVAL.md).
 
+The local `/data/hf_models/Qwen/Qwen3.5-35B-A3B` checkpoint can be tested as a
+frozen OpenAI-compatible API baseline with [`evaluate_mcq_api.py`](scripts/evaluate_mcq_api.py).
+It cannot load the existing Qwen3-VL-2B LoRA or Spatial-TTT memories because
+the model architecture and checkpoint shapes differ; see
+[`CODEX_MCQ_EVAL.md`](docs/CODEX_MCQ_EVAL.md) for the four-GPU server command
+and the measured 16/19 result.
+
 The three conditions can run concurrently on separate GPUs:
 
 ```bash
