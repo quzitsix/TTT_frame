@@ -28,6 +28,7 @@ conda run --no-capture-output -n meowbench python -u \
   --device cuda:0 --dtype bfloat16 \
   --chunk-seconds 60 --frames-per-chunk 4 --max-side 448 \
   --max-new-tokens 128 \
+  --checkpoint-dir /data/TTT_frame_homesentinel_asuka_spatial_latest \
   --output runs/homesentinel_asuka_spatial_60s4f/predictions.jsonl
 ```
 
@@ -61,6 +62,36 @@ conda run --no-capture-output -n meowbench python -u \
 
 开放式答案的词法分数只能作为可重复的诊断：同义词、复数、顺序和解释文字都会影响结果，不能把 token F1 直接解释成语义准确率。应同时抽查答案，并分别报告 `owner/home` 长期事实与 `event` cutoff 事件；尤其不要把 `without_memory` 的常识性猜测当作视觉记忆成功。
 
+如果后台进程在某段之后被终止，可以使用 checkpoint 继续；`progress.json` 中记录了最近完成的视频。恢复时保留原来的 predictions 文件，并指定同一个 checkpoint 目录：
+
+```bash
+conda run --no-capture-output -n meowbench python -u \
+  scripts/evaluate_homesentinel_spatial.py \
+  --device cuda:0 --chunk-seconds 60 --frames-per-chunk 4 \
+  --max-new-tokens 128 \
+  --checkpoint-dir /data/TTT_frame_homesentinel_asuka_spatial_latest \
+  --resume-from /data/TTT_frame_homesentinel_asuka_spatial_latest \
+  --output runs/homesentinel_asuka_spatial_60s4f/predictions.jsonl
+```
+
+`--resume-from` 会校验 checkpoint 的视频索引、视频 ID、基座和 Spatial 配置；输出 JSONL 以追加方式继续写入，已完成的问题不会重新回答。
+
+## 本次全量运行
+
+run6 已按上述协议完成 52 段视频和 138 道题，输出为
+`runs/homesentinel_asuka_spatial_60s4f_run6/`，总耗时约 5339 秒（89 分钟）。两臂各有 138 行，全部状态为 `ok`。开放题的词法诊断如下：
+
+| category | Spatial memory mean token F1 | without-memory mean token F1 |
+|---|---:|---:|
+| home | 0.1951 | 0.2172 |
+| event | 0.1224 | 0.1186 |
+| owner | 0.1514 | 0.1552 |
+| **all** | **0.1554** | **0.1624** |
+
+按 cutoff 分组，episodic 题为 0.1364 vs 0.1402，完整历史题为 0.1724 vs 0.1822。两臂答案有 96/138 道不同；逐题 token F1 上 memory 胜 33 道、without-memory 胜 41 道、持平 64 道。exact normalized 均为 0，gold substring 两臂均为 2/138。
+
+这些结果说明在当前 60 秒/4 帧采样和通用 Spatial-TTT nano checkpoint 下，写入 fast weights 没有带来总体词法分数提升；event 子集略有提升，home/owner 下降。由于这是开放式答案的词法匹配，结果应作为基线诊断，不能直接等价为语义准确率或证明 Spatial-TTT 机制失效。
+
 ## 已知限制
 
-官方 Spatial-TTT checkpoint 训练于通用视频任务，不是针对 HomeSentinel 的家庭记忆标注。60 秒/4 帧会丢失短动作和细小物品，且 fast weights 容量固定，长期写入可能发生遗忘。该脚本目前不支持从中断点恢复；如果进程被终止，需要从头建立同一条 fast-weight 历史。全量结果生成后，应记录 `summary.json` 的配置和耗时，并将 `predictions.jsonl` 与 summary 一起保留。
+官方 Spatial-TTT checkpoint 训练于通用视频任务，不是针对 HomeSentinel 的家庭记忆标注。60 秒/4 帧会丢失短动作和细小物品，且 fast weights 容量固定，长期写入可能发生遗忘。checkpoint 会保存约 505 MB 的 fast weights 和约 270 MB 的 Spatial slow weights，建议放在 `/data` 而不是空间紧张的系统盘。全量结果生成后，应记录 `summary.json` 的配置和耗时，并将 `predictions.jsonl` 与 summary 一起保留。
