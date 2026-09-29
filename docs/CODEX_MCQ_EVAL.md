@@ -76,6 +76,17 @@ Qwen3.5 Spatial-TTT comparison requires a new adapter for its linear-attention
 and full-attention layers, plus a new checkpoint trained for its 2048-wide
 hidden states.
 
+As a letter-bias check, I reversed the A/B/C/D positions in every item and
+remapped the gold letters while keeping the option text unchanged.  Qwen3.5
+ scored 17/19 on that variant, so the high score is not explained by always
+ choosing one letter.  The stronger explanation is that many distractors are
+ implausible or semantically mismatched: a microwave above a stove, produce
+ taken from an open refrigerator, and plates or utensils in a dishwasher rack
+ are easy language-level completions.  Choosing the longest option alone also
+ gets 10/19 on this set.  The remaining Qwen3.5 errors include the dark-bowl
+ location, dishwasher contents, and one cross-clip chronology question; these
+ are closer to tests of actual visual or long-term recall.
+
 ## Spatial paired controls
 
 For the same questions, adding the older Spatial memory and the official
