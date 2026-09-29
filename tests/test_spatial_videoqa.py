@@ -10,7 +10,8 @@ from PIL import Image, ImageDraw
 from safetensors.torch import load_file, save_file
 
 from test_spatial_model import assert_same_state, different_state, settings, snapshot, tiny_qwen
-from ttt_frame.spatial_videoqa import SpatialVideoConfig, SpatialVideoMemory
+from ttt_frame.spatial_videoqa import (SpatialVideoConfig, SpatialVideoMemory,
+                                       _pad_temporal_inputs)
 
 
 @pytest.fixture(scope="module", autouse=True)
@@ -79,6 +80,14 @@ def frames(color):
     images = [Image.new("RGB", (32, 32), color) for _ in range(2)]
     ImageDraw.Draw(images[1]).rectangle((4, 4, 16, 20), fill="white")
     return images
+
+
+def test_short_video_tail_is_padded_for_qwen_temporal_processor():
+    image = Image.new("RGB", (32, 32), "red")
+    padded_images, padded_timestamps = _pad_temporal_inputs([image], [7.0])
+    assert len(padded_images) == 3
+    assert padded_images == [image, image, image]
+    assert padded_timestamps == [7.0, 7.001, 7.002]
 
 
 def assert_no_observation_history(engine):

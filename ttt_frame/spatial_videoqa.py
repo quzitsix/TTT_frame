@@ -62,6 +62,31 @@ def _file_hash(path):
     return digest.hexdigest()
 
 
+def _pad_temporal_inputs(images, timestamps, *, minimum_frames=3):
+    """Pad a short tail so Qwen3-VL's temporal processor can encode it.
+
+    PyAV can yield a final sampling window with one or two selected frames.
+    Qwen3-VL's temporal patcher requires a time dimension greater than its
+    factor (2), so repeat the final observation internally.  The caller's
+    statistics still describe the real frames; only the processor input is
+    padded.
+    """
+
+    images = list(images)
+    timestamps = list(timestamps)
+    if len(images) != len(timestamps):
+        raise ValueError("timestamps must match images before temporal padding")
+    if not images:
+        return images, timestamps
+    if len(images) >= minimum_frames:
+        return images, timestamps
+    last_time = float(timestamps[-1])
+    for index in range(minimum_frames - len(images)):
+        images.append(images[-1])
+        timestamps.append(last_time + 0.001 * (index + 1))
+    return images, timestamps
+
+
 class SpatialVideoMemory:
     """One continuous environment: write -> ask -> write -> save -> resume.
 
@@ -128,6 +153,7 @@ class SpatialVideoMemory:
         from transformers.video_utils import VideoMetadata
 
         # Images are already sampled by PyAV. Disable the processor's second sampling pass.
+        images, timestamps = _pad_temporal_inputs(images, timestamps)
         frames = np.stack([np.asarray(im.convert("RGB")) for im in images])
         indices = [int(round(t * 1000)) for t in timestamps]
         metadata = VideoMetadata(total_num_frames=max(indices[-1] + 1, len(images)),
