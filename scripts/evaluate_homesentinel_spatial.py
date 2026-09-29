@@ -21,6 +21,7 @@ from __future__ import annotations
 import argparse
 from collections import Counter, defaultdict
 import json
+import shutil
 from pathlib import Path
 import re
 import string
@@ -150,6 +151,10 @@ def _parse_args(argv: list[str] | None = None) -> argparse.Namespace:
     parser.add_argument("--max-new-tokens", type=int, default=128)
     parser.add_argument("--output", type=Path,
                         default=Path("runs/homesentinel_asuka_spatial_60s4f/predictions.jsonl"))
+    parser.add_argument("--checkpoint-dir", type=Path,
+                        help="save the latest parameter-only memory after every completed video")
+    parser.add_argument("--resume-from", type=Path,
+                        help="resume from a checkpoint directory containing progress.json")
     return parser.parse_args(argv)
 
 
@@ -178,6 +183,31 @@ def _write_row(out, query: dict[str, Any], arm: str, answer: str, started: float
     return row
 
 
+def _read_prediction_rows(path: Path) -> list[dict[str, Any]]:
+    if not path.is_file():
+        return []
+    return [json.loads(line) for line in path.read_text(encoding="utf-8").splitlines()
+            if line.strip()]
+
+
+def _save_checkpoint(model, directory: Path, video_index: int, video_id: str) -> None:
+    """Atomically replace one latest-only parameter checkpoint."""
+
+    directory = directory.resolve()
+    directory.parent.mkdir(parents=True, exist_ok=True)
+    temporary = directory.with_name(directory.name + ".tmp")
+    if temporary.exists():
+        shutil.rmtree(temporary)
+    model.save(temporary)
+    (temporary / "progress.json").write_text(
+        json.dumps({"video_index": video_index, "video_id": video_id}, indent=2) + "\n",
+        encoding="utf-8",
+    )
+    if directory.exists():
+        shutil.rmtree(directory)
+    temporary.rename(directory)
+
+
 def main(argv: list[str] | None = None) -> int:
     args = _parse_args(argv)
     if args.limit < 0 or args.max_videos < 0 or args.chunk_seconds <= 0 or args.frames_per_chunk <= 0:
@@ -199,6 +229,11 @@ def main(argv: list[str] | None = None) -> int:
         by_cutoff[video_count if query["cutoff"] == -1 else query["cutoff"]].append(query)
     expected = {(q["query_id"], arm) for q in queries for arm in ("memory", "without_memory")}
     args.output.parent.mkdir(parents=True, exist_ok=True)
+    if args.resume_from and not args.resume_from.is_dir():
+        raise SystemExit(f"resume checkpoint does not exist: {args.resume_from}")
+    existing_rows = _read_prediction_rows(args.output)
+    if existing_rows and not args.resume_from:
+        raise SystemExit(f"output already contains {len(existing_rows)} rows; use a new --output or --resume-from")
 
     # Delayed import keeps --help and data validation usable without CUDA.
     from ttt_frame.spatial_videoqa import SpatialVideoConfig, SpatialVideoMemory
@@ -215,10 +250,23 @@ def main(argv: list[str] | None = None) -> int:
         max_new_tokens=args.max_new_tokens,
     )
     model = SpatialVideoMemory(config)
-    rows: list[dict[str, Any]] = []
+    start_index = 0
+    if args.resume_from:
+        progress_path = args.resume_from / "progress.json"
+        if not progress_path.is_file():
+            raise SystemExit(f"resume checkpoint is missing {progress_path}")
+        progress = json.loads(progress_path.read_text(encoding="utf-8"))
+        start_index = int(progress.get("video_index", 0))
+        if not 0 < start_index <= video_count:
+            raise SystemExit(f"invalid checkpoint video_index: {start_index}")
+        if order[start_index - 1] != progress.get("video_id"):
+            raise SystemExit("checkpoint video_id does not match video_order.json")
+        model.load_memory(args.resume_from)
+    rows: list[dict[str, Any]] = existing_rows
     started_all = time.perf_counter()
-    with args.output.open("w", encoding="utf-8") as out:
-        for video_index, video_id in enumerate(order[:video_count], start=1):
+    mode = "a" if existing_rows else "w"
+    with args.output.open(mode, encoding="utf-8") as out:
+        for video_index, video_id in enumerate(order[start_index:video_count], start=start_index + 1):
             video_path = data_root / video_id / "indoor_video.mp4"
             started = time.perf_counter()
             ingest_report = model.ingest_video(video_path)
@@ -239,6 +287,11 @@ def main(argv: list[str] | None = None) -> int:
                                          status="error", error=f"{type(exc).__name__}: {exc}")
                     rows.append(row)
                     print(f"  {query['query_id']} {arm}: {row['answer'][:160]}", flush=True)
+            if args.checkpoint_dir:
+                _save_checkpoint(model, args.checkpoint_dir, video_index, video_id)
+                print(json.dumps({"checkpoint_video_index": video_index,
+                                  "checkpoint_dir": str(args.checkpoint_dir)}, ensure_ascii=False),
+                      flush=True)
         # The full-history queries are mapped to video_count above.  This branch
         # is only reached for a deliberately short smoke run with no full query.
     payload = {
@@ -259,6 +312,8 @@ def main(argv: list[str] | None = None) -> int:
         "elapsed_sec": round(time.perf_counter() - started_all, 3),
         "summary": summary(rows),
         "predictions_jsonl": str(args.output),
+        "checkpoint_dir": str(args.checkpoint_dir) if args.checkpoint_dir else None,
+        "resumed_from": str(args.resume_from) if args.resume_from else None,
         "note": "Open-ended lexical scores are diagnostics; gold/evidence never enter model prompts.",
     }
     summary_path = args.output.with_name("summary.json")
