@@ -215,6 +215,26 @@ For experiments with already processed batches, the low-level differentiable
 trainer is [`ttt_frame/spatial_trainer.py`](ttt_frame/spatial_trainer.py); the
 regular video CLI remains inference-only.
 
+To build a denser, restartable Q9 memory, use the checkpointing driver below.
+It commits one 60-second source clip at a time and resumes from the newest
+checkpoint if the process is interrupted:
+
+```bash
+conda run --no-capture-output -n meowbench python scripts/build_spatial_memory.py \
+  --output runs/q9_full_history_spatial_official_4s8f \
+  --progress runs/q9_full_history_spatial_official_4s8f.progress \
+  --device cuda:0 --chunk-seconds 4 --frames-per-chunk 8
+```
+
+After it finishes, ask one question against dense memory, the older sparse
+memory, and the same official checkpoint without episode memory:
+
+```bash
+conda run --no-capture-output -n meowbench python scripts/test_spatial_memory.py \
+  --device cuda:2 --max-new-tokens 96 --concise \
+  --question 'Where did I put the empty red mesh bag?'
+```
+
 Python API:
 
 ```python

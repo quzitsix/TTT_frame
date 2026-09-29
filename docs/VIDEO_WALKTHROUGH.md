@@ -62,3 +62,29 @@ python scripts/watch_supermemory.py list \
 这套索引对应的顺序是：`0--60`、`60--120`、……、`1020--1080` 秒。观看时建议
 记下“发生时间、对象、动作、最后位置”，后续用这些带时间和动作的事实提问，比
 “厨房里有什么”更能区分模型是否真的读出了视频 memory。
+
+## 4 秒 / 8 帧的可恢复摄入和测试
+
+完整 1080 秒视频使用高密度采样时耗时较长。项目提供
+[`scripts/build_spatial_memory.py`](../scripts/build_spatial_memory.py)，每完成一个
+60 秒源片段就保存一次最新参数状态；中断后重复同一条命令会从最新片段继续：
+
+```bash
+conda run --no-capture-output -n meowbench python scripts/build_spatial_memory.py \
+  --output runs/q9_full_history_spatial_official_4s8f \
+  --progress runs/q9_full_history_spatial_official_4s8f.progress \
+  --device cuda:0 --chunk-seconds 4 --frames-per-chunk 8
+```
+
+完成后使用 [`scripts/test_spatial_memory.py`](../scripts/test_spatial_memory.py) 做三路
+对照。它会依次测试 4 秒/8 帧 memory、原来的 60 秒/16 帧 memory，以及同一官方
+checkpoint 的 `--without-memory` 控制：
+
+```bash
+conda run --no-capture-output -n meowbench python scripts/test_spatial_memory.py \
+  --device cuda:2 --max-new-tokens 96 --concise \
+  --question 'Where did I put the empty red mesh bag?'
+```
+
+这里的 4 秒/8 帧步骤是更密集的 fast-weight 在线摄入，不会更新官方 slow weights；
+若要训练 slow weights，仍需带答案的 QA batch 和 `SpatialOfflineTrainer`。
