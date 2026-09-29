@@ -235,6 +235,15 @@ conda run --no-capture-output -n meowbench python scripts/test_spatial_memory.py
   --question 'Where did I put the empty red mesh bag?'
 ```
 
+The three conditions can run concurrently on separate GPUs:
+
+```bash
+conda run --no-capture-output -n meowbench python scripts/test_spatial_memory.py \
+  --parallel --devices cuda:1,cuda:3,cuda:4 \
+  --max-new-tokens 96 --concise \
+  --question 'Where did I put the empty red mesh bag?'
+```
+
 Python API:
 
 ```python

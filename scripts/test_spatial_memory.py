@@ -16,6 +16,7 @@ Example::
 from __future__ import annotations
 
 import argparse
+from concurrent.futures import ThreadPoolExecutor
 from dataclasses import dataclass
 from pathlib import Path
 import subprocess
@@ -34,11 +35,13 @@ class Condition:
     use_memory: bool = True
 
 
-def run_condition(condition: Condition, args: argparse.Namespace, question: str) -> int:
-    print(f"\n===== {condition.label} =====", flush=True)
+def run_condition(
+    condition: Condition, args: argparse.Namespace, question: str, *, device: str
+) -> tuple[int, str]:
+    lines = [f"===== {condition.label} ({device}) ====="]
     if not condition.memory.is_dir():
-        print(f"UNAVAILABLE: {condition.memory}")
-        return 0
+        lines.append(f"UNAVAILABLE: {condition.memory}")
+        return 0, "\n".join(lines)
     command = [
         sys.executable,
         "-m",
@@ -49,7 +52,7 @@ def run_condition(condition: Condition, args: argparse.Namespace, question: str)
         "--model-path",
         args.model_path,
         "--device",
-        args.device,
+        device,
         "--dtype",
         args.dtype,
         "--max-new-tokens",
@@ -62,17 +65,17 @@ def run_condition(condition: Condition, args: argparse.Namespace, question: str)
     completed = subprocess.run(command, capture_output=True, text=True, check=False)
     answer = completed.stdout.strip()
     if answer:
-        print(answer)
+        lines.append(answer)
     if completed.returncode:
-        print(f"ERROR: exit status {completed.returncode}")
+        lines.append(f"ERROR: exit status {completed.returncode}")
         if completed.stderr.strip():
-            print(completed.stderr.strip()[-4000:])
-        return completed.returncode
+            lines.append(completed.stderr.strip()[-4000:])
+        return completed.returncode, "\n".join(lines)
     notes = [line for line in completed.stderr.splitlines()
              if "truncated" in line.lower() or "max_new_tokens" in line.lower()]
     for note in notes[-3:]:
-        print(f"NOTE: {note}")
-    return 0
+        lines.append(f"NOTE: {note}")
+    return 0, "\n".join(lines)
 
 
 def parse_args() -> argparse.Namespace:
@@ -88,6 +91,14 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--concise", action="store_true")
     parser.add_argument("--skip-sparse", action="store_true")
     parser.add_argument("--skip-control", action="store_true")
+    parser.add_argument(
+        "--parallel", action="store_true",
+        help="run conditions concurrently; provide one GPU in --devices per condition",
+    )
+    parser.add_argument(
+        "--devices", default="",
+        help="comma-separated CUDA devices for --parallel, e.g. cuda:1,cuda:3,cuda:4",
+    )
     return parser.parse_args()
 
 
@@ -112,7 +123,24 @@ def main() -> int:
             "Spatial-TTT official checkpoint (--without-memory)",
             Path(args.dense_memory), use_memory=False,
         ))
-    return max(run_condition(condition, args, question) for condition in conditions)
+    if args.parallel:
+        devices = [item.strip() for item in args.devices.split(",") if item.strip()]
+        if len(devices) < len(conditions):
+            raise SystemExit(
+                f"--parallel needs at least {len(conditions)} devices; got {len(devices)}"
+            )
+        with ThreadPoolExecutor(max_workers=len(conditions)) as pool:
+            futures = [
+                pool.submit(run_condition, condition, args, question, device=devices[index])
+                for index, condition in enumerate(conditions)
+            ]
+            results = [future.result() for future in futures]
+    else:
+        results = [run_condition(condition, args, question, device=args.device)
+                   for condition in conditions]
+    for _, rendered in results:
+        print(f"\n{rendered}")
+    return max(code for code, _ in results)
 
 
 if __name__ == "__main__":

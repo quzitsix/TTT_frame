@@ -86,5 +86,14 @@ conda run --no-capture-output -n meowbench python scripts/test_spatial_memory.py
   --question 'Where did I put the empty red mesh bag?'
 ```
 
+如果有空闲 GPU，可以把三个条件同时运行，缩短评测墙钟时间：
+
+```bash
+conda run --no-capture-output -n meowbench python scripts/test_spatial_memory.py \
+  --parallel --devices cuda:1,cuda:3,cuda:4 \
+  --max-new-tokens 96 --concise \
+  --question 'Where did I put the empty red mesh bag?'
+```
+
 这里的 4 秒/8 帧步骤是更密集的 fast-weight 在线摄入，不会更新官方 slow weights；
 若要训练 slow weights，仍需带答案的 QA batch 和 `SpatialOfflineTrainer`。
