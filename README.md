@@ -238,6 +238,22 @@ conda run --no-capture-output -n meowbench python scripts/test_spatial_memory.py
 The completed Q9 run and the eight-GPU scheduling notes are recorded in
 [`SPATIAL_DENSE_4S8F_RUN.md`](docs/SPATIAL_DENSE_4S8F_RUN.md).
 
+For the Codex-derived MCQ sanity set, use the persistent batch evaluator. Its
+default three methods are local-teacher LoRA, Codex-teacher LoRA, and dense
+Spatial-TTT; `--include-sparse-spatial --include-spatial-control` adds the
+60s/16f and no-fast-memory Spatial controls:
+
+```bash
+conda run --no-capture-output -n meowbench python scripts/evaluate_codex_mcq.py \
+  --items-path data/q9_codex_mcq.jsonl \
+  --parallel --devices cuda:3,cuda:4,cuda:5 \
+  --max-new-tokens 16 \
+  --output runs/q9_codex_mcq_models.json
+```
+
+The question provenance, evidence spans, option balancing, and the current
+results are documented in [`CODEX_MCQ_EVAL.md`](docs/CODEX_MCQ_EVAL.md).
+
 The three conditions can run concurrently on separate GPUs:
 
 ```bash
