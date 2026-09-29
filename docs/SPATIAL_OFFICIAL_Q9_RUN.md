@@ -69,7 +69,26 @@ of the room.
 
 对开放问题 `What objects did I interact with in the kitchen?`，16 帧版本生成了 microwave、coffee maker、toaster、kettle、cutting board 等重复列表；无记忆版本也生成相似的厨房常见物体列表。因此这个问题主要反映官方模型的厨房先验，不能作为记忆准确率指标。
 
-Q9 多选题的金标是 A。按 `items.jsonl` 中评测器实际使用的完整句式（每个选项都以 “You threw ...” 开头）运行时，16 帧版本输出 C，`--without-memory` 输出 A；因此这次 Spatial-TTT 读出反而把正确的基础模型答案改成了错误的 C。把选项缩短成 [`docs/TEACHER_PILOT_RESULTS.md`](TEACHER_PILOT_RESULTS.md) 中的片段句式后，两种模式都会输出 A，说明当前读出对提示词很敏感。多选题单次命中不能证明视频记忆被正确检索。
+Q9 多选题的金标是 A。历史记录中曾出现过“16 帧版本输出 C、`--without-memory` 输出 A”的结果；那次运行的手工提示词与正式套件并非逐字一致，因此不能直接与下面的复现实验比较。
+
+2026-09-29 使用发布包 `items.jsonl` 的正式 `build_prompt` 重新运行，命令如下：
+
+```bash
+conda run --no-capture-output -n meowbench python scripts/test_spatial_memory.py \
+  --item-id supermemory-9 \
+  --parallel --devices cuda:0,cuda:1,cuda:2 \
+  --max-new-tokens 16
+```
+
+三路输出均为 `C`：
+
+| 条件 | 输出 | gold A 的正式得分 |
+|---|---|---:|
+| 4 秒 / 8 帧 memory | C | 0/1 |
+| 原始 60 秒 / 16 帧 memory | C | 0/1 |
+| 官方 checkpoint，`--without-memory` | C | 0/1 |
+
+这里的原始 prompt 包含完整四个选项和 `Answer with the single letter of the best option and nothing else.`；`C` 是第一生成 token，增大生成预算不会把答案从 C 变成别的选项。因而在当前代码、当前官方 checkpoint 和正式 Q9 提示词下，4 秒/8 帧采样没有带来可观测的答案级提升，且 memory 与 paired control 都没有命中金标。开放式问题中出现的“trash can”等语义变化不能替代这个 MCQ 评分，仍需按正式题目和证据区间评估。
 
 ## 协议限制
 

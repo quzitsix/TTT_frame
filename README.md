@@ -247,6 +247,25 @@ conda run --no-capture-output -n meowbench python scripts/test_spatial_memory.py
   --question 'Where did I put the empty red mesh bag?'
 ```
 
+To replay an original MEOWBench multiple-choice item, pass its `item_id`.
+The script reads the prepared release at
+`/data/quzitsix/meow-releases/supermemory-pilot-v2/items.jsonl` by default,
+renders the question and options in the benchmark order, and prints the gold
+letter for comparison. `--concise` is only a modifier for hand-written
+questions and is ignored in item mode so the original single-letter prompt is
+preserved:
+
+```bash
+conda run --no-capture-output -n meowbench python scripts/test_spatial_memory.py \
+  --item-id supermemory-9 \
+  --parallel --devices cuda:3,cuda:4,cuda:5 \
+  --max-new-tokens 16
+```
+
+Use `--items-path /path/to/items.jsonl` when evaluating a different prepared
+release. The item gold/evidence are metadata for the terminal report; they are
+not included in the prompt sent to the model.
+
 Python API:
 
 ```python

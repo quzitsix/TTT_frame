@@ -95,5 +95,16 @@ conda run --no-capture-output -n meowbench python scripts/test_spatial_memory.py
   --question 'Where did I put the empty red mesh bag?'
 ```
 
+如果要复现发布包里的原题，直接传入题目的 `item_id`。脚本默认读取
+`/data/quzitsix/meow-releases/supermemory-pilot-v2/items.jsonl`，按原始顺序
+渲染选项，并在终端显示金标字母；金标和证据不会发送给模型：
+
+```bash
+conda run --no-capture-output -n meowbench python scripts/test_spatial_memory.py \
+  --item-id supermemory-9 \
+  --parallel --devices cuda:3,cuda:4,cuda:5 \
+  --max-new-tokens 16
+```
+
 这里的 4 秒/8 帧步骤是更密集的 fast-weight 在线摄入，不会更新官方 slow weights；
 若要训练 slow weights，仍需带答案的 QA batch 和 `SpatialOfflineTrainer`。
