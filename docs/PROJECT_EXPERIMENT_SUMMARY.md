@@ -13,6 +13,7 @@
 3. **Spatial-TTT 能改变读出，但答案不稳定。** Q9 的开放式回答中 memory 比 paired control 更接近证据，但正式选择题三路都答错；19 道 Codex 派生选择题中 dense Spatial 为 14/19，较强的 Qwen3.5 纯文本模型为 16/19，但 Qwen3.5 没看视频。
 4. **HomeSentinel 全量结果没有显示总体收益。** 52 段视频、138 道开放题、60 秒/4 帧配置下，Spatial memory 的平均 token F1 为 0.1554，without-memory 对照为 0.1624；event 子集略好，home/owner 子集略差。
 5. **早期 LaCT 的“搬家效应”已经撤回。** 交叉实验显示 filler 来源、查询场景和中心化参考集会改变结论，原来的 SAME/MOVED 差异不能解释成真实家庭搬家记忆能力。
+6. **Caption 文本参照明显强于当前 Spatial 视觉链路。** 同一个 Qwen3-VL-2B 只读 caption 的整体 token F1 为 0.2262，比 Spatial memory 高 0.0708；这更像是视觉覆盖、写入和读出问题，而不是单纯的模型规模问题。
 
 因此，当前项目状态应表述为：**TTT 参数记忆的输入—更新—保存—读出链路可运行；长期事实的可靠写入、寻址、抗干扰和抗遗忘仍未验证。**
 
@@ -200,6 +201,48 @@ Spatial 在这组题上最好，但题目来自 Codex 分析，不能独立证�
 - [`summary.json`](../runs/homesentinel_asuka_spatial_60s4f_run6/summary.json)
 - [`memory.json`](/data/TTT_frame_homesentinel_asuka_spatial_latest/memory.json)
 
+### 7.3 Caption-only 参照
+
+HomeSentinel 还有一条不同模态的参照：不读视频，只把截止到题目允许时间的
+`merged_captions.json` 有序文本交给模型回答。它不是 TTT memory；caption 已经把视频
+中的场景、地点、活动和部分事件转成了文字，因此这项结果主要衡量“已有文本观察被
+语言模型检索”的文本参照。数据包括 52 个视频、1,414 个场景、10,724 个事件和
+3,303 条 speech；脚本没有使用 `evidence.segment_ids` 或 gold 检索
+caption，但 caption 本身是自动生成文本，仍可能包含错误或比原始稀疏视频更完整的
+信息。summary 和 important 的最长输入约为 75.8k 和 137.4k tokens，因此它和 Spatial
+的参数读出并不是同一种信息接口。
+
+| 条件 | 模型 | 输入 | overall mean token F1 | gold substring | exact |
+|---|---|---|---:|---:|---:|
+| caption summary | Qwen3-VL-2B | summary/activity/location/time 文本 | **0.2262** | 11/138 | 0/138 |
+| caption summary | Qwen3.5-35B-A3B | 同类 summary 文本 | **0.2427** | 19/138 | 0/138 |
+| caption important | Qwen3.5-35B-A3B | summary 加每个场景最后一个结构化事件 | **0.2481** | 16/138 | 0/138 |
+| Spatial memory | Qwen3-VL-2B | 原始视频，60 秒/4 帧，fast weights | **0.1554** | 2/138 | 0/138 |
+| Spatial without-memory | Qwen3-VL-2B | 同一视频/基座，绕过 fast weights | **0.1624** | 2/138 | 0/138 |
+
+按类别展开如下，便于区分长期 owner/home 题和有 cutoff 的 event 题：
+
+| 条件 | owner | home | event |
+|---|---:|---:|---:|
+| Qwen3-VL-2B caption summary | 0.1632 | 0.3149 | 0.2161 |
+| Qwen3.5 caption summary | 0.2039 | 0.2825 | 0.2505 |
+| Qwen3.5 caption important | 0.2096 | 0.2778 | 0.2653 |
+| Spatial memory | 0.1514 | 0.1951 | 0.1224 |
+| Spatial without-memory | 0.1552 | 0.2172 | 0.1186 |
+
+同模型 Qwen3-VL-2B 的 caption summary 已经高于当前 Spatial memory，说明瓶颈主要在
+视觉输入覆盖、Spatial 写入和参数读出，而不是只换一个更大的语言模型。Qwen3.5 的
+结果还混合了模型规模和架构差异，不能直接当作 TTT 能力比较。`important` 只增加了
+每个场景的一个末事件，F1 略升但 substring 从 19 降到 16，说明开放题的词法指标会
+受到文本组织和答案表达影响，不能把它解读成单调的事实覆盖率提升。
+
+原始记录和输出位置：
+
+- [`HOMESENTINEL_CAPTION_RESULTS.md`](/home/quzitsix/meowbench/docs/HOMESENTINEL_CAPTION_RESULTS.md)
+- [`Qwen3-VL-2B caption summary`](</home/quzitsix/meowbench/runs/homesentinel-caption-qwen3-vl-2b-summary/summary.json>)
+- [`Qwen3.5 summary`](</home/quzitsix/meowbench/runs/homesentinel-caption-qwen35-summary-batched/summary.json>)
+- [`Qwen3.5 important`](</home/quzitsix/meowbench/runs/homesentinel-caption-qwen35-important/summary.json>)
+
 ## 8. 统一看这些结果
 
 ### 8.1 哪些结果可以支持“参数被改变”
@@ -259,6 +302,7 @@ PY
 - `b2682b9`：处理 Qwen3-VL 短尾窗口并加入测试；
 - `a60e79d`：加入 checkpoint/resume；
 - `2a262ed`：记录 HomeSentinel 全量结果。
+- `5f2730e`：加入本总览及 caption 对照、8 卡密集训练方案。
 
 ## 10. 下一步建议
 
@@ -270,5 +314,67 @@ PY
 4. 先测原始基座、官方 Spatial without-memory、Spatial memory、LoRA memory 和显式 notes，再比较同一采样帧和同一文本目标。
 5. 只有单事实可稳定读回后，才增加无关 filler、相似物体、位置更新和跨视频人物—物品关系，画出随干扰量变化的保持曲线。
 6. 如果要让 Spatial 适应家庭记忆，应训练 slow weights/读出模块或设计明确的 teacher-forced offline trainer；仅把 `ttt_scale_init` 调大不能替代训练。
+
+### 10.1 使用 8 张卡做密集采样训练
+
+这件事技术上可行，但需要区分“密集采样评测”和“训练 Spatial slow parameters”。当前
+[`evaluate_homesentinel_spatial.py`](../scripts/evaluate_homesentinel_spatial.py) 已经可以
+用 `--chunk-seconds 4 --frames-per-chunk 8` 做密集的在线 fast-weight 写入；仓库中的
+[`SpatialOfflineTrainer`](../ttt_frame/spatial_trainer.py) 只提供可微的单 episode API，
+还没有把 HomeSentinel caption 转成 QA batch、按场景切分、DDP、checkpoint/resume
+封装成完整训练 CLI。
+
+HomeSentinel 的 52 段视频总时长约 **33,297 秒**。按当前配置估算：
+
+| 配置 | 约 chunks | 约帧数 | 相对当前 60 秒/4 帧 |
+|---|---:|---:|---:|
+| 60 秒/4 帧 | 580 | 2,320 | 1× |
+| 4 秒/8 帧 | 8,341 | 66,728 | 约 28.8× |
+
+Q9 已测得 4 秒/8 帧约 14.2 秒/chunk；按线性比例，HomeSentinel 全量密集摄入约需
+**33 小时单卡**，实际应先测 1–2 段视频。8 卡可以把独立 episode 或视频 shard 分到
+不同进程，理想情况下约 4–6 小时，但不能把 8 卡分别得到的 fast weights 直接拼成一个
+连续的 52 视频 memory：Spatial 更新是非线性的，当前代码也没有合法的 fast-state
+merge 操作。
+
+推荐的训练形态是：
+
+1. 按视频划分 train/validation/test，例如 40/6/6，避免同一视频的 caption 和问题
+   同时出现在训练与测试中。
+2. 每个 rank 加载一份 Qwen3-VL-2B 和 Spatial slow 参数副本，用 `torchrun`/DDP
+   处理不同的短 episode；每个 episode 先按 4 秒/8 帧写视觉，再在无视频的 read 模式
+   用 `activity_summary` 和结构化 event 做 teacher-forced 文本交叉熵。
+3. 每个 episode 只保留 8–32 个 dense chunk（约 32–128 秒），更新后 reset fast state，
+   对 slow 参数做梯度同步。不能对 8,341 个 chunk 的完整历史保留反向图，否则显存和
+   反向时间都会失控；这需要 TBPTT/短 episode。
+4. 首轮只训练 Spatial 新增参数，先尝试 readout-only，再开放写入矩阵；语言模型保持
+   冻结。每卡的 slow 参数、Adam 状态和 fast runtime state 都远小于 24 GB，真正的
+   显存瓶颈是视觉激活和反向图。
+5. 训练完成后，把保存的 slow checkpoint 重新加载，在单个进程中按 `video_order.json`
+   的真实顺序重放 52 段视频，再用相同的 HomeSentinel 138 题和 without-memory 对照
+   评测。训练时不能使用 benchmark gold、`evidence.segment_ids` 或查询答案。
+
+先跑一个 1–2 段视频/约 10 分钟的 throughput pilot，比较 4 秒/8 帧和 8 秒/8 帧，
+确认每个 episode 的显存、loss 是否下降以及 caption 监督是否包含事实，再启动 8 卡
+全量训练。当前能直接执行的密集**评测**命令是：
+
+```bash
+cd /home/quzitsix/TTT_frame
+conda run --no-capture-output -n meowbench python -u \
+  scripts/evaluate_homesentinel_spatial.py \
+  --data-root /data/HomeSentinel/asuka \
+  --order-path /data/HomeSentinel/video_order.json \
+  --model-path /data/quzitsix/models/Qwen3-VL-2B-Instruct \
+  --spatial-checkpoint /data/quzitsix/models/Spatial-TTT-nano/model.safetensors \
+  --device cuda:0 --dtype bfloat16 \
+  --chunk-seconds 4 --frames-per-chunk 8 --max-side 448 \
+  --max-new-tokens 128 \
+  --checkpoint-dir /data/TTT_frame_homesentinel_asuka_spatial_dense_latest \
+  --output runs/homesentinel_asuka_spatial_4s8f/predictions.jsonl
+```
+
+这条命令会密集写入和评测，但**不会训练 slow parameters**。真正的 8 卡训练需要补充
+caption→QA 数据转换、短 episode 反向、DDP 梯度同步和 slow/optimizer checkpoint；
+在这些组件加入前，不应把 `4s/8f` 的在线摄入称为重新训练。
 
 当前最重要的验收标准是：**memory 相比 paired without-memory，在独立人工事实集上稳定提高准确率，并且同义改写、错误历史和追加无关视频不会使早期事实随意改变。**
