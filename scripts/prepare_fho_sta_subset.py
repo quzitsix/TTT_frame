@@ -22,6 +22,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import math
 from pathlib import Path
 import random
 from typing import Any
@@ -39,9 +40,15 @@ def _load(path: Path) -> dict[str, Any]:
 
 def _objects(annotation: dict[str, Any]) -> list[dict[str, Any]]:
     objects = annotation.get("objects", [])
-    return [obj for obj in objects if isinstance(obj, dict) and isinstance(
-        obj.get("time_to_contact"), (int, float)
-    ) and float(obj["time_to_contact"]) >= 0]
+    return [
+        obj for obj in objects
+        if isinstance(obj, dict)
+        and isinstance(obj.get("time_to_contact"), (int, float))
+        and math.isfinite(float(obj["time_to_contact"]))
+        and float(obj["time_to_contact"]) >= 0
+        and isinstance(obj.get("noun_category_id"), int)
+        and isinstance(obj.get("verb_category_id"), int)
+    ]
 
 
 def _bin(value: float) -> float:
