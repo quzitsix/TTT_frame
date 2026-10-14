@@ -67,6 +67,8 @@ conda run --no-capture-output -n meowbench python scripts/evaluate_fho_sta.py \
 
 ## 运行首轮评测
 
+`--max-side` 同时约束 ICL 与 Spatial-TTT 的输入图像最长边。它必须在两类条件中保持一致，否则空间分辨率会和记忆机制混在一起。建议首轮使用 `256/448/672` 三个配置；`448` 是当前默认值。
+
 服务器上若使用第 2 号物理 GPU，直接运行：
 
 ```bash
@@ -77,11 +79,49 @@ conda run --no-capture-output -n meowbench python scripts/evaluate_fho_sta.py \
   --model-path /data/quzitsix/models/Qwen3-VL-2B-Instruct \
   --spatial-checkpoint /data/quzitsix/models/Spatial-TTT-nano/model.safetensors \
   --device cuda:2 --dtype bfloat16 \
-  --limit 16 --max-new-tokens 8 \
+  --max-side 448 --limit 16 --max-new-tokens 8 \
   --output runs/fho_sta_smoke_16.jsonl
 ```
 
 输出包括逐题 JSONL 和同目录的 `summary.json`。每一行保留问题选项、模型原始回答、解析出的选项、gold、TTC、观测帧和耗时，便于之后定位模型是否读到了未来信息或只是猜常见类别。
+
+拿到真实数据后，可以在三张空闲 GPU 上并行运行空间大小 sweep：
+
+```bash
+conda run --no-capture-output -n meowbench python scripts/evaluate_fho_sta.py \
+  --annotations "$EGO4D_DIR/fho_sta_subset_16/fho_sta_val_subset.json" \
+  --video-root "$EGO4D_DIR/v2/clips" --frame-field clip_frame \
+  --model-path /data/quzitsix/models/Qwen3-VL-2B-Instruct \
+  --spatial-checkpoint /data/quzitsix/models/Spatial-TTT-nano/model.safetensors \
+  --device cuda:2 --max-side 256 --limit 16 \
+  --output runs/fho_sta_smoke_256.jsonl
+
+conda run --no-capture-output -n meowbench python scripts/evaluate_fho_sta.py \
+  --annotations "$EGO4D_DIR/fho_sta_subset_16/fho_sta_val_subset.json" \
+  --video-root "$EGO4D_DIR/v2/clips" --frame-field clip_frame \
+  --model-path /data/quzitsix/models/Qwen3-VL-2B-Instruct \
+  --spatial-checkpoint /data/quzitsix/models/Spatial-TTT-nano/model.safetensors \
+  --device cuda:3 --max-side 448 --limit 16 \
+  --output runs/fho_sta_smoke_448.jsonl
+
+conda run --no-capture-output -n meowbench python scripts/evaluate_fho_sta.py \
+  --annotations "$EGO4D_DIR/fho_sta_subset_16/fho_sta_val_subset.json" \
+  --video-root "$EGO4D_DIR/v2/clips" --frame-field clip_frame \
+  --model-path /data/quzitsix/models/Qwen3-VL-2B-Instruct \
+  --spatial-checkpoint /data/quzitsix/models/Spatial-TTT-nano/model.safetensors \
+  --device cuda:4 --max-side 672 --limit 16 \
+  --output runs/fho_sta_smoke_672.jsonl
+```
+
+完成后生成比较文档：
+
+```bash
+conda run --no-capture-output -n meowbench python scripts/report_fho_sta_results.py \
+  --run side256=runs/fho_sta_smoke_256.jsonl \
+  --run side448=runs/fho_sta_smoke_448.jsonl \
+  --run side672=runs/fho_sta_smoke_672.jsonl \
+  --output docs/FHO_STA_EXPERIMENT_A_RESULTS.md
+```
 
 如果使用 `full_scale` fallback，替换为：
 

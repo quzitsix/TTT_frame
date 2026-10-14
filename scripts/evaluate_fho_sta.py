@@ -24,7 +24,7 @@ Example::
       --frame-field clip_frame \
       --model-path /data/quzitsix/models/Qwen3-VL-2B-Instruct \
       --spatial-checkpoint /data/quzitsix/models/Spatial-TTT-nano/model.safetensors \
-      --device cuda:2 --limit 16 --output runs/fho_sta_smoke_16.jsonl
+      --device cuda:2 --max-side 448 --limit 16 --output runs/fho_sta_smoke_16.jsonl
 
 Use ``--dry-run`` to validate the annotation schema, selected horizons, and
 video paths without loading a model.
@@ -175,7 +175,12 @@ def _frame_end(annotation: dict[str, Any], video_path: Path, *, frame_field: str
 
 
 def decode_window(path: Path, end_frame: int, fps: float, *, seconds: float, count: int):
-    """Decode an observed-only window and return PIL images plus timestamps."""
+    """Decode an observed-only window and return PIL images plus timestamps.
+
+    Spatial resizing is deliberately kept outside this decoder.  The same
+    decoded prefix can then be resized once and shared by the ICL and
+    parameter-memory conditions, which makes a resolution sweep comparable.
+    """
 
     import av
 
@@ -202,6 +207,26 @@ def decode_window(path: Path, end_frame: int, fps: float, *, seconds: float, cou
         frames.append(frames[-1].copy())
         timestamps.append(timestamps[-1] + 0.001)
     return frames, timestamps
+
+
+def _resize_images(images, max_side: int):
+    """Bound the spatial input presented to both ICL and Spatial-TTT.
+
+    ``SpatialVideoMemory.ingest_video`` applies this bound through
+    :func:`iter_video_chunks`, but the FHO runner uses ``ingest_frames`` so it
+    can stop exactly at the labelled observation frame.  Applying the same
+    PIL thumbnail here closes that otherwise easy-to-miss discrepancy.  PIL
+    preserves the aspect ratio and never upsamples an already smaller frame.
+    """
+
+    if max_side < 1:
+        raise ValueError("max_side must be positive")
+    result = []
+    for image in images:
+        image = image.convert("RGB").copy()
+        image.thumbnail((max_side, max_side))
+        result.append(image)
+    return result
 
 
 def _options(gold: str, names: list[str], seed: int) -> tuple[list[str], int]:
@@ -295,7 +320,7 @@ def _answer_spatial(engine, images, timestamps, question: str, *, max_new_tokens
     return engine.answer(question, use_memory=True, max_new_tokens=max_new_tokens)
 
 
-def _condition_inputs(engine, path: Path, end_frame: int, fps: float):
+def _condition_inputs(engine, path: Path, end_frame: int, fps: float, *, max_side: int):
     cache = {}
     cache["blind"] = decode_window(path, end_frame, fps, seconds=0.1, count=1)
     cache["icl_4f"] = decode_window(path, end_frame, fps, seconds=4.0, count=4)
@@ -303,7 +328,10 @@ def _condition_inputs(engine, path: Path, end_frame: int, fps: float):
     cache["icl_8s4f"] = decode_window(path, end_frame, fps, seconds=8.0, count=4)
     cache["spatial_8s4f"] = decode_window(path, end_frame, fps, seconds=8.0, count=4)
     cache["spatial_4s8f"] = decode_window(path, end_frame, fps, seconds=4.0, count=8)
-    return cache
+    return {
+        condition: (_resize_images(images, max_side), timestamps)
+        for condition, (images, timestamps) in cache.items()
+    }
 
 
 def _summary(rows: list[dict[str, Any]]) -> dict[str, Any]:
@@ -339,6 +367,8 @@ def _parse_args(argv: list[str] | None = None) -> argparse.Namespace:
     parser.add_argument("--limit", type=int, default=16)
     parser.add_argument("--seed", type=int, default=0)
     parser.add_argument("--frame-field", choices=("auto", "frame", "clip_frame"), default="auto")
+    parser.add_argument("--max-side", type=int, default=448,
+                        help="maximum PIL input edge for every ICL and Spatial condition")
     parser.add_argument("--max-new-tokens", type=int, default=8)
     parser.add_argument("--output", type=Path, default=Path("runs/fho_sta_smoke.jsonl"))
     parser.add_argument("--dry-run", action="store_true")
@@ -347,6 +377,8 @@ def _parse_args(argv: list[str] | None = None) -> argparse.Namespace:
 
 def main(argv: list[str] | None = None) -> int:
     args = _parse_args(argv)
+    if args.max_side < 1:
+        raise SystemExit("max-side must be positive")
     if not args.annotations.is_file():
         raise SystemExit(f"annotations do not exist: {args.annotations}")
     payload = _load(args.annotations)
@@ -390,6 +422,7 @@ def main(argv: list[str] | None = None) -> int:
     args.output.parent.mkdir(parents=True, exist_ok=True)
     if args.dry_run:
         report = {"mode": "dry_run", "selected": len(selected), "usable": len(items),
+                  "max_side": args.max_side,
                   "missing": missing, "conditions": CONDITIONS,
                   "items": [{"uid": item["annotation"].get("uid"),
                              "video_uid": item["annotation"].get("video_uid"),
@@ -413,7 +446,7 @@ def main(argv: list[str] | None = None) -> int:
     engine = SpatialVideoMemory(SpatialVideoConfig(
         model_path=args.model_path, device=args.device, dtype=args.dtype,
         spatial_checkpoint=args.spatial_checkpoint, local_files_only=True,
-        max_new_tokens=args.max_new_tokens,
+        max_side=args.max_side, max_new_tokens=args.max_new_tokens,
     ))
     all_nouns = list(noun_map.values())
     all_verbs = list(verb_map.values())
@@ -421,7 +454,8 @@ def main(argv: list[str] | None = None) -> int:
     with args.output.open("w", encoding="utf-8") as output:
         for item_index, item in enumerate(items):
             started = time.perf_counter()
-            inputs = _condition_inputs(engine, item["path"], item["end_frame"], item["fps"])
+            inputs = _condition_inputs(engine, item["path"], item["end_frame"], item["fps"],
+                                       max_side=args.max_side)
             for condition in CONDITIONS:
                 for task, gold, names in (("noun", item["noun"], all_nouns),
                                            ("verb", item["verb"], all_verbs)):
@@ -443,6 +477,7 @@ def main(argv: list[str] | None = None) -> int:
                             "uid": item["annotation"].get("uid"),
                             "video_uid": item["annotation"].get("video_uid"),
                             "condition": condition, "task": task,
+                            "max_side": args.max_side,
                             "observed_frame": item["end_frame"], "fps": item["fps"],
                             "ttc": item["ttc"], "horizon_bin": item["horizon_bin"],
                             "gold": gold, "gold_index": gold_index,
@@ -457,6 +492,7 @@ def main(argv: list[str] | None = None) -> int:
                             "uid": item["annotation"].get("uid"),
                             "video_uid": item["annotation"].get("video_uid"),
                             "condition": condition, "task": task,
+                            "max_side": args.max_side,
                             "observed_frame": item["end_frame"], "fps": item["fps"],
                             "ttc": item["ttc"], "horizon_bin": item["horizon_bin"],
                             "gold": gold, "choices": choices, "answer": "",
@@ -470,6 +506,7 @@ def main(argv: list[str] | None = None) -> int:
     summary = {"schema": "ttt_frame.fho_sta_smoke/1", "annotations": str(args.annotations),
                "video_root": str(args.video_root), "model_path": args.model_path,
                "spatial_checkpoint": args.spatial_checkpoint, "n_items": len(items),
+               "max_side": args.max_side,
                "n_rows": len(rows), "summary": _summary(rows),
                "note": "Closed-set noun/verb smoke test; not official FHO STA mAP."}
     args.output.with_name("summary.json").write_text(
