@@ -58,11 +58,11 @@ The codebook removes OCR and visual encoder confounds so this run answers only w
 
 ## Visual PNG-card follow-up
 
-As a separate sanity check, two episodes (ten queries) were rendered as PNG event cards and passed through the native Qwen3-VL interfaces. The cards are text-heavy synthetic stimuli, so this is a visual plumbing check rather than a household-video result.
+As a separate sanity check, one episode (five queries) was rendered as PNG event cards and passed through the native Qwen3-VL interfaces with all 17 chronological cards. The cards are text-heavy synthetic stimuli, so this is a visual plumbing check rather than a household-video result.
 
 | arm | queries | mean token F1 | exact | gold substring |
 |---|---:|---:|---:|---:|
-| ICL visual | 10 | 0.0444 | 0 | 0 |
-| Spatial-TTT | 10 | 0.0196 | 0 | 0 |
+| ICL visual | 5 | 0.3455 | 1 | 1 |
+| Spatial-TTT | 5 | 0.0182 | 0 | 0 |
 
-Both arms were weak and neither produced an exact answer. This confirms that the symbolic C numbers must not be interpreted as VLM accuracy; the next C iteration should replace the cards with photorealistic rendered scenes or real controlled video while keeping the same query manifest.
+ICL answered one query exactly, while Spatial-TTT did not. The tiny, text-heavy card sample is not enough to establish a visual-memory advantage; the symbolic C numbers must not be interpreted as VLM accuracy. The next C iteration should replace the cards with photorealistic rendered scenes or real controlled video while keeping the same query manifest.

@@ -10,7 +10,7 @@
 
 SVCBench 只下载了一个约 14.8 MB 的视频和标注，没有下载约 80 GB 的完整数据集。为了完成一次可复现的真实模型 smoke，保留了 47 个原始 query points 中每四个取一个的 13 点轨迹。ICL 与 Spatial-TTT 的点准确率都为 0.1250；Spatial-TTT 的 MoC 较高（0.8750），但 UDA 较低（0.0625），说明预测轨迹更单调，却没有更好地跟随真实计数变化。
 
-实验 C 的 symbolic probe 不是视觉 VLM 结果。它把位置、owner、搬移者、状态和下一步动作写入固定维度关联记忆，12 个 episode、60 个 query、3 次 trial 共 2160 行。LaCT 在 relocated 条件为 0.8833，在 same-scene control 为 0.5611；显式表为 1.0/1.0。这个结果说明关联记忆机制能保留绑定，但不证明视觉编码或真实家庭场景已经有效。PNG 卡片视觉 follow-up 的两集结果也很弱：ICL token-F1 0.0444，Spatial-TTT 0.0196。
+实验 C 的 symbolic probe 不是视觉 VLM 结果。它把位置、owner、搬移者、状态和下一步动作写入固定维度关联记忆，12 个 episode、60 个 query、3 次 trial 共 2160 行。LaCT 在 relocated 条件为 0.8833，在 same-scene control 为 0.5611；显式表为 1.0/1.0。这个结果说明关联记忆机制能保留绑定，但不证明视觉编码或真实家庭场景已经有效。PNG 卡片视觉 follow-up 只跑 1 个 episode、5 个 query：ICL token-F1 0.3455，Spatial-TTT 0.0182，样本太小，不能据此判断视觉方法优劣。
 
 ## A：FHO-STA 短期预测边界
 
@@ -80,10 +80,10 @@ LaCT 的 relocated − same-scene 差值按 query type 为：location +1.0000、
 
 | arm | queries | mean token-F1 | exact | gold substring |
 |---|---:|---:|---:|---:|
-| ICL visual | 10 | 0.0444 | 0 | 0 |
-| Spatial-TTT | 10 | 0.0196 | 0 | 0 |
+| ICL visual | 5 | 0.3455 | 1 | 1 |
+| Spatial-TTT | 5 | 0.0182 | 0 | 0 |
 
-两种视觉 arm 都没有得到 exact answer，说明当前 PNG card 只适合检查数据流和读出接口，不能模拟真实家庭视觉。下一版 C 应将相同事件渲染成 photorealistic/3D 场景或使用真实受控视频，并保留当前的 same-scene、relocated、filler-only paired protocol。
+ICL 得到 1 个 exact answer，Spatial-TTT 没有 exact answer；由于只有 1 个 episode，当前 PNG card 只适合检查数据流和读出接口，不能模拟真实家庭视觉。下一版 C 应将相同事件渲染成 photorealistic/3D 场景或使用真实受控视频，并保留当前的 same-scene、relocated、filler-only paired protocol。
 
 ## 复现命令
 
@@ -125,13 +125,13 @@ conda run --no-capture-output -n meowbench python scripts/evaluate_experiment_c.
   --data data/experiment_c/manifest.json --output runs/experiment_c_final \
   --trials 3 --report docs/EXPERIMENT_C_RESULTS.md
 
-# Visual proxy, two episodes per arm
+# Visual proxy, one complete 17-card episode per arm
 CUDA_VISIBLE_DEVICES=3 conda run --no-capture-output -n meowbench python scripts/evaluate_experiment_c_visual.py \
-  --data data/experiment_c/manifest.json --episodes 2 --max-frames 16 \
-  --arm icl --device cuda:0 --output runs/experiment_c_visual_icl.jsonl
+  --data data/experiment_c/manifest.json --episodes 1 --max-frames 0 \
+  --arm icl --device cuda:0 --output runs/experiment_c_visual_icl_full17.jsonl
 CUDA_VISIBLE_DEVICES=4 conda run --no-capture-output -n meowbench python scripts/evaluate_experiment_c_visual.py \
-  --data data/experiment_c/manifest.json --episodes 2 --max-frames 16 \
-  --arm spatial --device cuda:0 --output runs/experiment_c_visual_spatial.jsonl
+  --data data/experiment_c/manifest.json --episodes 1 --max-frames 0 \
+  --arm spatial --device cuda:0 --output runs/experiment_c_visual_spatial_full17.jsonl
 ```
 
 ## 当前决策与下一步
