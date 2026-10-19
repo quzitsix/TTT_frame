@@ -1,0 +1,37 @@
+{
+  "schema": "ttt_frame.svcbench_real_selection/1",
+  "name": "SVCBench-Ego4D-3 matched-frame pilot",
+  "dataset_repo": "buaaplay/SVCBench",
+  "dataset_revision": "4c9bd87ef3b0f269ca8b4503c081f5f38bc1fc9a",
+  "annotation_sha256": "5537dc652e2d9329baeb3f303a08242261fe0cc6194ff5d43bea0f2fe48a9e82",
+  "source_type": "real first-person Ego4D video",
+  "videos": [
+    {
+      "video": "Ego4D/b71f48ff-db06-42d4-a49b-b58d7f4ba7e1.mp4",
+      "sha256": "626a05cb0f9eae0168d1519e8a528ba70e986fbda5ba5354ea4891f4fa24c8d7",
+      "question_ids": ["0650", "0651"],
+      "semantic_families": {"0650": "door_passage", "0651": "door_passage"}
+    },
+    {
+      "video": "Ego4D/e5d94463-f292-451d-8d7c-0926001da4e1.mp4",
+      "sha256": "20e69921ce528d78376cb2d9a11286f3ce1b1924af31e17f527b8bb674b158d8",
+      "question_ids": ["0661", "0662", "0663"],
+      "semantic_families": {
+        "0661": "vehicle_turn_any",
+        "0662": "vehicle_turn_any",
+        "0663": "vehicle_turn_right"
+      }
+    },
+    {
+      "video": "Ego4D/20f345f7-d592-4d52-851f-3ee4544a847d.mp4",
+      "sha256": "16095b9511cdc1489997baa3a951909a0a3b596af2eddea475c8b622c48dc714",
+      "question_ids": ["0826", "0827"],
+      "semantic_families": {"0826": "intersection_passage", "0827": "bicycle_turn_uturn"}
+    }
+  ],
+  "n_videos": 3,
+  "n_questions": 7,
+  "n_semantic_families": 5,
+  "n_query_points": 24,
+  "evaluation_note": "Question trajectories and points from the same source video are correlated; report question and source-video macro metrics, not 24 independent samples."
+}

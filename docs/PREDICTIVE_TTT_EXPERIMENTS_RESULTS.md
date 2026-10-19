@@ -1,6 +1,6 @@
 # Predictive-TTT 实验总报告：A、B、C
 
-本文汇总当前仓库中预测型 TTT 的三个实验。A 是 FHO-STA 短期预测边界；B 是 HomeSentinel 与 SVCBench 的流式状态维护；C 是受控搬移/重排机制探针。所有结果都保留了逐条 JSONL，或保存为带有逐条 `rows` 数组的 JSON；报告中的小数可以由对应脚本重新生成。
+本文汇总当前仓库中预测型 TTT 的三个实验方向。A 是 FHO-STA 短期预测边界；B 保留 HomeSentinel 与早期 SVCBench 流式状态实验；当前主要视觉 C 评测是真实视频 matched-prefix 状态/计数，旧 C-PNG 受控搬移与 V-JEPA 结果保留为机制/表征诊断。已完成的结果都保留了逐条 JSONL，或保存为带有逐条 `rows` 数组的 JSON；报告中的小数可以由对应脚本重新生成。
 
 ## 结论先行
 
@@ -8,9 +8,11 @@
 
 实验 B 的 HomeSentinel 快速结果显示，显式视觉 ICL 的 lexical token-F1 高于已有 Spatial-TTT 子集，但两者视觉帧预算不同，不能据此判断 ICL 优于 TTT。完整视频采样的 ICL 为 0.2001，已有 Spatial-TTT 为 0.1660，无记忆读出为 0.1730；这更像是“当前 TTT readout 没有体现稳定增益”的信号。
 
-SVCBench 只下载了一个约 14.8 MB 的视频和标注，没有下载约 80 GB 的完整数据集。为了完成一次可复现的真实模型 smoke，保留了 47 个原始 query points 中每四个取一个的 13 点轨迹。ICL 与 Spatial-TTT 的 **question-macro exact accuracy** 都为 0.1250：两条 question trajectory 分别为 0/9 与 1/4，不能把 0.1250 解释成 13 点 pooled accuracy。Spatial-TTT 的 MoC 较高（0.8750），但 UDA 较低（0.0625），说明预测轨迹更单调，却没有更好地跟随真实计数变化。
+SVCBench 早期 smoke 只下载了一个约 14.8 MB 的 `simulated/0030.mp4` 和标注，没有下载约 80 GB 的完整数据集。它保留了 47 个原始 query points 中每四个取一个的 13 点轨迹，但 ICL 只看最近 8 秒而 Spatial-TTT 读取完整前缀，因此是 **legacy unmatched smoke**。其 ICL 与 Spatial-TTT 的 question-macro exact accuracy 都为 0.1250，只作历史诊断，不是当前主要 SVCBench 结果。
 
-实验 C 已完成无未来泄漏的 fixture schema v2。Symbolic probe 在 12 个 episode × 10 次 trial 上显示：LaCT 在 relocated 为 0.6383，低于 same-scene 的 0.7333；显式检索和 oracle 都为 1.0000。C-PNG 严格四选一视觉评测已扩展到全部 12 个 episode，并统一为逐题读取：ICL 为 0.4944、blind 为 0.2667、完整 Spatial-TTT 为 0.2667、保留官方慢权重而清空视频 fast state 的 slow-only 为 0.2833。完整 Spatial 相对 slow-only 为 **-3/180**，没有显示在线写入收益。排除 exact-content 重复组后的冻结 V-JEPA 2 监督 readout 为 126/180 = 0.7000，匹配的低分辨率 pixel readout 为 132/180 = 0.7333；这组结果测表征可读性，监督方式不同，不能与零样本 VLM 四选一分数直接排序。
+当前主要视觉 C 评测已切换到 [SVCBench 真实视频 matched-prefix 协议](SVCBENCH_REAL_VIDEO.md)。Natural9 的 9 段视频、42 条 trajectories、125 个 query points 已完成，strict summarizer 验证 **625/625** 行通过且无解析/运行失败。question-macro exact 为：blind 0.3060、ICL 0.2889、Spatial fast 0.3131、slow-only 0.2980、base bypass 0.3060。Spatial fast 相对 slow-only 只增加 1/125 个净正确点（query delta +0.0080，question-macro +0.0151；left-only/right-only 6/5），来源视频上 3 个为正、2 个为负、4 个为零，不能视为稳定优势。真实视频输入排除了“Spatial 只是不适合文字卡”这一单一解释，但当前 writer/readout 仍没有形成可靠的精确计数记忆。
+
+旧 C-PNG fixture schema v2 已完成无未来泄漏的机制诊断。Symbolic probe 中 LaCT 的 relocated 为 0.6383，same-scene 为 0.7333；严格四选一中 ICL 为 0.4944、blind 为 0.2667、Spatial fast 为 0.2667、slow-only 为 0.2833。冻结 V-JEPA 2 与匹配 pixel readout 分别为 0.7000 与 0.7333。这些分数分别测试合成写入/读取链路和监督表征可读性，不是真实视频性能，也不与 C-real 分数直接比较。
 
 ## A：FHO-STA 短期预测边界
 
@@ -35,7 +37,7 @@ SVCBench 只下载了一个约 14.8 MB 的视频和标注，没有下载约 80 G
 
 详细表格和逐题结果见 [`docs/EXPERIMENT_B_RESULTS.md`](./EXPERIMENT_B_RESULTS.md)。runner 是 [`scripts/evaluate_homesentinel_icl.py`](../scripts/evaluate_homesentinel_icl.py)。
 
-### B2 SVCBench structured counting
+### B2 legacy unmatched SVCBench structured-counting smoke
 
 通过官方 [SVCBench repository](https://github.com/buaa-colalab/SVCBench) 和 [dataset card](https://huggingface.co/datasets/buaaplay/SVCBench) 的公开文件，只选择 `simulated/0030.mp4`。下载内容为：
 
@@ -50,13 +52,31 @@ SVCBench 只下载了一个约 14.8 MB 的视频和标注，没有下载约 80 G
 | ICL recent window | 2 | 13/13 | 1.0000 | 0.1250 | 0.1250 | 0.5625 | 0.3542 |
 | Spatial-TTT full prefix | 2 | 13/13 | 1.0000 | 0.1250 | 0.1250 | 0.8750 | 0.0625 |
 
-这是小样本、低分辨率 smoke，不代表完整 SVCBench。曾启动 448 px/47 点版本，但单点成本过高且没有产生可用结果，已停止；不能把它写成“完整轨迹已完成”。SVCBench runner 支持把 `--query-stride` 改成 1 进行完整评测。
+这是小样本、低分辨率且视觉前缀不匹配的历史 smoke，不代表完整 SVCBench。曾启动 448 px/47 点版本，但单点成本过高且没有产生可用结果，已停止；不能把它写成“完整轨迹已完成”。当前主要 SVCBench 评测见 [C-real matched-prefix 协议](SVCBENCH_REAL_VIDEO.md)。
 
-## C：受控搬移与重排（C-PNG，fixture schema v2）
+## C：当前主要真实视频 matched-prefix 评测
+
+当前 C 使用 Natural9 多来源真实图像视频和 SVCBench 的结构化计数标注，另保留 3 段 Ego4D 作为严格第一人称子集。每个 query point 作为独立 episode，blind 和 ICL 共享文字时间先验，ICL 与三个 Spatial 读取状态共享相同的截止时间、帧集合与顺序。数据 provenance、五臂协议、审计规则、运行命令和结果统一见 [`SVCBENCH_REAL_VIDEO.md`](SVCBENCH_REAL_VIDEO.md)。
+
+| arm | query exact | question macro | video macro | family macro | UDA |
+|---|---:|---:|---:|---:|---:|
+| blind | 0.2400 | 0.3060 | 0.2849 | 0.2995 | 0.1927 |
+| ICL | **0.2640** | 0.2889 | 0.2794 | 0.2776 | **0.4427** |
+| Spatial fast | 0.2400 | **0.3131** | **0.2887** | **0.3062** | 0.1849 |
+| Spatial slow-only | 0.2320 | 0.2980 | 0.2664 | 0.2900 | 0.2083 |
+| Spatial base bypass | 0.2400 | 0.3060 | 0.2849 | 0.2995 | 0.1927 |
+
+ICL 的 query micro 和 UDA 较高，但 question/video/family macro 都略低于 blind；其 `model.generate` 多模态路径与 blind 的手写 text-only greedy 路径也不完全相同，因此只作视觉基线描述。主要 TTT 比较使用同一 checkpoint、写入流和读取路径：Spatial fast − slow-only 的 query/question/video/family delta 分别为 +0.0080、+0.0151、+0.0223、+0.0162。这个小正差由 6 个 fast-only 正确点和 5 个 slow-only 正确点构成，同时 UDA 从 0.2083 降到 0.1849，证据是混合而不稳定的。
+
+计数标定诊断也显示明确的输出坍缩：gold 范围为 0–47，Spatial fast 的 125 个预测中 59 个为 1、63 个为 2、3 个为 3，MAE 3.368；ICL 的范围为 1–10、MAE 2.784。也就是说，当前 fast state 偶尔改变 exact 对错，却没有学会随长前缀可靠累积数值。
+
+SVC counting 和下面 C-PNG 的物体搬移/下一步问答是不同任务，只比较各自协议内的配对 arm，不比较两页的绝对分数。
+
+## C-PNG：受控搬移与重排的历史机制诊断（fixture schema v2）
 
 fixture schema v2 共有 12 个 episode。每个 episode 在三种条件下都提供 16 张观测卡和 27 次结构化 key/value 写入，并包含 location、mover、owner、state、next action 五类问题。`future_event` 与观测 `events` 分开存储，评测时不渲染、不编码，也不写入记忆；mover 与 owner 强制不同。`relocated`、`same_scene_control` 和 `filler_only_control` 使用匹配的观测与写入预算，避免 legacy fixture schema v1 中控制条件不等长的问题。
 
-这套 fixture 仍是机制 smoke，而不是独立同分布的真实视频基准。12 个 episode 在任一条件出现相同观测流就归为同组后，跨三种条件的并集形成 **9 个 exact-content clusters**；这些 cluster 仍共享生成器规律，不能当作 9 个独立随机样本。此外，`moved_object`、最终 location 和最终 state 按 episode 索引的三周期共同变化；filler 卡还直接显示 `control distractor`、`actor: control` 和 `control_records: 4` 等内部控制字段。`relocated` 与 `same_scene_control` 除背景外还把 `living room shelf` 改成 `shelf`、把 `side table` 改成 `table`，因此并非只改变场景线索的纯干预。这些规律都可能形成不依赖长期记忆的标签捷径；正式 C-real 版本应移除周期关联和控制标记，并统一两种条件的 location 词汇。
+这套 fixture 仍是机制 smoke，而不是独立同分布的真实视频基准。12 个 episode 在任一条件出现相同观测流就归为同组后，跨三种条件的并集形成 **9 个 exact-content clusters**；这些 cluster 仍共享生成器规律，不能当作 9 个独立随机样本。此外，`moved_object`、最终 location 和最终 state 按 episode 索引的三周期共同变化；filler 卡还直接显示 `control distractor`、`actor: control` 和 `control_records: 4` 等内部控制字段。`relocated` 与 `same_scene_control` 除背景外还把 `living room shelf` 改成 `shelf`、把 `side table` 改成 `table`，因此并非只改变场景线索的纯干预。这些规律都可能形成不依赖长期记忆的标签捷径。当前 C-real 主评测使用另一个真实视频计数任务，它不是这套 fixture 的修订版。
 
 ### C1 symbolic mechanism probe：12 episodes × 10 trials
 
@@ -119,7 +139,7 @@ Pixel control 在 relocated 与 same-scene 都高于 V-JEPA，V-JEPA 只在 fill
 
 ### C4 legacy / leakage diagnostics
 
-legacy fixture schema v1 的 full-history PNG-card 输入含有显式 forecast target card，控制条件和写入预算也未完全匹配。旧 symbolic 结果 LaCT relocated 0.8833、same-scene 0.5611，以及旧 open-answer 视觉结果 ICL token-F1 0.3455、Spatial-TTT 0.0182，现仅保留为数据流与泄漏诊断，**不得与正式 C-PNG 表混用，也不得作为预测能力证据**。fixture schema v2 早期使用普通 leave-one-episode-out 的 V-JEPA 142/180 和 pixel 148/180，也因 exact duplicate 观测流跨越训练/测试 fold 而降级为历史泄漏诊断。正式结论只采用 C3 的 leave-one-content-group-out 三条件结果。
+legacy fixture schema v1 的 full-history PNG-card 输入含有显式 forecast target card，控制条件和写入预算也未完全匹配。旧 symbolic 结果 LaCT relocated 0.8833、same-scene 0.5611，以及旧 open-answer 视觉结果 ICL token-F1 0.3455、Spatial-TTT 0.0182，现仅保留为数据流与泄漏诊断，**不得与正式 C-PNG 表混用，也不得作为预测能力证据**。fixture schema v2 早期使用普通 leave-one-episode-out 的 V-JEPA 142/180 和 pixel 148/180，也因 exact duplicate 观测流跨越训练/测试 fold 而降级为历史泄漏诊断。在 C-PNG 的监督表征诊断内，只采用 C3 的 leave-one-content-group-out 三条件结果。
 
 ## 复现命令
 
@@ -139,7 +159,7 @@ conda run --no-capture-output -n meowbench python scripts/evaluate_homesentinel_
   --output runs/homesentinel_b_icl_event_home10_fullvideo.jsonl --overwrite
 ```
 
-### SVCBench B
+### Legacy unmatched SVCBench B smoke
 
 ```bash
 SVC_ROOT=/data/quzitsix/svcbench_subset bash scripts/download_svcbench_subset.sh
@@ -152,7 +172,12 @@ CUDA_VISIBLE_DEVICES=4 conda run --no-capture-output -n meowbench python scripts
   --output runs/svcbench_0030_stride4.jsonl
 ```
 
-### C-PNG（fixture schema v2）symbolic、strict MCQ 与 V-JEPA
+### C-real SVCBench matched-prefix
+
+真实视频的下载、分片运行与 strict summarizer 命令见
+[`SVCBENCH_REAL_VIDEO.md`](SVCBENCH_REAL_VIDEO.md)。只有通过该页所列协议审计的产物才进入当前主结果。
+
+### C-PNG 机制诊断（fixture schema v2）symbolic、strict MCQ 与 V-JEPA
 
 ```bash
 conda run --no-capture-output -n meowbench python scripts/prepare_experiment_c.py \
@@ -208,8 +233,8 @@ done
 
 ## 当前决策与下一步
 
-1. 不把 A 的空结果、C1 symbolic 分数或 C3 的监督 readout 分数写成真实零样本视觉预测能力。
-2. B 的下一轮优先做等帧预算 Spatial-TTT：同一 2 frames/video、同一 query cutoff，避免把更多 Spatial 写入帧误认为 memory gain。
-3. C-PNG 的全 12-episode、统一逐题协议已经完成；下一轮应接入 visual explicit last-write control 和 StreamTTT 的 memory/bypass paired run，然后迁移到无文字的 C-real 视频。
-4. 现有 C2 中完整 Spatial 比 slow-only 少 3/180。继续扩大同类 PNG 卡数量的价值有限，应先检查写入目标、readout scale、层覆盖范围和跨 chunk position offset，再决定是否增加模型尺寸或训练量。
-5. V-JEPA 下一轮应分别测试 frozen encoder + explicit state 和 frozen encoder + recurrent state，并使用与 Spatial 相同的观测边界；当前监督 readout 只给出表征上限。
+1. 当前主要 C 评测是真实视频 matched-prefix SVCBench；在 strict summarizer 通过前不填入或解读未完成的数字。
+2. 后续优先扩大 source-video 数，并在五臂共享观测边界的前提下做采样率/分辨率消融；不把同一视频中的相关 query 当作独立证据。
+3. 旧 HomeSentinel 和 `simulated/0030` 结果因预算或视觉前缀不匹配而只作历史诊断；如重做，必须使用相同 query cutoff 和真实帧集合。
+4. C-PNG 的 symbolic、五臂 MCQ 和 V-JEPA/pixel readout 只用于机制或表征诊断；继续扩大同类文字卡的价值有限。
+5. 若将 V-JEPA、visual explicit state 或 StreamTTT 接入真实视频对照，必须使用与 Spatial 相同的观测边界，并单独报告其监督条件。

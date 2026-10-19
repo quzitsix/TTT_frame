@@ -7,6 +7,7 @@ set -euo pipefail
 
 ROOT_DIR=${SVC_ROOT:-/data/quzitsix/svcbench_subset}
 REPO_ID=${SVC_REPO_ID:-buaaplay/SVCBench}
+REVISION=${SVC_REVISION:-main}
 VIDEO_SPEC=${SVC_VIDEOS:-simulated/0030.mp4}
 SCRIPT_DIR=$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)
 
@@ -33,16 +34,16 @@ if [[ ${#VIDEO_ARGS[@]} -eq 0 ]]; then
   exit 2
 fi
 
-echo "Downloading SVCBench annotations only: $REPO_ID"
-"${PYTHON[@]}" - "$REPO_ID" "$ROOT_DIR" <<'PY'
+echo "Downloading SVCBench annotations only: $REPO_ID@$REVISION"
+"${PYTHON[@]}" - "$REPO_ID" "$REVISION" "$ROOT_DIR" <<'PY'
 from pathlib import Path
 import shutil
 import sys
 from huggingface_hub import hf_hub_download
 
-repo, root = sys.argv[1], Path(sys.argv[2])
+repo, revision, root = sys.argv[1], sys.argv[2], Path(sys.argv[3])
 source = Path(hf_hub_download(repo, "vcbench_eval.jsonl", repo_type="dataset",
-                               local_dir=str(root)))
+                               revision=revision, local_dir=str(root)))
 target = root / "vcbench_eval.jsonl"
 if source.resolve() != target.resolve():
     shutil.copy2(source, target)
@@ -57,17 +58,18 @@ echo "Preparing grouped trajectories: ${VIDEO_LIST[*]}"
   "${VIDEO_ARGS[@]}"
 
 echo "Downloading selected source videos (one file per requested video)"
-"${PYTHON[@]}" - "$REPO_ID" "$ROOT_DIR" "$SUBSET_DIR/download_manifest.txt" <<'PY'
+"${PYTHON[@]}" - "$REPO_ID" "$REVISION" "$ROOT_DIR" "$SUBSET_DIR/download_manifest.txt" <<'PY'
 from pathlib import Path
 import sys
 from huggingface_hub import hf_hub_download
 
-repo, root, manifest = sys.argv[1], Path(sys.argv[2]), Path(sys.argv[3])
+repo, revision, root, manifest = sys.argv[1], sys.argv[2], Path(sys.argv[3]), Path(sys.argv[4])
 for line in manifest.read_text(encoding="utf-8").splitlines():
     rel = line.strip()
     if not rel:
         continue
-    path = hf_hub_download(repo, rel, repo_type="dataset", local_dir=str(root))
+    path = hf_hub_download(repo, rel, repo_type="dataset", revision=revision,
+                           local_dir=str(root))
     print(path)
 PY
 

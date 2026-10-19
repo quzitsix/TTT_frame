@@ -9,12 +9,15 @@ that writes visual representations directly into recurrent fast weights.
 包含参数分布、A/B 与 attention 的连接、模型改动、记忆生命周期，以及本机
 `meowbench` 环境的核对结果（2026-09-14）。
 
-当前预测型 TTT 的 A/B/C 总结、完整 C-PNG 五臂结果与后续架构调研分别见
-[`PREDICTIVE_TTT_EXPERIMENTS_RESULTS.md`](docs/PREDICTIVE_TTT_EXPERIMENTS_RESULTS.md)、
-[`EXPERIMENT_C_RESULTS.md`](docs/EXPERIMENT_C_RESULTS.md) 和
-[`PREDICTIVE_TTT_ALTERNATIVES.md`](docs/PREDICTIVE_TTT_ALTERNATIVES.md)。官方冻结
-V-JEPA 2 的分组监督 probe、pixel 对照与部署细节见
-[`JEPA_BASELINE.md`](docs/JEPA_BASELINE.md)。
+当前主要视觉 C 评测是 Natural9 多来源真实视频的 matched-prefix SVCBench；其中另保留
+3 段 Ego4D 作为严格第一人称子集。协议、结果与复现方式见
+[`SVCBENCH_REAL_VIDEO.md`](docs/SVCBENCH_REAL_VIDEO.md)。
+预测型 TTT 的 A/B/C 总结与后续架构调研分别见
+[`PREDICTIVE_TTT_EXPERIMENTS_RESULTS.md`](docs/PREDICTIVE_TTT_EXPERIMENTS_RESULTS.md) 和
+[`PREDICTIVE_TTT_ALTERNATIVES.md`](docs/PREDICTIVE_TTT_ALTERNATIVES.md)。旧 C-PNG 五臂结果保留为
+[`C-PNG 机制诊断`](docs/EXPERIMENT_C_RESULTS.md)；官方冻结 V-JEPA 2 的分组监督
+probe、pixel 对照与部署细节见 [`JEPA_BASELINE.md`](docs/JEPA_BASELINE.md)，
+该实验只作表征诊断。
 
 ## Spatial-TTT direct visual parameter memory (2026-09-14)
 
@@ -384,8 +387,9 @@ is tight; `--gradient-checkpointing` applies to the text training pass.
 
 ### What to measure next
 
-Start with real first-person clips from the already prepared suite, preferably
-an automatically scored subset. Inspect zero-frame sessions, malformed QA
+For the LoRA/MEOWBench branch, start with real first-person clips from the
+already prepared suite, preferably an automatically scored subset. Inspect
+zero-frame sessions, malformed QA
 (`caption_only_chunks`), truncation, errors and video revocation before reading
 accuracy. Compare memory against blind and base-read; then add the existing
 `hf_vlm --context-mode memory` notes baseline and the video oracle. Their current

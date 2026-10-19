@@ -1,6 +1,7 @@
-# Experiment C-PNG：受控物体状态、跨场景记忆与下一步预测
+# Experiment C-PNG：受控物体状态、跨场景记忆与下一步预测（历史机制诊断）
 
 > 当前实验是由文字事件卡组成的合成机制测试（PNG-card proxy），不是家庭第一人称真实视频结果。它适合检查状态写入、跨场景保持和读取接口是否工作，不能证明模型已经学会现实世界中的视觉记忆或未来预测。
+> 当前主要视觉 C 评测已切换到 [SVCBench 真实视频 matched-prefix 协议](SVCBENCH_REAL_VIDEO.md)。
 
 ## 1. 正式协议
 
@@ -31,7 +32,7 @@ fixture schema v2 把未来事件单独保存为 `future_event`，它不属于 `
 
 当前 12 个 episode 并不对应 12 个相互独立的内容样本：按任一 condition 下的完整可观测事件流合并 exact duplicate 后，跨条件联合形成 **9 个 exact-content clusters**。监督 readout 和配对统计必须至少按这些 cluster 隔离，不能把 episode ID 直接当作独立划分单位；但 cluster 之间仍共享确定性的生成周期，也不能视为 9 个独立同分布随机样本。
 
-生成器还保留了几项可被模型利用的结构捷径。`moved_object`、最终位置和最终状态随 episode index 按 `% 3` 同步循环，因此模型可能从模板规律恢复标签，而不需要形成持久记忆；`filler_only_control` 的 PNG 又直接显示 `control distractor`、`actor: control` 和 `control_records: 4` 等内部控制字段。最后，`same_scene_control` 除了去掉背景变化，还把两个 location 文本从 `living room shelf`、`side table` 缩短为 `shelf`、`table`，所以 relocated 与 same-scene 的差异不是纯场景 cue 干预。正式结果只能作为当前 schema v2 的机制诊断；后续 schema v3/C-real 需要去除这些周期、内部标记和文本差异。
+生成器还保留了几项可被模型利用的结构捷径。`moved_object`、最终位置和最终状态随 episode index 按 `% 3` 同步循环，因此模型可能从模板规律恢复标签，而不需要形成持久记忆；`filler_only_control` 的 PNG 又直接显示 `control distractor`、`actor: control` 和 `control_records: 4` 等内部控制字段。最后，`same_scene_control` 除了去掉背景变化，还把两个 location 文本从 `living room shelf`、`side table` 缩短为 `shelf`、`table`，所以 relocated 与 same-scene 的差异不是纯场景 cue 干预。正式结果只能作为当前 schema v2 的机制诊断。当前 C-real 主评测改用了真实视频的前缀计数任务，而不是这套 fixture 的 schema v3；两者任务不同，分数不能直接比较。
 
 ## 2. Symbolic memory 结果
 
@@ -208,7 +209,7 @@ Pixel control 在 relocated 和 same-scene 中都高于 V-JEPA 2；filler-only �
 - `runs/experiment_c_jepa_v2_same_scene_12ep_16f.json`
 - `runs/experiment_c_jepa_v2_filler_only_12ep_16f.json`
 
-## 5. 当前可以得出的结论
+## 5. C-PNG 内部可以得出的结论
 
 | 实验层次 | 当前证据 | 能回答的问题 |
 |---|---|---|
@@ -218,8 +219,8 @@ Pixel control 在 relocated 和 same-scene 中都高于 V-JEPA 2；filler-only �
 
 当前最稳定的发现是：LaCT symbolic memory 确实保留了一部分状态，但 scene cue 变化会损害 owner 和组合式 next-action 读取；Qwen3-VL ICL 在 C-PNG 上明显高于配对 blind，说明卡片中有可读信息；官方 Spatial-TTT 的 episode fast update 比 slow-only 低 3/180，当前没有正向 memory 证据；V-JEPA 2 能提供可分特征，但没有超过相同 readout 下的低分辨率像素。这三类分数来自不同的监督和读取条件，不应直接排名。
 
-下一步按以下顺序推进：
+本页的后续工作只用于进一步定位机制：
 
 1. **Visual explicit**：在同一 16-card 协议上增加可审计的显式状态表/检索基线，将视觉读取错误与记忆写入错误分开。
 2. **StreamTTT**：以相同 future-withheld、同帧序列和 fast/slow-only 消融接入预测式 TTT 对照，测量在线更新本身的增益。
-3. **C-real**：将文字 PNG 卡替换为受控的真实或写实第一人称视频，按 house、scene 和 object identity 划分数据，继续保持 future target 隐藏、配对问题和可审计预算。
+3. **真实视频主评测**：扩展 [SVCBench matched-prefix 协议](SVCBENCH_REAL_VIDEO.md)的 source-video 覆盖与采样率消融；不将它与本页 C-PNG 分数做直接排名。

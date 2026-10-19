@@ -1,0 +1,172 @@
+{
+  "schema": "ttt_frame.svcbench_real_selection/1",
+  "name": "SVCBench natural-video 9-video multi-source matched-frame suite",
+  "dataset_repo": "buaaplay/SVCBench",
+  "dataset_revision": "4c9bd87ef3b0f269ca8b4503c081f5f38bc1fc9a",
+  "annotation_sha256": "5537dc652e2d9329baeb3f303a08242261fe0cc6194ff5d43bea0f2fe48a9e82",
+  "source_type": "non-simulated SVCBench video sources from Ego4D, ARKitScenes, ScanNet, ScanNet++, RoomTour3D, CODa, and YouTube; capture style ranges from continuous egocentric footage and scan sequences to edited web video",
+  "selection_policy": "Nine non-TOMATO, non-simulated source videos chosen to broaden camera motion, indoor scanning, driving, room-tour, and edited-video counting beyond the three-video Ego4D pilot.",
+  "artifact_hash_provenance": "Each video sha256 is the Git-LFS SHA-256 reported by Hugging Face at dataset_revision and was independently reproduced from the downloaded local bytes under /data/quzitsix/svcbench_real_natural9_v1 on 2026-10-19. The strict result summarizer recomputes these hashes again before accepting results.",
+  "videos": [
+    {
+      "video": "Ego4D/b71f48ff-db06-42d4-a49b-b58d7f4ba7e1.mp4",
+      "sha256": "626a05cb0f9eae0168d1519e8a528ba70e986fbda5ba5354ea4891f4fa24c8d7",
+      "size_bytes": 84196439,
+      "question_ids": ["0650", "0651"],
+      "question_point_counts": {"0650": 5, "0651": 4},
+      "semantic_families": {"0650": "door_passage", "0651": "door_passage"}
+    },
+    {
+      "video": "Ego4D/e5d94463-f292-451d-8d7c-0926001da4e1.mp4",
+      "sha256": "20e69921ce528d78376cb2d9a11286f3ce1b1924af31e17f527b8bb674b158d8",
+      "size_bytes": 121706587,
+      "question_ids": ["0661", "0662", "0663"],
+      "question_point_counts": {"0661": 3, "0662": 3, "0663": 3},
+      "semantic_families": {
+        "0661": "vehicle_turn_any",
+        "0662": "vehicle_turn_any",
+        "0663": "vehicle_turn_right"
+      }
+    },
+    {
+      "video": "Ego4D/20f345f7-d592-4d52-851f-3ee4544a847d.mp4",
+      "sha256": "16095b9511cdc1489997baa3a951909a0a3b596af2eddea475c8b622c48dc714",
+      "size_bytes": 94950911,
+      "question_ids": ["0826", "0827"],
+      "question_point_counts": {"0826": 3, "0827": 3},
+      "semantic_families": {
+        "0826": "intersection_passage",
+        "0827": "bicycle_turn_uturn"
+      }
+    },
+    {
+      "video": "arkitscenes/42898849.mp4",
+      "sha256": "00893c0b5ff1378f838b0d422ffc9262707a81791e2126af144b6aa9281cf142",
+      "size_bytes": 18072874,
+      "question_ids": ["0011", "0219", "0220", "0481", "0482", "0483", "0484"],
+      "question_point_counts": {
+        "0011": 3,
+        "0219": 4,
+        "0220": 4,
+        "0481": 1,
+        "0482": 1,
+        "0483": 1,
+        "0484": 1
+      },
+      "semantic_families": {
+        "0011": "visible_chairs_snapshot",
+        "0219": "cumulative_unique_chairs",
+        "0220": "cumulative_unique_tables",
+        "0481": "novel_lamps_recent_4s",
+        "0482": "novel_lamps_recent_7s",
+        "0483": "novel_lamps_recent_4s",
+        "0484": "novel_chandeliers_recent_4s"
+      }
+    },
+    {
+      "video": "scannet/scene0645_00.mp4",
+      "sha256": "6da9a9ce5a44af8cf01dc3e4ca00d1725f324585762718a2db076a2d51b03b47",
+      "size_bytes": 24595330,
+      "question_ids": ["0069", "0167", "0395", "0396", "0397", "0398", "0399", "0534", "0535"],
+      "question_point_counts": {
+        "0069": 3,
+        "0167": 1,
+        "0395": 4,
+        "0396": 4,
+        "0397": 4,
+        "0398": 3,
+        "0399": 3,
+        "0534": 1,
+        "0535": 1
+      },
+      "semantic_families": {
+        "0069": "visible_pillows_snapshot",
+        "0167": "new_pillows_recent_10s",
+        "0395": "cumulative_unique_pillows",
+        "0396": "cumulative_unique_lamps",
+        "0397": "cumulative_unique_backpacks",
+        "0398": "cumulative_unique_mirrors",
+        "0399": "cumulative_unique_trash_receptacles",
+        "0534": "novel_pillows_recent_55s",
+        "0535": "novel_lamps_recent_62s"
+      }
+    },
+    {
+      "video": "scannetpp/5eb31827b7.mp4",
+      "sha256": "a1949367df7a78e58b9f6035e94f2928b9ed181b7df3df2a3e733b67fd2290e7",
+      "size_bytes": 20805336,
+      "question_ids": ["0116", "0117", "0261", "0262", "0263", "0264", "0265", "0496", "0836"],
+      "question_point_counts": {
+        "0116": 1,
+        "0117": 1,
+        "0261": 3,
+        "0262": 4,
+        "0263": 2,
+        "0264": 4,
+        "0265": 4,
+        "0496": 1,
+        "0836": 4
+      },
+      "semantic_families": {
+        "0116": "new_monitors_recent_2s",
+        "0117": "new_bottles_recent_6s",
+        "0261": "cumulative_unique_whiteboards",
+        "0262": "cumulative_unique_monitors",
+        "0263": "cumulative_unique_computer_mice",
+        "0264": "cumulative_unique_trash_receptacles",
+        "0265": "cumulative_unique_laptops",
+        "0496": "novel_screens_recent_3s",
+        "0836": "under_table_appearance_episode"
+      }
+    },
+    {
+      "video": "RoomTour3D/B8Y35YnKONk.mp4",
+      "sha256": "17bd9f504af979a912549cecd0847975a50d16d5ec47fa867eaca11c8aca186b",
+      "size_bytes": 123849561,
+      "question_ids": ["0039", "0610", "0854"],
+      "question_point_counts": {"0039": 3, "0610": 4, "0854": 3},
+      "semantic_families": {
+        "0039": "visible_pillows_snapshot",
+        "0610": "door_passage",
+        "0854": "bedroom_appearance_episode"
+      }
+    },
+    {
+      "video": "CODa_full/6.mp4",
+      "sha256": "5e7a60a7d718b446abedd1bf9dcb0e644e97d478ee901995dfa4810137208a28",
+      "size_bytes": 142953515,
+      "question_ids": ["0759", "0837"],
+      "question_point_counts": {"0759": 3, "0837": 4},
+      "semantic_families": {
+        "0759": "scene_transition",
+        "0837": "white_car_appearance_episode"
+      }
+    },
+    {
+      "video": "youtube/youtube_0019.mp4",
+      "sha256": "b7e237625a6dfffc4fdf93d12f855de63f6c52225dbaca9f800ed038a972a192",
+      "size_bytes": 16402161,
+      "question_ids": ["0761", "0762", "0851", "0852", "0853"],
+      "question_point_counts": {"0761": 5, "0762": 5, "0851": 4, "0852": 3, "0853": 4},
+      "semantic_families": {
+        "0761": "scene_transition",
+        "0762": "jump_cut",
+        "0851": "little_penguin_closeup_episode",
+        "0852": "penguin_waddling_closeup_episode",
+        "0853": "adult_penguin_shelter_baby_closeup_episode"
+      }
+    }
+  ],
+  "n_videos": 9,
+  "n_questions": 42,
+  "n_semantic_families": 35,
+  "n_query_points": 125,
+  "semantic_family_policy": "Merge only clear paraphrases or the same counting target: door passage across Ego4D and RoomTour3D; unrestricted vehicle turning; pillow snapshots; four-second novel-lamp windows; cumulative unique trash bins/cans; and scene-transition wording across CODa and YouTube. Keep related but non-equivalent targets such as right turns, U-turns, jump cuts, and distinct penguin shots separate.",
+  "intended_matched_prefix_protocol": {
+    "cutoff_margin_sec": 0.0,
+    "sample_fps": 1.0,
+    "max_frames": 512,
+    "time_zero_policy": "A query at t=0 may use frame 0 and never receives a frame after its query timestamp."
+  },
+  "evaluation_note": "Questions and query points from one source video are correlated. Report question-, semantic-family-, and source-video-macro metrics; do not treat 125 query points as independent samples. Ten trajectories contain one query point and therefore cannot support trajectory-change metrics. The formal matched-prefix run uses cutoff_margin_sec=0, 1 fps, and at most 512 frames, so the t=0 query observes frame 0 rather than becoming an empty-prefix case."
+}
