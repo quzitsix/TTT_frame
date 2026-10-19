@@ -9,6 +9,13 @@ that writes visual representations directly into recurrent fast weights.
 包含参数分布、A/B 与 attention 的连接、模型改动、记忆生命周期，以及本机
 `meowbench` 环境的核对结果（2026-09-14）。
 
+当前预测型 TTT 的 A/B/C 总结、完整 C-PNG 五臂结果与后续架构调研分别见
+[`PREDICTIVE_TTT_EXPERIMENTS_RESULTS.md`](docs/PREDICTIVE_TTT_EXPERIMENTS_RESULTS.md)、
+[`EXPERIMENT_C_RESULTS.md`](docs/EXPERIMENT_C_RESULTS.md) 和
+[`PREDICTIVE_TTT_ALTERNATIVES.md`](docs/PREDICTIVE_TTT_ALTERNATIVES.md)。官方冻结
+V-JEPA 2 的分组监督 probe、pixel 对照与部署细节见
+[`JEPA_BASELINE.md`](docs/JEPA_BASELINE.md)。
+
 ## Spatial-TTT direct visual parameter memory (2026-09-14)
 
 The new [`Spatial-TTT implementation guide`](docs/SPATIAL_TTT.md) explains the

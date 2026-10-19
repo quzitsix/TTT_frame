@@ -15,12 +15,22 @@ key/value association.  The same event stream is evaluated with:
 ``none``
     no writes and no retained state (coverage is zero).
 
-The ``relocated`` and ``same_scene_control`` conditions share the number of
-events and filler writes.  Only the scene prefix of the query key changes.
-``filler_only_control`` removes the move event, so it measures ordinary
-filler/retention rather than a state update.  ``--scene-drift-strength 0`` is
-the invariant-object control; a positive value tests whether a scene change
-damages the retrieval cue.  No network or model download is required.
+The ``relocated`` and ``same_scene_control`` conditions share the same event
+and write budgets.  In fixture schema v2, the same-scene transform also maps
+two room-specific location names to shorter scene-A names, so their difference
+is a matched relocation-condition package rather than a pure scene-cue effect.
+``filler_only_control`` replaces the target move with unrelated writes under
+the same budget, so it measures ordinary retention rather than a state update.
+``--scene-drift-strength 0`` is the invariant-object control; a positive value
+tests whether a scene change damages the retrieval cue.  No network or model
+download is required.
+
+V2 stores the future ``forecast`` record as a sidecar target rather than an
+observed event.  The evaluator also filters it from legacy manifests.
+``next_action`` is composed from the retained moved-status, owner and
+final-location bindings under the public policy "an owner checks the object's
+final location after a move".  It is therefore a state-conditioned prediction
+rather than recall of a supplied future label.
 
 Examples
 --------
@@ -138,6 +148,10 @@ def condition_stream(episode: dict[str, Any], condition: str) -> tuple[list[dict
         transformed: list[dict[str, Any]] = []
         for event in events:
             if event["kind"] == "scene_change":
+                transformed.append({
+                    "kind": "scene_continue", "scene": "A", "time": int(event["time"]),
+                    "from_scene": "A", "to_scene": "A",
+                })
                 continue
             event["scene"] = "A"
             for field in ("location", "from_location", "to_location"):
@@ -154,10 +168,32 @@ def condition_stream(episode: dict[str, Any], condition: str) -> tuple[list[dict
                 answers[str(query["id"])] = query["answer"].replace("living room shelf", "shelf").replace("side table", "table")
         return transformed, answers
     if condition == "filler_only_control":
-        # Preserve all unrelated events but omit the move.  This gives a clean
-        # retention control for location/state/mover questions.
-        transformed = [event for event in events
-                       if event["kind"] not in {"scene_change", "move", "forecast"}]
+        # Match the event-card and key/value write budgets while removing the
+        # target move.  The scene marker becomes a same-scene marker and the
+        # four move bindings become four unrelated filler bindings.
+        transformed = []
+        for original in events:
+            if original["kind"] == "forecast":
+                continue
+            if original["kind"] == "scene_change":
+                transformed.append({
+                    "kind": "scene_continue", "scene": "A", "time": int(original["time"]),
+                    "from_scene": "A", "to_scene": "A",
+                })
+                continue
+            if original["kind"] == "move":
+                transformed.append({
+                    "kind": "filler", "scene": "A", "time": int(original["time"]),
+                    "object": "control distractor", "location": "A/counter",
+                    "state": "intact", "actor": "control", "control_records": 4,
+                })
+                continue
+            event = _copy_event(original)
+            event["scene"] = "A"
+            for field in ("location", "from_location", "to_location"):
+                if field in event:
+                    event[field] = _map_location(str(event[field]), "A")
+            transformed.append(event)
         answers = dict(query_gold)
         initial = next(event for event in transformed
                        if event.get("kind") == "place" and event.get("object") == moved)
@@ -182,19 +218,25 @@ def event_records(event: dict[str, Any]) -> list[tuple[str, str, str, str]]:
     scene = str(event.get("scene", "A"))
     obj = str(event.get("object", ""))
     if kind == "place":
-        return [("location", obj, str(event["location"]), scene)]
+        return [("location", obj, str(event["location"]), scene),
+                ("state", obj, str(event.get("state", "intact")), scene),
+                ("mover", obj, "unknown", scene),
+                ("moved_status", obj, "not_moved", scene)]
     if kind == "owner":
         return [("owner", obj, str(event["owner"]), scene)]
     if kind == "move":
         return [("location", obj, str(event["to_location"]), scene),
                 ("mover", obj, str(event["actor"]), scene),
-                ("state", obj, str(event["state_after"]), scene)]
+                ("state", obj, str(event["state_after"]), scene),
+                ("moved_status", obj, "moved", scene)]
     if kind == "forecast":
         # The forecast is keyed by its actor; the query targets the moved object
         # and therefore receives a separate synthetic key below.
         return []
     if kind == "filler":
-        return [("filler", obj + "/" + str(event["time"]), str(event.get("state", "intact")), scene)]
+        count = max(1, int(event.get("control_records", 1)))
+        return [("filler", obj + "/" + str(event["time"]) + f"/{index}",
+                 str(event.get("state", "intact")), scene) for index in range(count)]
     return []
 
 
@@ -208,10 +250,6 @@ def query_key_and_label(query: dict[str, Any], answer: str, scene: str,
 def write_event(memory: Any, event: dict[str, Any], *, codebook: SemanticCodebook,
                 drift: float) -> None:
     records = event_records(event)
-    # Forecast is written under the object/relation query key so it is a real
-    # state read rather than a language-model prior.
-    if event.get("kind") == "forecast":
-        records = [("next_action", event.get("object", ""), str(event["action"]), str(event.get("scene", "B")))]
     if not records:
         return
     if isinstance(memory, LaCTMemory):
@@ -240,13 +278,39 @@ def decode_table(memory: ExplicitRetrieval, query: dict[str, Any], candidates: l
     return memory.read(codebook.key(str(query["type"]), str(query["object"]), scene, drift))
 
 
+def _relation_query(query: dict[str, Any], relation: str) -> dict[str, Any]:
+    return {"type": relation, "object": str(query["object"])}
+
+
+def predict_next_action(memory: Any, query: dict[str, Any], *, arm: str, scene: str,
+                        codebook: SemanticCodebook, drift: float,
+                        candidates: dict[str, list[str]]) -> str | None:
+    """Compose the held-out future action from retained current state."""
+    decoder = decode_lact if arm == "lact" else decode_table
+    moved = decoder(memory, _relation_query(query, "moved_status"),
+                    candidates["moved_status"], scene=scene,
+                    codebook=codebook, drift=drift)
+    if moved != "moved":
+        return "unknown"
+    owner = decoder(memory, _relation_query(query, "owner"), candidates["owner"],
+                    scene=scene, codebook=codebook, drift=drift)
+    location = decoder(memory, _relation_query(query, "location"), candidates["location"],
+                       scene=scene, codebook=codebook, drift=drift)
+    if owner is None or location is None:
+        return None
+    return f"{owner} checks the {str(location).split('/', 1)[-1]}"
+
+
 def _candidate_sets(episodes: list[dict[str, Any]]) -> dict[str, list[str]]:
-    result = {name: [] for name in QUERY_TYPES}
+    result = {name: [] for name in (*QUERY_TYPES, "moved_status")}
     for episode in episodes:
-        for query in episode["queries"]:
-            value = str(query["answer"])
-            if value not in result[query["type"]]:
-                result[query["type"]].append(value)
+        for condition in CONDITIONS:
+            events, _ = condition_stream(episode, condition)
+            for event in events:
+                for relation, _, value, _ in event_records(event):
+                    if relation in result and value not in result[relation]:
+                        result[relation].append(value)
+    result["moved_status"] = ["not_moved", "moved"]
     for name in QUERY_TYPES:
         for value in ("unknown",):
             if value not in result[name]:
@@ -256,7 +320,7 @@ def _candidate_sets(episodes: list[dict[str, Any]]) -> dict[str, list[str]]:
 
 def evaluate(args: argparse.Namespace) -> tuple[list[dict[str, Any]], dict[str, Any]]:
     manifest = json.loads(args.data.read_text(encoding="utf-8"))
-    if manifest.get("schema") != "experiment_c_relocation_v1":
+    if manifest.get("schema") not in {"experiment_c_relocation_v1", "experiment_c_relocation_v2"}:
         raise ValueError(f"unsupported manifest schema: {manifest.get('schema')}")
     episodes = manifest.get("episodes", [])
     if args.limit:
@@ -267,6 +331,8 @@ def evaluate(args: argparse.Namespace) -> tuple[list[dict[str, Any]], dict[str, 
     for condition in CONDITIONS:
         for episode in episodes:
             events, answers = condition_stream(episode, condition)
+            # The held-out future card must never be written to memory.
+            events = [event for event in events if event.get("kind") != "forecast"]
             for trial in range(args.trials):
                 trial_seed = args.seed + trial * 1009 + int(episode["seed"])
                 torch.manual_seed(trial_seed)
@@ -292,13 +358,27 @@ def evaluate(args: argparse.Namespace) -> tuple[list[dict[str, Any]], dict[str, 
                         elif arm == "none":
                             prediction = None
                         elif arm == "explicit_retrieval":
-                            prediction = decode_table(memories[arm], query, candidates[qtype],
-                                                      scene=query_scene, codebook=codebook,
-                                                      drift=args.scene_drift_strength)
+                            if qtype == "next_action":
+                                prediction = predict_next_action(
+                                    memories[arm], query, arm=arm, scene=query_scene,
+                                    codebook=codebook, drift=args.scene_drift_strength,
+                                    candidates=candidates,
+                                )
+                            else:
+                                prediction = decode_table(memories[arm], query, candidates[qtype],
+                                                          scene=query_scene, codebook=codebook,
+                                                          drift=args.scene_drift_strength)
                         else:
-                            prediction = decode_lact(memories[arm], query, candidates[qtype],
-                                                     scene=query_scene, codebook=codebook,
-                                                     drift=args.scene_drift_strength)
+                            if qtype == "next_action":
+                                prediction = predict_next_action(
+                                    memories[arm], query, arm=arm, scene=query_scene,
+                                    codebook=codebook, drift=args.scene_drift_strength,
+                                    candidates=candidates,
+                                )
+                            else:
+                                prediction = decode_lact(memories[arm], query, candidates[qtype],
+                                                         scene=query_scene, codebook=codebook,
+                                                         drift=args.scene_drift_strength)
                         rows.append({
                             "episode_id": episode["episode_id"], "condition": condition,
                             "trial": trial, "query_id": qid, "query_type": qtype,
@@ -310,10 +390,12 @@ def evaluate(args: argparse.Namespace) -> tuple[list[dict[str, Any]], dict[str, 
                             "scene_drift_strength": args.scene_drift_strength,
                         })
     summary: dict[str, Any] = {
-        "schema": "experiment_c_result_v1", "data": str(args.data),
+        "schema": "experiment_c_result_v2", "data": str(args.data),
         "episodes": len(episodes), "trials": args.trials, "dim": args.dim,
         "head_dim": args.head_dim, "base_lr": args.base_lr,
         "scene_drift_strength": args.scene_drift_strength,
+        "forecast_event_withheld": True,
+        "next_action_policy": "after a move, the owner checks the object's final location",
         "by_arm_condition": {}, "by_arm_type": {},
     }
     for group_name, key_fields in (("by_arm_condition", ("arm", "condition")),
@@ -347,11 +429,13 @@ def write_report(path: Path, summary: dict[str, Any], rows: list[dict[str, Any]]
         "",
         "> This is a synthetic mechanism probe. It is not a result on real household video.",
         "",
-        "The fixture writes object–location, object–owner, mover, state and next-action events. "
-        "`relocated` and `same_scene_control` contain the same number of writes; the query cue "
-        "has a different scene component only in the former. `filler_only_control` removes the "
-        "move to measure ordinary retention. `explicit_retrieval` is a fixed-size table control, "
-        "and `oracle` is a ceiling.",
+        "The observed stream writes object–location, object–owner, mover and state events. "
+        "The held-out future event is never written. `next_action` is composed from retained "
+        "moved-status, owner and final-location bindings under a fixed public policy. "
+        "`relocated`, `same_scene_control` and `filler_only_control` each contain 16 event cards "
+        "and 27 key/value writes. The relocated/same-scene contrast also changes two "
+        "room-specific location strings, so it is not a pure scene-cue intervention. "
+        "`explicit_retrieval` is a fixed-size table control, and `oracle` is a ceiling.",
         "",
         f"- Episodes: **{summary['episodes']}**; trials: **{summary['trials']}**",
         f"- Semantic code dimension: **{summary['dim']}**; scene drift strength: **{summary['scene_drift_strength']}**",
@@ -366,9 +450,16 @@ def write_report(path: Path, summary: dict[str, Any], rows: list[dict[str, Any]]
         arm, condition = key.split("::")
         lines.append(f"| {arm} | {condition} | {metric['n']} | {metric['coverage']:.3f} | "
                      f"{metric['accuracy'] if metric['accuracy'] is not None else '—'} |")
+    lines += ["", "## Accuracy by query type", "",
+              "| arm | query type | n | coverage | accuracy |", "|---|---|---:|---:|---:|"]
+    for key, metric in summary["by_arm_type"].items():
+        arm, query_type = key.split("::")
+        lines.append(f"| {arm} | {query_type} | {metric['n']} | {metric['coverage']:.3f} | "
+                     f"{metric['accuracy'] if metric['accuracy'] is not None else '—'} |")
     lines += ["", "## Relocated minus same-scene accuracy", "",
-              "A negative value means the scene change hurt this query type under the chosen "
-              "cue drift. It is a diagnostic, not a claim about real video.", "",
+              "A negative value means the full relocated condition hurt this query type. "
+              "Because two location strings also change, this is not a pure scene-cue effect "
+              "and remains a diagnostic rather than a claim about real video.", "",
               "| arm | query type | delta |", "|---|---|---:|"]
     for key, delta in summary["paired_relocated_minus_same_scene"].items():
         arm, qtype = key.split("::")
@@ -376,9 +467,11 @@ def write_report(path: Path, summary: dict[str, Any], rows: list[dict[str, Any]]
     lines += ["", "## Interpretation boundary", "",
               "The codebook removes OCR and visual encoder confounds so this run answers only "
               "whether a fixed-size associative state can retain bindings through filler and a "
-              "scene-key change. A VLM follow-up should render the same event manifest into a "
-              "video and repeat the conditions with equal frame budgets. `none` has zero coverage "
-              "by design; it is a blind control, not a failed model run.", ""]
+              "relocation-condition change. A VLM follow-up should render the same event manifest into a "
+              "video and repeat the conditions with equal frame budgets. The next-action score "
+              "tests state-conditioned composition under the stated policy, not open-world action "
+              "forecasting. `none` has zero coverage by design; it is a blind control, not a "
+              "failed model run.", ""]
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text("\n".join(lines), encoding="utf-8")
 

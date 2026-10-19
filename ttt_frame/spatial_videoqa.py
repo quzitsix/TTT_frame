@@ -140,6 +140,23 @@ class SpatialVideoMemory:
         self.state = "ready"
         self._clear_generation_state()
 
+    def discard_fast_state(self):
+        """Drop episode updates while preserving the stream position and ingest budget.
+
+        A later ``answer(..., use_memory=True)`` still uses the trained Spatial
+        read path, whose ``state=None`` behavior reads the checkpoint's learned
+        initial fast weights.  This is the proper slow-only ablation; in
+        contrast, ``use_memory=False`` bypasses the whole Spatial branch.
+        """
+        self._check_ready()
+        self.controller.reset()
+        self._clear_generation_state()
+        return {
+            "discarded_episode_fast_state": True,
+            "position_offset": self.position_offset,
+            "stats": dict(self.stats),
+        }
+
     def _check_ready(self):
         if self.state == "failed":
             raise RuntimeError("failed ingestion cannot be queried or resumed; reset or load a valid memory")

@@ -57,7 +57,10 @@ def build_episode(index: int, *, seed: int, filler_before: int, filler_after: in
     # Rotate rather than sample so every object is moved equally often across
     # the default twelve episodes.
     moved_object = objects[index % len(objects)]
-    mover = PEOPLE[(PEOPLE.index(owner_of[moved_object]) + 1 + index) % len(PEOPLE)]
+    # Always choose one of the two non-owners.  The old ``+ 1 + index`` rule
+    # wrapped back to the owner for every third episode, coupling the mover and
+    # owner questions and making that subset artificially easy.
+    mover = PEOPLE[(PEOPLE.index(owner_of[moved_object]) + 1 + (index % 2)) % len(PEOPLE)]
     final_location = LOCATIONS_B[index % len(LOCATIONS_B)]
     final_state = STATES[(index + 1) % len(STATES)]
 
@@ -102,10 +105,10 @@ def build_episode(index: int, *, seed: int, filler_before: int, filler_after: in
         t += 1
 
     next_action = f"{owner_of[moved_object]} checks the {final_location.split('/', 1)[1]}"
-    events.append(_event(
+    future_event = _event(
         "forecast", scene="B", time=t, actor=owner_of[moved_object],
         object=moved_object, action=next_action,
-    ))
+    )
 
     queries = [
         {"id": f"{index:03d}-location", "type": "location", "object": moved_object,
@@ -122,7 +125,8 @@ def build_episode(index: int, *, seed: int, filler_before: int, filler_after: in
     return {
         "episode_id": f"c-{index:03d}", "seed": _episode_seed(seed, index),
         "objects": objects, "people": list(PEOPLE), "moved_object": moved_object,
-        "mover": mover, "events": events, "queries": queries,
+        "mover": mover, "events": events, "future_event": future_event,
+        "queries": queries,
         "conditions": {
             "relocated": {"write_scene": "A", "query_scene": "B", "scene_changed": True},
             "same_scene_control": {"write_scene": "A", "query_scene": "A", "scene_changed": False},
@@ -169,6 +173,10 @@ def main() -> int:
     root = args.output_dir.resolve()
     frames = root / "frames"
     frames.mkdir(parents=True, exist_ok=True)
+    # This directory is generator-owned.  Clear every prior episode card so a
+    # later run with fewer episodes cannot leave misleading stale files.
+    for stale in frames.glob("c-*.png"):
+        stale.unlink()
     episodes = []
     for index in range(args.episodes):
         episode = build_episode(index, seed=args.seed,
@@ -181,13 +189,14 @@ def main() -> int:
             episode["frame_paths"].append(str(path.relative_to(root)))
         episodes.append(episode)
     manifest = {
-        "schema": "experiment_c_relocation_v1",
+        "schema": "experiment_c_relocation_v2",
         "seed": args.seed, "episodes": episodes,
         "protocol": {
             "filler_before": args.filler_before, "filler_after": args.filler_after,
             "conditions": ["relocated", "same_scene_control", "filler_only_control"],
             "query_types": ["location", "mover", "owner", "state", "next_action"],
-            "note": "Synthetic semantic-code control; PNG cards are for inspection and are not fed to the symbolic evaluator.",
+            "future_target_withheld": True,
+            "note": "Observed PNG cards exclude future_event; the symbolic evaluator also withholds it.",
         },
     }
     destination = root / "manifest.json"

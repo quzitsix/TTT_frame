@@ -90,6 +90,22 @@ def test_short_video_tail_is_padded_for_qwen_temporal_processor():
     assert padded_timestamps == [7.0, 7.001, 7.002]
 
 
+def test_discard_fast_state_preserves_position_for_slow_only_readout():
+    engine = tiny_video_engine()
+    engine.ingest_frames(frames("red"), [0, 0.5])
+    position = engine.position_offset
+    stats = dict(engine.stats)
+    assert engine.controller.memory_state_dict()
+    report = engine.discard_fast_state()
+    assert not engine.controller.memory_state_dict()
+    assert engine.position_offset == position
+    assert engine.stats == stats
+    assert report["discarded_episode_fast_state"]
+    assert report["position_offset"] == position
+    assert engine.answer("Where is the mug?", use_memory=True)
+    assert not engine.controller.memory_state_dict()
+
+
 def assert_no_observation_history(engine):
     forbidden = {"notes", "frames", "images", "observations", "video_path", "teacher", "optimizer"}
     assert not forbidden.intersection(vars(engine))
