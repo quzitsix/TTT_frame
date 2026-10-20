@@ -21,6 +21,10 @@ Natural9 多来源真实视频 matched-prefix SVCBench 已完成，现保留为 
 probe、pixel 对照与部署细节见 [`JEPA_BASELINE.md`](docs/JEPA_BASELINE.md)，
 该实验只作表征诊断。
 
+IdeaX 五项预测记忆方案的代码可行性筛选、已实现的 delayed residual/key transport/
+inverse-address preflight，以及 HomeSentinel 人工核验队列见
+[`IDEAX_IMPLEMENTATION_ROADMAP.md`](docs/IDEAX_IMPLEMENTATION_ROADMAP.md)。
+
 ## Spatial-TTT direct visual parameter memory (2026-09-14)
 
 The new [`Spatial-TTT implementation guide`](docs/SPATIAL_TTT.md) explains the
