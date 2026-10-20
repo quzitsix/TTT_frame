@@ -1,11 +1,13 @@
-# C-real：SVCBench 真实视频 matched-prefix 评测
+# SVCBench Natural9：真实视频 matched-prefix counting 诊断
 
-> **主实验是 Natural9。**它包含 9 段非模拟真实图像视频、7 种来源、42 条
+> **本 counting 诊断的主数据是 Natural9。**它包含 9 段非模拟真实图像视频、7 种来源、42 条
 > question trajectories、35 个语义族和 125 个 query points。Natural9 已完成 625 行
 > 五臂评测；本文数值来自通过协议审计的 strict summarizer 产物，不是手工估计。
 >
 > 3 段 Ego4D 已完成的实验保留为严格第一人称 pilot/subset，用来验证协议和给出先行信号，
-> 不再代表 C-real 的主结论。
+> 不代表更广的第一人称长期记忆结论。该任务现归入实验 B3；实验 C 改为非 counting 的
+> 时间顺序、latest-state、延迟绑定和未来预测，见
+> [`VIDEO_MEMORY_ARCHITECTURE_COMPARISON.md`](VIDEO_MEMORY_ARCHITECTURE_COMPARISON.md)。
 
 ## 1. 为什么改用真实视频
 
@@ -13,12 +15,12 @@
 中的文字、颜色、固定版式和生成周期都是强线索，模型可以读卡或利用模板。Spatial-TTT 在
 这种输入上的弱结果不能代表它处理连续真实画面的能力。
 
-C-real 改用 SVCBench 的真实图像视频。模型在每个查询时刻只能观察此前的视频前缀，回答
+Natural9 改用 SVCBench 的真实图像视频。模型在每个查询时刻只能观察此前的视频前缀，回答
 事件或物体“到目前为止出现了多少次”。它检验连续视觉识别、状态累积以及 episode 内
 test-time fast update。这个任务属于 **observed-prefix visual state/counting**，不是未来动作
 预测，也不是完整的家庭长期记忆基准。
 
-## 2. 主数据：Natural9
+## 2. 数据：Natural9
 
 Natural9 从 [SVCBench 官方数据](https://huggingface.co/datasets/buaaplay/SVCBench)中选择
 9 段非模拟、非 TOMATO 合成循环的视频。选择清单是
@@ -276,8 +278,8 @@ pilot 使用同一 matched-prefix 五臂协议和相同模型工件，仅包含 
 
 结果只能作为先行信号：Spatial fast 相比 slow-only 的 query exact 高 1/24（+4.17pp），
 question macro 高 4.76pp，但净改善集中在一个 Ego4D 骑行视频的 `vehicle_turn_any` 族；ICL
-也没有超过带时间提示的 blind。3 个相关 video clusters 无法支持泛化结论，Natural9 才是主
-实验。
+也没有超过带时间提示的 blind。3 个相关 video clusters 无法支持泛化结论；Natural9 是本
+counting 诊断的主数据。
 
 ## 8. 已知限制
 

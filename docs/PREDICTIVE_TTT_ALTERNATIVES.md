@@ -1,6 +1,11 @@
 # 预测视角下的 TTT、JEPA 与长期视觉记忆路线
 
-整理日期：2026-10-19
+整理日期：2026-10-20
+
+> 本文保留各算法的详细调研。统一架构矩阵、当前全部证据、可比性边界，以及 counting
+> 降级后的新实验 C 定义见
+> [`VIDEO_MEMORY_ARCHITECTURE_COMPARISON.md`](VIDEO_MEMORY_ARCHITECTURE_COMPARISON.md)。
+> 下文历史计划中的 `C-real` 现在统一称为 `C-temporal`。
 
 本文回答三个问题：
 
@@ -29,7 +34,7 @@
 
 [LaCT](https://arxiv.org/abs/2505.23884) 的大块更新让非线性 fast weights 能高效运行，并允许 Muon、动量和权重归一化；代价是同一个大 chunk 内的 token 被近似当作集合，细粒度先后顺序主要交给局部注意力和位置编码。实验 C 恰好需要“旧位置被新位置覆盖”“所有者不随移动改变”“状态更新发生在动作之后”，所以更新顺序、覆盖规则和长期稳定性都必须单独测。
 
-实验 C 的 runner 已经补齐 fixture schema v2 控制协议。视觉 runner 会分别渲染 `relocated`、`same_scene_control` 和 `filler_only_control`，三者使用相同 event-card 数量；`future_event` 只作为 sidecar target 保存，不属于观测流，runner 还会过滤 legacy fixture schema v1 manifest 中遗留的 `forecast` 事件。它包含 `blind`、Spatial slow-only 和 Spatial base-attention bypass，默认使用答案位置严格均衡的四选一题，并按 condition 与 query type 汇总；开放生成及其语义判分只保留为辅助诊断。symbolic runner 根据记忆中的 `moved_status + owner + final location` 和公开策略组合 `next_action`；三条件现已匹配事件数和 key-value 写入预算。因此 C-PNG 已能测场景迁移、普通 filler retention、未来标签泄漏和同 checkpoint 的 fast-memory paired gain。当前剩余限制是卡片仍以文字承载视觉信息，尚未接入 StreamTTT 和视觉 explicit table，也不能代替 C-real 的无文字场景或真实家庭视频。
+实验 C 的 runner 已经补齐 fixture schema v2 控制协议。视觉 runner 会分别渲染 `relocated`、`same_scene_control` 和 `filler_only_control`，三者使用相同 event-card 数量；`future_event` 只作为 sidecar target 保存，不属于观测流，runner 还会过滤 legacy fixture schema v1 manifest 中遗留的 `forecast` 事件。它包含 `blind`、Spatial slow-only 和 Spatial base-attention bypass，默认使用答案位置严格均衡的四选一题，并按 condition 与 query type 汇总；开放生成及其语义判分只保留为辅助诊断。symbolic runner 根据记忆中的 `moved_status + owner + final location` 和公开策略组合 `next_action`；三条件现已匹配事件数和 key-value 写入预算。因此 C-PNG 已能测场景迁移、普通 filler retention、未来标签泄漏和同 checkpoint 的 fast-memory paired gain。当前剩余限制是卡片仍以文字承载视觉信息，尚未接入 StreamTTT 和视觉 explicit table，也不能代替 C-temporal 的无文字场景或真实家庭视频。
 
 ## 2. 候选路线总表
 
@@ -90,7 +95,7 @@ older stream  -> E²-TTT fast weights -> 长期记忆
 
 当前 C-PNG 已完成官方冻结 V-JEPA 2 ViT-L probe。正式协议会对规范化后的完整观测事件流做哈希，并在测试每个 episode 时排除其整个 exact-content group；也就是 **leave-one-content-group-out** 监督 readout，而不是只排除同名 episode。三个 condition 分别有 10、10、9 个 content group；跨 condition 将任一条件下内容相同的 episode 合并后，12 个 episode 形成 **9 个 exact-content clusters**。这些 cluster 仍共享 `%3` 标签周期，不能视作 9 个独立随机样本。正式结果为 V-JEPA 2 **126/180 = 0.7000**，相同分组和 readout 下的低分辨率 pixel control 为 **132/180 = 0.7333**。此前普通 leave-one-episode-out 得到的 142/180 和 148/180 会让 exact duplicate 同时进入训练与测试，现只作为泄漏诊断保留。
 
-这个 probe 使用跨 episode 标签监督，没有持续在线状态，因此既不是 TTT，也没有证明 JEPA 具备长期记忆，更不能与 ICL 或 Spatial 的 zero-shot MCQ choice accuracy 直接排名。pixel control 更高还说明文字、颜色、固定布局和生成器规律已经提供强低层线索。下一步应把同一个 encoder 接到 explicit last-write table 与固定大小 recurrent/fast-weight state，并迁移到 C-real 的无文字、照片级或真实视频。ViT-L/256 可单卡运行；ViT-g/1B 只适合作为后续表征上限。
+这个 probe 使用跨 episode 标签监督，没有持续在线状态，因此既不是 TTT，也没有证明 JEPA 具备长期记忆，更不能与 ICL 或 Spatial 的 zero-shot MCQ choice accuracy 直接排名。pixel control 更高还说明文字、颜色、固定布局和生成器规律已经提供强低层线索。下一步应把同一个 encoder 接到 explicit last-write table 与固定大小 recurrent/fast-weight state，并迁移到 C-temporal 的无文字、照片级或真实视频。ViT-L/256 可单卡运行；ViT-g/1B 只适合作为后续表征上限。
 
 ### 3.3 FFN：把“未来预测误差”变成写入门控
 
@@ -258,11 +263,11 @@ L_keep   = old-query retention loss
 
 三个 condition 现在分别生成等长的实际卡片流。`same_scene_control` 把场景切换改为 same-scene marker；`filler_only_control` 用同预算的无关绑定替换目标 move，所以不会把更少写入误当成更好 retention。`next_action` 不读取 forecast，而是从已发生的状态和公开策略预测。
 
-fixture schema v2 仍有必须在 C-real/schema v3 消除的捷径和混杂因素：`moved_object`、最终位置和最终状态按固定三周期共同变化；filler 卡会显式出现 `control distractor`、`actor: control` 和 `control_records` 等内部控制标记；`relocated` 与 `same_scene_control` 除场景条件外还存在 `living room shelf`/`shelf`、`side table`/`table` 的位置措辞差异。这些规律可被监督 readout 或 OCR 利用，所以当前 C-PNG 适合做管线与机制诊断，不能作为真实家庭视频长期记忆能力的最终结论。
+fixture schema v2 仍有必须在 C-temporal/schema v3 消除的捷径和混杂因素：`moved_object`、最终位置和最终状态按固定三周期共同变化；filler 卡会显式出现 `control distractor`、`actor: control` 和 `control_records` 等内部控制标记；`relocated` 与 `same_scene_control` 除场景条件外还存在 `living room shelf`/`shelf`、`side table`/`table` 的位置措辞差异。这些规律可被监督 readout 或 OCR 利用，所以当前 C-PNG 适合做管线与机制诊断，不能作为真实家庭视频长期记忆能力的最终结论。
 
-C-PNG 的主指标是严格均衡的 choice accuracy。semantic accuracy、token-F1、exact 与 substring 只用于开放生成兼容和错误分析。当前方法层面的优先缺口是 StreamTTT memory/bypass、V-JEPA 显式或递归状态，以及能摆脱文字卡 OCR 捷径的 C-real 无文本视频；visual explicit table 仍是需要保留的机制上限控制。
+C-PNG 的主指标是严格均衡的 choice accuracy。semantic accuracy、token-F1、exact 与 substring 只用于开放生成兼容和错误分析。当前方法层面的优先缺口是 StreamTTT memory/bypass、V-JEPA 显式或递归状态，以及能摆脱文字卡 OCR 捷径的 C-temporal 无文本视频；visual explicit table 仍是需要保留的机制上限控制。
 
-### 7.2 C-real：无文字可控视觉场景
+### 7.2 C-temporal：无文字可控视觉场景
 
 把相同 manifest 渲染成无文字图像或短视频：不同颜色/形状的物品、人物、房间和容器，以视觉动作表达搬动、开合、使用。每个 episode 生成三条条件，除唯一自变量外保持帧数和动作数相同。
 
@@ -318,25 +323,25 @@ latest-write gain  = acc(after_move) - acc(before_move_control)
 
 ```text
 GPU 0-1: StreamTTT memory / bypass
-GPU 2-3: C-real Qwen ICL / Spatial paired runs
+GPU 2-3: C-temporal Qwen ICL / Spatial paired runs
 GPU 4: V-JEPA ViT-L + explicit state
 GPU 5: V-JEPA ViT-L + recurrent state
-GPU 6: C-real frozen V-JEPA / pixel controls
+GPU 6: C-temporal frozen V-JEPA / pixel controls
 GPU 7: visual explicit table / Spatial control completion / failed-run retry
 ```
 
 每个 worker 都写独立 JSONL，最后按 `episode_id/query_id` 做 paired join。不要让多进程同时追加同一个结果文件。V-JEPA 2 ViT-L 只有 300M 参数，适合单卡；本机每张 4090 D 由 `nvidia-smi` 报告 **49,140 MiB** 显存，但 StreamTTT 完整模型能否在该预算内保持目标帧数仍应先记录实测峰值，再决定单卡、两卡分片或减小输入。官方明确给出的硬件事实只有 2B toy 在 3090 上约 12 GB。
 
-如果需要训练，小规模 probe、gate 和 update-operator 消融可各自单卡；StreamTTT/Spatial 的 LoRA 或 slow-weight SFT 再使用 8 卡 DeepSpeed。没有必要在确认 C-real 有可学习信号前重训完整 JEPA 或 4B VLM。
+如果需要训练，小规模 probe、gate 和 update-operator 消融可各自单卡；StreamTTT/Spatial 的 LoRA 或 slow-weight SFT 再使用 8 卡 DeepSpeed。没有必要在确认 C-temporal 有可学习信号前重训完整 JEPA 或 4B VLM。
 
 ## 9. 推荐顺序与停止条件
 
 建议按以下顺序推进：
 
 1. **P0：部署 StreamTTT 发布权重并加入 memory/bypass paired run**。这是最直接、变量最少的外部长期视频 TTT 对照。
-2. **并行完成 C-real 无文本视频轨道和 V-JEPA 状态接口**。C-real 去掉文字卡 OCR 捷径；V-JEPA 保留 frozen encoder，分别接 explicit last-write table 与固定大小 recurrent/fast-weight state。
-3. **在 C-real 上复用已经验证的 frozen V-JEPA/pixel probe，并加入第 2 步的两个状态臂**。所有 feature arm 使用相同训练 split 和 readout，所有 VLM arm 使用相同 closed-choice scorer。
-4. **给 C-PNG 和 C-real 保留 visual explicit last-write table**。它不是主要新架构，但能给出视觉识别后的可解释状态上限。
+2. **并行完成 C-temporal 无文本视频轨道和 V-JEPA 状态接口**。C-temporal 去掉文字卡 OCR 捷径；V-JEPA 保留 frozen encoder，分别接 explicit last-write table 与固定大小 recurrent/fast-weight state。
+3. **在 C-temporal 上复用已经验证的 frozen V-JEPA/pixel probe，并加入第 2 步的两个状态臂**。所有 feature arm 使用相同训练 split 和 readout，所有 VLM arm 使用相同 closed-choice scorer。
+4. **给 C-PNG 和 C-temporal 保留 visual explicit last-write table**。它不是主要新架构，但能给出视觉识别后的可解释状态上限。
 5. **在外部基线稳定后给 Spatial 写入加入 FFN surprise gate，再分别移植 E² update 和 LaCET consolidate**。三者解决的问题不同，应逐项消融。
 6. 只有 `next_action` 仍明显落后、而 state 查询已经可靠时，再训练 future-latent/action-conditioned predictor。
 
@@ -364,4 +369,4 @@ V-JEPA/Qwen visual state
     -> recent KV + structured state/readout heads
 ```
 
-实验时必须逐项增加。当前 Spatial fast/slow-only 与 frozen V-JEPA/pixel 已经给出第一批锚点；下一步先补 StreamTTT memory/bypass、V-JEPA explicit/recurrent state 和 C-real，再判断哪一个部件真正改善长期视觉状态记忆。
+实验时必须逐项增加。当前 Spatial fast/slow-only 与 frozen V-JEPA/pixel 已经给出第一批锚点；下一步先补 StreamTTT memory/bypass、V-JEPA explicit/recurrent state 和 C-temporal，再判断哪一个部件真正改善长期视觉状态记忆。

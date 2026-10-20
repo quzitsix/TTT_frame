@@ -1,7 +1,9 @@
 # Experiment C-PNG：受控物体状态、跨场景记忆与下一步预测（历史机制诊断）
 
 > 当前实验是由文字事件卡组成的合成机制测试（PNG-card proxy），不是家庭第一人称真实视频结果。它适合检查状态写入、跨场景保持和读取接口是否工作，不能证明模型已经学会现实世界中的视觉记忆或未来预测。
-> 当前主要视觉 C 评测已切换到 [SVCBench 真实视频 matched-prefix 协议](SVCBENCH_REAL_VIDEO.md)。
+> [SVCBench Natural9](SVCBENCH_REAL_VIDEO.md) 已完成真实视频 matched-prefix counting
+> 诊断，但 counting 不再作为 C 的主任务。新的 C 直接测试时间顺序、latest-state、延迟绑定
+> 和未来预测，见 [架构与实验总对比](VIDEO_MEMORY_ARCHITECTURE_COMPARISON.md)。
 
 ## 1. 正式协议
 
@@ -32,7 +34,7 @@ fixture schema v2 把未来事件单独保存为 `future_event`，它不属于 `
 
 当前 12 个 episode 并不对应 12 个相互独立的内容样本：按任一 condition 下的完整可观测事件流合并 exact duplicate 后，跨条件联合形成 **9 个 exact-content clusters**。监督 readout 和配对统计必须至少按这些 cluster 隔离，不能把 episode ID 直接当作独立划分单位；但 cluster 之间仍共享确定性的生成周期，也不能视为 9 个独立同分布随机样本。
 
-生成器还保留了几项可被模型利用的结构捷径。`moved_object`、最终位置和最终状态随 episode index 按 `% 3` 同步循环，因此模型可能从模板规律恢复标签，而不需要形成持久记忆；`filler_only_control` 的 PNG 又直接显示 `control distractor`、`actor: control` 和 `control_records: 4` 等内部控制字段。最后，`same_scene_control` 除了去掉背景变化，还把两个 location 文本从 `living room shelf`、`side table` 缩短为 `shelf`、`table`，所以 relocated 与 same-scene 的差异不是纯场景 cue 干预。正式结果只能作为当前 schema v2 的机制诊断。当前 C-real 主评测改用了真实视频的前缀计数任务，而不是这套 fixture 的 schema v3；两者任务不同，分数不能直接比较。
+生成器还保留了几项可被模型利用的结构捷径。`moved_object`、最终位置和最终状态随 episode index 按 `% 3` 同步循环，因此模型可能从模板规律恢复标签，而不需要形成持久记忆；`filler_only_control` 的 PNG 又直接显示 `control distractor`、`actor: control` 和 `control_records: 4` 等内部控制字段。最后，`same_scene_control` 除了去掉背景变化，还把两个 location 文本从 `living room shelf`、`side table` 缩短为 `shelf`、`table`，所以 relocated 与 same-scene 的差异不是纯场景 cue 干预。正式结果只能作为当前 schema v2 的机制诊断。SVCBench Natural9 使用另一个真实视频前缀计数任务；新的 C 则使用非 counting 的顺序和状态反事实。三者任务不同，分数不能直接比较。
 
 ## 2. Symbolic memory 结果
 
@@ -223,4 +225,4 @@ Pixel control 在 relocated 和 same-scene 中都高于 V-JEPA 2；filler-only �
 
 1. **Visual explicit**：在同一 16-card 协议上增加可审计的显式状态表/检索基线，将视觉读取错误与记忆写入错误分开。
 2. **StreamTTT**：以相同 future-withheld、同帧序列和 fast/slow-only 消融接入预测式 TTT 对照，测量在线更新本身的增益。
-3. **真实视频主评测**：扩展 [SVCBench matched-prefix 协议](SVCBENCH_REAL_VIDEO.md)的 source-video 覆盖与采样率消融；不将它与本页 C-PNG 分数做直接排名。
+3. **真实视频时间主评测**：按[架构与实验总对比](VIDEO_MEMORY_ARCHITECTURE_COMPARISON.md)构造 block-swap、cutoff-flip 和 delayed-binding；Natural9 counting 只保留为辅助诊断。

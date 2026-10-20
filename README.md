@@ -9,10 +9,12 @@ that writes visual representations directly into recurrent fast weights.
 包含参数分布、A/B 与 attention 的连接、模型改动、记忆生命周期，以及本机
 `meowbench` 环境的核对结果（2026-09-14）。
 
-当前主要视觉 C 评测是 Natural9 多来源真实视频的 matched-prefix SVCBench；其中另保留
-3 段 Ego4D 作为严格第一人称子集。协议、结果与复现方式见
-[`SVCBENCH_REAL_VIDEO.md`](docs/SVCBENCH_REAL_VIDEO.md)。
-预测型 TTT 的 A/B/C 总结与后续架构调研分别见
+Spatial-TTT、V-JEPA、StreamTTT、显式记忆、SSM 与其他路线的统一对比，以及下一轮
+非 counting 时间实验定义，见
+[`VIDEO_MEMORY_ARCHITECTURE_COMPARISON.md`](docs/VIDEO_MEMORY_ARCHITECTURE_COMPARISON.md)。
+Natural9 多来源真实视频 matched-prefix SVCBench 已完成，现保留为 B3 counting 诊断；
+协议、结果与复现方式见 [`SVCBENCH_REAL_VIDEO.md`](docs/SVCBENCH_REAL_VIDEO.md)。
+预测型 TTT 的 A/B/C 结果与扩展算法调研分别见
 [`PREDICTIVE_TTT_EXPERIMENTS_RESULTS.md`](docs/PREDICTIVE_TTT_EXPERIMENTS_RESULTS.md) 和
 [`PREDICTIVE_TTT_ALTERNATIVES.md`](docs/PREDICTIVE_TTT_ALTERNATIVES.md)。旧 C-PNG 五臂结果保留为
 [`C-PNG 机制诊断`](docs/EXPERIMENT_C_RESULTS.md)；官方冻结 V-JEPA 2 的分组监督

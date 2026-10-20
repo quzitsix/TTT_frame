@@ -1,5 +1,9 @@
 # V-JEPA 2 baseline for experiment C
 
+> Spatial-TTT、V-JEPA、StreamTTT、显式/递归记忆和其他路线的统一比较，以及新的
+> 非 counting 实验 C 设计见
+> [`VIDEO_MEMORY_ARCHITECTURE_COMPARISON.md`](VIDEO_MEMORY_ARCHITECTURE_COMPARISON.md)。
+
 ## Current status
 
 The formal result now uses `experiment_c_relocation_v2`. Every episode and condition contains exactly 16 observed cards, and `future_event` is stored only as a target. It is never rendered, encoded, or used as an input feature.
@@ -83,7 +87,7 @@ The deployment is valid: the runner loads a byte-verified official target encode
 
 The corrected formal C-PNG result shows no aggregate V-JEPA 2 advantage over the pixel control. Exact-stream grouping removes the direct duplicate leak, but perfect location and state recovery remains a fixture shortcut: `moved_object`, final location, and final state follow the same three-episode cycle. The literal text, repeated card layout, and deterministic generator therefore still expose labels without requiring persistent memory. The next-action target is properly withheld, but it is deterministically related to visible owner and final-location variables; a supervised readout can exploit that relation without learning a general future world model.
 
-Two condition artifacts further limit interpretation. Filler cards visibly contain the internal strings `control distractor`, `actor: control`, and `control_records: 4`. The relocated/same-scene transform also changes `living room shelf` to `shelf` and `side table` to `table`, so that contrast changes wording as well as the scene/background cue. These artifacts must be removed in fixture schema v3 or C-real.
+Two condition artifacts further limit interpretation. Filler cards visibly contain the internal strings `control distractor`, `actor: control`, and `control_records: 4`. The relocated/same-scene transform also changes `living room shelf` to `shelf` and `side table` to `table`, so that contrast changes wording as well as the scene/background cue. These artifacts must be removed in fixture schema v3 or C-temporal.
 
 This result is therefore useful as a deployment and representation sanity check. It cannot rank V-JEPA 2 against Spatial-TTT as a long-term memory system because the frozen JEPA arm contains no persistent online state, and because low-resolution pixels already expose enough template structure to do better.
 
