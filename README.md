@@ -24,6 +24,9 @@ probe、pixel 对照与部署细节见 [`JEPA_BASELINE.md`](docs/JEPA_BASELINE.m
 IdeaX 五项预测记忆方案的代码可行性筛选、已实现的 delayed residual/key transport/
 inverse-address preflight，以及 HomeSentinel 人工核验队列见
 [`IDEAX_IMPLEMENTATION_ROADMAP.md`](docs/IDEAX_IMPLEMENTATION_ROADMAP.md)。
+Idea 01 已接入新 EgoLife forecasting `bench_v0` 的因果特征与延迟残差预测预检，
+数据划分、六组对照、运行命令及与 ICL 比较的边界见
+[`IDEA01_BENCH_V0.md`](docs/IDEA01_BENCH_V0.md)。
 
 ## Spatial-TTT direct visual parameter memory (2026-09-14)
 

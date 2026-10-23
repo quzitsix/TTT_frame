@@ -2,6 +2,9 @@
 
 更新日期：2026-10-20
 
+后续进展：新 EgoLife forecasting 数据 `bench_v0` 的 Idea 01 数据接口、因果特征
+缓存与在线预测预检见 [IDEA01_BENCH_V0.md](IDEA01_BENCH_V0.md)。以下保留首次筛选记录。
+
 本文核对 `ideax_output` 中五份研究卡片与当前仓库、HomeSentinel 数据和
 Spatial-TTT 实现，给出现在适合推进的最小实现。研究卡片本身是方案，不是实验
 结果；本文也把“算子测试通过”“真实数据假设成立”“端到端任务有效”分开记录。
