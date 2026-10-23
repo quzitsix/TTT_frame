@@ -1,0 +1,80 @@
+{
+  "schema": "forecast_mcq_baseline_archive_v1",
+  "protocol_fingerprint": "8b089206266dd191c2f329cadaa3581d7ce77db96596fb48b63e7595fdbf1da5",
+  "sample_count": 200,
+  "prediction_rows": 1800,
+  "files": {
+    "README.md": {
+      "sha256": "3f13366a7c012c9302e073a09e8313b37a973dd27867044696d671f239eccf31",
+      "bytes": 1723
+    },
+    "aggregate_metrics.json": {
+      "sha256": "22a01ea4ebb748acba564addad2a009e946b02e8c60d17d7c142027bd1559bca",
+      "bytes": 146856
+    },
+    "blind_predictions.jsonl": {
+      "sha256": "b7b07ec1f4598bab22f495ccd87275b97bb08c113a615279df6834e15e78f05f",
+      "bytes": 8200
+    },
+    "execution_environment.json": {
+      "sha256": "b82cf930deb1b7ddbd886a27fa4cdbe623540703479a4a706d4fbd641069b73c",
+      "bytes": 863
+    },
+    "full_icl_predictions.jsonl": {
+      "sha256": "0e96386342807771f4256b64ea01fb37a45e00500e5cd899a8de0fad8f0e849a",
+      "bytes": 8200
+    },
+    "memory_state_audit.json": {
+      "sha256": "02d586207c26e6ec1ed64b7db7eb0a8eec064de7f1988ad3ef5ed900de18204b",
+      "bytes": 73912
+    },
+    "prediction_diagnostics.json": {
+      "sha256": "d3dce81b5be7454fcb4cefdd3829665ed77c5183fbe92064eb2f43fa36ae96c4",
+      "bytes": 522378
+    },
+    "protocol.json": {
+      "sha256": "cc2ee1ce87b479df71f7fe02b0c5f090e2c477391471928462d0f8fc1665c0b3",
+      "bytes": 7783
+    },
+    "qwen_blind_predictions.jsonl": {
+      "sha256": "339b15a4f3cbd417f2c62fd01d87223cc36bdec1e935b86f0af8538e7b2f93ed",
+      "bytes": 8200
+    },
+    "qwen_full_icl_predictions.jsonl": {
+      "sha256": "585972ce9842fb0d9dfc8422d438c9dc77684daff231b7dba1dac16350e67cb3",
+      "bytes": 8200
+    },
+    "qwen_recent_icl_predictions.jsonl": {
+      "sha256": "c4274155485bdc74af549f001c0d53c2087c0f8524cdd2fb5e25efe0cf71a308",
+      "bytes": 8200
+    },
+    "recent_icl_predictions.jsonl": {
+      "sha256": "2ec6514c449d181bfc809936f5a20a01074712562f36364330cda84ca0db027f",
+      "bytes": 8200
+    },
+    "research_day_split.json": {
+      "sha256": "e23dfe7584e6a7268187a56e3997510281b576c3aab4892d3c25ae1b6e479603",
+      "bytes": 9739
+    },
+    "smoke_execution_comparison.json": {
+      "sha256": "57131275e9b2317ff01193825c1f9514ed85d8788a400e4f37816e5439a73089",
+      "bytes": 2001
+    },
+    "spatial_base_predictions.jsonl": {
+      "sha256": "10148744cecd73937a5ee2cc17d2df91eafedb10b13778cffd35a4748fb20581",
+      "bytes": 8200
+    },
+    "spatial_predictions.jsonl": {
+      "sha256": "b6f932faac8562da58de27208620213aae5a742d60263928b5238e0f048107e2",
+      "bytes": 8200
+    },
+    "spatial_slow_only_predictions.jsonl": {
+      "sha256": "d44469e0f80498a95127cad51b0df4ad72816fd9d1b2318a0219c00350d512a6",
+      "bytes": 8200
+    },
+    "vision_patch_embed_validation.json": {
+      "sha256": "5ee2f6ce3fd72245c0847f20728ef490a929befa19e0b7916bb6041eb0b593d6",
+      "bytes": 5777
+    }
+  }
+}

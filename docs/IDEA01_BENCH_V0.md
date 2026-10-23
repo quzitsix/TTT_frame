@@ -5,6 +5,10 @@ cue→outcome 关系能否改善后续预测。目前实现安全数据接口、
 latent 预测预检。动作选择题读出、slow 参数的 outer training、完整 Spatial 集成
 及与 VLM ICL 的准确率比较属于后续阶段。
 
+补充：原始 Qwen 与官方 Spatial checkpoint 的全 200 题 MCQ 基线已另建独立
+评测入口，见 [bench_v0 选择题基线](BENCH_V0_MCQ_BASELINES.md)。该实验不代表
+Idea 01 已具备动作读出，也不改变本文 latent 预检的结论。
+
 ## 数据与划分
 
 数据目录 `/data/share/raw/bench_v0` 的本机审计结果：

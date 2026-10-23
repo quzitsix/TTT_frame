@@ -27,6 +27,8 @@ inverse-address preflight，以及 HomeSentinel 人工核验队列见
 Idea 01 已接入新 EgoLife forecasting `bench_v0` 的因果特征与延迟残差预测预检，
 数据划分、六组对照、运行命令及与 ICL 比较的边界见
 [`IDEA01_BENCH_V0.md`](docs/IDEA01_BENCH_V0.md)。
+新数据全 200 道动作选择题的原始 Qwen / 官方 Spatial 九组基线、固定测试子集及
+多卡复现命令见 [`BENCH_V0_MCQ_BASELINES.md`](docs/BENCH_V0_MCQ_BASELINES.md)。
 
 ## Spatial-TTT direct visual parameter memory (2026-09-14)
 

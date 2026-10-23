@@ -1,0 +1,65 @@
+{
+  "qwen_blind": {
+    "native_conv_prediction": "C",
+    "linear_patch_prediction": "C",
+    "same_prediction": true,
+    "linear_episode_seconds": 12.61898209399078,
+    "native_episode_seconds": 98.77917036600411
+  },
+  "qwen_recent_icl": {
+    "native_conv_prediction": "B",
+    "linear_patch_prediction": "B",
+    "same_prediction": true,
+    "linear_episode_seconds": 12.619166998076253,
+    "native_episode_seconds": 98.77929536800366
+  },
+  "qwen_full_icl": {
+    "native_conv_prediction": "B",
+    "linear_patch_prediction": "B",
+    "same_prediction": true,
+    "linear_episode_seconds": 12.619285554043017,
+    "native_episode_seconds": 98.77937715407461
+  },
+  "blind": {
+    "native_conv_prediction": "C",
+    "linear_patch_prediction": "C",
+    "same_prediction": true,
+    "linear_episode_seconds": 16.817455900949426,
+    "native_episode_seconds": 167.34657239401713
+  },
+  "recent_icl": {
+    "native_conv_prediction": "A",
+    "linear_patch_prediction": "A",
+    "same_prediction": true,
+    "linear_episode_seconds": 16.817664547008462,
+    "native_episode_seconds": 167.34667694591917
+  },
+  "full_icl": {
+    "native_conv_prediction": "C",
+    "linear_patch_prediction": "C",
+    "same_prediction": true,
+    "linear_episode_seconds": 16.817782691912726,
+    "native_episode_seconds": 167.3467502919957
+  },
+  "spatial": {
+    "native_conv_prediction": "C",
+    "linear_patch_prediction": "C",
+    "same_prediction": true,
+    "linear_episode_seconds": 16.81794592400547,
+    "native_episode_seconds": 167.34689217898995
+  },
+  "spatial_slow_only": {
+    "native_conv_prediction": "C",
+    "linear_patch_prediction": "C",
+    "same_prediction": true,
+    "linear_episode_seconds": 16.818073545000516,
+    "native_episode_seconds": 167.34695969498716
+  },
+  "spatial_base": {
+    "native_conv_prediction": "C",
+    "linear_patch_prediction": "C",
+    "same_prediction": true,
+    "linear_episode_seconds": 16.818203311995603,
+    "native_episode_seconds": 167.3470273669809
+  }
+}

@@ -24,3 +24,4 @@ memories/
 !pyproject.toml
 !data/svcbench_real_ego4d_pilot_v1.json
 !data/svcbench_real_natural9_v1.json
+!data/bench_v0_baseline_v1/*.json
