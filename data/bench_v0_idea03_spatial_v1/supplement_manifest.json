@@ -1,0 +1,91 @@
+{
+  "schema": "idea03_supplement_archive_v1",
+  "core_manifest_sha256": "b98b25ed1225bf5f468e3a869947039981805083c50813ec283978a811933283",
+  "description": "Exact copies of runtime/frame/test provenance, plus wrong/current pairs recomputed from frozen per_case correctness. Core archive is unchanged.",
+  "files": {
+    "provenance/frame_match_audit.json": {
+      "sha256": "b15c1e9a1febfc3adfa0656afed98dde0fd3b0077fa51a17c9810ded998e07f7",
+      "bytes": 111231
+    },
+    "provenance/launch.completion.json": {
+      "sha256": "9fdc50ae2f8e975eb982e488da4eb0453606a807d719fbe2c3873c1c0d60dd1c",
+      "bytes": 276
+    },
+    "provenance/launch.json": {
+      "sha256": "870c39f7bcc615989eacc63a4cd1a8799f93a4a75b8e764dadf2d8e301da4f8c",
+      "bytes": 2381
+    },
+    "provenance/launcher.log": {
+      "sha256": "0498d00abb1135012513225138e6762e48e9ae6ce165f718d25d3c374301a7b3",
+      "bytes": 8122
+    },
+    "provenance/pytest_final.log": {
+      "sha256": "9e7d24c9c1f29ee4a66cd68c78ec309cbb491549ea66fd02f3946518b651235b",
+      "bytes": 831
+    },
+    "provenance/report_manifest.json": {
+      "sha256": "6630eae08ddcba29c9f66c739faf319cfa11da4bf8ee6b53460adbf3d4d21ae6",
+      "bytes": 497
+    },
+    "provenance/scores.completion.json": {
+      "sha256": "f79d273de0cf1c1b7bfda751a74c9823988dcff5f39cd2a6a1043073cdb0b9b3",
+      "bytes": 629
+    },
+    "provenance/scores_0.completion.json": {
+      "sha256": "f1051c59c3464cfdd513631e4df49369d0f5fc6992f0697ebd1e209da456f8b2",
+      "bytes": 311
+    },
+    "provenance/scores_0.donors.json": {
+      "sha256": "19d7f1a6243c05125458df85c78ace50a365c455f0f117a90417da922508be32",
+      "bytes": 10899
+    },
+    "provenance/scores_1.completion.json": {
+      "sha256": "6dbebe752269113b42b2971280bdd605bf01e8fa889dcaf146299963c9494aab",
+      "bytes": 311
+    },
+    "provenance/scores_1.donors.json": {
+      "sha256": "f7342f27db53505a5dab17bf9fd6e25bfecb0b3deb301a29948cdff1a9eae99a",
+      "bytes": 10900
+    },
+    "provenance/scores_2.completion.json": {
+      "sha256": "b86901e17173164be265116677cf044e4db50c4c8854fe88ba28f4fa67d55428",
+      "bytes": 311
+    },
+    "provenance/scores_2.donors.json": {
+      "sha256": "b295a15afa87abca639f7f1dd9d1db01f5b74c15b6107ac881b80e56746262b7",
+      "bytes": 10899
+    },
+    "provenance/scores_3.completion.json": {
+      "sha256": "734e8c07041342ead80b5490776c24e20cfcdb9a7e5ba546dae9331fb185bf9c",
+      "bytes": 311
+    },
+    "provenance/scores_3.donors.json": {
+      "sha256": "61fcc0aaa7a06a1039dba8d8a749d1fc047c1289edd189281c22dbb5d78fa9a8",
+      "bytes": 10898
+    },
+    "provenance/worker_0.log": {
+      "sha256": "98e87dbd6d47aa4db10f46d5ef32cf7b1638f827ba66e8f3a8e63a9a6b273967",
+      "bytes": 8022
+    },
+    "provenance/worker_1.log": {
+      "sha256": "1b8eca14e719a03af3fea1640ebef39f6483ae2429c164bb3d17d8093e2b8b48",
+      "bytes": 8012
+    },
+    "provenance/worker_2.log": {
+      "sha256": "95fd7297fb13b7e4859fd1e442e3455f35b2b47012a53323afb9c10927e69912",
+      "bytes": 8009
+    },
+    "provenance/worker_3.log": {
+      "sha256": "c83fb60c155fe0ed7328c99bb59a16ab0744ff8ca345be18148e3846817646d0",
+      "bytes": 8004
+    },
+    "provenance/wrong_memory_pairs.json": {
+      "sha256": "4d2bee0ff552617f3d672389cbbcc3848ce3087fb9488664480893a9ae9f1a81",
+      "bytes": 2238
+    },
+    ".gitattributes": {
+      "sha256": "f521ccfd73a91390b4d7ef2e3e66782e96ab1720210424d059c6a628ff5ff04e",
+      "bytes": 110
+    }
+  }
+}

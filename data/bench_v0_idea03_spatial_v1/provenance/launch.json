@@ -1,0 +1,80 @@
+{
+  "commands": [
+    [
+      "/home/quzitsix/miniconda3/envs/meowbench/bin/python",
+      "/home/quzitsix/TTT_frame/scripts/run_idea3_spatial.py",
+      "--protocol",
+      "/home/quzitsix/TTT_frame/runs/forecast_bench_v0/idea03_native_spatial_v2/protocol.json",
+      "--output",
+      "/home/quzitsix/TTT_frame/runs/forecast_bench_v0/idea03_native_spatial_v2/scores_0.jsonl",
+      "--device",
+      "cuda:4",
+      "--num-shards",
+      "4",
+      "--shard-index",
+      "0",
+      "--threads",
+      "2"
+    ],
+    [
+      "/home/quzitsix/miniconda3/envs/meowbench/bin/python",
+      "/home/quzitsix/TTT_frame/scripts/run_idea3_spatial.py",
+      "--protocol",
+      "/home/quzitsix/TTT_frame/runs/forecast_bench_v0/idea03_native_spatial_v2/protocol.json",
+      "--output",
+      "/home/quzitsix/TTT_frame/runs/forecast_bench_v0/idea03_native_spatial_v2/scores_1.jsonl",
+      "--device",
+      "cuda:4",
+      "--num-shards",
+      "4",
+      "--shard-index",
+      "1",
+      "--threads",
+      "2"
+    ],
+    [
+      "/home/quzitsix/miniconda3/envs/meowbench/bin/python",
+      "/home/quzitsix/TTT_frame/scripts/run_idea3_spatial.py",
+      "--protocol",
+      "/home/quzitsix/TTT_frame/runs/forecast_bench_v0/idea03_native_spatial_v2/protocol.json",
+      "--output",
+      "/home/quzitsix/TTT_frame/runs/forecast_bench_v0/idea03_native_spatial_v2/scores_2.jsonl",
+      "--device",
+      "cuda:4",
+      "--num-shards",
+      "4",
+      "--shard-index",
+      "2",
+      "--threads",
+      "2"
+    ],
+    [
+      "/home/quzitsix/miniconda3/envs/meowbench/bin/python",
+      "/home/quzitsix/TTT_frame/scripts/run_idea3_spatial.py",
+      "--protocol",
+      "/home/quzitsix/TTT_frame/runs/forecast_bench_v0/idea03_native_spatial_v2/protocol.json",
+      "--output",
+      "/home/quzitsix/TTT_frame/runs/forecast_bench_v0/idea03_native_spatial_v2/scores_3.jsonl",
+      "--device",
+      "cuda:4",
+      "--num-shards",
+      "4",
+      "--shard-index",
+      "3",
+      "--threads",
+      "2"
+    ]
+  ],
+  "device": "cuda:4",
+  "workers": 4,
+  "gpu_free_bytes_at_launch": 50488082432,
+  "gpu_total_bytes": 50874875904,
+  "protocol_fingerprint": "5f70467da3daff0e402754059c80b9604d9293838674844c5c3a8e98e8292c97",
+  "launcher_sha256": "1277dc6efd1535ad6b4a80942b95859beeb7f00a19c7e61c455c27714123897b",
+  "pids": [
+    1731949,
+    1731950,
+    1731951,
+    1731952
+  ]
+}

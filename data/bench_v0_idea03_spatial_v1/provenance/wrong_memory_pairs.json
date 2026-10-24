@@ -1,0 +1,110 @@
+{
+  "source": "../per_case.jsonl",
+  "source_sha256": "30ca51eec41e0e81b29b613c5de1877474007290a73a8d890f20f7771b63ddef",
+  "paired": {
+    "wrong_search_vs_search": {
+      "train": {
+        "n": 111,
+        "gains": 6,
+        "losses": 7,
+        "net": -1,
+        "gain_ids": [
+          "egolife_010",
+          "egolife_038",
+          "egolife_044",
+          "egolife_079",
+          "egolife_142",
+          "egolife_176"
+        ],
+        "loss_ids": [
+          "egolife_005",
+          "egolife_015",
+          "egolife_073",
+          "egolife_105",
+          "egolife_132",
+          "egolife_168",
+          "egolife_172"
+        ]
+      },
+      "validation": {
+        "n": 32,
+        "gains": 1,
+        "losses": 5,
+        "net": -4,
+        "gain_ids": [
+          "egolife_021"
+        ],
+        "loss_ids": [
+          "egolife_052",
+          "egolife_149",
+          "egolife_153",
+          "egolife_187",
+          "egolife_189"
+        ]
+      },
+      "test": {
+        "n": 57,
+        "gains": 5,
+        "losses": 2,
+        "net": 3,
+        "gain_ids": [
+          "egolife_059",
+          "egolife_131",
+          "egolife_160",
+          "egolife_199",
+          "egolife_200"
+        ],
+        "loss_ids": [
+          "egolife_090",
+          "egolife_193"
+        ]
+      }
+    },
+    "wrong_direct_vs_direct": {
+      "train": {
+        "n": 111,
+        "gains": 3,
+        "losses": 4,
+        "net": -1,
+        "gain_ids": [
+          "egolife_015",
+          "egolife_071",
+          "egolife_142"
+        ],
+        "loss_ids": [
+          "egolife_072",
+          "egolife_073",
+          "egolife_102",
+          "egolife_105"
+        ]
+      },
+      "validation": {
+        "n": 32,
+        "gains": 0,
+        "losses": 1,
+        "net": -1,
+        "gain_ids": [],
+        "loss_ids": [
+          "egolife_019"
+        ]
+      },
+      "test": {
+        "n": 57,
+        "gains": 4,
+        "losses": 3,
+        "net": 1,
+        "gain_ids": [
+          "egolife_059",
+          "egolife_131",
+          "egolife_160",
+          "egolife_200"
+        ],
+        "loss_ids": [
+          "egolife_162",
+          "egolife_191",
+          "egolife_198"
+        ]
+      }
+    }
+  }
+}

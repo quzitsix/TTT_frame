@@ -1,0 +1,53 @@
+{
+  "schema": "idea03_spatial_archive_v1",
+  "source_run": "/home/quzitsix/TTT_frame/runs/forecast_bench_v0/idea03_native_spatial_v2/evaluation",
+  "protocol_fingerprint": "3d3d3acebbe3cbda0f44ddce4041897f4a6e69dacbd62976ecd26b2df206b8e5",
+  "cases": 200,
+  "answer_files_read_by_archiver": false,
+  "files": {
+    "completion.json": {
+      "sha256": "de791fadb6e15dfa185804205b1ab4a7541049f82db68c400553937e1eaf583d",
+      "bytes": 326
+    },
+    "inference_protocol.json": {
+      "sha256": "9e0f2f0985a3b5731d0931e4aa53b53d6d276584d7e7be0444b30966d37731e0",
+      "bytes": 29477
+    },
+    "per_case.csv": {
+      "sha256": "2c1c3331dffd2f74f385b56b2ef3fbaefdb773a7007e457ef03ae86850ae0fe0",
+      "bytes": 25262
+    },
+    "per_case.jsonl": {
+      "sha256": "30ca51eec41e0e81b29b613c5de1877474007290a73a8d890f20f7771b63ddef",
+      "bytes": 120710
+    },
+    "predictions.jsonl": {
+      "sha256": "5c4fe36db2426a8ed5cc63d6d200797624c78733727112d74fc88c87391dff0b",
+      "bytes": 424095
+    },
+    "protocol.json": {
+      "sha256": "c8e42ac9f9fddde9c1507a26569e3dffb206424a543c3a0048371e7a2d946cd9",
+      "bytes": 16017
+    },
+    "results.md": {
+      "sha256": "934197291e11e6e060974d2455fd191e53705fee25a4b024d011bb5a6bbfbc6a",
+      "bytes": 2945
+    },
+    "scores.jsonl": {
+      "sha256": "07c76a9786a0d178081a97d1faa2495100022f0c459138bd525bc7b55d670ba6",
+      "bytes": 18790217
+    },
+    "split_manifest.json": {
+      "sha256": "e23dfe7584e6a7268187a56e3997510281b576c3aab4892d3c25ae1b6e479603",
+      "bytes": 9739
+    },
+    "summary.json": {
+      "sha256": "1a813a0f9730510660e467de25c9777f88c0bb3aac8950dacff24caa919b1b00",
+      "bytes": 97144
+    },
+    "validation_selection.json": {
+      "sha256": "c58ec5bfd98ba31fe04afe00d0945cf720a5e3af3e958afabc3313f8bfb806dc",
+      "bytes": 3403
+    }
+  }
+}

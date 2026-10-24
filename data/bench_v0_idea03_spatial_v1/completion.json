@@ -1,0 +1,8 @@
+{
+  "schema": "idea03_spatial_prediction_completion_v1",
+  "complete": true,
+  "protocol_fingerprint": "3d3d3acebbe3cbda0f44ddce4041897f4a6e69dacbd62976ecd26b2df206b8e5",
+  "test_answer_fields_used": false,
+  "prediction_rows": 200,
+  "predictions_sha256": "5c4fe36db2426a8ed5cc63d6d200797624c78733727112d74fc88c87391dff0b"
+}

@@ -2,6 +2,12 @@
 
 更新日期：2026-10-20
 
+2026-10-25 后续：Idea3 已接入官方 Spatial checkpoint 的原生关联记忆，
+同 90 帧真实视频评测和 reset/wrong-video 对照见
+[IDEA03_BENCH_V0_RESULTS.md](IDEA03_BENCH_V0_RESULTS.md)。该实验是未训练 text-V
+代理目标的寻址诊断，非完整端到端 Idea3；下文保留首次筛选时的状态。
+后续 RL 研究输入见 [ideax_input.md](../ideax_input.md)。
+
 后续进展：新 EgoLife forecasting 数据 `bench_v0` 的 Idea 01 数据接口、因果特征
 缓存与在线预测预检见 [IDEA01_BENCH_V0.md](IDEA01_BENCH_V0.md)。以下保留首次筛选记录。
 

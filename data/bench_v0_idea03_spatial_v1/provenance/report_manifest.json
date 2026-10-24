@@ -1,0 +1,18 @@
+{
+  "schema": "idea03_spatial_scoring_completion_v1",
+  "complete": true,
+  "files": {
+    "per_case.csv": {
+      "sha256": "2c1c3331dffd2f74f385b56b2ef3fbaefdb773a7007e457ef03ae86850ae0fe0",
+      "bytes": 25262
+    },
+    "per_case.jsonl": {
+      "sha256": "30ca51eec41e0e81b29b613c5de1877474007290a73a8d890f20f7771b63ddef",
+      "bytes": 120710
+    },
+    "summary.json": {
+      "sha256": "1a813a0f9730510660e467de25c9777f88c0bb3aac8950dacff24caa919b1b00",
+      "bytes": 97144
+    }
+  }
+}

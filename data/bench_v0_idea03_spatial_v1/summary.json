@@ -1,0 +1,4233 @@
+{
+  "schema": "idea03_spatial_results_v1",
+  "protocol_fingerprint": "3d3d3acebbe3cbda0f44ddce4041897f4a6e69dacbd62976ecd26b2df206b8e5",
+  "selection": {
+    "direct": {
+      "memory_key": "direct",
+      "beta": 1.0,
+      "radius": null,
+      "correct": 8,
+      "n": 32
+    },
+    "search": {
+      "memory_key": "search_r05",
+      "beta": 1.0,
+      "radius": 0.5,
+      "correct": 6,
+      "n": 32
+    },
+    "direct_grid": [
+      {
+        "memory_key": "direct",
+        "beta": 0.0,
+        "radius": null,
+        "correct": 4,
+        "n": 32
+      },
+      {
+        "memory_key": "direct",
+        "beta": 0.01,
+        "radius": null,
+        "correct": 4,
+        "n": 32
+      },
+      {
+        "memory_key": "direct",
+        "beta": 0.1,
+        "radius": null,
+        "correct": 5,
+        "n": 32
+      },
+      {
+        "memory_key": "direct",
+        "beta": 1.0,
+        "radius": null,
+        "correct": 8,
+        "n": 32
+      },
+      {
+        "memory_key": "direct",
+        "beta": 10.0,
+        "radius": null,
+        "correct": 4,
+        "n": 32
+      },
+      {
+        "memory_key": "direct",
+        "beta": 100.0,
+        "radius": null,
+        "correct": 3,
+        "n": 32
+      }
+    ],
+    "search_grid": [
+      {
+        "memory_key": "search_r01",
+        "beta": 0.0,
+        "radius": 0.1,
+        "correct": 4,
+        "n": 32
+      },
+      {
+        "memory_key": "search_r01",
+        "beta": 0.01,
+        "radius": 0.1,
+        "correct": 4,
+        "n": 32
+      },
+      {
+        "memory_key": "search_r01",
+        "beta": 0.1,
+        "radius": 0.1,
+        "correct": 5,
+        "n": 32
+      },
+      {
+        "memory_key": "search_r01",
+        "beta": 1.0,
+        "radius": 0.1,
+        "correct": 5,
+        "n": 32
+      },
+      {
+        "memory_key": "search_r01",
+        "beta": 10.0,
+        "radius": 0.1,
+        "correct": 4,
+        "n": 32
+      },
+      {
+        "memory_key": "search_r01",
+        "beta": 100.0,
+        "radius": 0.1,
+        "correct": 4,
+        "n": 32
+      },
+      {
+        "memory_key": "search_r05",
+        "beta": 0.0,
+        "radius": 0.5,
+        "correct": 4,
+        "n": 32
+      },
+      {
+        "memory_key": "search_r05",
+        "beta": 0.01,
+        "radius": 0.5,
+        "correct": 4,
+        "n": 32
+      },
+      {
+        "memory_key": "search_r05",
+        "beta": 0.1,
+        "radius": 0.5,
+        "correct": 4,
+        "n": 32
+      },
+      {
+        "memory_key": "search_r05",
+        "beta": 1.0,
+        "radius": 0.5,
+        "correct": 6,
+        "n": 32
+      },
+      {
+        "memory_key": "search_r05",
+        "beta": 10.0,
+        "radius": 0.5,
+        "correct": 2,
+        "n": 32
+      },
+      {
+        "memory_key": "search_r05",
+        "beta": 100.0,
+        "radius": 0.5,
+        "correct": 2,
+        "n": 32
+      },
+      {
+        "memory_key": "search_r10",
+        "beta": 0.0,
+        "radius": 1.0,
+        "correct": 4,
+        "n": 32
+      },
+      {
+        "memory_key": "search_r10",
+        "beta": 0.01,
+        "radius": 1.0,
+        "correct": 4,
+        "n": 32
+      },
+      {
+        "memory_key": "search_r10",
+        "beta": 0.1,
+        "radius": 1.0,
+        "correct": 4,
+        "n": 32
+      },
+      {
+        "memory_key": "search_r10",
+        "beta": 1.0,
+        "radius": 1.0,
+        "correct": 6,
+        "n": 32
+      },
+      {
+        "memory_key": "search_r10",
+        "beta": 10.0,
+        "radius": 1.0,
+        "correct": 2,
+        "n": 32
+      },
+      {
+        "memory_key": "search_r10",
+        "beta": 100.0,
+        "radius": 1.0,
+        "correct": 2,
+        "n": 32
+      }
+    ],
+    "selection_rule": "validation correct descending, beta ascending, radius ascending",
+    "labels_used": "validation only",
+    "validation_labels_sha256": "0b00021bd113c1cef011e55ce819d574f38dffc361dad8be8d3c719be3fe9090"
+  },
+  "metrics": {
+    "prior": {
+      "train": {
+        "n": 111,
+        "correct": 11,
+        "accuracy": 0.0990990990990991,
+        "by_day": {
+          "1": {
+            "n": 29,
+            "correct": 3
+          },
+          "2": {
+            "n": 29,
+            "correct": 3
+          },
+          "3": {
+            "n": 28,
+            "correct": 4
+          },
+          "4": {
+            "n": 25,
+            "correct": 1
+          }
+        }
+      },
+      "validation": {
+        "n": 32,
+        "correct": 4,
+        "accuracy": 0.125,
+        "by_day": {
+          "5": {
+            "n": 32,
+            "correct": 4
+          }
+        }
+      },
+      "test": {
+        "n": 57,
+        "correct": 3,
+        "accuracy": 0.05263157894736842,
+        "by_day": {
+          "6": {
+            "n": 31,
+            "correct": 1
+          },
+          "7": {
+            "n": 26,
+            "correct": 2
+          }
+        }
+      }
+    },
+    "direct": {
+      "train": {
+        "n": 111,
+        "correct": 18,
+        "accuracy": 0.16216216216216217,
+        "by_day": {
+          "1": {
+            "n": 29,
+            "correct": 5
+          },
+          "2": {
+            "n": 29,
+            "correct": 6
+          },
+          "3": {
+            "n": 28,
+            "correct": 6
+          },
+          "4": {
+            "n": 25,
+            "correct": 1
+          }
+        }
+      },
+      "validation": {
+        "n": 32,
+        "correct": 8,
+        "accuracy": 0.25,
+        "by_day": {
+          "5": {
+            "n": 32,
+            "correct": 8
+          }
+        }
+      },
+      "test": {
+        "n": 57,
+        "correct": 9,
+        "accuracy": 0.15789473684210525,
+        "by_day": {
+          "6": {
+            "n": 31,
+            "correct": 4
+          },
+          "7": {
+            "n": 26,
+            "correct": 5
+          }
+        }
+      }
+    },
+    "direct_matched": {
+      "train": {
+        "n": 111,
+        "correct": 18,
+        "accuracy": 0.16216216216216217,
+        "by_day": {
+          "1": {
+            "n": 29,
+            "correct": 5
+          },
+          "2": {
+            "n": 29,
+            "correct": 6
+          },
+          "3": {
+            "n": 28,
+            "correct": 6
+          },
+          "4": {
+            "n": 25,
+            "correct": 1
+          }
+        }
+      },
+      "validation": {
+        "n": 32,
+        "correct": 8,
+        "accuracy": 0.25,
+        "by_day": {
+          "5": {
+            "n": 32,
+            "correct": 8
+          }
+        }
+      },
+      "test": {
+        "n": 57,
+        "correct": 9,
+        "accuracy": 0.15789473684210525,
+        "by_day": {
+          "6": {
+            "n": 31,
+            "correct": 4
+          },
+          "7": {
+            "n": 26,
+            "correct": 5
+          }
+        }
+      }
+    },
+    "search": {
+      "train": {
+        "n": 111,
+        "correct": 11,
+        "accuracy": 0.0990990990990991,
+        "by_day": {
+          "1": {
+            "n": 29,
+            "correct": 2
+          },
+          "2": {
+            "n": 29,
+            "correct": 6
+          },
+          "3": {
+            "n": 28,
+            "correct": 1
+          },
+          "4": {
+            "n": 25,
+            "correct": 2
+          }
+        }
+      },
+      "validation": {
+        "n": 32,
+        "correct": 6,
+        "accuracy": 0.1875,
+        "by_day": {
+          "5": {
+            "n": 32,
+            "correct": 6
+          }
+        }
+      },
+      "test": {
+        "n": 57,
+        "correct": 6,
+        "accuracy": 0.10526315789473684,
+        "by_day": {
+          "6": {
+            "n": 31,
+            "correct": 2
+          },
+          "7": {
+            "n": 26,
+            "correct": 4
+          }
+        }
+      }
+    },
+    "reset": {
+      "train": {
+        "n": 111,
+        "correct": 11,
+        "accuracy": 0.0990990990990991,
+        "by_day": {
+          "1": {
+            "n": 29,
+            "correct": 3
+          },
+          "2": {
+            "n": 29,
+            "correct": 3
+          },
+          "3": {
+            "n": 28,
+            "correct": 4
+          },
+          "4": {
+            "n": 25,
+            "correct": 1
+          }
+        }
+      },
+      "validation": {
+        "n": 32,
+        "correct": 4,
+        "accuracy": 0.125,
+        "by_day": {
+          "5": {
+            "n": 32,
+            "correct": 4
+          }
+        }
+      },
+      "test": {
+        "n": 57,
+        "correct": 3,
+        "accuracy": 0.05263157894736842,
+        "by_day": {
+          "6": {
+            "n": 31,
+            "correct": 1
+          },
+          "7": {
+            "n": 26,
+            "correct": 2
+          }
+        }
+      }
+    },
+    "frozen_init": {
+      "train": {
+        "n": 111,
+        "correct": 11,
+        "accuracy": 0.0990990990990991,
+        "by_day": {
+          "1": {
+            "n": 29,
+            "correct": 3
+          },
+          "2": {
+            "n": 29,
+            "correct": 3
+          },
+          "3": {
+            "n": 28,
+            "correct": 4
+          },
+          "4": {
+            "n": 25,
+            "correct": 1
+          }
+        }
+      },
+      "validation": {
+        "n": 32,
+        "correct": 4,
+        "accuracy": 0.125,
+        "by_day": {
+          "5": {
+            "n": 32,
+            "correct": 4
+          }
+        }
+      },
+      "test": {
+        "n": 57,
+        "correct": 3,
+        "accuracy": 0.05263157894736842,
+        "by_day": {
+          "6": {
+            "n": 31,
+            "correct": 1
+          },
+          "7": {
+            "n": 26,
+            "correct": 2
+          }
+        }
+      }
+    },
+    "wrong_direct": {
+      "train": {
+        "n": 111,
+        "correct": 17,
+        "accuracy": 0.15315315315315314,
+        "by_day": {
+          "1": {
+            "n": 29,
+            "correct": 4
+          },
+          "2": {
+            "n": 29,
+            "correct": 4
+          },
+          "3": {
+            "n": 28,
+            "correct": 7
+          },
+          "4": {
+            "n": 25,
+            "correct": 2
+          }
+        }
+      },
+      "validation": {
+        "n": 32,
+        "correct": 7,
+        "accuracy": 0.21875,
+        "by_day": {
+          "5": {
+            "n": 32,
+            "correct": 7
+          }
+        }
+      },
+      "test": {
+        "n": 57,
+        "correct": 10,
+        "accuracy": 0.17543859649122806,
+        "by_day": {
+          "6": {
+            "n": 31,
+            "correct": 5
+          },
+          "7": {
+            "n": 26,
+            "correct": 5
+          }
+        }
+      }
+    },
+    "wrong_direct_matched": {
+      "train": {
+        "n": 111,
+        "correct": 17,
+        "accuracy": 0.15315315315315314,
+        "by_day": {
+          "1": {
+            "n": 29,
+            "correct": 4
+          },
+          "2": {
+            "n": 29,
+            "correct": 4
+          },
+          "3": {
+            "n": 28,
+            "correct": 7
+          },
+          "4": {
+            "n": 25,
+            "correct": 2
+          }
+        }
+      },
+      "validation": {
+        "n": 32,
+        "correct": 7,
+        "accuracy": 0.21875,
+        "by_day": {
+          "5": {
+            "n": 32,
+            "correct": 7
+          }
+        }
+      },
+      "test": {
+        "n": 57,
+        "correct": 10,
+        "accuracy": 0.17543859649122806,
+        "by_day": {
+          "6": {
+            "n": 31,
+            "correct": 5
+          },
+          "7": {
+            "n": 26,
+            "correct": 5
+          }
+        }
+      }
+    },
+    "wrong_search": {
+      "train": {
+        "n": 111,
+        "correct": 10,
+        "accuracy": 0.09009009009009009,
+        "by_day": {
+          "1": {
+            "n": 29,
+            "correct": 0
+          },
+          "2": {
+            "n": 29,
+            "correct": 4
+          },
+          "3": {
+            "n": 28,
+            "correct": 5
+          },
+          "4": {
+            "n": 25,
+            "correct": 1
+          }
+        }
+      },
+      "validation": {
+        "n": 32,
+        "correct": 2,
+        "accuracy": 0.0625,
+        "by_day": {
+          "5": {
+            "n": 32,
+            "correct": 2
+          }
+        }
+      },
+      "test": {
+        "n": 57,
+        "correct": 9,
+        "accuracy": 0.15789473684210525,
+        "by_day": {
+          "6": {
+            "n": 31,
+            "correct": 2
+          },
+          "7": {
+            "n": 26,
+            "correct": 7
+          }
+        }
+      }
+    },
+    "direct_raw": {
+      "train": {
+        "n": 111,
+        "correct": 22,
+        "accuracy": 0.1981981981981982,
+        "by_day": {
+          "1": {
+            "n": 29,
+            "correct": 6
+          },
+          "2": {
+            "n": 29,
+            "correct": 5
+          },
+          "3": {
+            "n": 28,
+            "correct": 6
+          },
+          "4": {
+            "n": 25,
+            "correct": 5
+          }
+        }
+      },
+      "validation": {
+        "n": 32,
+        "correct": 3,
+        "accuracy": 0.09375,
+        "by_day": {
+          "5": {
+            "n": 32,
+            "correct": 3
+          }
+        }
+      },
+      "test": {
+        "n": 57,
+        "correct": 10,
+        "accuracy": 0.17543859649122806,
+        "by_day": {
+          "6": {
+            "n": 31,
+            "correct": 6
+          },
+          "7": {
+            "n": 26,
+            "correct": 4
+          }
+        }
+      }
+    },
+    "search_raw": {
+      "train": {
+        "n": 111,
+        "correct": 18,
+        "accuracy": 0.16216216216216217,
+        "by_day": {
+          "1": {
+            "n": 29,
+            "correct": 2
+          },
+          "2": {
+            "n": 29,
+            "correct": 7
+          },
+          "3": {
+            "n": 28,
+            "correct": 4
+          },
+          "4": {
+            "n": 25,
+            "correct": 5
+          }
+        }
+      },
+      "validation": {
+        "n": 32,
+        "correct": 2,
+        "accuracy": 0.0625,
+        "by_day": {
+          "5": {
+            "n": 32,
+            "correct": 2
+          }
+        }
+      },
+      "test": {
+        "n": 57,
+        "correct": 10,
+        "accuracy": 0.17543859649122806,
+        "by_day": {
+          "6": {
+            "n": 31,
+            "correct": 4
+          },
+          "7": {
+            "n": 26,
+            "correct": 6
+          }
+        }
+      }
+    },
+    "wrong_raw": {
+      "train": {
+        "n": 111,
+        "correct": 18,
+        "accuracy": 0.16216216216216217,
+        "by_day": {
+          "1": {
+            "n": 29,
+            "correct": 3
+          },
+          "2": {
+            "n": 29,
+            "correct": 5
+          },
+          "3": {
+            "n": 28,
+            "correct": 5
+          },
+          "4": {
+            "n": 25,
+            "correct": 5
+          }
+        }
+      },
+      "validation": {
+        "n": 32,
+        "correct": 1,
+        "accuracy": 0.03125,
+        "by_day": {
+          "5": {
+            "n": 32,
+            "correct": 1
+          }
+        }
+      },
+      "test": {
+        "n": 57,
+        "correct": 15,
+        "accuracy": 0.2631578947368421,
+        "by_day": {
+          "6": {
+            "n": 31,
+            "correct": 4
+          },
+          "7": {
+            "n": 26,
+            "correct": 11
+          }
+        }
+      }
+    },
+    "full_icl": {
+      "train": {
+        "n": 111,
+        "correct": 31,
+        "accuracy": 0.27927927927927926,
+        "by_day": {
+          "1": {
+            "n": 29,
+            "correct": 8
+          },
+          "2": {
+            "n": 29,
+            "correct": 7
+          },
+          "3": {
+            "n": 28,
+            "correct": 10
+          },
+          "4": {
+            "n": 25,
+            "correct": 6
+          }
+        }
+      },
+      "validation": {
+        "n": 32,
+        "correct": 6,
+        "accuracy": 0.1875,
+        "by_day": {
+          "5": {
+            "n": 32,
+            "correct": 6
+          }
+        }
+      },
+      "test": {
+        "n": 57,
+        "correct": 21,
+        "accuracy": 0.3684210526315789,
+        "by_day": {
+          "6": {
+            "n": 31,
+            "correct": 12
+          },
+          "7": {
+            "n": 26,
+            "correct": 9
+          }
+        }
+      }
+    }
+  },
+  "paired": {
+    "prior": {
+      "full_icl": {
+        "train": {
+          "n": 111,
+          "gains": 5,
+          "losses": 25,
+          "net": -20,
+          "disagreements": 83,
+          "gain_ids": [
+            "egolife_015",
+            "egolife_071",
+            "egolife_073",
+            "egolife_079",
+            "egolife_167"
+          ],
+          "loss_ids": [
+            "egolife_001",
+            "egolife_002",
+            "egolife_005",
+            "egolife_017",
+            "egolife_032",
+            "egolife_033",
+            "egolife_039",
+            "egolife_042",
+            "egolife_074",
+            "egolife_077",
+            "egolife_104",
+            "egolife_105",
+            "egolife_111",
+            "egolife_117",
+            "egolife_137",
+            "egolife_140",
+            "egolife_143",
+            "egolife_145",
+            "egolife_148",
+            "egolife_170",
+            "egolife_171",
+            "egolife_175",
+            "egolife_179",
+            "egolife_182",
+            "egolife_183"
+          ]
+        },
+        "validation": {
+          "n": 32,
+          "gains": 3,
+          "losses": 5,
+          "net": -2,
+          "disagreements": 26,
+          "gain_ids": [
+            "egolife_020",
+            "egolife_021",
+            "egolife_122"
+          ],
+          "loss_ids": [
+            "egolife_051",
+            "egolife_084",
+            "egolife_086",
+            "egolife_088",
+            "egolife_153"
+          ]
+        },
+        "test": {
+          "n": 57,
+          "gains": 1,
+          "losses": 19,
+          "net": -18,
+          "disagreements": 47,
+          "gain_ids": [
+            "egolife_162"
+          ],
+          "loss_ids": [
+            "egolife_022",
+            "egolife_027",
+            "egolife_059",
+            "egolife_064",
+            "egolife_065",
+            "egolife_090",
+            "egolife_093",
+            "egolife_097",
+            "egolife_124",
+            "egolife_126",
+            "egolife_129",
+            "egolife_156",
+            "egolife_158",
+            "egolife_160",
+            "egolife_163",
+            "egolife_193",
+            "egolife_195",
+            "egolife_198",
+            "egolife_199"
+          ]
+        }
+      },
+      "direct": {
+        "train": {
+          "n": 111,
+          "gains": 3,
+          "losses": 10,
+          "net": -7,
+          "disagreements": 46,
+          "gain_ids": [
+            "egolife_015",
+            "egolife_071",
+            "egolife_167"
+          ],
+          "loss_ids": [
+            "egolife_035",
+            "egolife_072",
+            "egolife_077",
+            "egolife_102",
+            "egolife_105",
+            "egolife_111",
+            "egolife_114",
+            "egolife_132",
+            "egolife_135",
+            "egolife_138"
+          ]
+        },
+        "validation": {
+          "n": 32,
+          "gains": 0,
+          "losses": 4,
+          "net": -4,
+          "disagreements": 10,
+          "gain_ids": [],
+          "loss_ids": [
+            "egolife_054",
+            "egolife_150",
+            "egolife_151",
+            "egolife_186"
+          ]
+        },
+        "test": {
+          "n": 57,
+          "gains": 0,
+          "losses": 6,
+          "net": -6,
+          "disagreements": 30,
+          "gain_ids": [],
+          "loss_ids": [
+            "egolife_058",
+            "egolife_091",
+            "egolife_095",
+            "egolife_128",
+            "egolife_158",
+            "egolife_198"
+          ]
+        }
+      },
+      "direct_matched": {
+        "train": {
+          "n": 111,
+          "gains": 3,
+          "losses": 10,
+          "net": -7,
+          "disagreements": 46,
+          "gain_ids": [
+            "egolife_015",
+            "egolife_071",
+            "egolife_167"
+          ],
+          "loss_ids": [
+            "egolife_035",
+            "egolife_072",
+            "egolife_077",
+            "egolife_102",
+            "egolife_105",
+            "egolife_111",
+            "egolife_114",
+            "egolife_132",
+            "egolife_135",
+            "egolife_138"
+          ]
+        },
+        "validation": {
+          "n": 32,
+          "gains": 0,
+          "losses": 4,
+          "net": -4,
+          "disagreements": 10,
+          "gain_ids": [],
+          "loss_ids": [
+            "egolife_054",
+            "egolife_150",
+            "egolife_151",
+            "egolife_186"
+          ]
+        },
+        "test": {
+          "n": 57,
+          "gains": 0,
+          "losses": 6,
+          "net": -6,
+          "disagreements": 30,
+          "gain_ids": [],
+          "loss_ids": [
+            "egolife_058",
+            "egolife_091",
+            "egolife_095",
+            "egolife_128",
+            "egolife_158",
+            "egolife_198"
+          ]
+        }
+      },
+      "prior": {
+        "train": {
+          "n": 111,
+          "gains": 0,
+          "losses": 0,
+          "net": 0,
+          "disagreements": 0,
+          "gain_ids": [],
+          "loss_ids": []
+        },
+        "validation": {
+          "n": 32,
+          "gains": 0,
+          "losses": 0,
+          "net": 0,
+          "disagreements": 0,
+          "gain_ids": [],
+          "loss_ids": []
+        },
+        "test": {
+          "n": 57,
+          "gains": 0,
+          "losses": 0,
+          "net": 0,
+          "disagreements": 0,
+          "gain_ids": [],
+          "loss_ids": []
+        }
+      }
+    },
+    "direct": {
+      "full_icl": {
+        "train": {
+          "n": 111,
+          "gains": 9,
+          "losses": 22,
+          "net": -13,
+          "disagreements": 83,
+          "gain_ids": [
+            "egolife_035",
+            "egolife_072",
+            "egolife_073",
+            "egolife_079",
+            "egolife_102",
+            "egolife_114",
+            "egolife_132",
+            "egolife_135",
+            "egolife_138"
+          ],
+          "loss_ids": [
+            "egolife_001",
+            "egolife_002",
+            "egolife_005",
+            "egolife_017",
+            "egolife_032",
+            "egolife_033",
+            "egolife_039",
+            "egolife_042",
+            "egolife_074",
+            "egolife_104",
+            "egolife_117",
+            "egolife_137",
+            "egolife_140",
+            "egolife_143",
+            "egolife_145",
+            "egolife_148",
+            "egolife_170",
+            "egolife_171",
+            "egolife_175",
+            "egolife_179",
+            "egolife_182",
+            "egolife_183"
+          ]
+        },
+        "validation": {
+          "n": 32,
+          "gains": 7,
+          "losses": 5,
+          "net": 2,
+          "disagreements": 27,
+          "gain_ids": [
+            "egolife_020",
+            "egolife_021",
+            "egolife_054",
+            "egolife_122",
+            "egolife_150",
+            "egolife_151",
+            "egolife_186"
+          ],
+          "loss_ids": [
+            "egolife_051",
+            "egolife_084",
+            "egolife_086",
+            "egolife_088",
+            "egolife_153"
+          ]
+        },
+        "test": {
+          "n": 57,
+          "gains": 5,
+          "losses": 17,
+          "net": -12,
+          "disagreements": 45,
+          "gain_ids": [
+            "egolife_058",
+            "egolife_091",
+            "egolife_095",
+            "egolife_128",
+            "egolife_162"
+          ],
+          "loss_ids": [
+            "egolife_022",
+            "egolife_027",
+            "egolife_059",
+            "egolife_064",
+            "egolife_065",
+            "egolife_090",
+            "egolife_093",
+            "egolife_097",
+            "egolife_124",
+            "egolife_126",
+            "egolife_129",
+            "egolife_156",
+            "egolife_160",
+            "egolife_163",
+            "egolife_193",
+            "egolife_195",
+            "egolife_199"
+          ]
+        }
+      },
+      "direct": {
+        "train": {
+          "n": 111,
+          "gains": 0,
+          "losses": 0,
+          "net": 0,
+          "disagreements": 0,
+          "gain_ids": [],
+          "loss_ids": []
+        },
+        "validation": {
+          "n": 32,
+          "gains": 0,
+          "losses": 0,
+          "net": 0,
+          "disagreements": 0,
+          "gain_ids": [],
+          "loss_ids": []
+        },
+        "test": {
+          "n": 57,
+          "gains": 0,
+          "losses": 0,
+          "net": 0,
+          "disagreements": 0,
+          "gain_ids": [],
+          "loss_ids": []
+        }
+      },
+      "direct_matched": {
+        "train": {
+          "n": 111,
+          "gains": 0,
+          "losses": 0,
+          "net": 0,
+          "disagreements": 0,
+          "gain_ids": [],
+          "loss_ids": []
+        },
+        "validation": {
+          "n": 32,
+          "gains": 0,
+          "losses": 0,
+          "net": 0,
+          "disagreements": 0,
+          "gain_ids": [],
+          "loss_ids": []
+        },
+        "test": {
+          "n": 57,
+          "gains": 0,
+          "losses": 0,
+          "net": 0,
+          "disagreements": 0,
+          "gain_ids": [],
+          "loss_ids": []
+        }
+      },
+      "prior": {
+        "train": {
+          "n": 111,
+          "gains": 10,
+          "losses": 3,
+          "net": 7,
+          "disagreements": 46,
+          "gain_ids": [
+            "egolife_035",
+            "egolife_072",
+            "egolife_077",
+            "egolife_102",
+            "egolife_105",
+            "egolife_111",
+            "egolife_114",
+            "egolife_132",
+            "egolife_135",
+            "egolife_138"
+          ],
+          "loss_ids": [
+            "egolife_015",
+            "egolife_071",
+            "egolife_167"
+          ]
+        },
+        "validation": {
+          "n": 32,
+          "gains": 4,
+          "losses": 0,
+          "net": 4,
+          "disagreements": 10,
+          "gain_ids": [
+            "egolife_054",
+            "egolife_150",
+            "egolife_151",
+            "egolife_186"
+          ],
+          "loss_ids": []
+        },
+        "test": {
+          "n": 57,
+          "gains": 6,
+          "losses": 0,
+          "net": 6,
+          "disagreements": 30,
+          "gain_ids": [
+            "egolife_058",
+            "egolife_091",
+            "egolife_095",
+            "egolife_128",
+            "egolife_158",
+            "egolife_198"
+          ],
+          "loss_ids": []
+        }
+      }
+    },
+    "direct_matched": {
+      "full_icl": {
+        "train": {
+          "n": 111,
+          "gains": 9,
+          "losses": 22,
+          "net": -13,
+          "disagreements": 83,
+          "gain_ids": [
+            "egolife_035",
+            "egolife_072",
+            "egolife_073",
+            "egolife_079",
+            "egolife_102",
+            "egolife_114",
+            "egolife_132",
+            "egolife_135",
+            "egolife_138"
+          ],
+          "loss_ids": [
+            "egolife_001",
+            "egolife_002",
+            "egolife_005",
+            "egolife_017",
+            "egolife_032",
+            "egolife_033",
+            "egolife_039",
+            "egolife_042",
+            "egolife_074",
+            "egolife_104",
+            "egolife_117",
+            "egolife_137",
+            "egolife_140",
+            "egolife_143",
+            "egolife_145",
+            "egolife_148",
+            "egolife_170",
+            "egolife_171",
+            "egolife_175",
+            "egolife_179",
+            "egolife_182",
+            "egolife_183"
+          ]
+        },
+        "validation": {
+          "n": 32,
+          "gains": 7,
+          "losses": 5,
+          "net": 2,
+          "disagreements": 27,
+          "gain_ids": [
+            "egolife_020",
+            "egolife_021",
+            "egolife_054",
+            "egolife_122",
+            "egolife_150",
+            "egolife_151",
+            "egolife_186"
+          ],
+          "loss_ids": [
+            "egolife_051",
+            "egolife_084",
+            "egolife_086",
+            "egolife_088",
+            "egolife_153"
+          ]
+        },
+        "test": {
+          "n": 57,
+          "gains": 5,
+          "losses": 17,
+          "net": -12,
+          "disagreements": 45,
+          "gain_ids": [
+            "egolife_058",
+            "egolife_091",
+            "egolife_095",
+            "egolife_128",
+            "egolife_162"
+          ],
+          "loss_ids": [
+            "egolife_022",
+            "egolife_027",
+            "egolife_059",
+            "egolife_064",
+            "egolife_065",
+            "egolife_090",
+            "egolife_093",
+            "egolife_097",
+            "egolife_124",
+            "egolife_126",
+            "egolife_129",
+            "egolife_156",
+            "egolife_160",
+            "egolife_163",
+            "egolife_193",
+            "egolife_195",
+            "egolife_199"
+          ]
+        }
+      },
+      "direct": {
+        "train": {
+          "n": 111,
+          "gains": 0,
+          "losses": 0,
+          "net": 0,
+          "disagreements": 0,
+          "gain_ids": [],
+          "loss_ids": []
+        },
+        "validation": {
+          "n": 32,
+          "gains": 0,
+          "losses": 0,
+          "net": 0,
+          "disagreements": 0,
+          "gain_ids": [],
+          "loss_ids": []
+        },
+        "test": {
+          "n": 57,
+          "gains": 0,
+          "losses": 0,
+          "net": 0,
+          "disagreements": 0,
+          "gain_ids": [],
+          "loss_ids": []
+        }
+      },
+      "direct_matched": {
+        "train": {
+          "n": 111,
+          "gains": 0,
+          "losses": 0,
+          "net": 0,
+          "disagreements": 0,
+          "gain_ids": [],
+          "loss_ids": []
+        },
+        "validation": {
+          "n": 32,
+          "gains": 0,
+          "losses": 0,
+          "net": 0,
+          "disagreements": 0,
+          "gain_ids": [],
+          "loss_ids": []
+        },
+        "test": {
+          "n": 57,
+          "gains": 0,
+          "losses": 0,
+          "net": 0,
+          "disagreements": 0,
+          "gain_ids": [],
+          "loss_ids": []
+        }
+      },
+      "prior": {
+        "train": {
+          "n": 111,
+          "gains": 10,
+          "losses": 3,
+          "net": 7,
+          "disagreements": 46,
+          "gain_ids": [
+            "egolife_035",
+            "egolife_072",
+            "egolife_077",
+            "egolife_102",
+            "egolife_105",
+            "egolife_111",
+            "egolife_114",
+            "egolife_132",
+            "egolife_135",
+            "egolife_138"
+          ],
+          "loss_ids": [
+            "egolife_015",
+            "egolife_071",
+            "egolife_167"
+          ]
+        },
+        "validation": {
+          "n": 32,
+          "gains": 4,
+          "losses": 0,
+          "net": 4,
+          "disagreements": 10,
+          "gain_ids": [
+            "egolife_054",
+            "egolife_150",
+            "egolife_151",
+            "egolife_186"
+          ],
+          "loss_ids": []
+        },
+        "test": {
+          "n": 57,
+          "gains": 6,
+          "losses": 0,
+          "net": 6,
+          "disagreements": 30,
+          "gain_ids": [
+            "egolife_058",
+            "egolife_091",
+            "egolife_095",
+            "egolife_128",
+            "egolife_158",
+            "egolife_198"
+          ],
+          "loss_ids": []
+        }
+      }
+    },
+    "search": {
+      "full_icl": {
+        "train": {
+          "n": 111,
+          "gains": 6,
+          "losses": 26,
+          "net": -20,
+          "disagreements": 80,
+          "gain_ids": [
+            "egolife_006",
+            "egolife_015",
+            "egolife_072",
+            "egolife_073",
+            "egolife_114",
+            "egolife_132"
+          ],
+          "loss_ids": [
+            "egolife_001",
+            "egolife_002",
+            "egolife_012",
+            "egolife_017",
+            "egolife_032",
+            "egolife_033",
+            "egolife_039",
+            "egolife_042",
+            "egolife_074",
+            "egolife_099",
+            "egolife_104",
+            "egolife_111",
+            "egolife_117",
+            "egolife_137",
+            "egolife_140",
+            "egolife_143",
+            "egolife_145",
+            "egolife_148",
+            "egolife_170",
+            "egolife_171",
+            "egolife_175",
+            "egolife_176",
+            "egolife_179",
+            "egolife_180",
+            "egolife_182",
+            "egolife_183"
+          ]
+        },
+        "validation": {
+          "n": 32,
+          "gains": 5,
+          "losses": 5,
+          "net": 0,
+          "disagreements": 25,
+          "gain_ids": [
+            "egolife_052",
+            "egolife_122",
+            "egolife_149",
+            "egolife_187",
+            "egolife_189"
+          ],
+          "loss_ids": [
+            "egolife_019",
+            "egolife_051",
+            "egolife_084",
+            "egolife_086",
+            "egolife_088"
+          ]
+        },
+        "test": {
+          "n": 57,
+          "gains": 3,
+          "losses": 18,
+          "net": -15,
+          "disagreements": 47,
+          "gain_ids": [
+            "egolife_128",
+            "egolife_161",
+            "egolife_162"
+          ],
+          "loss_ids": [
+            "egolife_022",
+            "egolife_027",
+            "egolife_059",
+            "egolife_064",
+            "egolife_065",
+            "egolife_093",
+            "egolife_097",
+            "egolife_124",
+            "egolife_126",
+            "egolife_129",
+            "egolife_156",
+            "egolife_158",
+            "egolife_160",
+            "egolife_163",
+            "egolife_191",
+            "egolife_195",
+            "egolife_198",
+            "egolife_199"
+          ]
+        }
+      },
+      "direct": {
+        "train": {
+          "n": 111,
+          "gains": 3,
+          "losses": 10,
+          "net": -7,
+          "disagreements": 50,
+          "gain_ids": [
+            "egolife_005",
+            "egolife_006",
+            "egolife_015"
+          ],
+          "loss_ids": [
+            "egolife_012",
+            "egolife_035",
+            "egolife_079",
+            "egolife_099",
+            "egolife_102",
+            "egolife_111",
+            "egolife_135",
+            "egolife_138",
+            "egolife_176",
+            "egolife_180"
+          ]
+        },
+        "validation": {
+          "n": 32,
+          "gains": 5,
+          "losses": 7,
+          "net": -2,
+          "disagreements": 23,
+          "gain_ids": [
+            "egolife_052",
+            "egolife_149",
+            "egolife_153",
+            "egolife_187",
+            "egolife_189"
+          ],
+          "loss_ids": [
+            "egolife_019",
+            "egolife_020",
+            "egolife_021",
+            "egolife_054",
+            "egolife_150",
+            "egolife_151",
+            "egolife_186"
+          ]
+        },
+        "test": {
+          "n": 57,
+          "gains": 3,
+          "losses": 6,
+          "net": -3,
+          "disagreements": 36,
+          "gain_ids": [
+            "egolife_090",
+            "egolife_161",
+            "egolife_193"
+          ],
+          "loss_ids": [
+            "egolife_058",
+            "egolife_091",
+            "egolife_095",
+            "egolife_158",
+            "egolife_191",
+            "egolife_198"
+          ]
+        }
+      },
+      "direct_matched": {
+        "train": {
+          "n": 111,
+          "gains": 3,
+          "losses": 10,
+          "net": -7,
+          "disagreements": 50,
+          "gain_ids": [
+            "egolife_005",
+            "egolife_006",
+            "egolife_015"
+          ],
+          "loss_ids": [
+            "egolife_012",
+            "egolife_035",
+            "egolife_079",
+            "egolife_099",
+            "egolife_102",
+            "egolife_111",
+            "egolife_135",
+            "egolife_138",
+            "egolife_176",
+            "egolife_180"
+          ]
+        },
+        "validation": {
+          "n": 32,
+          "gains": 5,
+          "losses": 7,
+          "net": -2,
+          "disagreements": 23,
+          "gain_ids": [
+            "egolife_052",
+            "egolife_149",
+            "egolife_153",
+            "egolife_187",
+            "egolife_189"
+          ],
+          "loss_ids": [
+            "egolife_019",
+            "egolife_020",
+            "egolife_021",
+            "egolife_054",
+            "egolife_150",
+            "egolife_151",
+            "egolife_186"
+          ]
+        },
+        "test": {
+          "n": 57,
+          "gains": 3,
+          "losses": 6,
+          "net": -3,
+          "disagreements": 36,
+          "gain_ids": [
+            "egolife_090",
+            "egolife_161",
+            "egolife_193"
+          ],
+          "loss_ids": [
+            "egolife_058",
+            "egolife_091",
+            "egolife_095",
+            "egolife_158",
+            "egolife_191",
+            "egolife_198"
+          ]
+        }
+      },
+      "prior": {
+        "train": {
+          "n": 111,
+          "gains": 7,
+          "losses": 7,
+          "net": 0,
+          "disagreements": 60,
+          "gain_ids": [
+            "egolife_005",
+            "egolife_006",
+            "egolife_072",
+            "egolife_077",
+            "egolife_105",
+            "egolife_114",
+            "egolife_132"
+          ],
+          "loss_ids": [
+            "egolife_012",
+            "egolife_071",
+            "egolife_079",
+            "egolife_099",
+            "egolife_167",
+            "egolife_176",
+            "egolife_180"
+          ]
+        },
+        "validation": {
+          "n": 32,
+          "gains": 5,
+          "losses": 3,
+          "net": 2,
+          "disagreements": 21,
+          "gain_ids": [
+            "egolife_052",
+            "egolife_149",
+            "egolife_153",
+            "egolife_187",
+            "egolife_189"
+          ],
+          "loss_ids": [
+            "egolife_019",
+            "egolife_020",
+            "egolife_021"
+          ]
+        },
+        "test": {
+          "n": 57,
+          "gains": 4,
+          "losses": 1,
+          "net": 3,
+          "disagreements": 28,
+          "gain_ids": [
+            "egolife_090",
+            "egolife_128",
+            "egolife_161",
+            "egolife_193"
+          ],
+          "loss_ids": [
+            "egolife_191"
+          ]
+        }
+      }
+    },
+    "reset": {
+      "full_icl": {
+        "train": {
+          "n": 111,
+          "gains": 5,
+          "losses": 25,
+          "net": -20,
+          "disagreements": 83,
+          "gain_ids": [
+            "egolife_015",
+            "egolife_071",
+            "egolife_073",
+            "egolife_079",
+            "egolife_167"
+          ],
+          "loss_ids": [
+            "egolife_001",
+            "egolife_002",
+            "egolife_005",
+            "egolife_017",
+            "egolife_032",
+            "egolife_033",
+            "egolife_039",
+            "egolife_042",
+            "egolife_074",
+            "egolife_077",
+            "egolife_104",
+            "egolife_105",
+            "egolife_111",
+            "egolife_117",
+            "egolife_137",
+            "egolife_140",
+            "egolife_143",
+            "egolife_145",
+            "egolife_148",
+            "egolife_170",
+            "egolife_171",
+            "egolife_175",
+            "egolife_179",
+            "egolife_182",
+            "egolife_183"
+          ]
+        },
+        "validation": {
+          "n": 32,
+          "gains": 3,
+          "losses": 5,
+          "net": -2,
+          "disagreements": 26,
+          "gain_ids": [
+            "egolife_020",
+            "egolife_021",
+            "egolife_122"
+          ],
+          "loss_ids": [
+            "egolife_051",
+            "egolife_084",
+            "egolife_086",
+            "egolife_088",
+            "egolife_153"
+          ]
+        },
+        "test": {
+          "n": 57,
+          "gains": 1,
+          "losses": 19,
+          "net": -18,
+          "disagreements": 47,
+          "gain_ids": [
+            "egolife_162"
+          ],
+          "loss_ids": [
+            "egolife_022",
+            "egolife_027",
+            "egolife_059",
+            "egolife_064",
+            "egolife_065",
+            "egolife_090",
+            "egolife_093",
+            "egolife_097",
+            "egolife_124",
+            "egolife_126",
+            "egolife_129",
+            "egolife_156",
+            "egolife_158",
+            "egolife_160",
+            "egolife_163",
+            "egolife_193",
+            "egolife_195",
+            "egolife_198",
+            "egolife_199"
+          ]
+        }
+      },
+      "direct": {
+        "train": {
+          "n": 111,
+          "gains": 3,
+          "losses": 10,
+          "net": -7,
+          "disagreements": 46,
+          "gain_ids": [
+            "egolife_015",
+            "egolife_071",
+            "egolife_167"
+          ],
+          "loss_ids": [
+            "egolife_035",
+            "egolife_072",
+            "egolife_077",
+            "egolife_102",
+            "egolife_105",
+            "egolife_111",
+            "egolife_114",
+            "egolife_132",
+            "egolife_135",
+            "egolife_138"
+          ]
+        },
+        "validation": {
+          "n": 32,
+          "gains": 0,
+          "losses": 4,
+          "net": -4,
+          "disagreements": 10,
+          "gain_ids": [],
+          "loss_ids": [
+            "egolife_054",
+            "egolife_150",
+            "egolife_151",
+            "egolife_186"
+          ]
+        },
+        "test": {
+          "n": 57,
+          "gains": 0,
+          "losses": 6,
+          "net": -6,
+          "disagreements": 30,
+          "gain_ids": [],
+          "loss_ids": [
+            "egolife_058",
+            "egolife_091",
+            "egolife_095",
+            "egolife_128",
+            "egolife_158",
+            "egolife_198"
+          ]
+        }
+      },
+      "direct_matched": {
+        "train": {
+          "n": 111,
+          "gains": 3,
+          "losses": 10,
+          "net": -7,
+          "disagreements": 46,
+          "gain_ids": [
+            "egolife_015",
+            "egolife_071",
+            "egolife_167"
+          ],
+          "loss_ids": [
+            "egolife_035",
+            "egolife_072",
+            "egolife_077",
+            "egolife_102",
+            "egolife_105",
+            "egolife_111",
+            "egolife_114",
+            "egolife_132",
+            "egolife_135",
+            "egolife_138"
+          ]
+        },
+        "validation": {
+          "n": 32,
+          "gains": 0,
+          "losses": 4,
+          "net": -4,
+          "disagreements": 10,
+          "gain_ids": [],
+          "loss_ids": [
+            "egolife_054",
+            "egolife_150",
+            "egolife_151",
+            "egolife_186"
+          ]
+        },
+        "test": {
+          "n": 57,
+          "gains": 0,
+          "losses": 6,
+          "net": -6,
+          "disagreements": 30,
+          "gain_ids": [],
+          "loss_ids": [
+            "egolife_058",
+            "egolife_091",
+            "egolife_095",
+            "egolife_128",
+            "egolife_158",
+            "egolife_198"
+          ]
+        }
+      },
+      "prior": {
+        "train": {
+          "n": 111,
+          "gains": 0,
+          "losses": 0,
+          "net": 0,
+          "disagreements": 0,
+          "gain_ids": [],
+          "loss_ids": []
+        },
+        "validation": {
+          "n": 32,
+          "gains": 0,
+          "losses": 0,
+          "net": 0,
+          "disagreements": 0,
+          "gain_ids": [],
+          "loss_ids": []
+        },
+        "test": {
+          "n": 57,
+          "gains": 0,
+          "losses": 0,
+          "net": 0,
+          "disagreements": 0,
+          "gain_ids": [],
+          "loss_ids": []
+        }
+      }
+    },
+    "frozen_init": {
+      "full_icl": {
+        "train": {
+          "n": 111,
+          "gains": 5,
+          "losses": 25,
+          "net": -20,
+          "disagreements": 83,
+          "gain_ids": [
+            "egolife_015",
+            "egolife_071",
+            "egolife_073",
+            "egolife_079",
+            "egolife_167"
+          ],
+          "loss_ids": [
+            "egolife_001",
+            "egolife_002",
+            "egolife_005",
+            "egolife_017",
+            "egolife_032",
+            "egolife_033",
+            "egolife_039",
+            "egolife_042",
+            "egolife_074",
+            "egolife_077",
+            "egolife_104",
+            "egolife_105",
+            "egolife_111",
+            "egolife_117",
+            "egolife_137",
+            "egolife_140",
+            "egolife_143",
+            "egolife_145",
+            "egolife_148",
+            "egolife_170",
+            "egolife_171",
+            "egolife_175",
+            "egolife_179",
+            "egolife_182",
+            "egolife_183"
+          ]
+        },
+        "validation": {
+          "n": 32,
+          "gains": 3,
+          "losses": 5,
+          "net": -2,
+          "disagreements": 26,
+          "gain_ids": [
+            "egolife_020",
+            "egolife_021",
+            "egolife_122"
+          ],
+          "loss_ids": [
+            "egolife_051",
+            "egolife_084",
+            "egolife_086",
+            "egolife_088",
+            "egolife_153"
+          ]
+        },
+        "test": {
+          "n": 57,
+          "gains": 1,
+          "losses": 19,
+          "net": -18,
+          "disagreements": 47,
+          "gain_ids": [
+            "egolife_162"
+          ],
+          "loss_ids": [
+            "egolife_022",
+            "egolife_027",
+            "egolife_059",
+            "egolife_064",
+            "egolife_065",
+            "egolife_090",
+            "egolife_093",
+            "egolife_097",
+            "egolife_124",
+            "egolife_126",
+            "egolife_129",
+            "egolife_156",
+            "egolife_158",
+            "egolife_160",
+            "egolife_163",
+            "egolife_193",
+            "egolife_195",
+            "egolife_198",
+            "egolife_199"
+          ]
+        }
+      },
+      "direct": {
+        "train": {
+          "n": 111,
+          "gains": 3,
+          "losses": 10,
+          "net": -7,
+          "disagreements": 46,
+          "gain_ids": [
+            "egolife_015",
+            "egolife_071",
+            "egolife_167"
+          ],
+          "loss_ids": [
+            "egolife_035",
+            "egolife_072",
+            "egolife_077",
+            "egolife_102",
+            "egolife_105",
+            "egolife_111",
+            "egolife_114",
+            "egolife_132",
+            "egolife_135",
+            "egolife_138"
+          ]
+        },
+        "validation": {
+          "n": 32,
+          "gains": 0,
+          "losses": 4,
+          "net": -4,
+          "disagreements": 10,
+          "gain_ids": [],
+          "loss_ids": [
+            "egolife_054",
+            "egolife_150",
+            "egolife_151",
+            "egolife_186"
+          ]
+        },
+        "test": {
+          "n": 57,
+          "gains": 0,
+          "losses": 6,
+          "net": -6,
+          "disagreements": 30,
+          "gain_ids": [],
+          "loss_ids": [
+            "egolife_058",
+            "egolife_091",
+            "egolife_095",
+            "egolife_128",
+            "egolife_158",
+            "egolife_198"
+          ]
+        }
+      },
+      "direct_matched": {
+        "train": {
+          "n": 111,
+          "gains": 3,
+          "losses": 10,
+          "net": -7,
+          "disagreements": 46,
+          "gain_ids": [
+            "egolife_015",
+            "egolife_071",
+            "egolife_167"
+          ],
+          "loss_ids": [
+            "egolife_035",
+            "egolife_072",
+            "egolife_077",
+            "egolife_102",
+            "egolife_105",
+            "egolife_111",
+            "egolife_114",
+            "egolife_132",
+            "egolife_135",
+            "egolife_138"
+          ]
+        },
+        "validation": {
+          "n": 32,
+          "gains": 0,
+          "losses": 4,
+          "net": -4,
+          "disagreements": 10,
+          "gain_ids": [],
+          "loss_ids": [
+            "egolife_054",
+            "egolife_150",
+            "egolife_151",
+            "egolife_186"
+          ]
+        },
+        "test": {
+          "n": 57,
+          "gains": 0,
+          "losses": 6,
+          "net": -6,
+          "disagreements": 30,
+          "gain_ids": [],
+          "loss_ids": [
+            "egolife_058",
+            "egolife_091",
+            "egolife_095",
+            "egolife_128",
+            "egolife_158",
+            "egolife_198"
+          ]
+        }
+      },
+      "prior": {
+        "train": {
+          "n": 111,
+          "gains": 0,
+          "losses": 0,
+          "net": 0,
+          "disagreements": 0,
+          "gain_ids": [],
+          "loss_ids": []
+        },
+        "validation": {
+          "n": 32,
+          "gains": 0,
+          "losses": 0,
+          "net": 0,
+          "disagreements": 0,
+          "gain_ids": [],
+          "loss_ids": []
+        },
+        "test": {
+          "n": 57,
+          "gains": 0,
+          "losses": 0,
+          "net": 0,
+          "disagreements": 0,
+          "gain_ids": [],
+          "loss_ids": []
+        }
+      }
+    },
+    "wrong_direct": {
+      "full_icl": {
+        "train": {
+          "n": 111,
+          "gains": 9,
+          "losses": 23,
+          "net": -14,
+          "disagreements": 85,
+          "gain_ids": [
+            "egolife_015",
+            "egolife_035",
+            "egolife_071",
+            "egolife_079",
+            "egolife_114",
+            "egolife_132",
+            "egolife_135",
+            "egolife_138",
+            "egolife_142"
+          ],
+          "loss_ids": [
+            "egolife_001",
+            "egolife_002",
+            "egolife_005",
+            "egolife_017",
+            "egolife_032",
+            "egolife_033",
+            "egolife_039",
+            "egolife_042",
+            "egolife_074",
+            "egolife_104",
+            "egolife_105",
+            "egolife_117",
+            "egolife_137",
+            "egolife_140",
+            "egolife_143",
+            "egolife_145",
+            "egolife_148",
+            "egolife_170",
+            "egolife_171",
+            "egolife_175",
+            "egolife_179",
+            "egolife_182",
+            "egolife_183"
+          ]
+        },
+        "validation": {
+          "n": 32,
+          "gains": 7,
+          "losses": 6,
+          "net": 1,
+          "disagreements": 28,
+          "gain_ids": [
+            "egolife_020",
+            "egolife_021",
+            "egolife_054",
+            "egolife_122",
+            "egolife_150",
+            "egolife_151",
+            "egolife_186"
+          ],
+          "loss_ids": [
+            "egolife_019",
+            "egolife_051",
+            "egolife_084",
+            "egolife_086",
+            "egolife_088",
+            "egolife_153"
+          ]
+        },
+        "test": {
+          "n": 57,
+          "gains": 6,
+          "losses": 17,
+          "net": -11,
+          "disagreements": 45,
+          "gain_ids": [
+            "egolife_058",
+            "egolife_091",
+            "egolife_095",
+            "egolife_128",
+            "egolife_131",
+            "egolife_200"
+          ],
+          "loss_ids": [
+            "egolife_022",
+            "egolife_027",
+            "egolife_064",
+            "egolife_065",
+            "egolife_090",
+            "egolife_093",
+            "egolife_097",
+            "egolife_124",
+            "egolife_126",
+            "egolife_129",
+            "egolife_156",
+            "egolife_163",
+            "egolife_191",
+            "egolife_193",
+            "egolife_195",
+            "egolife_198",
+            "egolife_199"
+          ]
+        }
+      },
+      "direct": {
+        "train": {
+          "n": 111,
+          "gains": 3,
+          "losses": 4,
+          "net": -1,
+          "disagreements": 25,
+          "gain_ids": [
+            "egolife_015",
+            "egolife_071",
+            "egolife_142"
+          ],
+          "loss_ids": [
+            "egolife_072",
+            "egolife_073",
+            "egolife_102",
+            "egolife_105"
+          ]
+        },
+        "validation": {
+          "n": 32,
+          "gains": 0,
+          "losses": 1,
+          "net": -1,
+          "disagreements": 7,
+          "gain_ids": [],
+          "loss_ids": [
+            "egolife_019"
+          ]
+        },
+        "test": {
+          "n": 57,
+          "gains": 4,
+          "losses": 3,
+          "net": 1,
+          "disagreements": 23,
+          "gain_ids": [
+            "egolife_059",
+            "egolife_131",
+            "egolife_160",
+            "egolife_200"
+          ],
+          "loss_ids": [
+            "egolife_162",
+            "egolife_191",
+            "egolife_198"
+          ]
+        }
+      },
+      "direct_matched": {
+        "train": {
+          "n": 111,
+          "gains": 3,
+          "losses": 4,
+          "net": -1,
+          "disagreements": 25,
+          "gain_ids": [
+            "egolife_015",
+            "egolife_071",
+            "egolife_142"
+          ],
+          "loss_ids": [
+            "egolife_072",
+            "egolife_073",
+            "egolife_102",
+            "egolife_105"
+          ]
+        },
+        "validation": {
+          "n": 32,
+          "gains": 0,
+          "losses": 1,
+          "net": -1,
+          "disagreements": 7,
+          "gain_ids": [],
+          "loss_ids": [
+            "egolife_019"
+          ]
+        },
+        "test": {
+          "n": 57,
+          "gains": 4,
+          "losses": 3,
+          "net": 1,
+          "disagreements": 23,
+          "gain_ids": [
+            "egolife_059",
+            "egolife_131",
+            "egolife_160",
+            "egolife_200"
+          ],
+          "loss_ids": [
+            "egolife_162",
+            "egolife_191",
+            "egolife_198"
+          ]
+        }
+      },
+      "prior": {
+        "train": {
+          "n": 111,
+          "gains": 8,
+          "losses": 2,
+          "net": 6,
+          "disagreements": 51,
+          "gain_ids": [
+            "egolife_035",
+            "egolife_077",
+            "egolife_111",
+            "egolife_114",
+            "egolife_132",
+            "egolife_135",
+            "egolife_138",
+            "egolife_142"
+          ],
+          "loss_ids": [
+            "egolife_073",
+            "egolife_167"
+          ]
+        },
+        "validation": {
+          "n": 32,
+          "gains": 4,
+          "losses": 1,
+          "net": 3,
+          "disagreements": 13,
+          "gain_ids": [
+            "egolife_054",
+            "egolife_150",
+            "egolife_151",
+            "egolife_186"
+          ],
+          "loss_ids": [
+            "egolife_019"
+          ]
+        },
+        "test": {
+          "n": 57,
+          "gains": 9,
+          "losses": 2,
+          "net": 7,
+          "disagreements": 34,
+          "gain_ids": [
+            "egolife_058",
+            "egolife_059",
+            "egolife_091",
+            "egolife_095",
+            "egolife_128",
+            "egolife_131",
+            "egolife_158",
+            "egolife_160",
+            "egolife_200"
+          ],
+          "loss_ids": [
+            "egolife_162",
+            "egolife_191"
+          ]
+        }
+      }
+    },
+    "wrong_direct_matched": {
+      "full_icl": {
+        "train": {
+          "n": 111,
+          "gains": 9,
+          "losses": 23,
+          "net": -14,
+          "disagreements": 85,
+          "gain_ids": [
+            "egolife_015",
+            "egolife_035",
+            "egolife_071",
+            "egolife_079",
+            "egolife_114",
+            "egolife_132",
+            "egolife_135",
+            "egolife_138",
+            "egolife_142"
+          ],
+          "loss_ids": [
+            "egolife_001",
+            "egolife_002",
+            "egolife_005",
+            "egolife_017",
+            "egolife_032",
+            "egolife_033",
+            "egolife_039",
+            "egolife_042",
+            "egolife_074",
+            "egolife_104",
+            "egolife_105",
+            "egolife_117",
+            "egolife_137",
+            "egolife_140",
+            "egolife_143",
+            "egolife_145",
+            "egolife_148",
+            "egolife_170",
+            "egolife_171",
+            "egolife_175",
+            "egolife_179",
+            "egolife_182",
+            "egolife_183"
+          ]
+        },
+        "validation": {
+          "n": 32,
+          "gains": 7,
+          "losses": 6,
+          "net": 1,
+          "disagreements": 28,
+          "gain_ids": [
+            "egolife_020",
+            "egolife_021",
+            "egolife_054",
+            "egolife_122",
+            "egolife_150",
+            "egolife_151",
+            "egolife_186"
+          ],
+          "loss_ids": [
+            "egolife_019",
+            "egolife_051",
+            "egolife_084",
+            "egolife_086",
+            "egolife_088",
+            "egolife_153"
+          ]
+        },
+        "test": {
+          "n": 57,
+          "gains": 6,
+          "losses": 17,
+          "net": -11,
+          "disagreements": 45,
+          "gain_ids": [
+            "egolife_058",
+            "egolife_091",
+            "egolife_095",
+            "egolife_128",
+            "egolife_131",
+            "egolife_200"
+          ],
+          "loss_ids": [
+            "egolife_022",
+            "egolife_027",
+            "egolife_064",
+            "egolife_065",
+            "egolife_090",
+            "egolife_093",
+            "egolife_097",
+            "egolife_124",
+            "egolife_126",
+            "egolife_129",
+            "egolife_156",
+            "egolife_163",
+            "egolife_191",
+            "egolife_193",
+            "egolife_195",
+            "egolife_198",
+            "egolife_199"
+          ]
+        }
+      },
+      "direct": {
+        "train": {
+          "n": 111,
+          "gains": 3,
+          "losses": 4,
+          "net": -1,
+          "disagreements": 25,
+          "gain_ids": [
+            "egolife_015",
+            "egolife_071",
+            "egolife_142"
+          ],
+          "loss_ids": [
+            "egolife_072",
+            "egolife_073",
+            "egolife_102",
+            "egolife_105"
+          ]
+        },
+        "validation": {
+          "n": 32,
+          "gains": 0,
+          "losses": 1,
+          "net": -1,
+          "disagreements": 7,
+          "gain_ids": [],
+          "loss_ids": [
+            "egolife_019"
+          ]
+        },
+        "test": {
+          "n": 57,
+          "gains": 4,
+          "losses": 3,
+          "net": 1,
+          "disagreements": 23,
+          "gain_ids": [
+            "egolife_059",
+            "egolife_131",
+            "egolife_160",
+            "egolife_200"
+          ],
+          "loss_ids": [
+            "egolife_162",
+            "egolife_191",
+            "egolife_198"
+          ]
+        }
+      },
+      "direct_matched": {
+        "train": {
+          "n": 111,
+          "gains": 3,
+          "losses": 4,
+          "net": -1,
+          "disagreements": 25,
+          "gain_ids": [
+            "egolife_015",
+            "egolife_071",
+            "egolife_142"
+          ],
+          "loss_ids": [
+            "egolife_072",
+            "egolife_073",
+            "egolife_102",
+            "egolife_105"
+          ]
+        },
+        "validation": {
+          "n": 32,
+          "gains": 0,
+          "losses": 1,
+          "net": -1,
+          "disagreements": 7,
+          "gain_ids": [],
+          "loss_ids": [
+            "egolife_019"
+          ]
+        },
+        "test": {
+          "n": 57,
+          "gains": 4,
+          "losses": 3,
+          "net": 1,
+          "disagreements": 23,
+          "gain_ids": [
+            "egolife_059",
+            "egolife_131",
+            "egolife_160",
+            "egolife_200"
+          ],
+          "loss_ids": [
+            "egolife_162",
+            "egolife_191",
+            "egolife_198"
+          ]
+        }
+      },
+      "prior": {
+        "train": {
+          "n": 111,
+          "gains": 8,
+          "losses": 2,
+          "net": 6,
+          "disagreements": 51,
+          "gain_ids": [
+            "egolife_035",
+            "egolife_077",
+            "egolife_111",
+            "egolife_114",
+            "egolife_132",
+            "egolife_135",
+            "egolife_138",
+            "egolife_142"
+          ],
+          "loss_ids": [
+            "egolife_073",
+            "egolife_167"
+          ]
+        },
+        "validation": {
+          "n": 32,
+          "gains": 4,
+          "losses": 1,
+          "net": 3,
+          "disagreements": 13,
+          "gain_ids": [
+            "egolife_054",
+            "egolife_150",
+            "egolife_151",
+            "egolife_186"
+          ],
+          "loss_ids": [
+            "egolife_019"
+          ]
+        },
+        "test": {
+          "n": 57,
+          "gains": 9,
+          "losses": 2,
+          "net": 7,
+          "disagreements": 34,
+          "gain_ids": [
+            "egolife_058",
+            "egolife_059",
+            "egolife_091",
+            "egolife_095",
+            "egolife_128",
+            "egolife_131",
+            "egolife_158",
+            "egolife_160",
+            "egolife_200"
+          ],
+          "loss_ids": [
+            "egolife_162",
+            "egolife_191"
+          ]
+        }
+      }
+    },
+    "wrong_search": {
+      "full_icl": {
+        "train": {
+          "n": 111,
+          "gains": 8,
+          "losses": 29,
+          "net": -21,
+          "disagreements": 89,
+          "gain_ids": [
+            "egolife_006",
+            "egolife_010",
+            "egolife_038",
+            "egolife_044",
+            "egolife_072",
+            "egolife_079",
+            "egolife_114",
+            "egolife_142"
+          ],
+          "loss_ids": [
+            "egolife_001",
+            "egolife_002",
+            "egolife_005",
+            "egolife_012",
+            "egolife_017",
+            "egolife_032",
+            "egolife_033",
+            "egolife_039",
+            "egolife_042",
+            "egolife_074",
+            "egolife_099",
+            "egolife_104",
+            "egolife_105",
+            "egolife_111",
+            "egolife_117",
+            "egolife_137",
+            "egolife_140",
+            "egolife_143",
+            "egolife_145",
+            "egolife_148",
+            "egolife_168",
+            "egolife_170",
+            "egolife_171",
+            "egolife_172",
+            "egolife_175",
+            "egolife_179",
+            "egolife_180",
+            "egolife_182",
+            "egolife_183"
+          ]
+        },
+        "validation": {
+          "n": 32,
+          "gains": 2,
+          "losses": 6,
+          "net": -4,
+          "disagreements": 26,
+          "gain_ids": [
+            "egolife_021",
+            "egolife_122"
+          ],
+          "loss_ids": [
+            "egolife_019",
+            "egolife_051",
+            "egolife_084",
+            "egolife_086",
+            "egolife_088",
+            "egolife_153"
+          ]
+        },
+        "test": {
+          "n": 57,
+          "gains": 5,
+          "losses": 17,
+          "net": -12,
+          "disagreements": 45,
+          "gain_ids": [
+            "egolife_128",
+            "egolife_131",
+            "egolife_161",
+            "egolife_162",
+            "egolife_200"
+          ],
+          "loss_ids": [
+            "egolife_022",
+            "egolife_027",
+            "egolife_064",
+            "egolife_065",
+            "egolife_090",
+            "egolife_093",
+            "egolife_097",
+            "egolife_124",
+            "egolife_126",
+            "egolife_129",
+            "egolife_156",
+            "egolife_158",
+            "egolife_163",
+            "egolife_191",
+            "egolife_193",
+            "egolife_195",
+            "egolife_198"
+          ]
+        }
+      },
+      "direct": {
+        "train": {
+          "n": 111,
+          "gains": 5,
+          "losses": 13,
+          "net": -8,
+          "disagreements": 50,
+          "gain_ids": [
+            "egolife_006",
+            "egolife_010",
+            "egolife_038",
+            "egolife_044",
+            "egolife_142"
+          ],
+          "loss_ids": [
+            "egolife_012",
+            "egolife_035",
+            "egolife_073",
+            "egolife_099",
+            "egolife_102",
+            "egolife_105",
+            "egolife_111",
+            "egolife_132",
+            "egolife_135",
+            "egolife_138",
+            "egolife_168",
+            "egolife_172",
+            "egolife_180"
+          ]
+        },
+        "validation": {
+          "n": 32,
+          "gains": 0,
+          "losses": 6,
+          "net": -6,
+          "disagreements": 16,
+          "gain_ids": [],
+          "loss_ids": [
+            "egolife_019",
+            "egolife_020",
+            "egolife_054",
+            "egolife_150",
+            "egolife_151",
+            "egolife_186"
+          ]
+        },
+        "test": {
+          "n": 57,
+          "gains": 6,
+          "losses": 6,
+          "net": 0,
+          "disagreements": 38,
+          "gain_ids": [
+            "egolife_059",
+            "egolife_131",
+            "egolife_160",
+            "egolife_161",
+            "egolife_199",
+            "egolife_200"
+          ],
+          "loss_ids": [
+            "egolife_058",
+            "egolife_091",
+            "egolife_095",
+            "egolife_158",
+            "egolife_191",
+            "egolife_198"
+          ]
+        }
+      },
+      "direct_matched": {
+        "train": {
+          "n": 111,
+          "gains": 5,
+          "losses": 13,
+          "net": -8,
+          "disagreements": 50,
+          "gain_ids": [
+            "egolife_006",
+            "egolife_010",
+            "egolife_038",
+            "egolife_044",
+            "egolife_142"
+          ],
+          "loss_ids": [
+            "egolife_012",
+            "egolife_035",
+            "egolife_073",
+            "egolife_099",
+            "egolife_102",
+            "egolife_105",
+            "egolife_111",
+            "egolife_132",
+            "egolife_135",
+            "egolife_138",
+            "egolife_168",
+            "egolife_172",
+            "egolife_180"
+          ]
+        },
+        "validation": {
+          "n": 32,
+          "gains": 0,
+          "losses": 6,
+          "net": -6,
+          "disagreements": 16,
+          "gain_ids": [],
+          "loss_ids": [
+            "egolife_019",
+            "egolife_020",
+            "egolife_054",
+            "egolife_150",
+            "egolife_151",
+            "egolife_186"
+          ]
+        },
+        "test": {
+          "n": 57,
+          "gains": 6,
+          "losses": 6,
+          "net": 0,
+          "disagreements": 38,
+          "gain_ids": [
+            "egolife_059",
+            "egolife_131",
+            "egolife_160",
+            "egolife_161",
+            "egolife_199",
+            "egolife_200"
+          ],
+          "loss_ids": [
+            "egolife_058",
+            "egolife_091",
+            "egolife_095",
+            "egolife_158",
+            "egolife_191",
+            "egolife_198"
+          ]
+        }
+      },
+      "prior": {
+        "train": {
+          "n": 111,
+          "gains": 8,
+          "losses": 9,
+          "net": -1,
+          "disagreements": 59,
+          "gain_ids": [
+            "egolife_006",
+            "egolife_010",
+            "egolife_038",
+            "egolife_044",
+            "egolife_072",
+            "egolife_077",
+            "egolife_114",
+            "egolife_142"
+          ],
+          "loss_ids": [
+            "egolife_012",
+            "egolife_015",
+            "egolife_071",
+            "egolife_073",
+            "egolife_099",
+            "egolife_167",
+            "egolife_168",
+            "egolife_172",
+            "egolife_180"
+          ]
+        },
+        "validation": {
+          "n": 32,
+          "gains": 0,
+          "losses": 2,
+          "net": -2,
+          "disagreements": 18,
+          "gain_ids": [],
+          "loss_ids": [
+            "egolife_019",
+            "egolife_020"
+          ]
+        },
+        "test": {
+          "n": 57,
+          "gains": 7,
+          "losses": 1,
+          "net": 6,
+          "disagreements": 29,
+          "gain_ids": [
+            "egolife_059",
+            "egolife_128",
+            "egolife_131",
+            "egolife_160",
+            "egolife_161",
+            "egolife_199",
+            "egolife_200"
+          ],
+          "loss_ids": [
+            "egolife_191"
+          ]
+        }
+      }
+    },
+    "direct_raw": {
+      "full_icl": {
+        "train": {
+          "n": 111,
+          "gains": 11,
+          "losses": 20,
+          "net": -9,
+          "disagreements": 79,
+          "gain_ids": [
+            "egolife_011",
+            "egolife_018",
+            "egolife_035",
+            "egolife_073",
+            "egolife_078",
+            "egolife_079",
+            "egolife_083",
+            "egolife_103",
+            "egolife_113",
+            "egolife_114",
+            "egolife_169"
+          ],
+          "loss_ids": [
+            "egolife_002",
+            "egolife_012",
+            "egolife_017",
+            "egolife_032",
+            "egolife_033",
+            "egolife_039",
+            "egolife_042",
+            "egolife_074",
+            "egolife_104",
+            "egolife_111",
+            "egolife_117",
+            "egolife_137",
+            "egolife_140",
+            "egolife_143",
+            "egolife_171",
+            "egolife_175",
+            "egolife_176",
+            "egolife_179",
+            "egolife_182",
+            "egolife_183"
+          ]
+        },
+        "validation": {
+          "n": 32,
+          "gains": 3,
+          "losses": 6,
+          "net": -3,
+          "disagreements": 28,
+          "gain_ids": [
+            "egolife_055",
+            "egolife_122",
+            "egolife_186"
+          ],
+          "loss_ids": [
+            "egolife_019",
+            "egolife_051",
+            "egolife_084",
+            "egolife_086",
+            "egolife_088",
+            "egolife_153"
+          ]
+        },
+        "test": {
+          "n": 57,
+          "gains": 5,
+          "losses": 16,
+          "net": -11,
+          "disagreements": 44,
+          "gain_ids": [
+            "egolife_058",
+            "egolife_091",
+            "egolife_095",
+            "egolife_128",
+            "egolife_157"
+          ],
+          "loss_ids": [
+            "egolife_022",
+            "egolife_027",
+            "egolife_059",
+            "egolife_064",
+            "egolife_065",
+            "egolife_090",
+            "egolife_093",
+            "egolife_097",
+            "egolife_126",
+            "egolife_129",
+            "egolife_156",
+            "egolife_160",
+            "egolife_163",
+            "egolife_193",
+            "egolife_195",
+            "egolife_199"
+          ]
+        }
+      },
+      "direct": {
+        "train": {
+          "n": 111,
+          "gains": 12,
+          "losses": 8,
+          "net": 4,
+          "disagreements": 54,
+          "gain_ids": [
+            "egolife_001",
+            "egolife_005",
+            "egolife_011",
+            "egolife_018",
+            "egolife_078",
+            "egolife_083",
+            "egolife_103",
+            "egolife_113",
+            "egolife_145",
+            "egolife_148",
+            "egolife_169",
+            "egolife_170"
+          ],
+          "loss_ids": [
+            "egolife_012",
+            "egolife_072",
+            "egolife_102",
+            "egolife_111",
+            "egolife_132",
+            "egolife_135",
+            "egolife_138",
+            "egolife_176"
+          ]
+        },
+        "validation": {
+          "n": 32,
+          "gains": 1,
+          "losses": 6,
+          "net": -5,
+          "disagreements": 19,
+          "gain_ids": [
+            "egolife_055"
+          ],
+          "loss_ids": [
+            "egolife_019",
+            "egolife_020",
+            "egolife_021",
+            "egolife_054",
+            "egolife_150",
+            "egolife_151"
+          ]
+        },
+        "test": {
+          "n": 57,
+          "gains": 2,
+          "losses": 1,
+          "net": 1,
+          "disagreements": 23,
+          "gain_ids": [
+            "egolife_124",
+            "egolife_157"
+          ],
+          "loss_ids": [
+            "egolife_162"
+          ]
+        }
+      },
+      "direct_matched": {
+        "train": {
+          "n": 111,
+          "gains": 12,
+          "losses": 8,
+          "net": 4,
+          "disagreements": 54,
+          "gain_ids": [
+            "egolife_001",
+            "egolife_005",
+            "egolife_011",
+            "egolife_018",
+            "egolife_078",
+            "egolife_083",
+            "egolife_103",
+            "egolife_113",
+            "egolife_145",
+            "egolife_148",
+            "egolife_169",
+            "egolife_170"
+          ],
+          "loss_ids": [
+            "egolife_012",
+            "egolife_072",
+            "egolife_102",
+            "egolife_111",
+            "egolife_132",
+            "egolife_135",
+            "egolife_138",
+            "egolife_176"
+          ]
+        },
+        "validation": {
+          "n": 32,
+          "gains": 1,
+          "losses": 6,
+          "net": -5,
+          "disagreements": 19,
+          "gain_ids": [
+            "egolife_055"
+          ],
+          "loss_ids": [
+            "egolife_019",
+            "egolife_020",
+            "egolife_021",
+            "egolife_054",
+            "egolife_150",
+            "egolife_151"
+          ]
+        },
+        "test": {
+          "n": 57,
+          "gains": 2,
+          "losses": 1,
+          "net": 1,
+          "disagreements": 23,
+          "gain_ids": [
+            "egolife_124",
+            "egolife_157"
+          ],
+          "loss_ids": [
+            "egolife_162"
+          ]
+        }
+      },
+      "prior": {
+        "train": {
+          "n": 111,
+          "gains": 16,
+          "losses": 5,
+          "net": 11,
+          "disagreements": 87,
+          "gain_ids": [
+            "egolife_001",
+            "egolife_005",
+            "egolife_011",
+            "egolife_018",
+            "egolife_035",
+            "egolife_077",
+            "egolife_078",
+            "egolife_083",
+            "egolife_103",
+            "egolife_105",
+            "egolife_113",
+            "egolife_114",
+            "egolife_145",
+            "egolife_148",
+            "egolife_169",
+            "egolife_170"
+          ],
+          "loss_ids": [
+            "egolife_012",
+            "egolife_015",
+            "egolife_071",
+            "egolife_167",
+            "egolife_176"
+          ]
+        },
+        "validation": {
+          "n": 32,
+          "gains": 2,
+          "losses": 3,
+          "net": -1,
+          "disagreements": 22,
+          "gain_ids": [
+            "egolife_055",
+            "egolife_186"
+          ],
+          "loss_ids": [
+            "egolife_019",
+            "egolife_020",
+            "egolife_021"
+          ]
+        },
+        "test": {
+          "n": 57,
+          "gains": 8,
+          "losses": 1,
+          "net": 7,
+          "disagreements": 47,
+          "gain_ids": [
+            "egolife_058",
+            "egolife_091",
+            "egolife_095",
+            "egolife_124",
+            "egolife_128",
+            "egolife_157",
+            "egolife_158",
+            "egolife_198"
+          ],
+          "loss_ids": [
+            "egolife_162"
+          ]
+        }
+      }
+    },
+    "search_raw": {
+      "full_icl": {
+        "train": {
+          "n": 111,
+          "gains": 12,
+          "losses": 25,
+          "net": -13,
+          "disagreements": 80,
+          "gain_ids": [
+            "egolife_006",
+            "egolife_010",
+            "egolife_015",
+            "egolife_037",
+            "egolife_072",
+            "egolife_073",
+            "egolife_078",
+            "egolife_082",
+            "egolife_083",
+            "egolife_112",
+            "egolife_114",
+            "egolife_178"
+          ],
+          "loss_ids": [
+            "egolife_002",
+            "egolife_012",
+            "egolife_017",
+            "egolife_032",
+            "egolife_033",
+            "egolife_039",
+            "egolife_042",
+            "egolife_074",
+            "egolife_099",
+            "egolife_104",
+            "egolife_111",
+            "egolife_117",
+            "egolife_137",
+            "egolife_140",
+            "egolife_143",
+            "egolife_148",
+            "egolife_168",
+            "egolife_171",
+            "egolife_172",
+            "egolife_175",
+            "egolife_176",
+            "egolife_179",
+            "egolife_180",
+            "egolife_182",
+            "egolife_183"
+          ]
+        },
+        "validation": {
+          "n": 32,
+          "gains": 2,
+          "losses": 6,
+          "net": -4,
+          "disagreements": 26,
+          "gain_ids": [
+            "egolife_187",
+            "egolife_189"
+          ],
+          "loss_ids": [
+            "egolife_019",
+            "egolife_051",
+            "egolife_084",
+            "egolife_086",
+            "egolife_088",
+            "egolife_153"
+          ]
+        },
+        "test": {
+          "n": 57,
+          "gains": 6,
+          "losses": 17,
+          "net": -11,
+          "disagreements": 42,
+          "gain_ids": [
+            "egolife_056",
+            "egolife_092",
+            "egolife_128",
+            "egolife_159",
+            "egolife_161",
+            "egolife_162"
+          ],
+          "loss_ids": [
+            "egolife_022",
+            "egolife_027",
+            "egolife_059",
+            "egolife_065",
+            "egolife_090",
+            "egolife_093",
+            "egolife_096",
+            "egolife_097",
+            "egolife_124",
+            "egolife_126",
+            "egolife_129",
+            "egolife_156",
+            "egolife_160",
+            "egolife_191",
+            "egolife_193",
+            "egolife_195",
+            "egolife_199"
+          ]
+        }
+      },
+      "direct": {
+        "train": {
+          "n": 111,
+          "gains": 13,
+          "losses": 13,
+          "net": 0,
+          "disagreements": 81,
+          "gain_ids": [
+            "egolife_001",
+            "egolife_005",
+            "egolife_006",
+            "egolife_010",
+            "egolife_015",
+            "egolife_037",
+            "egolife_078",
+            "egolife_082",
+            "egolife_083",
+            "egolife_112",
+            "egolife_145",
+            "egolife_170",
+            "egolife_178"
+          ],
+          "loss_ids": [
+            "egolife_012",
+            "egolife_035",
+            "egolife_079",
+            "egolife_099",
+            "egolife_102",
+            "egolife_111",
+            "egolife_132",
+            "egolife_135",
+            "egolife_138",
+            "egolife_168",
+            "egolife_172",
+            "egolife_176",
+            "egolife_180"
+          ]
+        },
+        "validation": {
+          "n": 32,
+          "gains": 2,
+          "losses": 8,
+          "net": -6,
+          "disagreements": 26,
+          "gain_ids": [
+            "egolife_187",
+            "egolife_189"
+          ],
+          "loss_ids": [
+            "egolife_019",
+            "egolife_020",
+            "egolife_021",
+            "egolife_054",
+            "egolife_122",
+            "egolife_150",
+            "egolife_151",
+            "egolife_186"
+          ]
+        },
+        "test": {
+          "n": 57,
+          "gains": 6,
+          "losses": 5,
+          "net": 1,
+          "disagreements": 45,
+          "gain_ids": [
+            "egolife_056",
+            "egolife_064",
+            "egolife_092",
+            "egolife_159",
+            "egolife_161",
+            "egolife_163"
+          ],
+          "loss_ids": [
+            "egolife_058",
+            "egolife_091",
+            "egolife_095",
+            "egolife_096",
+            "egolife_191"
+          ]
+        }
+      },
+      "direct_matched": {
+        "train": {
+          "n": 111,
+          "gains": 13,
+          "losses": 13,
+          "net": 0,
+          "disagreements": 81,
+          "gain_ids": [
+            "egolife_001",
+            "egolife_005",
+            "egolife_006",
+            "egolife_010",
+            "egolife_015",
+            "egolife_037",
+            "egolife_078",
+            "egolife_082",
+            "egolife_083",
+            "egolife_112",
+            "egolife_145",
+            "egolife_170",
+            "egolife_178"
+          ],
+          "loss_ids": [
+            "egolife_012",
+            "egolife_035",
+            "egolife_079",
+            "egolife_099",
+            "egolife_102",
+            "egolife_111",
+            "egolife_132",
+            "egolife_135",
+            "egolife_138",
+            "egolife_168",
+            "egolife_172",
+            "egolife_176",
+            "egolife_180"
+          ]
+        },
+        "validation": {
+          "n": 32,
+          "gains": 2,
+          "losses": 8,
+          "net": -6,
+          "disagreements": 26,
+          "gain_ids": [
+            "egolife_187",
+            "egolife_189"
+          ],
+          "loss_ids": [
+            "egolife_019",
+            "egolife_020",
+            "egolife_021",
+            "egolife_054",
+            "egolife_122",
+            "egolife_150",
+            "egolife_151",
+            "egolife_186"
+          ]
+        },
+        "test": {
+          "n": 57,
+          "gains": 6,
+          "losses": 5,
+          "net": 1,
+          "disagreements": 45,
+          "gain_ids": [
+            "egolife_056",
+            "egolife_064",
+            "egolife_092",
+            "egolife_159",
+            "egolife_161",
+            "egolife_163"
+          ],
+          "loss_ids": [
+            "egolife_058",
+            "egolife_091",
+            "egolife_095",
+            "egolife_096",
+            "egolife_191"
+          ]
+        }
+      },
+      "prior": {
+        "train": {
+          "n": 111,
+          "gains": 16,
+          "losses": 9,
+          "net": 7,
+          "disagreements": 98,
+          "gain_ids": [
+            "egolife_001",
+            "egolife_005",
+            "egolife_006",
+            "egolife_010",
+            "egolife_037",
+            "egolife_072",
+            "egolife_077",
+            "egolife_078",
+            "egolife_082",
+            "egolife_083",
+            "egolife_105",
+            "egolife_112",
+            "egolife_114",
+            "egolife_145",
+            "egolife_170",
+            "egolife_178"
+          ],
+          "loss_ids": [
+            "egolife_012",
+            "egolife_071",
+            "egolife_079",
+            "egolife_099",
+            "egolife_167",
+            "egolife_168",
+            "egolife_172",
+            "egolife_176",
+            "egolife_180"
+          ]
+        },
+        "validation": {
+          "n": 32,
+          "gains": 2,
+          "losses": 4,
+          "net": -2,
+          "disagreements": 27,
+          "gain_ids": [
+            "egolife_187",
+            "egolife_189"
+          ],
+          "loss_ids": [
+            "egolife_019",
+            "egolife_020",
+            "egolife_021",
+            "egolife_122"
+          ]
+        },
+        "test": {
+          "n": 57,
+          "gains": 9,
+          "losses": 2,
+          "net": 7,
+          "disagreements": 49,
+          "gain_ids": [
+            "egolife_056",
+            "egolife_064",
+            "egolife_092",
+            "egolife_128",
+            "egolife_158",
+            "egolife_159",
+            "egolife_161",
+            "egolife_163",
+            "egolife_198"
+          ],
+          "loss_ids": [
+            "egolife_096",
+            "egolife_191"
+          ]
+        }
+      }
+    },
+    "wrong_raw": {
+      "full_icl": {
+        "train": {
+          "n": 111,
+          "gains": 13,
+          "losses": 26,
+          "net": -13,
+          "disagreements": 90,
+          "gain_ids": [
+            "egolife_006",
+            "egolife_018",
+            "egolife_037",
+            "egolife_044",
+            "egolife_082",
+            "egolife_083",
+            "egolife_100",
+            "egolife_103",
+            "egolife_113",
+            "egolife_114",
+            "egolife_136",
+            "egolife_142",
+            "egolife_178"
+          ],
+          "loss_ids": [
+            "egolife_002",
+            "egolife_012",
+            "egolife_017",
+            "egolife_032",
+            "egolife_033",
+            "egolife_042",
+            "egolife_074",
+            "egolife_099",
+            "egolife_104",
+            "egolife_105",
+            "egolife_111",
+            "egolife_117",
+            "egolife_137",
+            "egolife_140",
+            "egolife_143",
+            "egolife_148",
+            "egolife_168",
+            "egolife_170",
+            "egolife_171",
+            "egolife_172",
+            "egolife_175",
+            "egolife_176",
+            "egolife_179",
+            "egolife_180",
+            "egolife_182",
+            "egolife_183"
+          ]
+        },
+        "validation": {
+          "n": 32,
+          "gains": 1,
+          "losses": 6,
+          "net": -5,
+          "disagreements": 26,
+          "gain_ids": [
+            "egolife_118"
+          ],
+          "loss_ids": [
+            "egolife_019",
+            "egolife_051",
+            "egolife_084",
+            "egolife_086",
+            "egolife_088",
+            "egolife_153"
+          ]
+        },
+        "test": {
+          "n": 57,
+          "gains": 9,
+          "losses": 15,
+          "net": -6,
+          "disagreements": 44,
+          "gain_ids": [
+            "egolife_056",
+            "egolife_063",
+            "egolife_092",
+            "egolife_128",
+            "egolife_131",
+            "egolife_159",
+            "egolife_161",
+            "egolife_162",
+            "egolife_200"
+          ],
+          "loss_ids": [
+            "egolife_022",
+            "egolife_027",
+            "egolife_059",
+            "egolife_065",
+            "egolife_093",
+            "egolife_097",
+            "egolife_124",
+            "egolife_126",
+            "egolife_156",
+            "egolife_158",
+            "egolife_160",
+            "egolife_191",
+            "egolife_193",
+            "egolife_195",
+            "egolife_198"
+          ]
+        }
+      },
+      "direct": {
+        "train": {
+          "n": 111,
+          "gains": 16,
+          "losses": 16,
+          "net": 0,
+          "disagreements": 94,
+          "gain_ids": [
+            "egolife_001",
+            "egolife_005",
+            "egolife_006",
+            "egolife_018",
+            "egolife_037",
+            "egolife_039",
+            "egolife_044",
+            "egolife_082",
+            "egolife_083",
+            "egolife_100",
+            "egolife_103",
+            "egolife_113",
+            "egolife_136",
+            "egolife_142",
+            "egolife_145",
+            "egolife_178"
+          ],
+          "loss_ids": [
+            "egolife_012",
+            "egolife_035",
+            "egolife_072",
+            "egolife_073",
+            "egolife_079",
+            "egolife_099",
+            "egolife_102",
+            "egolife_105",
+            "egolife_111",
+            "egolife_132",
+            "egolife_135",
+            "egolife_138",
+            "egolife_168",
+            "egolife_172",
+            "egolife_176",
+            "egolife_180"
+          ]
+        },
+        "validation": {
+          "n": 32,
+          "gains": 1,
+          "losses": 8,
+          "net": -7,
+          "disagreements": 27,
+          "gain_ids": [
+            "egolife_118"
+          ],
+          "loss_ids": [
+            "egolife_019",
+            "egolife_020",
+            "egolife_021",
+            "egolife_054",
+            "egolife_122",
+            "egolife_150",
+            "egolife_151",
+            "egolife_186"
+          ]
+        },
+        "test": {
+          "n": 57,
+          "gains": 12,
+          "losses": 6,
+          "net": 6,
+          "disagreements": 48,
+          "gain_ids": [
+            "egolife_056",
+            "egolife_063",
+            "egolife_064",
+            "egolife_090",
+            "egolife_092",
+            "egolife_129",
+            "egolife_131",
+            "egolife_159",
+            "egolife_161",
+            "egolife_163",
+            "egolife_199",
+            "egolife_200"
+          ],
+          "loss_ids": [
+            "egolife_058",
+            "egolife_091",
+            "egolife_095",
+            "egolife_158",
+            "egolife_191",
+            "egolife_198"
+          ]
+        }
+      },
+      "direct_matched": {
+        "train": {
+          "n": 111,
+          "gains": 16,
+          "losses": 16,
+          "net": 0,
+          "disagreements": 94,
+          "gain_ids": [
+            "egolife_001",
+            "egolife_005",
+            "egolife_006",
+            "egolife_018",
+            "egolife_037",
+            "egolife_039",
+            "egolife_044",
+            "egolife_082",
+            "egolife_083",
+            "egolife_100",
+            "egolife_103",
+            "egolife_113",
+            "egolife_136",
+            "egolife_142",
+            "egolife_145",
+            "egolife_178"
+          ],
+          "loss_ids": [
+            "egolife_012",
+            "egolife_035",
+            "egolife_072",
+            "egolife_073",
+            "egolife_079",
+            "egolife_099",
+            "egolife_102",
+            "egolife_105",
+            "egolife_111",
+            "egolife_132",
+            "egolife_135",
+            "egolife_138",
+            "egolife_168",
+            "egolife_172",
+            "egolife_176",
+            "egolife_180"
+          ]
+        },
+        "validation": {
+          "n": 32,
+          "gains": 1,
+          "losses": 8,
+          "net": -7,
+          "disagreements": 27,
+          "gain_ids": [
+            "egolife_118"
+          ],
+          "loss_ids": [
+            "egolife_019",
+            "egolife_020",
+            "egolife_021",
+            "egolife_054",
+            "egolife_122",
+            "egolife_150",
+            "egolife_151",
+            "egolife_186"
+          ]
+        },
+        "test": {
+          "n": 57,
+          "gains": 12,
+          "losses": 6,
+          "net": 6,
+          "disagreements": 48,
+          "gain_ids": [
+            "egolife_056",
+            "egolife_063",
+            "egolife_064",
+            "egolife_090",
+            "egolife_092",
+            "egolife_129",
+            "egolife_131",
+            "egolife_159",
+            "egolife_161",
+            "egolife_163",
+            "egolife_199",
+            "egolife_200"
+          ],
+          "loss_ids": [
+            "egolife_058",
+            "egolife_091",
+            "egolife_095",
+            "egolife_158",
+            "egolife_191",
+            "egolife_198"
+          ]
+        }
+      },
+      "prior": {
+        "train": {
+          "n": 111,
+          "gains": 18,
+          "losses": 11,
+          "net": 7,
+          "disagreements": 104,
+          "gain_ids": [
+            "egolife_001",
+            "egolife_005",
+            "egolife_006",
+            "egolife_018",
+            "egolife_037",
+            "egolife_039",
+            "egolife_044",
+            "egolife_077",
+            "egolife_082",
+            "egolife_083",
+            "egolife_100",
+            "egolife_103",
+            "egolife_113",
+            "egolife_114",
+            "egolife_136",
+            "egolife_142",
+            "egolife_145",
+            "egolife_178"
+          ],
+          "loss_ids": [
+            "egolife_012",
+            "egolife_015",
+            "egolife_071",
+            "egolife_073",
+            "egolife_079",
+            "egolife_099",
+            "egolife_167",
+            "egolife_168",
+            "egolife_172",
+            "egolife_176",
+            "egolife_180"
+          ]
+        },
+        "validation": {
+          "n": 32,
+          "gains": 1,
+          "losses": 4,
+          "net": -3,
+          "disagreements": 30,
+          "gain_ids": [
+            "egolife_118"
+          ],
+          "loss_ids": [
+            "egolife_019",
+            "egolife_020",
+            "egolife_021",
+            "egolife_122"
+          ]
+        },
+        "test": {
+          "n": 57,
+          "gains": 13,
+          "losses": 1,
+          "net": 12,
+          "disagreements": 46,
+          "gain_ids": [
+            "egolife_056",
+            "egolife_063",
+            "egolife_064",
+            "egolife_090",
+            "egolife_092",
+            "egolife_128",
+            "egolife_129",
+            "egolife_131",
+            "egolife_159",
+            "egolife_161",
+            "egolife_163",
+            "egolife_199",
+            "egolife_200"
+          ],
+          "loss_ids": [
+            "egolife_191"
+          ]
+        }
+      }
+    }
+  },
+  "score_diagnostics": {
+    "search_r01/train": {
+      "candidate_count": 666,
+      "mean_regularized_objective_improvement": 0.037292469438310855,
+      "negative_objective_changes": 0,
+      "interpretation": "searched regularized objective minus direct objective; not task correctness"
+    },
+    "search_r01/validation": {
+      "candidate_count": 192,
+      "mean_regularized_objective_improvement": 0.03717654759141927,
+      "negative_objective_changes": 0,
+      "interpretation": "searched regularized objective minus direct objective; not task correctness"
+    },
+    "search_r01/test": {
+      "candidate_count": 342,
+      "mean_regularized_objective_improvement": 0.03757988421889077,
+      "negative_objective_changes": 0,
+      "interpretation": "searched regularized objective minus direct objective; not task correctness"
+    },
+    "search_r05/train": {
+      "candidate_count": 666,
+      "mean_regularized_objective_improvement": 0.3251525006919831,
+      "negative_objective_changes": 0,
+      "interpretation": "searched regularized objective minus direct objective; not task correctness"
+    },
+    "search_r05/validation": {
+      "candidate_count": 192,
+      "mean_regularized_objective_improvement": 0.3253011650134188,
+      "negative_objective_changes": 0,
+      "interpretation": "searched regularized objective minus direct objective; not task correctness"
+    },
+    "search_r05/test": {
+      "candidate_count": 342,
+      "mean_regularized_objective_improvement": 0.32823218464067105,
+      "negative_objective_changes": 0,
+      "interpretation": "searched regularized objective minus direct objective; not task correctness"
+    },
+    "search_r10/train": {
+      "candidate_count": 666,
+      "mean_regularized_objective_improvement": 0.9860735583837863,
+      "negative_objective_changes": 0,
+      "interpretation": "searched regularized objective minus direct objective; not task correctness"
+    },
+    "search_r10/validation": {
+      "candidate_count": 192,
+      "mean_regularized_objective_improvement": 0.9883837916616661,
+      "negative_objective_changes": 0,
+      "interpretation": "searched regularized objective minus direct objective; not task correctness"
+    },
+    "search_r10/test": {
+      "candidate_count": 342,
+      "mean_regularized_objective_improvement": 0.9987675045448089,
+      "negative_objective_changes": 0,
+      "interpretation": "searched regularized objective minus direct objective; not task correctness"
+    }
+  },
+  "input_budget": {
+    "context_frames": 30,
+    "recent_frames": 60,
+    "max_side": 224,
+    "write_chunk_frames": 8,
+    "policy": "uniform_left_edges_separately_in_context_and_recent",
+    "audio_used": false,
+    "context_seconds": 1800,
+    "recent_seconds": 30,
+    "benchmark_training": false,
+    "validation_selection": true,
+    "candidate_searches_per_radius": 6,
+    "comparison": "same declared raw-frame sampling as full ICL; different checkpoint/readout/compute"
+  },
+  "baseline_file": "/home/quzitsix/TTT_frame/data/bench_v0_baseline_v1/qwen_full_icl_predictions.jsonl",
+  "baseline_sha256": "585972ce9842fb0d9dfc8422d438c9dc77684daff231b7dba1dac16350e67cb3",
+  "predictions_sha256": "5c4fe36db2426a8ed5cc63d6d200797624c78733727112d74fc88c87391dff0b",
+  "answers_sha256": "4c1c36e0ba137f921c009eceb64c6586829700bc183faae3cef7f8ffc6f20b6d",
+  "test_status": "exploratory reuse; silver labels; overlapping windows; only two test days",
+  "inference": "No iid significance interval: test has only two recording-day clusters."
+}

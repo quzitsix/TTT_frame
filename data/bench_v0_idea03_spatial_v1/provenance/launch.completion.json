@@ -1,0 +1,8 @@
+{
+  "complete": true,
+  "elapsed_seconds": 938.913913625991,
+  "workers": 4,
+  "device": "cuda:4",
+  "scores_sha256": "07c76a9786a0d178081a97d1faa2495100022f0c459138bd525bc7b55d670ba6",
+  "launcher_sha256": "1277dc6efd1535ad6b4a80942b95859beeb7f00a19c7e61c455c27714123897b"
+}

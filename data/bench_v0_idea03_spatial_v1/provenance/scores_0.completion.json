@@ -1,0 +1,9 @@
+{
+  "complete": true,
+  "rows": 50,
+  "scores_sha256": "f7f7a489f8a21b0d55ec7e32bc9b1de7fb05e5a1d3da8e5b5b1c12f7e608faec",
+  "protocol_fingerprint": "5f70467da3daff0e402754059c80b9604d9293838674844c5c3a8e98e8292c97",
+  "test_answers_loaded": false,
+  "elapsed_seconds": 811.5394265099894,
+  "reused_cases": 0
+}

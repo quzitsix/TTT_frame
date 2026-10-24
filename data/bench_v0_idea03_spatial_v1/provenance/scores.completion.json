@@ -1,0 +1,13 @@
+{
+  "complete": true,
+  "rows": 200,
+  "test_answers_loaded": false,
+  "protocol_fingerprint": "5f70467da3daff0e402754059c80b9604d9293838674844c5c3a8e98e8292c97",
+  "scores_sha256": "07c76a9786a0d178081a97d1faa2495100022f0c459138bd525bc7b55d670ba6",
+  "shards": {
+    "scores_0.jsonl": "f7f7a489f8a21b0d55ec7e32bc9b1de7fb05e5a1d3da8e5b5b1c12f7e608faec",
+    "scores_1.jsonl": "3667553a7ebc27cdf3e064954416d3d50f81414c9d8b5aaa3d9d5379a201c061",
+    "scores_2.jsonl": "cf78d98cddd718e1bde3fa30daabe8f98d3499cbcb1c3ff3606ab1e403fadc71",
+    "scores_3.jsonl": "cb9d34aebcde1974f1e88110a4856d9c4586b29929030a481349f2766ad02624"
+  }
+}

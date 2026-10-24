@@ -1,0 +1,3 @@
+# Preserve the exact bytes covered by the archive SHA256 manifests.
+* -text
+per_case.csv whitespace=cr-at-eol
