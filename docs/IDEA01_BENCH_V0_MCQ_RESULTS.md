@@ -9,6 +9,10 @@
 learned key、slow initialization outer training 或多层 Spatial 集成。因此，结果回答的是
 “当前最小延迟残差记忆能否帮助动作预测”，不能代表整个 Idea 01 提案已经完成。
 
+后续已完成 1×/4×/16× fast 容量、离线初始化训练和在线更新量的 12 组扩展，见
+[容量与训练量实验](IDEA01_SCALING_RESULTS.md)。视觉 MSE 改善，主比较的 residual
+动作准确率仍为 24/57；本页保留最初实验的原始配置和结果。
+
 ## 证据与训练边界
 
 - 数据：`/data/share/raw/bench_v0`，200 道六选一、cutoff 后 5 秒动作预测。

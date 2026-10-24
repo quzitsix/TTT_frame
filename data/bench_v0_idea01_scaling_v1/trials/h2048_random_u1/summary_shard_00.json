@@ -1,0 +1,412 @@
+{
+  "complete": true,
+  "cases": [
+    {
+      "sample_id": "egolife_001",
+      "artifact_sha256": "3ad7447c512e42c5b67c5cc1811d28a082e13ac61bb692e18a0b4207ae0a74f4"
+    },
+    {
+      "sample_id": "egolife_003",
+      "artifact_sha256": "b3b45d3b7b30654d51bcd7fbb3821c95df81c5e50b5666e44939aebbec3c54cb"
+    },
+    {
+      "sample_id": "egolife_005",
+      "artifact_sha256": "9609e0e152526a903810cd27ae57d02b243e0eca1951ce2af1a9fa7eef102902"
+    },
+    {
+      "sample_id": "egolife_007",
+      "artifact_sha256": "25bb9e5c5673737511da07b1b0f6b1bb0914ce1a840d316a78140734665b084f"
+    },
+    {
+      "sample_id": "egolife_009",
+      "artifact_sha256": "33ed886f2ac4e4b31b1af58bbee9b2c8f1770c97bb2fad69f97dd827b7389c2f"
+    },
+    {
+      "sample_id": "egolife_011",
+      "artifact_sha256": "7f18f4cbd613876186b6a6f380897ad8b8802957238c04076fe2c6486bbde402"
+    },
+    {
+      "sample_id": "egolife_013",
+      "artifact_sha256": "188381b014fbb512681d2d14c397f4ddf7373115da0934813353a00aa2541fb3"
+    },
+    {
+      "sample_id": "egolife_015",
+      "artifact_sha256": "20e4cfeb0e9526defa6ede46dc6884d5cb774f936cfd35ca7a1a03fdbf08f6ab"
+    },
+    {
+      "sample_id": "egolife_017",
+      "artifact_sha256": "18640ffb911717d7d5c3ed97162191346e0ea839a4faff3fc8099e9de36198c3"
+    },
+    {
+      "sample_id": "egolife_030",
+      "artifact_sha256": "9cc4f412df174b560d2e2cd8d877b3d1ff8a6d4995414dca39dacc933fbabfd3"
+    },
+    {
+      "sample_id": "egolife_032",
+      "artifact_sha256": "5c355c5443b2b71b6e0de60727b8ffdcbc554580f320f0dd1677e9dcb0827d59"
+    },
+    {
+      "sample_id": "egolife_034",
+      "artifact_sha256": "0d70beea6129b78397aa5033c804e82413d6f342e958a4e96c1c55515622ebb3"
+    },
+    {
+      "sample_id": "egolife_036",
+      "artifact_sha256": "be1ca0058fbc90e021580607a957606775cf938d683fd931e1c8b845323d8e9b"
+    },
+    {
+      "sample_id": "egolife_038",
+      "artifact_sha256": "e07d92f848ea84b9952210aaf9fc9b5ee2a4e69e8a8e045b4d2f3ad0fd8e8ab2"
+    },
+    {
+      "sample_id": "egolife_040",
+      "artifact_sha256": "0c8592c6b92a4345d509536f0589b8a2e63752b48ace446b7d5b63155efc3c63"
+    },
+    {
+      "sample_id": "egolife_042",
+      "artifact_sha256": "458e706267eae7eaacdd0d900094275b19262bfe5959ad12798de864bf9dba12"
+    },
+    {
+      "sample_id": "egolife_044",
+      "artifact_sha256": "640a7db0770ec307f49ed1768a390fb5d13552bcf0a1d337935ef5adeea79568"
+    },
+    {
+      "sample_id": "egolife_046",
+      "artifact_sha256": "d6ff6845fca8c75877663163a4b3e85b3a4600ccd0672136017c19405f1e3322"
+    },
+    {
+      "sample_id": "egolife_048",
+      "artifact_sha256": "97830f811433fa349e2ca0c5b67279b3449cfe5866fbc0104b53211359f7d37b"
+    },
+    {
+      "sample_id": "egolife_067",
+      "artifact_sha256": "7a8070fbdcdb433ac61cd7c12821a4c0d8a916654143397ac2bc55e452076fa1"
+    },
+    {
+      "sample_id": "egolife_069",
+      "artifact_sha256": "91c27b77668dabf7b861ca5ee71fdb8748a5d56c7227117e3bf8ca568320ea8e"
+    },
+    {
+      "sample_id": "egolife_071",
+      "artifact_sha256": "9eadfa24a8b8d13b4a42bbdf648eaf7f3425b49f3071828a987739788f2cc482"
+    },
+    {
+      "sample_id": "egolife_073",
+      "artifact_sha256": "b593cf995ecae15d749269c4c214042ffd722fe4ec6ab2313c92573055bfa594"
+    },
+    {
+      "sample_id": "egolife_075",
+      "artifact_sha256": "4caef8a5008a1e3f6b3fedbc65bd2223a5540837695ecb6e9daccd335ff769f3"
+    },
+    {
+      "sample_id": "egolife_077",
+      "artifact_sha256": "fd8903bd2ecb55431a0d82cd0a4ec68d9e05b4bff023111345116e5df1665b2f"
+    },
+    {
+      "sample_id": "egolife_079",
+      "artifact_sha256": "46cc0bd180f4abf2ccfae345e8fdd41062b8070acc16b48f2a13baadc222b357"
+    },
+    {
+      "sample_id": "egolife_081",
+      "artifact_sha256": "79c80794f6a474dc5a1181668ee10b2e90851f78d62dd626f438fda8f38446dd"
+    },
+    {
+      "sample_id": "egolife_083",
+      "artifact_sha256": "d8e9bbdce3a2dc9d76b04b749762b03bd54443110c8916a65fdafe4260b74500"
+    },
+    {
+      "sample_id": "egolife_100",
+      "artifact_sha256": "65468bcb9949d17831bf22770734c7ee9d82fb7d04e35311d5379b094f0979bd"
+    },
+    {
+      "sample_id": "egolife_102",
+      "artifact_sha256": "57a578ab551e732d57fbb7a116a2666108ca668ad15ce2dd33fbe4c7acc0c701"
+    },
+    {
+      "sample_id": "egolife_104",
+      "artifact_sha256": "84af889f57cba802e8e47b81693945e312b690c029556b9621ce06bb3c295c3b"
+    },
+    {
+      "sample_id": "egolife_106",
+      "artifact_sha256": "fc9a32c009695141ccc29bc8e8c7c6be6f98db1e88b299ae6d759ae59f549328"
+    },
+    {
+      "sample_id": "egolife_108",
+      "artifact_sha256": "3cb9a999528532ee8b6dc6a303bbab3571e2c9347bc0514fb57e741739ff44b2"
+    },
+    {
+      "sample_id": "egolife_110",
+      "artifact_sha256": "952b33eeec6b4d91b8adb5e5ee3eca3dba8b75106adc7fbbb8aab471aa0b09e2"
+    },
+    {
+      "sample_id": "egolife_112",
+      "artifact_sha256": "d4514499e42e9b06b6a687fab35e07079c9e297095bf70d1520b8d177f4881c2"
+    },
+    {
+      "sample_id": "egolife_114",
+      "artifact_sha256": "0d9f1e7c26d11a36f50bbd800d53ca11a596aa7aa54c60f69dc1dc39f3898906"
+    },
+    {
+      "sample_id": "egolife_116",
+      "artifact_sha256": "af5c789d98b4b4ff565fb9412927018186876e940655cfcaa6299a4c2901dbea"
+    },
+    {
+      "sample_id": "egolife_132",
+      "artifact_sha256": "14348330526d4b26c1d6570d9ded19be142490b8105f8d707f273dab12581cfe"
+    },
+    {
+      "sample_id": "egolife_134",
+      "artifact_sha256": "52d466cada552fff0ff4699b17ee31f0a26724f600e73d72ecae41a6c707db18"
+    },
+    {
+      "sample_id": "egolife_136",
+      "artifact_sha256": "c0d091797ef32115b474eb3fe9d26b5d34ed5a11d86ee55be96bf8b2f7440254"
+    },
+    {
+      "sample_id": "egolife_138",
+      "artifact_sha256": "e4413b2ded4a1828c9ea22090cd377e03540c75c6494115d4eace9dca32bfcfe"
+    },
+    {
+      "sample_id": "egolife_140",
+      "artifact_sha256": "d40468a0a75c0904aae34cadbe01324ea2d70e7b0651fd03642fb7718cc14f50"
+    },
+    {
+      "sample_id": "egolife_142",
+      "artifact_sha256": "007e5ec489cd166660d6bb81520d6f43b2ce0ff031dec38a8ca951648e87e8c6"
+    },
+    {
+      "sample_id": "egolife_144",
+      "artifact_sha256": "a11aaa7a6a2da8f726feac3f4023d25ff24b4956b584f44a03e062c901a1bbf7"
+    },
+    {
+      "sample_id": "egolife_146",
+      "artifact_sha256": "32665931c9717270140da41793e97b9a4ea93140eac0849f422b0e45de7a0150"
+    },
+    {
+      "sample_id": "egolife_148",
+      "artifact_sha256": "a215e09d525b2e98f39cd81fc66154346b83540b7307fdea27e8e7cf3213a39a"
+    },
+    {
+      "sample_id": "egolife_167",
+      "artifact_sha256": "1f88336b2cbae19b14636bc9472a3e37b2f26a216a9201a8d07d7d156e400d36"
+    },
+    {
+      "sample_id": "egolife_169",
+      "artifact_sha256": "700265375adebebaf210a31d068bda76a46de3aaf6b7d5e193c25785256a1ee0"
+    },
+    {
+      "sample_id": "egolife_171",
+      "artifact_sha256": "ccea52c66be9afb945b5b9516c9951eeffe545f31727a80065c0df011a881ec2"
+    },
+    {
+      "sample_id": "egolife_173",
+      "artifact_sha256": "7c8d089598bab453b31878afbbee5f446429a7f77358dfc65f4ee7b48c6ad758"
+    },
+    {
+      "sample_id": "egolife_175",
+      "artifact_sha256": "36cb8612f9ff34e89a1ddc3d6c777201dc61174c99fb2c0f027cd93bc3f5a45f"
+    },
+    {
+      "sample_id": "egolife_177",
+      "artifact_sha256": "1ed2e7b3cbfee46b92c3422668d318b0add0e9a6e895f321e4899817f512a12b"
+    },
+    {
+      "sample_id": "egolife_179",
+      "artifact_sha256": "b48460f3ef70d79422e462bd99660ec34bc961d0167cad98a10e857733f4748b"
+    },
+    {
+      "sample_id": "egolife_181",
+      "artifact_sha256": "7f07d95b1515f52fcb4d9b36b5b96ac616643a124b8eb51d7195e8077c00955d"
+    },
+    {
+      "sample_id": "egolife_183",
+      "artifact_sha256": "df71c7d83075b8dd7f660a2c4cf9ce0ff8fe32f3d7aaf5e6b97609f5d6bd5be8"
+    },
+    {
+      "sample_id": "egolife_185",
+      "artifact_sha256": "df243ab7f3de2eca7df863ba96164ce0f75d8bee62c104da631261338ad10232"
+    },
+    {
+      "sample_id": "egolife_020",
+      "artifact_sha256": "c35eb61fe954b5a213f43cf2566df43d4a45ea6e7ef77257155419d11f76a2e8"
+    },
+    {
+      "sample_id": "egolife_049",
+      "artifact_sha256": "6184aac032feb0a9c090af7613b394eb6c898ba55058d03e2ed9f12831f2ecd6"
+    },
+    {
+      "sample_id": "egolife_051",
+      "artifact_sha256": "bc392d42491d09cff0f7dbacd47b22703182314dde1c96b159108aa5f1c2d155"
+    },
+    {
+      "sample_id": "egolife_053",
+      "artifact_sha256": "03a31918280d182d70606115c3a736651bcc6d7988025b0afbc25bbb499ca983"
+    },
+    {
+      "sample_id": "egolife_055",
+      "artifact_sha256": "e93ba16c6a2a98036eded2253d9ae6d94199fd0485cb7023edb3b5e32078353c"
+    },
+    {
+      "sample_id": "egolife_085",
+      "artifact_sha256": "a221f2f5c5064e91f917d76fef5c46add112072fd921c7d9788b2e78232e903c"
+    },
+    {
+      "sample_id": "egolife_087",
+      "artifact_sha256": "3d158a6cd190cbe34945607ec0dc6cdb357688031572c15c360f0659adf834f8"
+    },
+    {
+      "sample_id": "egolife_089",
+      "artifact_sha256": "f3fd366453f2df0d1e45dc07b43070196df9b3b38a3e6b28dd4c94305a50b5ef"
+    },
+    {
+      "sample_id": "egolife_119",
+      "artifact_sha256": "986dd4032d8af5140449e25e9d3b7126d0f49fcf772e61905f9fea1668583fa4"
+    },
+    {
+      "sample_id": "egolife_121",
+      "artifact_sha256": "9a9f83cc82983edcf7369fefb0c71c4130ebe736433c8c81fda872061cf5bd4c"
+    },
+    {
+      "sample_id": "egolife_123",
+      "artifact_sha256": "31f1b2c6bd9482ffe3688e019f381c55c9eaf3d978298cd59b0376a8b70466db"
+    },
+    {
+      "sample_id": "egolife_150",
+      "artifact_sha256": "cfce8dc4a6dd024bb8fbc9b8e700658eb45ead3fc2fc1743de06771bc979271b"
+    },
+    {
+      "sample_id": "egolife_152",
+      "artifact_sha256": "5e40a7eb080df5aceb59f7db56e88029c94caeb17a46e62593b46a21de91d916"
+    },
+    {
+      "sample_id": "egolife_186",
+      "artifact_sha256": "f7bc1f82dcf905908aa3c6fe046afcb370599aef35c607d4b8e4751c2a6d1b66"
+    },
+    {
+      "sample_id": "egolife_188",
+      "artifact_sha256": "7f9fcfe50bc53e136f678170a80c3e90b8b00c31b040f0952fd6e84aa5102eeb"
+    },
+    {
+      "sample_id": "egolife_190",
+      "artifact_sha256": "28e63dd54b4cda17df349377ee704a384cda193c7b05f7b6759f7d6b14f28240"
+    },
+    {
+      "sample_id": "egolife_023",
+      "artifact_sha256": "88b2acb184a1b5d86d0be17a597d2c297c7829101a0eb34e5953a27df396531e"
+    },
+    {
+      "sample_id": "egolife_025",
+      "artifact_sha256": "646da11ca3aad2fcdc6dbec2042b0188efe39627d4e820b0d9c64fa7142a945b"
+    },
+    {
+      "sample_id": "egolife_027",
+      "artifact_sha256": "058fe3b693dadfa6365a52f122c650bfdcf0c02d430a83cc62454080e62e1297"
+    },
+    {
+      "sample_id": "egolife_029",
+      "artifact_sha256": "9ffbd6f5c6f2e74d5048b1b82af5be6cee382fb318f476efe2b1df3386723d03"
+    },
+    {
+      "sample_id": "egolife_057",
+      "artifact_sha256": "c429eca590bd34724d4a1babc1cc6c54dcf41dc4c964feeed23c505ccdb440b1"
+    },
+    {
+      "sample_id": "egolife_059",
+      "artifact_sha256": "a2333d45e5e53b563e7bc76bbec6c9e180215e63d878cd9c6b62f4e232cfc61a"
+    },
+    {
+      "sample_id": "egolife_061",
+      "artifact_sha256": "636d8adc9e42e1994f0e197eaa6f822f8a0052fb0efd355df235b8bfd4dbd6b1"
+    },
+    {
+      "sample_id": "egolife_063",
+      "artifact_sha256": "c6dafc70b84bc1ca8f121fd45b333539df1fd093444df87d80b6e01908f38d42"
+    },
+    {
+      "sample_id": "egolife_065",
+      "artifact_sha256": "d1b1e48d35f0925f61026efa8eefcdebbf87f5cb1719edb28175f2a0fdff2bc3"
+    },
+    {
+      "sample_id": "egolife_091",
+      "artifact_sha256": "edc1a173dca4832dfa571536c0de20d56e623323018083744db0b2a2953730f6"
+    },
+    {
+      "sample_id": "egolife_093",
+      "artifact_sha256": "5aed00af560547515400cb133a32a887fd58080cbb4198154f646bf2cbf8a5e6"
+    },
+    {
+      "sample_id": "egolife_095",
+      "artifact_sha256": "fb8bb51da7f27cf150f5e7f31d79c3f2506fd2e31ad40af3b6158097faae7697"
+    },
+    {
+      "sample_id": "egolife_097",
+      "artifact_sha256": "07bbe2d6dc9e70c1e5a712fc99a55286463a9a2ebb50773c588643539abd5353"
+    },
+    {
+      "sample_id": "egolife_124",
+      "artifact_sha256": "e69b005ff061ee0a3ba5d8175089bb33b8f63cb078cfb97bcaa8cf5dea02a96b"
+    },
+    {
+      "sample_id": "egolife_126",
+      "artifact_sha256": "d1d37a16bafe2c53088ee320c77bbe39f7e80c33635ca5cf7bc36662a2f27ed6"
+    },
+    {
+      "sample_id": "egolife_128",
+      "artifact_sha256": "adaa938b2d0f2c123724f354011d6b6175f07b9e8719fe81ad20b5a11de99df0"
+    },
+    {
+      "sample_id": "egolife_130",
+      "artifact_sha256": "310f058b20120a7faa8cc058f6b4357364fa22419adc68ca30ce01dee131ccd1"
+    },
+    {
+      "sample_id": "egolife_154",
+      "artifact_sha256": "8525d43add9b6e6e230878f0ef07cc4ac6b11bfa248d76ecc6718e4ebb86399d"
+    },
+    {
+      "sample_id": "egolife_156",
+      "artifact_sha256": "7a4afce922223d304c095de2e4144342e18b4e998646bb408100651d47eaa52c"
+    },
+    {
+      "sample_id": "egolife_158",
+      "artifact_sha256": "4fcdfd141b8f1d96c73c2b9647c706bddd8d9750afd0e703e315d39c133ef449"
+    },
+    {
+      "sample_id": "egolife_160",
+      "artifact_sha256": "2344f2208051672fa80841ae4803dc4846853ff375cb235f50ff00b92faa80ed"
+    },
+    {
+      "sample_id": "egolife_162",
+      "artifact_sha256": "229447e02dc0608fb9650b8729c04853f2e38421cd00a6615d12054a1b5c7917"
+    },
+    {
+      "sample_id": "egolife_164",
+      "artifact_sha256": "82c3133e015743dffdd5425b9d930c6a1f398dedc2adea7ff55ec0019bb187b5"
+    },
+    {
+      "sample_id": "egolife_191",
+      "artifact_sha256": "0b9968a9407c830b19adc7d36edd27030dc7a0cbffe26d17c465769495e108ff"
+    },
+    {
+      "sample_id": "egolife_193",
+      "artifact_sha256": "0c3ad1fd364ef9123e329bbe40d8e66fe02f13bfd67d6a32dc3a905a5ce2b93d"
+    },
+    {
+      "sample_id": "egolife_195",
+      "artifact_sha256": "3354dffd95ad69571b5e3e12406bf3013ffd76fd2f2e5b9d5e080e0d49e6d6bb"
+    },
+    {
+      "sample_id": "egolife_197",
+      "artifact_sha256": "f9e845dc3096421048821981790e426c74f701b76fbd1c571125f67eee5f3f5e"
+    },
+    {
+      "sample_id": "egolife_199",
+      "artifact_sha256": "e382f67e9bd8ea658a3c618e42654b7cc228fb75e911bd59b8e4073785a48d4c"
+    }
+  ],
+  "protocol_sha256": "627879ebfe4b7a5d272fc42948e940e2c019b3c6b8c5ac65a82518eb5769458b",
+  "elapsed_seconds": 231.91511336900294,
+  "device": "cuda:2",
+  "batch_size": 8,
+  "reused": 0,
+  "shard_index": 0,
+  "num_shards": 2
+}

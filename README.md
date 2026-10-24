@@ -33,6 +33,10 @@ Idea 01 的完整 1830 秒视频前缀、七组记忆对照和共享动作读出
 测试结果、架构与复现命令见
 [`IDEA01_BENCH_V0_MCQ_RESULTS.md`](docs/IDEA01_BENCH_V0_MCQ_RESULTS.md)。当前 residual
 与关闭在线更新的 recent-only 均为 24/57，尚未显示累计残差记忆的动作预测收益。
+容量与训练量扩展已完成 12 个配置：fast memory 为 26 万/105 万/419 万参数，
+离线初始化训练 0/200/800 步，并比较 1/4 次在线更新。视觉预测误差改善，主读出
+的 residual 动作准确率仍未超过匹配的无更新对照；完整结果与 8 卡复现命令见
+[`IDEA01_SCALING_RESULTS.md`](docs/IDEA01_SCALING_RESULTS.md)。
 
 ## Spatial-TTT direct visual parameter memory (2026-09-14)
 

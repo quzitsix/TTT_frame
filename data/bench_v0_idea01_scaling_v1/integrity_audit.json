@@ -1,0 +1,865 @@
+{
+  "schema": "idea01_scaling_integrity_audit_v1",
+  "generated_by": "/root/scaling_audit",
+  "experiment_run": "runs/forecast_bench_v0/idea01_scaling_v1",
+  "plan_sha256": "a2c982f586a4b9872df29e3e44d54b1774d6b4be2dc00995251947d6d14719a0",
+  "input_manifest_sha256": "7a3b6eb61eef3111f409bd2781ec1634ce9f2bad3a66a2dd6919ef049bf29df8",
+  "split_sha256": "e23dfe7584e6a7268187a56e3997510281b576c3aab4892d3c25ae1b6e479603",
+  "coverage": {
+    "trial_count": 12,
+    "expected_trials": 12,
+    "cases_per_trial_expected": 200,
+    "artifacts_total": 2400,
+    "artifacts_expected": 2400,
+    "all_trials_complete": true,
+    "all_trial_checks_pass": true,
+    "trial_audit": [
+      {
+        "name": "h128_random_u1",
+        "configuration": {
+          "hidden_dim": 128,
+          "inner_steps": 1,
+          "pretraining_steps": 0,
+          "initialization_checkpoint": null,
+          "learning_rate": 0.05,
+          "gain_mode": "normalized",
+          "seed": 0
+        },
+        "artifact_count": 200,
+        "checks": {
+          "protocol_canonical_hash": true,
+          "plan_sha256_matches_declared_plan": true,
+          "source_hashes_match_current_files": true,
+          "configuration_matches_plan": true,
+          "recent_predictor_hash_matches_plan": true,
+          "case_id_set_matches_declared_200": true,
+          "initialization_checkpoint_hash_matches": true
+        },
+        "metadata_failure_count": 0,
+        "stats_checks": {
+          "full_mature_updates": true,
+          "tail_mature_updates": true,
+          "inner_steps": true,
+          "no_update_zero_delta": true,
+          "mature_count": true,
+          "state_capacity": true
+        },
+        "all_checks_pass": true
+      },
+      {
+        "name": "h128_random_u4",
+        "configuration": {
+          "hidden_dim": 128,
+          "inner_steps": 4,
+          "pretraining_steps": 0,
+          "initialization_checkpoint": null,
+          "learning_rate": 0.05,
+          "gain_mode": "normalized",
+          "seed": 0
+        },
+        "artifact_count": 200,
+        "checks": {
+          "protocol_canonical_hash": true,
+          "plan_sha256_matches_declared_plan": true,
+          "source_hashes_match_current_files": true,
+          "configuration_matches_plan": true,
+          "recent_predictor_hash_matches_plan": true,
+          "case_id_set_matches_declared_200": true,
+          "initialization_checkpoint_hash_matches": true
+        },
+        "metadata_failure_count": 0,
+        "stats_checks": {
+          "full_mature_updates": true,
+          "tail_mature_updates": true,
+          "inner_steps": true,
+          "no_update_zero_delta": true,
+          "mature_count": true,
+          "state_capacity": true
+        },
+        "all_checks_pass": true
+      },
+      {
+        "name": "h128_pre200_u1",
+        "configuration": {
+          "hidden_dim": 128,
+          "inner_steps": 1,
+          "pretraining_steps": 200,
+          "initialization_checkpoint": "/home/quzitsix/TTT_frame/runs/forecast_bench_v0/idea01_scaling_v1/pretraining/h128/step_000200.pt",
+          "learning_rate": 0.05,
+          "gain_mode": "normalized",
+          "seed": 0
+        },
+        "artifact_count": 200,
+        "checks": {
+          "protocol_canonical_hash": true,
+          "plan_sha256_matches_declared_plan": true,
+          "source_hashes_match_current_files": true,
+          "configuration_matches_plan": true,
+          "recent_predictor_hash_matches_plan": true,
+          "case_id_set_matches_declared_200": true,
+          "initialization_checkpoint_hash_matches": true
+        },
+        "metadata_failure_count": 0,
+        "stats_checks": {
+          "full_mature_updates": true,
+          "tail_mature_updates": true,
+          "inner_steps": true,
+          "no_update_zero_delta": true,
+          "mature_count": true,
+          "state_capacity": true
+        },
+        "all_checks_pass": true
+      },
+      {
+        "name": "h128_pre800_u1",
+        "configuration": {
+          "hidden_dim": 128,
+          "inner_steps": 1,
+          "pretraining_steps": 800,
+          "initialization_checkpoint": "/home/quzitsix/TTT_frame/runs/forecast_bench_v0/idea01_scaling_v1/pretraining/h128/step_000800.pt",
+          "learning_rate": 0.05,
+          "gain_mode": "normalized",
+          "seed": 0
+        },
+        "artifact_count": 200,
+        "checks": {
+          "protocol_canonical_hash": true,
+          "plan_sha256_matches_declared_plan": true,
+          "source_hashes_match_current_files": true,
+          "configuration_matches_plan": true,
+          "recent_predictor_hash_matches_plan": true,
+          "case_id_set_matches_declared_200": true,
+          "initialization_checkpoint_hash_matches": true
+        },
+        "metadata_failure_count": 0,
+        "stats_checks": {
+          "full_mature_updates": true,
+          "tail_mature_updates": true,
+          "inner_steps": true,
+          "no_update_zero_delta": true,
+          "mature_count": true,
+          "state_capacity": true
+        },
+        "all_checks_pass": true
+      },
+      {
+        "name": "h512_random_u1",
+        "configuration": {
+          "hidden_dim": 512,
+          "inner_steps": 1,
+          "pretraining_steps": 0,
+          "initialization_checkpoint": null,
+          "learning_rate": 0.05,
+          "gain_mode": "normalized",
+          "seed": 0
+        },
+        "artifact_count": 200,
+        "checks": {
+          "protocol_canonical_hash": true,
+          "plan_sha256_matches_declared_plan": true,
+          "source_hashes_match_current_files": true,
+          "configuration_matches_plan": true,
+          "recent_predictor_hash_matches_plan": true,
+          "case_id_set_matches_declared_200": true,
+          "initialization_checkpoint_hash_matches": true
+        },
+        "metadata_failure_count": 0,
+        "stats_checks": {
+          "full_mature_updates": true,
+          "tail_mature_updates": true,
+          "inner_steps": true,
+          "no_update_zero_delta": true,
+          "mature_count": true,
+          "state_capacity": true
+        },
+        "all_checks_pass": true
+      },
+      {
+        "name": "h512_random_u4",
+        "configuration": {
+          "hidden_dim": 512,
+          "inner_steps": 4,
+          "pretraining_steps": 0,
+          "initialization_checkpoint": null,
+          "learning_rate": 0.05,
+          "gain_mode": "normalized",
+          "seed": 0
+        },
+        "artifact_count": 200,
+        "checks": {
+          "protocol_canonical_hash": true,
+          "plan_sha256_matches_declared_plan": true,
+          "source_hashes_match_current_files": true,
+          "configuration_matches_plan": true,
+          "recent_predictor_hash_matches_plan": true,
+          "case_id_set_matches_declared_200": true,
+          "initialization_checkpoint_hash_matches": true
+        },
+        "metadata_failure_count": 0,
+        "stats_checks": {
+          "full_mature_updates": true,
+          "tail_mature_updates": true,
+          "inner_steps": true,
+          "no_update_zero_delta": true,
+          "mature_count": true,
+          "state_capacity": true
+        },
+        "all_checks_pass": true
+      },
+      {
+        "name": "h512_pre200_u1",
+        "configuration": {
+          "hidden_dim": 512,
+          "inner_steps": 1,
+          "pretraining_steps": 200,
+          "initialization_checkpoint": "/home/quzitsix/TTT_frame/runs/forecast_bench_v0/idea01_scaling_v1/pretraining/h512/step_000200.pt",
+          "learning_rate": 0.05,
+          "gain_mode": "normalized",
+          "seed": 0
+        },
+        "artifact_count": 200,
+        "checks": {
+          "protocol_canonical_hash": true,
+          "plan_sha256_matches_declared_plan": true,
+          "source_hashes_match_current_files": true,
+          "configuration_matches_plan": true,
+          "recent_predictor_hash_matches_plan": true,
+          "case_id_set_matches_declared_200": true,
+          "initialization_checkpoint_hash_matches": true
+        },
+        "metadata_failure_count": 0,
+        "stats_checks": {
+          "full_mature_updates": true,
+          "tail_mature_updates": true,
+          "inner_steps": true,
+          "no_update_zero_delta": true,
+          "mature_count": true,
+          "state_capacity": true
+        },
+        "all_checks_pass": true
+      },
+      {
+        "name": "h512_pre800_u1",
+        "configuration": {
+          "hidden_dim": 512,
+          "inner_steps": 1,
+          "pretraining_steps": 800,
+          "initialization_checkpoint": "/home/quzitsix/TTT_frame/runs/forecast_bench_v0/idea01_scaling_v1/pretraining/h512/step_000800.pt",
+          "learning_rate": 0.05,
+          "gain_mode": "normalized",
+          "seed": 0
+        },
+        "artifact_count": 200,
+        "checks": {
+          "protocol_canonical_hash": true,
+          "plan_sha256_matches_declared_plan": true,
+          "source_hashes_match_current_files": true,
+          "configuration_matches_plan": true,
+          "recent_predictor_hash_matches_plan": true,
+          "case_id_set_matches_declared_200": true,
+          "initialization_checkpoint_hash_matches": true
+        },
+        "metadata_failure_count": 0,
+        "stats_checks": {
+          "full_mature_updates": true,
+          "tail_mature_updates": true,
+          "inner_steps": true,
+          "no_update_zero_delta": true,
+          "mature_count": true,
+          "state_capacity": true
+        },
+        "all_checks_pass": true
+      },
+      {
+        "name": "h2048_random_u1",
+        "configuration": {
+          "hidden_dim": 2048,
+          "inner_steps": 1,
+          "pretraining_steps": 0,
+          "initialization_checkpoint": null,
+          "learning_rate": 0.05,
+          "gain_mode": "normalized",
+          "seed": 0
+        },
+        "artifact_count": 200,
+        "checks": {
+          "protocol_canonical_hash": true,
+          "plan_sha256_matches_declared_plan": true,
+          "source_hashes_match_current_files": true,
+          "configuration_matches_plan": true,
+          "recent_predictor_hash_matches_plan": true,
+          "case_id_set_matches_declared_200": true,
+          "initialization_checkpoint_hash_matches": true
+        },
+        "metadata_failure_count": 0,
+        "stats_checks": {
+          "full_mature_updates": true,
+          "tail_mature_updates": true,
+          "inner_steps": true,
+          "no_update_zero_delta": true,
+          "mature_count": true,
+          "state_capacity": true
+        },
+        "all_checks_pass": true
+      },
+      {
+        "name": "h2048_random_u4",
+        "configuration": {
+          "hidden_dim": 2048,
+          "inner_steps": 4,
+          "pretraining_steps": 0,
+          "initialization_checkpoint": null,
+          "learning_rate": 0.05,
+          "gain_mode": "normalized",
+          "seed": 0
+        },
+        "artifact_count": 200,
+        "checks": {
+          "protocol_canonical_hash": true,
+          "plan_sha256_matches_declared_plan": true,
+          "source_hashes_match_current_files": true,
+          "configuration_matches_plan": true,
+          "recent_predictor_hash_matches_plan": true,
+          "case_id_set_matches_declared_200": true,
+          "initialization_checkpoint_hash_matches": true
+        },
+        "metadata_failure_count": 0,
+        "stats_checks": {
+          "full_mature_updates": true,
+          "tail_mature_updates": true,
+          "inner_steps": true,
+          "no_update_zero_delta": true,
+          "mature_count": true,
+          "state_capacity": true
+        },
+        "all_checks_pass": true
+      },
+      {
+        "name": "h2048_pre200_u1",
+        "configuration": {
+          "hidden_dim": 2048,
+          "inner_steps": 1,
+          "pretraining_steps": 200,
+          "initialization_checkpoint": "/home/quzitsix/TTT_frame/runs/forecast_bench_v0/idea01_scaling_v1/pretraining/h2048/step_000200.pt",
+          "learning_rate": 0.05,
+          "gain_mode": "normalized",
+          "seed": 0
+        },
+        "artifact_count": 200,
+        "checks": {
+          "protocol_canonical_hash": true,
+          "plan_sha256_matches_declared_plan": true,
+          "source_hashes_match_current_files": true,
+          "configuration_matches_plan": true,
+          "recent_predictor_hash_matches_plan": true,
+          "case_id_set_matches_declared_200": true,
+          "initialization_checkpoint_hash_matches": true
+        },
+        "metadata_failure_count": 0,
+        "stats_checks": {
+          "full_mature_updates": true,
+          "tail_mature_updates": true,
+          "inner_steps": true,
+          "no_update_zero_delta": true,
+          "mature_count": true,
+          "state_capacity": true
+        },
+        "all_checks_pass": true
+      },
+      {
+        "name": "h2048_pre800_u1",
+        "configuration": {
+          "hidden_dim": 2048,
+          "inner_steps": 1,
+          "pretraining_steps": 800,
+          "initialization_checkpoint": "/home/quzitsix/TTT_frame/runs/forecast_bench_v0/idea01_scaling_v1/pretraining/h2048/step_000800.pt",
+          "learning_rate": 0.05,
+          "gain_mode": "normalized",
+          "seed": 0
+        },
+        "artifact_count": 200,
+        "checks": {
+          "protocol_canonical_hash": true,
+          "plan_sha256_matches_declared_plan": true,
+          "source_hashes_match_current_files": true,
+          "configuration_matches_plan": true,
+          "recent_predictor_hash_matches_plan": true,
+          "case_id_set_matches_declared_200": true,
+          "initialization_checkpoint_hash_matches": true
+        },
+        "metadata_failure_count": 0,
+        "stats_checks": {
+          "full_mature_updates": true,
+          "tail_mature_updates": true,
+          "inner_steps": true,
+          "no_update_zero_delta": true,
+          "mature_count": true,
+          "state_capacity": true
+        },
+        "all_checks_pass": true
+      }
+    ]
+  },
+  "checkpoint_audit": {
+    "widths": [
+      128,
+      512,
+      2048
+    ],
+    "steps": [
+      0,
+      200,
+      800
+    ],
+    "expected_checkpoints": 9,
+    "completed_and_valid": true,
+    "source_protocol_and_shapes_checked": true,
+    "records": [
+      {
+        "width": 128,
+        "step": 0,
+        "checkpoint_sha256": "af16238c174392c33685a9899fe35e0db95c8cdd915629d81fc0ce35f4d434da",
+        "protocol_sha256": "5c1b6cbec21af70d63edf5c0f97b8e013241d6a82c4a137877b20ab089cceb4a",
+        "checks": {
+          "protocol_canonical_hash": true,
+          "source_hashes": true,
+          "exact_train_ids": true,
+          "width_and_step": true,
+          "checkpoint_protocol": true,
+          "shape": true,
+          "provenance_cache_roles": true,
+          "predictor_sha256": true
+        },
+        "all_checks_pass": true
+      },
+      {
+        "width": 128,
+        "step": 200,
+        "checkpoint_sha256": "233967afe468de1200557db5d4245d2fd3e21f197522aa2add929ccb3f529419",
+        "protocol_sha256": "5c1b6cbec21af70d63edf5c0f97b8e013241d6a82c4a137877b20ab089cceb4a",
+        "checks": {
+          "protocol_canonical_hash": true,
+          "source_hashes": true,
+          "exact_train_ids": true,
+          "width_and_step": true,
+          "checkpoint_protocol": true,
+          "shape": true,
+          "provenance_cache_roles": true,
+          "predictor_sha256": true
+        },
+        "all_checks_pass": true
+      },
+      {
+        "width": 128,
+        "step": 800,
+        "checkpoint_sha256": "f0b425ffefa9690a3f0e3d1b7dd8b3c272192dc6fa6d704e990ef53425506bcb",
+        "protocol_sha256": "5c1b6cbec21af70d63edf5c0f97b8e013241d6a82c4a137877b20ab089cceb4a",
+        "checks": {
+          "protocol_canonical_hash": true,
+          "source_hashes": true,
+          "exact_train_ids": true,
+          "width_and_step": true,
+          "checkpoint_protocol": true,
+          "shape": true,
+          "provenance_cache_roles": true,
+          "predictor_sha256": true
+        },
+        "all_checks_pass": true
+      },
+      {
+        "width": 512,
+        "step": 0,
+        "checkpoint_sha256": "a3630edfea3baae103bdae3f016872eec2cffb6f2a814c77145ab74f0ce03073",
+        "protocol_sha256": "c356c1171bebb160e3fd13208d48c350c4b4f7f72f12190e87f67d5f9df0e270",
+        "checks": {
+          "protocol_canonical_hash": true,
+          "source_hashes": true,
+          "exact_train_ids": true,
+          "width_and_step": true,
+          "checkpoint_protocol": true,
+          "shape": true,
+          "provenance_cache_roles": true,
+          "predictor_sha256": true
+        },
+        "all_checks_pass": true
+      },
+      {
+        "width": 512,
+        "step": 200,
+        "checkpoint_sha256": "28e6ca1ad36c3bcf212ebd615d465429501e69a8bc6b9c76ff4cc00b4e983e70",
+        "protocol_sha256": "c356c1171bebb160e3fd13208d48c350c4b4f7f72f12190e87f67d5f9df0e270",
+        "checks": {
+          "protocol_canonical_hash": true,
+          "source_hashes": true,
+          "exact_train_ids": true,
+          "width_and_step": true,
+          "checkpoint_protocol": true,
+          "shape": true,
+          "provenance_cache_roles": true,
+          "predictor_sha256": true
+        },
+        "all_checks_pass": true
+      },
+      {
+        "width": 512,
+        "step": 800,
+        "checkpoint_sha256": "538707f1c21f128161203f300f1caa6afe40b101f06bab9d8829535708767192",
+        "protocol_sha256": "c356c1171bebb160e3fd13208d48c350c4b4f7f72f12190e87f67d5f9df0e270",
+        "checks": {
+          "protocol_canonical_hash": true,
+          "source_hashes": true,
+          "exact_train_ids": true,
+          "width_and_step": true,
+          "checkpoint_protocol": true,
+          "shape": true,
+          "provenance_cache_roles": true,
+          "predictor_sha256": true
+        },
+        "all_checks_pass": true
+      },
+      {
+        "width": 2048,
+        "step": 0,
+        "checkpoint_sha256": "72936ce2da1f4bc3fd90e042246df32c24b4cbf6944faa59d25b7a144cffc8a6",
+        "protocol_sha256": "7ab7e92bbcf91f94c73a40b4d64c6b2840caed8922aff3108bc0476a099f7169",
+        "checks": {
+          "protocol_canonical_hash": true,
+          "source_hashes": true,
+          "exact_train_ids": true,
+          "width_and_step": true,
+          "checkpoint_protocol": true,
+          "shape": true,
+          "provenance_cache_roles": true,
+          "predictor_sha256": true
+        },
+        "all_checks_pass": true
+      },
+      {
+        "width": 2048,
+        "step": 200,
+        "checkpoint_sha256": "53106dfdcd8f771b34958fc9e8e359b4f1554b0228751f4d56cae1d2c5290c7a",
+        "protocol_sha256": "7ab7e92bbcf91f94c73a40b4d64c6b2840caed8922aff3108bc0476a099f7169",
+        "checks": {
+          "protocol_canonical_hash": true,
+          "source_hashes": true,
+          "exact_train_ids": true,
+          "width_and_step": true,
+          "checkpoint_protocol": true,
+          "shape": true,
+          "provenance_cache_roles": true,
+          "predictor_sha256": true
+        },
+        "all_checks_pass": true
+      },
+      {
+        "width": 2048,
+        "step": 800,
+        "checkpoint_sha256": "ec49ccda509f3893721b2f4a6d02aded125c65e1e51bce663eef2023fb98e0cd",
+        "protocol_sha256": "7ab7e92bbcf91f94c73a40b4d64c6b2840caed8922aff3108bc0476a099f7169",
+        "checks": {
+          "protocol_canonical_hash": true,
+          "source_hashes": true,
+          "exact_train_ids": true,
+          "width_and_step": true,
+          "checkpoint_protocol": true,
+          "shape": true,
+          "provenance_cache_roles": true,
+          "predictor_sha256": true
+        },
+        "all_checks_pass": true
+      }
+    ],
+    "note": "Checkpoint validation includes exact train IDs, step, width, protocol and source hashes; checkpoint tensors have w_in [4,H,256] and w_out [4,256,H]."
+  },
+  "old_h128_random_u1_comparison": {
+    "case_count": 9,
+    "case_ids": [
+      "egolife_001",
+      "egolife_099",
+      "egolife_185",
+      "egolife_019",
+      "egolife_118",
+      "egolife_190",
+      "egolife_022",
+      "egolife_125",
+      "egolife_200"
+    ],
+    "arms_compared": [
+      "persistence",
+      "recent_only",
+      "plain_delayed",
+      "residual",
+      "reset_residual",
+      "recent_tail_residual"
+    ],
+    "max_abs_diff_by_arm": {
+      "persistence": 0.0,
+      "recent_only": 9.5367431640625e-07,
+      "plain_delayed": 1.1920928955078125e-06,
+      "residual": 8.344650268554688e-07,
+      "reset_residual": 8.344650268554688e-07,
+      "recent_tail_residual": 9.5367431640625e-07
+    },
+    "overall_max_abs_diff": 1.1920928955078125e-06,
+    "tolerance": 1.5e-06,
+    "within_tolerance": true,
+    "persistence_bit_exact": true,
+    "per_case": [
+      {
+        "id": "egolife_001",
+        "max_abs_diff": {
+          "persistence": 0.0,
+          "recent_only": 9.5367431640625e-07,
+          "plain_delayed": 3.5762786865234375e-07,
+          "residual": 7.152557373046875e-07,
+          "reset_residual": 7.152557373046875e-07,
+          "recent_tail_residual": 7.152557373046875e-07
+        }
+      },
+      {
+        "id": "egolife_099",
+        "max_abs_diff": {
+          "persistence": 0.0,
+          "recent_only": 4.76837158203125e-07,
+          "plain_delayed": 4.76837158203125e-07,
+          "residual": 7.152557373046875e-07,
+          "reset_residual": 7.152557373046875e-07,
+          "recent_tail_residual": 5.960464477539062e-07
+        }
+      },
+      {
+        "id": "egolife_185",
+        "max_abs_diff": {
+          "persistence": 0.0,
+          "recent_only": 4.76837158203125e-07,
+          "plain_delayed": 4.76837158203125e-07,
+          "residual": 5.364418029785156e-07,
+          "reset_residual": 5.364418029785156e-07,
+          "recent_tail_residual": 5.364418029785156e-07
+        }
+      },
+      {
+        "id": "egolife_019",
+        "max_abs_diff": {
+          "persistence": 0.0,
+          "recent_only": 7.152557373046875e-07,
+          "plain_delayed": 4.76837158203125e-07,
+          "residual": 6.556510925292969e-07,
+          "reset_residual": 7.152557373046875e-07,
+          "recent_tail_residual": 7.152557373046875e-07
+        }
+      },
+      {
+        "id": "egolife_118",
+        "max_abs_diff": {
+          "persistence": 0.0,
+          "recent_only": 7.152557373046875e-07,
+          "plain_delayed": 7.152557373046875e-07,
+          "residual": 7.152557373046875e-07,
+          "reset_residual": 8.344650268554688e-07,
+          "recent_tail_residual": 7.152557373046875e-07
+        }
+      },
+      {
+        "id": "egolife_190",
+        "max_abs_diff": {
+          "persistence": 0.0,
+          "recent_only": 8.344650268554688e-07,
+          "plain_delayed": 1.1920928955078125e-06,
+          "residual": 8.344650268554688e-07,
+          "reset_residual": 7.152557373046875e-07,
+          "recent_tail_residual": 7.152557373046875e-07
+        }
+      },
+      {
+        "id": "egolife_022",
+        "max_abs_diff": {
+          "persistence": 0.0,
+          "recent_only": 7.152557373046875e-07,
+          "plain_delayed": 3.5762786865234375e-07,
+          "residual": 7.152557373046875e-07,
+          "reset_residual": 7.152557373046875e-07,
+          "recent_tail_residual": 7.748603820800781e-07
+        }
+      },
+      {
+        "id": "egolife_125",
+        "max_abs_diff": {
+          "persistence": 0.0,
+          "recent_only": 5.960464477539062e-07,
+          "plain_delayed": 4.76837158203125e-07,
+          "residual": 6.556510925292969e-07,
+          "reset_residual": 5.960464477539062e-07,
+          "recent_tail_residual": 5.960464477539062e-07
+        }
+      },
+      {
+        "id": "egolife_200",
+        "max_abs_diff": {
+          "persistence": 0.0,
+          "recent_only": 5.960464477539062e-07,
+          "plain_delayed": 5.960464477539062e-07,
+          "residual": 5.960464477539062e-07,
+          "reset_residual": 5.960464477539062e-07,
+          "recent_tail_residual": 9.5367431640625e-07
+        }
+      }
+    ]
+  },
+  "causal_and_episode_checks": {
+    "observed_target_only": true,
+    "predictions_scored_before_target_arrival": true,
+    "final_unobserved_forecasts_excluded_from_mature_mse": true,
+    "per_case_fast_state_reset": true,
+    "no_cross_case_writes": true,
+    "test_answers_or_future_media_used_for_scaling_runs": false,
+    "basis": "runner provenance fields, implementation audit, and 2400 artifact invariants"
+  },
+  "legacy_source_hash_audit": [
+    {
+      "label": "archived_original_baseline",
+      "protocol": "data/bench_v0_baseline_v1/protocol.json",
+      "source_hashes": {
+        "scripts/evaluate_forecast_mcq.py": {
+          "declared_sha256": "d029dd17784aece648577510e48291988082482ec5cdc680df8167fd302433f0",
+          "current_sha256": "d029dd17784aece648577510e48291988082482ec5cdc680df8167fd302433f0",
+          "match": true
+        },
+        "ttt_frame/forecast_mcq.py": {
+          "declared_sha256": "27dbce7dddff826ae66b3c4f794b66319f4698ed4d58a48ee99be1eb08b0b5bd",
+          "current_sha256": "27dbce7dddff826ae66b3c4f794b66319f4698ed4d58a48ee99be1eb08b0b5bd",
+          "match": true
+        },
+        "ttt_frame/forecast_bench.py": {
+          "declared_sha256": "0b18e4437123533851595d3ad5254ce0f2a0c2a10ec85af08ca133ae1a945407",
+          "current_sha256": "0b18e4437123533851595d3ad5254ce0f2a0c2a10ec85af08ca133ae1a945407",
+          "match": true
+        },
+        "ttt_frame/forecast_features.py": {
+          "declared_sha256": "0ea30f8f209f76b5649dcc648995bd5e4da40b87c3edc11712fc9025852dcfff",
+          "current_sha256": "0ea30f8f209f76b5649dcc648995bd5e4da40b87c3edc11712fc9025852dcfff",
+          "match": true
+        },
+        "ttt_frame/spatial_videoqa.py": {
+          "declared_sha256": "bae6780a05f60763499cd0faabd35121c459ad4b43742f7c4011d7746040bac5",
+          "current_sha256": "bae6780a05f60763499cd0faabd35121c459ad4b43742f7c4011d7746040bac5",
+          "match": true
+        },
+        "ttt_frame/spatial_model.py": {
+          "declared_sha256": "1ec402441fd38d5fe8e99948cbc3368573a0b737e4a0c3af4acff719ccd8eb05",
+          "current_sha256": "1ec402441fd38d5fe8e99948cbc3368573a0b737e4a0c3af4acff719ccd8eb05",
+          "match": true
+        },
+        "ttt_frame/spatial_memory.py": {
+          "declared_sha256": "0d670dd41dd4782c261ce65c5a50924ab3eb2d7e16de0b06ed5ce494d666aa59",
+          "current_sha256": "0d670dd41dd4782c261ce65c5a50924ab3eb2d7e16de0b06ed5ce494d666aa59",
+          "match": true
+        },
+        "scripts/evaluate_fho_sta.py": {
+          "declared_sha256": "5d9ca4e8569932df9cb03c6a4294a354dd6a78da0674e5af421cfd45e070b2f0",
+          "current_sha256": "5d9ca4e8569932df9cb03c6a4294a354dd6a78da0674e5af421cfd45e070b2f0",
+          "match": true
+        },
+        "ttt_frame/vision_attention.py": {
+          "declared_sha256": "05bb772f9c5e40c1b131720dc63229951fb4f716507c40841af7e7c9c0c12f72",
+          "current_sha256": "05bb772f9c5e40c1b131720dc63229951fb4f716507c40841af7e7c9c0c12f72",
+          "match": true
+        },
+        "ttt_frame/vision_patch_embed.py": {
+          "declared_sha256": "19a16da6fd6ccfcc5e31a4b0a39899a86fd1df613b4a68146185c414ba9ca868",
+          "current_sha256": "19a16da6fd6ccfcc5e31a4b0a39899a86fd1df613b4a68146185c414ba9ca868",
+          "match": true
+        }
+      },
+      "all_match": true
+    },
+    {
+      "label": "old_idea1_forecast",
+      "protocol": "runs/forecast_bench_v0/idea01_mcq_v1/forecasts/protocol.json",
+      "source_hashes": {
+        "scripts/run_idea1_mcq_forecasts.py": {
+          "declared_sha256": "20d04da30537f823e5571164877beb6d4746611fc92336140551bcff3d91ab1c",
+          "current_sha256": "20d04da30537f823e5571164877beb6d4746611fc92336140551bcff3d91ab1c",
+          "match": true
+        },
+        "scripts/run_forecast_residual.py": {
+          "declared_sha256": "c02843b2f0c5c8deff8668f2fdfcef68598ae7cf43238080413c0a6c1fe65346",
+          "current_sha256": "c02843b2f0c5c8deff8668f2fdfcef68598ae7cf43238080413c0a6c1fe65346",
+          "match": true
+        },
+        "ttt_frame/idea1_mcq_memory.py": {
+          "declared_sha256": "0901cf93f374d136c98d99f39acc9912998c76429c349be773f2b8433f8c6ef2",
+          "current_sha256": "0901cf93f374d136c98d99f39acc9912998c76429c349be773f2b8433f8c6ef2",
+          "match": true
+        },
+        "ttt_frame/forecast_residual.py": {
+          "declared_sha256": "fe446b07706954ffbe0a65b50c4bfa5a812d1a1db198a3ab9e56bbfe9aa0bd8c",
+          "current_sha256": "fe446b07706954ffbe0a65b50c4bfa5a812d1a1db198a3ab9e56bbfe9aa0bd8c",
+          "match": true
+        },
+        "ttt_frame/predictive_memory.py": {
+          "declared_sha256": "74e169a90f1b44b0a3dd30306175f80b94103e2e9e0759ae1b4de9f5b05dd97f",
+          "current_sha256": "74e169a90f1b44b0a3dd30306175f80b94103e2e9e0759ae1b4de9f5b05dd97f",
+          "match": true
+        }
+      },
+      "all_match": true
+    },
+    {
+      "label": "old_idea1_feature_cache",
+      "protocol": "runs/forecast_bench_v0/idea01_mcq_v1/features/cache_protocol.json",
+      "source_hashes": {
+        "ttt_frame/forecast_bench.py": {
+          "declared_sha256": "0b18e4437123533851595d3ad5254ce0f2a0c2a10ec85af08ca133ae1a945407",
+          "current_sha256": "0b18e4437123533851595d3ad5254ce0f2a0c2a10ec85af08ca133ae1a945407",
+          "match": true
+        },
+        "ttt_frame/forecast_features.py": {
+          "declared_sha256": "0ea30f8f209f76b5649dcc648995bd5e4da40b87c3edc11712fc9025852dcfff",
+          "current_sha256": "0ea30f8f209f76b5649dcc648995bd5e4da40b87c3edc11712fc9025852dcfff",
+          "match": true
+        },
+        "ttt_frame/vision_patch_embed.py": {
+          "declared_sha256": "19a16da6fd6ccfcc5e31a4b0a39899a86fd1df613b4a68146185c414ba9ca868",
+          "current_sha256": "19a16da6fd6ccfcc5e31a4b0a39899a86fd1df613b4a68146185c414ba9ca868",
+          "match": true
+        },
+        "ttt_frame/vision_attention.py": {
+          "declared_sha256": "05bb772f9c5e40c1b131720dc63229951fb4f716507c40841af7e7c9c0c12f72",
+          "current_sha256": "05bb772f9c5e40c1b131720dc63229951fb4f716507c40841af7e7c9c0c12f72",
+          "match": true
+        },
+        "scripts/cache_idea1_features.py": {
+          "declared_sha256": "ec81bb839db3c793e870081f33850d6fc39aa9926dc504084b1b02c6b0878310",
+          "current_sha256": "ec81bb839db3c793e870081f33850d6fc39aa9926dc504084b1b02c6b0878310",
+          "match": true
+        }
+      },
+      "all_match": true
+    },
+    {
+      "label": "old_idea1_readout",
+      "protocol": "runs/forecast_bench_v0/idea01_mcq_v1/mcq/protocol.json",
+      "source_hashes": {
+        "scripts/evaluate_idea1_mcq.py": {
+          "declared_sha256": "e0015053348c6154c28455ea215e5091eb563693f0a5f1bea762f3d873a50f76",
+          "current_sha256": "e0015053348c6154c28455ea215e5091eb563693f0a5f1bea762f3d873a50f76",
+          "match": true
+        },
+        "ttt_frame/idea1_mcq_readout.py": {
+          "declared_sha256": "65a2c9573750cbc30530d3504d9b5779714d6efac224c1ffc545d9eea37d18d6",
+          "current_sha256": "65a2c9573750cbc30530d3504d9b5779714d6efac224c1ffc545d9eea37d18d6",
+          "match": true
+        }
+      },
+      "all_match": true
+    }
+  ],
+  "limitations": [
+    "Expanded component is the frozen-encoder-to-fast-MLP adapter, not the Qwen/vision backbone; the frozen visual representation remains the information bottleneck.",
+    "pre200 versus pre800 changes both sampled training pairs and optimizer updates; the effect cannot be attributed to independent-data scale alone.",
+    "The 32/64 readout diagnostics still use visual pretraining on all 111 train cases; they are low-label action-head diagnostics, not low-data end-to-end training.",
+    "All scaling runs use one seed and reuse the previously inspected 57-case test split, so their test comparison is exploratory rather than confirmatory.",
+    "The split has only two held-out recording days in test; small accuracy differences should not be interpreted as stable generalization without another untouched split."
+  ]
+}

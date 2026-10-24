@@ -1,0 +1,3207 @@
+{
+  "protocol_sha256": "7ab7e92bbcf91f94c73a40b4d64c6b2840caed8922aff3108bc0476a099f7169",
+  "protocol": {
+    "schema": "idea01_offline_initialization_protocol_v1",
+    "provenance": {
+      "split_sha256": "e23dfe7584e6a7268187a56e3997510281b576c3aab4892d3c25ae1b6e479603",
+      "input_manifest_sha256": "7a3b6eb61eef3111f409bd2781ec1634ce9f2bad3a66a2dd6919ef049bf29df8",
+      "feature_protocol_sha256": "3a249e94ba11f58d757657a8345eb1e1b78726233262e36d6070443adbbeff44",
+      "recent_predictor_sha256": "4c79dbcf14f2e5d87f8324cc60e02438f031ac19d41a2b79c4bbc6290300fe35",
+      "recent_predictor_protocol_sha256": "a075f32fa55515ab044dfebde16ad01307f15b00574eb74723316c2f6c867c46",
+      "cache_sources": {
+        "egolife_001": {
+          "cache_sha256": "857057102a76921641716591a83d2f49b1b356db384050b3ff2b35a6cee1f2f1",
+          "cache_size_bytes": 30045841,
+          "feature_sha256": "4254edcd66bf95f67ad0f14e5c8c376e2cbab3e96b3bf786670dae4d1993a986",
+          "source_media": {
+            "context": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_001/context.mp4",
+              "size_bytes": 53222187,
+              "mtime_ns": 1792483893000000000,
+              "sha256": "121a341e164e6b5d77a00984927b703ae1e608cede3f8affb154140244a0acf1"
+            },
+            "recent": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_001/input.mp4",
+              "size_bytes": 2894628,
+              "mtime_ns": 1792483914000000000,
+              "sha256": "366aac8508c59e2705d99b563ef17c089d35d9495ef801ed07cf834b6edd355e"
+            }
+          },
+          "requested_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642",
+          "actual_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642"
+        },
+        "egolife_002": {
+          "cache_sha256": "17443c38be8e77fbfd57315b1ab745a9bbfc56d62c83dc2c2818817b9d1a9db4",
+          "cache_size_bytes": 30045841,
+          "feature_sha256": "fa982320fa492db9283abc9c4c5f6ddc5d9da3a13f2217b8937f13ffab009aa5",
+          "source_media": {
+            "context": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_002/context.mp4",
+              "size_bytes": 58732091,
+              "mtime_ns": 1792483747000000000,
+              "sha256": "b3083815d7493488e903c6798bb68f57ae5711a1e0fc554ab468b15d23ee58ed"
+            },
+            "recent": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_002/input.mp4",
+              "size_bytes": 3401275,
+              "mtime_ns": 1792483770000000000,
+              "sha256": "acf9cb9aee1c920068c12e300842011ed807b0387d44a059f1a98bb36f1e548e"
+            }
+          },
+          "requested_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642",
+          "actual_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642"
+        },
+        "egolife_003": {
+          "cache_sha256": "12e15fc30ff6ce52e2b3bd9f32b86862d61c54ba3f6378425c97a24521df4400",
+          "cache_size_bytes": 30045841,
+          "feature_sha256": "dc5b267cd2187ea038313c801ab071dcbbf30a03d16a42390ec9e9aa584324ad",
+          "source_media": {
+            "context": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_003/context.mp4",
+              "size_bytes": 62008779,
+              "mtime_ns": 1792480876000000000,
+              "sha256": "633f9e76cab631ad4c306cd61e28d88c41e5055ca85b65e75287e4bac80b1230"
+            },
+            "recent": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_003/input.mp4",
+              "size_bytes": 3549141,
+              "mtime_ns": 1792480900000000000,
+              "sha256": "356ad4352872453c5888e226161d8f4a74822f963c3820991d7791bb5c4d99bc"
+            }
+          },
+          "requested_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642",
+          "actual_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642"
+        },
+        "egolife_004": {
+          "cache_sha256": "01b3047a7030c9620f9ebf640d15a7a635c506104ea9835aec4faf39e65e5fd0",
+          "cache_size_bytes": 30045841,
+          "feature_sha256": "c46b6a9e2a2a75f16d3a9d97cb97c3f24e790280f515bedada78859d3a5e3dd0",
+          "source_media": {
+            "context": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_004/context.mp4",
+              "size_bytes": 85865792,
+              "mtime_ns": 1792483929000000000,
+              "sha256": "92fad5acc9936bb46d0e18591b5145e91960415cf7980ed0f465ffc2287e368b"
+            },
+            "recent": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_004/input.mp4",
+              "size_bytes": 5057332,
+              "mtime_ns": 1792483958000000000,
+              "sha256": "cfafa9eb0b571ca43caebe6575b3193324e720cc8e925bd705e3970f30bb3885"
+            }
+          },
+          "requested_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642",
+          "actual_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642"
+        },
+        "egolife_005": {
+          "cache_sha256": "c5a47c5659f3571b5a7f8fefea77b08c15cc1016322b049a2be255854c4ee6d0",
+          "cache_size_bytes": 30045841,
+          "feature_sha256": "4464b847de4b7b52d55eff2246581d839d84f41fc4a176bf446d0a2e49227b1e",
+          "source_media": {
+            "context": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_005/context.mp4",
+              "size_bytes": 59798613,
+              "mtime_ns": 1792483037000000000,
+              "sha256": "f579db9526bddb7a97dcee7438a554eb4720dbfd8b020c068b852c7834c659b8"
+            },
+            "recent": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_005/input.mp4",
+              "size_bytes": 3096508,
+              "mtime_ns": 1792483060000000000,
+              "sha256": "d9ee23331692e97c7699ddf6d8f86b9a05e5f5479cc7a5044c3185397d5b535b"
+            }
+          },
+          "requested_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642",
+          "actual_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642"
+        },
+        "egolife_006": {
+          "cache_sha256": "2b382ea64cd889b0d651ec0f122ab51ac9d35fb9c13ae66417bc74fdbe74f7ee",
+          "cache_size_bytes": 30045841,
+          "feature_sha256": "ccd260f6cd4705da3702ea060c41ebfa833c97fb5a474b793f413b2d373db757",
+          "source_media": {
+            "context": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_006/context.mp4",
+              "size_bytes": 57813559,
+              "mtime_ns": 1792483777000000000,
+              "sha256": "5a417d8fcc15d3edc750893593315cc4d8677ab466073c11602dfec3e0821482"
+            },
+            "recent": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_006/input.mp4",
+              "size_bytes": 3219091,
+              "mtime_ns": 1792483800000000000,
+              "sha256": "79ac7f4cd8ac41fcb001814e233865011bbd99a20651a55682a7918105b939fc"
+            }
+          },
+          "requested_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642",
+          "actual_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642"
+        },
+        "egolife_007": {
+          "cache_sha256": "8604c8597f95bcd07d6a4ddb8bffa5174d577e3b76f78b58d1cc8faf119ff7a2",
+          "cache_size_bytes": 30045841,
+          "feature_sha256": "cdc5fab878316401dddbf21cff5bcbf095b2c10ae745373746eb457e4478d6e1",
+          "source_media": {
+            "context": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_007/context.mp4",
+              "size_bytes": 64024120,
+              "mtime_ns": 1792478985000000000,
+              "sha256": "28f7d3018b18c7dae2ba165cc8405212765ccce51d036584d5d1edc5c9e4d7cc"
+            },
+            "recent": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_007/input.mp4",
+              "size_bytes": 4638531,
+              "mtime_ns": 1792479004000000000,
+              "sha256": "d47bfccf6be7d41a8afd4a41f0a67c1247f5a1788e16166f91ac8b0db400980e"
+            }
+          },
+          "requested_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642",
+          "actual_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642"
+        },
+        "egolife_008": {
+          "cache_sha256": "b4e2118cf90499d8a37f2c0c749fc7cb7adbd5cb58298e076818f285f984f66c",
+          "cache_size_bytes": 30045841,
+          "feature_sha256": "07152f17494f2f5cfdf9fb5c482bc14ed4284b2f09f32b0584fd55f257fc76b0",
+          "source_media": {
+            "context": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_008/context.mp4",
+              "size_bytes": 59101355,
+              "mtime_ns": 1792482502000000000,
+              "sha256": "adfccf9579d74f11405ad30624558f0cbe1041c0e267e20a3183020da51afce2"
+            },
+            "recent": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_008/input.mp4",
+              "size_bytes": 3588665,
+              "mtime_ns": 1792482528000000000,
+              "sha256": "c9f1b41997d92687a13b90f22a17b7896c53de8f4f1273c7ac96bbeffa0d4329"
+            }
+          },
+          "requested_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642",
+          "actual_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642"
+        },
+        "egolife_009": {
+          "cache_sha256": "c19f16fe4835a6b21e32d53cd0377a0fea6e8677b4ba783d6ddaeeb22dc28846",
+          "cache_size_bytes": 30045841,
+          "feature_sha256": "9dccf9b9a8ba947d21e06de250fc86f78aac625297ab0687a5814e1a56048016",
+          "source_media": {
+            "context": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_009/context.mp4",
+              "size_bytes": 60643129,
+              "mtime_ns": 1792483236000000000,
+              "sha256": "a4751dfeef123746e363a5d8098dd4fc40c427f3d08f85ff6e138426f16523cb"
+            },
+            "recent": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_009/input.mp4",
+              "size_bytes": 3741680,
+              "mtime_ns": 1792483262000000000,
+              "sha256": "b624ce936cda661fb82f2148d3ecf61c5547e6195835c99b015391bbd54fdcdf"
+            }
+          },
+          "requested_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642",
+          "actual_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642"
+        },
+        "egolife_010": {
+          "cache_sha256": "1fe926114aff87192563ef95a081894344f85c629fd52499a36ad59e6a155161",
+          "cache_size_bytes": 30045841,
+          "feature_sha256": "3ff0e2f811f65ea4c056605f2a04c59dd80c860d6834bcbd176ecb20af6c90b6",
+          "source_media": {
+            "context": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_010/context.mp4",
+              "size_bytes": 62595969,
+              "mtime_ns": 1792483775000000000,
+              "sha256": "e187558fcea9103bca7a2b409f43d581b5ee832dbefdf474a2a1e76e2e27803a"
+            },
+            "recent": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_010/input.mp4",
+              "size_bytes": 3885341,
+              "mtime_ns": 1792483799000000000,
+              "sha256": "2e50b7adaf4ff3387a279e014f7af6328fc73f68ff077313a9ec5bbda0f0bcd5"
+            }
+          },
+          "requested_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642",
+          "actual_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642"
+        },
+        "egolife_011": {
+          "cache_sha256": "32eedadc2328c0a722eb042de697efddf59202aaf150188506bfcf3f0d44893b",
+          "cache_size_bytes": 30045841,
+          "feature_sha256": "d054ebd9978e3c8be3875db09fadeee7a69e903a28edffe78a0795ef65347861",
+          "source_media": {
+            "context": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_011/context.mp4",
+              "size_bytes": 60710299,
+              "mtime_ns": 1792480337000000000,
+              "sha256": "56067fc538336d3d427bd269cc1683f2afb43f6ea36209b671cef92917d4ff15"
+            },
+            "recent": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_011/input.mp4",
+              "size_bytes": 3851605,
+              "mtime_ns": 1792480361000000000,
+              "sha256": "bbc492e8bf208087dcb2f33b8e33e47160061c8de8abf377f456987a4fd9f66d"
+            }
+          },
+          "requested_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642",
+          "actual_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642"
+        },
+        "egolife_012": {
+          "cache_sha256": "1d9a63c91ece0bfa2a05531bc44670a93cf5bb62f232ad1f79f28ea308b10a53",
+          "cache_size_bytes": 30045841,
+          "feature_sha256": "84f7a2285bb0d4abf00bc9aa5ce97acd99eb3eb5a586f760d51a364bd3e17127",
+          "source_media": {
+            "context": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_012/context.mp4",
+              "size_bytes": 61588892,
+              "mtime_ns": 1792482720000000000,
+              "sha256": "55876b9a27a326cc46c451a12dc3f0558b1245a76ee7c20bb146121ad70d58b7"
+            },
+            "recent": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_012/input.mp4",
+              "size_bytes": 4115341,
+              "mtime_ns": 1792482746000000000,
+              "sha256": "e4ebfc9455fb0d8682891d494f21984b7f4d444ec9c8f19a44bf4b89ecb96c5b"
+            }
+          },
+          "requested_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642",
+          "actual_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642"
+        },
+        "egolife_013": {
+          "cache_sha256": "5ced06d3039fcca2ac7fa437ea5367f111e2737856c36726b8580aa9e9beeee0",
+          "cache_size_bytes": 30045841,
+          "feature_sha256": "3c3577d92b418d0aa2b4aae3003b2d222709f946e75591c4eda813f4a7f08095",
+          "source_media": {
+            "context": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_013/context.mp4",
+              "size_bytes": 64204451,
+              "mtime_ns": 1792476309000000000,
+              "sha256": "3e3b0f449f59b6b1420ce886a7247322b3a3b3a9d48128bcc80e611cf359355d"
+            },
+            "recent": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_013/input.mp4",
+              "size_bytes": 5111339,
+              "mtime_ns": 1792476329000000000,
+              "sha256": "88f38aa6d2d43357e5067a856b5baa000582a74b95e55d4b1008a02267328df2"
+            }
+          },
+          "requested_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642",
+          "actual_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642"
+        },
+        "egolife_014": {
+          "cache_sha256": "706c68195a2c9c2c95df0af0d95a499fbcd0d239fd08232c507697707578c3ee",
+          "cache_size_bytes": 30045841,
+          "feature_sha256": "d640fcbaa50780bcf465cd704e6f197c1f9c7726a469b76c6188ae779b137730",
+          "source_media": {
+            "context": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_014/context.mp4",
+              "size_bytes": 64074434,
+              "mtime_ns": 1792484276000000000,
+              "sha256": "e041b5e95290b80fc6bd62f0b2cd4794846137ff2a435a86b13d326eb51e11d7"
+            },
+            "recent": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_014/input.mp4",
+              "size_bytes": 3130212,
+              "mtime_ns": 1792484300000000000,
+              "sha256": "dde70b1bb4d3ea3d3033c09432cb50590923dbaf66bd20de92f0f4661064be6e"
+            }
+          },
+          "requested_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642",
+          "actual_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642"
+        },
+        "egolife_015": {
+          "cache_sha256": "00d428f6f1e693a92818a74c098d58313866f027206420fbffa077a665c1f7e8",
+          "cache_size_bytes": 30045841,
+          "feature_sha256": "a4cdd97a1fa3758f4eaa5845d149a5efd92596378e428284aa34cb007fa613f1",
+          "source_media": {
+            "context": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_015/context.mp4",
+              "size_bytes": 60237767,
+              "mtime_ns": 1792481957000000000,
+              "sha256": "9ed01e2c38685fb8494548180a52f1cda3c3863333b0654f6d24e7df1549b8ee"
+            },
+            "recent": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_015/input.mp4",
+              "size_bytes": 3581823,
+              "mtime_ns": 1792481982000000000,
+              "sha256": "5a388cc1ac22bc28b72a5f2d2de07ceb083d6611a0e3fb845e826d233d685c34"
+            }
+          },
+          "requested_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642",
+          "actual_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642"
+        },
+        "egolife_016": {
+          "cache_sha256": "1bb1669a8457df455615b853e57e3e97f330c9d9e8ebe011ec73b1b64896cd6b",
+          "cache_size_bytes": 30045841,
+          "feature_sha256": "f560aee11ed07bb9319ab6702435fae2e4001f8b01c091c393bee37f0f46bcef",
+          "source_media": {
+            "context": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_016/context.mp4",
+              "size_bytes": 60898066,
+              "mtime_ns": 1792484065000000000,
+              "sha256": "53e85c0aaea578c18c8dbce629e220834f0f0d4d073d818da810683a0997010a"
+            },
+            "recent": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_016/input.mp4",
+              "size_bytes": 1933066,
+              "mtime_ns": 1792484085000000000,
+              "sha256": "15ff7392b634dcc0a1b51473375d980cada7009aff11bdffaf9ed7dc25d738b4"
+            }
+          },
+          "requested_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642",
+          "actual_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642"
+        },
+        "egolife_017": {
+          "cache_sha256": "a599ca329af00d8ec715b4c11dcac451a0cd040f612ad184a3ff83b8e5811add",
+          "cache_size_bytes": 30045841,
+          "feature_sha256": "1a7c0648c56fc39a001a1fbc1a63a03c907b6ec38a4eaf63819c8265a4d81510",
+          "source_media": {
+            "context": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_017/context.mp4",
+              "size_bytes": 56499766,
+              "mtime_ns": 1792484241000000000,
+              "sha256": "40e873536e5a605c5416508ed25d8bbd4fd5653ac0028a588bcd7197ab22a791"
+            },
+            "recent": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_017/input.mp4",
+              "size_bytes": 2973657,
+              "mtime_ns": 1792484263000000000,
+              "sha256": "c7994beccd3392dd72177870c1ddca1482a88f3cef41a2e46c46d0140de8b86b"
+            }
+          },
+          "requested_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642",
+          "actual_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642"
+        },
+        "egolife_018": {
+          "cache_sha256": "df867992edd76638762d16a6695fb6ab67b4a0c1070010dd315267f459a09bdb",
+          "cache_size_bytes": 30045841,
+          "feature_sha256": "4996747f4e46cc8d57ad0cbaad4f888cf81202d8ee0132b4938d7a3054e27433",
+          "source_media": {
+            "context": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_018/context.mp4",
+              "size_bytes": 57566977,
+              "mtime_ns": 1792483405000000000,
+              "sha256": "20e8e23ccce9dc89e1f090075b7108cc5ec94634a853f0a98f41e3ac3bb0aea2"
+            },
+            "recent": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_018/input.mp4",
+              "size_bytes": 4290279,
+              "mtime_ns": 1792483431000000000,
+              "sha256": "8910bb13310aae1fdb0a5600949f90e9fc7512b3ed1836f2ae2e2bb719d29c74"
+            }
+          },
+          "requested_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642",
+          "actual_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642"
+        },
+        "egolife_030": {
+          "cache_sha256": "a102cf0acefebb478eb06594b20952e3b16b7b240427fe093a217ba72fb22957",
+          "cache_size_bytes": 30045841,
+          "feature_sha256": "e06cc1dc930db7977c0a98f0df13af3462957a5bda76638434b71f99dfaa6af9",
+          "source_media": {
+            "context": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_030/context.mp4",
+              "size_bytes": 64372188,
+              "mtime_ns": 1792482903000000000,
+              "sha256": "3030d4c7e3db4a8a3c8bf9553ee9fabf18862e2238430868067a451004f4b100"
+            },
+            "recent": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_030/input.mp4",
+              "size_bytes": 4039101,
+              "mtime_ns": 1792482929000000000,
+              "sha256": "55e635830169ecfc8bd54c34dc15be2aa6778848a5042d46905c5dbbc701eec7"
+            }
+          },
+          "requested_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642",
+          "actual_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642"
+        },
+        "egolife_031": {
+          "cache_sha256": "76e8cf9501b6d7e3d0928acab9734ff651f9705221810de491df35c1f38be28e",
+          "cache_size_bytes": 30045841,
+          "feature_sha256": "07307cb912465c34209fa5d4a8c7eede2eb4dc2b09f587c8b6dd9f4de1749373",
+          "source_media": {
+            "context": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_031/context.mp4",
+              "size_bytes": 67276926,
+              "mtime_ns": 1792483947000000000,
+              "sha256": "dfec37de8ab91617e342ec94520ef89cc6d9b0c497db9bbce692cbc49a3c92d2"
+            },
+            "recent": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_031/input.mp4",
+              "size_bytes": 4055376,
+              "mtime_ns": 1792483973000000000,
+              "sha256": "07cc54d690613eb40428f4ff43ee561c41dd45ddd2fb75815c89c7a09655e263"
+            }
+          },
+          "requested_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642",
+          "actual_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642"
+        },
+        "egolife_032": {
+          "cache_sha256": "03fe4059f506ea73053dd0879ab64f20901fb08b5ed62067cbe29c34e2525ecc",
+          "cache_size_bytes": 30045841,
+          "feature_sha256": "9342653b703c02f788de05dae99f0fd139d05984e0241d35cef394224a9f0b30",
+          "source_media": {
+            "context": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_032/context.mp4",
+              "size_bytes": 67181328,
+              "mtime_ns": 1792484794000000000,
+              "sha256": "e219e82d550113a162bfcecb129dbb91af9db04c4773534aaa8d2f58fcbf82bf"
+            },
+            "recent": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_032/input.mp4",
+              "size_bytes": 3727885,
+              "mtime_ns": 1792484819000000000,
+              "sha256": "0333d10f66bda08cc9bcb6e535891be46dccdde67c6e60ddf997f0f989ebe0d7"
+            }
+          },
+          "requested_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642",
+          "actual_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642"
+        },
+        "egolife_033": {
+          "cache_sha256": "bda2f2a5dc9c3c23cc86d7faf36fe072ec4c0e192f8ab338263d00c9e2f202b5",
+          "cache_size_bytes": 30045841,
+          "feature_sha256": "8503de59a3852062f1aba40d75c32c09279338ebdb2bff442f67f0639a23d2b1",
+          "source_media": {
+            "context": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_033/context.mp4",
+              "size_bytes": 65710912,
+              "mtime_ns": 1792483567000000000,
+              "sha256": "1f82b6fe3f682ad6caf7c2822b6b9e96bb4c33643787d69cb4d4d52ec7c5b72f"
+            },
+            "recent": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_033/input.mp4",
+              "size_bytes": 4126381,
+              "mtime_ns": 1792483593000000000,
+              "sha256": "ac21d6c0c198c03119d12a3fd697f20a823b9b47c849d20c7fcc8b1cc97124d1"
+            }
+          },
+          "requested_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642",
+          "actual_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642"
+        },
+        "egolife_034": {
+          "cache_sha256": "37b399e5c8edc299a46b48a348ca8d250808a32715c49fda59173d7a82ac9176",
+          "cache_size_bytes": 30045841,
+          "feature_sha256": "0acc5ee6d120f04254514b0205a4be929b7b46c61be800a432de4e17eb7723a1",
+          "source_media": {
+            "context": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_034/context.mp4",
+              "size_bytes": 64386218,
+              "mtime_ns": 1792485000000000000,
+              "sha256": "f60d21951aa3468d1360c63b2b85e8f91d45031bd99b892014525987fa7b3380"
+            },
+            "recent": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_034/input.mp4",
+              "size_bytes": 3130783,
+              "mtime_ns": 1792485025000000000,
+              "sha256": "8ef30f0024463a17eabe0b4b2f9480c002909ab68b7ac30c521c19acf8164bcb"
+            }
+          },
+          "requested_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642",
+          "actual_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642"
+        },
+        "egolife_035": {
+          "cache_sha256": "433996d80793df9079fe323a8aaa99e168d87a1482ec55630ad0c5c7e3b1c6c3",
+          "cache_size_bytes": 30045841,
+          "feature_sha256": "a03ad8fe1736db6916242379c9e06eeebec3e9c46a7d68e203cd1772b5cddfe1",
+          "source_media": {
+            "context": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_035/context.mp4",
+              "size_bytes": 55258164,
+              "mtime_ns": 1792483944000000000,
+              "sha256": "c866c67f26db5c98f09b5dc1f2191494103ce1bd884e72cdb969ff9aa71da7da"
+            },
+            "recent": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_035/input.mp4",
+              "size_bytes": 2762631,
+              "mtime_ns": 1792483966000000000,
+              "sha256": "dee9e4fdcabf45caa448fa0898fb4864e95c9e3785c704bcf166e90c615012ec"
+            }
+          },
+          "requested_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642",
+          "actual_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642"
+        },
+        "egolife_036": {
+          "cache_sha256": "769e4d34c4da977b13f2a03922ea12d4e8acec2902ce3145ebb1b2707e8ac6e3",
+          "cache_size_bytes": 30045841,
+          "feature_sha256": "69f42a8eff8a360727913d74b990d547182d0751b732b8c5c6a16eed1c7cd9c9",
+          "source_media": {
+            "context": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_036/context.mp4",
+              "size_bytes": 53388677,
+              "mtime_ns": 1792483076000000000,
+              "sha256": "22a508dec2a8e5e8bf9050b2ac557ee1ea717984af6c2da4f6541c2227fd7110"
+            },
+            "recent": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_036/input.mp4",
+              "size_bytes": 2832941,
+              "mtime_ns": 1792483097000000000,
+              "sha256": "9bccadf53261777f0edd7f49233fc235b3b5d67058b415359ad72e1d024093f4"
+            }
+          },
+          "requested_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642",
+          "actual_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642"
+        },
+        "egolife_037": {
+          "cache_sha256": "97cf98c15aa438aceb5bc724e523621f4264c48d1f251ca137554fb8c9ec29db",
+          "cache_size_bytes": 30045841,
+          "feature_sha256": "924b8251fd1363d569848aa2557daba1313d4a09660aa9c389de16891abe6356",
+          "source_media": {
+            "context": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_037/context.mp4",
+              "size_bytes": 66013931,
+              "mtime_ns": 1792479484000000000,
+              "sha256": "5d934c00bbd34881ffd7af92cde4faa117553d57efb653a2a4422b961caac797"
+            },
+            "recent": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_037/input.mp4",
+              "size_bytes": 3546712,
+              "mtime_ns": 1792479508000000000,
+              "sha256": "7ac84c96f0a651a1b84e394efdc1afb89a1bea4242413c04b6648bcde8bcb127"
+            }
+          },
+          "requested_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642",
+          "actual_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642"
+        },
+        "egolife_038": {
+          "cache_sha256": "aa60b2c31a854a344d9df4fa23898a5db297d6f5ea247cda2a3c0bc429264586",
+          "cache_size_bytes": 30045841,
+          "feature_sha256": "03a498fff6de0c11457b1002eec234825ce003e88d07a42d2ee068da868c00d3",
+          "source_media": {
+            "context": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_038/context.mp4",
+              "size_bytes": 62234604,
+              "mtime_ns": 1792482149000000000,
+              "sha256": "b44252d783cec5c37652dd2143c38d3b0937fa3aae28a86f71c28bfc45b115ff"
+            },
+            "recent": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_038/input.mp4",
+              "size_bytes": 2854448,
+              "mtime_ns": 1792482171000000000,
+              "sha256": "29aff0f5236b7fb4e74dc8624cf1f73d50d0345721ec63396414daa9703504c4"
+            }
+          },
+          "requested_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642",
+          "actual_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642"
+        },
+        "egolife_039": {
+          "cache_sha256": "13ff95fe4b8a2e2e66a2619ea0ac0e1b205fa4a339c34964fbbb060d0b8fec76",
+          "cache_size_bytes": 30045841,
+          "feature_sha256": "c40dcad6bc0c9ec323d654bad0abca07f11b64ea95bf0715e78e52599e7e896d",
+          "source_media": {
+            "context": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_039/context.mp4",
+              "size_bytes": 52669011,
+              "mtime_ns": 1792483928000000000,
+              "sha256": "ced549bdfc8b60a2d3436828929c1f67db883860bd207cf08462f0e181740c81"
+            },
+            "recent": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_039/input.mp4",
+              "size_bytes": 2577025,
+              "mtime_ns": 1792483949000000000,
+              "sha256": "3677f5767fd35ea325a1f9f230c844b1fee9c3cfc5d6764a28cad2efca34d10f"
+            }
+          },
+          "requested_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642",
+          "actual_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642"
+        },
+        "egolife_040": {
+          "cache_sha256": "2f724ad8e070cd0eb6294fb787a1a2303405fdf738bbfc5de4bcd2a19330ff62",
+          "cache_size_bytes": 30045841,
+          "feature_sha256": "e548e8c7e9cc9b49b2058b5ce5ac8603b93fe63468fca1c60a8ad7aea7c4c38a",
+          "source_media": {
+            "context": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_040/context.mp4",
+              "size_bytes": 64926652,
+              "mtime_ns": 1792483692000000000,
+              "sha256": "e2fd8b5a7918061d60ee47fe8f9c5a2895dcb3c445b9da58c969498b52087b81"
+            },
+            "recent": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_040/input.mp4",
+              "size_bytes": 5277380,
+              "mtime_ns": 1792483719000000000,
+              "sha256": "a859bcde966b9a1c66f9fa365782160cc4a7329ff5332e7f32e732e036d3363a"
+            }
+          },
+          "requested_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642",
+          "actual_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642"
+        },
+        "egolife_041": {
+          "cache_sha256": "57d4b304f13439f3e00426f2c2e2b68583d0d57db87293542fef78210a9b75db",
+          "cache_size_bytes": 30045841,
+          "feature_sha256": "dcc18fbbdad23169be1fc2a279ae1af3160fc099569366c73c870e7ebd52fc86",
+          "source_media": {
+            "context": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_041/context.mp4",
+              "size_bytes": 55583292,
+              "mtime_ns": 1792475266000000000,
+              "sha256": "f07f6be1557dc6b95747edb90c82182568d8e3a6838d82c4e0f412c435a3ddfb"
+            },
+            "recent": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_041/input.mp4",
+              "size_bytes": 3944032,
+              "mtime_ns": 1792475284000000000,
+              "sha256": "01c2df392770698755897b967fe877d9bd3c547cbf96636f50f367acaf3c958c"
+            }
+          },
+          "requested_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642",
+          "actual_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642"
+        },
+        "egolife_042": {
+          "cache_sha256": "8fd5c8e88a93ef767bb23fa1dc5f7c0102a71ce37cb872acd72b833437855405",
+          "cache_size_bytes": 30045841,
+          "feature_sha256": "6d0f373965943cd7972fab6d6b8951d36a3f362c6544c6a45108f510fc15df5a",
+          "source_media": {
+            "context": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_042/context.mp4",
+              "size_bytes": 42887878,
+              "mtime_ns": 1792479662000000000,
+              "sha256": "17a8ecddbec056e4fe5669cc46d5e4d10c7c364c98708c315309ef0f87370dab"
+            },
+            "recent": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_042/input.mp4",
+              "size_bytes": 2470552,
+              "mtime_ns": 1792479681000000000,
+              "sha256": "9d0574bae48edb7d6d440c9c5749028cf48a20e5d8908d263394c4e2b0666794"
+            }
+          },
+          "requested_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642",
+          "actual_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642"
+        },
+        "egolife_043": {
+          "cache_sha256": "c3e4a7a800c6b078f9ecaa18fba3c12c16eb302338e47819077fa405e45ffc32",
+          "cache_size_bytes": 30045841,
+          "feature_sha256": "b3c938f9723db21f91df8dd8be6d18c2f7f4a2aaee610a33481434c32f580f02",
+          "source_media": {
+            "context": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_043/context.mp4",
+              "size_bytes": 66970575,
+              "mtime_ns": 1792484372000000000,
+              "sha256": "de173b7291e1ed25db36d2e754fe5774e361cbf95739ef1aa017d9929e0c1447"
+            },
+            "recent": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_043/input.mp4",
+              "size_bytes": 3491593,
+              "mtime_ns": 1792484397000000000,
+              "sha256": "573c375caaea79ada862a3df13cbf93c6d0be531a2736a9772c5731322b2fcf1"
+            }
+          },
+          "requested_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642",
+          "actual_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642"
+        },
+        "egolife_044": {
+          "cache_sha256": "296c01fa771cc3e58b5fe5a9f99c91d98503fbf4462e7ebd6fe7ba818c743894",
+          "cache_size_bytes": 30045841,
+          "feature_sha256": "0711e74ce8ba8b61ec6b5124d57fdbd931b0538a6a3f430ae154b26592c33213",
+          "source_media": {
+            "context": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_044/context.mp4",
+              "size_bytes": 67577205,
+              "mtime_ns": 1792482621000000000,
+              "sha256": "e0e4181497bbaa793037abbdaec734cfb9dcff97e84804f002560ef11c8a7d86"
+            },
+            "recent": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_044/input.mp4",
+              "size_bytes": 3653051,
+              "mtime_ns": 1792482647000000000,
+              "sha256": "2374ced0eb30add17f080ab455687b77f7d4eb02f47c1494549ff58300ad9ce7"
+            }
+          },
+          "requested_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642",
+          "actual_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642"
+        },
+        "egolife_045": {
+          "cache_sha256": "bd08093880edb00d7e971504ab3550c892df4b2a6a66b0809b39ddb294c8c152",
+          "cache_size_bytes": 30045841,
+          "feature_sha256": "bfe3f6d578470410a3b28817ad51b56ee7337fc8fd3e07d06df08a05ed88cb3f",
+          "source_media": {
+            "context": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_045/context.mp4",
+              "size_bytes": 58787233,
+              "mtime_ns": 1792482789000000000,
+              "sha256": "aec6c2e8f1c3940dab2fc418ba29d62ba2fd5425b4c87c2df96360ca510d29e8"
+            },
+            "recent": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_045/input.mp4",
+              "size_bytes": 2969649,
+              "mtime_ns": 1792482811000000000,
+              "sha256": "5d8b5989545ac52777d2a51bf958ec92c06c94ec577b49b5034d06a246e704f2"
+            }
+          },
+          "requested_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642",
+          "actual_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642"
+        },
+        "egolife_046": {
+          "cache_sha256": "188bdaf690d523c308b301a9bb89a418a62b06e02bfe2928ca7ba3199b89dbd3",
+          "cache_size_bytes": 30045841,
+          "feature_sha256": "76d38714aa11b9b4e02bb2617ad44c91203cf131b1ad4301f44cbbdc407bb7a5",
+          "source_media": {
+            "context": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_046/context.mp4",
+              "size_bytes": 58046222,
+              "mtime_ns": 1792482560000000000,
+              "sha256": "fe59a1419e4c7532647ed8f4bf863b009d0769d92349278adacec19cedd7753f"
+            },
+            "recent": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_046/input.mp4",
+              "size_bytes": 3193045,
+              "mtime_ns": 1792482584000000000,
+              "sha256": "2c79bf0937695d36808d28669905e871f6c1bdb344f3563dc3b1eb38fbe7e096"
+            }
+          },
+          "requested_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642",
+          "actual_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642"
+        },
+        "egolife_047": {
+          "cache_sha256": "e675103c5e4242c6508f34a1f8c5a5803c857c26e8bfb7a49c0ecea91a8fbcb4",
+          "cache_size_bytes": 30045841,
+          "feature_sha256": "7bf151eb17b0f60639fef55e0b170d2945d761be66a483a4c97d780432cd0d5a",
+          "source_media": {
+            "context": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_047/context.mp4",
+              "size_bytes": 58630804,
+              "mtime_ns": 1792483797000000000,
+              "sha256": "49146191724419e75367161653d648a85237aac4d231dd4e4e3ebc9031fac2ed"
+            },
+            "recent": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_047/input.mp4",
+              "size_bytes": 3399060,
+              "mtime_ns": 1792483821000000000,
+              "sha256": "c158e53b1d627752205d670bbe53c7990e7f684d47870fc5dbe0d0240fb264a6"
+            }
+          },
+          "requested_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642",
+          "actual_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642"
+        },
+        "egolife_048": {
+          "cache_sha256": "d2410d350f4880fbf79288cd78550e4bde51050775bfec57c2c5b37c5a771305",
+          "cache_size_bytes": 30045841,
+          "feature_sha256": "3e5b697f1a8370072d2756bf71a0052fb7335d79ec9b7af299e5dbb0f9e095c8",
+          "source_media": {
+            "context": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_048/context.mp4",
+              "size_bytes": 39013882,
+              "mtime_ns": 1792482560000000000,
+              "sha256": "59370db9f211eec9cf0694a199987548f8f2929b5ff11d42570d8a77340df822"
+            },
+            "recent": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_048/input.mp4",
+              "size_bytes": 2548330,
+              "mtime_ns": 1792482579000000000,
+              "sha256": "42230a6703f4c7fa5c5564380582f2421d0c59ed92557384f2ef9b1e0579bf2e"
+            }
+          },
+          "requested_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642",
+          "actual_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642"
+        },
+        "egolife_066": {
+          "cache_sha256": "80bbe5caf4e5821cd726b9e3e4f7cef4c0d28aa0b7988ce6fbffdd49eb45e11a",
+          "cache_size_bytes": 30045841,
+          "feature_sha256": "41a873e772b2452460d12ed96186a002b686853d54fb72748eabbd6b7c557008",
+          "source_media": {
+            "context": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_066/context.mp4",
+              "size_bytes": 54524377,
+              "mtime_ns": 1792484377000000000,
+              "sha256": "c2fe667037743b30c79f3f240baeed84fe466ca15d1dc6c8eeb65fa29deb4a03"
+            },
+            "recent": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_066/input.mp4",
+              "size_bytes": 2372294,
+              "mtime_ns": 1792484398000000000,
+              "sha256": "3f305873167841b50f3e75f5dc4fc0a99c4c1f9a91ceeb8dc10f933098b7bf4a"
+            }
+          },
+          "requested_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642",
+          "actual_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642"
+        },
+        "egolife_067": {
+          "cache_sha256": "f2da107130b7d2d3e8d9b5e7bfea40f3feb23c5cccd5e74018de390f2768ed5d",
+          "cache_size_bytes": 30045841,
+          "feature_sha256": "c585d635611c41854336bdf3d61d48ed62ba9f9ac6e98c32644b68036127e80a",
+          "source_media": {
+            "context": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_067/context.mp4",
+              "size_bytes": 67723556,
+              "mtime_ns": 1792484703000000000,
+              "sha256": "72f42a0e9ace51f5c43cf48cc8403ba6890b5a35c0a2973c70b339c3ceaf5ac8"
+            },
+            "recent": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_067/input.mp4",
+              "size_bytes": 4523714,
+              "mtime_ns": 1792484730000000000,
+              "sha256": "17b1555298a7dd5eb774346a8967a37161ac28eb1ee91abaa26dc89535c14948"
+            }
+          },
+          "requested_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642",
+          "actual_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642"
+        },
+        "egolife_068": {
+          "cache_sha256": "3e660d95d1f06f90e70967f0dfde6aaa7570579b5c649f196094dd88814cb9f1",
+          "cache_size_bytes": 30045841,
+          "feature_sha256": "971939db178aacc91eeef4495e3485588fb8ebe754bc4628cf4b7cfe5f4437fe",
+          "source_media": {
+            "context": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_068/context.mp4",
+              "size_bytes": 78499545,
+              "mtime_ns": 1792481678000000000,
+              "sha256": "18a07b01a81f6e12045ca4669588596c4fd97e2af7d63ee7b1ea8f0eb5bfe40e"
+            },
+            "recent": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_068/input.mp4",
+              "size_bytes": 5033804,
+              "mtime_ns": 1792481705000000000,
+              "sha256": "335bd24bd5dced58fb44382822f9de6482eae0fc865a8ce988bec578194723df"
+            }
+          },
+          "requested_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642",
+          "actual_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642"
+        },
+        "egolife_069": {
+          "cache_sha256": "89b3773d9c610b53d242e86f43361d60766bc674acfe4bbcdf7422ef1a52256e",
+          "cache_size_bytes": 30045841,
+          "feature_sha256": "bd67ea6b17c2107f878108d8e139d3aab00757d52ba1c633366778623b24c147",
+          "source_media": {
+            "context": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_069/context.mp4",
+              "size_bytes": 59324990,
+              "mtime_ns": 1792481284000000000,
+              "sha256": "6d5fa67ea0f19a2d0dd77db47fea8fab5fee05faac9d693b1bc3bacc0c3a4c8f"
+            },
+            "recent": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_069/input.mp4",
+              "size_bytes": 4026582,
+              "mtime_ns": 1792481309000000000,
+              "sha256": "b275507c30838d51d348c7312573c132e96936dca0dd78b818d73ea732757657"
+            }
+          },
+          "requested_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642",
+          "actual_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642"
+        },
+        "egolife_070": {
+          "cache_sha256": "6a937ea1e552036aa849a425cd78a44e3ba66bc17819959ccf60559005aa82f3",
+          "cache_size_bytes": 30045841,
+          "feature_sha256": "fb988e85df900371322b79ea06f25014e1f6129ced0068eb96116fbf0ab2221e",
+          "source_media": {
+            "context": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_070/context.mp4",
+              "size_bytes": 55194164,
+              "mtime_ns": 1792484699000000000,
+              "sha256": "5614c4b3b23ddf79780f9846b57a9575074376c1b9e5069cf9cff3bc7c4ed024"
+            },
+            "recent": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_070/input.mp4",
+              "size_bytes": 3041379,
+              "mtime_ns": 1792484722000000000,
+              "sha256": "60453802e77eac29d8ed198535aeaca72a129a72f47e8620e5dd767ebc63db91"
+            }
+          },
+          "requested_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642",
+          "actual_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642"
+        },
+        "egolife_071": {
+          "cache_sha256": "a4efa983c4ddd3a261602762d2bfd124819d589c723aa3e87504bcdb39a141d1",
+          "cache_size_bytes": 30045841,
+          "feature_sha256": "1723cf12b6719e3a9ec9a2a7c31fdb02d8f684c0e9d672704ac76ff0e4f0ee79",
+          "source_media": {
+            "context": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_071/context.mp4",
+              "size_bytes": 60676781,
+              "mtime_ns": 1792482766000000000,
+              "sha256": "3f205f06b6cb3deaf4d236fb65e4d75dda632a5be1968f1c711da107e6bc5b68"
+            },
+            "recent": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_071/input.mp4",
+              "size_bytes": 3699002,
+              "mtime_ns": 1792482790000000000,
+              "sha256": "ecad1966a9fc0d5b4492cadb79bdbb200fab6d4ec6ff1c5191c560aac14c2a30"
+            }
+          },
+          "requested_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642",
+          "actual_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642"
+        },
+        "egolife_072": {
+          "cache_sha256": "0734572dc1a98de3bf529c2e684f9072c12644567dfb39f66e9defb66334c89f",
+          "cache_size_bytes": 30045841,
+          "feature_sha256": "1775b0e2e5a99105ddbaaf9de38f8b82c01495248af8866fadd997010b41dbc8",
+          "source_media": {
+            "context": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_072/context.mp4",
+              "size_bytes": 54244446,
+              "mtime_ns": 1792484340000000000,
+              "sha256": "7fe9c9a80440b3f44d6b31a69681b2ab524e6c2ac3db36db9f7a55cb12234aba"
+            },
+            "recent": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_072/input.mp4",
+              "size_bytes": 3173042,
+              "mtime_ns": 1792484362000000000,
+              "sha256": "617f65aceec6896de6cb50f9769a97465b445f9dccd0b509bc64892086733d26"
+            }
+          },
+          "requested_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642",
+          "actual_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642"
+        },
+        "egolife_073": {
+          "cache_sha256": "02bc4dddb110888d60fa1896cefd00c37d4c80d8d6ef76241b98be9bea3a38a1",
+          "cache_size_bytes": 30045841,
+          "feature_sha256": "eaf24de4121b3c56919163a303caf6088b1995a175252b39a923ef17efe4bd17",
+          "source_media": {
+            "context": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_073/context.mp4",
+              "size_bytes": 46573076,
+              "mtime_ns": 1792484718000000000,
+              "sha256": "133a20b128c43bc11e64ed082b3e0eb3c296f9249b49ea90f5e0dd7b10ab79f8"
+            },
+            "recent": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_073/input.mp4",
+              "size_bytes": 3560549,
+              "mtime_ns": 1792484740000000000,
+              "sha256": "24e47ab567d6d10b6a4fd0a29d4c47060c5acc2fb166e97522f12ccca1797c3f"
+            }
+          },
+          "requested_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642",
+          "actual_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642"
+        },
+        "egolife_074": {
+          "cache_sha256": "2ca5598b8ddd5e0eb0ba1a1429f51fba9e7cec7dadca05c05bef7ebba360c758",
+          "cache_size_bytes": 30045841,
+          "feature_sha256": "74aed8644d6b6134d8ddd55865c68b6c047f72bc18ab1b43cef9e829bb06f520",
+          "source_media": {
+            "context": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_074/context.mp4",
+              "size_bytes": 58051404,
+              "mtime_ns": 1792479308000000000,
+              "sha256": "1a76a83bc2b2099fa5bd880c695f5fa8ec09e9984f3ba77e0f99a331d9839f07"
+            },
+            "recent": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_074/input.mp4",
+              "size_bytes": 4395951,
+              "mtime_ns": 1792479326000000000,
+              "sha256": "29d8bd05f2568cad8caaa5ccc5c988d97db0d7c33f844504fd82ef3db0d16ee2"
+            }
+          },
+          "requested_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642",
+          "actual_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642"
+        },
+        "egolife_075": {
+          "cache_sha256": "adc8238a337c943327f0e79f5ed78d62e5c314f4c44f01c43f0c2bbe2c08f74f",
+          "cache_size_bytes": 30045841,
+          "feature_sha256": "c7b74a60b45763cbf31de86e11b4045d2c10dd458089283adc2d350747c0fb35",
+          "source_media": {
+            "context": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_075/context.mp4",
+              "size_bytes": 59117030,
+              "mtime_ns": 1792482573000000000,
+              "sha256": "afd546aefcc21960725bb0bc0c2ceef17a8887183412c9007fe190c789749799"
+            },
+            "recent": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_075/input.mp4",
+              "size_bytes": 1792936,
+              "mtime_ns": 1792482593000000000,
+              "sha256": "8688d0f7c74e3f39b8a70601297f7306df9cf294ee64e1f818f6512d1c1e0c1c"
+            }
+          },
+          "requested_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642",
+          "actual_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642"
+        },
+        "egolife_076": {
+          "cache_sha256": "7cf2be1f18974d7c0d337ae8ec0e4a690df405e8fe9013be85f23bb3e00b6ee4",
+          "cache_size_bytes": 30045841,
+          "feature_sha256": "e0b9c7a4efcb892970234ade8d68a20b90e14450d25f49fd7eac4c4e95064c5d",
+          "source_media": {
+            "context": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_076/context.mp4",
+              "size_bytes": 80034278,
+              "mtime_ns": 1792483992000000000,
+              "sha256": "c3f4bf646acd7950d8ba6f3bb77d2f9a0d2d4fd65ec34291c620c689f6757842"
+            },
+            "recent": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_076/input.mp4",
+              "size_bytes": 4686705,
+              "mtime_ns": 1792484019000000000,
+              "sha256": "14df700a3b289af486764b3da18185024b391933aaa6a8b3cef9463e04e121ef"
+            }
+          },
+          "requested_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642",
+          "actual_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642"
+        },
+        "egolife_077": {
+          "cache_sha256": "e6ad654648180319f11a275d8bb7cae5c8c623bc62572648692158d33922f763",
+          "cache_size_bytes": 30045841,
+          "feature_sha256": "9fb6cb17511e7762ee025110195499dd6cbf00374a1ba05bd421b3a7d50488e2",
+          "source_media": {
+            "context": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_077/context.mp4",
+              "size_bytes": 78799429,
+              "mtime_ns": 1792483000000000000,
+              "sha256": "f48f47a4721adf742fb9693d5362dcbf4af397d451f4764594716b361c88e402"
+            },
+            "recent": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_077/input.mp4",
+              "size_bytes": 5219485,
+              "mtime_ns": 1792483028000000000,
+              "sha256": "17b8de1ae3bfd79c8f8a34bf712cc1a25f4996672e05038a26e383a2012f8efe"
+            }
+          },
+          "requested_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642",
+          "actual_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642"
+        },
+        "egolife_078": {
+          "cache_sha256": "2ed0c397c87b33c38ef5cae263d5cf40fd0bf51e6484d87528b639b8b8127fd4",
+          "cache_size_bytes": 30045841,
+          "feature_sha256": "2a30561c9617de0bf75a0e13def4a657527cd6a0c576f43881577e4208c9d98f",
+          "source_media": {
+            "context": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_078/context.mp4",
+              "size_bytes": 74195602,
+              "mtime_ns": 1792484876000000000,
+              "sha256": "fef84139a5e2a3f907ab10a95d040772990144eb8f22b301cf6f4dc80989b6c0"
+            },
+            "recent": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_078/input.mp4",
+              "size_bytes": 5028641,
+              "mtime_ns": 1792484902000000000,
+              "sha256": "f96213a6f226d5d14cbe391cae75b5093169d785d09d877e5d650adb81777944"
+            }
+          },
+          "requested_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642",
+          "actual_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642"
+        },
+        "egolife_079": {
+          "cache_sha256": "df79b4ab0fd6127a683ef63861e83ef103346f9163e229c2dd6c333f87b9e789",
+          "cache_size_bytes": 30045841,
+          "feature_sha256": "3b4767b87fb0b8e82488877da2a778b72ec219250c12175d3c99e6635e99712f",
+          "source_media": {
+            "context": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_079/context.mp4",
+              "size_bytes": 72801354,
+              "mtime_ns": 1792484675000000000,
+              "sha256": "493260873717f926a3563391a5b55eaed1848f5ace6633bb010840f94e870de8"
+            },
+            "recent": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_079/input.mp4",
+              "size_bytes": 3945622,
+              "mtime_ns": 1792484700000000000,
+              "sha256": "96a6804b37770ec551bff389d10ee899f4ba97901f9022fe47b83dca9e0dfb9a"
+            }
+          },
+          "requested_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642",
+          "actual_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642"
+        },
+        "egolife_080": {
+          "cache_sha256": "a0a87076d34abe93219549f3718b831390807de439168715adf4cfcae39839a1",
+          "cache_size_bytes": 30045841,
+          "feature_sha256": "541758e10c7c96ab8bad026a76c31cdef60cfc6dd0b482a8ea50a927fcd0335a",
+          "source_media": {
+            "context": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_080/context.mp4",
+              "size_bytes": 60278184,
+              "mtime_ns": 1792484396000000000,
+              "sha256": "441a750ecfa55a3f6e6af1f4a79c4c11cb9256003824103e019cbd7dacc2b4bd"
+            },
+            "recent": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_080/input.mp4",
+              "size_bytes": 1513817,
+              "mtime_ns": 1792484414000000000,
+              "sha256": "d133889931f146f0fc368318c359c1978564990b5377762129a865d5ee6db9cb"
+            }
+          },
+          "requested_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642",
+          "actual_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642"
+        },
+        "egolife_081": {
+          "cache_sha256": "2212ba61731e23e567fe0235d28a350d87f2959cf13d527a51fa680e1c87ad20",
+          "cache_size_bytes": 30045841,
+          "feature_sha256": "d6ab671df6141559c87f024729812d6ba9044079ffd3439623be7439a1fa39a7",
+          "source_media": {
+            "context": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_081/context.mp4",
+              "size_bytes": 64760740,
+              "mtime_ns": 1792482897000000000,
+              "sha256": "643cf888febce9c0876d84aa9ed91f75e0b1813ec48eeadbacca966c53b18c0b"
+            },
+            "recent": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_081/input.mp4",
+              "size_bytes": 3885654,
+              "mtime_ns": 1792482923000000000,
+              "sha256": "4a0db6f5172997211134dfb41125f259beb2017390090efeec0c5f460129ffac"
+            }
+          },
+          "requested_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642",
+          "actual_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642"
+        },
+        "egolife_082": {
+          "cache_sha256": "bafc6a8b6c30272e94a4014294a73ef1e3c2637132e3dba64fcfc5d09da985a0",
+          "cache_size_bytes": 30045841,
+          "feature_sha256": "601c6963c4aa60710c72e54f38b504043fc513881ed86f7bee62940da0626a7f",
+          "source_media": {
+            "context": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_082/context.mp4",
+              "size_bytes": 64001448,
+              "mtime_ns": 1792485464000000000,
+              "sha256": "e2756109afb55bdb2676a75e9787c0c91b3fe4b7ea8d898452995384374b271d"
+            },
+            "recent": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_082/input.mp4",
+              "size_bytes": 3451082,
+              "mtime_ns": 1792485489000000000,
+              "sha256": "e58b78abfd918976abc10430ea33d61697c086c2f462b719deea88d8ebdfa2d5"
+            }
+          },
+          "requested_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642",
+          "actual_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642"
+        },
+        "egolife_083": {
+          "cache_sha256": "6258894e12e9342a42ae7094ac5338442ceb5642d5e3daef874afb83c610a6bb",
+          "cache_size_bytes": 30045841,
+          "feature_sha256": "89d6aae5bd4ad7a1de63d0d9ce2f9659be068b7d2ad2f269834173634f0fc487",
+          "source_media": {
+            "context": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_083/context.mp4",
+              "size_bytes": 62206705,
+              "mtime_ns": 1792478358000000000,
+              "sha256": "3a0eb24317e2c83ba6b4fad5995a94de1f3405958c392ed7f3931e1c3c465de8"
+            },
+            "recent": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_083/input.mp4",
+              "size_bytes": 4368144,
+              "mtime_ns": 1792478377000000000,
+              "sha256": "98cbbe9445b5aa2446a7c29c83a1518847143f29768475e66b783a793be6f9c3"
+            }
+          },
+          "requested_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642",
+          "actual_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642"
+        },
+        "egolife_099": {
+          "cache_sha256": "53fc11907d714fc0db459f4e77b939096781c1c0cfea32e79e66a161d584647b",
+          "cache_size_bytes": 30045841,
+          "feature_sha256": "283a3655efe9119633b0fe97fc2110b68594ec7ab610633ed8c7da99a84b5843",
+          "source_media": {
+            "context": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_099/context.mp4",
+              "size_bytes": 63901400,
+              "mtime_ns": 1792483179000000000,
+              "sha256": "ebbb228819eeca01d4e7ef0424d9813b421a034b179d9ff9888c4065638b16a7"
+            },
+            "recent": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_099/input.mp4",
+              "size_bytes": 3904643,
+              "mtime_ns": 1792483204000000000,
+              "sha256": "d9093eb910036f823f1b4c22d0f26f9ae8d845d05bef63701ef5f3d6cf879315"
+            }
+          },
+          "requested_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642",
+          "actual_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642"
+        },
+        "egolife_100": {
+          "cache_sha256": "11c86a1267567474754cb10da882d701f0cc509d163a626dfa9842e5b7ecafa6",
+          "cache_size_bytes": 30045841,
+          "feature_sha256": "1d01a02bc20a453c7da0f9ec48556cc7ce6e1f2a5487680787599a12bbeefdbc",
+          "source_media": {
+            "context": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_100/context.mp4",
+              "size_bytes": 62778242,
+              "mtime_ns": 1792484153000000000,
+              "sha256": "11462aacfc7c4ef7b34a6e06eb77c3367bdfb96dd50d98006aa684c6fe49b8ac"
+            },
+            "recent": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_100/input.mp4",
+              "size_bytes": 2619370,
+              "mtime_ns": 1792484176000000000,
+              "sha256": "ec9cf2bcafd83f7b5ae652e3dacc73c673b508b542f473a5ccc7748395b70ca2"
+            }
+          },
+          "requested_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642",
+          "actual_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642"
+        },
+        "egolife_101": {
+          "cache_sha256": "377429697aa57617109e48b869fb4b78d2fe31e478f4b5d54bf7785cfdd6d30e",
+          "cache_size_bytes": 30045841,
+          "feature_sha256": "c5ed016529486fa5eec8f4e2069c3d7ba29fe0933355f69f16cb9b9ad0c9c6c8",
+          "source_media": {
+            "context": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_101/context.mp4",
+              "size_bytes": 52360906,
+              "mtime_ns": 1792478498000000000,
+              "sha256": "3dab75e3a6694846b9a5f13a80f8f43c374060b7c4822f13910a2f01686c8945"
+            },
+            "recent": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_101/input.mp4",
+              "size_bytes": 4194356,
+              "mtime_ns": 1792478516000000000,
+              "sha256": "a5787999b0dffd6076252e0de62dd6efa8a53520060f779f1245c10c471ea5c2"
+            }
+          },
+          "requested_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642",
+          "actual_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642"
+        },
+        "egolife_102": {
+          "cache_sha256": "5c3cf9451feab3a001fec3fab9c47bac707261436ecb4d336619dbaf8a0b9feb",
+          "cache_size_bytes": 30045841,
+          "feature_sha256": "05d834b5be46c9fbebb097802a33a8691f03ad51a3491c7465b5d7898592161d",
+          "source_media": {
+            "context": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_102/context.mp4",
+              "size_bytes": 68349753,
+              "mtime_ns": 1792482555000000000,
+              "sha256": "cf98126ee4883d716ac5eb0fda093ce1b3e4d7780f5b45994ec0c51abe815141"
+            },
+            "recent": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_102/input.mp4",
+              "size_bytes": 4687942,
+              "mtime_ns": 1792482583000000000,
+              "sha256": "fa4ed372c1fa9767e1fa73bb6477542a3198c24eccee787c981a96c6cd64dc4a"
+            }
+          },
+          "requested_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642",
+          "actual_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642"
+        },
+        "egolife_103": {
+          "cache_sha256": "2b4ad7fb3c163a3a5f7162f954b811ddb60f793fcaf2d578cceff63eb619c0e4",
+          "cache_size_bytes": 30045841,
+          "feature_sha256": "a8645ac51bf4e199341b57e0d6c387133b242bcb52814ffd14bc8adc9f94d72f",
+          "source_media": {
+            "context": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_103/context.mp4",
+              "size_bytes": 64375705,
+              "mtime_ns": 1792483594000000000,
+              "sha256": "988fc4229958a639a6aebf1d172f6e66252dad8ffcaefbd4b5e911e867c8a666"
+            },
+            "recent": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_103/input.mp4",
+              "size_bytes": 3789458,
+              "mtime_ns": 1792483618000000000,
+              "sha256": "1e96ce43463b0722fad7da3392f5eab219e13ac7e0d12946bb7b600578e48cd7"
+            }
+          },
+          "requested_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642",
+          "actual_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642"
+        },
+        "egolife_104": {
+          "cache_sha256": "2bcc2a8bf023b915b397fbb31843b66ddc785bb556e44011a3b05205fe698a2b",
+          "cache_size_bytes": 30045841,
+          "feature_sha256": "b73631343c7d7de4f7a8831ea09f60bc8a3b312da93a359b86e1a675ad9ef23c",
+          "source_media": {
+            "context": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_104/context.mp4",
+              "size_bytes": 65237290,
+              "mtime_ns": 1792483315000000000,
+              "sha256": "ffe76a713862d5a16247d8b916163d86cddc70e59944d459ef5341c519ddb500"
+            },
+            "recent": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_104/input.mp4",
+              "size_bytes": 4552689,
+              "mtime_ns": 1792483342000000000,
+              "sha256": "a30d39236f18b043b882aae3168d5afb635b7f6a3493470827d4e0aec6f0dec7"
+            }
+          },
+          "requested_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642",
+          "actual_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642"
+        },
+        "egolife_105": {
+          "cache_sha256": "ea3c677c442177085070118e71ab5a708bd5ab65da14bd59b39e947581949872",
+          "cache_size_bytes": 30045841,
+          "feature_sha256": "24b3fb3eef3ce80b3d8c2a8fecc706b9c24a9fcbd766b824aae208e6dc77fe17",
+          "source_media": {
+            "context": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_105/context.mp4",
+              "size_bytes": 49907939,
+              "mtime_ns": 1792482032000000000,
+              "sha256": "089942f540e68f9ad692e5c85877c71299789a9617258b9f681568196271d611"
+            },
+            "recent": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_105/input.mp4",
+              "size_bytes": 3796708,
+              "mtime_ns": 1792482055000000000,
+              "sha256": "1ebdde00c3a90bb1fd8f36f809c314256cc8b36acbc4464ab347897b9bcfb52e"
+            }
+          },
+          "requested_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642",
+          "actual_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642"
+        },
+        "egolife_106": {
+          "cache_sha256": "b1696d7ea1085b17d6938c639122a1b551f56a9a3c2ee69500c18ad4faba8775",
+          "cache_size_bytes": 30045841,
+          "feature_sha256": "dfd4b207b057439709feb0e586f5aba581243931ab22de85031d84f0b9883f2a",
+          "source_media": {
+            "context": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_106/context.mp4",
+              "size_bytes": 56313369,
+              "mtime_ns": 1792484079000000000,
+              "sha256": "4defcbb19a72eb620b7040e3ff19e0a2685bd2116013aecff394bab7e84bc5f3"
+            },
+            "recent": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_106/input.mp4",
+              "size_bytes": 3860654,
+              "mtime_ns": 1792484104000000000,
+              "sha256": "644567ef4020dc69c0187bc7b7b0f510d9a8b23fd5d577bacc24fce162e710e4"
+            }
+          },
+          "requested_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642",
+          "actual_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642"
+        },
+        "egolife_107": {
+          "cache_sha256": "1f1f1204ef0d625552c598669dde9abf70aae24052b345e7b24270fe742f597f",
+          "cache_size_bytes": 30045841,
+          "feature_sha256": "c156143f46401e26bb664ce7f0b31ec0102a6aca64a1a3b65a9d61c9100f2bda",
+          "source_media": {
+            "context": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_107/context.mp4",
+              "size_bytes": 59322110,
+              "mtime_ns": 1792483307000000000,
+              "sha256": "47c4a5b02b9c1db1ede227db6a96023e39d433f29b75332f93a5c61655166973"
+            },
+            "recent": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_107/input.mp4",
+              "size_bytes": 2367490,
+              "mtime_ns": 1792483329000000000,
+              "sha256": "7731bbcdb8c011e4992f7da286c1eb3aaee318701b2e53a39b6ba29193a3dcff"
+            }
+          },
+          "requested_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642",
+          "actual_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642"
+        },
+        "egolife_108": {
+          "cache_sha256": "2ec536a4583c58173a640c2f7b0c974b6529cf617ae73f8c453bf3daebaaa4e5",
+          "cache_size_bytes": 30045841,
+          "feature_sha256": "f29b18e5d949fd9ef61853997a155c887aceefef689794b22ffea25e897c9770",
+          "source_media": {
+            "context": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_108/context.mp4",
+              "size_bytes": 39804048,
+              "mtime_ns": 1792483053000000000,
+              "sha256": "4c00fd9f296462f0d39a09f5af08f485966aa128ec243859cd85ffeb152a9efa"
+            },
+            "recent": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_108/input.mp4",
+              "size_bytes": 3709473,
+              "mtime_ns": 1792483074000000000,
+              "sha256": "be3d80804100f6fd7116a8acae82a7ee7373039841977d5bd9776a4e8d7fa122"
+            }
+          },
+          "requested_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642",
+          "actual_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642"
+        },
+        "egolife_109": {
+          "cache_sha256": "4fec5b079377f79666aca8d316b1445ee9438172cffd2f9b4cd16dd1cea552a0",
+          "cache_size_bytes": 30045841,
+          "feature_sha256": "e860f97d0f79ab73960a5b17e0c903df9b51a7589b1da84f61c032039d07c6ba",
+          "source_media": {
+            "context": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_109/context.mp4",
+              "size_bytes": 42774103,
+              "mtime_ns": 1792483870000000000,
+              "sha256": "8de6deef7438923d08ea6ff1f7fce250ce0e8825e9a6a8868939fdb087ed84f9"
+            },
+            "recent": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_109/input.mp4",
+              "size_bytes": 3023363,
+              "mtime_ns": 1792483891000000000,
+              "sha256": "67c5e9699fe4baf5444eef6029b7550b2e754f73e2bb577c501652e7fa2c33df"
+            }
+          },
+          "requested_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642",
+          "actual_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642"
+        },
+        "egolife_110": {
+          "cache_sha256": "022a95211661e0f8c5ad4aea7f723565b31e67e9df73fbb52436daee52a20589",
+          "cache_size_bytes": 30045841,
+          "feature_sha256": "f222db7a97604d041edec6d8b6f6b3d102086cba3eaf784a766af411b30ce291",
+          "source_media": {
+            "context": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_110/context.mp4",
+              "size_bytes": 77625876,
+              "mtime_ns": 1792483273000000000,
+              "sha256": "3ea2ffb2477bee18eb4b4027358bd3aae18423bd4a9bdd06cb1cd71aa29bf58f"
+            },
+            "recent": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_110/input.mp4",
+              "size_bytes": 2555649,
+              "mtime_ns": 1792483290000000000,
+              "sha256": "2ea393fc03ba8977990f29effacf3bc5636b8fa266d5666aba64b2dcc83b10a2"
+            }
+          },
+          "requested_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642",
+          "actual_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642"
+        },
+        "egolife_111": {
+          "cache_sha256": "198cbb809da86eadc9a960cb87a971efa28697bf95e37c33fd57e8e36be25499",
+          "cache_size_bytes": 30045841,
+          "feature_sha256": "dd428020b6f2fa96ab2d2994f6e45a090b6103060362a1020f2e25b1539c5d75",
+          "source_media": {
+            "context": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_111/context.mp4",
+              "size_bytes": 63454246,
+              "mtime_ns": 1792484314000000000,
+              "sha256": "95eb5778dc2d679b9c0e2fcae4a500627e59058858de05a8a3ebaf64351d33e4"
+            },
+            "recent": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_111/input.mp4",
+              "size_bytes": 3816229,
+              "mtime_ns": 1792484338000000000,
+              "sha256": "314a29f1da4b6d0371aed8a9edc1942d6715d76641e9bc5abec95e3f75469ca5"
+            }
+          },
+          "requested_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642",
+          "actual_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642"
+        },
+        "egolife_112": {
+          "cache_sha256": "3badba2e7d0fe6955abbfd41a6eff5baefb912039255d0b33038b1f380707e03",
+          "cache_size_bytes": 30045841,
+          "feature_sha256": "5d5967fca615d29282da400c1dab4cd11c3d94ed9b3ac9c131289bf131ab3048",
+          "source_media": {
+            "context": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_112/context.mp4",
+              "size_bytes": 65871730,
+              "mtime_ns": 1792484664000000000,
+              "sha256": "a20cdb3975722df116267f7e4355db4c5707f52f2206645ce24c2d75edbc471f"
+            },
+            "recent": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_112/input.mp4",
+              "size_bytes": 3865198,
+              "mtime_ns": 1792484690000000000,
+              "sha256": "243c46b6ae9c15318954e3e4c730ec24780be13fc7b74bc81ed2ff78688bed70"
+            }
+          },
+          "requested_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642",
+          "actual_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642"
+        },
+        "egolife_113": {
+          "cache_sha256": "33c382b20c51245a62ad370a89a58bd37390966ee14e3c3e6fa17ea660336d9a",
+          "cache_size_bytes": 30045841,
+          "feature_sha256": "243bf963342c3fdd4ce8d743bb9b151cac156db14882a51562d7312627109835",
+          "source_media": {
+            "context": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_113/context.mp4",
+              "size_bytes": 65644709,
+              "mtime_ns": 1792478380000000000,
+              "sha256": "158b98071dda945d4a87d04636c0a0f3b6e348e7326b57b70912250f5e65d4f8"
+            },
+            "recent": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_113/input.mp4",
+              "size_bytes": 5025743,
+              "mtime_ns": 1792478400000000000,
+              "sha256": "b7bfacebcd2575887ac50f66929d144ef4ee1a3a127c5eb95867954b8f69489a"
+            }
+          },
+          "requested_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642",
+          "actual_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642"
+        },
+        "egolife_114": {
+          "cache_sha256": "20ae64c16f164e44a27803bd45e57184d01d3b83f1d3d5c769761149095223d2",
+          "cache_size_bytes": 30045841,
+          "feature_sha256": "6d91509f4291f837d183d3f2b8a628f512493a429ef2597ab6ff7e6aae8d8e15",
+          "source_media": {
+            "context": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_114/context.mp4",
+              "size_bytes": 63563484,
+              "mtime_ns": 1792482846000000000,
+              "sha256": "9ad1e155bf42020be160e2c2c60253bcd4716d8e5ede03825373af7b691b48ea"
+            },
+            "recent": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_114/input.mp4",
+              "size_bytes": 4021107,
+              "mtime_ns": 1792482872000000000,
+              "sha256": "7376e838f763307a61c5950340bdce48c1789a3ffdb79fda644f70f2c7fa31eb"
+            }
+          },
+          "requested_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642",
+          "actual_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642"
+        },
+        "egolife_115": {
+          "cache_sha256": "12edecff0ed28874322dc591585ce696ddae9cba7df69abff612395d541c7e24",
+          "cache_size_bytes": 30045841,
+          "feature_sha256": "16fcbdfdcc56ab9ccc746d9d2ac042bf3240449f193e9407fed0a27818ba416d",
+          "source_media": {
+            "context": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_115/context.mp4",
+              "size_bytes": 63477845,
+              "mtime_ns": 1792483661000000000,
+              "sha256": "f77eb6e13e7b4aac411920ae521f1a7a8aad76d3e3f9b754b10ea2051267b3fb"
+            },
+            "recent": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_115/input.mp4",
+              "size_bytes": 3910314,
+              "mtime_ns": 1792483687000000000,
+              "sha256": "4063fbd177bedba07953ebe5ba5065bfb106bad6bae3a8a37c1395290d3c0074"
+            }
+          },
+          "requested_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642",
+          "actual_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642"
+        },
+        "egolife_116": {
+          "cache_sha256": "b755c24600b82214d12e54020854f4a388904d72a093e61724f95618db4b7c00",
+          "cache_size_bytes": 30045841,
+          "feature_sha256": "289f5a7fdbe4386a99ab765ea0b3b47b5fd0b8d0b183abb58149cf35bf89489e",
+          "source_media": {
+            "context": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_116/context.mp4",
+              "size_bytes": 63337966,
+              "mtime_ns": 1792484272000000000,
+              "sha256": "66298f35db047e16b52cdef8e2371468f76b693310d3025e34c5012ea4e9ece2"
+            },
+            "recent": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_116/input.mp4",
+              "size_bytes": 2342578,
+              "mtime_ns": 1792484295000000000,
+              "sha256": "0acff4cc009f54a24ec9ca79690a697342a044fd1040dcc0b8b05a10c08bcaec"
+            }
+          },
+          "requested_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642",
+          "actual_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642"
+        },
+        "egolife_117": {
+          "cache_sha256": "0e5bb3ef250d2692b9bade45e4fcb31477daca4428a3bc236a0b706d2b466c97",
+          "cache_size_bytes": 30045841,
+          "feature_sha256": "e7d071650bf478304110183854ffce731513f2834ecb78d320dcaa1d96603d1e",
+          "source_media": {
+            "context": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_117/context.mp4",
+              "size_bytes": 68479128,
+              "mtime_ns": 1792479132000000000,
+              "sha256": "3d2877430e66e94f0494a31d30c1cd0555d2932c06196ffc24e76dface780b72"
+            },
+            "recent": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_117/input.mp4",
+              "size_bytes": 3868213,
+              "mtime_ns": 1792479153000000000,
+              "sha256": "4ad2f16d938881e47b49da19b0e8490b7e1164dc84db6949624731bed016435f"
+            }
+          },
+          "requested_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642",
+          "actual_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642"
+        },
+        "egolife_132": {
+          "cache_sha256": "c746977ceb20cdb636f81fe6a7a836fb2e0b832e9497224a37f3d3d6dc8f4c3a",
+          "cache_size_bytes": 30045841,
+          "feature_sha256": "99d225f7d5142232ba7735cb77d0e1a1b96292b46c6528e9f177059f10875d94",
+          "source_media": {
+            "context": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_132/context.mp4",
+              "size_bytes": 51618277,
+              "mtime_ns": 1792484595000000000,
+              "sha256": "1a61a7a2be6e9ee302083ee996172037e67c83ae76c4c69a46a757f8b34dd4c4"
+            },
+            "recent": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_132/input.mp4",
+              "size_bytes": 2802296,
+              "mtime_ns": 1792484618000000000,
+              "sha256": "18cf8d78061d7d44bd4c7e7ea2135146756dcceb89ac1e13ac3ce590f24a500b"
+            }
+          },
+          "requested_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642",
+          "actual_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642"
+        },
+        "egolife_133": {
+          "cache_sha256": "91f22aef1c9aef975606e5755757ffb122005cdcbe3d6f2e1dcce51b296b8a53",
+          "cache_size_bytes": 30045841,
+          "feature_sha256": "d18b1d64b4c1180c94241e5482a3708ea59e01fce15b1f3c2dc2115654f99cae",
+          "source_media": {
+            "context": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_133/context.mp4",
+              "size_bytes": 57907208,
+              "mtime_ns": 1792482575000000000,
+              "sha256": "7454623acd1eaaed3b848c939efb06dd1e7d5cca6c1ba871e9cc367d202881b5"
+            },
+            "recent": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_133/input.mp4",
+              "size_bytes": 3655706,
+              "mtime_ns": 1792482599000000000,
+              "sha256": "0a3d3e2ba683c730b4dce87592f2719108f57f3b774395fdd20645c7d9fd70db"
+            }
+          },
+          "requested_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642",
+          "actual_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642"
+        },
+        "egolife_134": {
+          "cache_sha256": "32aa1217e9cb5353391e00cc3228f41fadf66c711822b9674638f1cd71ffb229",
+          "cache_size_bytes": 30045841,
+          "feature_sha256": "520efa330bd7a25bc4dc983ddd98c950e3d6d2e4a3c408b29e5eee9d487068c0",
+          "source_media": {
+            "context": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_134/context.mp4",
+              "size_bytes": 56217776,
+              "mtime_ns": 1792484045000000000,
+              "sha256": "24efc893fedaa610cd335c4506eea310f971311a05a4c1798070802006cee504"
+            },
+            "recent": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_134/input.mp4",
+              "size_bytes": 2381767,
+              "mtime_ns": 1792484065000000000,
+              "sha256": "e1a559a86614ef70d3eaf5e85917f869e36cb2fb0a74a934955288d30505718d"
+            }
+          },
+          "requested_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642",
+          "actual_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642"
+        },
+        "egolife_135": {
+          "cache_sha256": "74404e74bb1b1081505960ccd69525cf96a1e14aa7606126eff4e0dcc4fcf6df",
+          "cache_size_bytes": 30045841,
+          "feature_sha256": "3f1df46b75750828de8794273f4dfe025422427defe3b2b1667f3e1a5e0741e7",
+          "source_media": {
+            "context": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_135/context.mp4",
+              "size_bytes": 51595052,
+              "mtime_ns": 1792478437000000000,
+              "sha256": "2ca6c6ed1b466f85fe588a090c3be4e7a05956b5c9918d4d7e85c089c128adb8"
+            },
+            "recent": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_135/input.mp4",
+              "size_bytes": 3054540,
+              "mtime_ns": 1792478454000000000,
+              "sha256": "9d35944baf4136dfff0bef4c5953d5a300489009ac1452c358a00d8e221048d0"
+            }
+          },
+          "requested_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642",
+          "actual_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642"
+        },
+        "egolife_136": {
+          "cache_sha256": "652ef52d48d12ca37e2e9ecabe9a38ce84cbd27fc4294a34800f0a4a91843aeb",
+          "cache_size_bytes": 30045841,
+          "feature_sha256": "1896a3e0570659523e9a95fa25606c02ab36ffc067799cb92dd28f462fe484cc",
+          "source_media": {
+            "context": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_136/context.mp4",
+              "size_bytes": 50505888,
+              "mtime_ns": 1792482949000000000,
+              "sha256": "33eacae0409348334cac3c48ecba0cedfe67ab20fd73fdd86273445181845753"
+            },
+            "recent": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_136/input.mp4",
+              "size_bytes": 2286778,
+              "mtime_ns": 1792482969000000000,
+              "sha256": "8c4a7ca722c57b6bdcf54d81f67d654aa4cf31f7b05733c4190bba1c049e9d3c"
+            }
+          },
+          "requested_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642",
+          "actual_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642"
+        },
+        "egolife_137": {
+          "cache_sha256": "aeab6fac7ccf7624760f47060c051e881d9f3177816388604717ceaa1b4e5220",
+          "cache_size_bytes": 30045841,
+          "feature_sha256": "862e844a42780461fbbc66f1535db366d0e15dccdd603a318db5a4de36a9146b",
+          "source_media": {
+            "context": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_137/context.mp4",
+              "size_bytes": 51132261,
+              "mtime_ns": 1792484199000000000,
+              "sha256": "89083b31c9e5936016ebb188062a346072b3f8a6e203f93300a96f34fcd94a0f"
+            },
+            "recent": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_137/input.mp4",
+              "size_bytes": 2467493,
+              "mtime_ns": 1792484219000000000,
+              "sha256": "5ef9840f71a3ba9638142f2f0a6caef251d1d8fca1eabca1054f532b27cf6417"
+            }
+          },
+          "requested_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642",
+          "actual_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642"
+        },
+        "egolife_138": {
+          "cache_sha256": "1bed851d690c6a7a258b7a2b2dadfae02c0642db246bba9fde0d44902701db4f",
+          "cache_size_bytes": 30045841,
+          "feature_sha256": "d84369c5a53075efc8dcbe870012e516681b5de926c76e15bce73152a6b2b144",
+          "source_media": {
+            "context": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_138/context.mp4",
+              "size_bytes": 51625930,
+              "mtime_ns": 1792483298000000000,
+              "sha256": "e1634e8b3457443dbdc737be46e2be06101299be81ab188d137e71614147e457"
+            },
+            "recent": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_138/input.mp4",
+              "size_bytes": 3844463,
+              "mtime_ns": 1792483321000000000,
+              "sha256": "e544077a5d1651a02d66a497e26f46f9755c490c68a901779ec809f8aebfa5c5"
+            }
+          },
+          "requested_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642",
+          "actual_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642"
+        },
+        "egolife_139": {
+          "cache_sha256": "516784dd0f0116509bf47ecf3e18f5543665eeea224884a7cd70585801157d39",
+          "cache_size_bytes": 30045841,
+          "feature_sha256": "1700f4aef48ff5647a6206b604367c2fe4daa19079c0a7ac301a7080d22248c1",
+          "source_media": {
+            "context": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_139/context.mp4",
+              "size_bytes": 53985181,
+              "mtime_ns": 1792483869000000000,
+              "sha256": "212bcfcf72bc4673ab0a61a3c8d580af423c0f9bf576d6682c10d06258b5b8a5"
+            },
+            "recent": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_139/input.mp4",
+              "size_bytes": 3449039,
+              "mtime_ns": 1792483892000000000,
+              "sha256": "ea3a9b748445a16aeaf4abcf8ca85a2a4d3e92f70d0e1caa6d443a7cc9ea8a83"
+            }
+          },
+          "requested_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642",
+          "actual_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642"
+        },
+        "egolife_140": {
+          "cache_sha256": "437a6d2d950a4d8abefc0d13bedaf8f595637f6c2a6f937fc5e17eb148754e72",
+          "cache_size_bytes": 30045841,
+          "feature_sha256": "89790d7443c2c777a4930d436d069eff1964bd265de2eb959d555089f76fb566",
+          "source_media": {
+            "context": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_140/context.mp4",
+              "size_bytes": 58350500,
+              "mtime_ns": 1792483381000000000,
+              "sha256": "2277433c814fbd7da12b3cf2f2acc28e457edc1cfbc31447858216c542c8de81"
+            },
+            "recent": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_140/input.mp4",
+              "size_bytes": 4191180,
+              "mtime_ns": 1792483407000000000,
+              "sha256": "6f34413558cb0e6f67dd927e8cb36cb1716232352802a1f84f9eaeb398bec3dc"
+            }
+          },
+          "requested_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642",
+          "actual_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642"
+        },
+        "egolife_141": {
+          "cache_sha256": "5dd1d5c229228a740152b7ebdbb8eacdae89b19933cbec3496d7ea533812780f",
+          "cache_size_bytes": 30045841,
+          "feature_sha256": "227f6150ea6f2d4d44ac10a1a3107a090e3618c0419713ef5e28aba9634edd8c",
+          "source_media": {
+            "context": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_141/context.mp4",
+              "size_bytes": 53202965,
+              "mtime_ns": 1792483749000000000,
+              "sha256": "420813b8c0c04dc9d5e0cf5349815077999a80bd167126c968d0bbca2dc3a7fd"
+            },
+            "recent": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_141/input.mp4",
+              "size_bytes": 3075131,
+              "mtime_ns": 1792483771000000000,
+              "sha256": "cfc28e72565ce83ec3f3f1e13239869628cce484d197c2e9e356dab506209949"
+            }
+          },
+          "requested_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642",
+          "actual_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642"
+        },
+        "egolife_142": {
+          "cache_sha256": "0c60e565866d34f58f90c9c64e7518fad0df47a350253920833b66e47ea1f4b9",
+          "cache_size_bytes": 30045841,
+          "feature_sha256": "f83aba1f103387222b7138330e57b7db0ed22aac824c98e1075ee23143171982",
+          "source_media": {
+            "context": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_142/context.mp4",
+              "size_bytes": 64590289,
+              "mtime_ns": 1792481522000000000,
+              "sha256": "38eef4022bc58a0c599d277962b5c0b69488cda9c815d2ee11c9c53bf93f5cef"
+            },
+            "recent": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_142/input.mp4",
+              "size_bytes": 4857322,
+              "mtime_ns": 1792481549000000000,
+              "sha256": "a227bade1af3cf216f47fbcfefb9ed57782a14e745cc290d6ed2b307722dc9a2"
+            }
+          },
+          "requested_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642",
+          "actual_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642"
+        },
+        "egolife_143": {
+          "cache_sha256": "94dd4c0604b212cab0ebe3708465aa3c0139b71de88743a594f11fcc52a1729f",
+          "cache_size_bytes": 30045841,
+          "feature_sha256": "88bf331eea010c94cf7715467a75d6d32f76b59e3ed3d4d07edd12e2c4fd4d46",
+          "source_media": {
+            "context": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_143/context.mp4",
+              "size_bytes": 53672449,
+              "mtime_ns": 1792478672000000000,
+              "sha256": "72b25069b4df98f225212cfc371ab454e2afafa7bc92a4a817f196dde996c384"
+            },
+            "recent": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_143/input.mp4",
+              "size_bytes": 4349963,
+              "mtime_ns": 1792478690000000000,
+              "sha256": "a92e10be1819058b341ab850f8e90a3a4bdb0e8212f2795e28e9fe72a1389b35"
+            }
+          },
+          "requested_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642",
+          "actual_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642"
+        },
+        "egolife_144": {
+          "cache_sha256": "ca8b771e7cc0057af4830d200be5baf818799fff19eb6854260ccbba3d68a99b",
+          "cache_size_bytes": 30045841,
+          "feature_sha256": "23d2f96b7cee5756f6fcff1dd03cb38f20e04107e1723fecfd267deedeb7d48d",
+          "source_media": {
+            "context": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_144/context.mp4",
+              "size_bytes": 50466993,
+              "mtime_ns": 1792483902000000000,
+              "sha256": "b5b66ebc4572ab9eabf97e85907eabb5e912f82457e0d5a7579c126a5d846f55"
+            },
+            "recent": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_144/input.mp4",
+              "size_bytes": 3628146,
+              "mtime_ns": 1792483925000000000,
+              "sha256": "c13e6682a63699ad1b7edf8a6a568d49528b21fb8d03d889b112fd7ced369a7d"
+            }
+          },
+          "requested_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642",
+          "actual_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642"
+        },
+        "egolife_145": {
+          "cache_sha256": "7ddd107f34e0e52a70cebb5b8a88615830483a78fdbeb1314365646a26115688",
+          "cache_size_bytes": 30045841,
+          "feature_sha256": "d8b5710fac149c4d3abcbba448fbd32ecc98c57d0ba71edcef35b6dd09b64a92",
+          "source_media": {
+            "context": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_145/context.mp4",
+              "size_bytes": 57355549,
+              "mtime_ns": 1792481710000000000,
+              "sha256": "89ca5dd22fc214bd4827fe51fb1e75115110efef5d75d804106900fb114e72e5"
+            },
+            "recent": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_145/input.mp4",
+              "size_bytes": 3183282,
+              "mtime_ns": 1792481732000000000,
+              "sha256": "599522283ba15bb44aef5b9a1601ed7ec19128c23587cd343eac2c3408c38d2a"
+            }
+          },
+          "requested_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642",
+          "actual_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642"
+        },
+        "egolife_146": {
+          "cache_sha256": "2f18d15c38463d80fa3e071188301e653189f92dda6464cf058de8f9fdba9de0",
+          "cache_size_bytes": 30045841,
+          "feature_sha256": "d236bec29e440ed859e05fbbd4981d79bf601a3ad7a0e6e27c96081ef2a6379b",
+          "source_media": {
+            "context": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_146/context.mp4",
+              "size_bytes": 61893202,
+              "mtime_ns": 1792484683000000000,
+              "sha256": "1f673ec388ba3ca55496a468fa62bbb4131a410a7c0d3e58ea321427503ef7d3"
+            },
+            "recent": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_146/input.mp4",
+              "size_bytes": 3003907,
+              "mtime_ns": 1792484706000000000,
+              "sha256": "f786aa320733a3c3f31ab6f5915028d08f86202db3dc4ec26d6448e1c433a14a"
+            }
+          },
+          "requested_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642",
+          "actual_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642"
+        },
+        "egolife_147": {
+          "cache_sha256": "2f819ba888018fe61e377956e30d3c1299c9264b583b0acea1241b7d6352e0c4",
+          "cache_size_bytes": 30045841,
+          "feature_sha256": "90d415fe36d47b026bee60447bccd9510de894febc8e4192cbe9cac4e59ecf84",
+          "source_media": {
+            "context": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_147/context.mp4",
+              "size_bytes": 59381421,
+              "mtime_ns": 1792484360000000000,
+              "sha256": "17d3c49143be83895f478e513e7e9aef337c06dee2889836ba723df8e8b4f595"
+            },
+            "recent": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_147/input.mp4",
+              "size_bytes": 3805647,
+              "mtime_ns": 1792484384000000000,
+              "sha256": "180194b48345e16323d513ad3f5c5e2eb836741303d16bd7dc2348721f7a145e"
+            }
+          },
+          "requested_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642",
+          "actual_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642"
+        },
+        "egolife_148": {
+          "cache_sha256": "3a42768cb334f20107841f3a06ef91248d462f6d5d411ad0a42771edffd86ed4",
+          "cache_size_bytes": 30045841,
+          "feature_sha256": "d8e52bf5086cfaf3da0f4e24ef852ed7ba4bccad36e8b97463a58b8d1c100621",
+          "source_media": {
+            "context": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_148/context.mp4",
+              "size_bytes": 61291202,
+              "mtime_ns": 1792482611000000000,
+              "sha256": "dee825957e59f16ba34359e41640736a3d050c8190ad19ac1b37a3efe762e4d6"
+            },
+            "recent": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_148/input.mp4",
+              "size_bytes": 3529560,
+              "mtime_ns": 1792482636000000000,
+              "sha256": "db0018c0e9667c89e5640c023e13837e6c59fd2c4a692e60461e1fefcc200cc0"
+            }
+          },
+          "requested_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642",
+          "actual_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642"
+        },
+        "egolife_166": {
+          "cache_sha256": "92350ce50c2657c3efb304e5f18699568cbf36ab40612cbe56771ebd01ab1204",
+          "cache_size_bytes": 30045841,
+          "feature_sha256": "0f15659add05cba47e7266fae1b38a54e7d0c7bfff74916eefea99d7a2525bba",
+          "source_media": {
+            "context": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_166/context.mp4",
+              "size_bytes": 61028892,
+              "mtime_ns": 1792475349000000000,
+              "sha256": "bc9c542ba03a4e81f562aae803a9df954a1a1c729e11bd5c75469713187cdb13"
+            },
+            "recent": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_166/input.mp4",
+              "size_bytes": 4499046,
+              "mtime_ns": 1792475368000000000,
+              "sha256": "ee1c8ed3bb7a24990b7069569052c4371c645c93a34a3eb7bf3721ddf3655b4e"
+            }
+          },
+          "requested_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642",
+          "actual_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642"
+        },
+        "egolife_167": {
+          "cache_sha256": "0a3c9ccf6539ee909af96d969aef5a89f953565399c38805f924e33b917c1919",
+          "cache_size_bytes": 30045841,
+          "feature_sha256": "b0d8d156d12e79d9ecf2cef997db658f219fb9ec5ae939124ff4ea7f2409a5e5",
+          "source_media": {
+            "context": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_167/context.mp4",
+              "size_bytes": 57155838,
+              "mtime_ns": 1792482064000000000,
+              "sha256": "c7fb2ca7128820180fbab9bf3f5a503c12ecc1719d5d674f92b96b8b6e51543c"
+            },
+            "recent": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_167/input.mp4",
+              "size_bytes": 2645245,
+              "mtime_ns": 1792482086000000000,
+              "sha256": "1a740d08174fbc1e002ca6a4a6653d8cb4bd1c2d62888a33d0abc78ba04765e9"
+            }
+          },
+          "requested_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642",
+          "actual_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642"
+        },
+        "egolife_168": {
+          "cache_sha256": "9e29896b0dd53464f2cb96c1b78a7766ba22b40e8f62b594943b5a272d53c2e3",
+          "cache_size_bytes": 30045841,
+          "feature_sha256": "08e2973224ea3ef48016bffc1f44cd49e75d9fba0aa45b1a6cbc11fd2b82234a",
+          "source_media": {
+            "context": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_168/context.mp4",
+              "size_bytes": 60985908,
+              "mtime_ns": 1792473919000000000,
+              "sha256": "cb6427fdffd2cd54af18f2f42d9462d8fc4e49f26d98db142c48011f43c1d262"
+            },
+            "recent": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_168/input.mp4",
+              "size_bytes": 3792412,
+              "mtime_ns": 1792473937000000000,
+              "sha256": "ce0eac4f00710732701eda0b91dca994b597cb36c396620fc7766c0ab74708ed"
+            }
+          },
+          "requested_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642",
+          "actual_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642"
+        },
+        "egolife_169": {
+          "cache_sha256": "74a98c0a81c80c180b17c8c885824b6fb30e94ffeaab28e17aec86b0fc634af0",
+          "cache_size_bytes": 30045841,
+          "feature_sha256": "fec2009c44779b2b4af747bfbf2c61a248f0a005ff225ed0da73a250f5c497f7",
+          "source_media": {
+            "context": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_169/context.mp4",
+              "size_bytes": 69957596,
+              "mtime_ns": 1792483006000000000,
+              "sha256": "4fcc9da4f65e0bdda2c02d14a6793d99367ae2a855f1e3e091348a34d5f090e3"
+            },
+            "recent": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_169/input.mp4",
+              "size_bytes": 4362890,
+              "mtime_ns": 1792483032000000000,
+              "sha256": "51ba90b230101d5b7777cfc4ab6e0dddb0b945099ba0417288dbba7cc970bf21"
+            }
+          },
+          "requested_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642",
+          "actual_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642"
+        },
+        "egolife_170": {
+          "cache_sha256": "b8e56bcb32a698b7b207e7f784c04f03242f41bbdba99b5e605b24c154246591",
+          "cache_size_bytes": 30045841,
+          "feature_sha256": "a60c109a3105361695102331f7c8f5580c942d529b49a959ff8f6a8fa41d4c1c",
+          "source_media": {
+            "context": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_170/context.mp4",
+              "size_bytes": 71536851,
+              "mtime_ns": 1792482970000000000,
+              "sha256": "26666e2a16119f1cf767a8045d91e0dbbdffb9e706f7a4dee1ec71dcd0639130"
+            },
+            "recent": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_170/input.mp4",
+              "size_bytes": 3409332,
+              "mtime_ns": 1792482995000000000,
+              "sha256": "a81aafbf868125a40f735c109c1268a3cde666360f7eb1c798679638d730cc3c"
+            }
+          },
+          "requested_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642",
+          "actual_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642"
+        },
+        "egolife_171": {
+          "cache_sha256": "f3108df344dc477bdae20aced033fd98eb89aaa9226c0117150d656aa8c57a63",
+          "cache_size_bytes": 30045841,
+          "feature_sha256": "74c22a6d8013d39bf204d81bf21a934743b202b64bb6bbc41d425bf8b298584a",
+          "source_media": {
+            "context": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_171/context.mp4",
+              "size_bytes": 58383034,
+              "mtime_ns": 1792478732000000000,
+              "sha256": "c70ce48bfe9b2ae11f0225a9c3bfa3480fa67f95206a7f992d366d748a59ffbc"
+            },
+            "recent": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_171/input.mp4",
+              "size_bytes": 2485235,
+              "mtime_ns": 1792478749000000000,
+              "sha256": "8996f9efe4af18eebb40818a6691018a799f5482609921a03d56b37b87728550"
+            }
+          },
+          "requested_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642",
+          "actual_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642"
+        },
+        "egolife_172": {
+          "cache_sha256": "f80c59eefb678fd92d93c157d72ee70caaf168cc120ac0eaf49920b9fa74b4ad",
+          "cache_size_bytes": 30045841,
+          "feature_sha256": "c58102f46568ee37d9ef13c90497f3e6689994d7bc3a73458984bfa8e9519963",
+          "source_media": {
+            "context": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_172/context.mp4",
+              "size_bytes": 53397731,
+              "mtime_ns": 1792483861000000000,
+              "sha256": "4f1c75f449b162a73e3c645512c7d9b267490f7e6fcbafce23e7a1f2cad11eec"
+            },
+            "recent": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_172/input.mp4",
+              "size_bytes": 2932469,
+              "mtime_ns": 1792483883000000000,
+              "sha256": "0e8040504b30c6f3c5d5508cd62523705c8593ef72ac8bd2b32024709ad9f3b6"
+            }
+          },
+          "requested_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642",
+          "actual_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642"
+        },
+        "egolife_173": {
+          "cache_sha256": "b52ddb52de4e364b38d499fff84be3008b240c9e32cb169b1defd5549b88b7be",
+          "cache_size_bytes": 30045841,
+          "feature_sha256": "f19897e04bbe464e642d0f8341c1b2ac1e6c3ae913a5cb8a4af388fdbf82078f",
+          "source_media": {
+            "context": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_173/context.mp4",
+              "size_bytes": 64240635,
+              "mtime_ns": 1792483486000000000,
+              "sha256": "d9efa0f4b9cdc1a2800de4fe713a653d051b564178e4bde980275fd5772720db"
+            },
+            "recent": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_173/input.mp4",
+              "size_bytes": 3639561,
+              "mtime_ns": 1792483510000000000,
+              "sha256": "b1e6148790f5bcb20b8f6646472fc6c4527570abb6ea6f0893e5db90890e0b81"
+            }
+          },
+          "requested_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642",
+          "actual_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642"
+        },
+        "egolife_174": {
+          "cache_sha256": "f79a64e4a9bedd483eee2108d9374e0b8c068f789637c726682d1869cd91119f",
+          "cache_size_bytes": 30045841,
+          "feature_sha256": "6265d3e8129394864cb9eaabf2462e46d460b5b1cc307156926c1b705c134fcb",
+          "source_media": {
+            "context": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_174/context.mp4",
+              "size_bytes": 65212157,
+              "mtime_ns": 1792480891000000000,
+              "sha256": "98cf631023823454a4f5b7ea5a27e7598dd74250d8f20cb9641f7619da38a04f"
+            },
+            "recent": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_174/input.mp4",
+              "size_bytes": 3385769,
+              "mtime_ns": 1792480916000000000,
+              "sha256": "66c313736f1aff9252984edc0b0cb9ff60bd518a1e50a0948addf4381825ad89"
+            }
+          },
+          "requested_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642",
+          "actual_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642"
+        },
+        "egolife_175": {
+          "cache_sha256": "c6f10b0c005f93c11490d1c5f6046186cf937b3000eef0ce0df2e4e6105821a9",
+          "cache_size_bytes": 30045841,
+          "feature_sha256": "155e6735d0eb174646b998fdbd116f457e4be27c722b8ae0afd927f0b56b5371",
+          "source_media": {
+            "context": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_175/context.mp4",
+              "size_bytes": 93976005,
+              "mtime_ns": 1792480084000000000,
+              "sha256": "f94de0713d9886dff74a664e4b71381d10dcf3070007844e73a7268994528e1d"
+            },
+            "recent": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_175/input.mp4",
+              "size_bytes": 5714390,
+              "mtime_ns": 1792480114000000000,
+              "sha256": "0f8e0b96ca94667732d76f678c69daa4542ccc934028c1ae1e5d6f17480a19b4"
+            }
+          },
+          "requested_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642",
+          "actual_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642"
+        },
+        "egolife_176": {
+          "cache_sha256": "2af3312f2d1bb2f2a0f85bb02fa632ccaedbf6584a239868c28c04e8cddef1e5",
+          "cache_size_bytes": 30045841,
+          "feature_sha256": "828cb9a948bd6714076296a187a45714239ade7ed1e61f647997586d70a41a38",
+          "source_media": {
+            "context": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_176/context.mp4",
+              "size_bytes": 66083558,
+              "mtime_ns": 1792485278000000000,
+              "sha256": "e95a2ff6e1c3e76ac17ebc5bb12a05343d171e2aec3944b490582d602e3e4e9c"
+            },
+            "recent": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_176/input.mp4",
+              "size_bytes": 2990720,
+              "mtime_ns": 1792485301000000000,
+              "sha256": "c5950cc598c9a84c924735fd161646b24f0d10cc11428ef704b6194ff440e83f"
+            }
+          },
+          "requested_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642",
+          "actual_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642"
+        },
+        "egolife_177": {
+          "cache_sha256": "06ea2b76cbb3d72323924ab46258b0fb99bea55ee2f2539358f18ac7aef594dd",
+          "cache_size_bytes": 30045841,
+          "feature_sha256": "2a2f4e0ed7ceacb4478c1f2e0cf0a9036848b0795c0a5b103d43e893bdf4ff95",
+          "source_media": {
+            "context": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_177/context.mp4",
+              "size_bytes": 45786040,
+              "mtime_ns": 1792483198000000000,
+              "sha256": "60b3e2724a33e8455051e4545c7a8c4cfa96ead7e81d720d58f9d54b4d385996"
+            },
+            "recent": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_177/input.mp4",
+              "size_bytes": 2264515,
+              "mtime_ns": 1792483219000000000,
+              "sha256": "8294c8b4e236da2bb7f53a4700480b5dfbd9db79f75484d37ef07e6724ae07c7"
+            }
+          },
+          "requested_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642",
+          "actual_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642"
+        },
+        "egolife_178": {
+          "cache_sha256": "f63550ac1c9b31381b7bf9ace9342214941dd22cc7ecc33b3413b235321a9dd8",
+          "cache_size_bytes": 30045841,
+          "feature_sha256": "0a9abe8026eef2743bfa09e74f1cab1b6dda2d7e0c501dcff66986556885908e",
+          "source_media": {
+            "context": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_178/context.mp4",
+              "size_bytes": 44925517,
+              "mtime_ns": 1792483839000000000,
+              "sha256": "48e118eff1c182b833d4b4d9e53e9ac4d74f53a7b4d1a85f454833dec9536754"
+            },
+            "recent": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_178/input.mp4",
+              "size_bytes": 2326044,
+              "mtime_ns": 1792483858000000000,
+              "sha256": "215cc2b80565eab47406c008dcff57b32d433e436672f72ba237fe8f56064241"
+            }
+          },
+          "requested_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642",
+          "actual_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642"
+        },
+        "egolife_179": {
+          "cache_sha256": "0f71f36c7aba046c96bd64c7bd42a752dc94ff4a36162d95805eb3bb3d9834e6",
+          "cache_size_bytes": 30045841,
+          "feature_sha256": "ce4a710abb3b49552ff99bdbb75387b230cb494c1edb3ffb5d4033e8967daba3",
+          "source_media": {
+            "context": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_179/context.mp4",
+              "size_bytes": 44834513,
+              "mtime_ns": 1792484032000000000,
+              "sha256": "20bfa453a0204a4100e0e0285445b53d2b9d7d3308a12e102774a026fba95a39"
+            },
+            "recent": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_179/input.mp4",
+              "size_bytes": 2285810,
+              "mtime_ns": 1792484051000000000,
+              "sha256": "f9b7c5e8998d7b2072a4682f878bc3ab315fb58f259df4c7f92257275b379d48"
+            }
+          },
+          "requested_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642",
+          "actual_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642"
+        },
+        "egolife_180": {
+          "cache_sha256": "0c3fc81dc23e5c031a435d05186509d5fb89a6468c63c9f90d04c47af7062cf9",
+          "cache_size_bytes": 30045841,
+          "feature_sha256": "eb79f6d5874a5d95a37296be3b706c413064143b1ef5edfc90455b64e77fa147",
+          "source_media": {
+            "context": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_180/context.mp4",
+              "size_bytes": 49230698,
+              "mtime_ns": 1792474946000000000,
+              "sha256": "37a865b30b37abd2e2a91cf0dd71e26e514180a00d928d33ffc17817f0d8ce17"
+            },
+            "recent": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_180/input.mp4",
+              "size_bytes": 4104989,
+              "mtime_ns": 1792474963000000000,
+              "sha256": "063cd15d4a01a5c10f9f7acfa92c6e75c06387907422716535b78660b375f2f9"
+            }
+          },
+          "requested_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642",
+          "actual_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642"
+        },
+        "egolife_181": {
+          "cache_sha256": "1f3f0a00acf1ec09ede0a57d375113edc3edb5412b4167e89d5fabc8a47a557e",
+          "cache_size_bytes": 30045841,
+          "feature_sha256": "b4d7c551066056aa1b9a5e232462f99b54281e86c9ff7bd2cc7ecff94b0a53c3",
+          "source_media": {
+            "context": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_181/context.mp4",
+              "size_bytes": 59338075,
+              "mtime_ns": 1792483470000000000,
+              "sha256": "c9e4b4abcffd02bbf0e1343959509bdb0d014c0feb8f9d1e9ae496741450202c"
+            },
+            "recent": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_181/input.mp4",
+              "size_bytes": 3819182,
+              "mtime_ns": 1792483494000000000,
+              "sha256": "99fc7ac7752a218dcd346995695d47f2ccd027b0d0a26843c6672bd456c494ca"
+            }
+          },
+          "requested_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642",
+          "actual_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642"
+        },
+        "egolife_182": {
+          "cache_sha256": "12ac426ce5cfed6aa09f165dc0dd18932e6402c8a75e00964a22b7987c4bc672",
+          "cache_size_bytes": 30045841,
+          "feature_sha256": "c597595ffd32d3437730a55fee331732329f65fcc4fec104858eff48ee7f38de",
+          "source_media": {
+            "context": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_182/context.mp4",
+              "size_bytes": 59021926,
+              "mtime_ns": 1792482897000000000,
+              "sha256": "08c4b30f774c138449bb5c3ac5ca93ffb043e35f36f19d1dc869c67ba14cc739"
+            },
+            "recent": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_182/input.mp4",
+              "size_bytes": 3886953,
+              "mtime_ns": 1792482923000000000,
+              "sha256": "28a1de435f42c408308e6e82ebaaccf76a4794fa72f3b6ebff0b5bffbd74ebf0"
+            }
+          },
+          "requested_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642",
+          "actual_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642"
+        },
+        "egolife_183": {
+          "cache_sha256": "f41f365e62870d73f39056b94a83ba0febbc17e3f303b8ad03610110a01a6862",
+          "cache_size_bytes": 30045841,
+          "feature_sha256": "016e8cc81859a659fb8bc7b0d3ecebc7abb7195d853adae02ded5931367b2817",
+          "source_media": {
+            "context": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_183/context.mp4",
+              "size_bytes": 61686495,
+              "mtime_ns": 1792481613000000000,
+              "sha256": "c47e6227c505e91babbb5b7ce90c1b85d691390e128fe54e6aa6beeb1b670460"
+            },
+            "recent": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_183/input.mp4",
+              "size_bytes": 2524265,
+              "mtime_ns": 1792481635000000000,
+              "sha256": "9929c913a659f9c89035d2c963cb5bc9d898e96e0a568a276860c1cf951bd117"
+            }
+          },
+          "requested_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642",
+          "actual_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642"
+        },
+        "egolife_184": {
+          "cache_sha256": "13f67124f9a4f82c1ec0cb2993254fc7aba61428df9add35913986f01e3aa15f",
+          "cache_size_bytes": 30045841,
+          "feature_sha256": "f1e63c830bd8bc50a83e65b4f16620af960168f1bcc886f297b682f9cf8ad062",
+          "source_media": {
+            "context": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_184/context.mp4",
+              "size_bytes": 62042041,
+              "mtime_ns": 1792480773000000000,
+              "sha256": "30a39aa8c28d6b65212350d24e9e5ff094eb12fa9e353905d741772fbf3b0016"
+            },
+            "recent": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_184/input.mp4",
+              "size_bytes": 3454274,
+              "mtime_ns": 1792480797000000000,
+              "sha256": "f50d16647fcd07d0a68b6cf375511916cbe65d9d5417a5600eaee8db59ebd8df"
+            }
+          },
+          "requested_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642",
+          "actual_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642"
+        },
+        "egolife_185": {
+          "cache_sha256": "89472ac07d6199432a03421ef3d5b0047d7c0bf1fd775f59e19194de00a02ca2",
+          "cache_size_bytes": 30045841,
+          "feature_sha256": "497e4d3be390b9ea31ec757ce5e1b55dd704033646cf879bbcd45ffd810186d5",
+          "source_media": {
+            "context": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_185/context.mp4",
+              "size_bytes": 56433076,
+              "mtime_ns": 1792483956000000000,
+              "sha256": "7e75da637811d3e2beadfad57215830cd2e96dd237803ddbfc872fbfc2099686"
+            },
+            "recent": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_185/input.mp4",
+              "size_bytes": 2865859,
+              "mtime_ns": 1792483979000000000,
+              "sha256": "d25f522a0d2f6d9caa8dfb0c7dea5f6a0217f90c27faad4dc8dba4361a811d26"
+            }
+          },
+          "requested_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642",
+          "actual_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642"
+        },
+        "egolife_019": {
+          "cache_sha256": "43ba6863b35ab95b39b89a686236f255f7b646f72623007ab19dad45991b24e4",
+          "cache_size_bytes": 30045841,
+          "feature_sha256": "34ad61833193faa244a1157a5d57471cdcb8800595ba48fd21d0f314bfbd597e",
+          "source_media": {
+            "context": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_019/context.mp4",
+              "size_bytes": 40391340,
+              "mtime_ns": 1792484876000000000,
+              "sha256": "61a75f8f66da1ade4548530ead4a84c56195eb79c939db3bb5c827a1d83857fd"
+            },
+            "recent": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_019/input.mp4",
+              "size_bytes": 4128398,
+              "mtime_ns": 1792484898000000000,
+              "sha256": "7a1361ac266599985abfed78b5698c8506a18f80eb8bcfee38e49b9c59f43607"
+            }
+          },
+          "requested_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642",
+          "actual_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642"
+        },
+        "egolife_020": {
+          "cache_sha256": "5c5ce7ce93ac91e203ab658284d674e4f1792ec06cde3710c2a38440fb203b30",
+          "cache_size_bytes": 30045841,
+          "feature_sha256": "59442aeec065f334c72b28b3671b104e63b5a77c2faf440de119f3440f9e1873",
+          "source_media": {
+            "context": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_020/context.mp4",
+              "size_bytes": 52791049,
+              "mtime_ns": 1792483556000000000,
+              "sha256": "62dbde4a4f5348275c90c0566e520edc1d4542b2cddf02a84f7d60600200e123"
+            },
+            "recent": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_020/input.mp4",
+              "size_bytes": 3005678,
+              "mtime_ns": 1792483579000000000,
+              "sha256": "369e0b6d4bc666cc45c637c4dee86137e74127ff01c53e9475d970738722d41a"
+            }
+          },
+          "requested_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642",
+          "actual_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642"
+        },
+        "egolife_021": {
+          "cache_sha256": "bcbbc0822cfdf96187dc4595b786d3aba0ce7f15abf91677c03ca6ee62698948",
+          "cache_size_bytes": 30045841,
+          "feature_sha256": "0aa659038368e5f3d3c34cbf02167e16ac5af05eaa3c17dffc307ef7218e136a",
+          "source_media": {
+            "context": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_021/context.mp4",
+              "size_bytes": 63827143,
+              "mtime_ns": 1792478355000000000,
+              "sha256": "0af70be63600f5767bbfbd452800f45b786c2ff022c4fc98fbfa0339d8d6a6d0"
+            },
+            "recent": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_021/input.mp4",
+              "size_bytes": 3830024,
+              "mtime_ns": 1792478374000000000,
+              "sha256": "4f0e1bc47f1632ff9cca8e3b7b679314da7204734734ef5cea1de1e117dfb8fb"
+            }
+          },
+          "requested_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642",
+          "actual_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642"
+        },
+        "egolife_049": {
+          "cache_sha256": "d11f3af0127cc8d64b2bcbd4e68dbcd3fc6c659c5c3489c3f2626781bdaa1be5",
+          "cache_size_bytes": 30045841,
+          "feature_sha256": "6f0afeba8bb6c6f5a38aa35ad44f29b192333a6fa12b581df7eeff278efe3fad",
+          "source_media": {
+            "context": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_049/context.mp4",
+              "size_bytes": 54855572,
+              "mtime_ns": 1792484658000000000,
+              "sha256": "cca6a597e90e1d464e5f1a0fa72aea22e61b53ab3b57720e2cb77ac07ff9db78"
+            },
+            "recent": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_049/input.mp4",
+              "size_bytes": 2629812,
+              "mtime_ns": 1792484680000000000,
+              "sha256": "c4c088e4bcdacfa38b8243fea6236fecbcc90f6d00a394716264866a799db086"
+            }
+          },
+          "requested_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642",
+          "actual_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642"
+        },
+        "egolife_050": {
+          "cache_sha256": "f07d2948d953a8c0414295bd448387d5c9fe8a9962ccff8ed0ee8a8805e4b4f4",
+          "cache_size_bytes": 30045841,
+          "feature_sha256": "23b5deaf3fafc55c0d6c266cb1c39eed87e51dc8d0c6b12ef5662ea110dc1ec4",
+          "source_media": {
+            "context": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_050/context.mp4",
+              "size_bytes": 51289733,
+              "mtime_ns": 1792482506000000000,
+              "sha256": "fda109976b49a2e4d0ea5e8686326a0234d856d75fd315221e2ee166e02958d5"
+            },
+            "recent": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_050/input.mp4",
+              "size_bytes": 3613545,
+              "mtime_ns": 1792482532000000000,
+              "sha256": "5f5f241ac9c8cbbac430fcfeff5fd74b78a626b630fe5fc4ce3085d8d290f722"
+            }
+          },
+          "requested_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642",
+          "actual_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642"
+        },
+        "egolife_051": {
+          "cache_sha256": "70e4c57713b763fb5fdc7be65041bbb8452c15285683ec444e738c268925ad5c",
+          "cache_size_bytes": 30045841,
+          "feature_sha256": "ef003a902350910c79809c3e2ae00cb51a622060a5121cb3ef1e4218ee200fb8",
+          "source_media": {
+            "context": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_051/context.mp4",
+              "size_bytes": 51141119,
+              "mtime_ns": 1792482523000000000,
+              "sha256": "36254dcb819fcd3dee05c6c56d9564fd0f100d8b940d9f6191550c828124d18d"
+            },
+            "recent": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_051/input.mp4",
+              "size_bytes": 3642047,
+              "mtime_ns": 1792482547000000000,
+              "sha256": "f3d3c18412494a7b00b25c2dd67a37f2641ad7e39e8f74acd29bbb11775728ed"
+            }
+          },
+          "requested_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642",
+          "actual_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642"
+        },
+        "egolife_052": {
+          "cache_sha256": "64b98c83f6f578504c5200c07e7b7e1cbffd345d9d00a8a69959b3dab928a834",
+          "cache_size_bytes": 30045841,
+          "feature_sha256": "40e78d7211b101a1cdf5dea76fe3eb4b2528ebd480283aa95dbd2a154034312a",
+          "source_media": {
+            "context": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_052/context.mp4",
+              "size_bytes": 72016076,
+              "mtime_ns": 1792475816000000000,
+              "sha256": "dcd365de3217c800c99d986a487671d849699e074ce023f3dc03293844e5a1c2"
+            },
+            "recent": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_052/input.mp4",
+              "size_bytes": 4761363,
+              "mtime_ns": 1792475835000000000,
+              "sha256": "b7ebe180701083062dcdfa30b42cdbc942348a57671bbd7cd8bc7ba62e6f3acb"
+            }
+          },
+          "requested_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642",
+          "actual_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642"
+        },
+        "egolife_053": {
+          "cache_sha256": "5c53907af44746114cf3b5a75bb28085ecdcb72c176b33e718a93da1ad523b3a",
+          "cache_size_bytes": 30045841,
+          "feature_sha256": "031228b0e475b89ae83d27fd2e4881f5b0f44d2f1279ebbedaf227c94ff41ebd",
+          "source_media": {
+            "context": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_053/context.mp4",
+              "size_bytes": 66266593,
+              "mtime_ns": 1792484060000000000,
+              "sha256": "753e78faa5d5400a33f1163b5c2fbacc2a540c8b19d41048eaae73d8d44ab6f3"
+            },
+            "recent": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_053/input.mp4",
+              "size_bytes": 3914708,
+              "mtime_ns": 1792484085000000000,
+              "sha256": "11e26bc9a2fa7554916570c200c6fa166d81a03dd0b8798f1b19af47020ba2e5"
+            }
+          },
+          "requested_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642",
+          "actual_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642"
+        },
+        "egolife_054": {
+          "cache_sha256": "2f4f5e2c1fb35c81c05ddbcd982ed9d9d81edbcf8c914cd2b6c71b8d993adfb5",
+          "cache_size_bytes": 30045841,
+          "feature_sha256": "a51c4177a252e82f610b589bf40a13bd28933a93ac2258e466fdd3bf70692839",
+          "source_media": {
+            "context": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_054/context.mp4",
+              "size_bytes": 58970533,
+              "mtime_ns": 1792479574000000000,
+              "sha256": "375d4247ecb9de8b62d24614f3dcd0edc09f34031944a1cc885075373d021459"
+            },
+            "recent": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_054/input.mp4",
+              "size_bytes": 3039750,
+              "mtime_ns": 1792479598000000000,
+              "sha256": "d59ccf322999918ce92be951595acee3ae16a29d4c2eb2120be4c8e032f52665"
+            }
+          },
+          "requested_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642",
+          "actual_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642"
+        },
+        "egolife_055": {
+          "cache_sha256": "3751451b9f5f05e093c949639a24789b7cb63f366693c0e0ba609b14877d4ff7",
+          "cache_size_bytes": 30045841,
+          "feature_sha256": "be8161fbfa0feb1d682f57b5159bdf97aaa4fca60f4a5995b37218cf62d12416",
+          "source_media": {
+            "context": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_055/context.mp4",
+              "size_bytes": 64875921,
+              "mtime_ns": 1792483459000000000,
+              "sha256": "02043439b026996ee118c4d4c73b8877b702a7cef39bb9bebb1278138b6438b6"
+            },
+            "recent": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_055/input.mp4",
+              "size_bytes": 4102368,
+              "mtime_ns": 1792483484000000000,
+              "sha256": "de8b06c8160bfa9e7fba238c4613899d3928f99ed747d9072b4486bbf3b6c99f"
+            }
+          },
+          "requested_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642",
+          "actual_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642"
+        },
+        "egolife_084": {
+          "cache_sha256": "caa3a5d11f7aa7a29dbcd0ff0d829312c7c78a88ca5b6ed3b033cd106ef02cd5",
+          "cache_size_bytes": 30045841,
+          "feature_sha256": "fd0d92cddf4ab82986fe07440f2c58eb313c4f790b686c8550d4d7950c615725",
+          "source_media": {
+            "context": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_084/context.mp4",
+              "size_bytes": 55246228,
+              "mtime_ns": 1792483405000000000,
+              "sha256": "179add7ca3134924b51a143dc90e91cd5d68a57df6bcf06af4b95dd6f1739a9e"
+            },
+            "recent": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_084/input.mp4",
+              "size_bytes": 2218110,
+              "mtime_ns": 1792483426000000000,
+              "sha256": "4745fe549c697191ac44d51db617b4735e806725e0485ab2ff2df634c0d5d617"
+            }
+          },
+          "requested_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642",
+          "actual_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642"
+        },
+        "egolife_085": {
+          "cache_sha256": "15adc1d4e5a000cc7cd9a4857dd0f72c224fca0b50b15ee0fe9ac50f1228b9e6",
+          "cache_size_bytes": 30045841,
+          "feature_sha256": "ccfe5bb173fccb8ea801d17a8a28c44f99ee7ff55c1b04b101a3dba854b03d9f",
+          "source_media": {
+            "context": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_085/context.mp4",
+              "size_bytes": 52071422,
+              "mtime_ns": 1792483951000000000,
+              "sha256": "7368f5cc71f78143723c8e7231a1d6d52ebc87818f5129b48fb7e8c89cdca78b"
+            },
+            "recent": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_085/input.mp4",
+              "size_bytes": 2150610,
+              "mtime_ns": 1792483972000000000,
+              "sha256": "8ef5104599ad671067c8f8d24ef616cc497f8bd003f677598023c9dfb7e175c0"
+            }
+          },
+          "requested_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642",
+          "actual_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642"
+        },
+        "egolife_086": {
+          "cache_sha256": "1f0e91d41a5f8c7d08e2f116beed538dfa509e0bc470a2a9572d7e4fba6cf269",
+          "cache_size_bytes": 30045841,
+          "feature_sha256": "3312b7b4c3902a6781aab7b358952fb57cdda398f0fda6a859a71b0fbacefa5f",
+          "source_media": {
+            "context": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_086/context.mp4",
+              "size_bytes": 68617185,
+              "mtime_ns": 1792483523000000000,
+              "sha256": "1169f7182805039b2c4548ed4d257c0dd95537ec1bd0189de42c1b8b1e9b5ce0"
+            },
+            "recent": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_086/input.mp4",
+              "size_bytes": 3018081,
+              "mtime_ns": 1792483547000000000,
+              "sha256": "780d17f3a56b8e195e0efb1345dce3c8a85fa02202adb88c66f34be404954bdd"
+            }
+          },
+          "requested_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642",
+          "actual_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642"
+        },
+        "egolife_087": {
+          "cache_sha256": "804841be577608fe6206933d689f4339c19ea13e79de51ea7debd6fafdc70d59",
+          "cache_size_bytes": 30045841,
+          "feature_sha256": "3005282877853dd3d9f1d9255bbd1bc295b9aab467a53b317aa56b3df3794562",
+          "source_media": {
+            "context": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_087/context.mp4",
+              "size_bytes": 67767837,
+              "mtime_ns": 1792484022000000000,
+              "sha256": "fd6797476e6b1daa22a818d550e8a39b2a0289a51dd41cdf7528519e819fdc51"
+            },
+            "recent": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_087/input.mp4",
+              "size_bytes": 4464300,
+              "mtime_ns": 1792484049000000000,
+              "sha256": "f23f73d069c663bcb9b31d5c6a24572ae614882fe22b6fdda3e991f4509903a6"
+            }
+          },
+          "requested_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642",
+          "actual_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642"
+        },
+        "egolife_088": {
+          "cache_sha256": "30650fe65ce2211f72d5140f9617268490f5dd866b70cbc39d9c057d959fb625",
+          "cache_size_bytes": 30045841,
+          "feature_sha256": "a054a40cc254da535dcdce4e6ee5e1fbd114e70375064d12860f11dbd49b0ac2",
+          "source_media": {
+            "context": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_088/context.mp4",
+              "size_bytes": 72680966,
+              "mtime_ns": 1792479467000000000,
+              "sha256": "444803821b43fd107df4004b23653efa9f1b66823b2f4a6fb33e7fcf2d83bb25"
+            },
+            "recent": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_088/input.mp4",
+              "size_bytes": 5305157,
+              "mtime_ns": 1792479488000000000,
+              "sha256": "81329e7f9d6757e78775903267dba6be9f2f74841c62a9f2786a574f2b63f857"
+            }
+          },
+          "requested_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642",
+          "actual_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642"
+        },
+        "egolife_089": {
+          "cache_sha256": "32922070629c5d7086ee258a1c05e32eb4dffa490963ad73a75bd2183711676d",
+          "cache_size_bytes": 30045841,
+          "feature_sha256": "608a62382736c37ad86b74bafa99990d5407921fe5a30497caee789f405aaac1",
+          "source_media": {
+            "context": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_089/context.mp4",
+              "size_bytes": 67550524,
+              "mtime_ns": 1792482420000000000,
+              "sha256": "bc0e1747e5170c43cea2d5abb5c8c9ec93dbadda961693d208ca1507a289522c"
+            },
+            "recent": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_089/input.mp4",
+              "size_bytes": 4124554,
+              "mtime_ns": 1792482446000000000,
+              "sha256": "34acbaa9badfa3920cfbdf35fe4458d02fc472190de7d1be4bd97b00ef531715"
+            }
+          },
+          "requested_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642",
+          "actual_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642"
+        },
+        "egolife_118": {
+          "cache_sha256": "7e993b86246f56efc4d52dd5c248dd212a1d9b16efbe27208723dbd2515260e0",
+          "cache_size_bytes": 30045841,
+          "feature_sha256": "ebbf6e5b0b7dd5f3b0da2891a100ae8f8a575352145d7cc23f214a1d19870b0c",
+          "source_media": {
+            "context": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_118/context.mp4",
+              "size_bytes": 90388278,
+              "mtime_ns": 1792481922000000000,
+              "sha256": "d858ee585d7477e7000f17d9d7f53c2d85ed324a86808517b48093dc860d856c"
+            },
+            "recent": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_118/input.mp4",
+              "size_bytes": 5920996,
+              "mtime_ns": 1792481953000000000,
+              "sha256": "f189ff062bf85acee04d65bb61db4d2b5b5c4bcac286a646ddc4e7c309ba7723"
+            }
+          },
+          "requested_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642",
+          "actual_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642"
+        },
+        "egolife_119": {
+          "cache_sha256": "b0a4911a62d6c6e278bd4a99892bd29b4f4b2b9a03c2d9bb80bbbdefd3fe44aa",
+          "cache_size_bytes": 30045841,
+          "feature_sha256": "cbbfbccc06bc11fe8e5a508d01abe6336aee6f58df86d35023e06e14c18a1464",
+          "source_media": {
+            "context": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_119/context.mp4",
+              "size_bytes": 52682727,
+              "mtime_ns": 1792476211000000000,
+              "sha256": "84abba74063422bf14fa07a5e6b594411caad5ad244ea544cc63d51df514d2d8"
+            },
+            "recent": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_119/input.mp4",
+              "size_bytes": 5443493,
+              "mtime_ns": 1792476230000000000,
+              "sha256": "9f2b5320f46fe531c3c34dc3114faa56bbedfc3358e984d01cefb1497009ab7f"
+            }
+          },
+          "requested_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642",
+          "actual_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642"
+        },
+        "egolife_120": {
+          "cache_sha256": "1c9bb598a2e7a6dac8c72166470521ee049397f283a726a8115e2b88558c4fe2",
+          "cache_size_bytes": 30045841,
+          "feature_sha256": "e759a94aa7aafac4e118c04d5ea07574983ea808f03d6cbea1417557850d7be7",
+          "source_media": {
+            "context": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_120/context.mp4",
+              "size_bytes": 51757540,
+              "mtime_ns": 1792480218000000000,
+              "sha256": "bf96744b2dd3ce9f6e3dd5c826f33f6d4d423fe045e08311110286430f5df397"
+            },
+            "recent": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_120/input.mp4",
+              "size_bytes": 4900703,
+              "mtime_ns": 1792480242000000000,
+              "sha256": "8fbf0cf8ebc3b33fe9998577a534dfc72c46e7f33c16e9c2558a6242494f226c"
+            }
+          },
+          "requested_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642",
+          "actual_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642"
+        },
+        "egolife_121": {
+          "cache_sha256": "833535694fc8dcee19789421d56df5a933b91d2a41c0b0790dd0fb1560f74750",
+          "cache_size_bytes": 30045841,
+          "feature_sha256": "96f2c8591e505b2326793bbf788b9e1ce600f8d9c69298836e544f20a7ca905d",
+          "source_media": {
+            "context": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_121/context.mp4",
+              "size_bytes": 71907535,
+              "mtime_ns": 1792482893000000000,
+              "sha256": "889e258c75d969c3fe3fbddfaa280a7931073b0ca365d1140ae3f4b3385790f0"
+            },
+            "recent": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_121/input.mp4",
+              "size_bytes": 5124541,
+              "mtime_ns": 1792482922000000000,
+              "sha256": "f5e229fbef495d1d550af0553356af2c080b3a76a92992fedb8fd172ec1c1348"
+            }
+          },
+          "requested_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642",
+          "actual_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642"
+        },
+        "egolife_122": {
+          "cache_sha256": "08449442d1fa7ab587a1ce626ea761f6dfac4471cf1453ec43441abbda949360",
+          "cache_size_bytes": 30045841,
+          "feature_sha256": "98857cb14784d68fea8b51d1fcea19977926b7ab6e68db6925f1da484a94aae2",
+          "source_media": {
+            "context": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_122/context.mp4",
+              "size_bytes": 72098262,
+              "mtime_ns": 1792483395000000000,
+              "sha256": "f386c10b2b2f4918f19701ce4ad1704c0abe8f2323dd46eed9bdc23fb379c5dc"
+            },
+            "recent": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_122/input.mp4",
+              "size_bytes": 4184125,
+              "mtime_ns": 1792483422000000000,
+              "sha256": "581bc0974893103ee34579600abfdf0d437ff6e37a7f4369e06c8cccd82a955d"
+            }
+          },
+          "requested_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642",
+          "actual_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642"
+        },
+        "egolife_123": {
+          "cache_sha256": "6f63514354994baa4bc029b82ca29372d25d8d6fbc6c6dbffbaa14c658e53eaa",
+          "cache_size_bytes": 30045841,
+          "feature_sha256": "9b9f01eb5c526c39e37c29469dfc67bb9260fe3542375e407b0b57f52a2528bd",
+          "source_media": {
+            "context": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_123/context.mp4",
+              "size_bytes": 70818071,
+              "mtime_ns": 1792482948000000000,
+              "sha256": "39352579d5d15d9cc51c15dfddd82127e44357a3cb34fe8e95c4abee6f35d192"
+            },
+            "recent": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_123/input.mp4",
+              "size_bytes": 4806625,
+              "mtime_ns": 1792482976000000000,
+              "sha256": "3d1d01c766bb4654d8e937e8b25cfcc5d71edb03e1d0dd1d7473ea55a8d68fff"
+            }
+          },
+          "requested_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642",
+          "actual_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642"
+        },
+        "egolife_149": {
+          "cache_sha256": "a1de2974e674a4a320dc174079bbd2f38a53ac2a69114142bdffbe19fb3c3f80",
+          "cache_size_bytes": 30045841,
+          "feature_sha256": "9fb631961a842b35ed8218e8281150901668305c21c2fb895c0c4df60e92e213",
+          "source_media": {
+            "context": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_149/context.mp4",
+              "size_bytes": 60211088,
+              "mtime_ns": 1792483374000000000,
+              "sha256": "38f589d2d2a42233d65abf3cc191e8dddc5e4f9c7271a24dbe58b8f56c41bf50"
+            },
+            "recent": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_149/input.mp4",
+              "size_bytes": 3432538,
+              "mtime_ns": 1792483398000000000,
+              "sha256": "3b922a9406a33fb9382b7fd1d3bce0a499583bb125592ae925b5aab836ccf274"
+            }
+          },
+          "requested_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642",
+          "actual_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642"
+        },
+        "egolife_150": {
+          "cache_sha256": "2df527b03ba0d383443b2f366721f9f209fe317c00388516b1f7e17ceaaf51c2",
+          "cache_size_bytes": 30045841,
+          "feature_sha256": "1a4167d2bc2a4e241d009379c4010f054b241f4853a0eebada4c1f9025f29afb",
+          "source_media": {
+            "context": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_150/context.mp4",
+              "size_bytes": 79139587,
+              "mtime_ns": 1792480082000000000,
+              "sha256": "e33c985043ea67b94fa808c4886934689b1a9a936203e6754db76979481da30b"
+            },
+            "recent": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_150/input.mp4",
+              "size_bytes": 2815498,
+              "mtime_ns": 1792480108000000000,
+              "sha256": "1c924675c17309ef122b96523e81c0cbbcf08df0286d06b9a2ba4b1721f1b15e"
+            }
+          },
+          "requested_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642",
+          "actual_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642"
+        },
+        "egolife_151": {
+          "cache_sha256": "ffedf2af43e3c2e7de0e5984476b497397cf1a3023d6d52f7ce6d55ef3695f61",
+          "cache_size_bytes": 30045841,
+          "feature_sha256": "f173de5c2eda6427051ec0afe8e5b26a5a636b569be0840cad31bb472585abce",
+          "source_media": {
+            "context": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_151/context.mp4",
+              "size_bytes": 47348125,
+              "mtime_ns": 1792482430000000000,
+              "sha256": "d994ab332042c3c06b5d9fe0585c0e82cbbf31ed64e2d53d7a8c4570f39bf8d8"
+            },
+            "recent": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_151/input.mp4",
+              "size_bytes": 3955930,
+              "mtime_ns": 1792482453000000000,
+              "sha256": "8ac6f6ddbad361d993942840db166727692786dc4e68baf56a92a05b5cc6572e"
+            }
+          },
+          "requested_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642",
+          "actual_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642"
+        },
+        "egolife_152": {
+          "cache_sha256": "84491d697acce94f4cbd451646f9526d0a104d8e1c1f08185a0d96a9bdfdb8c0",
+          "cache_size_bytes": 30045841,
+          "feature_sha256": "817a84d4d3ba0d4844f56bcb3a1572e1a30dfcf013480068daa48975049e5709",
+          "source_media": {
+            "context": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_152/context.mp4",
+              "size_bytes": 51076277,
+              "mtime_ns": 1792482630000000000,
+              "sha256": "1c44a55b1a4a39a1d131bcd63b4193865a5c5c16c047ff2e0be64546da3ede60"
+            },
+            "recent": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_152/input.mp4",
+              "size_bytes": 2981763,
+              "mtime_ns": 1792482651000000000,
+              "sha256": "4f30d7553103a8ee047d5254d9ad91a78bbb401aa17802fad1353cfe2e7c5c4c"
+            }
+          },
+          "requested_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642",
+          "actual_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642"
+        },
+        "egolife_153": {
+          "cache_sha256": "5f74ca9f1c0c048514076e72edbc8960b4213a1360c31218f8e0763f61c49965",
+          "cache_size_bytes": 30045841,
+          "feature_sha256": "2ac1f46fee95d0f95454596c437c3e36ef997c0a5a3da47d6714b8aabace3112",
+          "source_media": {
+            "context": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_153/context.mp4",
+              "size_bytes": 58373726,
+              "mtime_ns": 1792484519000000000,
+              "sha256": "4010e3fb0284dfd45e4674663c72a7c5379a75a2c4f09c032dd8c4f5772fa49e"
+            },
+            "recent": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_153/input.mp4",
+              "size_bytes": 2682978,
+              "mtime_ns": 1792484541000000000,
+              "sha256": "7c88e3aa127406969e5db8c9f087312715c005aab84fb224f7cab0fe6e9b8310"
+            }
+          },
+          "requested_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642",
+          "actual_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642"
+        },
+        "egolife_186": {
+          "cache_sha256": "49974ee58c0ee1fd73c7ab5db8fe9e187a926a4cacddd67d4ea5262319c00401",
+          "cache_size_bytes": 30045841,
+          "feature_sha256": "d97146c6d5680981b69cfb1ccf5c429404a36e000b3e5d79a05158ec1924fba4",
+          "source_media": {
+            "context": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_186/context.mp4",
+              "size_bytes": 50123435,
+              "mtime_ns": 1792480546000000000,
+              "sha256": "678903a9d3f65bf52bc2194a823553f2fd52d27361e7953acdbe569195182bd1"
+            },
+            "recent": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_186/input.mp4",
+              "size_bytes": 3237711,
+              "mtime_ns": 1792480568000000000,
+              "sha256": "280aa4c77ca30c2ab1af7166c3d09b858a34b314c640ac8ed73df1113086e68e"
+            }
+          },
+          "requested_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642",
+          "actual_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642"
+        },
+        "egolife_187": {
+          "cache_sha256": "ecc1f9339e3f0b11664dd22d51ef0a63441411bee4063fd4f702723d6a0209fe",
+          "cache_size_bytes": 30045841,
+          "feature_sha256": "cd4ebd85c64b072677d3030eacef6dfdc52d026283b3275be7d9efe07a4bed24",
+          "source_media": {
+            "context": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_187/context.mp4",
+              "size_bytes": 62834637,
+              "mtime_ns": 1792475544000000000,
+              "sha256": "e0d755b2de76fc4ded54d6617735d53813942c2721d77e57d46e61149672a2cd"
+            },
+            "recent": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_187/input.mp4",
+              "size_bytes": 4197053,
+              "mtime_ns": 1792475563000000000,
+              "sha256": "2229739613d8658878814ee895e955fe882d293a7740d06f0135c17ff05ffd3f"
+            }
+          },
+          "requested_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642",
+          "actual_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642"
+        },
+        "egolife_188": {
+          "cache_sha256": "89914cd749aca15279f33729600c2813ea3ba1b3ccdadf4820897e1650c03b93",
+          "cache_size_bytes": 30045841,
+          "feature_sha256": "fcfd950b8f38c701a2c60b1aecca4ffb58c4dfc8646c7b5be30fef1bf48be2c2",
+          "source_media": {
+            "context": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_188/context.mp4",
+              "size_bytes": 60663629,
+              "mtime_ns": 1792484122000000000,
+              "sha256": "ca174ea0c10ea14a1e259aafbcb9f9e796456b3121e10caae8b43d6c1e24d1ff"
+            },
+            "recent": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_188/input.mp4",
+              "size_bytes": 3199397,
+              "mtime_ns": 1792484144000000000,
+              "sha256": "e2de66c1cf0752de6f1cf356f3f93e0e3753a0f03ca81c0e34473d6e75ba123d"
+            }
+          },
+          "requested_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642",
+          "actual_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642"
+        },
+        "egolife_189": {
+          "cache_sha256": "8fb7a0e6a534895022ddbd7000eda07d4530ae599aeadc5f2c048f1de08a7519",
+          "cache_size_bytes": 30045841,
+          "feature_sha256": "023130c0116289646a1410b1751cfb99a4b338b3f7bb800e864a955c56bb478b",
+          "source_media": {
+            "context": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_189/context.mp4",
+              "size_bytes": 53902704,
+              "mtime_ns": 1792485119000000000,
+              "sha256": "cb199a477676465d0c615c654bedf81d9e4d328f33d2dfd42241a4e865eb273b"
+            },
+            "recent": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_189/input.mp4",
+              "size_bytes": 1817463,
+              "mtime_ns": 1792485139000000000,
+              "sha256": "c2a09a0d5a9e159cfb37b84d74f009658631738957df31c8e00923d5ef928b27"
+            }
+          },
+          "requested_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642",
+          "actual_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642"
+        },
+        "egolife_190": {
+          "cache_sha256": "736a1b6b314fc989fea4921013698e4988c3ac880d6a82d9136f5ad9890c9f74",
+          "cache_size_bytes": 30045841,
+          "feature_sha256": "f32cf05f23952e3293094de9141448c59bacf7ec059e5dab91a166894a7b9d4e",
+          "source_media": {
+            "context": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_190/context.mp4",
+              "size_bytes": 39833633,
+              "mtime_ns": 1792483578000000000,
+              "sha256": "ed3019bc0174a7a175dc26e7d9a89c13b7c073476b5027aa40b4635bd18a6838"
+            },
+            "recent": {
+              "path": "/data/share/raw/bench_v0/samples/egolife_190/input.mp4",
+              "size_bytes": 1135085,
+              "mtime_ns": 1792483592000000000,
+              "sha256": "244727f745411c8f8d52231de6b281771a41d53aa1bb98204dc50ff8d67e2f1d"
+            }
+          },
+          "requested_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642",
+          "actual_time_sha256": "dbcb3d628d530530e2bf92fe63c09194223ef95a168d6806673158d324589642"
+        }
+      }
+    },
+    "config": {
+      "hidden_dim": 2048,
+      "batch_size": 128,
+      "learning_rate": 0.001,
+      "weight_decay": 0.01,
+      "grad_clip": 1.0,
+      "seed": 0
+    },
+    "snapshot_steps": [
+      200,
+      800
+    ],
+    "train_ids": [
+      "egolife_001",
+      "egolife_002",
+      "egolife_003",
+      "egolife_004",
+      "egolife_005",
+      "egolife_006",
+      "egolife_007",
+      "egolife_008",
+      "egolife_009",
+      "egolife_010",
+      "egolife_011",
+      "egolife_012",
+      "egolife_013",
+      "egolife_014",
+      "egolife_015",
+      "egolife_016",
+      "egolife_017",
+      "egolife_018",
+      "egolife_030",
+      "egolife_031",
+      "egolife_032",
+      "egolife_033",
+      "egolife_034",
+      "egolife_035",
+      "egolife_036",
+      "egolife_037",
+      "egolife_038",
+      "egolife_039",
+      "egolife_040",
+      "egolife_041",
+      "egolife_042",
+      "egolife_043",
+      "egolife_044",
+      "egolife_045",
+      "egolife_046",
+      "egolife_047",
+      "egolife_048",
+      "egolife_066",
+      "egolife_067",
+      "egolife_068",
+      "egolife_069",
+      "egolife_070",
+      "egolife_071",
+      "egolife_072",
+      "egolife_073",
+      "egolife_074",
+      "egolife_075",
+      "egolife_076",
+      "egolife_077",
+      "egolife_078",
+      "egolife_079",
+      "egolife_080",
+      "egolife_081",
+      "egolife_082",
+      "egolife_083",
+      "egolife_099",
+      "egolife_100",
+      "egolife_101",
+      "egolife_102",
+      "egolife_103",
+      "egolife_104",
+      "egolife_105",
+      "egolife_106",
+      "egolife_107",
+      "egolife_108",
+      "egolife_109",
+      "egolife_110",
+      "egolife_111",
+      "egolife_112",
+      "egolife_113",
+      "egolife_114",
+      "egolife_115",
+      "egolife_116",
+      "egolife_117",
+      "egolife_132",
+      "egolife_133",
+      "egolife_134",
+      "egolife_135",
+      "egolife_136",
+      "egolife_137",
+      "egolife_138",
+      "egolife_139",
+      "egolife_140",
+      "egolife_141",
+      "egolife_142",
+      "egolife_143",
+      "egolife_144",
+      "egolife_145",
+      "egolife_146",
+      "egolife_147",
+      "egolife_148",
+      "egolife_166",
+      "egolife_167",
+      "egolife_168",
+      "egolife_169",
+      "egolife_170",
+      "egolife_171",
+      "egolife_172",
+      "egolife_173",
+      "egolife_174",
+      "egolife_175",
+      "egolife_176",
+      "egolife_177",
+      "egolife_178",
+      "egolife_179",
+      "egolife_180",
+      "egolife_181",
+      "egolife_182",
+      "egolife_183",
+      "egolife_184",
+      "egolife_185"
+    ],
+    "validation_ids": [
+      "egolife_019",
+      "egolife_020",
+      "egolife_021",
+      "egolife_049",
+      "egolife_050",
+      "egolife_051",
+      "egolife_052",
+      "egolife_053",
+      "egolife_054",
+      "egolife_055",
+      "egolife_084",
+      "egolife_085",
+      "egolife_086",
+      "egolife_087",
+      "egolife_088",
+      "egolife_089",
+      "egolife_118",
+      "egolife_119",
+      "egolife_120",
+      "egolife_121",
+      "egolife_122",
+      "egolife_123",
+      "egolife_149",
+      "egolife_150",
+      "egolife_151",
+      "egolife_152",
+      "egolife_153",
+      "egolife_186",
+      "egolife_187",
+      "egolife_188",
+      "egolife_189",
+      "egolife_190"
+    ],
+    "horizons": [
+      1,
+      2,
+      4,
+      10
+    ],
+    "window_steps": 4,
+    "device": "cuda:3",
+    "dtype": "float32",
+    "matmul_precision": "highest",
+    "optimizer": "AdamW",
+    "loss": "sum_arm_horizon_mean_batch_token_dim_MSE",
+    "width_output_gain": "sqrt(128/hidden_dim)",
+    "pair_sampling": "uniform_case_then_uniform_valid_origin_with_replacement; four horizons share cue",
+    "validation": {
+      "origins": 512,
+      "seed": 187,
+      "used_for": "fixed snapshot diagnostic only, no early stopping or selection"
+    },
+    "test_ids_or_labels_used": false,
+    "mcq_answers_used": false,
+    "future_media_used": false,
+    "meta_outer_training": false,
+    "training_type": "offline within-train past-prefix prediction initialization",
+    "torch": "2.9.1+cu128",
+    "cuda_runtime": "12.8",
+    "source_sha256": {
+      "scripts/pretrain_idea1_scaling.py": "8b6940f8bf004c74cc0488c63cc54df311c1314b685ae5882fd28506e5437d0b",
+      "ttt_frame/idea1_scaling_pretrain.py": "02c7485cf82b05036729f098fc470a521fa92b1daecc17f26d1db69d4dbf7448"
+    }
+  }
+}
