@@ -1,0 +1,50 @@
+{
+  "protocol_sha256": "3a249e94ba11f58d757657a8345eb1e1b78726233262e36d6070443adbbeff44",
+  "protocol": {
+    "kind": "idea01_full_prefix_visual_cache_protocol",
+    "format_version": 1,
+    "feature_config": {
+      "sample_fps": 2.0,
+      "max_side": 224,
+      "projection_dim": 256,
+      "projection_seed": 0,
+      "pool_shape": [
+        2,
+        4
+      ],
+      "dtype": "bfloat16",
+      "context_tail_seconds": null,
+      "limit_frames": 0
+    },
+    "model_fingerprint": {
+      "kind": "visual_tensor_content_plus_config_sha256",
+      "sha256": "317f465c9107c75f736f43c6ad6296a2928670b47d97ecaacd7a9337b8a51b43",
+      "visual_parameters": 315
+    },
+    "input_manifest_sha256": "7a3b6eb61eef3111f409bd2781ec1634ce9f2bad3a66a2dd6919ef049bf29df8",
+    "execution": {
+      "linear_vision_patch_embed": "qwen3_vl_linear_patch_embed_v1",
+      "equal_length_vision_sdpa": "qwen3_vl_equal_length_vision_sdpa_v1",
+      "batch_size": 64,
+      "images_attend_independently": true
+    },
+    "source_sha256": {
+      "ttt_frame/forecast_bench.py": "0b18e4437123533851595d3ad5254ce0f2a0c2a10ec85af08ca133ae1a945407",
+      "ttt_frame/forecast_features.py": "0ea30f8f209f76b5649dcc648995bd5e4da40b87c3edc11712fc9025852dcfff",
+      "ttt_frame/vision_patch_embed.py": "19a16da6fd6ccfcc5e31a4b0a39899a86fd1df613b4a68146185c414ba9ca868",
+      "ttt_frame/vision_attention.py": "05bb772f9c5e40c1b131720dc63229951fb4f716507c40841af7e7c9c0c12f72",
+      "scripts/cache_idea1_features.py": "ec81bb839db3c793e870081f33850d6fc39aa9926dc504084b1b02c6b0878310"
+    },
+    "libraries": {
+      "torch": "2.9.1+cu128",
+      "transformers": "4.57.6",
+      "pyav": "18.1.0",
+      "pillow": "12.3.0",
+      "cuda_runtime": "12.8"
+    },
+    "storage_dtype": "float32",
+    "audio_used": false,
+    "future_media_used": false,
+    "questions_or_choices_encoded": false
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "protocol": {
+    "model_path": "/data/quzitsix/models/Qwen3-VL-2B-Instruct",
+    "model_fingerprint": {
+      "kind": "text_decoder_tensor_content_plus_config_tokenizer_sha256",
+      "sha256": "61c6f444f7453b09e5cc03c19f48f42459831d4d711525cd1c0ad6026f3dde45",
+      "text_tensors": 310,
+      "config_tokenizer_sha256": {
+        "config.json": "bec4b3d446efa05807365c9e1cec03ac590836879d02f3a6da879971154bdd3b",
+        "tokenizer.json": "a5d85b6dcc535e6b93115a9ef287e6132fdbf30270da6218194ba742261173c7",
+        "tokenizer_config.json": "c2da771801886ad9ae98181793ffd3dfb7f1af30f6f7c6a4e15d7dbba52e2399",
+        "vocab.json": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910",
+        "merges.txt": "599bab54075088774b1733fde865d5bd747cbcc7a547c5bc12610e874e26f5e3"
+      }
+    },
+    "input_manifest_sha256": "7a3b6eb61eef3111f409bd2781ec1634ce9f2bad3a66a2dd6919ef049bf29df8",
+    "dtype": "bfloat16",
+    "batch_size": 12,
+    "prompt_template": "问题：{question}\\n候选动作：{candidate}",
+    "pooling": "last_nonpadding_token_after_final_decoder_norm",
+    "add_special_tokens": false,
+    "chat_template": false,
+    "truncation": false,
+    "candidate_order_features": false,
+    "answer_keys_used": false,
+    "videos_used": false,
+    "model_training": false,
+    "local_files_only": true,
+    "attention_implementation": "sdpa",
+    "source_sha256": {
+      "scripts/cache_idea1_text.py": "0ffe3fe6aacdc8c5683e4bceb1a523ec8769310080697399f9a949a35294775e",
+      "ttt_frame/idea1_mcq_readout.py": "65a2c9573750cbc30530d3504d9b5779714d6efac224c1ffc545d9eea37d18d6",
+      "ttt_frame/forecast_bench.py": "0b18e4437123533851595d3ad5254ce0f2a0c2a10ec85af08ca133ae1a945407"
+    },
+    "libraries": {
+      "torch": "2.9.1+cu128",
+      "transformers": "4.57.6",
+      "cuda": "12.8"
+    }
+  },
+  "protocol_sha256": "30f05e789cfac709248f63e0e4574c88c92763dd41e2f33757a901c17a3a4baf",
+  "cache_sha256": "742252983b65610e1b496f8c3805bc56bd0b198015be5152bf2fac4ac0f42324"
+}

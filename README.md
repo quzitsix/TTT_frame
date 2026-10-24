@@ -29,6 +29,10 @@ Idea 01 已接入新 EgoLife forecasting `bench_v0` 的因果特征与延迟残�
 [`IDEA01_BENCH_V0.md`](docs/IDEA01_BENCH_V0.md)。
 新数据全 200 道动作选择题的原始 Qwen / 官方 Spatial 九组基线、固定测试子集及
 多卡复现命令见 [`BENCH_V0_MCQ_BASELINES.md`](docs/BENCH_V0_MCQ_BASELINES.md)。
+Idea 01 的完整 1830 秒视频前缀、七组记忆对照和共享动作读出已完成评测，固定 57 题
+测试结果、架构与复现命令见
+[`IDEA01_BENCH_V0_MCQ_RESULTS.md`](docs/IDEA01_BENCH_V0_MCQ_RESULTS.md)。当前 residual
+与关闭在线更新的 recent-only 均为 24/57，尚未显示累计残差记忆的动作预测收益。
 
 ## Spatial-TTT direct visual parameter memory (2026-09-14)
 

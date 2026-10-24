@@ -1,0 +1,1234 @@
+{
+  "schema": "idea01_execution_diagnostics_v1",
+  "sample_count": 200,
+  "test_count": 57,
+  "private_answers_or_future_opened": false,
+  "feature_extraction": {
+    "frames_per_case": 3660,
+    "total_frames": 732000,
+    "case_seconds": {
+      "n": 200,
+      "min": 43.12492190406192,
+      "max": 70.45683301205281,
+      "mean": 55.425054617756395
+    },
+    "sum_case_seconds": 11085.01092355128,
+    "cache_total_file_bytes": 6009168200,
+    "workers": 12,
+    "devices": [
+      "cuda:2",
+      "cuda:3",
+      "cuda:4",
+      "cuda:5"
+    ],
+    "approximate_parallel_wall_seconds": 1016.7370059490204,
+    "wall_measurement": "last worker log mtime minus recorded 12-worker launch; includes process startup; one preflight cache predates launch and is reused",
+    "worker_plan_sha256": "f1f8b421b455e7cb1fe70b025d44d45edc0e40b961b7b78cd69fb989e79c1ccb"
+  },
+  "forecasting": {
+    "wall_seconds": 184.8106285680551,
+    "recent_predictor_fit_seconds": 40.968189829960465,
+    "case_seconds": {
+      "n": 200,
+      "min": 5.337592356954701,
+      "max": 10.500550781958736,
+      "mean": 8.187017306347844
+    },
+    "sum_case_seconds": 1637.4034612695687,
+    "workers": 16,
+    "threads_per_worker": 2
+  },
+  "readout": {
+    "fit_select_and_predict_seconds": 1.6723269170615822,
+    "text_cache_seconds": 12.262583391042426,
+    "selected_lambda": 100.0
+  },
+  "test_state_statistics": {
+    "persistence": {
+      "updates": {
+        "n": 57,
+        "min": 0.0,
+        "max": 0.0,
+        "mean": 0.0
+      },
+      "state_bytes": {
+        "n": 57,
+        "min": 0.0,
+        "max": 0.0,
+        "mean": 0.0
+      },
+      "state_capacity_bytes": {
+        "n": 57,
+        "min": 0.0,
+        "max": 0.0,
+        "mean": 0.0
+      },
+      "pending_bytes": {
+        "n": 57,
+        "min": 0.0,
+        "max": 0.0,
+        "mean": 0.0
+      }
+    },
+    "recent_only": {
+      "updates": {
+        "n": 57,
+        "min": 0.0,
+        "max": 0.0,
+        "mean": 0.0
+      },
+      "state_bytes": {
+        "n": 57,
+        "min": 0.0,
+        "max": 0.0,
+        "mean": 0.0
+      },
+      "state_capacity_bytes": {
+        "n": 57,
+        "min": 0.0,
+        "max": 0.0,
+        "mean": 0.0
+      },
+      "pending_bytes": {
+        "n": 57,
+        "min": 0.0,
+        "max": 0.0,
+        "mean": 0.0
+      }
+    },
+    "plain_delayed": {
+      "updates": {
+        "n": 57,
+        "min": 14623.0,
+        "max": 14623.0,
+        "mean": 14623.0
+      },
+      "state_bytes": {
+        "n": 57,
+        "min": 1048576.0,
+        "max": 1048576.0,
+        "mean": 1048576.0
+      },
+      "state_capacity_bytes": {
+        "n": 57,
+        "min": 1048576.0,
+        "max": 1048576.0,
+        "mean": 1048576.0
+      },
+      "pending_bytes": {
+        "n": 57,
+        "min": 278528.0,
+        "max": 278528.0,
+        "mean": 278528.0
+      },
+      "fast_weight_delta_l2": {
+        "n": 57,
+        "min": 7.871878623962402,
+        "max": 9.439419746398926,
+        "mean": 8.648694448303758
+      }
+    },
+    "residual": {
+      "updates": {
+        "n": 57,
+        "min": 14623.0,
+        "max": 14623.0,
+        "mean": 14623.0
+      },
+      "state_bytes": {
+        "n": 57,
+        "min": 1048576.0,
+        "max": 1048576.0,
+        "mean": 1048576.0
+      },
+      "state_capacity_bytes": {
+        "n": 57,
+        "min": 1048576.0,
+        "max": 1048576.0,
+        "mean": 1048576.0
+      },
+      "pending_bytes": {
+        "n": 57,
+        "min": 278528.0,
+        "max": 278528.0,
+        "mean": 278528.0
+      },
+      "fast_weight_delta_l2": {
+        "n": 57,
+        "min": 2.6931710243225098,
+        "max": 3.6802775859832764,
+        "mean": 3.053607802642019
+      }
+    },
+    "reset_residual": {
+      "updates": {
+        "n": 57,
+        "min": 14623.0,
+        "max": 14623.0,
+        "mean": 14623.0
+      },
+      "state_bytes": {
+        "n": 57,
+        "min": 1048576.0,
+        "max": 1048576.0,
+        "mean": 1048576.0
+      },
+      "state_capacity_bytes": {
+        "n": 57,
+        "min": 1048576.0,
+        "max": 1048576.0,
+        "mean": 1048576.0
+      },
+      "pending_bytes": {
+        "n": 57,
+        "min": 278528.0,
+        "max": 278528.0,
+        "mean": 278528.0
+      },
+      "fast_weight_delta_l2": {
+        "n": 57,
+        "min": 0.01729469746351242,
+        "max": 0.04470467194914818,
+        "mean": 0.026137660992772954
+      }
+    },
+    "nearest_bank": {
+      "updates": {
+        "n": 57,
+        "min": 14623.0,
+        "max": 14623.0,
+        "mean": 14623.0
+      },
+      "state_bytes": {
+        "n": 57,
+        "min": 1048576.0,
+        "max": 1048576.0,
+        "mean": 1048576.0
+      },
+      "state_capacity_bytes": {
+        "n": 57,
+        "min": 1048576.0,
+        "max": 1048576.0,
+        "mean": 1048576.0
+      },
+      "pending_bytes": {
+        "n": 57,
+        "min": 278528.0,
+        "max": 278528.0,
+        "mean": 278528.0
+      }
+    },
+    "recent_tail_residual": {
+      "updates": {
+        "n": 57,
+        "min": 223.0,
+        "max": 223.0,
+        "mean": 223.0
+      },
+      "state_bytes": {
+        "n": 57,
+        "min": 1048576.0,
+        "max": 1048576.0,
+        "mean": 1048576.0
+      },
+      "state_capacity_bytes": {
+        "n": 57,
+        "min": 1048576.0,
+        "max": 1048576.0,
+        "mean": 1048576.0
+      },
+      "pending_bytes": {
+        "n": 57,
+        "min": 278528.0,
+        "max": 278528.0,
+        "mean": 278528.0
+      },
+      "fast_weight_delta_l2": {
+        "n": 57,
+        "min": 0.2551579773426056,
+        "max": 0.5880802273750305,
+        "mean": 0.35590490489675286
+      }
+    }
+  },
+  "test_forecast_difference_from_recent_only": {
+    "persistence": {
+      "normalized_mse": {
+        "n": 57,
+        "min": 0.13995945022787118,
+        "max": 0.48250839706929355,
+        "mean": 0.2580153950525367
+      },
+      "normalized_l2": {
+        "n": 57,
+        "min": 33.86071198700228,
+        "max": 62.87057172311746,
+        "mean": 45.58145741470986
+      },
+      "relative_l2": {
+        "n": 57,
+        "min": 0.4772406478293625,
+        "max": 0.9854052709461703,
+        "mean": 0.7118857450314998
+      }
+    },
+    "recent_only": {
+      "normalized_mse": {
+        "n": 57,
+        "min": 0.0,
+        "max": 0.0,
+        "mean": 0.0
+      },
+      "normalized_l2": {
+        "n": 57,
+        "min": 0.0,
+        "max": 0.0,
+        "mean": 0.0
+      },
+      "relative_l2": {
+        "n": 57,
+        "min": 0.0,
+        "max": 0.0,
+        "mean": 0.0
+      }
+    },
+    "plain_delayed": {
+      "normalized_mse": {
+        "n": 57,
+        "min": 0.08829541160195209,
+        "max": 0.23643576346898942,
+        "mean": 0.13215289225106355
+      },
+      "normalized_l2": {
+        "n": 57,
+        "min": 26.894534980980644,
+        "max": 44.01001902224039,
+        "mean": 32.72827550930561
+      },
+      "relative_l2": {
+        "n": 57,
+        "min": 0.3747616699882712,
+        "max": 0.6714592635249148,
+        "mean": 0.5091599203686704
+      }
+    },
+    "residual": {
+      "normalized_mse": {
+        "n": 57,
+        "min": 0.007970567479010674,
+        "max": 0.06787634745603877,
+        "mean": 0.0193889635357809
+      },
+      "normalized_l2": {
+        "n": 57,
+        "min": 8.080525279216413,
+        "max": 23.580564843952946,
+        "mean": 12.167092973075945
+      },
+      "relative_l2": {
+        "n": 57,
+        "min": 0.1268295833387035,
+        "max": 0.3323498940787242,
+        "mean": 0.18777409843013138
+      }
+    },
+    "reset_residual": {
+      "normalized_mse": {
+        "n": 57,
+        "min": 1.405975641437684e-06,
+        "max": 1.5443489819155127e-05,
+        "mean": 4.851740207653627e-06
+      },
+      "normalized_l2": {
+        "n": 57,
+        "min": 0.10732079227557681,
+        "max": 0.35568675628777463,
+        "mean": 0.1922416865455065
+      },
+      "relative_l2": {
+        "n": 57,
+        "min": 0.0018375025279541719,
+        "max": 0.005393153094745926,
+        "mean": 0.002957018288169568
+      }
+    },
+    "nearest_bank": {
+      "normalized_mse": {
+        "n": 57,
+        "min": 0.20290612240132738,
+        "max": 0.7360817088260103,
+        "mean": 0.48151017754192615
+      },
+      "normalized_l2": {
+        "n": 57,
+        "min": 40.7701723654889,
+        "max": 77.65295460381836,
+        "mean": 62.156606807702595
+      },
+      "relative_l2": {
+        "n": 57,
+        "min": 0.5485736756632524,
+        "max": 1.4225294944578932,
+        "mean": 0.971657469142457
+      }
+    },
+    "recent_tail_residual": {
+      "normalized_mse": {
+        "n": 57,
+        "min": 0.00016106925130613555,
+        "max": 0.0069705994933759435,
+        "mean": 0.0010835482567036411
+      },
+      "normalized_l2": {
+        "n": 57,
+        "min": 1.1486859042836137,
+        "max": 7.556662692600201,
+        "mean": 2.6464202204685616
+      },
+      "relative_l2": {
+        "n": 57,
+        "min": 0.018715216333097626,
+        "max": 0.1016034681820711,
+        "mean": 0.04017749505398557
+      }
+    }
+  },
+  "difference_scope": "forecast-to-forecast diagnostics in train-standardized feature space; not error against actual future targets",
+  "past_only_replay": {
+    "sample_id": "egolife_001",
+    "max_abs_saved_forecast_delta_by_arm": {
+      "persistence": 0.0,
+      "recent_only": 0.0,
+      "plain_delayed": 0.0,
+      "residual": 0.0,
+      "reset_residual": 0.0,
+      "nearest_bank": 0.0,
+      "recent_tail_residual": 0.0
+    },
+    "zero_lr_residual_vs_recent_max_abs_delta": 0.0
+  },
+  "parameter_counts": {
+    "frozen_components": {
+      "parameter_values": {
+        "visual": 406957056,
+        "text_decoder": 1720574976
+      },
+      "tensor_arrays": {
+        "visual": 315,
+        "text_decoder": 310
+      },
+      "scope": "checkpoint tensors in separately loaded frozen components; lm_head excluded"
+    },
+    "fast_memory_values_per_arm": 262144,
+    "fast_memory_bytes_per_arm": 1048576,
+    "recent_predictor_coefficient_values": 525312,
+    "recent_predictor_statistics_values": 512,
+    "readout_coefficient_values": 2097152,
+    "readout_coefficient_bytes": 16777216
+  },
+  "artifact_validation": {
+    "egolife_001": {
+      "cache_sha256": "857057102a76921641716591a83d2f49b1b356db384050b3ff2b35a6cee1f2f1",
+      "forecast_sha256": "2cc8ac170c9e26b5482ac46e87064cd51185d4c1804c821a5d781c763871ab57"
+    },
+    "egolife_002": {
+      "cache_sha256": "17443c38be8e77fbfd57315b1ab745a9bbfc56d62c83dc2c2818817b9d1a9db4",
+      "forecast_sha256": "7d529c82f2bb72dc65a0608c107e9e046eab5d0ea0ba69c2d7af397d2bfb0d8d"
+    },
+    "egolife_003": {
+      "cache_sha256": "12e15fc30ff6ce52e2b3bd9f32b86862d61c54ba3f6378425c97a24521df4400",
+      "forecast_sha256": "909b4c78220293d95a32c2c0f66ed28200c900a27268f7b386d0fa967ee262e3"
+    },
+    "egolife_004": {
+      "cache_sha256": "01b3047a7030c9620f9ebf640d15a7a635c506104ea9835aec4faf39e65e5fd0",
+      "forecast_sha256": "83de0b283629f64e9de7d593e08c2033ee8a2c0739a41c47624d61760c10176f"
+    },
+    "egolife_005": {
+      "cache_sha256": "c5a47c5659f3571b5a7f8fefea77b08c15cc1016322b049a2be255854c4ee6d0",
+      "forecast_sha256": "b1cb89f4efaa3213822c98ca9385e93fbbe5992b7060166cf0fee9defec7287f"
+    },
+    "egolife_006": {
+      "cache_sha256": "2b382ea64cd889b0d651ec0f122ab51ac9d35fb9c13ae66417bc74fdbe74f7ee",
+      "forecast_sha256": "75a1859940efa10527029cc05decaa5947b128e15c074281a1d1915dc49b19ee"
+    },
+    "egolife_007": {
+      "cache_sha256": "8604c8597f95bcd07d6a4ddb8bffa5174d577e3b76f78b58d1cc8faf119ff7a2",
+      "forecast_sha256": "82e895c774c8ca26c6047546f55d1d905d20c7c268abaeea7ebf7340d71e5a11"
+    },
+    "egolife_008": {
+      "cache_sha256": "b4e2118cf90499d8a37f2c0c749fc7cb7adbd5cb58298e076818f285f984f66c",
+      "forecast_sha256": "10f304be2e0522e95b782ab0c42aed16d7daa4b5b03f3b611f0ea2cdbfd2ef36"
+    },
+    "egolife_009": {
+      "cache_sha256": "c19f16fe4835a6b21e32d53cd0377a0fea6e8677b4ba783d6ddaeeb22dc28846",
+      "forecast_sha256": "28b825ccbb241ecd052e73bc18cf6e70f53e2246399275a0a7fc803b427ca239"
+    },
+    "egolife_010": {
+      "cache_sha256": "1fe926114aff87192563ef95a081894344f85c629fd52499a36ad59e6a155161",
+      "forecast_sha256": "4adb1de512ce7f191c447389f2f6fe58bfaeedbeaf4d2f15dab328ce245e0acc"
+    },
+    "egolife_011": {
+      "cache_sha256": "32eedadc2328c0a722eb042de697efddf59202aaf150188506bfcf3f0d44893b",
+      "forecast_sha256": "74ac7fdf590efbd7b039c62299e5cd8866656f2adda4b123b246cf54afeea22b"
+    },
+    "egolife_012": {
+      "cache_sha256": "1d9a63c91ece0bfa2a05531bc44670a93cf5bb62f232ad1f79f28ea308b10a53",
+      "forecast_sha256": "ac5aa01fe59fec30c8ae3cb04e6c7e929d8bd14123c7c318b5a33b72f6becb01"
+    },
+    "egolife_013": {
+      "cache_sha256": "5ced06d3039fcca2ac7fa437ea5367f111e2737856c36726b8580aa9e9beeee0",
+      "forecast_sha256": "b896d73e20292c1c8c06b7b8b393c52276a0635e11d1b3c3d24cecb1451aace3"
+    },
+    "egolife_014": {
+      "cache_sha256": "706c68195a2c9c2c95df0af0d95a499fbcd0d239fd08232c507697707578c3ee",
+      "forecast_sha256": "36b0e640d84ed3533e0e5dddf22592704046008571d3a177f64f1b223a75fc2c"
+    },
+    "egolife_015": {
+      "cache_sha256": "00d428f6f1e693a92818a74c098d58313866f027206420fbffa077a665c1f7e8",
+      "forecast_sha256": "e6095355a00b9c61890c2e50ff60898ae7e068ce12b941d042ebf8b0619085ba"
+    },
+    "egolife_016": {
+      "cache_sha256": "1bb1669a8457df455615b853e57e3e97f330c9d9e8ebe011ec73b1b64896cd6b",
+      "forecast_sha256": "22813a22bf238b5141f7c8202b0fa36259f6cf5bbc4a5bcdc75c891d5098f0cc"
+    },
+    "egolife_017": {
+      "cache_sha256": "a599ca329af00d8ec715b4c11dcac451a0cd040f612ad184a3ff83b8e5811add",
+      "forecast_sha256": "a9fbfca3600ab3fc29c2d81c40a0e93b5fce195da8f33c5b92fc92381c2d35ba"
+    },
+    "egolife_018": {
+      "cache_sha256": "df867992edd76638762d16a6695fb6ab67b4a0c1070010dd315267f459a09bdb",
+      "forecast_sha256": "5270cc24b4c7d74525fd82b42ee5ef3eae4d88b0c1983ba2b2174be9c7c405c8"
+    },
+    "egolife_019": {
+      "cache_sha256": "43ba6863b35ab95b39b89a686236f255f7b646f72623007ab19dad45991b24e4",
+      "forecast_sha256": "2018ff7b4d9f7a2e7007d0806f0db22f50c6fecd467f557432c0cb90f15df31c"
+    },
+    "egolife_020": {
+      "cache_sha256": "5c5ce7ce93ac91e203ab658284d674e4f1792ec06cde3710c2a38440fb203b30",
+      "forecast_sha256": "a04af74ad70db64adba373026f55379810f4661dff60ba25efce2f1d3065c3cc"
+    },
+    "egolife_021": {
+      "cache_sha256": "bcbbc0822cfdf96187dc4595b786d3aba0ce7f15abf91677c03ca6ee62698948",
+      "forecast_sha256": "7d8091703cc20a9c102d6255b5733351b1eba1c071e434579c559a3764daaa8d"
+    },
+    "egolife_022": {
+      "cache_sha256": "c9e33857cd3fea2143cbf6fb9f6a863ab7e8df536186c94ea0e370bcc62ec9da",
+      "forecast_sha256": "70fe39e3a1ce2478761576b6aaf1beb0b39e851f30ecfeb5494aca72da967a89"
+    },
+    "egolife_023": {
+      "cache_sha256": "2fc82d65cca2f276163c9b15c20ef6df83168097ca9e2a94068cc39a5a7db5b7",
+      "forecast_sha256": "f1ed4ee836338b09e027212e2888bc502fb721f2bc009b84d745670ce3d655bf"
+    },
+    "egolife_024": {
+      "cache_sha256": "0a2b59bd467ec0043872b528f2884da44592f8928fd06061ecd7b7458a2108bf",
+      "forecast_sha256": "47bb6f9eabab624cc01dcd95ec5d74340548ed7627eb3eb583f0d0510204db08"
+    },
+    "egolife_025": {
+      "cache_sha256": "c5fab2bf13f8b1fea6e0141598f6a6bb2af5a14fa99aea1a71318d4d90950173",
+      "forecast_sha256": "133e887d217524d05c3217d5b94374e845dd961cd294d7859ea961c5f815fab6"
+    },
+    "egolife_026": {
+      "cache_sha256": "1f2c21e7821b533e2fa91f1641f05ec4fb1639978e372b5cf872ff67a2ab3211",
+      "forecast_sha256": "3e0febdf8669f25affad015bac87e637f8a08f52c0af5773653f699ba1c5fa2f"
+    },
+    "egolife_027": {
+      "cache_sha256": "3abb2a993838954301d8c03ed0713e34700854d144ef3e4c2f271485d1aa2280",
+      "forecast_sha256": "65047e739aa999ab607d52e5d9eb634907e73aa0cdd29666150f0d9f3a84c9f6"
+    },
+    "egolife_028": {
+      "cache_sha256": "4e0f939c7cb2a0a7d43a02d1d1919903117f2608b20bc35d5dcd1968cf0007d3",
+      "forecast_sha256": "46c829f29919795141e8b853c7f079d965d5d768970713bee89fcfc8824a4283"
+    },
+    "egolife_029": {
+      "cache_sha256": "195c9aaa6d204535f6e8b2f66ddb4527224358d17d9a34f1a872446c1314421f",
+      "forecast_sha256": "2a4824f79d427b782c4555b2b65aad0398c4dc1f37b075f036b38268a3cad603"
+    },
+    "egolife_030": {
+      "cache_sha256": "a102cf0acefebb478eb06594b20952e3b16b7b240427fe093a217ba72fb22957",
+      "forecast_sha256": "6095510400e3b55db79953709fdda8874cf730517d1bf9b510ba70e7c5b27888"
+    },
+    "egolife_031": {
+      "cache_sha256": "76e8cf9501b6d7e3d0928acab9734ff651f9705221810de491df35c1f38be28e",
+      "forecast_sha256": "eaa0d428a464b41b3f55a149e149ebe118305600352a5378851831051dfff7e2"
+    },
+    "egolife_032": {
+      "cache_sha256": "03fe4059f506ea73053dd0879ab64f20901fb08b5ed62067cbe29c34e2525ecc",
+      "forecast_sha256": "c6abc9c0a10cc25ca342cf206a33b9cdd0157b61ecc158e7769b29ac32422ecf"
+    },
+    "egolife_033": {
+      "cache_sha256": "bda2f2a5dc9c3c23cc86d7faf36fe072ec4c0e192f8ab338263d00c9e2f202b5",
+      "forecast_sha256": "a3400e3a02ca868d61fca4e15579813dea498d0749c24984379d29573b6e8023"
+    },
+    "egolife_034": {
+      "cache_sha256": "37b399e5c8edc299a46b48a348ca8d250808a32715c49fda59173d7a82ac9176",
+      "forecast_sha256": "7c6338861d35d85ab84fdb7d68126ca149f0209a209110f6064b613f5bfcd4c3"
+    },
+    "egolife_035": {
+      "cache_sha256": "433996d80793df9079fe323a8aaa99e168d87a1482ec55630ad0c5c7e3b1c6c3",
+      "forecast_sha256": "82705ab4082113a7c13bb65dca5b3fe30dfa25f691e318a5583c201c5fb73bc1"
+    },
+    "egolife_036": {
+      "cache_sha256": "769e4d34c4da977b13f2a03922ea12d4e8acec2902ce3145ebb1b2707e8ac6e3",
+      "forecast_sha256": "697d1b0ab7a1324a9142a84a721372ed5c704394925650c8ab09371f15a976cb"
+    },
+    "egolife_037": {
+      "cache_sha256": "97cf98c15aa438aceb5bc724e523621f4264c48d1f251ca137554fb8c9ec29db",
+      "forecast_sha256": "c5b624b68e53eb4e09a641648a6417e1d53e6b7b6bdb4523f175614bbe5e1dab"
+    },
+    "egolife_038": {
+      "cache_sha256": "aa60b2c31a854a344d9df4fa23898a5db297d6f5ea247cda2a3c0bc429264586",
+      "forecast_sha256": "4f5cf5752d4cd43b95e52cc3a01f919041916ba924e62ca0d7b308921c27d52d"
+    },
+    "egolife_039": {
+      "cache_sha256": "13ff95fe4b8a2e2e66a2619ea0ac0e1b205fa4a339c34964fbbb060d0b8fec76",
+      "forecast_sha256": "c75412b1b3d69ea78ed5bab8d5a252607235ee659807834b3f09e914d3f05c96"
+    },
+    "egolife_040": {
+      "cache_sha256": "2f724ad8e070cd0eb6294fb787a1a2303405fdf738bbfc5de4bcd2a19330ff62",
+      "forecast_sha256": "20184b5db97d0237e73d3fa27fe7dce992ac13d663bf965493530381c39bfcf6"
+    },
+    "egolife_041": {
+      "cache_sha256": "57d4b304f13439f3e00426f2c2e2b68583d0d57db87293542fef78210a9b75db",
+      "forecast_sha256": "b38b51d8d0b770d04e9fbb6c1b7569de4a8105efc5694e09a75c6239f8decfd1"
+    },
+    "egolife_042": {
+      "cache_sha256": "8fd5c8e88a93ef767bb23fa1dc5f7c0102a71ce37cb872acd72b833437855405",
+      "forecast_sha256": "b504f5e296c97110ace936e067157ad5a962919edb1184c56e44a506039c2d89"
+    },
+    "egolife_043": {
+      "cache_sha256": "c3e4a7a800c6b078f9ecaa18fba3c12c16eb302338e47819077fa405e45ffc32",
+      "forecast_sha256": "2fc146749264d3d149b67ebeb1190105657da75468ae6743a8c7882f1c18444e"
+    },
+    "egolife_044": {
+      "cache_sha256": "296c01fa771cc3e58b5fe5a9f99c91d98503fbf4462e7ebd6fe7ba818c743894",
+      "forecast_sha256": "f4fec0fc3522168d5eedb373ec0964a4dbb5bd31167e74e3508e00b23ece66b8"
+    },
+    "egolife_045": {
+      "cache_sha256": "bd08093880edb00d7e971504ab3550c892df4b2a6a66b0809b39ddb294c8c152",
+      "forecast_sha256": "2680970ee70a4b18d061ae565cc3fe60564b77fd85d83b748e6e512fffddba57"
+    },
+    "egolife_046": {
+      "cache_sha256": "188bdaf690d523c308b301a9bb89a418a62b06e02bfe2928ca7ba3199b89dbd3",
+      "forecast_sha256": "8e99cf24b91d81cc3b7bda198cc169cded739b4da407d5317ebcf42255188de1"
+    },
+    "egolife_047": {
+      "cache_sha256": "e675103c5e4242c6508f34a1f8c5a5803c857c26e8bfb7a49c0ecea91a8fbcb4",
+      "forecast_sha256": "d4f06412f5ac3e11fe2180f9103978a6b7667de0c31ab37dea6ba7386527fb6c"
+    },
+    "egolife_048": {
+      "cache_sha256": "d2410d350f4880fbf79288cd78550e4bde51050775bfec57c2c5b37c5a771305",
+      "forecast_sha256": "2253f3e9ec464892bbb2e1945978e5fca876a1c7cda3aecec95a16c47fbdb467"
+    },
+    "egolife_049": {
+      "cache_sha256": "d11f3af0127cc8d64b2bcbd4e68dbcd3fc6c659c5c3489c3f2626781bdaa1be5",
+      "forecast_sha256": "e43f7ce7d60c7b90c71297f4a0f35ba46ba8b414dbe277248e6053cc82e41c9c"
+    },
+    "egolife_050": {
+      "cache_sha256": "f07d2948d953a8c0414295bd448387d5c9fe8a9962ccff8ed0ee8a8805e4b4f4",
+      "forecast_sha256": "1763c7a5be6b2837fb8d723cacf9115d2534e3aa9c8635678c1d421da39fd17a"
+    },
+    "egolife_051": {
+      "cache_sha256": "70e4c57713b763fb5fdc7be65041bbb8452c15285683ec444e738c268925ad5c",
+      "forecast_sha256": "f2f5184ecd6eb7d65b9367b85950faed0c42451f1cc07a9c3d929fe0d0ebb681"
+    },
+    "egolife_052": {
+      "cache_sha256": "64b98c83f6f578504c5200c07e7b7e1cbffd345d9d00a8a69959b3dab928a834",
+      "forecast_sha256": "07a4815896e7256d8ce815b1a6fe989851d50fe2d6d4c932e1f2abb402f12a60"
+    },
+    "egolife_053": {
+      "cache_sha256": "5c53907af44746114cf3b5a75bb28085ecdcb72c176b33e718a93da1ad523b3a",
+      "forecast_sha256": "1f4468d26e047e75d5d0bfc3bbd0857fb1aa075c5307ac4240622adc36280e0e"
+    },
+    "egolife_054": {
+      "cache_sha256": "2f4f5e2c1fb35c81c05ddbcd982ed9d9d81edbcf8c914cd2b6c71b8d993adfb5",
+      "forecast_sha256": "235c0341d1c618eaf2c1fe2a3cec1ecba471d3712d11d1e78b6beaf1a70264e3"
+    },
+    "egolife_055": {
+      "cache_sha256": "3751451b9f5f05e093c949639a24789b7cb63f366693c0e0ba609b14877d4ff7",
+      "forecast_sha256": "9858a3333557ca0b2445b9adaace78fc00a6bb2e0a7a00b6a882f154b7de0335"
+    },
+    "egolife_056": {
+      "cache_sha256": "ba51907a2fdf8b6fd7fc05e49581165be334317a81978006a5411463835d66c4",
+      "forecast_sha256": "9d2006ab236f5fd012407adbea8eddbff63bafb5bf036f0e29f7de2efc89a33f"
+    },
+    "egolife_057": {
+      "cache_sha256": "226c16623850b2e257dcc41669445b5015849cd85d6e18d521960adfe73076ac",
+      "forecast_sha256": "4069465c3bc50fd20d78afc69ba983273a1b13891f5389cc1141cfe3432a027e"
+    },
+    "egolife_058": {
+      "cache_sha256": "ae576079eeead3e6c9bb071ca6c89af0ccdb3862c8058b815124b9b874f2c8a5",
+      "forecast_sha256": "12b5f07b77cf39ee9757e0f15d650d62b37da9674bf71fad59bc7333833a2cbe"
+    },
+    "egolife_059": {
+      "cache_sha256": "b48018e80e7d04bd900f558502f935ca49b133f9cbbf4458a55c0b704b9a7e2a",
+      "forecast_sha256": "368ee7f521362ee0dfd2e14ebb3977e46d67bd02cd8c4ff37f2b362117cac088"
+    },
+    "egolife_060": {
+      "cache_sha256": "d1248d52e534cb799cdf1c66265610169f5cce0d3cf533ee88c8007f20d6787b",
+      "forecast_sha256": "39555596a811ae588bd3da19f6508ba78b7986d36d249871509c75d72be19cce"
+    },
+    "egolife_061": {
+      "cache_sha256": "7be141255d678be410f04b8ab8a3b722cfd08d08f1cf93c7ce464fbabe389102",
+      "forecast_sha256": "4b293fe1fe95595b4301a8d55fb445c619eb121172df145f85370387ee83e558"
+    },
+    "egolife_062": {
+      "cache_sha256": "75442168002c608f9d4f34428c7d1b59cbbbfcec00e5d88f96d4ede9cb8f68e5",
+      "forecast_sha256": "eef8f562aa604db213eef2919454db60fca7919bf27279afdeb0c72c35acecff"
+    },
+    "egolife_063": {
+      "cache_sha256": "5c7aded47dafe70481a2d3c46e6f63e31a3ed218cea2f30fe53d0c80edb4f2c1",
+      "forecast_sha256": "5d782eaf41f1bac0d235823f70965852d180d4381510a7ddf2556940a24eb882"
+    },
+    "egolife_064": {
+      "cache_sha256": "fa7643f8288457c46f43f97b0113236dd6c3475948de217e9152b507cd395001",
+      "forecast_sha256": "195eff76e15b52d71e32404ca977c7543f4e57cd2529009d892fb9d6dc31c690"
+    },
+    "egolife_065": {
+      "cache_sha256": "2a95252bffda6e135fb83052b6ef65f3586e59b9d3019bbd3bfe46b8ceb19237",
+      "forecast_sha256": "35647cef4ce7400dc5a5cb993e8307de47f137cc3e32c18c506a18ba57bad3ba"
+    },
+    "egolife_066": {
+      "cache_sha256": "80bbe5caf4e5821cd726b9e3e4f7cef4c0d28aa0b7988ce6fbffdd49eb45e11a",
+      "forecast_sha256": "147fbd60dec37a88203b710f26aabb331d71c725c78cfe81bfaba04ec3d42856"
+    },
+    "egolife_067": {
+      "cache_sha256": "f2da107130b7d2d3e8d9b5e7bfea40f3feb23c5cccd5e74018de390f2768ed5d",
+      "forecast_sha256": "6d815fa550a1b3d78869aae32b9a696bcf79c3e183f5cd8e47228a2d05b49668"
+    },
+    "egolife_068": {
+      "cache_sha256": "3e660d95d1f06f90e70967f0dfde6aaa7570579b5c649f196094dd88814cb9f1",
+      "forecast_sha256": "c382b253aa0e93e917954514719cee5252f3d3835c0e7474e007a9977a6f4cb9"
+    },
+    "egolife_069": {
+      "cache_sha256": "89b3773d9c610b53d242e86f43361d60766bc674acfe4bbcdf7422ef1a52256e",
+      "forecast_sha256": "dec5e70b2c4d85b73dd27c016211158bc155353cd4c6d924f59b911e694c69ef"
+    },
+    "egolife_070": {
+      "cache_sha256": "6a937ea1e552036aa849a425cd78a44e3ba66bc17819959ccf60559005aa82f3",
+      "forecast_sha256": "2060ecd4e719eba3ebe3f1491ec980e412bc814fb058df120cdce4e004c154dc"
+    },
+    "egolife_071": {
+      "cache_sha256": "a4efa983c4ddd3a261602762d2bfd124819d589c723aa3e87504bcdb39a141d1",
+      "forecast_sha256": "9cb627fc73f4d1536f7de64f6798289d75a0ad9a2cfc2b904410e9c186d149a1"
+    },
+    "egolife_072": {
+      "cache_sha256": "0734572dc1a98de3bf529c2e684f9072c12644567dfb39f66e9defb66334c89f",
+      "forecast_sha256": "dc88ce652498ed7a5c6d2be5bae2c374d680453dcc7785c5eada474f3a87cf3a"
+    },
+    "egolife_073": {
+      "cache_sha256": "02bc4dddb110888d60fa1896cefd00c37d4c80d8d6ef76241b98be9bea3a38a1",
+      "forecast_sha256": "bfd4d994986bd62d916280dee7c42275e2eb25f799287cbe1ca44e0c837e20bd"
+    },
+    "egolife_074": {
+      "cache_sha256": "2ca5598b8ddd5e0eb0ba1a1429f51fba9e7cec7dadca05c05bef7ebba360c758",
+      "forecast_sha256": "9342d8321d5662c93121069afa5cb734ffbdc37bb0fe63a61da66b226aebfb91"
+    },
+    "egolife_075": {
+      "cache_sha256": "adc8238a337c943327f0e79f5ed78d62e5c314f4c44f01c43f0c2bbe2c08f74f",
+      "forecast_sha256": "d30fba223a7c168510e06973c1de8388a84aebb84dee784071af6bf61556af31"
+    },
+    "egolife_076": {
+      "cache_sha256": "7cf2be1f18974d7c0d337ae8ec0e4a690df405e8fe9013be85f23bb3e00b6ee4",
+      "forecast_sha256": "119c35946aff94e3f10679d5bbbefeff1157bf8edc98c04d611c5f5237ea4b9e"
+    },
+    "egolife_077": {
+      "cache_sha256": "e6ad654648180319f11a275d8bb7cae5c8c623bc62572648692158d33922f763",
+      "forecast_sha256": "8b204d5c9f77c2166c4645027b0e52f434b00910a8af994a627bf018267b2f6f"
+    },
+    "egolife_078": {
+      "cache_sha256": "2ed0c397c87b33c38ef5cae263d5cf40fd0bf51e6484d87528b639b8b8127fd4",
+      "forecast_sha256": "cc2fb37e9b4be77d1b2780263d68a78acd43e5a5e18b610318832a16f514bbcd"
+    },
+    "egolife_079": {
+      "cache_sha256": "df79b4ab0fd6127a683ef63861e83ef103346f9163e229c2dd6c333f87b9e789",
+      "forecast_sha256": "ea8e08915e3c2003b00a4a49617bd8a548104d3dffae404ab468bb118fd50d77"
+    },
+    "egolife_080": {
+      "cache_sha256": "a0a87076d34abe93219549f3718b831390807de439168715adf4cfcae39839a1",
+      "forecast_sha256": "621484da662ea0cb8fa433656038c38e9100498c5272226f163ba81823848663"
+    },
+    "egolife_081": {
+      "cache_sha256": "2212ba61731e23e567fe0235d28a350d87f2959cf13d527a51fa680e1c87ad20",
+      "forecast_sha256": "545df22e0586e73a31ac69e5dd7325689feff5e144fb4cd3ba6dff8687568515"
+    },
+    "egolife_082": {
+      "cache_sha256": "bafc6a8b6c30272e94a4014294a73ef1e3c2637132e3dba64fcfc5d09da985a0",
+      "forecast_sha256": "62ad5c759ed59da3f0d84134dc63dc562a763d4d914988338d3402f7283205c9"
+    },
+    "egolife_083": {
+      "cache_sha256": "6258894e12e9342a42ae7094ac5338442ceb5642d5e3daef874afb83c610a6bb",
+      "forecast_sha256": "937530bd53ecba8399eded5f77f9086ca2c35852a3544062e21d80d2b46638aa"
+    },
+    "egolife_084": {
+      "cache_sha256": "caa3a5d11f7aa7a29dbcd0ff0d829312c7c78a88ca5b6ed3b033cd106ef02cd5",
+      "forecast_sha256": "6db571833f07989b23101b9c580f2c670ba08f60a7bb7abab3378fb9a506a864"
+    },
+    "egolife_085": {
+      "cache_sha256": "15adc1d4e5a000cc7cd9a4857dd0f72c224fca0b50b15ee0fe9ac50f1228b9e6",
+      "forecast_sha256": "199a97c871aca81ca3758bc728b7b59baa405b574089a678276592d656dc1173"
+    },
+    "egolife_086": {
+      "cache_sha256": "1f0e91d41a5f8c7d08e2f116beed538dfa509e0bc470a2a9572d7e4fba6cf269",
+      "forecast_sha256": "ec4fbc7a35358363b2f5bb6d573623766a844df599989513a6aa42ba411e702c"
+    },
+    "egolife_087": {
+      "cache_sha256": "804841be577608fe6206933d689f4339c19ea13e79de51ea7debd6fafdc70d59",
+      "forecast_sha256": "b3c4d04520a232a6b4fb52f0dc62dfeb676ba8a343e1426cb9941e6bd37b304f"
+    },
+    "egolife_088": {
+      "cache_sha256": "30650fe65ce2211f72d5140f9617268490f5dd866b70cbc39d9c057d959fb625",
+      "forecast_sha256": "9a7339f8adb7637ca8cdfeafee12414ea896ab8ed7ac4d2b25dc7b9376fbfde0"
+    },
+    "egolife_089": {
+      "cache_sha256": "32922070629c5d7086ee258a1c05e32eb4dffa490963ad73a75bd2183711676d",
+      "forecast_sha256": "5a57a442a6c09cb552f2bc64ed15bb096a32939c032dac82547e244746124da7"
+    },
+    "egolife_090": {
+      "cache_sha256": "27dc65772d137dd75eeeddd08a3a4e0b735cf70c810c1239e950ddd35425c874",
+      "forecast_sha256": "3fae3b790c2441cbba8c0e5e2a92c34ea63d301151e840e3b7994d57c5e7bf23"
+    },
+    "egolife_091": {
+      "cache_sha256": "207ee770013773791f043fc002f43976444ef62ac5332807dd3a1d85be13af95",
+      "forecast_sha256": "c77cc5f92e8dba92c5cc2463ecf2da1a6d44b1af69218242aea4ac4b55ea6e3a"
+    },
+    "egolife_092": {
+      "cache_sha256": "5fd350cf4cc82e130afb5c3c19cadfa421df8e9e76d45beecfbaa6b30408a3cc",
+      "forecast_sha256": "740a6a3b37995472c719bb924b6a96ca372ae0ff9e4f371b28b92036d47461ed"
+    },
+    "egolife_093": {
+      "cache_sha256": "3c51d177273c41ee415453d6817f8675ed4ac396ff0cdb644696485449d73c73",
+      "forecast_sha256": "57ed3ed024276a3ef3a8192c833845e67367f9abdcd0c10bd4c7b173bf75535f"
+    },
+    "egolife_094": {
+      "cache_sha256": "d3522323331513b76188cf1b7f77a011b1ff807a5eb54e7b45f02fcbf4269a19",
+      "forecast_sha256": "0a1f6c9d5edc675b894ff2cb4c75cbb438e84e3b6523e521f0e6c8353d45023d"
+    },
+    "egolife_095": {
+      "cache_sha256": "ff1f8984d66d4d8ceee51addb086b19bf27ff13071595b7b17de740606ebd4ad",
+      "forecast_sha256": "a1779335c87132f9bfbbf1e66cdcbe41cdeec4a3fc1896de0626fe265450ad3f"
+    },
+    "egolife_096": {
+      "cache_sha256": "e7aeb32b506c062cfc47c37e48079c1593979ffc5647cf81a1266fe56cc85c6c",
+      "forecast_sha256": "212ca6fa01f8ab2a17bd3ca83d99c2b9d586e1c42d1e282e8df73a62692adaa7"
+    },
+    "egolife_097": {
+      "cache_sha256": "ad19e572da8d953fb653cbfe49badf06595b73f49a96410584845444b0d50114",
+      "forecast_sha256": "8fc22d0ccd8497fd2cf8587fb183edec28b05b5b0d18df4859f399c58babcdc1"
+    },
+    "egolife_098": {
+      "cache_sha256": "b2a73ea42c571563e1ea61f1155aa721d527405116d53cc3777b9a9c93707892",
+      "forecast_sha256": "25d09d5d9f06024cf029bcc4cb004de06d1540730bf6f8a6b380cd608c1b4b01"
+    },
+    "egolife_099": {
+      "cache_sha256": "53fc11907d714fc0db459f4e77b939096781c1c0cfea32e79e66a161d584647b",
+      "forecast_sha256": "3a90e022f7aa44de84015ccc75d052e113712dbe8688ada2ad3d63e7df5042a1"
+    },
+    "egolife_100": {
+      "cache_sha256": "11c86a1267567474754cb10da882d701f0cc509d163a626dfa9842e5b7ecafa6",
+      "forecast_sha256": "360f5f0476a0b7db22e65e6c53d36c59f274a39ce1ea2a375d80188c9c60714a"
+    },
+    "egolife_101": {
+      "cache_sha256": "377429697aa57617109e48b869fb4b78d2fe31e478f4b5d54bf7785cfdd6d30e",
+      "forecast_sha256": "124f3e685f20f00efac2073c71a5b87138e1581fac947edec4c51c0dd130c085"
+    },
+    "egolife_102": {
+      "cache_sha256": "5c3cf9451feab3a001fec3fab9c47bac707261436ecb4d336619dbaf8a0b9feb",
+      "forecast_sha256": "f50b0cf1584af5c085fe3d35e8ded2aae28b873850b62a232333bc00cc32dcc8"
+    },
+    "egolife_103": {
+      "cache_sha256": "2b4ad7fb3c163a3a5f7162f954b811ddb60f793fcaf2d578cceff63eb619c0e4",
+      "forecast_sha256": "758598c8931bd040525ee4bc649cc73e773a2a114691e184c7eae0f0dd65752d"
+    },
+    "egolife_104": {
+      "cache_sha256": "2bcc2a8bf023b915b397fbb31843b66ddc785bb556e44011a3b05205fe698a2b",
+      "forecast_sha256": "4fd4fbeb629e86607655ebd4ab23a46821cbdcef54699fcb5ea874f16b5ecb1c"
+    },
+    "egolife_105": {
+      "cache_sha256": "ea3c677c442177085070118e71ab5a708bd5ab65da14bd59b39e947581949872",
+      "forecast_sha256": "4a0965c6457916e0cbcde781791816f894f465d3a8437131b36ca28d9bd67d02"
+    },
+    "egolife_106": {
+      "cache_sha256": "b1696d7ea1085b17d6938c639122a1b551f56a9a3c2ee69500c18ad4faba8775",
+      "forecast_sha256": "73e4dc2061e4301256cbc48e837a78a98351cf1ad856b15df2e5dcd5953660f8"
+    },
+    "egolife_107": {
+      "cache_sha256": "1f1f1204ef0d625552c598669dde9abf70aae24052b345e7b24270fe742f597f",
+      "forecast_sha256": "28b7e2ecde2d60bc1af73731ea1953177b2b86c17f5f59df2c92c24943c7cef4"
+    },
+    "egolife_108": {
+      "cache_sha256": "2ec536a4583c58173a640c2f7b0c974b6529cf617ae73f8c453bf3daebaaa4e5",
+      "forecast_sha256": "815d3321fb8a25d431855a846a6c93883ec2acada41bf20aa04b85663b6eda0e"
+    },
+    "egolife_109": {
+      "cache_sha256": "4fec5b079377f79666aca8d316b1445ee9438172cffd2f9b4cd16dd1cea552a0",
+      "forecast_sha256": "f20cf0c74fd1668c02e01bea04c4f10af9e8bdb1e1ebb99206154d9820863e27"
+    },
+    "egolife_110": {
+      "cache_sha256": "022a95211661e0f8c5ad4aea7f723565b31e67e9df73fbb52436daee52a20589",
+      "forecast_sha256": "be2086d1ed77fde7971eda78b3a73901602827aaf5d4eb05676183dbf84623d0"
+    },
+    "egolife_111": {
+      "cache_sha256": "198cbb809da86eadc9a960cb87a971efa28697bf95e37c33fd57e8e36be25499",
+      "forecast_sha256": "3149097a4c6a7b7b68204437db9e625e976572248d02eb8f081083b57ec7043a"
+    },
+    "egolife_112": {
+      "cache_sha256": "3badba2e7d0fe6955abbfd41a6eff5baefb912039255d0b33038b1f380707e03",
+      "forecast_sha256": "275aaa2c71145ae2248e543371bfc8e7e71b9c13cf5033caec5677cbb511d090"
+    },
+    "egolife_113": {
+      "cache_sha256": "33c382b20c51245a62ad370a89a58bd37390966ee14e3c3e6fa17ea660336d9a",
+      "forecast_sha256": "a5747d9f2a8c8dadbb7c09db5b3313a95d73802ffccdc43875f5375c394f1f02"
+    },
+    "egolife_114": {
+      "cache_sha256": "20ae64c16f164e44a27803bd45e57184d01d3b83f1d3d5c769761149095223d2",
+      "forecast_sha256": "836f47c867c6bfc8d90c864a52742d0ea001e658b52d11ba095d74d0c5fb2246"
+    },
+    "egolife_115": {
+      "cache_sha256": "12edecff0ed28874322dc591585ce696ddae9cba7df69abff612395d541c7e24",
+      "forecast_sha256": "ed1a832f6e077444fc7f7ee149825e191739da7bc9c9d262a142ac85d639dde3"
+    },
+    "egolife_116": {
+      "cache_sha256": "b755c24600b82214d12e54020854f4a388904d72a093e61724f95618db4b7c00",
+      "forecast_sha256": "f03d3297cdc122780c79be08f38b5328b938beb6f8be6fd76ef1bc524c146d86"
+    },
+    "egolife_117": {
+      "cache_sha256": "0e5bb3ef250d2692b9bade45e4fcb31477daca4428a3bc236a0b706d2b466c97",
+      "forecast_sha256": "b650ed3e91f3a16217b6bf5ee21ffa284053772c7d9697bbfcbef53cba76cc8f"
+    },
+    "egolife_118": {
+      "cache_sha256": "7e993b86246f56efc4d52dd5c248dd212a1d9b16efbe27208723dbd2515260e0",
+      "forecast_sha256": "271e0465a369a57827dc5d27359a13af4909d70596c1c1d9a80860b17cdd0240"
+    },
+    "egolife_119": {
+      "cache_sha256": "b0a4911a62d6c6e278bd4a99892bd29b4f4b2b9a03c2d9bb80bbbdefd3fe44aa",
+      "forecast_sha256": "c9c04d9538aad3881284335149362d0abf81bfe0bbf9f1b6f0877367ec79bb9b"
+    },
+    "egolife_120": {
+      "cache_sha256": "1c9bb598a2e7a6dac8c72166470521ee049397f283a726a8115e2b88558c4fe2",
+      "forecast_sha256": "cd12c41658cb483c1156978f10f0b1b17c5f4837672b1fa992c253033bcf6ad8"
+    },
+    "egolife_121": {
+      "cache_sha256": "833535694fc8dcee19789421d56df5a933b91d2a41c0b0790dd0fb1560f74750",
+      "forecast_sha256": "f9038a55694a05767d4c34a4099cffeeabae70a0c8e1a83db402fab97c5af0cc"
+    },
+    "egolife_122": {
+      "cache_sha256": "08449442d1fa7ab587a1ce626ea761f6dfac4471cf1453ec43441abbda949360",
+      "forecast_sha256": "3cb00f1ebce7fe7cc927b4686b00a3bbecd545f1c16807834c3cd89d8234bdf1"
+    },
+    "egolife_123": {
+      "cache_sha256": "6f63514354994baa4bc029b82ca29372d25d8d6fbc6c6dbffbaa14c658e53eaa",
+      "forecast_sha256": "36139de2abb6858b93fe298230ef144357776a5de4f67af39df28ca1952d28c2"
+    },
+    "egolife_124": {
+      "cache_sha256": "b3fab371b2af8c855e5c80a3687b420681fb0619a217f1911907affa166d21e9",
+      "forecast_sha256": "89cf0600a9cad72c4e6551081cc52debcfd1d3483a25c707e37221a3d3cc34c2"
+    },
+    "egolife_125": {
+      "cache_sha256": "61196a9d4c77428bb71d267ba0a2ec42782761b17bb546b4738c6f43e0688178",
+      "forecast_sha256": "2771c066d5b6006598cb9660ce9d2332b0817a7123f128ee22723c800d250261"
+    },
+    "egolife_126": {
+      "cache_sha256": "488b448508d0a18da3678c9db1a872d758106d1ec83a59d65fab46adf31a5de7",
+      "forecast_sha256": "ca1d5ac84748dea3d05621ed50299b35de96181660f90ed502dd97bbdeaa6687"
+    },
+    "egolife_127": {
+      "cache_sha256": "dad7dd48a570dc3432920a1c4c43dd847b7be8bb1e517eb02f0c5e05829bd9ef",
+      "forecast_sha256": "369b334ccbce52fa5b896ea21fb65d9497f7bcf5c503ada401145a1dadd9e3fd"
+    },
+    "egolife_128": {
+      "cache_sha256": "da9e335e3e6c017c5d1b8391098cb9192e9212321fa39af12f66658b4d16d7a1",
+      "forecast_sha256": "27871606e06a42560d3bdb05dcbf7f618cfc3ef2fc11f66f9bcb4ac48d5c7475"
+    },
+    "egolife_129": {
+      "cache_sha256": "918be87ca78039c1ac09932a02ee74537a0e57714847679bb3681582e6ba0530",
+      "forecast_sha256": "bdbf564c84cc43539e72e9a9976aced2a05a6f0e0a6155b75726daa520513583"
+    },
+    "egolife_130": {
+      "cache_sha256": "ae3753ebbabc9fa2048a603a9066baedb89940a27f30da856ecde55767cb190e",
+      "forecast_sha256": "9cb628419f097c6eb6dd07b86a33313809c621c2860f48b5a26f9c32982900d9"
+    },
+    "egolife_131": {
+      "cache_sha256": "754295eb97eac1bb05ee51eac5e8691fbc5f4bdc603c33d898e58b7d957245f4",
+      "forecast_sha256": "2c62137fa895c8de4b20d4b431c1c1e1f5af576eaf1afd9bbb05c477e42d8afc"
+    },
+    "egolife_132": {
+      "cache_sha256": "c746977ceb20cdb636f81fe6a7a836fb2e0b832e9497224a37f3d3d6dc8f4c3a",
+      "forecast_sha256": "36c167d4c1269263abba5b08f8d86cba7ef8036a0c63641d7a91340c268cb332"
+    },
+    "egolife_133": {
+      "cache_sha256": "91f22aef1c9aef975606e5755757ffb122005cdcbe3d6f2e1dcce51b296b8a53",
+      "forecast_sha256": "2538484033f67f8776486783a8557fdce76a014db19275c4463cb263f4cd7629"
+    },
+    "egolife_134": {
+      "cache_sha256": "32aa1217e9cb5353391e00cc3228f41fadf66c711822b9674638f1cd71ffb229",
+      "forecast_sha256": "744a86a64ae33304aeffad98394d7e53356632679e1d0bb76ad47871ee5c39ff"
+    },
+    "egolife_135": {
+      "cache_sha256": "74404e74bb1b1081505960ccd69525cf96a1e14aa7606126eff4e0dcc4fcf6df",
+      "forecast_sha256": "32d5247f8c94442a46fb886eb2e4a1cfdcb9145a4829a75ace05fc4147d9fdb3"
+    },
+    "egolife_136": {
+      "cache_sha256": "652ef52d48d12ca37e2e9ecabe9a38ce84cbd27fc4294a34800f0a4a91843aeb",
+      "forecast_sha256": "ab6e2e16ec7a0885b450d66e2d427d62d5a2228cbc62b0d6521fb60a34bb0e55"
+    },
+    "egolife_137": {
+      "cache_sha256": "aeab6fac7ccf7624760f47060c051e881d9f3177816388604717ceaa1b4e5220",
+      "forecast_sha256": "8bde2544efe123301e58b03158739307dc9be34dc726918db4f274a2bfb8bba9"
+    },
+    "egolife_138": {
+      "cache_sha256": "1bed851d690c6a7a258b7a2b2dadfae02c0642db246bba9fde0d44902701db4f",
+      "forecast_sha256": "d35b655f7a5f361a14643a88648060d8ef87548764384d68fb0aa576d0bc3da6"
+    },
+    "egolife_139": {
+      "cache_sha256": "516784dd0f0116509bf47ecf3e18f5543665eeea224884a7cd70585801157d39",
+      "forecast_sha256": "f144b1d7669f5adc7ae0763bf79b872e6c753524339ee4120d145339832d67fd"
+    },
+    "egolife_140": {
+      "cache_sha256": "437a6d2d950a4d8abefc0d13bedaf8f595637f6c2a6f937fc5e17eb148754e72",
+      "forecast_sha256": "c6f97560d7590491fea8c2bf2bf84091e7d9f848569c95ac3bb2886a660080f0"
+    },
+    "egolife_141": {
+      "cache_sha256": "5dd1d5c229228a740152b7ebdbb8eacdae89b19933cbec3496d7ea533812780f",
+      "forecast_sha256": "d934b410ad6a360c3f8d6e87742b7905bd45b51e6862128a2e120dca8f5f54e0"
+    },
+    "egolife_142": {
+      "cache_sha256": "0c60e565866d34f58f90c9c64e7518fad0df47a350253920833b66e47ea1f4b9",
+      "forecast_sha256": "433ae649a9394e35d3c29a7be0f5bbdca59ed395ea605cf9132e96f717cc92d1"
+    },
+    "egolife_143": {
+      "cache_sha256": "94dd4c0604b212cab0ebe3708465aa3c0139b71de88743a594f11fcc52a1729f",
+      "forecast_sha256": "786ba2afd2e55348fdeb533cb8fe844ff1327bd1b30dab58a0c6f25391e0d535"
+    },
+    "egolife_144": {
+      "cache_sha256": "ca8b771e7cc0057af4830d200be5baf818799fff19eb6854260ccbba3d68a99b",
+      "forecast_sha256": "994412c132da4e3759fcd06272275a17521db37b8a27c639cc3a304d899fb0e4"
+    },
+    "egolife_145": {
+      "cache_sha256": "7ddd107f34e0e52a70cebb5b8a88615830483a78fdbeb1314365646a26115688",
+      "forecast_sha256": "323d4af737ab386d04e9009b0b424d3040d4bc39e660e2ba35757843604a9b65"
+    },
+    "egolife_146": {
+      "cache_sha256": "2f18d15c38463d80fa3e071188301e653189f92dda6464cf058de8f9fdba9de0",
+      "forecast_sha256": "c5ed964dc8a29cec353d3961b27b83742a10240ddfe4b9e7d3160a7286e5a03f"
+    },
+    "egolife_147": {
+      "cache_sha256": "2f819ba888018fe61e377956e30d3c1299c9264b583b0acea1241b7d6352e0c4",
+      "forecast_sha256": "52a0a8a0909edc0034082d9785c781114619d90e9bded1fd59836310854681df"
+    },
+    "egolife_148": {
+      "cache_sha256": "3a42768cb334f20107841f3a06ef91248d462f6d5d411ad0a42771edffd86ed4",
+      "forecast_sha256": "5387293a72f32afa179cd4bdb5995f4f77f0863ef63d7953ca19f8d8321cf981"
+    },
+    "egolife_149": {
+      "cache_sha256": "a1de2974e674a4a320dc174079bbd2f38a53ac2a69114142bdffbe19fb3c3f80",
+      "forecast_sha256": "9b0e57ed2039012f3f11a2a08a7582fd5a0427ccba4fbe16f9c970d0789c872a"
+    },
+    "egolife_150": {
+      "cache_sha256": "2df527b03ba0d383443b2f366721f9f209fe317c00388516b1f7e17ceaaf51c2",
+      "forecast_sha256": "cc88df0e0717f5dd07e889c9381dbdc15b3c8b5d9446b745329cdac07f3d3556"
+    },
+    "egolife_151": {
+      "cache_sha256": "ffedf2af43e3c2e7de0e5984476b497397cf1a3023d6d52f7ce6d55ef3695f61",
+      "forecast_sha256": "b702b3cc8bdf6a897f2c7af2ef733166c02f9d3b1741adc5e87378b6228f87c0"
+    },
+    "egolife_152": {
+      "cache_sha256": "84491d697acce94f4cbd451646f9526d0a104d8e1c1f08185a0d96a9bdfdb8c0",
+      "forecast_sha256": "766e5050594609bb22cf449b526b94a0242bcd534a042cccd00b55136696ec5a"
+    },
+    "egolife_153": {
+      "cache_sha256": "5f74ca9f1c0c048514076e72edbc8960b4213a1360c31218f8e0763f61c49965",
+      "forecast_sha256": "f0ce9d15e47bdb1819a1819b4af21e179482c54770f4e8c30d9f1395063e8e5e"
+    },
+    "egolife_154": {
+      "cache_sha256": "7bcf15c3a577d2c1fbdf16b3a18100faf40dbdd64b50efb505bfa3fbfd0a3486",
+      "forecast_sha256": "291eefe262d62749636b4eb62927068f9e7dec8f99465fc2763f0c4305f50616"
+    },
+    "egolife_155": {
+      "cache_sha256": "c58b40f73e056de04a825fc4a8a0198ab0f97d781a53a11cd13d012b852fd96b",
+      "forecast_sha256": "42b527ae01741fd932173d5938e05d2b4921ad14a253281d197f391ba9c86ee7"
+    },
+    "egolife_156": {
+      "cache_sha256": "9d11be9bf2d638b1cffc57c1519400fe67552fff2db114497eb2d4c75c67f94b",
+      "forecast_sha256": "e0583ff8e4019eb24948586726bc766a5bed2b9768c6ddc0c48655ee68f8edcb"
+    },
+    "egolife_157": {
+      "cache_sha256": "1392ac97a25489851078768c404539248d3ea9bff3946c4f6cc5f46ed57566df",
+      "forecast_sha256": "8d8d23fca242816da659a9bddc4bf2a35bd769c605328b33c87f5d49e1676aa2"
+    },
+    "egolife_158": {
+      "cache_sha256": "5f9a4e3bab2376f3a24abb19aa584a078ec5b61e0e6e135ee4d738eef16e73eb",
+      "forecast_sha256": "09497aec7dc311b4871b498d73b0840c58cadc173be4cf6b758a8fd5641e565e"
+    },
+    "egolife_159": {
+      "cache_sha256": "02a01e86b410cba4a95135686e06ea8680d17134418f5d9c76f4ed2deda28d21",
+      "forecast_sha256": "2000439740205fc85fa7bf38bab055200252d036deb3615b569fe4ee01b5d3e1"
+    },
+    "egolife_160": {
+      "cache_sha256": "24bebfc1c024a96379c0f40c27be94ba333d0082761eed0207b3745a6c8a2277",
+      "forecast_sha256": "161b206b6038563ad1993ed5e3c3ab556cc87e19f209057bac52da0e8ff982cc"
+    },
+    "egolife_161": {
+      "cache_sha256": "3afbc8c22a489ece733c06a3e45f548f86dfe585f1dcc6e29aaaeed738abc5bf",
+      "forecast_sha256": "20f9e7848e1cad4c1ae71e5b47245def387fc8c4bd3d98f335b05cddde6260c5"
+    },
+    "egolife_162": {
+      "cache_sha256": "9b7a35baca5dcf65e9fa397aa68b316dd1670cb3c410b6aa2f0a48c79d7822ae",
+      "forecast_sha256": "6801300d5d5986e05a448694f25dd2a906fb5e1207748f9abce53ee6788ed889"
+    },
+    "egolife_163": {
+      "cache_sha256": "c09140c1cac8d97121577f2b93ca8127d03fcb7a2fb81baf9d29029f5fbd03d1",
+      "forecast_sha256": "69a2e84e90becb53be0860178101d6a77528d74307f3df058ecc96fcfab981e1"
+    },
+    "egolife_164": {
+      "cache_sha256": "0476feac58671bdb395f6c63ae6329d5dd8cdda77ba04c4869797bab9dd450f4",
+      "forecast_sha256": "ae424444e86288c15f6cb91c201ac8019fd85fd3b6e11e2e7fc16f47496ca12d"
+    },
+    "egolife_165": {
+      "cache_sha256": "3c1c3739ee1011c645799a1d7e14ce96e10485231705c87a9610a268dcfd780d",
+      "forecast_sha256": "b9e5133f2df9b6f8b0b824a31dce88147fc2de2a2e15409c717e9c5c28b160a2"
+    },
+    "egolife_166": {
+      "cache_sha256": "92350ce50c2657c3efb304e5f18699568cbf36ab40612cbe56771ebd01ab1204",
+      "forecast_sha256": "f51c94294e1b42919a99ef8d55c31aa275bec9f80e5a8f870e890784425039b5"
+    },
+    "egolife_167": {
+      "cache_sha256": "0a3c9ccf6539ee909af96d969aef5a89f953565399c38805f924e33b917c1919",
+      "forecast_sha256": "15596861e0026cc11ee9034256f608296315c7e344a9e874cb90e5b5975ba79b"
+    },
+    "egolife_168": {
+      "cache_sha256": "9e29896b0dd53464f2cb96c1b78a7766ba22b40e8f62b594943b5a272d53c2e3",
+      "forecast_sha256": "eeb9fa8aa7284eab77ded6620de7c9956f9637b003348ed79cb6ed46a91a6987"
+    },
+    "egolife_169": {
+      "cache_sha256": "74a98c0a81c80c180b17c8c885824b6fb30e94ffeaab28e17aec86b0fc634af0",
+      "forecast_sha256": "1001695b0d41ab3d9c642afee37c87d52283bf51bd2fa27883ad4d1a28304ba5"
+    },
+    "egolife_170": {
+      "cache_sha256": "b8e56bcb32a698b7b207e7f784c04f03242f41bbdba99b5e605b24c154246591",
+      "forecast_sha256": "85a6e6d59afe93b9dce41b01206cc94755a5abc3d1e548ddeb5389ea543310d9"
+    },
+    "egolife_171": {
+      "cache_sha256": "f3108df344dc477bdae20aced033fd98eb89aaa9226c0117150d656aa8c57a63",
+      "forecast_sha256": "152bd8808b5fec0fd119941242425860831655ed1f59ffdfd98b13a25715480f"
+    },
+    "egolife_172": {
+      "cache_sha256": "f80c59eefb678fd92d93c157d72ee70caaf168cc120ac0eaf49920b9fa74b4ad",
+      "forecast_sha256": "919db35a938dcbfd6d78eaaf08c91aa56d1d546565b88ae96da3988bf35a0669"
+    },
+    "egolife_173": {
+      "cache_sha256": "b52ddb52de4e364b38d499fff84be3008b240c9e32cb169b1defd5549b88b7be",
+      "forecast_sha256": "5f4efbaac3e2ba024220318bff3ae13e240f8f4be48f461b5aa1f80328341a9f"
+    },
+    "egolife_174": {
+      "cache_sha256": "f79a64e4a9bedd483eee2108d9374e0b8c068f789637c726682d1869cd91119f",
+      "forecast_sha256": "abe6255c780a7a52fec4d842e5e465342818d406bd6d705ff6b706f1d6a4bcca"
+    },
+    "egolife_175": {
+      "cache_sha256": "c6f10b0c005f93c11490d1c5f6046186cf937b3000eef0ce0df2e4e6105821a9",
+      "forecast_sha256": "83a3c043640ae9f15c96077decf147ee0a689b1c6eb7994c0e028a2a16f46201"
+    },
+    "egolife_176": {
+      "cache_sha256": "2af3312f2d1bb2f2a0f85bb02fa632ccaedbf6584a239868c28c04e8cddef1e5",
+      "forecast_sha256": "300c17a856ad5f4c8ede17a0d1410dc7c3541001800300e858fcd7de64f4467b"
+    },
+    "egolife_177": {
+      "cache_sha256": "06ea2b76cbb3d72323924ab46258b0fb99bea55ee2f2539358f18ac7aef594dd",
+      "forecast_sha256": "e765f2e85f48e3819d0d4c362053be3dbbe43d771f601b6813380ac50ee93697"
+    },
+    "egolife_178": {
+      "cache_sha256": "f63550ac1c9b31381b7bf9ace9342214941dd22cc7ecc33b3413b235321a9dd8",
+      "forecast_sha256": "a2f26ba8607a2aa0e5b8863f66c6e7641c91f447fbc971c9a06ecd999db5ab74"
+    },
+    "egolife_179": {
+      "cache_sha256": "0f71f36c7aba046c96bd64c7bd42a752dc94ff4a36162d95805eb3bb3d9834e6",
+      "forecast_sha256": "cd75dd9699a65307e84e166f84dc201171f6b7afee21679ee0fa3ce46009bffd"
+    },
+    "egolife_180": {
+      "cache_sha256": "0c3fc81dc23e5c031a435d05186509d5fb89a6468c63c9f90d04c47af7062cf9",
+      "forecast_sha256": "20ee7a484877949232fbfb057cd2c03750e2108ebb2ba9bcf7788a5b91534d5e"
+    },
+    "egolife_181": {
+      "cache_sha256": "1f3f0a00acf1ec09ede0a57d375113edc3edb5412b4167e89d5fabc8a47a557e",
+      "forecast_sha256": "91ec757963becf82aa1d1bf4e2eac22966d78df2eab42e15d9d844459535e9f0"
+    },
+    "egolife_182": {
+      "cache_sha256": "12ac426ce5cfed6aa09f165dc0dd18932e6402c8a75e00964a22b7987c4bc672",
+      "forecast_sha256": "f8f1f6593699a6549d188b6fea2de2f15c50a93af839325ca44d97f4828a2737"
+    },
+    "egolife_183": {
+      "cache_sha256": "f41f365e62870d73f39056b94a83ba0febbc17e3f303b8ad03610110a01a6862",
+      "forecast_sha256": "382c91863bbcb42ce262cb797226b58ede13cc45527b94bb071b8c699fde844a"
+    },
+    "egolife_184": {
+      "cache_sha256": "13f67124f9a4f82c1ec0cb2993254fc7aba61428df9add35913986f01e3aa15f",
+      "forecast_sha256": "bd966c6608b18b9014af3d89e310fdd5fb38735b05e04c37e20578472eb002f5"
+    },
+    "egolife_185": {
+      "cache_sha256": "89472ac07d6199432a03421ef3d5b0047d7c0bf1fd775f59e19194de00a02ca2",
+      "forecast_sha256": "0422d56428d702bd7c9e394e25b1f11382409c86c2bf79d8cf2e2f12d06a27b1"
+    },
+    "egolife_186": {
+      "cache_sha256": "49974ee58c0ee1fd73c7ab5db8fe9e187a926a4cacddd67d4ea5262319c00401",
+      "forecast_sha256": "603dfb28ab7e3d15f7310d9ba9710ac9befaae4c081bed50127723851f1a4e0b"
+    },
+    "egolife_187": {
+      "cache_sha256": "ecc1f9339e3f0b11664dd22d51ef0a63441411bee4063fd4f702723d6a0209fe",
+      "forecast_sha256": "3c170e95c0470fae1f5d457515189f69b544d1378e28704455427c2ee80e564d"
+    },
+    "egolife_188": {
+      "cache_sha256": "89914cd749aca15279f33729600c2813ea3ba1b3ccdadf4820897e1650c03b93",
+      "forecast_sha256": "a9e993c7f04cb10e8b626c2544549597c73595b48fdd5f04f4a0141cfbea03fa"
+    },
+    "egolife_189": {
+      "cache_sha256": "8fb7a0e6a534895022ddbd7000eda07d4530ae599aeadc5f2c048f1de08a7519",
+      "forecast_sha256": "3ac5a69f4837783f55b73a37e9f40062946e558b7171982148efca99bf35bfb6"
+    },
+    "egolife_190": {
+      "cache_sha256": "736a1b6b314fc989fea4921013698e4988c3ac880d6a82d9136f5ad9890c9f74",
+      "forecast_sha256": "b7314c152a27faae36c6e3a75b51392275592dfca1fe73dcf549b4e065c16c79"
+    },
+    "egolife_191": {
+      "cache_sha256": "7a2cb01ddf0f464285b324c4f5cf7f96c951ea2b4f222943c5e8e17edffb5769",
+      "forecast_sha256": "79ff72ad90c6cf25cab2c0074ad81913e525cb0c98dcfb154548f4717a806cf8"
+    },
+    "egolife_192": {
+      "cache_sha256": "6fff17469ea5072b3470b4fbe0c8429ae96b60f0eb2965fab6fd7381b20bd9bf",
+      "forecast_sha256": "e527fdf40b19b8621c992e97a55329a3645981014f17d52eb8aa59cdf3f16b5a"
+    },
+    "egolife_193": {
+      "cache_sha256": "8275c1ff54dc96205c0271f1360c27afaeaf9bf74d6343c2d6e0ab7cce6da4aa",
+      "forecast_sha256": "fb8f43985447a42ea8a1afc52421611463e9ec852567b8d1d003d165f44927f1"
+    },
+    "egolife_194": {
+      "cache_sha256": "c9346d0b8470ab95d4eddfffabbeb5988fe623d8c262f3c8b58c939b7b7f216c",
+      "forecast_sha256": "473a79d171d515ab52540945aba7ca3db8d5efea0d907d46065193f9cbf7c659"
+    },
+    "egolife_195": {
+      "cache_sha256": "4116fd636fac91cadcb57551b14f776831864d8a2068e5665ddd347078c36b57",
+      "forecast_sha256": "b9b9a4578ee3fbca501f6ea467df4cf746db623502a7cde3b9d645b080088249"
+    },
+    "egolife_196": {
+      "cache_sha256": "9d368b1312fe80f6099ddb4a4d1176f7d49eaaa2c7a285c0cedfb27ec8214a56",
+      "forecast_sha256": "a60af805e74b1cfdbda4dc57256552164a212d49f6853ad32b28ec12d06bd621"
+    },
+    "egolife_197": {
+      "cache_sha256": "ec61cae64f96bbcf37df91207d90a0b266d943545a737990f1269f12b4f9f3da",
+      "forecast_sha256": "9975f06268fb2f3cf288edf383d958589f76a3c558ae442eeb50e0ea81618d91"
+    },
+    "egolife_198": {
+      "cache_sha256": "b27860a12ed49594637647151f6a6cb211ade75a830e29a70144c946f2f2f905",
+      "forecast_sha256": "6c3fcdff84a850cc1a20822802f31d35c82a0b16cbdecd06b800f5fead6a0767"
+    },
+    "egolife_199": {
+      "cache_sha256": "4b82af1d0214ae02b4a7f5a82f4ee3872fd80955c42c78ced2b6feb71ad017a2",
+      "forecast_sha256": "6e50edf5ec2cd1bed2d0cf30d1a03ae16c57a776f26b6f13cb5d9ac23a0423ec"
+    },
+    "egolife_200": {
+      "cache_sha256": "c56588ca595dd0fda5d4915757d0d4e5b658bfe8c1f401dda5379cf850126852",
+      "forecast_sha256": "1eb77c62609dfd92af2eb1f96c99123aea6b099e9a951380e30fbe7b1a3e7bd0"
+    }
+  },
+  "source_sha256": {
+    "scripts/archive_idea1_mcq.py": "191004a9c89438ce7e6087f545486c2ad73c0d5cbf02f56c83d680a463ae41b4"
+  }
+}

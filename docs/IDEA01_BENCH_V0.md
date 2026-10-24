@@ -1,5 +1,8 @@
 # Idea 01 接入 EgoLife bench_v0：延迟残差预测记忆
 
+更新：本页保留最初的 latent 预检及其历史结果。完整 200 段视频、共享动作读出和固定
+57 题测试集的后续评测见 [Idea 01 MCQ 实验报告](IDEA01_BENCH_V0_MCQ_RESULTS.md)。
+
 本轮以 `ideax_output/idea_01/idea_card.md` 为实现依据。目标是检验历史中已经发生的
 cue→outcome 关系能否改善后续预测。目前实现安全数据接口、冻结视觉特征和在线
 latent 预测预检。动作选择题读出、slow 参数的 outer training、完整 Spatial 集成
