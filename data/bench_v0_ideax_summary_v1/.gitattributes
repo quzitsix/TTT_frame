@@ -1,0 +1,3 @@
+* -text
+# Keep the captured failure traceback byte-for-byte, including indentation.
+verification/*.log -whitespace

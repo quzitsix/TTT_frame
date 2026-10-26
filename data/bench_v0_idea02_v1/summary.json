@@ -1,0 +1,509 @@
+{
+  "schema": "idea02_transport_results_v1",
+  "cases": 200,
+  "pairs": 7200,
+  "selection": {
+    "regularization": 10.0,
+    "grid": [
+      {
+        "regularization": 0.0,
+        "validation_gate": {
+          "correspondences": 9395,
+          "identity_rmse": 0.08996276837593245,
+          "candidate_rmse": 0.09729964405675237,
+          "gated_rmse": 0.08996276837593245,
+          "candidate_relative_improvement": -0.0815545787804229,
+          "gated_relative_improvement": 0.0
+        },
+        "eligible": 384
+      },
+      {
+        "regularization": 0.01,
+        "validation_gate": {
+          "correspondences": 9395,
+          "identity_rmse": 0.08996276837593245,
+          "candidate_rmse": 0.09708274208290964,
+          "gated_rmse": 0.08996276837593245,
+          "candidate_relative_improvement": -0.07914355944699872,
+          "gated_relative_improvement": 0.0
+        },
+        "eligible": 384
+      },
+      {
+        "regularization": 0.1,
+        "validation_gate": {
+          "correspondences": 9395,
+          "identity_rmse": 0.08996276837593245,
+          "candidate_rmse": 0.09585428883172968,
+          "gated_rmse": 0.08996276837593245,
+          "candidate_relative_improvement": -0.0654884299600253,
+          "gated_relative_improvement": 0.0
+        },
+        "eligible": 384
+      },
+      {
+        "regularization": 1.0,
+        "validation_gate": {
+          "correspondences": 9395,
+          "identity_rmse": 0.08996276837593245,
+          "candidate_rmse": 0.09237403009724687,
+          "gated_rmse": 0.08996276837593245,
+          "candidate_relative_improvement": -0.026802884847188655,
+          "gated_relative_improvement": 0.0
+        },
+        "eligible": 384
+      },
+      {
+        "regularization": 10.0,
+        "validation_gate": {
+          "correspondences": 9395,
+          "identity_rmse": 0.08996276837593245,
+          "candidate_rmse": 0.08997843490672283,
+          "gated_rmse": 0.08996276837593245,
+          "candidate_relative_improvement": -0.00017414460529843607,
+          "gated_relative_improvement": 0.0
+        },
+        "eligible": 384
+      }
+    ],
+    "labels_used": false,
+    "selection_split": "validation gate correspondences only",
+    "pca_train_ids": [
+      "egolife_001",
+      "egolife_002",
+      "egolife_003",
+      "egolife_004",
+      "egolife_005",
+      "egolife_006",
+      "egolife_007",
+      "egolife_008",
+      "egolife_009",
+      "egolife_010",
+      "egolife_011",
+      "egolife_012",
+      "egolife_013",
+      "egolife_014",
+      "egolife_015",
+      "egolife_016",
+      "egolife_017",
+      "egolife_018",
+      "egolife_030",
+      "egolife_031",
+      "egolife_032",
+      "egolife_033",
+      "egolife_034",
+      "egolife_035",
+      "egolife_036",
+      "egolife_037",
+      "egolife_038",
+      "egolife_039",
+      "egolife_040",
+      "egolife_041",
+      "egolife_042",
+      "egolife_043",
+      "egolife_044",
+      "egolife_045",
+      "egolife_046",
+      "egolife_047",
+      "egolife_048",
+      "egolife_066",
+      "egolife_067",
+      "egolife_068",
+      "egolife_069",
+      "egolife_070",
+      "egolife_071",
+      "egolife_072",
+      "egolife_073",
+      "egolife_074",
+      "egolife_075",
+      "egolife_076",
+      "egolife_077",
+      "egolife_078",
+      "egolife_079",
+      "egolife_080",
+      "egolife_081",
+      "egolife_082",
+      "egolife_083",
+      "egolife_099",
+      "egolife_100",
+      "egolife_101",
+      "egolife_102",
+      "egolife_103",
+      "egolife_104",
+      "egolife_105",
+      "egolife_106",
+      "egolife_107",
+      "egolife_108",
+      "egolife_109",
+      "egolife_110",
+      "egolife_111",
+      "egolife_112",
+      "egolife_113",
+      "egolife_114",
+      "egolife_115",
+      "egolife_116",
+      "egolife_117",
+      "egolife_132",
+      "egolife_133",
+      "egolife_134",
+      "egolife_135",
+      "egolife_136",
+      "egolife_137",
+      "egolife_138",
+      "egolife_139",
+      "egolife_140",
+      "egolife_141",
+      "egolife_142",
+      "egolife_143",
+      "egolife_144",
+      "egolife_145",
+      "egolife_146",
+      "egolife_147",
+      "egolife_148",
+      "egolife_166",
+      "egolife_167",
+      "egolife_168",
+      "egolife_169",
+      "egolife_170",
+      "egolife_171",
+      "egolife_172",
+      "egolife_173",
+      "egolife_174",
+      "egolife_175",
+      "egolife_176",
+      "egolife_177",
+      "egolife_178",
+      "egolife_179",
+      "egolife_180",
+      "egolife_181",
+      "egolife_182",
+      "egolife_183",
+      "egolife_184",
+      "egolife_185"
+    ],
+    "pca_sha256": "3672c4bab75cb0541391de67de9b54fb85fc6cd7cf4b6aa2a38aec2bd92f88fa",
+    "explained_variance_ratio": 0.5550120182591668,
+    "token_count": 522144
+  },
+  "metrics": {
+    "train": {
+      "matched": {
+        "pairs": 1332,
+        "eligible": 1332,
+        "eligible_fraction": 1.0,
+        "accepted": 0,
+        "accepted_fraction_all": 0.0,
+        "accepted_fraction_eligible": 0.0,
+        "fit": {
+          "correspondences": 67110,
+          "identity_rmse": 0.09017567586054162,
+          "candidate_rmse": 0.08741074322221158,
+          "gated_rmse": 0.09017567586054162,
+          "candidate_relative_improvement": 0.03066162368004937,
+          "gated_relative_improvement": 0.0
+        },
+        "gate": {
+          "correspondences": 33553,
+          "identity_rmse": 0.08994007341074728,
+          "candidate_rmse": 0.09000907487410428,
+          "gated_rmse": 0.08994007341074728,
+          "candidate_relative_improvement": -0.0007671937629168022,
+          "gated_relative_improvement": 0.0
+        },
+        "audit": {
+          "correspondences": 34216,
+          "identity_rmse": 0.09009035237249627,
+          "candidate_rmse": 0.09018729116106548,
+          "gated_rmse": 0.09009035237249627,
+          "candidate_relative_improvement": -0.0010760174204714197,
+          "gated_relative_improvement": 0.0
+        }
+      },
+      "permuted": {
+        "pairs": 1332,
+        "eligible": 1332,
+        "eligible_fraction": 1.0,
+        "accepted": 0,
+        "accepted_fraction_all": 0.0,
+        "accepted_fraction_eligible": 0.0,
+        "fit": {
+          "correspondences": 67110,
+          "identity_rmse": 0.3491861603096911,
+          "candidate_rmse": 0.34056445308207184,
+          "gated_rmse": 0.3491861603096911,
+          "candidate_relative_improvement": 0.024690861802691998,
+          "gated_relative_improvement": 0.0
+        },
+        "gate": {
+          "correspondences": 33553,
+          "identity_rmse": 0.3490868671792422,
+          "candidate_rmse": 0.34841367968570064,
+          "gated_rmse": 0.3490868671792422,
+          "candidate_relative_improvement": 0.0019284240022581702,
+          "gated_relative_improvement": 0.0
+        },
+        "audit": {
+          "correspondences": 34216,
+          "identity_rmse": 0.34918401209879213,
+          "candidate_rmse": 0.34863664366654884,
+          "gated_rmse": 0.34918401209879213,
+          "candidate_relative_improvement": 0.0015675644166904933,
+          "gated_relative_improvement": 0.0
+        }
+      },
+      "wrong_video": {
+        "pairs": 1332,
+        "eligible": 1232,
+        "eligible_fraction": 0.924924924924925,
+        "accepted": 0,
+        "accepted_fraction_all": 0.0,
+        "accepted_fraction_eligible": 0.0,
+        "fit": {
+          "correspondences": 26595,
+          "identity_rmse": 0.10383023357213213,
+          "candidate_rmse": 0.0994770753165318,
+          "gated_rmse": 0.10383023357213213,
+          "candidate_relative_improvement": 0.041925729200793294,
+          "gated_relative_improvement": 0.0
+        },
+        "gate": {
+          "correspondences": 13285,
+          "identity_rmse": 0.10460038941731256,
+          "candidate_rmse": 0.10412939803316192,
+          "gated_rmse": 0.10460038941731256,
+          "candidate_relative_improvement": 0.004502768935893573,
+          "gated_relative_improvement": 0.0
+        },
+        "audit": {
+          "correspondences": 13897,
+          "identity_rmse": 0.10459147616405054,
+          "candidate_rmse": 0.10413806809567308,
+          "gated_rmse": 0.10459147616405054,
+          "candidate_relative_improvement": 0.004335038427665879,
+          "gated_relative_improvement": 0.0
+        }
+      }
+    },
+    "validation": {
+      "matched": {
+        "pairs": 384,
+        "eligible": 384,
+        "eligible_fraction": 1.0,
+        "accepted": 0,
+        "accepted_fraction_all": 0.0,
+        "accepted_fraction_eligible": 0.0,
+        "fit": {
+          "correspondences": 18804,
+          "identity_rmse": 0.09073031505774068,
+          "candidate_rmse": 0.08786661435175479,
+          "gated_rmse": 0.09073031505774068,
+          "candidate_relative_improvement": 0.03156277705156689,
+          "gated_relative_improvement": 0.0
+        },
+        "gate": {
+          "correspondences": 9395,
+          "identity_rmse": 0.08996276837593245,
+          "candidate_rmse": 0.08997843490672283,
+          "gated_rmse": 0.08996276837593245,
+          "candidate_relative_improvement": -0.00017414460529843607,
+          "gated_relative_improvement": 0.0
+        },
+        "audit": {
+          "correspondences": 9602,
+          "identity_rmse": 0.09067745601280558,
+          "candidate_rmse": 0.0907450681327548,
+          "gated_rmse": 0.09067745601280558,
+          "candidate_relative_improvement": -0.000745633180750875,
+          "gated_relative_improvement": 0.0
+        }
+      },
+      "permuted": {
+        "pairs": 384,
+        "eligible": 384,
+        "eligible_fraction": 1.0,
+        "accepted": 0,
+        "accepted_fraction_all": 0.0,
+        "accepted_fraction_eligible": 0.0,
+        "fit": {
+          "correspondences": 18804,
+          "identity_rmse": 0.34876142639175484,
+          "candidate_rmse": 0.3401785089990571,
+          "gated_rmse": 0.34876142639175484,
+          "candidate_relative_improvement": 0.0246097095125903,
+          "gated_relative_improvement": 0.0
+        },
+        "gate": {
+          "correspondences": 9395,
+          "identity_rmse": 0.34922951169821087,
+          "candidate_rmse": 0.34864756312297396,
+          "gated_rmse": 0.34922951169821087,
+          "candidate_relative_improvement": 0.001666378572667156,
+          "gated_relative_improvement": 0.0
+        },
+        "audit": {
+          "correspondences": 9602,
+          "identity_rmse": 0.3492964827291244,
+          "candidate_rmse": 0.3485979633544934,
+          "gated_rmse": 0.3492964827291244,
+          "candidate_relative_improvement": 0.0019997893170103738,
+          "gated_relative_improvement": 0.0
+        }
+      },
+      "wrong_video": {
+        "pairs": 384,
+        "eligible": 341,
+        "eligible_fraction": 0.8880208333333334,
+        "accepted": 0,
+        "accepted_fraction_all": 0.0,
+        "accepted_fraction_eligible": 0.0,
+        "fit": {
+          "correspondences": 7161,
+          "identity_rmse": 0.10447462508544347,
+          "candidate_rmse": 0.10006845969115331,
+          "gated_rmse": 0.10447462508544347,
+          "candidate_relative_improvement": 0.04217450304977523,
+          "gated_relative_improvement": 0.0
+        },
+        "gate": {
+          "correspondences": 3585,
+          "identity_rmse": 0.10508975845668922,
+          "candidate_rmse": 0.1046001827001022,
+          "gated_rmse": 0.10508975845668922,
+          "candidate_relative_improvement": 0.004658643846715003,
+          "gated_relative_improvement": 0.0
+        },
+        "audit": {
+          "correspondences": 3748,
+          "identity_rmse": 0.10576665663708408,
+          "candidate_rmse": 0.10533235356942458,
+          "gated_rmse": 0.10576665663708408,
+          "candidate_relative_improvement": 0.004106238028774221,
+          "gated_relative_improvement": 0.0
+        }
+      }
+    },
+    "test": {
+      "matched": {
+        "pairs": 684,
+        "eligible": 684,
+        "eligible_fraction": 1.0,
+        "accepted": 0,
+        "accepted_fraction_all": 0.0,
+        "accepted_fraction_eligible": 0.0,
+        "fit": {
+          "correspondences": 36007,
+          "identity_rmse": 0.08859840478309905,
+          "candidate_rmse": 0.08595074102966394,
+          "gated_rmse": 0.08859840478309905,
+          "candidate_relative_improvement": 0.029883876125275117,
+          "gated_relative_improvement": 0.0
+        },
+        "gate": {
+          "correspondences": 18004,
+          "identity_rmse": 0.0888386179278847,
+          "candidate_rmse": 0.08890917905706401,
+          "gated_rmse": 0.0888386179278847,
+          "candidate_relative_improvement": -0.0007942618967417438,
+          "gated_relative_improvement": 0.0
+        },
+        "audit": {
+          "correspondences": 18351,
+          "identity_rmse": 0.08914431169269237,
+          "candidate_rmse": 0.08926238598467312,
+          "gated_rmse": 0.08914431169269237,
+          "candidate_relative_improvement": -0.0013245297399097423,
+          "gated_relative_improvement": 0.0
+        }
+      },
+      "permuted": {
+        "pairs": 684,
+        "eligible": 684,
+        "eligible_fraction": 1.0,
+        "accepted": 0,
+        "accepted_fraction_all": 0.0,
+        "accepted_fraction_eligible": 0.0,
+        "fit": {
+          "correspondences": 36007,
+          "identity_rmse": 0.3503109441246548,
+          "candidate_rmse": 0.3413488849594969,
+          "gated_rmse": 0.3503109441246548,
+          "candidate_relative_improvement": 0.025583154952672122,
+          "gated_relative_improvement": 0.0
+        },
+        "gate": {
+          "correspondences": 18004,
+          "identity_rmse": 0.35009306191626344,
+          "candidate_rmse": 0.34925614299261243,
+          "gated_rmse": 0.35009306191626344,
+          "candidate_relative_improvement": 0.002390561295531147,
+          "gated_relative_improvement": 0.0
+        },
+        "audit": {
+          "correspondences": 18351,
+          "identity_rmse": 0.3495231386813599,
+          "candidate_rmse": 0.34879816220290855,
+          "gated_rmse": 0.3495231386813599,
+          "candidate_relative_improvement": 0.0020741873662112457,
+          "gated_relative_improvement": 0.0
+        }
+      },
+      "wrong_video": {
+        "pairs": 684,
+        "eligible": 643,
+        "eligible_fraction": 0.9400584795321637,
+        "accepted": 0,
+        "accepted_fraction_all": 0.0,
+        "accepted_fraction_eligible": 0.0,
+        "fit": {
+          "correspondences": 13527,
+          "identity_rmse": 0.1047381729228496,
+          "candidate_rmse": 0.10028471693756562,
+          "gated_rmse": 0.1047381729228496,
+          "candidate_relative_improvement": 0.04251989375988461,
+          "gated_relative_improvement": 0.0
+        },
+        "gate": {
+          "correspondences": 6769,
+          "identity_rmse": 0.10419486569412968,
+          "candidate_rmse": 0.1037251981612445,
+          "gated_rmse": 0.10419486569412968,
+          "candidate_relative_improvement": 0.00450758806354168,
+          "gated_relative_improvement": 0.0
+        },
+        "audit": {
+          "correspondences": 7076,
+          "identity_rmse": 0.10485402097341577,
+          "candidate_rmse": 0.1043333091835482,
+          "gated_rmse": 0.10485402097341577,
+          "candidate_relative_improvement": 0.004966064105444142,
+          "gated_relative_improvement": 0.0
+        }
+      }
+    }
+  },
+  "go": false,
+  "interpretation": "frozen visual feature preflight; no forecast answer produced, no semantic identity labels, no live memory transport",
+  "limitations": [
+    "overlapping episodes and only two exploratory test days",
+    "matching does not verify object identity or separate camera motion from object change",
+    "fixed random projection and train PCA are not the proposed learned key encoder",
+    "not same input budget as90frame forecasting; this probes12adjacentpairs"
+  ],
+  "protocol_sha256": "7a36d5dd779d55d83d54c174a8ff1ea8a19dc3b230b4180a187ce0e5ed586c34",
+  "sources": {
+    "ttt_frame/idea2_transport_audit.py": "345ca2d95b659b7030aa626eaede4d7064ee7998dcd0f7b0198155ae243bdd54",
+    "scripts/run_idea2_transport.py": "356e7b89805c5e0d5b405397b1bd0bcfb8175a164a34a7efe6415f8888afb887",
+    "ttt_frame/key_transport.py": "ef1e752c9c38705304e600104d5d6333c16e5b3cfd53fd20fc6490cf566075c7",
+    "ttt_frame/forecast_features.py": "0ea30f8f209f76b5649dcc648995bd5e4da40b87c3edc11712fc9025852dcfff",
+    "ttt_frame/forecast_mcq.py": "27dbce7dddff826ae66b3c4f794b66319f4698ed4d58a48ee99be1eb08b0b5bd",
+    "ttt_frame/forecast_bench.py": "0b18e4437123533851595d3ad5254ce0f2a0c2a10ec85af08ca133ae1a945407",
+    "ttt_frame/vision_attention.py": "05bb772f9c5e40c1b131720dc63229951fb4f716507c40841af7e7c9c0c12f72",
+    "ttt_frame/vision_patch_embed.py": "19a16da6fd6ccfcc5e31a4b0a39899a86fd1df613b4a68146185c414ba9ca868"
+  },
+  "answer_files_read": false,
+  "runtime_seconds": {
+    "decode_seconds": 1048.2371332000475,
+    "encode_seconds": 77.74584901682101,
+    "elapsed_seconds": 1125.9829822168685
+  }
+}

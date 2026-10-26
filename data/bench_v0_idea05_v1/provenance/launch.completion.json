@@ -1,0 +1,13 @@
+{
+  "complete": true,
+  "elapsed_seconds": 532.2327916692011,
+  "workers": 4,
+  "devices": [
+    "cuda:4",
+    "cuda:4",
+    "cuda:5",
+    "cuda:5"
+  ],
+  "scores_sha256": "be60b01e500e3b146e08689af4d51c11135b0037f23d2d7f973e2376e5a2bd52",
+  "launcher_sha256": "3624d6388294504f86f7232ecec128b64a62f4365719923ca283f78e66ee3f99"
+}

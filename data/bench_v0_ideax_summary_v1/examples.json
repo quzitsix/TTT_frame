@@ -1,0 +1,1546 @@
+[
+  {
+    "id": "egolife_023",
+    "research_split": "test",
+    "day": 6,
+    "question": "结合此前30分钟的历史视频和最近30秒视频，预测佩戴者在接下来的5秒内会做的一个具体动作。请选择一个最符合预测的选项。",
+    "options": [
+      {
+        "label": "A",
+        "text": "我拿起了一个抱枕"
+      },
+      {
+        "label": "B",
+        "text": "我整理了一下窗帘"
+      },
+      {
+        "label": "C",
+        "text": "我把被子叠整齐了"
+      },
+      {
+        "label": "D",
+        "text": "我整理了一下枕头"
+      },
+      {
+        "label": "E",
+        "text": "我接过了这个床单"
+      },
+      {
+        "label": "F",
+        "text": "我拿起了一个玩偶"
+      }
+    ],
+    "reference": {
+      "label": "E",
+      "text": "我接过了这个床单",
+      "category": "handover",
+      "silver_label": true
+    },
+    "predictions": {
+      "full_ICL": {
+        "label": "D",
+        "text": "我整理了一下枕头",
+        "correct": false,
+        "released_option_role": "plausible_not_observed"
+      },
+      "recent_ICL": {
+        "label": "E",
+        "text": "我接过了这个床单",
+        "correct": true,
+        "released_option_role": "ground_truth"
+      },
+      "idea1_recent_only": {
+        "label": "C",
+        "text": "我把被子叠整齐了",
+        "correct": false,
+        "released_option_role": "plausible_not_observed"
+      },
+      "idea1_residual": {
+        "label": "C",
+        "text": "我把被子叠整齐了",
+        "correct": false,
+        "released_option_role": "plausible_not_observed"
+      },
+      "idea1_plain_delayed": {
+        "label": "C",
+        "text": "我把被子叠整齐了",
+        "correct": false,
+        "released_option_role": "plausible_not_observed"
+      },
+      "idea1_reset_residual": {
+        "label": "C",
+        "text": "我把被子叠整齐了",
+        "correct": false,
+        "released_option_role": "plausible_not_observed"
+      },
+      "idea3_direct": {
+        "label": "A",
+        "text": "我拿起了一个抱枕",
+        "correct": false,
+        "released_option_role": "implausible_not_observed"
+      },
+      "idea3_search": {
+        "label": "F",
+        "text": "我拿起了一个玩偶",
+        "correct": false,
+        "released_option_role": "implausible_not_observed"
+      },
+      "idea3_reset": {
+        "label": "F",
+        "text": "我拿起了一个玩偶",
+        "correct": false,
+        "released_option_role": "implausible_not_observed"
+      },
+      "idea3_wrong_direct": {
+        "label": "A",
+        "text": "我拿起了一个抱枕",
+        "correct": false,
+        "released_option_role": "implausible_not_observed"
+      },
+      "idea3_wrong_search": {
+        "label": "F",
+        "text": "我拿起了一个玩偶",
+        "correct": false,
+        "released_option_role": "implausible_not_observed"
+      },
+      "idea4_teacher": {
+        "label": "C",
+        "text": "我把被子叠整齐了",
+        "correct": false,
+        "released_option_role": "plausible_not_observed"
+      },
+      "idea4_fixed_full": {
+        "label": "C",
+        "text": "我把被子叠整齐了",
+        "correct": false,
+        "released_option_role": "plausible_not_observed"
+      },
+      "idea4_conditioned_full": {
+        "label": "C",
+        "text": "我把被子叠整齐了",
+        "correct": false,
+        "released_option_role": "plausible_not_observed"
+      },
+      "idea4_fixed_warm20": {
+        "label": "C",
+        "text": "我把被子叠整齐了",
+        "correct": false,
+        "released_option_role": "plausible_not_observed"
+      },
+      "idea4_conditioned_warm20": {
+        "label": "C",
+        "text": "我把被子叠整齐了",
+        "correct": false,
+        "released_option_role": "plausible_not_observed"
+      },
+      "idea4_fixed_copy": {
+        "label": "C",
+        "text": "我把被子叠整齐了",
+        "correct": false,
+        "released_option_role": "plausible_not_observed"
+      },
+      "idea4_fixed_oracle": {
+        "label": "C",
+        "text": "我把被子叠整齐了",
+        "correct": false,
+        "released_option_role": "plausible_not_observed"
+      },
+      "idea5_low112": {
+        "label": "D",
+        "text": "我整理了一下枕头",
+        "correct": false,
+        "released_option_role": "plausible_not_observed"
+      },
+      "idea5_mid224": {
+        "label": "D",
+        "text": "我整理了一下枕头",
+        "correct": false,
+        "released_option_role": "plausible_not_observed"
+      },
+      "idea5_high448": {
+        "label": "E",
+        "text": "我接过了这个床单",
+        "correct": true,
+        "released_option_role": "ground_truth"
+      },
+      "idea5_uniform_high": {
+        "label": "D",
+        "text": "我整理了一下枕头",
+        "correct": false,
+        "released_option_role": "plausible_not_observed"
+      },
+      "idea5_random_high": {
+        "label": "D",
+        "text": "我整理了一下枕头",
+        "correct": false,
+        "released_option_role": "plausible_not_observed"
+      },
+      "idea5_motion_high": {
+        "label": "E",
+        "text": "我接过了这个床单",
+        "correct": true,
+        "released_option_role": "ground_truth"
+      },
+      "idea5_deadline_high_posthoc": {
+        "label": "E",
+        "text": "我接过了这个床单",
+        "correct": true,
+        "released_option_role": "ground_truth"
+      }
+    },
+    "selection_reasons": [
+      "idea5_high448 改对 idea5_low112 的错误"
+    ]
+  },
+  {
+    "id": "egolife_024",
+    "research_split": "test",
+    "day": 6,
+    "question": "结合此前30分钟的历史视频和最近30秒视频，预测佩戴者在接下来的5秒内会做的一个具体动作。请选择一个最符合预测的选项。",
+    "options": [
+      {
+        "label": "A",
+        "text": "我拿起床边的手机"
+      },
+      {
+        "label": "B",
+        "text": "我摘下头上的耳机"
+      },
+      {
+        "label": "C",
+        "text": "我整理凌乱的被子"
+      },
+      {
+        "label": "D",
+        "text": "我拖动鼠标指针"
+      },
+      {
+        "label": "E",
+        "text": "我拿起桌上的水杯"
+      },
+      {
+        "label": "F",
+        "text": "我打开刚才的黑色软件"
+      }
+    ],
+    "reference": {
+      "label": "F",
+      "text": "我打开刚才的黑色软件",
+      "category": "open",
+      "silver_label": true
+    },
+    "predictions": {
+      "full_ICL": {
+        "label": "B",
+        "text": "我摘下头上的耳机",
+        "correct": false,
+        "released_option_role": "implausible_not_observed"
+      },
+      "recent_ICL": {
+        "label": "D",
+        "text": "我拖动鼠标指针",
+        "correct": false,
+        "released_option_role": "plausible_not_observed"
+      },
+      "idea1_recent_only": {
+        "label": "F",
+        "text": "我打开刚才的黑色软件",
+        "correct": true,
+        "released_option_role": "ground_truth"
+      },
+      "idea1_residual": {
+        "label": "F",
+        "text": "我打开刚才的黑色软件",
+        "correct": true,
+        "released_option_role": "ground_truth"
+      },
+      "idea1_plain_delayed": {
+        "label": "F",
+        "text": "我打开刚才的黑色软件",
+        "correct": true,
+        "released_option_role": "ground_truth"
+      },
+      "idea1_reset_residual": {
+        "label": "F",
+        "text": "我打开刚才的黑色软件",
+        "correct": true,
+        "released_option_role": "ground_truth"
+      },
+      "idea3_direct": {
+        "label": "B",
+        "text": "我摘下头上的耳机",
+        "correct": false,
+        "released_option_role": "implausible_not_observed"
+      },
+      "idea3_search": {
+        "label": "A",
+        "text": "我拿起床边的手机",
+        "correct": false,
+        "released_option_role": "implausible_not_observed"
+      },
+      "idea3_reset": {
+        "label": "B",
+        "text": "我摘下头上的耳机",
+        "correct": false,
+        "released_option_role": "implausible_not_observed"
+      },
+      "idea3_wrong_direct": {
+        "label": "B",
+        "text": "我摘下头上的耳机",
+        "correct": false,
+        "released_option_role": "implausible_not_observed"
+      },
+      "idea3_wrong_search": {
+        "label": "B",
+        "text": "我摘下头上的耳机",
+        "correct": false,
+        "released_option_role": "implausible_not_observed"
+      },
+      "idea4_teacher": {
+        "label": "F",
+        "text": "我打开刚才的黑色软件",
+        "correct": true,
+        "released_option_role": "ground_truth"
+      },
+      "idea4_fixed_full": {
+        "label": "F",
+        "text": "我打开刚才的黑色软件",
+        "correct": true,
+        "released_option_role": "ground_truth"
+      },
+      "idea4_conditioned_full": {
+        "label": "F",
+        "text": "我打开刚才的黑色软件",
+        "correct": true,
+        "released_option_role": "ground_truth"
+      },
+      "idea4_fixed_warm20": {
+        "label": "F",
+        "text": "我打开刚才的黑色软件",
+        "correct": true,
+        "released_option_role": "ground_truth"
+      },
+      "idea4_conditioned_warm20": {
+        "label": "F",
+        "text": "我打开刚才的黑色软件",
+        "correct": true,
+        "released_option_role": "ground_truth"
+      },
+      "idea4_fixed_copy": {
+        "label": "F",
+        "text": "我打开刚才的黑色软件",
+        "correct": true,
+        "released_option_role": "ground_truth"
+      },
+      "idea4_fixed_oracle": {
+        "label": "F",
+        "text": "我打开刚才的黑色软件",
+        "correct": true,
+        "released_option_role": "ground_truth"
+      },
+      "idea5_low112": {
+        "label": "F",
+        "text": "我打开刚才的黑色软件",
+        "correct": true,
+        "released_option_role": "ground_truth"
+      },
+      "idea5_mid224": {
+        "label": "B",
+        "text": "我摘下头上的耳机",
+        "correct": false,
+        "released_option_role": "implausible_not_observed"
+      },
+      "idea5_high448": {
+        "label": "B",
+        "text": "我摘下头上的耳机",
+        "correct": false,
+        "released_option_role": "implausible_not_observed"
+      },
+      "idea5_uniform_high": {
+        "label": "B",
+        "text": "我摘下头上的耳机",
+        "correct": false,
+        "released_option_role": "implausible_not_observed"
+      },
+      "idea5_random_high": {
+        "label": "B",
+        "text": "我摘下头上的耳机",
+        "correct": false,
+        "released_option_role": "implausible_not_observed"
+      },
+      "idea5_motion_high": {
+        "label": "B",
+        "text": "我摘下头上的耳机",
+        "correct": false,
+        "released_option_role": "implausible_not_observed"
+      },
+      "idea5_deadline_high_posthoc": {
+        "label": "F",
+        "text": "我打开刚才的黑色软件",
+        "correct": true,
+        "released_option_role": "ground_truth"
+      }
+    },
+    "selection_reasons": [
+      "idea5_high448 改错 idea5_low112 的正确答案"
+    ]
+  },
+  {
+    "id": "egolife_027",
+    "research_split": "test",
+    "day": 7,
+    "question": "结合此前30分钟的历史视频和最近30秒视频，预测佩戴者在接下来的5秒内会做的一个具体动作。请选择一个最符合预测的选项。",
+    "options": [
+      {
+        "label": "A",
+        "text": "我打开一瓶饮料"
+      },
+      {
+        "label": "B",
+        "text": "我拿起另一个杯子"
+      },
+      {
+        "label": "C",
+        "text": "我拿起一瓶酱油"
+      },
+      {
+        "label": "D",
+        "text": "我拿起一块饼干"
+      },
+      {
+        "label": "E",
+        "text": "我拿起一把勺子"
+      },
+      {
+        "label": "F",
+        "text": "我拿起一块奶酪"
+      }
+    ],
+    "reference": {
+      "label": "B",
+      "text": "我拿起另一个杯子",
+      "category": "take",
+      "silver_label": true
+    },
+    "predictions": {
+      "full_ICL": {
+        "label": "B",
+        "text": "我拿起另一个杯子",
+        "correct": true,
+        "released_option_role": "ground_truth"
+      },
+      "recent_ICL": {
+        "label": "B",
+        "text": "我拿起另一个杯子",
+        "correct": true,
+        "released_option_role": "ground_truth"
+      },
+      "idea1_recent_only": {
+        "label": "C",
+        "text": "我拿起一瓶酱油",
+        "correct": false,
+        "released_option_role": "implausible_not_observed"
+      },
+      "idea1_residual": {
+        "label": "C",
+        "text": "我拿起一瓶酱油",
+        "correct": false,
+        "released_option_role": "implausible_not_observed"
+      },
+      "idea1_plain_delayed": {
+        "label": "C",
+        "text": "我拿起一瓶酱油",
+        "correct": false,
+        "released_option_role": "implausible_not_observed"
+      },
+      "idea1_reset_residual": {
+        "label": "C",
+        "text": "我拿起一瓶酱油",
+        "correct": false,
+        "released_option_role": "implausible_not_observed"
+      },
+      "idea3_direct": {
+        "label": "E",
+        "text": "我拿起一把勺子",
+        "correct": false,
+        "released_option_role": "plausible_not_observed"
+      },
+      "idea3_search": {
+        "label": "A",
+        "text": "我打开一瓶饮料",
+        "correct": false,
+        "released_option_role": "plausible_not_observed"
+      },
+      "idea3_reset": {
+        "label": "F",
+        "text": "我拿起一块奶酪",
+        "correct": false,
+        "released_option_role": "implausible_not_observed"
+      },
+      "idea3_wrong_direct": {
+        "label": "F",
+        "text": "我拿起一块奶酪",
+        "correct": false,
+        "released_option_role": "implausible_not_observed"
+      },
+      "idea3_wrong_search": {
+        "label": "F",
+        "text": "我拿起一块奶酪",
+        "correct": false,
+        "released_option_role": "implausible_not_observed"
+      },
+      "idea4_teacher": {
+        "label": "C",
+        "text": "我拿起一瓶酱油",
+        "correct": false,
+        "released_option_role": "implausible_not_observed"
+      },
+      "idea4_fixed_full": {
+        "label": "C",
+        "text": "我拿起一瓶酱油",
+        "correct": false,
+        "released_option_role": "implausible_not_observed"
+      },
+      "idea4_conditioned_full": {
+        "label": "C",
+        "text": "我拿起一瓶酱油",
+        "correct": false,
+        "released_option_role": "implausible_not_observed"
+      },
+      "idea4_fixed_warm20": {
+        "label": "C",
+        "text": "我拿起一瓶酱油",
+        "correct": false,
+        "released_option_role": "implausible_not_observed"
+      },
+      "idea4_conditioned_warm20": {
+        "label": "C",
+        "text": "我拿起一瓶酱油",
+        "correct": false,
+        "released_option_role": "implausible_not_observed"
+      },
+      "idea4_fixed_copy": {
+        "label": "C",
+        "text": "我拿起一瓶酱油",
+        "correct": false,
+        "released_option_role": "implausible_not_observed"
+      },
+      "idea4_fixed_oracle": {
+        "label": "C",
+        "text": "我拿起一瓶酱油",
+        "correct": false,
+        "released_option_role": "implausible_not_observed"
+      },
+      "idea5_low112": {
+        "label": "C",
+        "text": "我拿起一瓶酱油",
+        "correct": false,
+        "released_option_role": "implausible_not_observed"
+      },
+      "idea5_mid224": {
+        "label": "B",
+        "text": "我拿起另一个杯子",
+        "correct": true,
+        "released_option_role": "ground_truth"
+      },
+      "idea5_high448": {
+        "label": "B",
+        "text": "我拿起另一个杯子",
+        "correct": true,
+        "released_option_role": "ground_truth"
+      },
+      "idea5_uniform_high": {
+        "label": "C",
+        "text": "我拿起一瓶酱油",
+        "correct": false,
+        "released_option_role": "implausible_not_observed"
+      },
+      "idea5_random_high": {
+        "label": "C",
+        "text": "我拿起一瓶酱油",
+        "correct": false,
+        "released_option_role": "implausible_not_observed"
+      },
+      "idea5_motion_high": {
+        "label": "B",
+        "text": "我拿起另一个杯子",
+        "correct": true,
+        "released_option_role": "ground_truth"
+      },
+      "idea5_deadline_high_posthoc": {
+        "label": "B",
+        "text": "我拿起另一个杯子",
+        "correct": true,
+        "released_option_role": "ground_truth"
+      }
+    },
+    "selection_reasons": [
+      "idea5_motion_high 改对 idea5_uniform_high 的错误"
+    ]
+  },
+  {
+    "id": "egolife_093",
+    "research_split": "test",
+    "day": 6,
+    "question": "结合此前30分钟的历史视频和最近30秒视频，预测佩戴者在接下来的5秒内会做的一个具体动作。请选择一个最符合预测的选项。",
+    "options": [
+      {
+        "label": "A",
+        "text": "我擦了擦眼镜片"
+      },
+      {
+        "label": "B",
+        "text": "我拿起了桌上的书"
+      },
+      {
+        "label": "C",
+        "text": "我调整了一下耳机"
+      },
+      {
+        "label": "D",
+        "text": "我喝了一口矿泉水"
+      },
+      {
+        "label": "E",
+        "text": "我拍了一下地板"
+      },
+      {
+        "label": "F",
+        "text": "我放下手中的水瓶"
+      }
+    ],
+    "reference": {
+      "label": "D",
+      "text": "我喝了一口矿泉水",
+      "category": "eat_drink",
+      "silver_label": true
+    },
+    "predictions": {
+      "full_ICL": {
+        "label": "D",
+        "text": "我喝了一口矿泉水",
+        "correct": true,
+        "released_option_role": "ground_truth"
+      },
+      "recent_ICL": {
+        "label": "F",
+        "text": "我放下手中的水瓶",
+        "correct": false,
+        "released_option_role": "plausible_not_observed"
+      },
+      "idea1_recent_only": {
+        "label": "C",
+        "text": "我调整了一下耳机",
+        "correct": false,
+        "released_option_role": "implausible_not_observed"
+      },
+      "idea1_residual": {
+        "label": "C",
+        "text": "我调整了一下耳机",
+        "correct": false,
+        "released_option_role": "implausible_not_observed"
+      },
+      "idea1_plain_delayed": {
+        "label": "C",
+        "text": "我调整了一下耳机",
+        "correct": false,
+        "released_option_role": "implausible_not_observed"
+      },
+      "idea1_reset_residual": {
+        "label": "C",
+        "text": "我调整了一下耳机",
+        "correct": false,
+        "released_option_role": "implausible_not_observed"
+      },
+      "idea3_direct": {
+        "label": "B",
+        "text": "我拿起了桌上的书",
+        "correct": false,
+        "released_option_role": "implausible_not_observed"
+      },
+      "idea3_search": {
+        "label": "B",
+        "text": "我拿起了桌上的书",
+        "correct": false,
+        "released_option_role": "implausible_not_observed"
+      },
+      "idea3_reset": {
+        "label": "B",
+        "text": "我拿起了桌上的书",
+        "correct": false,
+        "released_option_role": "implausible_not_observed"
+      },
+      "idea3_wrong_direct": {
+        "label": "F",
+        "text": "我放下手中的水瓶",
+        "correct": false,
+        "released_option_role": "plausible_not_observed"
+      },
+      "idea3_wrong_search": {
+        "label": "B",
+        "text": "我拿起了桌上的书",
+        "correct": false,
+        "released_option_role": "implausible_not_observed"
+      },
+      "idea4_teacher": {
+        "label": "C",
+        "text": "我调整了一下耳机",
+        "correct": false,
+        "released_option_role": "implausible_not_observed"
+      },
+      "idea4_fixed_full": {
+        "label": "C",
+        "text": "我调整了一下耳机",
+        "correct": false,
+        "released_option_role": "implausible_not_observed"
+      },
+      "idea4_conditioned_full": {
+        "label": "C",
+        "text": "我调整了一下耳机",
+        "correct": false,
+        "released_option_role": "implausible_not_observed"
+      },
+      "idea4_fixed_warm20": {
+        "label": "C",
+        "text": "我调整了一下耳机",
+        "correct": false,
+        "released_option_role": "implausible_not_observed"
+      },
+      "idea4_conditioned_warm20": {
+        "label": "C",
+        "text": "我调整了一下耳机",
+        "correct": false,
+        "released_option_role": "implausible_not_observed"
+      },
+      "idea4_fixed_copy": {
+        "label": "C",
+        "text": "我调整了一下耳机",
+        "correct": false,
+        "released_option_role": "implausible_not_observed"
+      },
+      "idea4_fixed_oracle": {
+        "label": "C",
+        "text": "我调整了一下耳机",
+        "correct": false,
+        "released_option_role": "implausible_not_observed"
+      },
+      "idea5_low112": {
+        "label": "C",
+        "text": "我调整了一下耳机",
+        "correct": false,
+        "released_option_role": "implausible_not_observed"
+      },
+      "idea5_mid224": {
+        "label": "D",
+        "text": "我喝了一口矿泉水",
+        "correct": true,
+        "released_option_role": "ground_truth"
+      },
+      "idea5_high448": {
+        "label": "D",
+        "text": "我喝了一口矿泉水",
+        "correct": true,
+        "released_option_role": "ground_truth"
+      },
+      "idea5_uniform_high": {
+        "label": "D",
+        "text": "我喝了一口矿泉水",
+        "correct": true,
+        "released_option_role": "ground_truth"
+      },
+      "idea5_random_high": {
+        "label": "D",
+        "text": "我喝了一口矿泉水",
+        "correct": true,
+        "released_option_role": "ground_truth"
+      },
+      "idea5_motion_high": {
+        "label": "C",
+        "text": "我调整了一下耳机",
+        "correct": false,
+        "released_option_role": "implausible_not_observed"
+      },
+      "idea5_deadline_high_posthoc": {
+        "label": "D",
+        "text": "我喝了一口矿泉水",
+        "correct": true,
+        "released_option_role": "ground_truth"
+      }
+    },
+    "selection_reasons": [
+      "idea5_motion_high 改错 idea5_uniform_high 的正确答案"
+    ]
+  },
+  {
+    "id": "egolife_090",
+    "research_split": "test",
+    "day": 6,
+    "question": "结合此前30分钟的历史视频和最近30秒视频，预测佩戴者在接下来的5秒内会做的一个具体动作。请选择一个最符合预测的选项。",
+    "options": [
+      {
+        "label": "A",
+        "text": "我举起双手示意"
+      },
+      {
+        "label": "B",
+        "text": "我把包裹放回去了"
+      },
+      {
+        "label": "C",
+        "text": "我拿着手机走了"
+      },
+      {
+        "label": "D",
+        "text": "我走向对面的房子"
+      },
+      {
+        "label": "E",
+        "text": "我坐在椅子上等了"
+      },
+      {
+        "label": "F",
+        "text": "我接过了快递"
+      }
+    ],
+    "reference": {
+      "label": "F",
+      "text": "我接过了快递",
+      "category": "handover",
+      "silver_label": true
+    },
+    "predictions": {
+      "full_ICL": {
+        "label": "F",
+        "text": "我接过了快递",
+        "correct": true,
+        "released_option_role": "ground_truth"
+      },
+      "recent_ICL": {
+        "label": "F",
+        "text": "我接过了快递",
+        "correct": true,
+        "released_option_role": "ground_truth"
+      },
+      "idea1_recent_only": {
+        "label": "B",
+        "text": "我把包裹放回去了",
+        "correct": false,
+        "released_option_role": "plausible_not_observed"
+      },
+      "idea1_residual": {
+        "label": "B",
+        "text": "我把包裹放回去了",
+        "correct": false,
+        "released_option_role": "plausible_not_observed"
+      },
+      "idea1_plain_delayed": {
+        "label": "B",
+        "text": "我把包裹放回去了",
+        "correct": false,
+        "released_option_role": "plausible_not_observed"
+      },
+      "idea1_reset_residual": {
+        "label": "B",
+        "text": "我把包裹放回去了",
+        "correct": false,
+        "released_option_role": "plausible_not_observed"
+      },
+      "idea3_direct": {
+        "label": "B",
+        "text": "我把包裹放回去了",
+        "correct": false,
+        "released_option_role": "plausible_not_observed"
+      },
+      "idea3_search": {
+        "label": "F",
+        "text": "我接过了快递",
+        "correct": true,
+        "released_option_role": "ground_truth"
+      },
+      "idea3_reset": {
+        "label": "E",
+        "text": "我坐在椅子上等了",
+        "correct": false,
+        "released_option_role": "implausible_not_observed"
+      },
+      "idea3_wrong_direct": {
+        "label": "E",
+        "text": "我坐在椅子上等了",
+        "correct": false,
+        "released_option_role": "implausible_not_observed"
+      },
+      "idea3_wrong_search": {
+        "label": "E",
+        "text": "我坐在椅子上等了",
+        "correct": false,
+        "released_option_role": "implausible_not_observed"
+      },
+      "idea4_teacher": {
+        "label": "B",
+        "text": "我把包裹放回去了",
+        "correct": false,
+        "released_option_role": "plausible_not_observed"
+      },
+      "idea4_fixed_full": {
+        "label": "B",
+        "text": "我把包裹放回去了",
+        "correct": false,
+        "released_option_role": "plausible_not_observed"
+      },
+      "idea4_conditioned_full": {
+        "label": "B",
+        "text": "我把包裹放回去了",
+        "correct": false,
+        "released_option_role": "plausible_not_observed"
+      },
+      "idea4_fixed_warm20": {
+        "label": "B",
+        "text": "我把包裹放回去了",
+        "correct": false,
+        "released_option_role": "plausible_not_observed"
+      },
+      "idea4_conditioned_warm20": {
+        "label": "B",
+        "text": "我把包裹放回去了",
+        "correct": false,
+        "released_option_role": "plausible_not_observed"
+      },
+      "idea4_fixed_copy": {
+        "label": "B",
+        "text": "我把包裹放回去了",
+        "correct": false,
+        "released_option_role": "plausible_not_observed"
+      },
+      "idea4_fixed_oracle": {
+        "label": "B",
+        "text": "我把包裹放回去了",
+        "correct": false,
+        "released_option_role": "plausible_not_observed"
+      },
+      "idea5_low112": {
+        "label": "F",
+        "text": "我接过了快递",
+        "correct": true,
+        "released_option_role": "ground_truth"
+      },
+      "idea5_mid224": {
+        "label": "F",
+        "text": "我接过了快递",
+        "correct": true,
+        "released_option_role": "ground_truth"
+      },
+      "idea5_high448": {
+        "label": "F",
+        "text": "我接过了快递",
+        "correct": true,
+        "released_option_role": "ground_truth"
+      },
+      "idea5_uniform_high": {
+        "label": "F",
+        "text": "我接过了快递",
+        "correct": true,
+        "released_option_role": "ground_truth"
+      },
+      "idea5_random_high": {
+        "label": "F",
+        "text": "我接过了快递",
+        "correct": true,
+        "released_option_role": "ground_truth"
+      },
+      "idea5_motion_high": {
+        "label": "F",
+        "text": "我接过了快递",
+        "correct": true,
+        "released_option_role": "ground_truth"
+      },
+      "idea5_deadline_high_posthoc": {
+        "label": "F",
+        "text": "我接过了快递",
+        "correct": true,
+        "released_option_role": "ground_truth"
+      }
+    },
+    "selection_reasons": [
+      "idea3_search 改对 idea3_direct 的错误"
+    ]
+  },
+  {
+    "id": "egolife_058",
+    "research_split": "test",
+    "day": 6,
+    "question": "结合此前30分钟的历史视频和最近30秒视频，预测佩戴者在接下来的5秒内会做的一个具体动作。请选择一个最符合预测的选项。",
+    "options": [
+      {
+        "label": "A",
+        "text": "我喝了一口水"
+      },
+      {
+        "label": "B",
+        "text": "我站起来吃饭"
+      },
+      {
+        "label": "C",
+        "text": "我打开了盖子"
+      },
+      {
+        "label": "D",
+        "text": "我转身离开了"
+      },
+      {
+        "label": "E",
+        "text": "我站起来走了"
+      },
+      {
+        "label": "F",
+        "text": "我擦了擦嘴"
+      }
+    ],
+    "reference": {
+      "label": "C",
+      "text": "我打开了盖子",
+      "category": "open",
+      "silver_label": true
+    },
+    "predictions": {
+      "full_ICL": {
+        "label": "B",
+        "text": "我站起来吃饭",
+        "correct": false,
+        "released_option_role": "plausible_not_observed"
+      },
+      "recent_ICL": {
+        "label": "C",
+        "text": "我打开了盖子",
+        "correct": true,
+        "released_option_role": "ground_truth"
+      },
+      "idea1_recent_only": {
+        "label": "D",
+        "text": "我转身离开了",
+        "correct": false,
+        "released_option_role": "implausible_not_observed"
+      },
+      "idea1_residual": {
+        "label": "D",
+        "text": "我转身离开了",
+        "correct": false,
+        "released_option_role": "implausible_not_observed"
+      },
+      "idea1_plain_delayed": {
+        "label": "D",
+        "text": "我转身离开了",
+        "correct": false,
+        "released_option_role": "implausible_not_observed"
+      },
+      "idea1_reset_residual": {
+        "label": "D",
+        "text": "我转身离开了",
+        "correct": false,
+        "released_option_role": "implausible_not_observed"
+      },
+      "idea3_direct": {
+        "label": "C",
+        "text": "我打开了盖子",
+        "correct": true,
+        "released_option_role": "ground_truth"
+      },
+      "idea3_search": {
+        "label": "A",
+        "text": "我喝了一口水",
+        "correct": false,
+        "released_option_role": "implausible_not_observed"
+      },
+      "idea3_reset": {
+        "label": "F",
+        "text": "我擦了擦嘴",
+        "correct": false,
+        "released_option_role": "implausible_not_observed"
+      },
+      "idea3_wrong_direct": {
+        "label": "C",
+        "text": "我打开了盖子",
+        "correct": true,
+        "released_option_role": "ground_truth"
+      },
+      "idea3_wrong_search": {
+        "label": "F",
+        "text": "我擦了擦嘴",
+        "correct": false,
+        "released_option_role": "implausible_not_observed"
+      },
+      "idea4_teacher": {
+        "label": "D",
+        "text": "我转身离开了",
+        "correct": false,
+        "released_option_role": "implausible_not_observed"
+      },
+      "idea4_fixed_full": {
+        "label": "D",
+        "text": "我转身离开了",
+        "correct": false,
+        "released_option_role": "implausible_not_observed"
+      },
+      "idea4_conditioned_full": {
+        "label": "D",
+        "text": "我转身离开了",
+        "correct": false,
+        "released_option_role": "implausible_not_observed"
+      },
+      "idea4_fixed_warm20": {
+        "label": "D",
+        "text": "我转身离开了",
+        "correct": false,
+        "released_option_role": "implausible_not_observed"
+      },
+      "idea4_conditioned_warm20": {
+        "label": "D",
+        "text": "我转身离开了",
+        "correct": false,
+        "released_option_role": "implausible_not_observed"
+      },
+      "idea4_fixed_copy": {
+        "label": "D",
+        "text": "我转身离开了",
+        "correct": false,
+        "released_option_role": "implausible_not_observed"
+      },
+      "idea4_fixed_oracle": {
+        "label": "D",
+        "text": "我转身离开了",
+        "correct": false,
+        "released_option_role": "implausible_not_observed"
+      },
+      "idea5_low112": {
+        "label": "B",
+        "text": "我站起来吃饭",
+        "correct": false,
+        "released_option_role": "plausible_not_observed"
+      },
+      "idea5_mid224": {
+        "label": "B",
+        "text": "我站起来吃饭",
+        "correct": false,
+        "released_option_role": "plausible_not_observed"
+      },
+      "idea5_high448": {
+        "label": "B",
+        "text": "我站起来吃饭",
+        "correct": false,
+        "released_option_role": "plausible_not_observed"
+      },
+      "idea5_uniform_high": {
+        "label": "B",
+        "text": "我站起来吃饭",
+        "correct": false,
+        "released_option_role": "plausible_not_observed"
+      },
+      "idea5_random_high": {
+        "label": "B",
+        "text": "我站起来吃饭",
+        "correct": false,
+        "released_option_role": "plausible_not_observed"
+      },
+      "idea5_motion_high": {
+        "label": "B",
+        "text": "我站起来吃饭",
+        "correct": false,
+        "released_option_role": "plausible_not_observed"
+      },
+      "idea5_deadline_high_posthoc": {
+        "label": "B",
+        "text": "我站起来吃饭",
+        "correct": false,
+        "released_option_role": "plausible_not_observed"
+      }
+    },
+    "selection_reasons": [
+      "idea3_search 改错 idea3_direct 的正确答案"
+    ]
+  },
+  {
+    "id": "egolife_026",
+    "research_split": "test",
+    "day": 7,
+    "question": "结合此前30分钟的历史视频和最近30秒视频，预测佩戴者在接下来的5秒内会做的一个具体动作。请选择一个最符合预测的选项。",
+    "options": [
+      {
+        "label": "A",
+        "text": "我触摸手机屏幕确认地址"
+      },
+      {
+        "label": "B",
+        "text": "我点击手机屏幕发送消息"
+      },
+      {
+        "label": "C",
+        "text": "我操作手机屏幕切换应用"
+      },
+      {
+        "label": "D",
+        "text": "我长按手机屏幕刷新页面"
+      },
+      {
+        "label": "E",
+        "text": "我抬起手机查看导航路线"
+      },
+      {
+        "label": "F",
+        "text": "我点击手机屏幕呼出键盘"
+      }
+    ],
+    "reference": {
+      "label": "F",
+      "text": "我点击手机屏幕呼出键盘",
+      "category": "operate",
+      "silver_label": true
+    },
+    "predictions": {
+      "full_ICL": {
+        "label": "A",
+        "text": "我触摸手机屏幕确认地址",
+        "correct": false,
+        "released_option_role": "plausible_not_observed"
+      },
+      "recent_ICL": {
+        "label": "A",
+        "text": "我触摸手机屏幕确认地址",
+        "correct": false,
+        "released_option_role": "plausible_not_observed"
+      },
+      "idea1_recent_only": {
+        "label": "D",
+        "text": "我长按手机屏幕刷新页面",
+        "correct": false,
+        "released_option_role": "implausible_not_observed"
+      },
+      "idea1_residual": {
+        "label": "D",
+        "text": "我长按手机屏幕刷新页面",
+        "correct": false,
+        "released_option_role": "implausible_not_observed"
+      },
+      "idea1_plain_delayed": {
+        "label": "D",
+        "text": "我长按手机屏幕刷新页面",
+        "correct": false,
+        "released_option_role": "implausible_not_observed"
+      },
+      "idea1_reset_residual": {
+        "label": "D",
+        "text": "我长按手机屏幕刷新页面",
+        "correct": false,
+        "released_option_role": "implausible_not_observed"
+      },
+      "idea3_direct": {
+        "label": "B",
+        "text": "我点击手机屏幕发送消息",
+        "correct": false,
+        "released_option_role": "implausible_not_observed"
+      },
+      "idea3_search": {
+        "label": "B",
+        "text": "我点击手机屏幕发送消息",
+        "correct": false,
+        "released_option_role": "implausible_not_observed"
+      },
+      "idea3_reset": {
+        "label": "B",
+        "text": "我点击手机屏幕发送消息",
+        "correct": false,
+        "released_option_role": "implausible_not_observed"
+      },
+      "idea3_wrong_direct": {
+        "label": "B",
+        "text": "我点击手机屏幕发送消息",
+        "correct": false,
+        "released_option_role": "implausible_not_observed"
+      },
+      "idea3_wrong_search": {
+        "label": "B",
+        "text": "我点击手机屏幕发送消息",
+        "correct": false,
+        "released_option_role": "implausible_not_observed"
+      },
+      "idea4_teacher": {
+        "label": "D",
+        "text": "我长按手机屏幕刷新页面",
+        "correct": false,
+        "released_option_role": "implausible_not_observed"
+      },
+      "idea4_fixed_full": {
+        "label": "D",
+        "text": "我长按手机屏幕刷新页面",
+        "correct": false,
+        "released_option_role": "implausible_not_observed"
+      },
+      "idea4_conditioned_full": {
+        "label": "D",
+        "text": "我长按手机屏幕刷新页面",
+        "correct": false,
+        "released_option_role": "implausible_not_observed"
+      },
+      "idea4_fixed_warm20": {
+        "label": "D",
+        "text": "我长按手机屏幕刷新页面",
+        "correct": false,
+        "released_option_role": "implausible_not_observed"
+      },
+      "idea4_conditioned_warm20": {
+        "label": "D",
+        "text": "我长按手机屏幕刷新页面",
+        "correct": false,
+        "released_option_role": "implausible_not_observed"
+      },
+      "idea4_fixed_copy": {
+        "label": "D",
+        "text": "我长按手机屏幕刷新页面",
+        "correct": false,
+        "released_option_role": "implausible_not_observed"
+      },
+      "idea4_fixed_oracle": {
+        "label": "D",
+        "text": "我长按手机屏幕刷新页面",
+        "correct": false,
+        "released_option_role": "implausible_not_observed"
+      },
+      "idea5_low112": {
+        "label": "A",
+        "text": "我触摸手机屏幕确认地址",
+        "correct": false,
+        "released_option_role": "plausible_not_observed"
+      },
+      "idea5_mid224": {
+        "label": "A",
+        "text": "我触摸手机屏幕确认地址",
+        "correct": false,
+        "released_option_role": "plausible_not_observed"
+      },
+      "idea5_high448": {
+        "label": "C",
+        "text": "我操作手机屏幕切换应用",
+        "correct": false,
+        "released_option_role": "plausible_not_observed"
+      },
+      "idea5_uniform_high": {
+        "label": "C",
+        "text": "我操作手机屏幕切换应用",
+        "correct": false,
+        "released_option_role": "plausible_not_observed"
+      },
+      "idea5_random_high": {
+        "label": "C",
+        "text": "我操作手机屏幕切换应用",
+        "correct": false,
+        "released_option_role": "plausible_not_observed"
+      },
+      "idea5_motion_high": {
+        "label": "C",
+        "text": "我操作手机屏幕切换应用",
+        "correct": false,
+        "released_option_role": "plausible_not_observed"
+      },
+      "idea5_deadline_high_posthoc": {
+        "label": "C",
+        "text": "我操作手机屏幕切换应用",
+        "correct": false,
+        "released_option_role": "plausible_not_observed"
+      }
+    },
+    "selection_reasons": [
+      "全部展示方法均错误"
+    ]
+  },
+  {
+    "id": "egolife_022",
+    "research_split": "test",
+    "day": 6,
+    "question": "结合此前30分钟的历史视频和最近30秒视频，预测佩戴者在接下来的5秒内会做的一个具体动作。请选择一个最符合预测的选项。",
+    "options": [
+      {
+        "label": "A",
+        "text": "我喝了一大口牛奶"
+      },
+      {
+        "label": "B",
+        "text": "我把酸奶倒在地上"
+      },
+      {
+        "label": "C",
+        "text": "我喝了一口酸奶"
+      },
+      {
+        "label": "D",
+        "text": "我闻了闻这瓶饮料"
+      },
+      {
+        "label": "E",
+        "text": "我打开了冰箱门"
+      },
+      {
+        "label": "F",
+        "text": "我随手扔掉了瓶子"
+      }
+    ],
+    "reference": {
+      "label": "C",
+      "text": "我喝了一口酸奶",
+      "category": "eat_drink",
+      "silver_label": true
+    },
+    "predictions": {
+      "full_ICL": {
+        "label": "C",
+        "text": "我喝了一口酸奶",
+        "correct": true,
+        "released_option_role": "ground_truth"
+      },
+      "recent_ICL": {
+        "label": "C",
+        "text": "我喝了一口酸奶",
+        "correct": true,
+        "released_option_role": "ground_truth"
+      },
+      "idea1_recent_only": {
+        "label": "B",
+        "text": "我把酸奶倒在地上",
+        "correct": false,
+        "released_option_role": "implausible_not_observed"
+      },
+      "idea1_residual": {
+        "label": "B",
+        "text": "我把酸奶倒在地上",
+        "correct": false,
+        "released_option_role": "implausible_not_observed"
+      },
+      "idea1_plain_delayed": {
+        "label": "B",
+        "text": "我把酸奶倒在地上",
+        "correct": false,
+        "released_option_role": "implausible_not_observed"
+      },
+      "idea1_reset_residual": {
+        "label": "B",
+        "text": "我把酸奶倒在地上",
+        "correct": false,
+        "released_option_role": "implausible_not_observed"
+      },
+      "idea3_direct": {
+        "label": "E",
+        "text": "我打开了冰箱门",
+        "correct": false,
+        "released_option_role": "implausible_not_observed"
+      },
+      "idea3_search": {
+        "label": "A",
+        "text": "我喝了一大口牛奶",
+        "correct": false,
+        "released_option_role": "implausible_not_observed"
+      },
+      "idea3_reset": {
+        "label": "A",
+        "text": "我喝了一大口牛奶",
+        "correct": false,
+        "released_option_role": "implausible_not_observed"
+      },
+      "idea3_wrong_direct": {
+        "label": "D",
+        "text": "我闻了闻这瓶饮料",
+        "correct": false,
+        "released_option_role": "plausible_not_observed"
+      },
+      "idea3_wrong_search": {
+        "label": "D",
+        "text": "我闻了闻这瓶饮料",
+        "correct": false,
+        "released_option_role": "plausible_not_observed"
+      },
+      "idea4_teacher": {
+        "label": "B",
+        "text": "我把酸奶倒在地上",
+        "correct": false,
+        "released_option_role": "implausible_not_observed"
+      },
+      "idea4_fixed_full": {
+        "label": "B",
+        "text": "我把酸奶倒在地上",
+        "correct": false,
+        "released_option_role": "implausible_not_observed"
+      },
+      "idea4_conditioned_full": {
+        "label": "B",
+        "text": "我把酸奶倒在地上",
+        "correct": false,
+        "released_option_role": "implausible_not_observed"
+      },
+      "idea4_fixed_warm20": {
+        "label": "B",
+        "text": "我把酸奶倒在地上",
+        "correct": false,
+        "released_option_role": "implausible_not_observed"
+      },
+      "idea4_conditioned_warm20": {
+        "label": "B",
+        "text": "我把酸奶倒在地上",
+        "correct": false,
+        "released_option_role": "implausible_not_observed"
+      },
+      "idea4_fixed_copy": {
+        "label": "B",
+        "text": "我把酸奶倒在地上",
+        "correct": false,
+        "released_option_role": "implausible_not_observed"
+      },
+      "idea4_fixed_oracle": {
+        "label": "B",
+        "text": "我把酸奶倒在地上",
+        "correct": false,
+        "released_option_role": "implausible_not_observed"
+      },
+      "idea5_low112": {
+        "label": "C",
+        "text": "我喝了一口酸奶",
+        "correct": true,
+        "released_option_role": "ground_truth"
+      },
+      "idea5_mid224": {
+        "label": "C",
+        "text": "我喝了一口酸奶",
+        "correct": true,
+        "released_option_role": "ground_truth"
+      },
+      "idea5_high448": {
+        "label": "C",
+        "text": "我喝了一口酸奶",
+        "correct": true,
+        "released_option_role": "ground_truth"
+      },
+      "idea5_uniform_high": {
+        "label": "C",
+        "text": "我喝了一口酸奶",
+        "correct": true,
+        "released_option_role": "ground_truth"
+      },
+      "idea5_random_high": {
+        "label": "C",
+        "text": "我喝了一口酸奶",
+        "correct": true,
+        "released_option_role": "ground_truth"
+      },
+      "idea5_motion_high": {
+        "label": "C",
+        "text": "我喝了一口酸奶",
+        "correct": true,
+        "released_option_role": "ground_truth"
+      },
+      "idea5_deadline_high_posthoc": {
+        "label": "C",
+        "text": "我喝了一口酸奶",
+        "correct": true,
+        "released_option_role": "ground_truth"
+      }
+    },
+    "selection_reasons": [
+      "full_ICL 正确的补充例子"
+    ]
+  }
+]

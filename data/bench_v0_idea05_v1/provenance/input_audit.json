@@ -1,0 +1,1018 @@
+{
+  "cases": 200,
+  "source_times_equal": 200,
+  "mid224_pixels_equal": 0,
+  "per_case": [
+    {
+      "id": "egolife_001",
+      "source_times_equal": true,
+      "mid224_pixels_equal": false
+    },
+    {
+      "id": "egolife_002",
+      "source_times_equal": true,
+      "mid224_pixels_equal": false
+    },
+    {
+      "id": "egolife_003",
+      "source_times_equal": true,
+      "mid224_pixels_equal": false
+    },
+    {
+      "id": "egolife_004",
+      "source_times_equal": true,
+      "mid224_pixels_equal": false
+    },
+    {
+      "id": "egolife_005",
+      "source_times_equal": true,
+      "mid224_pixels_equal": false
+    },
+    {
+      "id": "egolife_006",
+      "source_times_equal": true,
+      "mid224_pixels_equal": false
+    },
+    {
+      "id": "egolife_007",
+      "source_times_equal": true,
+      "mid224_pixels_equal": false
+    },
+    {
+      "id": "egolife_008",
+      "source_times_equal": true,
+      "mid224_pixels_equal": false
+    },
+    {
+      "id": "egolife_009",
+      "source_times_equal": true,
+      "mid224_pixels_equal": false
+    },
+    {
+      "id": "egolife_010",
+      "source_times_equal": true,
+      "mid224_pixels_equal": false
+    },
+    {
+      "id": "egolife_011",
+      "source_times_equal": true,
+      "mid224_pixels_equal": false
+    },
+    {
+      "id": "egolife_012",
+      "source_times_equal": true,
+      "mid224_pixels_equal": false
+    },
+    {
+      "id": "egolife_013",
+      "source_times_equal": true,
+      "mid224_pixels_equal": false
+    },
+    {
+      "id": "egolife_014",
+      "source_times_equal": true,
+      "mid224_pixels_equal": false
+    },
+    {
+      "id": "egolife_015",
+      "source_times_equal": true,
+      "mid224_pixels_equal": false
+    },
+    {
+      "id": "egolife_016",
+      "source_times_equal": true,
+      "mid224_pixels_equal": false
+    },
+    {
+      "id": "egolife_017",
+      "source_times_equal": true,
+      "mid224_pixels_equal": false
+    },
+    {
+      "id": "egolife_018",
+      "source_times_equal": true,
+      "mid224_pixels_equal": false
+    },
+    {
+      "id": "egolife_019",
+      "source_times_equal": true,
+      "mid224_pixels_equal": false
+    },
+    {
+      "id": "egolife_020",
+      "source_times_equal": true,
+      "mid224_pixels_equal": false
+    },
+    {
+      "id": "egolife_021",
+      "source_times_equal": true,
+      "mid224_pixels_equal": false
+    },
+    {
+      "id": "egolife_022",
+      "source_times_equal": true,
+      "mid224_pixels_equal": false
+    },
+    {
+      "id": "egolife_023",
+      "source_times_equal": true,
+      "mid224_pixels_equal": false
+    },
+    {
+      "id": "egolife_024",
+      "source_times_equal": true,
+      "mid224_pixels_equal": false
+    },
+    {
+      "id": "egolife_025",
+      "source_times_equal": true,
+      "mid224_pixels_equal": false
+    },
+    {
+      "id": "egolife_026",
+      "source_times_equal": true,
+      "mid224_pixels_equal": false
+    },
+    {
+      "id": "egolife_027",
+      "source_times_equal": true,
+      "mid224_pixels_equal": false
+    },
+    {
+      "id": "egolife_028",
+      "source_times_equal": true,
+      "mid224_pixels_equal": false
+    },
+    {
+      "id": "egolife_029",
+      "source_times_equal": true,
+      "mid224_pixels_equal": false
+    },
+    {
+      "id": "egolife_030",
+      "source_times_equal": true,
+      "mid224_pixels_equal": false
+    },
+    {
+      "id": "egolife_031",
+      "source_times_equal": true,
+      "mid224_pixels_equal": false
+    },
+    {
+      "id": "egolife_032",
+      "source_times_equal": true,
+      "mid224_pixels_equal": false
+    },
+    {
+      "id": "egolife_033",
+      "source_times_equal": true,
+      "mid224_pixels_equal": false
+    },
+    {
+      "id": "egolife_034",
+      "source_times_equal": true,
+      "mid224_pixels_equal": false
+    },
+    {
+      "id": "egolife_035",
+      "source_times_equal": true,
+      "mid224_pixels_equal": false
+    },
+    {
+      "id": "egolife_036",
+      "source_times_equal": true,
+      "mid224_pixels_equal": false
+    },
+    {
+      "id": "egolife_037",
+      "source_times_equal": true,
+      "mid224_pixels_equal": false
+    },
+    {
+      "id": "egolife_038",
+      "source_times_equal": true,
+      "mid224_pixels_equal": false
+    },
+    {
+      "id": "egolife_039",
+      "source_times_equal": true,
+      "mid224_pixels_equal": false
+    },
+    {
+      "id": "egolife_040",
+      "source_times_equal": true,
+      "mid224_pixels_equal": false
+    },
+    {
+      "id": "egolife_041",
+      "source_times_equal": true,
+      "mid224_pixels_equal": false
+    },
+    {
+      "id": "egolife_042",
+      "source_times_equal": true,
+      "mid224_pixels_equal": false
+    },
+    {
+      "id": "egolife_043",
+      "source_times_equal": true,
+      "mid224_pixels_equal": false
+    },
+    {
+      "id": "egolife_044",
+      "source_times_equal": true,
+      "mid224_pixels_equal": false
+    },
+    {
+      "id": "egolife_045",
+      "source_times_equal": true,
+      "mid224_pixels_equal": false
+    },
+    {
+      "id": "egolife_046",
+      "source_times_equal": true,
+      "mid224_pixels_equal": false
+    },
+    {
+      "id": "egolife_047",
+      "source_times_equal": true,
+      "mid224_pixels_equal": false
+    },
+    {
+      "id": "egolife_048",
+      "source_times_equal": true,
+      "mid224_pixels_equal": false
+    },
+    {
+      "id": "egolife_049",
+      "source_times_equal": true,
+      "mid224_pixels_equal": false
+    },
+    {
+      "id": "egolife_050",
+      "source_times_equal": true,
+      "mid224_pixels_equal": false
+    },
+    {
+      "id": "egolife_051",
+      "source_times_equal": true,
+      "mid224_pixels_equal": false
+    },
+    {
+      "id": "egolife_052",
+      "source_times_equal": true,
+      "mid224_pixels_equal": false
+    },
+    {
+      "id": "egolife_053",
+      "source_times_equal": true,
+      "mid224_pixels_equal": false
+    },
+    {
+      "id": "egolife_054",
+      "source_times_equal": true,
+      "mid224_pixels_equal": false
+    },
+    {
+      "id": "egolife_055",
+      "source_times_equal": true,
+      "mid224_pixels_equal": false
+    },
+    {
+      "id": "egolife_056",
+      "source_times_equal": true,
+      "mid224_pixels_equal": false
+    },
+    {
+      "id": "egolife_057",
+      "source_times_equal": true,
+      "mid224_pixels_equal": false
+    },
+    {
+      "id": "egolife_058",
+      "source_times_equal": true,
+      "mid224_pixels_equal": false
+    },
+    {
+      "id": "egolife_059",
+      "source_times_equal": true,
+      "mid224_pixels_equal": false
+    },
+    {
+      "id": "egolife_060",
+      "source_times_equal": true,
+      "mid224_pixels_equal": false
+    },
+    {
+      "id": "egolife_061",
+      "source_times_equal": true,
+      "mid224_pixels_equal": false
+    },
+    {
+      "id": "egolife_062",
+      "source_times_equal": true,
+      "mid224_pixels_equal": false
+    },
+    {
+      "id": "egolife_063",
+      "source_times_equal": true,
+      "mid224_pixels_equal": false
+    },
+    {
+      "id": "egolife_064",
+      "source_times_equal": true,
+      "mid224_pixels_equal": false
+    },
+    {
+      "id": "egolife_065",
+      "source_times_equal": true,
+      "mid224_pixels_equal": false
+    },
+    {
+      "id": "egolife_066",
+      "source_times_equal": true,
+      "mid224_pixels_equal": false
+    },
+    {
+      "id": "egolife_067",
+      "source_times_equal": true,
+      "mid224_pixels_equal": false
+    },
+    {
+      "id": "egolife_068",
+      "source_times_equal": true,
+      "mid224_pixels_equal": false
+    },
+    {
+      "id": "egolife_069",
+      "source_times_equal": true,
+      "mid224_pixels_equal": false
+    },
+    {
+      "id": "egolife_070",
+      "source_times_equal": true,
+      "mid224_pixels_equal": false
+    },
+    {
+      "id": "egolife_071",
+      "source_times_equal": true,
+      "mid224_pixels_equal": false
+    },
+    {
+      "id": "egolife_072",
+      "source_times_equal": true,
+      "mid224_pixels_equal": false
+    },
+    {
+      "id": "egolife_073",
+      "source_times_equal": true,
+      "mid224_pixels_equal": false
+    },
+    {
+      "id": "egolife_074",
+      "source_times_equal": true,
+      "mid224_pixels_equal": false
+    },
+    {
+      "id": "egolife_075",
+      "source_times_equal": true,
+      "mid224_pixels_equal": false
+    },
+    {
+      "id": "egolife_076",
+      "source_times_equal": true,
+      "mid224_pixels_equal": false
+    },
+    {
+      "id": "egolife_077",
+      "source_times_equal": true,
+      "mid224_pixels_equal": false
+    },
+    {
+      "id": "egolife_078",
+      "source_times_equal": true,
+      "mid224_pixels_equal": false
+    },
+    {
+      "id": "egolife_079",
+      "source_times_equal": true,
+      "mid224_pixels_equal": false
+    },
+    {
+      "id": "egolife_080",
+      "source_times_equal": true,
+      "mid224_pixels_equal": false
+    },
+    {
+      "id": "egolife_081",
+      "source_times_equal": true,
+      "mid224_pixels_equal": false
+    },
+    {
+      "id": "egolife_082",
+      "source_times_equal": true,
+      "mid224_pixels_equal": false
+    },
+    {
+      "id": "egolife_083",
+      "source_times_equal": true,
+      "mid224_pixels_equal": false
+    },
+    {
+      "id": "egolife_084",
+      "source_times_equal": true,
+      "mid224_pixels_equal": false
+    },
+    {
+      "id": "egolife_085",
+      "source_times_equal": true,
+      "mid224_pixels_equal": false
+    },
+    {
+      "id": "egolife_086",
+      "source_times_equal": true,
+      "mid224_pixels_equal": false
+    },
+    {
+      "id": "egolife_087",
+      "source_times_equal": true,
+      "mid224_pixels_equal": false
+    },
+    {
+      "id": "egolife_088",
+      "source_times_equal": true,
+      "mid224_pixels_equal": false
+    },
+    {
+      "id": "egolife_089",
+      "source_times_equal": true,
+      "mid224_pixels_equal": false
+    },
+    {
+      "id": "egolife_090",
+      "source_times_equal": true,
+      "mid224_pixels_equal": false
+    },
+    {
+      "id": "egolife_091",
+      "source_times_equal": true,
+      "mid224_pixels_equal": false
+    },
+    {
+      "id": "egolife_092",
+      "source_times_equal": true,
+      "mid224_pixels_equal": false
+    },
+    {
+      "id": "egolife_093",
+      "source_times_equal": true,
+      "mid224_pixels_equal": false
+    },
+    {
+      "id": "egolife_094",
+      "source_times_equal": true,
+      "mid224_pixels_equal": false
+    },
+    {
+      "id": "egolife_095",
+      "source_times_equal": true,
+      "mid224_pixels_equal": false
+    },
+    {
+      "id": "egolife_096",
+      "source_times_equal": true,
+      "mid224_pixels_equal": false
+    },
+    {
+      "id": "egolife_097",
+      "source_times_equal": true,
+      "mid224_pixels_equal": false
+    },
+    {
+      "id": "egolife_098",
+      "source_times_equal": true,
+      "mid224_pixels_equal": false
+    },
+    {
+      "id": "egolife_099",
+      "source_times_equal": true,
+      "mid224_pixels_equal": false
+    },
+    {
+      "id": "egolife_100",
+      "source_times_equal": true,
+      "mid224_pixels_equal": false
+    },
+    {
+      "id": "egolife_101",
+      "source_times_equal": true,
+      "mid224_pixels_equal": false
+    },
+    {
+      "id": "egolife_102",
+      "source_times_equal": true,
+      "mid224_pixels_equal": false
+    },
+    {
+      "id": "egolife_103",
+      "source_times_equal": true,
+      "mid224_pixels_equal": false
+    },
+    {
+      "id": "egolife_104",
+      "source_times_equal": true,
+      "mid224_pixels_equal": false
+    },
+    {
+      "id": "egolife_105",
+      "source_times_equal": true,
+      "mid224_pixels_equal": false
+    },
+    {
+      "id": "egolife_106",
+      "source_times_equal": true,
+      "mid224_pixels_equal": false
+    },
+    {
+      "id": "egolife_107",
+      "source_times_equal": true,
+      "mid224_pixels_equal": false
+    },
+    {
+      "id": "egolife_108",
+      "source_times_equal": true,
+      "mid224_pixels_equal": false
+    },
+    {
+      "id": "egolife_109",
+      "source_times_equal": true,
+      "mid224_pixels_equal": false
+    },
+    {
+      "id": "egolife_110",
+      "source_times_equal": true,
+      "mid224_pixels_equal": false
+    },
+    {
+      "id": "egolife_111",
+      "source_times_equal": true,
+      "mid224_pixels_equal": false
+    },
+    {
+      "id": "egolife_112",
+      "source_times_equal": true,
+      "mid224_pixels_equal": false
+    },
+    {
+      "id": "egolife_113",
+      "source_times_equal": true,
+      "mid224_pixels_equal": false
+    },
+    {
+      "id": "egolife_114",
+      "source_times_equal": true,
+      "mid224_pixels_equal": false
+    },
+    {
+      "id": "egolife_115",
+      "source_times_equal": true,
+      "mid224_pixels_equal": false
+    },
+    {
+      "id": "egolife_116",
+      "source_times_equal": true,
+      "mid224_pixels_equal": false
+    },
+    {
+      "id": "egolife_117",
+      "source_times_equal": true,
+      "mid224_pixels_equal": false
+    },
+    {
+      "id": "egolife_118",
+      "source_times_equal": true,
+      "mid224_pixels_equal": false
+    },
+    {
+      "id": "egolife_119",
+      "source_times_equal": true,
+      "mid224_pixels_equal": false
+    },
+    {
+      "id": "egolife_120",
+      "source_times_equal": true,
+      "mid224_pixels_equal": false
+    },
+    {
+      "id": "egolife_121",
+      "source_times_equal": true,
+      "mid224_pixels_equal": false
+    },
+    {
+      "id": "egolife_122",
+      "source_times_equal": true,
+      "mid224_pixels_equal": false
+    },
+    {
+      "id": "egolife_123",
+      "source_times_equal": true,
+      "mid224_pixels_equal": false
+    },
+    {
+      "id": "egolife_124",
+      "source_times_equal": true,
+      "mid224_pixels_equal": false
+    },
+    {
+      "id": "egolife_125",
+      "source_times_equal": true,
+      "mid224_pixels_equal": false
+    },
+    {
+      "id": "egolife_126",
+      "source_times_equal": true,
+      "mid224_pixels_equal": false
+    },
+    {
+      "id": "egolife_127",
+      "source_times_equal": true,
+      "mid224_pixels_equal": false
+    },
+    {
+      "id": "egolife_128",
+      "source_times_equal": true,
+      "mid224_pixels_equal": false
+    },
+    {
+      "id": "egolife_129",
+      "source_times_equal": true,
+      "mid224_pixels_equal": false
+    },
+    {
+      "id": "egolife_130",
+      "source_times_equal": true,
+      "mid224_pixels_equal": false
+    },
+    {
+      "id": "egolife_131",
+      "source_times_equal": true,
+      "mid224_pixels_equal": false
+    },
+    {
+      "id": "egolife_132",
+      "source_times_equal": true,
+      "mid224_pixels_equal": false
+    },
+    {
+      "id": "egolife_133",
+      "source_times_equal": true,
+      "mid224_pixels_equal": false
+    },
+    {
+      "id": "egolife_134",
+      "source_times_equal": true,
+      "mid224_pixels_equal": false
+    },
+    {
+      "id": "egolife_135",
+      "source_times_equal": true,
+      "mid224_pixels_equal": false
+    },
+    {
+      "id": "egolife_136",
+      "source_times_equal": true,
+      "mid224_pixels_equal": false
+    },
+    {
+      "id": "egolife_137",
+      "source_times_equal": true,
+      "mid224_pixels_equal": false
+    },
+    {
+      "id": "egolife_138",
+      "source_times_equal": true,
+      "mid224_pixels_equal": false
+    },
+    {
+      "id": "egolife_139",
+      "source_times_equal": true,
+      "mid224_pixels_equal": false
+    },
+    {
+      "id": "egolife_140",
+      "source_times_equal": true,
+      "mid224_pixels_equal": false
+    },
+    {
+      "id": "egolife_141",
+      "source_times_equal": true,
+      "mid224_pixels_equal": false
+    },
+    {
+      "id": "egolife_142",
+      "source_times_equal": true,
+      "mid224_pixels_equal": false
+    },
+    {
+      "id": "egolife_143",
+      "source_times_equal": true,
+      "mid224_pixels_equal": false
+    },
+    {
+      "id": "egolife_144",
+      "source_times_equal": true,
+      "mid224_pixels_equal": false
+    },
+    {
+      "id": "egolife_145",
+      "source_times_equal": true,
+      "mid224_pixels_equal": false
+    },
+    {
+      "id": "egolife_146",
+      "source_times_equal": true,
+      "mid224_pixels_equal": false
+    },
+    {
+      "id": "egolife_147",
+      "source_times_equal": true,
+      "mid224_pixels_equal": false
+    },
+    {
+      "id": "egolife_148",
+      "source_times_equal": true,
+      "mid224_pixels_equal": false
+    },
+    {
+      "id": "egolife_149",
+      "source_times_equal": true,
+      "mid224_pixels_equal": false
+    },
+    {
+      "id": "egolife_150",
+      "source_times_equal": true,
+      "mid224_pixels_equal": false
+    },
+    {
+      "id": "egolife_151",
+      "source_times_equal": true,
+      "mid224_pixels_equal": false
+    },
+    {
+      "id": "egolife_152",
+      "source_times_equal": true,
+      "mid224_pixels_equal": false
+    },
+    {
+      "id": "egolife_153",
+      "source_times_equal": true,
+      "mid224_pixels_equal": false
+    },
+    {
+      "id": "egolife_154",
+      "source_times_equal": true,
+      "mid224_pixels_equal": false
+    },
+    {
+      "id": "egolife_155",
+      "source_times_equal": true,
+      "mid224_pixels_equal": false
+    },
+    {
+      "id": "egolife_156",
+      "source_times_equal": true,
+      "mid224_pixels_equal": false
+    },
+    {
+      "id": "egolife_157",
+      "source_times_equal": true,
+      "mid224_pixels_equal": false
+    },
+    {
+      "id": "egolife_158",
+      "source_times_equal": true,
+      "mid224_pixels_equal": false
+    },
+    {
+      "id": "egolife_159",
+      "source_times_equal": true,
+      "mid224_pixels_equal": false
+    },
+    {
+      "id": "egolife_160",
+      "source_times_equal": true,
+      "mid224_pixels_equal": false
+    },
+    {
+      "id": "egolife_161",
+      "source_times_equal": true,
+      "mid224_pixels_equal": false
+    },
+    {
+      "id": "egolife_162",
+      "source_times_equal": true,
+      "mid224_pixels_equal": false
+    },
+    {
+      "id": "egolife_163",
+      "source_times_equal": true,
+      "mid224_pixels_equal": false
+    },
+    {
+      "id": "egolife_164",
+      "source_times_equal": true,
+      "mid224_pixels_equal": false
+    },
+    {
+      "id": "egolife_165",
+      "source_times_equal": true,
+      "mid224_pixels_equal": false
+    },
+    {
+      "id": "egolife_166",
+      "source_times_equal": true,
+      "mid224_pixels_equal": false
+    },
+    {
+      "id": "egolife_167",
+      "source_times_equal": true,
+      "mid224_pixels_equal": false
+    },
+    {
+      "id": "egolife_168",
+      "source_times_equal": true,
+      "mid224_pixels_equal": false
+    },
+    {
+      "id": "egolife_169",
+      "source_times_equal": true,
+      "mid224_pixels_equal": false
+    },
+    {
+      "id": "egolife_170",
+      "source_times_equal": true,
+      "mid224_pixels_equal": false
+    },
+    {
+      "id": "egolife_171",
+      "source_times_equal": true,
+      "mid224_pixels_equal": false
+    },
+    {
+      "id": "egolife_172",
+      "source_times_equal": true,
+      "mid224_pixels_equal": false
+    },
+    {
+      "id": "egolife_173",
+      "source_times_equal": true,
+      "mid224_pixels_equal": false
+    },
+    {
+      "id": "egolife_174",
+      "source_times_equal": true,
+      "mid224_pixels_equal": false
+    },
+    {
+      "id": "egolife_175",
+      "source_times_equal": true,
+      "mid224_pixels_equal": false
+    },
+    {
+      "id": "egolife_176",
+      "source_times_equal": true,
+      "mid224_pixels_equal": false
+    },
+    {
+      "id": "egolife_177",
+      "source_times_equal": true,
+      "mid224_pixels_equal": false
+    },
+    {
+      "id": "egolife_178",
+      "source_times_equal": true,
+      "mid224_pixels_equal": false
+    },
+    {
+      "id": "egolife_179",
+      "source_times_equal": true,
+      "mid224_pixels_equal": false
+    },
+    {
+      "id": "egolife_180",
+      "source_times_equal": true,
+      "mid224_pixels_equal": false
+    },
+    {
+      "id": "egolife_181",
+      "source_times_equal": true,
+      "mid224_pixels_equal": false
+    },
+    {
+      "id": "egolife_182",
+      "source_times_equal": true,
+      "mid224_pixels_equal": false
+    },
+    {
+      "id": "egolife_183",
+      "source_times_equal": true,
+      "mid224_pixels_equal": false
+    },
+    {
+      "id": "egolife_184",
+      "source_times_equal": true,
+      "mid224_pixels_equal": false
+    },
+    {
+      "id": "egolife_185",
+      "source_times_equal": true,
+      "mid224_pixels_equal": false
+    },
+    {
+      "id": "egolife_186",
+      "source_times_equal": true,
+      "mid224_pixels_equal": false
+    },
+    {
+      "id": "egolife_187",
+      "source_times_equal": true,
+      "mid224_pixels_equal": false
+    },
+    {
+      "id": "egolife_188",
+      "source_times_equal": true,
+      "mid224_pixels_equal": false
+    },
+    {
+      "id": "egolife_189",
+      "source_times_equal": true,
+      "mid224_pixels_equal": false
+    },
+    {
+      "id": "egolife_190",
+      "source_times_equal": true,
+      "mid224_pixels_equal": false
+    },
+    {
+      "id": "egolife_191",
+      "source_times_equal": true,
+      "mid224_pixels_equal": false
+    },
+    {
+      "id": "egolife_192",
+      "source_times_equal": true,
+      "mid224_pixels_equal": false
+    },
+    {
+      "id": "egolife_193",
+      "source_times_equal": true,
+      "mid224_pixels_equal": false
+    },
+    {
+      "id": "egolife_194",
+      "source_times_equal": true,
+      "mid224_pixels_equal": false
+    },
+    {
+      "id": "egolife_195",
+      "source_times_equal": true,
+      "mid224_pixels_equal": false
+    },
+    {
+      "id": "egolife_196",
+      "source_times_equal": true,
+      "mid224_pixels_equal": false
+    },
+    {
+      "id": "egolife_197",
+      "source_times_equal": true,
+      "mid224_pixels_equal": false
+    },
+    {
+      "id": "egolife_198",
+      "source_times_equal": true,
+      "mid224_pixels_equal": false
+    },
+    {
+      "id": "egolife_199",
+      "source_times_equal": true,
+      "mid224_pixels_equal": false
+    },
+    {
+      "id": "egolife_200",
+      "source_times_equal": true,
+      "mid224_pixels_equal": false
+    }
+  ],
+  "limitation": "15 segments vs one video, plus 448->224 vs direct224 resizing; not a pure packing ablation",
+  "schema": "idea05_input_audit_v1",
+  "answer_files_read": false,
+  "scores_sha256": "be60b01e500e3b146e08689af4d51c11135b0037f23d2d7f973e2376e5a2bd52",
+  "baseline_shards": {
+    "runs/forecast_bench_v0/mcq_baseline_v1/eval/qwen_shard00.jsonl": "69fb9461f49551b65b3dc38a4b159a28e640c1b14d7fa45daefb119efcbb04fe",
+    "runs/forecast_bench_v0/mcq_baseline_v1/eval/qwen_shard01.jsonl": "dc5e0a9c1b43ed099d9669e6da1338ae98a13cb30c8e1ca7b192cd136e63a8a8",
+    "runs/forecast_bench_v0/mcq_baseline_v1/eval/qwen_shard02.jsonl": "0c3d4087b3aa82e25c823f5d0f22993a8053afe6cfd42fc2c11f674215e520cc",
+    "runs/forecast_bench_v0/mcq_baseline_v1/eval/qwen_shard03.jsonl": "507562c24ae575dbcfc2e5e6dc734cb349f8106624af56d263825b262dbe67f1"
+  },
+  "source_sha256": "19d16c4e769a5e0a76770eef5048804cb01b44cc494dc1dca1430b5782a5b9e2"
+}

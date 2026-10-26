@@ -1,0 +1,184 @@
+{
+  "benchmark_root": "/data/share/raw/bench_v0",
+  "split_manifest": "data/bench_v0_baseline_v1/research_day_split.json",
+  "arms": [
+    {
+      "name": "full_ICL",
+      "path": "data/bench_v0_baseline_v1/qwen_full_icl_predictions.jsonl",
+      "sha256": "585972ce9842fb0d9dfc8422d438c9dc77684daff231b7dba1dac16350e67cb3"
+    },
+    {
+      "name": "recent_ICL",
+      "path": "data/bench_v0_baseline_v1/qwen_recent_icl_predictions.jsonl",
+      "sha256": "c4274155485bdc74af549f001c0d53c2087c0f8524cdd2fb5e25efe0cf71a308"
+    },
+    {
+      "name": "idea1_recent_only",
+      "path": "data/bench_v0_idea01_v1/recent_only_predictions.jsonl",
+      "sha256": "f6365229b1ca498d743c8284cfc55157b99f025c658fabe6ae90a9f1deae43d2"
+    },
+    {
+      "name": "idea1_residual",
+      "path": "data/bench_v0_idea01_v1/residual_predictions.jsonl",
+      "sha256": "e22ffcafbe5b9b4b987ba20191f4306b8d4eddb0950c43ccb5ca40d2ad9b88ba"
+    },
+    {
+      "name": "idea1_plain_delayed",
+      "path": "data/bench_v0_idea01_v1/plain_delayed_predictions.jsonl",
+      "sha256": "62ff079a1f925fdd19ab877ee3a1a009c6136027567ef499be6b615beaacb514"
+    },
+    {
+      "name": "idea1_reset_residual",
+      "path": "data/bench_v0_idea01_v1/reset_residual_predictions.jsonl",
+      "sha256": "f6365229b1ca498d743c8284cfc55157b99f025c658fabe6ae90a9f1deae43d2"
+    },
+    {
+      "name": "idea3_direct",
+      "path": "data/bench_v0_idea03_spatial_v1/per_case.jsonl",
+      "sha256": "30ca51eec41e0e81b29b613c5de1877474007290a73a8d890f20f7771b63ddef",
+      "key": "direct"
+    },
+    {
+      "name": "idea3_search",
+      "path": "data/bench_v0_idea03_spatial_v1/per_case.jsonl",
+      "sha256": "30ca51eec41e0e81b29b613c5de1877474007290a73a8d890f20f7771b63ddef",
+      "key": "search"
+    },
+    {
+      "name": "idea3_reset",
+      "path": "data/bench_v0_idea03_spatial_v1/per_case.jsonl",
+      "sha256": "30ca51eec41e0e81b29b613c5de1877474007290a73a8d890f20f7771b63ddef",
+      "key": "reset"
+    },
+    {
+      "name": "idea3_wrong_direct",
+      "path": "data/bench_v0_idea03_spatial_v1/per_case.jsonl",
+      "sha256": "30ca51eec41e0e81b29b613c5de1877474007290a73a8d890f20f7771b63ddef",
+      "key": "wrong_direct"
+    },
+    {
+      "name": "idea3_wrong_search",
+      "path": "data/bench_v0_idea03_spatial_v1/per_case.jsonl",
+      "sha256": "30ca51eec41e0e81b29b613c5de1877474007290a73a8d890f20f7771b63ddef",
+      "key": "wrong_search"
+    },
+    {
+      "name": "idea4_teacher",
+      "path": "data/bench_v0_idea04_v1/per_case.jsonl",
+      "sha256": "e035e9904c9f9d3602fe8b24f6d633a8d962dfa1ad65563a4a0c61549578dbbc",
+      "key": "teacher"
+    },
+    {
+      "name": "idea4_fixed_full",
+      "path": "data/bench_v0_idea04_v1/per_case.jsonl",
+      "sha256": "e035e9904c9f9d3602fe8b24f6d633a8d962dfa1ad65563a4a0c61549578dbbc",
+      "key": "fixed_full"
+    },
+    {
+      "name": "idea4_conditioned_full",
+      "path": "data/bench_v0_idea04_v1/per_case.jsonl",
+      "sha256": "e035e9904c9f9d3602fe8b24f6d633a8d962dfa1ad65563a4a0c61549578dbbc",
+      "key": "conditioned_full"
+    },
+    {
+      "name": "idea4_fixed_warm20",
+      "path": "data/bench_v0_idea04_v1/per_case.jsonl",
+      "sha256": "e035e9904c9f9d3602fe8b24f6d633a8d962dfa1ad65563a4a0c61549578dbbc",
+      "key": "fixed_warm20"
+    },
+    {
+      "name": "idea4_conditioned_warm20",
+      "path": "data/bench_v0_idea04_v1/per_case.jsonl",
+      "sha256": "e035e9904c9f9d3602fe8b24f6d633a8d962dfa1ad65563a4a0c61549578dbbc",
+      "key": "conditioned_warm20"
+    },
+    {
+      "name": "idea4_fixed_copy",
+      "path": "data/bench_v0_idea04_v1/per_case.jsonl",
+      "sha256": "e035e9904c9f9d3602fe8b24f6d633a8d962dfa1ad65563a4a0c61549578dbbc",
+      "key": "fixed_copy"
+    },
+    {
+      "name": "idea4_fixed_oracle",
+      "path": "data/bench_v0_idea04_v1/per_case.jsonl",
+      "sha256": "e035e9904c9f9d3602fe8b24f6d633a8d962dfa1ad65563a4a0c61549578dbbc",
+      "key": "fixed_oracle"
+    },
+    {
+      "name": "idea5_low112",
+      "path": "data/bench_v0_idea05_v1/per_case.jsonl",
+      "sha256": "692cb374ce3a96707d7f3c6a09112ef5c78cf7c2b0d7b03d8422a728d1d99164",
+      "key": "low112"
+    },
+    {
+      "name": "idea5_mid224",
+      "path": "data/bench_v0_idea05_v1/per_case.jsonl",
+      "sha256": "692cb374ce3a96707d7f3c6a09112ef5c78cf7c2b0d7b03d8422a728d1d99164",
+      "key": "mid224"
+    },
+    {
+      "name": "idea5_high448",
+      "path": "data/bench_v0_idea05_v1/per_case.jsonl",
+      "sha256": "692cb374ce3a96707d7f3c6a09112ef5c78cf7c2b0d7b03d8422a728d1d99164",
+      "key": "high448"
+    },
+    {
+      "name": "idea5_uniform_high",
+      "path": "data/bench_v0_idea05_v1/per_case.jsonl",
+      "sha256": "692cb374ce3a96707d7f3c6a09112ef5c78cf7c2b0d7b03d8422a728d1d99164",
+      "key": "uniform_high"
+    },
+    {
+      "name": "idea5_random_high",
+      "path": "data/bench_v0_idea05_v1/per_case.jsonl",
+      "sha256": "692cb374ce3a96707d7f3c6a09112ef5c78cf7c2b0d7b03d8422a728d1d99164",
+      "key": "random_high"
+    },
+    {
+      "name": "idea5_motion_high",
+      "path": "data/bench_v0_idea05_v1/per_case.jsonl",
+      "sha256": "692cb374ce3a96707d7f3c6a09112ef5c78cf7c2b0d7b03d8422a728d1d99164",
+      "key": "motion_high"
+    },
+    {
+      "name": "idea5_deadline_high_posthoc",
+      "path": "data/bench_v0_idea05_v1/supplement/deadline/per_case.jsonl",
+      "key": "deadline_high",
+      "sha256": "25b851bb1106f94343ad47e0d8609b455f80707347cae6e598998e89baecd11f"
+    }
+  ],
+  "baseline": "full_ICL",
+  "comparisons": [
+    [
+      "idea5_high448",
+      "idea5_low112"
+    ],
+    [
+      "idea5_motion_high",
+      "idea5_uniform_high"
+    ],
+    [
+      "idea4_conditioned_full",
+      "idea4_teacher"
+    ],
+    [
+      "idea3_search",
+      "idea3_direct"
+    ]
+  ],
+  "example_arms": [
+    "full_ICL",
+    "recent_ICL",
+    "idea1_residual",
+    "idea3_direct",
+    "idea3_search",
+    "idea4_conditioned_full",
+    "idea5_low112",
+    "idea5_mid224",
+    "idea5_high448",
+    "idea5_uniform_high",
+    "idea5_motion_high",
+    "idea5_deadline_high_posthoc"
+  ],
+  "example_limit": 10
+}

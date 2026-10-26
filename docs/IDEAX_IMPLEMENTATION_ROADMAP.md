@@ -2,6 +2,11 @@
 
 更新日期：2026-10-20
 
+2026-10-26 后续：Idea2/4/5 的真实视频预检和原型实验已完成，五个方向的尝试、
+结果、预算差异及具体回答见 [实验总报告](IDEAX_EXPERIMENT_SUMMARY_20261026.md)。
+Idea2未通过坐标泛化门槛；Idea4答案与reset/教师相同；Idea5发现细节与偏近期预算
+线索，但未证明记忆条件获取的增量。下文保留最初筛选记录，不代表当前实验进度。
+
 2026-10-25 后续：Idea3 已接入官方 Spatial checkpoint 的原生关联记忆，
 同 90 帧真实视频评测和 reset/wrong-video 对照见
 [IDEA03_BENCH_V0_RESULTS.md](IDEA03_BENCH_V0_RESULTS.md)。该实验是未训练 text-V

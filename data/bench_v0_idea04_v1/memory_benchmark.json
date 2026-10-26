@@ -1,0 +1,45 @@
+{
+  "schema": "idea04_module_timing_v1",
+  "device": "cuda:3",
+  "gpu": "NVIDIA GeForce RTX 4090 D",
+  "case_id": "egolife_001",
+  "source_sha256": "be76c50f85632e2e41db3e5de36f08918f49ee21b9bc16b03af8426eaf9b1e17",
+  "results": {
+    "teacher": {
+      "seconds_per_four_horizon_write": 0.0001448936527594924,
+      "repeat_means_seconds": [
+        0.0001437072525732219,
+        0.0001469573937356472,
+        0.0001448936527594924,
+        0.000144120492041111,
+        0.00014525764854624867
+      ],
+      "process_peak_allocated_bytes": 24769024
+    },
+    "fixed": {
+      "seconds_per_four_horizon_write": 0.001433661754708737,
+      "repeat_means_seconds": [
+        0.001436835853382945,
+        0.001433661754708737,
+        0.0014360327506437898,
+        0.0014296062057837845,
+        0.0014329339028336108
+      ],
+      "process_peak_allocated_bytes": 24965120
+    },
+    "conditioned": {
+      "seconds_per_four_horizon_write": 0.0014102603425271809,
+      "repeat_means_seconds": [
+        0.0014269768958911299,
+        0.001426399196498096,
+        0.0014102603425271809,
+        0.001404657051898539,
+        0.0014077839558012783
+      ],
+      "process_peak_allocated_bytes": 24965120
+    }
+  },
+  "answer_files_read": false,
+  "scope": "one case, four horizons, eight simultaneous tokens, 20 real mature writes, zero initial states, two warmup + five measured repeats, synchronized wall time; all three modules resident; excludes video/baseline/query/teacher training/trajectory generation",
+  "speed_claim": "local unfused implementations only; process peaks include co-resident models and trace data; no end-to-end latency claim"
+}

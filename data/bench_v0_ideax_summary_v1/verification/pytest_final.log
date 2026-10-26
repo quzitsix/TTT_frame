@@ -1,0 +1,201 @@
+........................................................................ [ 10%]
+........................................................................ [ 20%]
+........................................................................ [ 30%]
+........................................................................ [ 40%]
+........................................................................ [ 50%]
+.........F.............................................................. [ 60%]
+........................................................................ [ 70%]
+........................................................................ [ 81%]
+........................................................................ [ 91%]
+...............................................................          [100%]
+=================================== FAILURES ===================================
+__________ test_binding_survives_write_read_with_adequate_perception ___________
+
+    def test_binding_survives_write_read_with_adequate_perception():
+        """The end-to-end claim, with perception factored out.
+    
+        The relocate fixture renders its facts as text in the frames, and a frozen
+        CLIP ViT-B/32 cannot read them: measured, every frame within one session
+        embeds to cosine 0.9996 of every other, so there is nothing for a memory to
+        bind. That is a *perception* limit, and it would otherwise be mistaken for
+        "fast weights cannot hold a binding".
+    
+        This test removes perception from the loop by writing the facts as text
+        embeddings, then asks the memory the same question the benchmark asks. If
+        it passes, the write/revoke/read chain is sound and any failure on the
+        fixture belongs to the encoder.
+    
+        It skips when the weights are not already cached. The load is forced
+        OFFLINE to do that: `from_pretrained` otherwise retries the hub five times
+        with exponential backoff, per file, so on a server without internet it
+        takes over five minutes to raise — long enough that pytest-timeout kills
+        the test before the `except` can turn it into a skip. Measured on the
+        8x4090 box: 331 s and a hard failure instead of an instant skip.
+        """
+        transformers = pytest.importorskip("transformers")
+        try:
+            model = transformers.AutoModel.from_pretrained(
+                "openai/clip-vit-base-patch32", local_files_only=True
+            )
+>           proc = transformers.AutoProcessor.from_pretrained(
+                "openai/clip-vit-base-patch32", local_files_only=True
+            )
+
+tests/test_lact.py:207: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../miniconda3/envs/meowbench/lib/python3.11/site-packages/transformers/models/auto/processing_auto.py:349: in from_pretrained
+    tokenizer_config_file = cached_file(
+../miniconda3/envs/meowbench/lib/python3.11/site-packages/transformers/utils/hub.py:322: in cached_file
+    file = cached_files(path_or_repo_id=path_or_repo_id, filenames=[filename], **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+../miniconda3/envs/meowbench/lib/python3.11/site-packages/transformers/utils/hub.py:479: in cached_files
+    hf_hub_download(
+../miniconda3/envs/meowbench/lib/python3.11/site-packages/huggingface_hub/utils/_validators.py:114: in _inner_fn
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+../miniconda3/envs/meowbench/lib/python3.11/site-packages/huggingface_hub/file_download.py:1014: in hf_hub_download
+    return _hf_hub_download_to_cache_dir(
+../miniconda3/envs/meowbench/lib/python3.11/site-packages/huggingface_hub/file_download.py:1077: in _hf_hub_download_to_cache_dir
+    (url_to_download, etag, commit_hash, expected_size, xet_file_data, head_call_error) = _get_metadata_or_catch_error(
+../miniconda3/envs/meowbench/lib/python3.11/site-packages/huggingface_hub/file_download.py:1550: in _get_metadata_or_catch_error
+    metadata = get_hf_file_metadata(
+../miniconda3/envs/meowbench/lib/python3.11/site-packages/huggingface_hub/utils/_validators.py:114: in _inner_fn
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+../miniconda3/envs/meowbench/lib/python3.11/site-packages/huggingface_hub/file_download.py:1467: in get_hf_file_metadata
+    r = _request_wrapper(
+../miniconda3/envs/meowbench/lib/python3.11/site-packages/huggingface_hub/file_download.py:283: in _request_wrapper
+    response = _request_wrapper(
+../miniconda3/envs/meowbench/lib/python3.11/site-packages/huggingface_hub/file_download.py:306: in _request_wrapper
+    response = http_backoff(method=method, url=url, **params)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+../miniconda3/envs/meowbench/lib/python3.11/site-packages/huggingface_hub/utils/_http.py:307: in http_backoff
+    response = session.request(method=method, url=url, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+../miniconda3/envs/meowbench/lib/python3.11/site-packages/requests/sessions.py:651: in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+../miniconda3/envs/meowbench/lib/python3.11/site-packages/requests/sessions.py:784: in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+../miniconda3/envs/meowbench/lib/python3.11/site-packages/huggingface_hub/utils/_http.py:96: in send
+    return super().send(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+../miniconda3/envs/meowbench/lib/python3.11/site-packages/requests/adapters.py:696: in send
+    resp = conn.urlopen(
+../miniconda3/envs/meowbench/lib/python3.11/site-packages/urllib3/connectionpool.py:788: in urlopen
+    response = self._make_request(
+../miniconda3/envs/meowbench/lib/python3.11/site-packages/urllib3/connectionpool.py:464: in _make_request
+    self._validate_conn(conn)
+../miniconda3/envs/meowbench/lib/python3.11/site-packages/urllib3/connectionpool.py:1106: in _validate_conn
+    conn.connect()
+../miniconda3/envs/meowbench/lib/python3.11/site-packages/urllib3/connection.py:759: in connect
+    self.sock = sock = self._new_conn()
+                       ^^^^^^^^^^^^^^^^
+../miniconda3/envs/meowbench/lib/python3.11/site-packages/urllib3/connection.py:204: in _new_conn
+    sock = connection.create_connection(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+address = ('huggingface.co', 443), timeout = 10, source_address = None
+socket_options = [(6, 1, 1)]
+
+    def create_connection(
+        address: tuple[str, int],
+        timeout: _TYPE_TIMEOUT = _DEFAULT_TIMEOUT,
+        source_address: tuple[str, int] | None = None,
+        socket_options: _TYPE_SOCKET_OPTIONS | None = None,
+    ) -> socket.socket:
+        """Connect to *address* and return the socket object.
+    
+        Convenience function.  Connect to *address* (a 2-tuple ``(host,
+        port)``) and return the socket object.  Passing the optional
+        *timeout* parameter will set the timeout on the socket instance
+        before attempting to connect.  If no *timeout* is supplied, the
+        global default timeout setting returned by :func:`socket.getdefaulttimeout`
+        is used.  If *source_address* is set it must be a tuple of (host, port)
+        for the socket to bind as a source address before making the connection.
+        An host of '' or port 0 tells the OS to use the default.
+        """
+    
+        host, port = address
+        if host.startswith("["):
+            host = host.strip("[]")
+        err = None
+    
+        # Using the value from allowed_gai_family() in the context of getaddrinfo lets
+        # us select whether to work with IPv4 DNS records, IPv6 records, or both.
+        # The original create_connection function always returns all records.
+        family = allowed_gai_family()
+    
+        try:
+            host.encode("idna")
+        except UnicodeError:
+            raise LocationParseError(f"'{host}', label empty or too long") from None
+    
+        for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+            af, socktype, proto, canonname, sa = res
+            sock = None
+            try:
+                sock = socket.socket(af, socktype, proto)
+    
+                # If provided, set socket level options before connecting.
+                _set_socket_options(sock, socket_options)
+    
+                if timeout is not _DEFAULT_TIMEOUT:
+                    sock.settimeout(timeout)
+                if source_address:
+                    sock.bind(source_address)
+>               sock.connect(sa)
+E               Failed: Timeout (>300.0s) from pytest-timeout.
+
+../miniconda3/envs/meowbench/lib/python3.11/site-packages/urllib3/util/connection.py:73: Failed
+----------------------------- Captured stderr call -----------------------------
+'(MaxRetryError("HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /openai/clip-vit-base-patch32/resolve/main/processor_config.json (Caused by ConnectTimeoutError(<HTTPSConnection(host='huggingface.co', port=443) at 0x7d365f781e10>, 'Connection to huggingface.co timed out. (connect timeout=10)'))"), '(Request ID: 5a1380f2-2132-4b71-af8e-f63d9e5d0842)')' thrown while requesting HEAD https://huggingface.co/openai/clip-vit-base-patch32/resolve/main/processor_config.json
+Retrying in 1s [Retry 1/5].
+'(MaxRetryError("HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /openai/clip-vit-base-patch32/resolve/main/processor_config.json (Caused by ConnectTimeoutError(<HTTPSConnection(host='huggingface.co', port=443) at 0x7d365e271250>, 'Connection to huggingface.co timed out. (connect timeout=10)'))"), '(Request ID: 9d3a739e-2bc1-4474-812c-e41a705975ac)')' thrown while requesting HEAD https://huggingface.co/openai/clip-vit-base-patch32/resolve/main/processor_config.json
+Retrying in 2s [Retry 2/5].
+'(MaxRetryError("HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /openai/clip-vit-base-patch32/resolve/main/processor_config.json (Caused by ConnectTimeoutError(<HTTPSConnection(host='huggingface.co', port=443) at 0x7d365e23d050>, 'Connection to huggingface.co timed out. (connect timeout=10)'))"), '(Request ID: 7b511563-7cb2-4c28-9f66-15a62554981e)')' thrown while requesting HEAD https://huggingface.co/openai/clip-vit-base-patch32/resolve/main/processor_config.json
+Retrying in 4s [Retry 3/5].
+'(MaxRetryError("HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /openai/clip-vit-base-patch32/resolve/main/processor_config.json (Caused by ConnectTimeoutError(<HTTPSConnection(host='huggingface.co', port=443) at 0x7d365e2a1750>, 'Connection to huggingface.co timed out. (connect timeout=10)'))"), '(Request ID: 12646ee6-aea5-4774-83ba-334cc1bc5bc8)')' thrown while requesting HEAD https://huggingface.co/openai/clip-vit-base-patch32/resolve/main/processor_config.json
+Retrying in 8s [Retry 4/5].
+'(MaxRetryError("HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /openai/clip-vit-base-patch32/resolve/main/processor_config.json (Caused by ConnectTimeoutError(<HTTPSConnection(host='huggingface.co', port=443) at 0x7d365e381190>, 'Connection to huggingface.co timed out. (connect timeout=10)'))"), '(Request ID: 35faf03a-8af1-43f4-a392-360d42a57cc3)')' thrown while requesting HEAD https://huggingface.co/openai/clip-vit-base-patch32/resolve/main/processor_config.json
+Retrying in 8s [Retry 5/5].
+'(MaxRetryError("HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /openai/clip-vit-base-patch32/resolve/main/processor_config.json (Caused by ConnectTimeoutError(<HTTPSConnection(host='huggingface.co', port=443) at 0x7d365e28f350>, 'Connection to huggingface.co timed out. (connect timeout=10)'))"), '(Request ID: 2aca93a9-0229-448d-8b76-21e2844dc1c1)')' thrown while requesting HEAD https://huggingface.co/openai/clip-vit-base-patch32/resolve/main/processor_config.json
+'(MaxRetryError("HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /openai/clip-vit-base-patch32/resolve/main/preprocessor_config.json (Caused by ConnectTimeoutError(<HTTPSConnection(host='huggingface.co', port=443) at 0x7d365e297a50>, 'Connection to huggingface.co timed out. (connect timeout=10)'))"), '(Request ID: ddf1eb0d-fa2b-4ded-8ae0-0263b9154daa)')' thrown while requesting HEAD https://huggingface.co/openai/clip-vit-base-patch32/resolve/main/preprocessor_config.json
+Retrying in 1s [Retry 1/5].
+'(MaxRetryError("HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /openai/clip-vit-base-patch32/resolve/main/preprocessor_config.json (Caused by ConnectTimeoutError(<HTTPSConnection(host='huggingface.co', port=443) at 0x7d365f770410>, 'Connection to huggingface.co timed out. (connect timeout=10)'))"), '(Request ID: 9dd2e922-dfa0-4a6e-8779-2e8aa8d150e6)')' thrown while requesting HEAD https://huggingface.co/openai/clip-vit-base-patch32/resolve/main/preprocessor_config.json
+Retrying in 2s [Retry 2/5].
+'(MaxRetryError("HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /openai/clip-vit-base-patch32/resolve/main/preprocessor_config.json (Caused by ConnectTimeoutError(<HTTPSConnection(host='huggingface.co', port=443) at 0x7d365e23f6d0>, 'Connection to huggingface.co timed out. (connect timeout=10)'))"), '(Request ID: 356614a2-a00b-467c-be6b-8334e7277735)')' thrown while requesting HEAD https://huggingface.co/openai/clip-vit-base-patch32/resolve/main/preprocessor_config.json
+Retrying in 4s [Retry 3/5].
+'(MaxRetryError("HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /openai/clip-vit-base-patch32/resolve/main/preprocessor_config.json (Caused by ConnectTimeoutError(<HTTPSConnection(host='huggingface.co', port=443) at 0x7d365e2723d0>, 'Connection to huggingface.co timed out. (connect timeout=10)'))"), '(Request ID: 92bc7d64-6b48-4a5e-8a46-57dcafb2ee15)')' thrown while requesting HEAD https://huggingface.co/openai/clip-vit-base-patch32/resolve/main/preprocessor_config.json
+Retrying in 8s [Retry 4/5].
+'(MaxRetryError("HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /openai/clip-vit-base-patch32/resolve/main/preprocessor_config.json (Caused by ConnectTimeoutError(<HTTPSConnection(host='huggingface.co', port=443) at 0x7d365e337550>, 'Connection to huggingface.co timed out. (connect timeout=10)'))"), '(Request ID: 5d54f90c-cc18-41dc-8af0-8b8cb3215949)')' thrown while requesting HEAD https://huggingface.co/openai/clip-vit-base-patch32/resolve/main/preprocessor_config.json
+Retrying in 8s [Retry 5/5].
+'(MaxRetryError("HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /openai/clip-vit-base-patch32/resolve/main/preprocessor_config.json (Caused by ConnectTimeoutError(<HTTPSConnection(host='huggingface.co', port=443) at 0x7d365e3839d0>, 'Connection to huggingface.co timed out. (connect timeout=10)'))"), '(Request ID: e3cf9c9c-a0d9-494c-867d-fad325dea3c3)')' thrown while requesting HEAD https://huggingface.co/openai/clip-vit-base-patch32/resolve/main/preprocessor_config.json
+------------------------------ Captured log call -------------------------------
+WARNING  huggingface_hub.utils._http:_http.py:320 '(MaxRetryError("HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /openai/clip-vit-base-patch32/resolve/main/processor_config.json (Caused by ConnectTimeoutError(<HTTPSConnection(host='huggingface.co', port=443) at 0x7d365f781e10>, 'Connection to huggingface.co timed out. (connect timeout=10)'))"), '(Request ID: 5a1380f2-2132-4b71-af8e-f63d9e5d0842)')' thrown while requesting HEAD https://huggingface.co/openai/clip-vit-base-patch32/resolve/main/processor_config.json
+WARNING  huggingface_hub.utils._http:_http.py:329 Retrying in 1s [Retry 1/5].
+WARNING  huggingface_hub.utils._http:_http.py:320 '(MaxRetryError("HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /openai/clip-vit-base-patch32/resolve/main/processor_config.json (Caused by ConnectTimeoutError(<HTTPSConnection(host='huggingface.co', port=443) at 0x7d365e271250>, 'Connection to huggingface.co timed out. (connect timeout=10)'))"), '(Request ID: 9d3a739e-2bc1-4474-812c-e41a705975ac)')' thrown while requesting HEAD https://huggingface.co/openai/clip-vit-base-patch32/resolve/main/processor_config.json
+WARNING  huggingface_hub.utils._http:_http.py:329 Retrying in 2s [Retry 2/5].
+WARNING  huggingface_hub.utils._http:_http.py:320 '(MaxRetryError("HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /openai/clip-vit-base-patch32/resolve/main/processor_config.json (Caused by ConnectTimeoutError(<HTTPSConnection(host='huggingface.co', port=443) at 0x7d365e23d050>, 'Connection to huggingface.co timed out. (connect timeout=10)'))"), '(Request ID: 7b511563-7cb2-4c28-9f66-15a62554981e)')' thrown while requesting HEAD https://huggingface.co/openai/clip-vit-base-patch32/resolve/main/processor_config.json
+WARNING  huggingface_hub.utils._http:_http.py:329 Retrying in 4s [Retry 3/5].
+WARNING  huggingface_hub.utils._http:_http.py:320 '(MaxRetryError("HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /openai/clip-vit-base-patch32/resolve/main/processor_config.json (Caused by ConnectTimeoutError(<HTTPSConnection(host='huggingface.co', port=443) at 0x7d365e2a1750>, 'Connection to huggingface.co timed out. (connect timeout=10)'))"), '(Request ID: 12646ee6-aea5-4774-83ba-334cc1bc5bc8)')' thrown while requesting HEAD https://huggingface.co/openai/clip-vit-base-patch32/resolve/main/processor_config.json
+WARNING  huggingface_hub.utils._http:_http.py:329 Retrying in 8s [Retry 4/5].
+WARNING  huggingface_hub.utils._http:_http.py:320 '(MaxRetryError("HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /openai/clip-vit-base-patch32/resolve/main/processor_config.json (Caused by ConnectTimeoutError(<HTTPSConnection(host='huggingface.co', port=443) at 0x7d365e381190>, 'Connection to huggingface.co timed out. (connect timeout=10)'))"), '(Request ID: 35faf03a-8af1-43f4-a392-360d42a57cc3)')' thrown while requesting HEAD https://huggingface.co/openai/clip-vit-base-patch32/resolve/main/processor_config.json
+WARNING  huggingface_hub.utils._http:_http.py:329 Retrying in 8s [Retry 5/5].
+WARNING  huggingface_hub.utils._http:_http.py:320 '(MaxRetryError("HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /openai/clip-vit-base-patch32/resolve/main/processor_config.json (Caused by ConnectTimeoutError(<HTTPSConnection(host='huggingface.co', port=443) at 0x7d365e28f350>, 'Connection to huggingface.co timed out. (connect timeout=10)'))"), '(Request ID: 2aca93a9-0229-448d-8b76-21e2844dc1c1)')' thrown while requesting HEAD https://huggingface.co/openai/clip-vit-base-patch32/resolve/main/processor_config.json
+WARNING  huggingface_hub.utils._http:_http.py:320 '(MaxRetryError("HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /openai/clip-vit-base-patch32/resolve/main/preprocessor_config.json (Caused by ConnectTimeoutError(<HTTPSConnection(host='huggingface.co', port=443) at 0x7d365e297a50>, 'Connection to huggingface.co timed out. (connect timeout=10)'))"), '(Request ID: ddf1eb0d-fa2b-4ded-8ae0-0263b9154daa)')' thrown while requesting HEAD https://huggingface.co/openai/clip-vit-base-patch32/resolve/main/preprocessor_config.json
+WARNING  huggingface_hub.utils._http:_http.py:329 Retrying in 1s [Retry 1/5].
+WARNING  huggingface_hub.utils._http:_http.py:320 '(MaxRetryError("HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /openai/clip-vit-base-patch32/resolve/main/preprocessor_config.json (Caused by ConnectTimeoutError(<HTTPSConnection(host='huggingface.co', port=443) at 0x7d365f770410>, 'Connection to huggingface.co timed out. (connect timeout=10)'))"), '(Request ID: 9dd2e922-dfa0-4a6e-8779-2e8aa8d150e6)')' thrown while requesting HEAD https://huggingface.co/openai/clip-vit-base-patch32/resolve/main/preprocessor_config.json
+WARNING  huggingface_hub.utils._http:_http.py:329 Retrying in 2s [Retry 2/5].
+WARNING  huggingface_hub.utils._http:_http.py:320 '(MaxRetryError("HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /openai/clip-vit-base-patch32/resolve/main/preprocessor_config.json (Caused by ConnectTimeoutError(<HTTPSConnection(host='huggingface.co', port=443) at 0x7d365e23f6d0>, 'Connection to huggingface.co timed out. (connect timeout=10)'))"), '(Request ID: 356614a2-a00b-467c-be6b-8334e7277735)')' thrown while requesting HEAD https://huggingface.co/openai/clip-vit-base-patch32/resolve/main/preprocessor_config.json
+WARNING  huggingface_hub.utils._http:_http.py:329 Retrying in 4s [Retry 3/5].
+WARNING  huggingface_hub.utils._http:_http.py:320 '(MaxRetryError("HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /openai/clip-vit-base-patch32/resolve/main/preprocessor_config.json (Caused by ConnectTimeoutError(<HTTPSConnection(host='huggingface.co', port=443) at 0x7d365e2723d0>, 'Connection to huggingface.co timed out. (connect timeout=10)'))"), '(Request ID: 92bc7d64-6b48-4a5e-8a46-57dcafb2ee15)')' thrown while requesting HEAD https://huggingface.co/openai/clip-vit-base-patch32/resolve/main/preprocessor_config.json
+WARNING  huggingface_hub.utils._http:_http.py:329 Retrying in 8s [Retry 4/5].
+WARNING  huggingface_hub.utils._http:_http.py:320 '(MaxRetryError("HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /openai/clip-vit-base-patch32/resolve/main/preprocessor_config.json (Caused by ConnectTimeoutError(<HTTPSConnection(host='huggingface.co', port=443) at 0x7d365e337550>, 'Connection to huggingface.co timed out. (connect timeout=10)'))"), '(Request ID: 5d54f90c-cc18-41dc-8af0-8b8cb3215949)')' thrown while requesting HEAD https://huggingface.co/openai/clip-vit-base-patch32/resolve/main/preprocessor_config.json
+WARNING  huggingface_hub.utils._http:_http.py:329 Retrying in 8s [Retry 5/5].
+WARNING  huggingface_hub.utils._http:_http.py:320 '(MaxRetryError("HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /openai/clip-vit-base-patch32/resolve/main/preprocessor_config.json (Caused by ConnectTimeoutError(<HTTPSConnection(host='huggingface.co', port=443) at 0x7d365e3839d0>, 'Connection to huggingface.co timed out. (connect timeout=10)'))"), '(Request ID: e3cf9c9c-a0d9-494c-867d-fad325dea3c3)')' thrown while requesting HEAD https://huggingface.co/openai/clip-vit-base-patch32/resolve/main/preprocessor_config.json
+=========================== short test summary info ============================
+FAILED tests/test_lact.py::test_binding_survives_write_read_with_adequate_perception
+1 failed, 710 passed in 340.24s (0:05:40)
+ERROR conda.cli.main_run:execute(148): `conda run python -m pytest -q` failed. (See above for error)

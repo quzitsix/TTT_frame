@@ -1,0 +1,47 @@
+{
+  "schema": "idea05_posthoc_deadline_supplement_v1",
+  "core_manifest_sha256": "98357303222ad9b731875df43da73b02ecfcab2e1edbe28abd7b440d8c29fa8e",
+  "scope": "post-hoc fixed latest attribution; core six-arm archive unchanged",
+  "files": {
+    "supplement/deadline/protocol.json": {
+      "bytes": 819,
+      "sha256": "9119d810e7da7a266f6897c5cfbeb7eaff5302bd1e6a46f3052c79bf1c7d7b26"
+    },
+    "supplement/deadline/worker_0.log": {
+      "bytes": 2050,
+      "sha256": "1b1eb10f88b5d92918c57a0c0f0719e526d9da221b63ab08ae79976dd770a3d6"
+    },
+    "supplement/deadline/worker_2.log": {
+      "bytes": 2050,
+      "sha256": "19b9f71af3bcec59b11b317d0f558e38f246dc3d654ff81deb6ebe38a4a144ea"
+    },
+    "supplement/deadline/scores.jsonl": {
+      "bytes": 266723,
+      "sha256": "9c1829b000c40b365a005e978ac6ac89f118f3ef0a30214499028c738c2e686c"
+    },
+    "supplement/deadline/freeze.json": {
+      "bytes": 370,
+      "sha256": "e7771c3bc55bb25fd8cd0f2079a49cef12540c91a052f15a1f0fb1106f0827ed"
+    },
+    "supplement/deadline/worker_3.log": {
+      "bytes": 2050,
+      "sha256": "6d697ea205f9008af9d1b4115cbafc9b930440b3f483986eb7fb520cc02ae676"
+    },
+    "supplement/deadline/per_case.jsonl": {
+      "bytes": 236922,
+      "sha256": "25b851bb1106f94343ad47e0d8609b455f80707347cae6e598998e89baecd11f"
+    },
+    "supplement/deadline/summary.json": {
+      "bytes": 8147,
+      "sha256": "5c1ab2684382b00e1fc886d31d09d007a2542c7dd2e0b6ad30841605b4bd7b41"
+    },
+    "supplement/deadline/launcher.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "supplement/deadline/worker_1.log": {
+      "bytes": 2050,
+      "sha256": "96ad7f8d4d84432373c49d1039135d5d6cdde346d620187e8b97b5a28e33cc1a"
+    }
+  }
+}

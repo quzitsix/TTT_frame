@@ -1,0 +1,301 @@
+{"analyzed": "egolife_001", "split": "train"}
+{"analyzed": "egolife_002", "split": "train"}
+{"analyzed": "egolife_003", "split": "train"}
+{"analyzed": "egolife_004", "split": "train"}
+{"analyzed": "egolife_005", "split": "train"}
+{"analyzed": "egolife_006", "split": "train"}
+{"analyzed": "egolife_007", "split": "train"}
+{"analyzed": "egolife_008", "split": "train"}
+{"analyzed": "egolife_009", "split": "train"}
+{"analyzed": "egolife_010", "split": "train"}
+{"analyzed": "egolife_011", "split": "train"}
+{"analyzed": "egolife_012", "split": "train"}
+{"analyzed": "egolife_013", "split": "train"}
+{"analyzed": "egolife_014", "split": "train"}
+{"analyzed": "egolife_015", "split": "train"}
+{"analyzed": "egolife_016", "split": "train"}
+{"analyzed": "egolife_017", "split": "train"}
+{"analyzed": "egolife_018", "split": "train"}
+{"analyzed": "egolife_030", "split": "train"}
+{"analyzed": "egolife_031", "split": "train"}
+{"analyzed": "egolife_032", "split": "train"}
+{"analyzed": "egolife_033", "split": "train"}
+{"analyzed": "egolife_034", "split": "train"}
+{"analyzed": "egolife_035", "split": "train"}
+{"analyzed": "egolife_036", "split": "train"}
+{"analyzed": "egolife_037", "split": "train"}
+{"analyzed": "egolife_038", "split": "train"}
+{"analyzed": "egolife_039", "split": "train"}
+{"analyzed": "egolife_040", "split": "train"}
+{"analyzed": "egolife_041", "split": "train"}
+{"analyzed": "egolife_042", "split": "train"}
+{"analyzed": "egolife_043", "split": "train"}
+{"analyzed": "egolife_044", "split": "train"}
+{"analyzed": "egolife_045", "split": "train"}
+{"analyzed": "egolife_046", "split": "train"}
+{"analyzed": "egolife_047", "split": "train"}
+{"analyzed": "egolife_048", "split": "train"}
+{"analyzed": "egolife_066", "split": "train"}
+{"analyzed": "egolife_067", "split": "train"}
+{"analyzed": "egolife_068", "split": "train"}
+{"analyzed": "egolife_069", "split": "train"}
+{"analyzed": "egolife_070", "split": "train"}
+{"analyzed": "egolife_071", "split": "train"}
+{"analyzed": "egolife_072", "split": "train"}
+{"analyzed": "egolife_073", "split": "train"}
+{"analyzed": "egolife_074", "split": "train"}
+{"analyzed": "egolife_075", "split": "train"}
+{"analyzed": "egolife_076", "split": "train"}
+{"analyzed": "egolife_077", "split": "train"}
+{"analyzed": "egolife_078", "split": "train"}
+{"analyzed": "egolife_079", "split": "train"}
+{"analyzed": "egolife_080", "split": "train"}
+{"analyzed": "egolife_081", "split": "train"}
+{"analyzed": "egolife_082", "split": "train"}
+{"analyzed": "egolife_083", "split": "train"}
+{"analyzed": "egolife_099", "split": "train"}
+{"analyzed": "egolife_100", "split": "train"}
+{"analyzed": "egolife_101", "split": "train"}
+{"analyzed": "egolife_102", "split": "train"}
+{"analyzed": "egolife_103", "split": "train"}
+{"analyzed": "egolife_104", "split": "train"}
+{"analyzed": "egolife_105", "split": "train"}
+{"analyzed": "egolife_106", "split": "train"}
+{"analyzed": "egolife_107", "split": "train"}
+{"analyzed": "egolife_108", "split": "train"}
+{"analyzed": "egolife_109", "split": "train"}
+{"analyzed": "egolife_110", "split": "train"}
+{"analyzed": "egolife_111", "split": "train"}
+{"analyzed": "egolife_112", "split": "train"}
+{"analyzed": "egolife_113", "split": "train"}
+{"analyzed": "egolife_114", "split": "train"}
+{"analyzed": "egolife_115", "split": "train"}
+{"analyzed": "egolife_116", "split": "train"}
+{"analyzed": "egolife_117", "split": "train"}
+{"analyzed": "egolife_132", "split": "train"}
+{"analyzed": "egolife_133", "split": "train"}
+{"analyzed": "egolife_134", "split": "train"}
+{"analyzed": "egolife_135", "split": "train"}
+{"analyzed": "egolife_136", "split": "train"}
+{"analyzed": "egolife_137", "split": "train"}
+{"analyzed": "egolife_138", "split": "train"}
+{"analyzed": "egolife_139", "split": "train"}
+{"analyzed": "egolife_140", "split": "train"}
+{"analyzed": "egolife_141", "split": "train"}
+{"analyzed": "egolife_142", "split": "train"}
+{"analyzed": "egolife_143", "split": "train"}
+{"analyzed": "egolife_144", "split": "train"}
+{"analyzed": "egolife_145", "split": "train"}
+{"analyzed": "egolife_146", "split": "train"}
+{"analyzed": "egolife_147", "split": "train"}
+{"analyzed": "egolife_148", "split": "train"}
+{"analyzed": "egolife_166", "split": "train"}
+{"analyzed": "egolife_167", "split": "train"}
+{"analyzed": "egolife_168", "split": "train"}
+{"analyzed": "egolife_169", "split": "train"}
+{"analyzed": "egolife_170", "split": "train"}
+{"analyzed": "egolife_171", "split": "train"}
+{"analyzed": "egolife_172", "split": "train"}
+{"analyzed": "egolife_173", "split": "train"}
+{"analyzed": "egolife_174", "split": "train"}
+{"analyzed": "egolife_175", "split": "train"}
+{"analyzed": "egolife_176", "split": "train"}
+{"analyzed": "egolife_177", "split": "train"}
+{"analyzed": "egolife_178", "split": "train"}
+{"analyzed": "egolife_179", "split": "train"}
+{"analyzed": "egolife_180", "split": "train"}
+{"analyzed": "egolife_181", "split": "train"}
+{"analyzed": "egolife_182", "split": "train"}
+{"analyzed": "egolife_183", "split": "train"}
+{"analyzed": "egolife_184", "split": "train"}
+{"analyzed": "egolife_185", "split": "train"}
+{"analyzed": "egolife_019", "split": "validation"}
+{"analyzed": "egolife_020", "split": "validation"}
+{"analyzed": "egolife_021", "split": "validation"}
+{"analyzed": "egolife_049", "split": "validation"}
+{"analyzed": "egolife_050", "split": "validation"}
+{"analyzed": "egolife_051", "split": "validation"}
+{"analyzed": "egolife_052", "split": "validation"}
+{"analyzed": "egolife_053", "split": "validation"}
+{"analyzed": "egolife_054", "split": "validation"}
+{"analyzed": "egolife_055", "split": "validation"}
+{"analyzed": "egolife_084", "split": "validation"}
+{"analyzed": "egolife_085", "split": "validation"}
+{"analyzed": "egolife_086", "split": "validation"}
+{"analyzed": "egolife_087", "split": "validation"}
+{"analyzed": "egolife_088", "split": "validation"}
+{"analyzed": "egolife_089", "split": "validation"}
+{"analyzed": "egolife_118", "split": "validation"}
+{"analyzed": "egolife_119", "split": "validation"}
+{"analyzed": "egolife_120", "split": "validation"}
+{"analyzed": "egolife_121", "split": "validation"}
+{"analyzed": "egolife_122", "split": "validation"}
+{"analyzed": "egolife_123", "split": "validation"}
+{"analyzed": "egolife_149", "split": "validation"}
+{"analyzed": "egolife_150", "split": "validation"}
+{"analyzed": "egolife_151", "split": "validation"}
+{"analyzed": "egolife_152", "split": "validation"}
+{"analyzed": "egolife_153", "split": "validation"}
+{"analyzed": "egolife_186", "split": "validation"}
+{"analyzed": "egolife_187", "split": "validation"}
+{"analyzed": "egolife_188", "split": "validation"}
+{"analyzed": "egolife_189", "split": "validation"}
+{"analyzed": "egolife_190", "split": "validation"}
+{"analyzed": "egolife_022", "split": "test"}
+{"analyzed": "egolife_023", "split": "test"}
+{"analyzed": "egolife_024", "split": "test"}
+{"analyzed": "egolife_025", "split": "test"}
+{"analyzed": "egolife_026", "split": "test"}
+{"analyzed": "egolife_027", "split": "test"}
+{"analyzed": "egolife_028", "split": "test"}
+{"analyzed": "egolife_029", "split": "test"}
+{"analyzed": "egolife_056", "split": "test"}
+{"analyzed": "egolife_057", "split": "test"}
+{"analyzed": "egolife_058", "split": "test"}
+{"analyzed": "egolife_059", "split": "test"}
+{"analyzed": "egolife_060", "split": "test"}
+{"analyzed": "egolife_061", "split": "test"}
+{"analyzed": "egolife_062", "split": "test"}
+{"analyzed": "egolife_063", "split": "test"}
+{"analyzed": "egolife_064", "split": "test"}
+{"analyzed": "egolife_065", "split": "test"}
+{"analyzed": "egolife_090", "split": "test"}
+{"analyzed": "egolife_091", "split": "test"}
+{"analyzed": "egolife_092", "split": "test"}
+{"analyzed": "egolife_093", "split": "test"}
+{"analyzed": "egolife_094", "split": "test"}
+{"analyzed": "egolife_095", "split": "test"}
+{"analyzed": "egolife_096", "split": "test"}
+{"analyzed": "egolife_097", "split": "test"}
+{"analyzed": "egolife_098", "split": "test"}
+{"analyzed": "egolife_124", "split": "test"}
+{"analyzed": "egolife_125", "split": "test"}
+{"analyzed": "egolife_126", "split": "test"}
+{"analyzed": "egolife_127", "split": "test"}
+{"analyzed": "egolife_128", "split": "test"}
+{"analyzed": "egolife_129", "split": "test"}
+{"analyzed": "egolife_130", "split": "test"}
+{"analyzed": "egolife_131", "split": "test"}
+{"analyzed": "egolife_154", "split": "test"}
+{"analyzed": "egolife_155", "split": "test"}
+{"analyzed": "egolife_156", "split": "test"}
+{"analyzed": "egolife_157", "split": "test"}
+{"analyzed": "egolife_158", "split": "test"}
+{"analyzed": "egolife_159", "split": "test"}
+{"analyzed": "egolife_160", "split": "test"}
+{"analyzed": "egolife_161", "split": "test"}
+{"analyzed": "egolife_162", "split": "test"}
+{"analyzed": "egolife_163", "split": "test"}
+{"analyzed": "egolife_164", "split": "test"}
+{"analyzed": "egolife_165", "split": "test"}
+{"analyzed": "egolife_191", "split": "test"}
+{"analyzed": "egolife_192", "split": "test"}
+{"analyzed": "egolife_193", "split": "test"}
+{"analyzed": "egolife_194", "split": "test"}
+{"analyzed": "egolife_195", "split": "test"}
+{"analyzed": "egolife_196", "split": "test"}
+{"analyzed": "egolife_197", "split": "test"}
+{"analyzed": "egolife_198", "split": "test"}
+{"analyzed": "egolife_199", "split": "test"}
+{"analyzed": "egolife_200", "split": "test"}
+{
+  "go": false,
+  "test": {
+    "matched": {
+      "pairs": 684,
+      "eligible": 684,
+      "eligible_fraction": 1.0,
+      "accepted": 0,
+      "accepted_fraction_all": 0.0,
+      "accepted_fraction_eligible": 0.0,
+      "fit": {
+        "correspondences": 36007,
+        "identity_rmse": 0.08859840478309905,
+        "candidate_rmse": 0.08595074102966394,
+        "gated_rmse": 0.08859840478309905,
+        "candidate_relative_improvement": 0.029883876125275117,
+        "gated_relative_improvement": 0.0
+      },
+      "gate": {
+        "correspondences": 18004,
+        "identity_rmse": 0.0888386179278847,
+        "candidate_rmse": 0.08890917905706401,
+        "gated_rmse": 0.0888386179278847,
+        "candidate_relative_improvement": -0.0007942618967417438,
+        "gated_relative_improvement": 0.0
+      },
+      "audit": {
+        "correspondences": 18351,
+        "identity_rmse": 0.08914431169269237,
+        "candidate_rmse": 0.08926238598467312,
+        "gated_rmse": 0.08914431169269237,
+        "candidate_relative_improvement": -0.0013245297399097423,
+        "gated_relative_improvement": 0.0
+      }
+    },
+    "permuted": {
+      "pairs": 684,
+      "eligible": 684,
+      "eligible_fraction": 1.0,
+      "accepted": 0,
+      "accepted_fraction_all": 0.0,
+      "accepted_fraction_eligible": 0.0,
+      "fit": {
+        "correspondences": 36007,
+        "identity_rmse": 0.3503109441246548,
+        "candidate_rmse": 0.3413488849594969,
+        "gated_rmse": 0.3503109441246548,
+        "candidate_relative_improvement": 0.025583154952672122,
+        "gated_relative_improvement": 0.0
+      },
+      "gate": {
+        "correspondences": 18004,
+        "identity_rmse": 0.35009306191626344,
+        "candidate_rmse": 0.34925614299261243,
+        "gated_rmse": 0.35009306191626344,
+        "candidate_relative_improvement": 0.002390561295531147,
+        "gated_relative_improvement": 0.0
+      },
+      "audit": {
+        "correspondences": 18351,
+        "identity_rmse": 0.3495231386813599,
+        "candidate_rmse": 0.34879816220290855,
+        "gated_rmse": 0.3495231386813599,
+        "candidate_relative_improvement": 0.0020741873662112457,
+        "gated_relative_improvement": 0.0
+      }
+    },
+    "wrong_video": {
+      "pairs": 684,
+      "eligible": 643,
+      "eligible_fraction": 0.9400584795321637,
+      "accepted": 0,
+      "accepted_fraction_all": 0.0,
+      "accepted_fraction_eligible": 0.0,
+      "fit": {
+        "correspondences": 13527,
+        "identity_rmse": 0.1047381729228496,
+        "candidate_rmse": 0.10028471693756562,
+        "gated_rmse": 0.1047381729228496,
+        "candidate_relative_improvement": 0.04251989375988461,
+        "gated_relative_improvement": 0.0
+      },
+      "gate": {
+        "correspondences": 6769,
+        "identity_rmse": 0.10419486569412968,
+        "candidate_rmse": 0.1037251981612445,
+        "gated_rmse": 0.10419486569412968,
+        "candidate_relative_improvement": 0.00450758806354168,
+        "gated_relative_improvement": 0.0
+      },
+      "audit": {
+        "correspondences": 7076,
+        "identity_rmse": 0.10485402097341577,
+        "candidate_rmse": 0.1043333091835482,
+        "gated_rmse": 0.10485402097341577,
+        "candidate_relative_improvement": 0.004966064105444142,
+        "gated_relative_improvement": 0.0
+      }
+    }
+  }
+}

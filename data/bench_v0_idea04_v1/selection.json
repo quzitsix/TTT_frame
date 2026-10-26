@@ -1,0 +1,245 @@
+{
+  "rule": "lowest validation twenty-write unseen visual query MSE; ties smaller probe count; no MCQ labels",
+  "selected": {
+    "fixed": "fixed_m128",
+    "conditioned": "conditioned_m128"
+  },
+  "records": [
+    {
+      "name": "fixed_m32",
+      "config": {
+        "probes": 32,
+        "ridge": 0.05,
+        "conditioned": false,
+        "log_tau": -0.12643413245677948,
+        "logit_eta": -3.850707769393921,
+        "tau_state": 0.0,
+        "eta_state": 0.0
+      },
+      "validation": {
+        "1": {
+          "response_mse": 7.262911481120682e-07,
+          "query_mse": 0.009115882217884064,
+          "oracle_query_mse": 0.009129181504249573,
+          "copy_query_mse": 0.009125514887273312,
+          "probe_consistency_mse": 1.677791260590311e-05,
+          "query_signal_mse": 0.017778217792510986
+        },
+        "2": {
+          "response_mse": 1.9537171738193138e-06,
+          "query_mse": 0.0090952068567276,
+          "oracle_query_mse": 0.009122498333454132,
+          "copy_query_mse": 0.009118560701608658,
+          "probe_consistency_mse": 1.6780777514213696e-05,
+          "query_signal_mse": 0.017762571573257446
+        },
+        "20": {
+          "response_mse": 3.655240288935602e-05,
+          "query_mse": 0.00868939608335495,
+          "oracle_query_mse": 0.008974814787507057,
+          "copy_query_mse": 0.008954424411058426,
+          "probe_consistency_mse": 1.6846923244884238e-05,
+          "query_signal_mse": 0.017306048423051834
+        }
+      },
+      "sha256": "021a805b196487f73a6db58c76024feaaee3bef63c84da2d3bf8c3911cc246b0"
+    },
+    {
+      "name": "conditioned_m32",
+      "config": {
+        "probes": 32,
+        "ridge": 0.05,
+        "conditioned": true,
+        "log_tau": -0.19236338138580322,
+        "logit_eta": -3.904597282409668,
+        "tau_state": 0.6207982897758484,
+        "eta_state": 0.7536194324493408
+      },
+      "validation": {
+        "1": {
+          "response_mse": 7.163446298363851e-07,
+          "query_mse": 0.009112885221838951,
+          "oracle_query_mse": 0.00912666879594326,
+          "copy_query_mse": 0.009122923947870731,
+          "probe_consistency_mse": 1.677021646173671e-05,
+          "query_signal_mse": 0.017778217792510986
+        },
+        "2": {
+          "response_mse": 1.929169684444787e-06,
+          "query_mse": 0.00909176841378212,
+          "oracle_query_mse": 0.009120085276663303,
+          "copy_query_mse": 0.009115969762206078,
+          "probe_consistency_mse": 1.6773276001913473e-05,
+          "query_signal_mse": 0.017762571573257446
+        },
+        "20": {
+          "response_mse": 3.637307236203924e-05,
+          "query_mse": 0.008677615784108639,
+          "oracle_query_mse": 0.008973082527518272,
+          "copy_query_mse": 0.00895202811807394,
+          "probe_consistency_mse": 1.684488779574167e-05,
+          "query_signal_mse": 0.017306048423051834
+        }
+      },
+      "sha256": "9df0f61d957959f1515ca1fb8ea80b481fe408e3136b866a892f26f47b99f3b7"
+    },
+    {
+      "name": "fixed_m64",
+      "config": {
+        "probes": 64,
+        "ridge": 0.05,
+        "conditioned": false,
+        "log_tau": -0.150391086935997,
+        "logit_eta": -3.7641656398773193,
+        "tau_state": 0.0,
+        "eta_state": 0.0
+      },
+      "validation": {
+        "1": {
+          "response_mse": 7.500632364099147e-07,
+          "query_mse": 0.007641501724720001,
+          "oracle_query_mse": 0.007655251771211624,
+          "copy_query_mse": 0.007651380728930235,
+          "probe_consistency_mse": 1.5743766198283993e-05,
+          "query_signal_mse": 0.017778217792510986
+        },
+        "2": {
+          "response_mse": 1.9823726233880734e-06,
+          "query_mse": 0.007623050361871719,
+          "oracle_query_mse": 0.007651264779269695,
+          "copy_query_mse": 0.0076482887379825115,
+          "probe_consistency_mse": 1.574492489453405e-05,
+          "query_signal_mse": 0.017762571573257446
+        },
+        "20": {
+          "response_mse": 3.574467700673267e-05,
+          "query_mse": 0.0072736600413918495,
+          "oracle_query_mse": 0.007538463920354843,
+          "copy_query_mse": 0.0075644636526703835,
+          "probe_consistency_mse": 1.577813600306399e-05,
+          "query_signal_mse": 0.017306048423051834
+        }
+      },
+      "sha256": "ef6add6cf4130ab3e8b6f4ba68924f974ad60e22cc6859110324d2a59301c6f0"
+    },
+    {
+      "name": "conditioned_m64",
+      "config": {
+        "probes": 64,
+        "ridge": 0.05,
+        "conditioned": true,
+        "log_tau": -0.21494585275650024,
+        "logit_eta": -3.824223518371582,
+        "tau_state": 0.572947084903717,
+        "eta_state": 0.7931630611419678
+      },
+      "validation": {
+        "1": {
+          "response_mse": 7.385923481706413e-07,
+          "query_mse": 0.0076475245878100395,
+          "oracle_query_mse": 0.007661584764719009,
+          "copy_query_mse": 0.007657648529857397,
+          "probe_consistency_mse": 1.568468360346742e-05,
+          "query_signal_mse": 0.017778217792510986
+        },
+        "2": {
+          "response_mse": 1.9553426682250574e-06,
+          "query_mse": 0.007628748659044504,
+          "oracle_query_mse": 0.007657649926841259,
+          "copy_query_mse": 0.007654530927538872,
+          "probe_consistency_mse": 1.5686015103710815e-05,
+          "query_signal_mse": 0.017762571573257446
+        },
+        "20": {
+          "response_mse": 3.5444831155473366e-05,
+          "query_mse": 0.007272783666849136,
+          "oracle_query_mse": 0.007545027416199446,
+          "copy_query_mse": 0.007570343557745218,
+          "probe_consistency_mse": 1.572333712829277e-05,
+          "query_signal_mse": 0.017306048423051834
+        }
+      },
+      "sha256": "75ee64cf37703bc9432334de3b084ed3aff645d588f7b67311a1cf3f608d2188"
+    },
+    {
+      "name": "fixed_m128",
+      "config": {
+        "probes": 128,
+        "ridge": 0.05,
+        "conditioned": false,
+        "log_tau": -0.17157022655010223,
+        "logit_eta": -3.7319650650024414,
+        "tau_state": 0.0,
+        "eta_state": 0.0
+      },
+      "validation": {
+        "1": {
+          "response_mse": 7.09174344137864e-07,
+          "query_mse": 0.006534379906952381,
+          "oracle_query_mse": 0.006547614000737667,
+          "copy_query_mse": 0.006544661242514849,
+          "probe_consistency_mse": 1.4761961210751906e-05,
+          "query_signal_mse": 0.017778217792510986
+        },
+        "2": {
+          "response_mse": 1.8577695755084278e-06,
+          "query_mse": 0.006518807262182236,
+          "oracle_query_mse": 0.0065442463383078575,
+          "copy_query_mse": 0.006545610260218382,
+          "probe_consistency_mse": 1.4762362297915388e-05,
+          "query_signal_mse": 0.017762571573257446
+        },
+        "20": {
+          "response_mse": 3.317572918604128e-05,
+          "query_mse": 0.006220459006726742,
+          "oracle_query_mse": 0.0064729428850114346,
+          "copy_query_mse": 0.006533895153552294,
+          "probe_consistency_mse": 1.4777895557926968e-05,
+          "query_signal_mse": 0.017306048423051834
+        }
+      },
+      "sha256": "045fdbe64ea6a04a37076f09b86d4718a5224e689b009c14eeee61c3d702d31e"
+    },
+    {
+      "name": "conditioned_m128",
+      "config": {
+        "probes": 128,
+        "ridge": 0.05,
+        "conditioned": true,
+        "log_tau": -0.2326483577489853,
+        "logit_eta": -3.7858359813690186,
+        "tau_state": 0.5254089832305908,
+        "eta_state": 0.8028087615966797
+      },
+      "validation": {
+        "1": {
+          "response_mse": 6.980388320698694e-07,
+          "query_mse": 0.0065432097762823105,
+          "oracle_query_mse": 0.0065566860139369965,
+          "copy_query_mse": 0.00655366899445653,
+          "probe_consistency_mse": 1.4626545635110233e-05,
+          "query_signal_mse": 0.017778217792510986
+        },
+        "2": {
+          "response_mse": 1.8318297634323244e-06,
+          "query_mse": 0.006527318153530359,
+          "oracle_query_mse": 0.006553350016474724,
+          "copy_query_mse": 0.006554584018886089,
+          "probe_consistency_mse": 1.4627124983235262e-05,
+          "query_signal_mse": 0.017762571573257446
+        },
+        "20": {
+          "response_mse": 3.286383434897289e-05,
+          "query_mse": 0.006222547963261604,
+          "oracle_query_mse": 0.0064820097759366035,
+          "copy_query_mse": 0.006542410235852003,
+          "probe_consistency_mse": 1.4646321687905584e-05,
+          "query_signal_mse": 0.017306048423051834
+        }
+      },
+      "sha256": "8534afd642f2c549929aee418114461bcce1cc6e76cea381fbc679c2d6070501"
+    }
+  ],
+  "fit_seconds": 24.566814217949286,
+  "answer_files_read": false
+}

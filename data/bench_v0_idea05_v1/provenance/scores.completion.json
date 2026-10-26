@@ -1,0 +1,12 @@
+{
+  "complete": true,
+  "cases": 200,
+  "protocol_fingerprint": "8acdaec1a4c91336d9e0a7d4e62ed052daf559d07f4bb1e3403d93938d67aa7a",
+  "scores_sha256": "be60b01e500e3b146e08689af4d51c11135b0037f23d2d7f973e2376e5a2bd52",
+  "shards": {
+    "scores_0.jsonl": "1f3a4cd843a0afd8070cc8635a2fdc39b540df82d4ce76663ec2574c7eaf4805",
+    "scores_1.jsonl": "7794d9beaf77293ab3a3f1f1d1ea5062f5af8e635511efba0f6b5b0e0ed343ad",
+    "scores_2.jsonl": "5342f66df2d0a25b2874fc7999aac2004c0dde2a39b8f812e17ea4c55e28f331",
+    "scores_3.jsonl": "2b47da8702f4d5b58ca3ae359460463b5666476d9e4f1c0933fbcccbf5316005"
+  }
+}

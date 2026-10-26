@@ -1,0 +1,9 @@
+{
+  "complete": true,
+  "cases": 200,
+  "elapsed_seconds": 370.181442683097,
+  "scores_sha256": "9c1829b000c40b365a005e978ac6ac89f118f3ef0a30214499028c738c2e686c",
+  "protocol_sha256": "9119d810e7da7a266f6897c5cfbeb7eaff5302bd1e6a46f3052c79bf1c7d7b26",
+  "source_sha256": "86d02823450cc474b761e5c1b4508526b8317e48eb5d2601cb8c806f4dd24064",
+  "answer_keys_read": false
+}

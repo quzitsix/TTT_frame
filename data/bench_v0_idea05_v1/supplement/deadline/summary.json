@@ -1,0 +1,374 @@
+{
+  "metrics": {
+    "train": {
+      "n": 111,
+      "correct": 36,
+      "accuracy": 0.32432432432432434
+    },
+    "validation": {
+      "n": 32,
+      "correct": 10,
+      "accuracy": 0.3125
+    },
+    "test": {
+      "n": 57,
+      "correct": 24,
+      "accuracy": 0.42105263157894735
+    }
+  },
+  "paired": {
+    "train": {
+      "motion_high": {
+        "n": 111,
+        "gains": 4,
+        "losses": 4,
+        "net": 0,
+        "gain_ids": [
+          "egolife_005",
+          "egolife_006",
+          "egolife_067",
+          "egolife_183"
+        ],
+        "loss_ids": [
+          "egolife_083",
+          "egolife_101",
+          "egolife_144",
+          "egolife_174"
+        ],
+        "prediction_disagreements": 16
+      },
+      "uniform_high": {
+        "n": 111,
+        "gains": 13,
+        "losses": 5,
+        "net": 8,
+        "gain_ids": [
+          "egolife_017",
+          "egolife_018",
+          "egolife_035",
+          "egolife_048",
+          "egolife_067",
+          "egolife_069",
+          "egolife_104",
+          "egolife_117",
+          "egolife_139",
+          "egolife_147",
+          "egolife_148",
+          "egolife_180",
+          "egolife_182"
+        ],
+        "loss_ids": [
+          "egolife_038",
+          "egolife_083",
+          "egolife_101",
+          "egolife_111",
+          "egolife_133"
+        ],
+        "prediction_disagreements": 39
+      },
+      "high448": {
+        "n": 111,
+        "gains": 4,
+        "losses": 5,
+        "net": -1,
+        "gain_ids": [
+          "egolife_006",
+          "egolife_067",
+          "egolife_079",
+          "egolife_148"
+        ],
+        "loss_ids": [
+          "egolife_010",
+          "egolife_076",
+          "egolife_083",
+          "egolife_112",
+          "egolife_174"
+        ],
+        "prediction_disagreements": 22
+      },
+      "low112": {
+        "n": 111,
+        "gains": 25,
+        "losses": 3,
+        "net": 22,
+        "gain_ids": [
+          "egolife_002",
+          "egolife_006",
+          "egolife_018",
+          "egolife_032",
+          "egolife_035",
+          "egolife_039",
+          "egolife_048",
+          "egolife_067",
+          "egolife_069",
+          "egolife_074",
+          "egolife_077",
+          "egolife_079",
+          "egolife_104",
+          "egolife_105",
+          "egolife_117",
+          "egolife_137",
+          "egolife_139",
+          "egolife_143",
+          "egolife_147",
+          "egolife_148",
+          "egolife_168",
+          "egolife_176",
+          "egolife_180",
+          "egolife_182",
+          "egolife_183"
+        ],
+        "loss_ids": [
+          "egolife_015",
+          "egolife_083",
+          "egolife_132"
+        ],
+        "prediction_disagreements": 62
+      },
+      "mid224": {
+        "n": 111,
+        "gains": 10,
+        "losses": 4,
+        "net": 6,
+        "gain_ids": [
+          "egolife_006",
+          "egolife_018",
+          "egolife_035",
+          "egolife_042",
+          "egolife_048",
+          "egolife_067",
+          "egolife_069",
+          "egolife_079",
+          "egolife_139",
+          "egolife_147"
+        ],
+        "loss_ids": [
+          "egolife_111",
+          "egolife_171",
+          "egolife_172",
+          "egolife_179"
+        ],
+        "prediction_disagreements": 33
+      }
+    },
+    "validation": {
+      "motion_high": {
+        "n": 32,
+        "gains": 2,
+        "losses": 0,
+        "net": 2,
+        "gain_ids": [
+          "egolife_052",
+          "egolife_189"
+        ],
+        "loss_ids": [],
+        "prediction_disagreements": 3
+      },
+      "uniform_high": {
+        "n": 32,
+        "gains": 3,
+        "losses": 2,
+        "net": 1,
+        "gain_ids": [
+          "egolife_019",
+          "egolife_052",
+          "egolife_187"
+        ],
+        "loss_ids": [
+          "egolife_122",
+          "egolife_149"
+        ],
+        "prediction_disagreements": 12
+      },
+      "high448": {
+        "n": 32,
+        "gains": 2,
+        "losses": 0,
+        "net": 2,
+        "gain_ids": [
+          "egolife_187",
+          "egolife_189"
+        ],
+        "loss_ids": [],
+        "prediction_disagreements": 4
+      },
+      "low112": {
+        "n": 32,
+        "gains": 7,
+        "losses": 1,
+        "net": 6,
+        "gain_ids": [
+          "egolife_019",
+          "egolife_051",
+          "egolife_052",
+          "egolife_084",
+          "egolife_089",
+          "egolife_187",
+          "egolife_189"
+        ],
+        "loss_ids": [
+          "egolife_123"
+        ],
+        "prediction_disagreements": 16
+      },
+      "mid224": {
+        "n": 32,
+        "gains": 4,
+        "losses": 0,
+        "net": 4,
+        "gain_ids": [
+          "egolife_052",
+          "egolife_089",
+          "egolife_187",
+          "egolife_189"
+        ],
+        "loss_ids": [],
+        "prediction_disagreements": 11
+      }
+    },
+    "test": {
+      "motion_high": {
+        "n": 57,
+        "gains": 3,
+        "losses": 1,
+        "net": 2,
+        "gain_ids": [
+          "egolife_024",
+          "egolife_093",
+          "egolife_095"
+        ],
+        "loss_ids": [
+          "egolife_195"
+        ],
+        "prediction_disagreements": 8
+      },
+      "uniform_high": {
+        "n": 57,
+        "gains": 10,
+        "losses": 2,
+        "net": 8,
+        "gain_ids": [
+          "egolife_023",
+          "egolife_024",
+          "egolife_027",
+          "egolife_057",
+          "egolife_060",
+          "egolife_094",
+          "egolife_095",
+          "egolife_124",
+          "egolife_160",
+          "egolife_198"
+        ],
+        "loss_ids": [
+          "egolife_096",
+          "egolife_129"
+        ],
+        "prediction_disagreements": 20
+      },
+      "high448": {
+        "n": 57,
+        "gains": 2,
+        "losses": 3,
+        "net": -1,
+        "gain_ids": [
+          "egolife_024",
+          "egolife_095"
+        ],
+        "loss_ids": [
+          "egolife_063",
+          "egolife_065",
+          "egolife_129"
+        ],
+        "prediction_disagreements": 13
+      },
+      "low112": {
+        "n": 57,
+        "gains": 13,
+        "losses": 4,
+        "net": 9,
+        "gain_ids": [
+          "egolife_023",
+          "egolife_027",
+          "egolife_057",
+          "egolife_060",
+          "egolife_093",
+          "egolife_097",
+          "egolife_156",
+          "egolife_157",
+          "egolife_158",
+          "egolife_160",
+          "egolife_161",
+          "egolife_193",
+          "egolife_198"
+        ],
+        "loss_ids": [
+          "egolife_129",
+          "egolife_162",
+          "egolife_195",
+          "egolife_197"
+        ],
+        "prediction_disagreements": 23
+      },
+      "mid224": {
+        "n": 57,
+        "gains": 8,
+        "losses": 5,
+        "net": 3,
+        "gain_ids": [
+          "egolife_023",
+          "egolife_024",
+          "egolife_057",
+          "egolife_060",
+          "egolife_095",
+          "egolife_157",
+          "egolife_161",
+          "egolife_198"
+        ],
+        "loss_ids": [
+          "egolife_065",
+          "egolife_096",
+          "egolife_129",
+          "egolife_191",
+          "egolife_195"
+        ],
+        "prediction_disagreements": 20
+      }
+    }
+  },
+  "timing": {
+    "elapsed_seconds": {
+      "n": 200,
+      "mean": 0.4187238594377413,
+      "min": 0.3670170397963375,
+      "max": 0.9332507678773254,
+      "p50": 0.4062349715968594,
+      "p95": 0.49065670906566083
+    },
+    "forward_seconds": {
+      "n": 200,
+      "mean": 0.24961799676297233,
+      "min": 0.23095468198880553,
+      "max": 0.675410030875355,
+      "p50": 0.2394952360773459,
+      "p95": 0.2621273130644113
+    },
+    "input_tokens": {
+      "n": 200,
+      "mean": 3606.695,
+      "min": 3597,
+      "max": 3636,
+      "p50": 3605.0,
+      "p95": 3619
+    },
+    "visual_tokens": {
+      "n": 200,
+      "mean": 2880,
+      "min": 2880,
+      "max": 2880,
+      "p50": 2880.0,
+      "p95": 2880
+    }
+  },
+  "status": "post-hoc fixed latest control, predictions independently frozen before grading",
+  "source_freeze_sha256": "e7771c3bc55bb25fd8cd0f2079a49cef12540c91a052f15a1f0fb1106f0827ed"
+}

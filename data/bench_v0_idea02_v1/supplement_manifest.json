@@ -1,0 +1,10 @@
+{
+  "schema": "archive_git_preservation_v1",
+  "core_manifest_sha256": "79700fab7fce3a7c217625532d0a25728a023070b5f65baeee518fea66f29c56",
+  "files": {
+    ".gitattributes": {
+      "sha256": "b5cd1afa8d2ac7f7f89d5458159852434a726a08dfd3c3a73898cc8c3ea47482",
+      "bytes": 70
+    }
+  }
+}

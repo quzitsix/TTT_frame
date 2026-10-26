@@ -1,0 +1,112 @@
+{
+  "schema": "idea04_response_archive_v1",
+  "source_run": "/home/quzitsix/TTT_frame/runs/forecast_bench_v0/idea04_response_v2",
+  "cases": 200,
+  "answer_files_read_by_archiver": false,
+  "sources": {
+    "scripts/summarize_idea4_response.py": "fdbb372f4c432b14ba95f0cb0221e65ddb04a82baae727f203283d45a68a50b0",
+    "scripts/audit_idea4_response.py": "71cda204dee9d87d8255776322a7d6564ac90d99adf7d076646a1fc33f519e73"
+  },
+  "files": {
+    "audit_before_fit.json": {
+      "sha256": "49a8be9e8bb7a3be3f420c4120265396ed951d8e46bf875a4da635849fdecef4",
+      "bytes": 72089
+    },
+    "audit_before_forecast.json": {
+      "sha256": "87371e436e5514d98e16d633164aaad3597567887632d2aed4a4a41640f4754b",
+      "bytes": 72774
+    },
+    "audit_before_score.json": {
+      "sha256": "e9c855504bd1781f7dfe438b30a1023304aadb2b4ce0c3cb699db9558f8f9848",
+      "bytes": 72964
+    },
+    "diagnostics.json": {
+      "sha256": "e274fb7674e38056e7b959f069c57e8f0998152d226ff9a7b7f095f7ff187c95",
+      "bytes": 17634
+    },
+    "fit.log": {
+      "sha256": "ca2520f5546dd6bc885160a6ef9b818ef3a5c2c9ab52c53f20eb50be69475d03",
+      "bytes": 6372
+    },
+    "forecast.log": {
+      "sha256": "709f38a60bcfedbfe990ad238ab04aeed13e3585cbeccf5bf6e155a74ce28cff",
+      "bytes": 377
+    },
+    "forecast_completion.json": {
+      "sha256": "cd5a71f7c510cdd8b5a00824668aee30210f3024a6fcdf49b4633a5bfc75a94b",
+      "bytes": 17709
+    },
+    "forecast_errors.jsonl": {
+      "sha256": "3d19d360c9ca4878cd34c9a3ef522b43c57a24abba19f907e84916ea64da253f",
+      "bytes": 89947
+    },
+    "memory_benchmark.json": {
+      "sha256": "82ae7fa8eca1301f879887f5ad27a3dbab07591305cf8a981f3c4d6eaa6ea407",
+      "bytes": 1658
+    },
+    "models/conditioned_m128.pt": {
+      "sha256": "8534afd642f2c549929aee418114461bcce1cc6e76cea381fbc679c2d6070501",
+      "bytes": 236013
+    },
+    "models/conditioned_m32.pt": {
+      "sha256": "9df0f61d957959f1515ca1fb8ea80b481fe408e3136b866a892f26f47b99f3b7",
+      "bytes": 76256
+    },
+    "models/conditioned_m64.pt": {
+      "sha256": "75ee64cf37703bc9432334de3b084ed3aff645d588f7b67311a1cf3f608d2188",
+      "bytes": 121312
+    },
+    "models/fixed_m128.pt": {
+      "sha256": "045fdbe64ea6a04a37076f09b86d4718a5224e689b009c14eeee61c3d702d31e",
+      "bytes": 235935
+    },
+    "models/fixed_m32.pt": {
+      "sha256": "021a805b196487f73a6db58c76024feaaee3bef63c84da2d3bf8c3911cc246b0",
+      "bytes": 76178
+    },
+    "models/fixed_m64.pt": {
+      "sha256": "ef6add6cf4130ab3e8b6f4ba68924f974ad60e22cc6859110324d2a59301c6f0",
+      "bytes": 121234
+    },
+    "per_case.csv": {
+      "sha256": "4f1a7d63cd992634b7240038350bb39edd20fba77c84f3085621d5ad02a4c14d",
+      "bytes": 18834
+    },
+    "per_case.jsonl": {
+      "sha256": "e035e9904c9f9d3602fe8b24f6d633a8d962dfa1ad65563a4a0c61549578dbbc",
+      "bytes": 400304
+    },
+    "predictions.jsonl": {
+      "sha256": "1c3984dc232eddc891ff7087054aa86c0085d091b0a8936a8b318f8ad1c27c42",
+      "bytes": 351061
+    },
+    "probes.pt": {
+      "sha256": "17650537c381e0f794542e937f6054a2bf7672f6fee5bd8bfa6f640866a1759e",
+      "bytes": 167733
+    },
+    "protocol.json": {
+      "sha256": "b9bc4088253f634a430c30146a1e66ed9d7504011c83fc3acbaf92c84e168370",
+      "bytes": 217714
+    },
+    "results.md": {
+      "sha256": "dd79e9b5770dc8df2e0c0ae2ad47e793bd84cb79272a5c13d208ccb9f00fdeee",
+      "bytes": 968
+    },
+    "selection.json": {
+      "sha256": "046d48087f5080be697f48e1adee70df296515e83d7496d5fa33de01c319a9a7",
+      "bytes": 8702
+    },
+    "summary.json": {
+      "sha256": "92022003d48dca50bc883d3153ebda3044a8b6bacd434d153786c05ee354473c",
+      "bytes": 11483
+    },
+    "teacher.log": {
+      "sha256": "28415c4bd4f97b5f20fc20405ac1be7e5b2e0317e97fa440c7cd833b4f199e0e",
+      "bytes": 689
+    },
+    "teacher_completion.json": {
+      "sha256": "eb2f4203c07ba1ca524fe9777fe80abe9a37dc45170d2e752a32f0c1dd2d363f",
+      "bytes": 17489
+    }
+  }
+}

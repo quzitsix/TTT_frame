@@ -1,0 +1,592 @@
+{
+  "metrics": {
+    "teacher": {
+      "train": {
+        "n": 111,
+        "correct": 98
+      },
+      "validation": {
+        "n": 32,
+        "correct": 14
+      },
+      "test": {
+        "n": 57,
+        "correct": 24
+      }
+    },
+    "recent_only": {
+      "train": {
+        "n": 111,
+        "correct": 97
+      },
+      "validation": {
+        "n": 32,
+        "correct": 14
+      },
+      "test": {
+        "n": 57,
+        "correct": 24
+      }
+    },
+    "fixed_full": {
+      "train": {
+        "n": 111,
+        "correct": 98
+      },
+      "validation": {
+        "n": 32,
+        "correct": 14
+      },
+      "test": {
+        "n": 57,
+        "correct": 24
+      }
+    },
+    "fixed_warm20": {
+      "train": {
+        "n": 111,
+        "correct": 98
+      },
+      "validation": {
+        "n": 32,
+        "correct": 14
+      },
+      "test": {
+        "n": 57,
+        "correct": 24
+      }
+    },
+    "fixed_copy": {
+      "train": {
+        "n": 111,
+        "correct": 97
+      },
+      "validation": {
+        "n": 32,
+        "correct": 14
+      },
+      "test": {
+        "n": 57,
+        "correct": 24
+      }
+    },
+    "fixed_oracle": {
+      "train": {
+        "n": 111,
+        "correct": 98
+      },
+      "validation": {
+        "n": 32,
+        "correct": 14
+      },
+      "test": {
+        "n": 57,
+        "correct": 24
+      }
+    },
+    "conditioned_full": {
+      "train": {
+        "n": 111,
+        "correct": 98
+      },
+      "validation": {
+        "n": 32,
+        "correct": 14
+      },
+      "test": {
+        "n": 57,
+        "correct": 24
+      }
+    },
+    "conditioned_warm20": {
+      "train": {
+        "n": 111,
+        "correct": 98
+      },
+      "validation": {
+        "n": 32,
+        "correct": 14
+      },
+      "test": {
+        "n": 57,
+        "correct": 24
+      }
+    },
+    "conditioned_copy": {
+      "train": {
+        "n": 111,
+        "correct": 97
+      },
+      "validation": {
+        "n": 32,
+        "correct": 14
+      },
+      "test": {
+        "n": 57,
+        "correct": 24
+      }
+    },
+    "conditioned_oracle": {
+      "train": {
+        "n": 111,
+        "correct": 98
+      },
+      "validation": {
+        "n": 32,
+        "correct": 14
+      },
+      "test": {
+        "n": 57,
+        "correct": 24
+      }
+    }
+  },
+  "paired": {
+    "teacher": {
+      "teacher": {
+        "train": {
+          "gains": 0,
+          "losses": 0,
+          "gain_ids": [],
+          "loss_ids": []
+        },
+        "validation": {
+          "gains": 0,
+          "losses": 0,
+          "gain_ids": [],
+          "loss_ids": []
+        },
+        "test": {
+          "gains": 0,
+          "losses": 0,
+          "gain_ids": [],
+          "loss_ids": []
+        }
+      },
+      "recent_only": {
+        "train": {
+          "gains": 1,
+          "losses": 0,
+          "gain_ids": [
+            "egolife_077"
+          ],
+          "loss_ids": []
+        },
+        "validation": {
+          "gains": 0,
+          "losses": 0,
+          "gain_ids": [],
+          "loss_ids": []
+        },
+        "test": {
+          "gains": 0,
+          "losses": 0,
+          "gain_ids": [],
+          "loss_ids": []
+        }
+      }
+    },
+    "recent_only": {
+      "teacher": {
+        "train": {
+          "gains": 0,
+          "losses": 1,
+          "gain_ids": [],
+          "loss_ids": [
+            "egolife_077"
+          ]
+        },
+        "validation": {
+          "gains": 0,
+          "losses": 0,
+          "gain_ids": [],
+          "loss_ids": []
+        },
+        "test": {
+          "gains": 0,
+          "losses": 0,
+          "gain_ids": [],
+          "loss_ids": []
+        }
+      },
+      "recent_only": {
+        "train": {
+          "gains": 0,
+          "losses": 0,
+          "gain_ids": [],
+          "loss_ids": []
+        },
+        "validation": {
+          "gains": 0,
+          "losses": 0,
+          "gain_ids": [],
+          "loss_ids": []
+        },
+        "test": {
+          "gains": 0,
+          "losses": 0,
+          "gain_ids": [],
+          "loss_ids": []
+        }
+      }
+    },
+    "fixed_full": {
+      "teacher": {
+        "train": {
+          "gains": 0,
+          "losses": 0,
+          "gain_ids": [],
+          "loss_ids": []
+        },
+        "validation": {
+          "gains": 0,
+          "losses": 0,
+          "gain_ids": [],
+          "loss_ids": []
+        },
+        "test": {
+          "gains": 0,
+          "losses": 0,
+          "gain_ids": [],
+          "loss_ids": []
+        }
+      },
+      "recent_only": {
+        "train": {
+          "gains": 1,
+          "losses": 0,
+          "gain_ids": [
+            "egolife_077"
+          ],
+          "loss_ids": []
+        },
+        "validation": {
+          "gains": 0,
+          "losses": 0,
+          "gain_ids": [],
+          "loss_ids": []
+        },
+        "test": {
+          "gains": 0,
+          "losses": 0,
+          "gain_ids": [],
+          "loss_ids": []
+        }
+      }
+    },
+    "fixed_warm20": {
+      "teacher": {
+        "train": {
+          "gains": 0,
+          "losses": 0,
+          "gain_ids": [],
+          "loss_ids": []
+        },
+        "validation": {
+          "gains": 0,
+          "losses": 0,
+          "gain_ids": [],
+          "loss_ids": []
+        },
+        "test": {
+          "gains": 0,
+          "losses": 0,
+          "gain_ids": [],
+          "loss_ids": []
+        }
+      },
+      "recent_only": {
+        "train": {
+          "gains": 1,
+          "losses": 0,
+          "gain_ids": [
+            "egolife_077"
+          ],
+          "loss_ids": []
+        },
+        "validation": {
+          "gains": 0,
+          "losses": 0,
+          "gain_ids": [],
+          "loss_ids": []
+        },
+        "test": {
+          "gains": 0,
+          "losses": 0,
+          "gain_ids": [],
+          "loss_ids": []
+        }
+      }
+    },
+    "fixed_copy": {
+      "teacher": {
+        "train": {
+          "gains": 0,
+          "losses": 1,
+          "gain_ids": [],
+          "loss_ids": [
+            "egolife_077"
+          ]
+        },
+        "validation": {
+          "gains": 0,
+          "losses": 0,
+          "gain_ids": [],
+          "loss_ids": []
+        },
+        "test": {
+          "gains": 0,
+          "losses": 0,
+          "gain_ids": [],
+          "loss_ids": []
+        }
+      },
+      "recent_only": {
+        "train": {
+          "gains": 0,
+          "losses": 0,
+          "gain_ids": [],
+          "loss_ids": []
+        },
+        "validation": {
+          "gains": 0,
+          "losses": 0,
+          "gain_ids": [],
+          "loss_ids": []
+        },
+        "test": {
+          "gains": 0,
+          "losses": 0,
+          "gain_ids": [],
+          "loss_ids": []
+        }
+      }
+    },
+    "fixed_oracle": {
+      "teacher": {
+        "train": {
+          "gains": 0,
+          "losses": 0,
+          "gain_ids": [],
+          "loss_ids": []
+        },
+        "validation": {
+          "gains": 0,
+          "losses": 0,
+          "gain_ids": [],
+          "loss_ids": []
+        },
+        "test": {
+          "gains": 0,
+          "losses": 0,
+          "gain_ids": [],
+          "loss_ids": []
+        }
+      },
+      "recent_only": {
+        "train": {
+          "gains": 1,
+          "losses": 0,
+          "gain_ids": [
+            "egolife_077"
+          ],
+          "loss_ids": []
+        },
+        "validation": {
+          "gains": 0,
+          "losses": 0,
+          "gain_ids": [],
+          "loss_ids": []
+        },
+        "test": {
+          "gains": 0,
+          "losses": 0,
+          "gain_ids": [],
+          "loss_ids": []
+        }
+      }
+    },
+    "conditioned_full": {
+      "teacher": {
+        "train": {
+          "gains": 0,
+          "losses": 0,
+          "gain_ids": [],
+          "loss_ids": []
+        },
+        "validation": {
+          "gains": 0,
+          "losses": 0,
+          "gain_ids": [],
+          "loss_ids": []
+        },
+        "test": {
+          "gains": 0,
+          "losses": 0,
+          "gain_ids": [],
+          "loss_ids": []
+        }
+      },
+      "recent_only": {
+        "train": {
+          "gains": 1,
+          "losses": 0,
+          "gain_ids": [
+            "egolife_077"
+          ],
+          "loss_ids": []
+        },
+        "validation": {
+          "gains": 0,
+          "losses": 0,
+          "gain_ids": [],
+          "loss_ids": []
+        },
+        "test": {
+          "gains": 0,
+          "losses": 0,
+          "gain_ids": [],
+          "loss_ids": []
+        }
+      }
+    },
+    "conditioned_warm20": {
+      "teacher": {
+        "train": {
+          "gains": 0,
+          "losses": 0,
+          "gain_ids": [],
+          "loss_ids": []
+        },
+        "validation": {
+          "gains": 0,
+          "losses": 0,
+          "gain_ids": [],
+          "loss_ids": []
+        },
+        "test": {
+          "gains": 0,
+          "losses": 0,
+          "gain_ids": [],
+          "loss_ids": []
+        }
+      },
+      "recent_only": {
+        "train": {
+          "gains": 1,
+          "losses": 0,
+          "gain_ids": [
+            "egolife_077"
+          ],
+          "loss_ids": []
+        },
+        "validation": {
+          "gains": 0,
+          "losses": 0,
+          "gain_ids": [],
+          "loss_ids": []
+        },
+        "test": {
+          "gains": 0,
+          "losses": 0,
+          "gain_ids": [],
+          "loss_ids": []
+        }
+      }
+    },
+    "conditioned_copy": {
+      "teacher": {
+        "train": {
+          "gains": 0,
+          "losses": 1,
+          "gain_ids": [],
+          "loss_ids": [
+            "egolife_077"
+          ]
+        },
+        "validation": {
+          "gains": 0,
+          "losses": 0,
+          "gain_ids": [],
+          "loss_ids": []
+        },
+        "test": {
+          "gains": 0,
+          "losses": 0,
+          "gain_ids": [],
+          "loss_ids": []
+        }
+      },
+      "recent_only": {
+        "train": {
+          "gains": 0,
+          "losses": 0,
+          "gain_ids": [],
+          "loss_ids": []
+        },
+        "validation": {
+          "gains": 0,
+          "losses": 0,
+          "gain_ids": [],
+          "loss_ids": []
+        },
+        "test": {
+          "gains": 0,
+          "losses": 0,
+          "gain_ids": [],
+          "loss_ids": []
+        }
+      }
+    },
+    "conditioned_oracle": {
+      "teacher": {
+        "train": {
+          "gains": 0,
+          "losses": 0,
+          "gain_ids": [],
+          "loss_ids": []
+        },
+        "validation": {
+          "gains": 0,
+          "losses": 0,
+          "gain_ids": [],
+          "loss_ids": []
+        },
+        "test": {
+          "gains": 0,
+          "losses": 0,
+          "gain_ids": [],
+          "loss_ids": []
+        }
+      },
+      "recent_only": {
+        "train": {
+          "gains": 1,
+          "losses": 0,
+          "gain_ids": [
+            "egolife_077"
+          ],
+          "loss_ids": []
+        },
+        "validation": {
+          "gains": 0,
+          "losses": 0,
+          "gain_ids": [],
+          "loss_ids": []
+        },
+        "test": {
+          "gains": 0,
+          "losses": 0,
+          "gain_ids": [],
+          "loss_ids": []
+        }
+      }
+    }
+  },
+  "selection": {
+    "fixed": "fixed_m128",
+    "conditioned": "conditioned_m128"
+  },
+  "test_status": "exploratory reused silver labels; same day split; no test model selection",
+  "predictions_sha256": "1c3984dc232eddc891ff7087054aa86c0085d091b0a8936a8b318f8ad1c27c42"
+}

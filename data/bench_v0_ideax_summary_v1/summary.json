@@ -1,0 +1,3461 @@
+{
+  "schema": "ideax_answer_comparison_v1",
+  "analysis_only": true,
+  "selection_is_posthoc": true,
+  "examples_are_generated_rationales": false,
+  "metrics": {
+    "full_ICL": {
+      "train": {
+        "n": 111,
+        "correct": 31,
+        "accuracy": 0.27927927927927926,
+        "incorrect_released_option_roles": {
+          "plausible_not_observed": 54,
+          "implausible_not_observed": 26
+        }
+      },
+      "validation": {
+        "n": 32,
+        "correct": 6,
+        "accuracy": 0.1875,
+        "incorrect_released_option_roles": {
+          "implausible_not_observed": 11,
+          "plausible_not_observed": 15
+        }
+      },
+      "test": {
+        "n": 57,
+        "correct": 21,
+        "accuracy": 0.3684210526315789,
+        "incorrect_released_option_roles": {
+          "plausible_not_observed": 21,
+          "implausible_not_observed": 15
+        }
+      }
+    },
+    "recent_ICL": {
+      "train": {
+        "n": 111,
+        "correct": 30,
+        "accuracy": 0.2702702702702703,
+        "incorrect_released_option_roles": {
+          "plausible_not_observed": 53,
+          "implausible_not_observed": 28
+        }
+      },
+      "validation": {
+        "n": 32,
+        "correct": 4,
+        "accuracy": 0.125,
+        "incorrect_released_option_roles": {
+          "implausible_not_observed": 10,
+          "plausible_not_observed": 18
+        }
+      },
+      "test": {
+        "n": 57,
+        "correct": 23,
+        "accuracy": 0.40350877192982454,
+        "incorrect_released_option_roles": {
+          "plausible_not_observed": 23,
+          "implausible_not_observed": 11
+        }
+      }
+    },
+    "idea1_recent_only": {
+      "train": {
+        "n": 111,
+        "correct": 97,
+        "accuracy": 0.8738738738738738,
+        "incorrect_released_option_roles": {
+          "plausible_not_observed": 6,
+          "implausible_not_observed": 8
+        }
+      },
+      "validation": {
+        "n": 32,
+        "correct": 14,
+        "accuracy": 0.4375,
+        "incorrect_released_option_roles": {
+          "implausible_not_observed": 9,
+          "plausible_not_observed": 9
+        }
+      },
+      "test": {
+        "n": 57,
+        "correct": 24,
+        "accuracy": 0.42105263157894735,
+        "incorrect_released_option_roles": {
+          "implausible_not_observed": 19,
+          "plausible_not_observed": 14
+        }
+      }
+    },
+    "idea1_residual": {
+      "train": {
+        "n": 111,
+        "correct": 98,
+        "accuracy": 0.8828828828828829,
+        "incorrect_released_option_roles": {
+          "plausible_not_observed": 6,
+          "implausible_not_observed": 7
+        }
+      },
+      "validation": {
+        "n": 32,
+        "correct": 14,
+        "accuracy": 0.4375,
+        "incorrect_released_option_roles": {
+          "implausible_not_observed": 9,
+          "plausible_not_observed": 9
+        }
+      },
+      "test": {
+        "n": 57,
+        "correct": 24,
+        "accuracy": 0.42105263157894735,
+        "incorrect_released_option_roles": {
+          "implausible_not_observed": 19,
+          "plausible_not_observed": 14
+        }
+      }
+    },
+    "idea1_plain_delayed": {
+      "train": {
+        "n": 111,
+        "correct": 94,
+        "accuracy": 0.8468468468468469,
+        "incorrect_released_option_roles": {
+          "plausible_not_observed": 8,
+          "implausible_not_observed": 9
+        }
+      },
+      "validation": {
+        "n": 32,
+        "correct": 10,
+        "accuracy": 0.3125,
+        "incorrect_released_option_roles": {
+          "plausible_not_observed": 11,
+          "implausible_not_observed": 11
+        }
+      },
+      "test": {
+        "n": 57,
+        "correct": 25,
+        "accuracy": 0.43859649122807015,
+        "incorrect_released_option_roles": {
+          "implausible_not_observed": 19,
+          "plausible_not_observed": 13
+        }
+      }
+    },
+    "idea1_reset_residual": {
+      "train": {
+        "n": 111,
+        "correct": 97,
+        "accuracy": 0.8738738738738738,
+        "incorrect_released_option_roles": {
+          "plausible_not_observed": 6,
+          "implausible_not_observed": 8
+        }
+      },
+      "validation": {
+        "n": 32,
+        "correct": 14,
+        "accuracy": 0.4375,
+        "incorrect_released_option_roles": {
+          "implausible_not_observed": 9,
+          "plausible_not_observed": 9
+        }
+      },
+      "test": {
+        "n": 57,
+        "correct": 24,
+        "accuracy": 0.42105263157894735,
+        "incorrect_released_option_roles": {
+          "implausible_not_observed": 19,
+          "plausible_not_observed": 14
+        }
+      }
+    },
+    "idea3_direct": {
+      "train": {
+        "n": 111,
+        "correct": 18,
+        "accuracy": 0.16216216216216217,
+        "incorrect_released_option_roles": {
+          "implausible_not_observed": 59,
+          "plausible_not_observed": 34
+        }
+      },
+      "validation": {
+        "n": 32,
+        "correct": 8,
+        "accuracy": 0.25,
+        "incorrect_released_option_roles": {
+          "implausible_not_observed": 14,
+          "plausible_not_observed": 10
+        }
+      },
+      "test": {
+        "n": 57,
+        "correct": 9,
+        "accuracy": 0.15789473684210525,
+        "incorrect_released_option_roles": {
+          "implausible_not_observed": 28,
+          "plausible_not_observed": 20
+        }
+      }
+    },
+    "idea3_search": {
+      "train": {
+        "n": 111,
+        "correct": 11,
+        "accuracy": 0.0990990990990991,
+        "incorrect_released_option_roles": {
+          "implausible_not_observed": 61,
+          "plausible_not_observed": 39
+        }
+      },
+      "validation": {
+        "n": 32,
+        "correct": 6,
+        "accuracy": 0.1875,
+        "incorrect_released_option_roles": {
+          "implausible_not_observed": 12,
+          "plausible_not_observed": 14
+        }
+      },
+      "test": {
+        "n": 57,
+        "correct": 6,
+        "accuracy": 0.10526315789473684,
+        "incorrect_released_option_roles": {
+          "implausible_not_observed": 32,
+          "plausible_not_observed": 19
+        }
+      }
+    },
+    "idea3_reset": {
+      "train": {
+        "n": 111,
+        "correct": 11,
+        "accuracy": 0.0990990990990991,
+        "incorrect_released_option_roles": {
+          "implausible_not_observed": 70,
+          "plausible_not_observed": 30
+        }
+      },
+      "validation": {
+        "n": 32,
+        "correct": 4,
+        "accuracy": 0.125,
+        "incorrect_released_option_roles": {
+          "implausible_not_observed": 13,
+          "plausible_not_observed": 15
+        }
+      },
+      "test": {
+        "n": 57,
+        "correct": 3,
+        "accuracy": 0.05263157894736842,
+        "incorrect_released_option_roles": {
+          "implausible_not_observed": 37,
+          "plausible_not_observed": 17
+        }
+      }
+    },
+    "idea3_wrong_direct": {
+      "train": {
+        "n": 111,
+        "correct": 17,
+        "accuracy": 0.15315315315315314,
+        "incorrect_released_option_roles": {
+          "implausible_not_observed": 65,
+          "plausible_not_observed": 29
+        }
+      },
+      "validation": {
+        "n": 32,
+        "correct": 7,
+        "accuracy": 0.21875,
+        "incorrect_released_option_roles": {
+          "implausible_not_observed": 15,
+          "plausible_not_observed": 10
+        }
+      },
+      "test": {
+        "n": 57,
+        "correct": 10,
+        "accuracy": 0.17543859649122806,
+        "incorrect_released_option_roles": {
+          "plausible_not_observed": 15,
+          "implausible_not_observed": 32
+        }
+      }
+    },
+    "idea3_wrong_search": {
+      "train": {
+        "n": 111,
+        "correct": 10,
+        "accuracy": 0.09009009009009009,
+        "incorrect_released_option_roles": {
+          "implausible_not_observed": 65,
+          "plausible_not_observed": 36
+        }
+      },
+      "validation": {
+        "n": 32,
+        "correct": 2,
+        "accuracy": 0.0625,
+        "incorrect_released_option_roles": {
+          "implausible_not_observed": 17,
+          "plausible_not_observed": 13
+        }
+      },
+      "test": {
+        "n": 57,
+        "correct": 9,
+        "accuracy": 0.15789473684210525,
+        "incorrect_released_option_roles": {
+          "plausible_not_observed": 18,
+          "implausible_not_observed": 30
+        }
+      }
+    },
+    "idea4_teacher": {
+      "train": {
+        "n": 111,
+        "correct": 98,
+        "accuracy": 0.8828828828828829,
+        "incorrect_released_option_roles": {
+          "plausible_not_observed": 6,
+          "implausible_not_observed": 7
+        }
+      },
+      "validation": {
+        "n": 32,
+        "correct": 14,
+        "accuracy": 0.4375,
+        "incorrect_released_option_roles": {
+          "implausible_not_observed": 9,
+          "plausible_not_observed": 9
+        }
+      },
+      "test": {
+        "n": 57,
+        "correct": 24,
+        "accuracy": 0.42105263157894735,
+        "incorrect_released_option_roles": {
+          "implausible_not_observed": 19,
+          "plausible_not_observed": 14
+        }
+      }
+    },
+    "idea4_fixed_full": {
+      "train": {
+        "n": 111,
+        "correct": 98,
+        "accuracy": 0.8828828828828829,
+        "incorrect_released_option_roles": {
+          "plausible_not_observed": 6,
+          "implausible_not_observed": 7
+        }
+      },
+      "validation": {
+        "n": 32,
+        "correct": 14,
+        "accuracy": 0.4375,
+        "incorrect_released_option_roles": {
+          "implausible_not_observed": 9,
+          "plausible_not_observed": 9
+        }
+      },
+      "test": {
+        "n": 57,
+        "correct": 24,
+        "accuracy": 0.42105263157894735,
+        "incorrect_released_option_roles": {
+          "implausible_not_observed": 19,
+          "plausible_not_observed": 14
+        }
+      }
+    },
+    "idea4_conditioned_full": {
+      "train": {
+        "n": 111,
+        "correct": 98,
+        "accuracy": 0.8828828828828829,
+        "incorrect_released_option_roles": {
+          "plausible_not_observed": 6,
+          "implausible_not_observed": 7
+        }
+      },
+      "validation": {
+        "n": 32,
+        "correct": 14,
+        "accuracy": 0.4375,
+        "incorrect_released_option_roles": {
+          "implausible_not_observed": 9,
+          "plausible_not_observed": 9
+        }
+      },
+      "test": {
+        "n": 57,
+        "correct": 24,
+        "accuracy": 0.42105263157894735,
+        "incorrect_released_option_roles": {
+          "implausible_not_observed": 19,
+          "plausible_not_observed": 14
+        }
+      }
+    },
+    "idea4_fixed_warm20": {
+      "train": {
+        "n": 111,
+        "correct": 98,
+        "accuracy": 0.8828828828828829,
+        "incorrect_released_option_roles": {
+          "plausible_not_observed": 6,
+          "implausible_not_observed": 7
+        }
+      },
+      "validation": {
+        "n": 32,
+        "correct": 14,
+        "accuracy": 0.4375,
+        "incorrect_released_option_roles": {
+          "implausible_not_observed": 9,
+          "plausible_not_observed": 9
+        }
+      },
+      "test": {
+        "n": 57,
+        "correct": 24,
+        "accuracy": 0.42105263157894735,
+        "incorrect_released_option_roles": {
+          "implausible_not_observed": 19,
+          "plausible_not_observed": 14
+        }
+      }
+    },
+    "idea4_conditioned_warm20": {
+      "train": {
+        "n": 111,
+        "correct": 98,
+        "accuracy": 0.8828828828828829,
+        "incorrect_released_option_roles": {
+          "plausible_not_observed": 6,
+          "implausible_not_observed": 7
+        }
+      },
+      "validation": {
+        "n": 32,
+        "correct": 14,
+        "accuracy": 0.4375,
+        "incorrect_released_option_roles": {
+          "implausible_not_observed": 9,
+          "plausible_not_observed": 9
+        }
+      },
+      "test": {
+        "n": 57,
+        "correct": 24,
+        "accuracy": 0.42105263157894735,
+        "incorrect_released_option_roles": {
+          "implausible_not_observed": 19,
+          "plausible_not_observed": 14
+        }
+      }
+    },
+    "idea4_fixed_copy": {
+      "train": {
+        "n": 111,
+        "correct": 97,
+        "accuracy": 0.8738738738738738,
+        "incorrect_released_option_roles": {
+          "plausible_not_observed": 6,
+          "implausible_not_observed": 8
+        }
+      },
+      "validation": {
+        "n": 32,
+        "correct": 14,
+        "accuracy": 0.4375,
+        "incorrect_released_option_roles": {
+          "implausible_not_observed": 9,
+          "plausible_not_observed": 9
+        }
+      },
+      "test": {
+        "n": 57,
+        "correct": 24,
+        "accuracy": 0.42105263157894735,
+        "incorrect_released_option_roles": {
+          "implausible_not_observed": 19,
+          "plausible_not_observed": 14
+        }
+      }
+    },
+    "idea4_fixed_oracle": {
+      "train": {
+        "n": 111,
+        "correct": 98,
+        "accuracy": 0.8828828828828829,
+        "incorrect_released_option_roles": {
+          "plausible_not_observed": 6,
+          "implausible_not_observed": 7
+        }
+      },
+      "validation": {
+        "n": 32,
+        "correct": 14,
+        "accuracy": 0.4375,
+        "incorrect_released_option_roles": {
+          "implausible_not_observed": 9,
+          "plausible_not_observed": 9
+        }
+      },
+      "test": {
+        "n": 57,
+        "correct": 24,
+        "accuracy": 0.42105263157894735,
+        "incorrect_released_option_roles": {
+          "implausible_not_observed": 19,
+          "plausible_not_observed": 14
+        }
+      }
+    },
+    "idea5_low112": {
+      "train": {
+        "n": 111,
+        "correct": 14,
+        "accuracy": 0.12612612612612611,
+        "incorrect_released_option_roles": {
+          "plausible_not_observed": 50,
+          "implausible_not_observed": 47
+        }
+      },
+      "validation": {
+        "n": 32,
+        "correct": 4,
+        "accuracy": 0.125,
+        "incorrect_released_option_roles": {
+          "implausible_not_observed": 12,
+          "plausible_not_observed": 16
+        }
+      },
+      "test": {
+        "n": 57,
+        "correct": 15,
+        "accuracy": 0.2631578947368421,
+        "incorrect_released_option_roles": {
+          "plausible_not_observed": 23,
+          "implausible_not_observed": 19
+        }
+      }
+    },
+    "idea5_mid224": {
+      "train": {
+        "n": 111,
+        "correct": 30,
+        "accuracy": 0.2702702702702703,
+        "incorrect_released_option_roles": {
+          "plausible_not_observed": 55,
+          "implausible_not_observed": 26
+        }
+      },
+      "validation": {
+        "n": 32,
+        "correct": 6,
+        "accuracy": 0.1875,
+        "incorrect_released_option_roles": {
+          "implausible_not_observed": 11,
+          "plausible_not_observed": 15
+        }
+      },
+      "test": {
+        "n": 57,
+        "correct": 21,
+        "accuracy": 0.3684210526315789,
+        "incorrect_released_option_roles": {
+          "plausible_not_observed": 20,
+          "implausible_not_observed": 16
+        }
+      }
+    },
+    "idea5_high448": {
+      "train": {
+        "n": 111,
+        "correct": 37,
+        "accuracy": 0.3333333333333333,
+        "incorrect_released_option_roles": {
+          "plausible_not_observed": 59,
+          "implausible_not_observed": 15
+        }
+      },
+      "validation": {
+        "n": 32,
+        "correct": 8,
+        "accuracy": 0.25,
+        "incorrect_released_option_roles": {
+          "implausible_not_observed": 8,
+          "plausible_not_observed": 16
+        }
+      },
+      "test": {
+        "n": 57,
+        "correct": 25,
+        "accuracy": 0.43859649122807015,
+        "incorrect_released_option_roles": {
+          "implausible_not_observed": 17,
+          "plausible_not_observed": 15
+        }
+      }
+    },
+    "idea5_uniform_high": {
+      "train": {
+        "n": 111,
+        "correct": 28,
+        "accuracy": 0.25225225225225223,
+        "incorrect_released_option_roles": {
+          "plausible_not_observed": 60,
+          "implausible_not_observed": 23
+        }
+      },
+      "validation": {
+        "n": 32,
+        "correct": 9,
+        "accuracy": 0.28125,
+        "incorrect_released_option_roles": {
+          "implausible_not_observed": 13,
+          "plausible_not_observed": 10
+        }
+      },
+      "test": {
+        "n": 57,
+        "correct": 16,
+        "accuracy": 0.2807017543859649,
+        "incorrect_released_option_roles": {
+          "plausible_not_observed": 24,
+          "implausible_not_observed": 17
+        }
+      }
+    },
+    "idea5_random_high": {
+      "train": {
+        "n": 111,
+        "correct": 32,
+        "accuracy": 0.2882882882882883,
+        "incorrect_released_option_roles": {
+          "plausible_not_observed": 56,
+          "implausible_not_observed": 23
+        }
+      },
+      "validation": {
+        "n": 32,
+        "correct": 7,
+        "accuracy": 0.21875,
+        "incorrect_released_option_roles": {
+          "implausible_not_observed": 11,
+          "plausible_not_observed": 14
+        }
+      },
+      "test": {
+        "n": 57,
+        "correct": 17,
+        "accuracy": 0.2982456140350877,
+        "incorrect_released_option_roles": {
+          "plausible_not_observed": 23,
+          "implausible_not_observed": 17
+        }
+      }
+    },
+    "idea5_motion_high": {
+      "train": {
+        "n": 111,
+        "correct": 36,
+        "accuracy": 0.32432432432432434,
+        "incorrect_released_option_roles": {
+          "plausible_not_observed": 57,
+          "implausible_not_observed": 18
+        }
+      },
+      "validation": {
+        "n": 32,
+        "correct": 8,
+        "accuracy": 0.25,
+        "incorrect_released_option_roles": {
+          "implausible_not_observed": 8,
+          "plausible_not_observed": 16
+        }
+      },
+      "test": {
+        "n": 57,
+        "correct": 22,
+        "accuracy": 0.38596491228070173,
+        "incorrect_released_option_roles": {
+          "implausible_not_observed": 17,
+          "plausible_not_observed": 18
+        }
+      }
+    },
+    "idea5_deadline_high_posthoc": {
+      "train": {
+        "n": 111,
+        "correct": 36,
+        "accuracy": 0.32432432432432434,
+        "incorrect_released_option_roles": {
+          "implausible_not_observed": 16,
+          "plausible_not_observed": 59
+        }
+      },
+      "validation": {
+        "n": 32,
+        "correct": 10,
+        "accuracy": 0.3125,
+        "incorrect_released_option_roles": {
+          "implausible_not_observed": 5,
+          "plausible_not_observed": 17
+        }
+      },
+      "test": {
+        "n": 57,
+        "correct": 24,
+        "accuracy": 0.42105263157894735,
+        "incorrect_released_option_roles": {
+          "implausible_not_observed": 14,
+          "plausible_not_observed": 19
+        }
+      }
+    }
+  },
+  "paired": {
+    "recent_ICL vs full_ICL": {
+      "train": {
+        "gains": 5,
+        "losses": 6,
+        "net": -1,
+        "gain_ids": [
+          "egolife_006",
+          "egolife_069",
+          "egolife_081",
+          "egolife_083",
+          "egolife_112"
+        ],
+        "loss_ids": [
+          "egolife_017",
+          "egolife_039",
+          "egolife_077",
+          "egolife_117",
+          "egolife_172",
+          "egolife_175"
+        ]
+      },
+      "validation": {
+        "gains": 0,
+        "losses": 2,
+        "net": -2,
+        "gain_ids": [],
+        "loss_ids": [
+          "egolife_051",
+          "egolife_153"
+        ]
+      },
+      "test": {
+        "gains": 6,
+        "losses": 4,
+        "net": 2,
+        "gain_ids": [
+          "egolife_023",
+          "egolife_058",
+          "egolife_060",
+          "egolife_098",
+          "egolife_161",
+          "egolife_162"
+        ],
+        "loss_ids": [
+          "egolife_065",
+          "egolife_093",
+          "egolife_096",
+          "egolife_191"
+        ]
+      }
+    },
+    "idea1_recent_only vs full_ICL": {
+      "train": {
+        "gains": 70,
+        "losses": 4,
+        "net": 66,
+        "gain_ids": [
+          "egolife_003",
+          "egolife_004",
+          "egolife_006",
+          "egolife_008",
+          "egolife_009",
+          "egolife_010",
+          "egolife_011",
+          "egolife_013",
+          "egolife_014",
+          "egolife_015",
+          "egolife_016",
+          "egolife_018",
+          "egolife_030",
+          "egolife_031",
+          "egolife_034",
+          "egolife_035",
+          "egolife_036",
+          "egolife_037",
+          "egolife_038",
+          "egolife_041",
+          "egolife_043",
+          "egolife_044",
+          "egolife_045",
+          "egolife_047",
+          "egolife_048",
+          "egolife_066",
+          "egolife_067",
+          "egolife_068",
+          "egolife_071",
+          "egolife_072",
+          "egolife_073",
+          "egolife_075",
+          "egolife_076",
+          "egolife_078",
+          "egolife_079",
+          "egolife_080",
+          "egolife_081",
+          "egolife_082",
+          "egolife_083",
+          "egolife_100",
+          "egolife_101",
+          "egolife_102",
+          "egolife_107",
+          "egolife_108",
+          "egolife_109",
+          "egolife_110",
+          "egolife_112",
+          "egolife_113",
+          "egolife_114",
+          "egolife_115",
+          "egolife_116",
+          "egolife_132",
+          "egolife_133",
+          "egolife_135",
+          "egolife_136",
+          "egolife_138",
+          "egolife_141",
+          "egolife_142",
+          "egolife_144",
+          "egolife_146",
+          "egolife_166",
+          "egolife_167",
+          "egolife_169",
+          "egolife_173",
+          "egolife_174",
+          "egolife_177",
+          "egolife_178",
+          "egolife_181",
+          "egolife_184",
+          "egolife_185"
+        ],
+        "loss_ids": [
+          "egolife_017",
+          "egolife_077",
+          "egolife_140",
+          "egolife_168"
+        ]
+      },
+      "validation": {
+        "gains": 11,
+        "losses": 3,
+        "net": 8,
+        "gain_ids": [
+          "egolife_020",
+          "egolife_049",
+          "egolife_050",
+          "egolife_052",
+          "egolife_055",
+          "egolife_085",
+          "egolife_087",
+          "egolife_089",
+          "egolife_186",
+          "egolife_187",
+          "egolife_188"
+        ],
+        "loss_ids": [
+          "egolife_051",
+          "egolife_086",
+          "egolife_153"
+        ]
+      },
+      "test": {
+        "gains": 15,
+        "losses": 12,
+        "net": 3,
+        "gain_ids": [
+          "egolife_024",
+          "egolife_025",
+          "egolife_029",
+          "egolife_057",
+          "egolife_063",
+          "egolife_128",
+          "egolife_130",
+          "egolife_131",
+          "egolife_154",
+          "egolife_155",
+          "egolife_159",
+          "egolife_164",
+          "egolife_192",
+          "egolife_196",
+          "egolife_200"
+        ],
+        "loss_ids": [
+          "egolife_022",
+          "egolife_027",
+          "egolife_065",
+          "egolife_090",
+          "egolife_093",
+          "egolife_126",
+          "egolife_156",
+          "egolife_158",
+          "egolife_160",
+          "egolife_191",
+          "egolife_193",
+          "egolife_195"
+        ]
+      }
+    },
+    "idea1_residual vs full_ICL": {
+      "train": {
+        "gains": 70,
+        "losses": 3,
+        "net": 67,
+        "gain_ids": [
+          "egolife_003",
+          "egolife_004",
+          "egolife_006",
+          "egolife_008",
+          "egolife_009",
+          "egolife_010",
+          "egolife_011",
+          "egolife_013",
+          "egolife_014",
+          "egolife_015",
+          "egolife_016",
+          "egolife_018",
+          "egolife_030",
+          "egolife_031",
+          "egolife_034",
+          "egolife_035",
+          "egolife_036",
+          "egolife_037",
+          "egolife_038",
+          "egolife_041",
+          "egolife_043",
+          "egolife_044",
+          "egolife_045",
+          "egolife_047",
+          "egolife_048",
+          "egolife_066",
+          "egolife_067",
+          "egolife_068",
+          "egolife_071",
+          "egolife_072",
+          "egolife_073",
+          "egolife_075",
+          "egolife_076",
+          "egolife_078",
+          "egolife_079",
+          "egolife_080",
+          "egolife_081",
+          "egolife_082",
+          "egolife_083",
+          "egolife_100",
+          "egolife_101",
+          "egolife_102",
+          "egolife_107",
+          "egolife_108",
+          "egolife_109",
+          "egolife_110",
+          "egolife_112",
+          "egolife_113",
+          "egolife_114",
+          "egolife_115",
+          "egolife_116",
+          "egolife_132",
+          "egolife_133",
+          "egolife_135",
+          "egolife_136",
+          "egolife_138",
+          "egolife_141",
+          "egolife_142",
+          "egolife_144",
+          "egolife_146",
+          "egolife_166",
+          "egolife_167",
+          "egolife_169",
+          "egolife_173",
+          "egolife_174",
+          "egolife_177",
+          "egolife_178",
+          "egolife_181",
+          "egolife_184",
+          "egolife_185"
+        ],
+        "loss_ids": [
+          "egolife_017",
+          "egolife_140",
+          "egolife_168"
+        ]
+      },
+      "validation": {
+        "gains": 11,
+        "losses": 3,
+        "net": 8,
+        "gain_ids": [
+          "egolife_020",
+          "egolife_049",
+          "egolife_050",
+          "egolife_052",
+          "egolife_055",
+          "egolife_085",
+          "egolife_087",
+          "egolife_089",
+          "egolife_186",
+          "egolife_187",
+          "egolife_188"
+        ],
+        "loss_ids": [
+          "egolife_051",
+          "egolife_086",
+          "egolife_153"
+        ]
+      },
+      "test": {
+        "gains": 15,
+        "losses": 12,
+        "net": 3,
+        "gain_ids": [
+          "egolife_024",
+          "egolife_025",
+          "egolife_029",
+          "egolife_057",
+          "egolife_063",
+          "egolife_128",
+          "egolife_130",
+          "egolife_131",
+          "egolife_154",
+          "egolife_155",
+          "egolife_159",
+          "egolife_164",
+          "egolife_192",
+          "egolife_196",
+          "egolife_200"
+        ],
+        "loss_ids": [
+          "egolife_022",
+          "egolife_027",
+          "egolife_065",
+          "egolife_090",
+          "egolife_093",
+          "egolife_126",
+          "egolife_156",
+          "egolife_158",
+          "egolife_160",
+          "egolife_191",
+          "egolife_193",
+          "egolife_195"
+        ]
+      }
+    },
+    "idea1_plain_delayed vs full_ICL": {
+      "train": {
+        "gains": 68,
+        "losses": 5,
+        "net": 63,
+        "gain_ids": [
+          "egolife_003",
+          "egolife_004",
+          "egolife_006",
+          "egolife_008",
+          "egolife_010",
+          "egolife_011",
+          "egolife_013",
+          "egolife_014",
+          "egolife_015",
+          "egolife_016",
+          "egolife_018",
+          "egolife_030",
+          "egolife_031",
+          "egolife_034",
+          "egolife_035",
+          "egolife_036",
+          "egolife_037",
+          "egolife_038",
+          "egolife_041",
+          "egolife_043",
+          "egolife_044",
+          "egolife_045",
+          "egolife_047",
+          "egolife_048",
+          "egolife_066",
+          "egolife_067",
+          "egolife_068",
+          "egolife_071",
+          "egolife_072",
+          "egolife_073",
+          "egolife_075",
+          "egolife_076",
+          "egolife_078",
+          "egolife_079",
+          "egolife_080",
+          "egolife_081",
+          "egolife_082",
+          "egolife_083",
+          "egolife_100",
+          "egolife_101",
+          "egolife_102",
+          "egolife_107",
+          "egolife_108",
+          "egolife_109",
+          "egolife_110",
+          "egolife_112",
+          "egolife_114",
+          "egolife_115",
+          "egolife_116",
+          "egolife_132",
+          "egolife_133",
+          "egolife_135",
+          "egolife_136",
+          "egolife_138",
+          "egolife_141",
+          "egolife_142",
+          "egolife_144",
+          "egolife_146",
+          "egolife_166",
+          "egolife_167",
+          "egolife_169",
+          "egolife_173",
+          "egolife_174",
+          "egolife_177",
+          "egolife_178",
+          "egolife_181",
+          "egolife_184",
+          "egolife_185"
+        ],
+        "loss_ids": [
+          "egolife_017",
+          "egolife_077",
+          "egolife_140",
+          "egolife_148",
+          "egolife_168"
+        ]
+      },
+      "validation": {
+        "gains": 8,
+        "losses": 4,
+        "net": 4,
+        "gain_ids": [
+          "egolife_049",
+          "egolife_052",
+          "egolife_085",
+          "egolife_087",
+          "egolife_089",
+          "egolife_186",
+          "egolife_187",
+          "egolife_188"
+        ],
+        "loss_ids": [
+          "egolife_019",
+          "egolife_051",
+          "egolife_086",
+          "egolife_153"
+        ]
+      },
+      "test": {
+        "gains": 15,
+        "losses": 11,
+        "net": 4,
+        "gain_ids": [
+          "egolife_024",
+          "egolife_025",
+          "egolife_029",
+          "egolife_057",
+          "egolife_063",
+          "egolife_128",
+          "egolife_130",
+          "egolife_131",
+          "egolife_154",
+          "egolife_155",
+          "egolife_159",
+          "egolife_164",
+          "egolife_192",
+          "egolife_196",
+          "egolife_200"
+        ],
+        "loss_ids": [
+          "egolife_022",
+          "egolife_027",
+          "egolife_090",
+          "egolife_093",
+          "egolife_126",
+          "egolife_156",
+          "egolife_158",
+          "egolife_160",
+          "egolife_191",
+          "egolife_193",
+          "egolife_195"
+        ]
+      }
+    },
+    "idea1_reset_residual vs full_ICL": {
+      "train": {
+        "gains": 70,
+        "losses": 4,
+        "net": 66,
+        "gain_ids": [
+          "egolife_003",
+          "egolife_004",
+          "egolife_006",
+          "egolife_008",
+          "egolife_009",
+          "egolife_010",
+          "egolife_011",
+          "egolife_013",
+          "egolife_014",
+          "egolife_015",
+          "egolife_016",
+          "egolife_018",
+          "egolife_030",
+          "egolife_031",
+          "egolife_034",
+          "egolife_035",
+          "egolife_036",
+          "egolife_037",
+          "egolife_038",
+          "egolife_041",
+          "egolife_043",
+          "egolife_044",
+          "egolife_045",
+          "egolife_047",
+          "egolife_048",
+          "egolife_066",
+          "egolife_067",
+          "egolife_068",
+          "egolife_071",
+          "egolife_072",
+          "egolife_073",
+          "egolife_075",
+          "egolife_076",
+          "egolife_078",
+          "egolife_079",
+          "egolife_080",
+          "egolife_081",
+          "egolife_082",
+          "egolife_083",
+          "egolife_100",
+          "egolife_101",
+          "egolife_102",
+          "egolife_107",
+          "egolife_108",
+          "egolife_109",
+          "egolife_110",
+          "egolife_112",
+          "egolife_113",
+          "egolife_114",
+          "egolife_115",
+          "egolife_116",
+          "egolife_132",
+          "egolife_133",
+          "egolife_135",
+          "egolife_136",
+          "egolife_138",
+          "egolife_141",
+          "egolife_142",
+          "egolife_144",
+          "egolife_146",
+          "egolife_166",
+          "egolife_167",
+          "egolife_169",
+          "egolife_173",
+          "egolife_174",
+          "egolife_177",
+          "egolife_178",
+          "egolife_181",
+          "egolife_184",
+          "egolife_185"
+        ],
+        "loss_ids": [
+          "egolife_017",
+          "egolife_077",
+          "egolife_140",
+          "egolife_168"
+        ]
+      },
+      "validation": {
+        "gains": 11,
+        "losses": 3,
+        "net": 8,
+        "gain_ids": [
+          "egolife_020",
+          "egolife_049",
+          "egolife_050",
+          "egolife_052",
+          "egolife_055",
+          "egolife_085",
+          "egolife_087",
+          "egolife_089",
+          "egolife_186",
+          "egolife_187",
+          "egolife_188"
+        ],
+        "loss_ids": [
+          "egolife_051",
+          "egolife_086",
+          "egolife_153"
+        ]
+      },
+      "test": {
+        "gains": 15,
+        "losses": 12,
+        "net": 3,
+        "gain_ids": [
+          "egolife_024",
+          "egolife_025",
+          "egolife_029",
+          "egolife_057",
+          "egolife_063",
+          "egolife_128",
+          "egolife_130",
+          "egolife_131",
+          "egolife_154",
+          "egolife_155",
+          "egolife_159",
+          "egolife_164",
+          "egolife_192",
+          "egolife_196",
+          "egolife_200"
+        ],
+        "loss_ids": [
+          "egolife_022",
+          "egolife_027",
+          "egolife_065",
+          "egolife_090",
+          "egolife_093",
+          "egolife_126",
+          "egolife_156",
+          "egolife_158",
+          "egolife_160",
+          "egolife_191",
+          "egolife_193",
+          "egolife_195"
+        ]
+      }
+    },
+    "idea3_direct vs full_ICL": {
+      "train": {
+        "gains": 9,
+        "losses": 22,
+        "net": -13,
+        "gain_ids": [
+          "egolife_035",
+          "egolife_072",
+          "egolife_073",
+          "egolife_079",
+          "egolife_102",
+          "egolife_114",
+          "egolife_132",
+          "egolife_135",
+          "egolife_138"
+        ],
+        "loss_ids": [
+          "egolife_001",
+          "egolife_002",
+          "egolife_005",
+          "egolife_017",
+          "egolife_032",
+          "egolife_033",
+          "egolife_039",
+          "egolife_042",
+          "egolife_074",
+          "egolife_104",
+          "egolife_117",
+          "egolife_137",
+          "egolife_140",
+          "egolife_143",
+          "egolife_145",
+          "egolife_148",
+          "egolife_170",
+          "egolife_171",
+          "egolife_175",
+          "egolife_179",
+          "egolife_182",
+          "egolife_183"
+        ]
+      },
+      "validation": {
+        "gains": 7,
+        "losses": 5,
+        "net": 2,
+        "gain_ids": [
+          "egolife_020",
+          "egolife_021",
+          "egolife_054",
+          "egolife_122",
+          "egolife_150",
+          "egolife_151",
+          "egolife_186"
+        ],
+        "loss_ids": [
+          "egolife_051",
+          "egolife_084",
+          "egolife_086",
+          "egolife_088",
+          "egolife_153"
+        ]
+      },
+      "test": {
+        "gains": 5,
+        "losses": 17,
+        "net": -12,
+        "gain_ids": [
+          "egolife_058",
+          "egolife_091",
+          "egolife_095",
+          "egolife_128",
+          "egolife_162"
+        ],
+        "loss_ids": [
+          "egolife_022",
+          "egolife_027",
+          "egolife_059",
+          "egolife_064",
+          "egolife_065",
+          "egolife_090",
+          "egolife_093",
+          "egolife_097",
+          "egolife_124",
+          "egolife_126",
+          "egolife_129",
+          "egolife_156",
+          "egolife_160",
+          "egolife_163",
+          "egolife_193",
+          "egolife_195",
+          "egolife_199"
+        ]
+      }
+    },
+    "idea3_search vs full_ICL": {
+      "train": {
+        "gains": 6,
+        "losses": 26,
+        "net": -20,
+        "gain_ids": [
+          "egolife_006",
+          "egolife_015",
+          "egolife_072",
+          "egolife_073",
+          "egolife_114",
+          "egolife_132"
+        ],
+        "loss_ids": [
+          "egolife_001",
+          "egolife_002",
+          "egolife_012",
+          "egolife_017",
+          "egolife_032",
+          "egolife_033",
+          "egolife_039",
+          "egolife_042",
+          "egolife_074",
+          "egolife_099",
+          "egolife_104",
+          "egolife_111",
+          "egolife_117",
+          "egolife_137",
+          "egolife_140",
+          "egolife_143",
+          "egolife_145",
+          "egolife_148",
+          "egolife_170",
+          "egolife_171",
+          "egolife_175",
+          "egolife_176",
+          "egolife_179",
+          "egolife_180",
+          "egolife_182",
+          "egolife_183"
+        ]
+      },
+      "validation": {
+        "gains": 5,
+        "losses": 5,
+        "net": 0,
+        "gain_ids": [
+          "egolife_052",
+          "egolife_122",
+          "egolife_149",
+          "egolife_187",
+          "egolife_189"
+        ],
+        "loss_ids": [
+          "egolife_019",
+          "egolife_051",
+          "egolife_084",
+          "egolife_086",
+          "egolife_088"
+        ]
+      },
+      "test": {
+        "gains": 3,
+        "losses": 18,
+        "net": -15,
+        "gain_ids": [
+          "egolife_128",
+          "egolife_161",
+          "egolife_162"
+        ],
+        "loss_ids": [
+          "egolife_022",
+          "egolife_027",
+          "egolife_059",
+          "egolife_064",
+          "egolife_065",
+          "egolife_093",
+          "egolife_097",
+          "egolife_124",
+          "egolife_126",
+          "egolife_129",
+          "egolife_156",
+          "egolife_158",
+          "egolife_160",
+          "egolife_163",
+          "egolife_191",
+          "egolife_195",
+          "egolife_198",
+          "egolife_199"
+        ]
+      }
+    },
+    "idea3_reset vs full_ICL": {
+      "train": {
+        "gains": 5,
+        "losses": 25,
+        "net": -20,
+        "gain_ids": [
+          "egolife_015",
+          "egolife_071",
+          "egolife_073",
+          "egolife_079",
+          "egolife_167"
+        ],
+        "loss_ids": [
+          "egolife_001",
+          "egolife_002",
+          "egolife_005",
+          "egolife_017",
+          "egolife_032",
+          "egolife_033",
+          "egolife_039",
+          "egolife_042",
+          "egolife_074",
+          "egolife_077",
+          "egolife_104",
+          "egolife_105",
+          "egolife_111",
+          "egolife_117",
+          "egolife_137",
+          "egolife_140",
+          "egolife_143",
+          "egolife_145",
+          "egolife_148",
+          "egolife_170",
+          "egolife_171",
+          "egolife_175",
+          "egolife_179",
+          "egolife_182",
+          "egolife_183"
+        ]
+      },
+      "validation": {
+        "gains": 3,
+        "losses": 5,
+        "net": -2,
+        "gain_ids": [
+          "egolife_020",
+          "egolife_021",
+          "egolife_122"
+        ],
+        "loss_ids": [
+          "egolife_051",
+          "egolife_084",
+          "egolife_086",
+          "egolife_088",
+          "egolife_153"
+        ]
+      },
+      "test": {
+        "gains": 1,
+        "losses": 19,
+        "net": -18,
+        "gain_ids": [
+          "egolife_162"
+        ],
+        "loss_ids": [
+          "egolife_022",
+          "egolife_027",
+          "egolife_059",
+          "egolife_064",
+          "egolife_065",
+          "egolife_090",
+          "egolife_093",
+          "egolife_097",
+          "egolife_124",
+          "egolife_126",
+          "egolife_129",
+          "egolife_156",
+          "egolife_158",
+          "egolife_160",
+          "egolife_163",
+          "egolife_193",
+          "egolife_195",
+          "egolife_198",
+          "egolife_199"
+        ]
+      }
+    },
+    "idea3_wrong_direct vs full_ICL": {
+      "train": {
+        "gains": 9,
+        "losses": 23,
+        "net": -14,
+        "gain_ids": [
+          "egolife_015",
+          "egolife_035",
+          "egolife_071",
+          "egolife_079",
+          "egolife_114",
+          "egolife_132",
+          "egolife_135",
+          "egolife_138",
+          "egolife_142"
+        ],
+        "loss_ids": [
+          "egolife_001",
+          "egolife_002",
+          "egolife_005",
+          "egolife_017",
+          "egolife_032",
+          "egolife_033",
+          "egolife_039",
+          "egolife_042",
+          "egolife_074",
+          "egolife_104",
+          "egolife_105",
+          "egolife_117",
+          "egolife_137",
+          "egolife_140",
+          "egolife_143",
+          "egolife_145",
+          "egolife_148",
+          "egolife_170",
+          "egolife_171",
+          "egolife_175",
+          "egolife_179",
+          "egolife_182",
+          "egolife_183"
+        ]
+      },
+      "validation": {
+        "gains": 7,
+        "losses": 6,
+        "net": 1,
+        "gain_ids": [
+          "egolife_020",
+          "egolife_021",
+          "egolife_054",
+          "egolife_122",
+          "egolife_150",
+          "egolife_151",
+          "egolife_186"
+        ],
+        "loss_ids": [
+          "egolife_019",
+          "egolife_051",
+          "egolife_084",
+          "egolife_086",
+          "egolife_088",
+          "egolife_153"
+        ]
+      },
+      "test": {
+        "gains": 6,
+        "losses": 17,
+        "net": -11,
+        "gain_ids": [
+          "egolife_058",
+          "egolife_091",
+          "egolife_095",
+          "egolife_128",
+          "egolife_131",
+          "egolife_200"
+        ],
+        "loss_ids": [
+          "egolife_022",
+          "egolife_027",
+          "egolife_064",
+          "egolife_065",
+          "egolife_090",
+          "egolife_093",
+          "egolife_097",
+          "egolife_124",
+          "egolife_126",
+          "egolife_129",
+          "egolife_156",
+          "egolife_163",
+          "egolife_191",
+          "egolife_193",
+          "egolife_195",
+          "egolife_198",
+          "egolife_199"
+        ]
+      }
+    },
+    "idea3_wrong_search vs full_ICL": {
+      "train": {
+        "gains": 8,
+        "losses": 29,
+        "net": -21,
+        "gain_ids": [
+          "egolife_006",
+          "egolife_010",
+          "egolife_038",
+          "egolife_044",
+          "egolife_072",
+          "egolife_079",
+          "egolife_114",
+          "egolife_142"
+        ],
+        "loss_ids": [
+          "egolife_001",
+          "egolife_002",
+          "egolife_005",
+          "egolife_012",
+          "egolife_017",
+          "egolife_032",
+          "egolife_033",
+          "egolife_039",
+          "egolife_042",
+          "egolife_074",
+          "egolife_099",
+          "egolife_104",
+          "egolife_105",
+          "egolife_111",
+          "egolife_117",
+          "egolife_137",
+          "egolife_140",
+          "egolife_143",
+          "egolife_145",
+          "egolife_148",
+          "egolife_168",
+          "egolife_170",
+          "egolife_171",
+          "egolife_172",
+          "egolife_175",
+          "egolife_179",
+          "egolife_180",
+          "egolife_182",
+          "egolife_183"
+        ]
+      },
+      "validation": {
+        "gains": 2,
+        "losses": 6,
+        "net": -4,
+        "gain_ids": [
+          "egolife_021",
+          "egolife_122"
+        ],
+        "loss_ids": [
+          "egolife_019",
+          "egolife_051",
+          "egolife_084",
+          "egolife_086",
+          "egolife_088",
+          "egolife_153"
+        ]
+      },
+      "test": {
+        "gains": 5,
+        "losses": 17,
+        "net": -12,
+        "gain_ids": [
+          "egolife_128",
+          "egolife_131",
+          "egolife_161",
+          "egolife_162",
+          "egolife_200"
+        ],
+        "loss_ids": [
+          "egolife_022",
+          "egolife_027",
+          "egolife_064",
+          "egolife_065",
+          "egolife_090",
+          "egolife_093",
+          "egolife_097",
+          "egolife_124",
+          "egolife_126",
+          "egolife_129",
+          "egolife_156",
+          "egolife_158",
+          "egolife_163",
+          "egolife_191",
+          "egolife_193",
+          "egolife_195",
+          "egolife_198"
+        ]
+      }
+    },
+    "idea4_teacher vs full_ICL": {
+      "train": {
+        "gains": 70,
+        "losses": 3,
+        "net": 67,
+        "gain_ids": [
+          "egolife_003",
+          "egolife_004",
+          "egolife_006",
+          "egolife_008",
+          "egolife_009",
+          "egolife_010",
+          "egolife_011",
+          "egolife_013",
+          "egolife_014",
+          "egolife_015",
+          "egolife_016",
+          "egolife_018",
+          "egolife_030",
+          "egolife_031",
+          "egolife_034",
+          "egolife_035",
+          "egolife_036",
+          "egolife_037",
+          "egolife_038",
+          "egolife_041",
+          "egolife_043",
+          "egolife_044",
+          "egolife_045",
+          "egolife_047",
+          "egolife_048",
+          "egolife_066",
+          "egolife_067",
+          "egolife_068",
+          "egolife_071",
+          "egolife_072",
+          "egolife_073",
+          "egolife_075",
+          "egolife_076",
+          "egolife_078",
+          "egolife_079",
+          "egolife_080",
+          "egolife_081",
+          "egolife_082",
+          "egolife_083",
+          "egolife_100",
+          "egolife_101",
+          "egolife_102",
+          "egolife_107",
+          "egolife_108",
+          "egolife_109",
+          "egolife_110",
+          "egolife_112",
+          "egolife_113",
+          "egolife_114",
+          "egolife_115",
+          "egolife_116",
+          "egolife_132",
+          "egolife_133",
+          "egolife_135",
+          "egolife_136",
+          "egolife_138",
+          "egolife_141",
+          "egolife_142",
+          "egolife_144",
+          "egolife_146",
+          "egolife_166",
+          "egolife_167",
+          "egolife_169",
+          "egolife_173",
+          "egolife_174",
+          "egolife_177",
+          "egolife_178",
+          "egolife_181",
+          "egolife_184",
+          "egolife_185"
+        ],
+        "loss_ids": [
+          "egolife_017",
+          "egolife_140",
+          "egolife_168"
+        ]
+      },
+      "validation": {
+        "gains": 11,
+        "losses": 3,
+        "net": 8,
+        "gain_ids": [
+          "egolife_020",
+          "egolife_049",
+          "egolife_050",
+          "egolife_052",
+          "egolife_055",
+          "egolife_085",
+          "egolife_087",
+          "egolife_089",
+          "egolife_186",
+          "egolife_187",
+          "egolife_188"
+        ],
+        "loss_ids": [
+          "egolife_051",
+          "egolife_086",
+          "egolife_153"
+        ]
+      },
+      "test": {
+        "gains": 15,
+        "losses": 12,
+        "net": 3,
+        "gain_ids": [
+          "egolife_024",
+          "egolife_025",
+          "egolife_029",
+          "egolife_057",
+          "egolife_063",
+          "egolife_128",
+          "egolife_130",
+          "egolife_131",
+          "egolife_154",
+          "egolife_155",
+          "egolife_159",
+          "egolife_164",
+          "egolife_192",
+          "egolife_196",
+          "egolife_200"
+        ],
+        "loss_ids": [
+          "egolife_022",
+          "egolife_027",
+          "egolife_065",
+          "egolife_090",
+          "egolife_093",
+          "egolife_126",
+          "egolife_156",
+          "egolife_158",
+          "egolife_160",
+          "egolife_191",
+          "egolife_193",
+          "egolife_195"
+        ]
+      }
+    },
+    "idea4_fixed_full vs full_ICL": {
+      "train": {
+        "gains": 70,
+        "losses": 3,
+        "net": 67,
+        "gain_ids": [
+          "egolife_003",
+          "egolife_004",
+          "egolife_006",
+          "egolife_008",
+          "egolife_009",
+          "egolife_010",
+          "egolife_011",
+          "egolife_013",
+          "egolife_014",
+          "egolife_015",
+          "egolife_016",
+          "egolife_018",
+          "egolife_030",
+          "egolife_031",
+          "egolife_034",
+          "egolife_035",
+          "egolife_036",
+          "egolife_037",
+          "egolife_038",
+          "egolife_041",
+          "egolife_043",
+          "egolife_044",
+          "egolife_045",
+          "egolife_047",
+          "egolife_048",
+          "egolife_066",
+          "egolife_067",
+          "egolife_068",
+          "egolife_071",
+          "egolife_072",
+          "egolife_073",
+          "egolife_075",
+          "egolife_076",
+          "egolife_078",
+          "egolife_079",
+          "egolife_080",
+          "egolife_081",
+          "egolife_082",
+          "egolife_083",
+          "egolife_100",
+          "egolife_101",
+          "egolife_102",
+          "egolife_107",
+          "egolife_108",
+          "egolife_109",
+          "egolife_110",
+          "egolife_112",
+          "egolife_113",
+          "egolife_114",
+          "egolife_115",
+          "egolife_116",
+          "egolife_132",
+          "egolife_133",
+          "egolife_135",
+          "egolife_136",
+          "egolife_138",
+          "egolife_141",
+          "egolife_142",
+          "egolife_144",
+          "egolife_146",
+          "egolife_166",
+          "egolife_167",
+          "egolife_169",
+          "egolife_173",
+          "egolife_174",
+          "egolife_177",
+          "egolife_178",
+          "egolife_181",
+          "egolife_184",
+          "egolife_185"
+        ],
+        "loss_ids": [
+          "egolife_017",
+          "egolife_140",
+          "egolife_168"
+        ]
+      },
+      "validation": {
+        "gains": 11,
+        "losses": 3,
+        "net": 8,
+        "gain_ids": [
+          "egolife_020",
+          "egolife_049",
+          "egolife_050",
+          "egolife_052",
+          "egolife_055",
+          "egolife_085",
+          "egolife_087",
+          "egolife_089",
+          "egolife_186",
+          "egolife_187",
+          "egolife_188"
+        ],
+        "loss_ids": [
+          "egolife_051",
+          "egolife_086",
+          "egolife_153"
+        ]
+      },
+      "test": {
+        "gains": 15,
+        "losses": 12,
+        "net": 3,
+        "gain_ids": [
+          "egolife_024",
+          "egolife_025",
+          "egolife_029",
+          "egolife_057",
+          "egolife_063",
+          "egolife_128",
+          "egolife_130",
+          "egolife_131",
+          "egolife_154",
+          "egolife_155",
+          "egolife_159",
+          "egolife_164",
+          "egolife_192",
+          "egolife_196",
+          "egolife_200"
+        ],
+        "loss_ids": [
+          "egolife_022",
+          "egolife_027",
+          "egolife_065",
+          "egolife_090",
+          "egolife_093",
+          "egolife_126",
+          "egolife_156",
+          "egolife_158",
+          "egolife_160",
+          "egolife_191",
+          "egolife_193",
+          "egolife_195"
+        ]
+      }
+    },
+    "idea4_conditioned_full vs full_ICL": {
+      "train": {
+        "gains": 70,
+        "losses": 3,
+        "net": 67,
+        "gain_ids": [
+          "egolife_003",
+          "egolife_004",
+          "egolife_006",
+          "egolife_008",
+          "egolife_009",
+          "egolife_010",
+          "egolife_011",
+          "egolife_013",
+          "egolife_014",
+          "egolife_015",
+          "egolife_016",
+          "egolife_018",
+          "egolife_030",
+          "egolife_031",
+          "egolife_034",
+          "egolife_035",
+          "egolife_036",
+          "egolife_037",
+          "egolife_038",
+          "egolife_041",
+          "egolife_043",
+          "egolife_044",
+          "egolife_045",
+          "egolife_047",
+          "egolife_048",
+          "egolife_066",
+          "egolife_067",
+          "egolife_068",
+          "egolife_071",
+          "egolife_072",
+          "egolife_073",
+          "egolife_075",
+          "egolife_076",
+          "egolife_078",
+          "egolife_079",
+          "egolife_080",
+          "egolife_081",
+          "egolife_082",
+          "egolife_083",
+          "egolife_100",
+          "egolife_101",
+          "egolife_102",
+          "egolife_107",
+          "egolife_108",
+          "egolife_109",
+          "egolife_110",
+          "egolife_112",
+          "egolife_113",
+          "egolife_114",
+          "egolife_115",
+          "egolife_116",
+          "egolife_132",
+          "egolife_133",
+          "egolife_135",
+          "egolife_136",
+          "egolife_138",
+          "egolife_141",
+          "egolife_142",
+          "egolife_144",
+          "egolife_146",
+          "egolife_166",
+          "egolife_167",
+          "egolife_169",
+          "egolife_173",
+          "egolife_174",
+          "egolife_177",
+          "egolife_178",
+          "egolife_181",
+          "egolife_184",
+          "egolife_185"
+        ],
+        "loss_ids": [
+          "egolife_017",
+          "egolife_140",
+          "egolife_168"
+        ]
+      },
+      "validation": {
+        "gains": 11,
+        "losses": 3,
+        "net": 8,
+        "gain_ids": [
+          "egolife_020",
+          "egolife_049",
+          "egolife_050",
+          "egolife_052",
+          "egolife_055",
+          "egolife_085",
+          "egolife_087",
+          "egolife_089",
+          "egolife_186",
+          "egolife_187",
+          "egolife_188"
+        ],
+        "loss_ids": [
+          "egolife_051",
+          "egolife_086",
+          "egolife_153"
+        ]
+      },
+      "test": {
+        "gains": 15,
+        "losses": 12,
+        "net": 3,
+        "gain_ids": [
+          "egolife_024",
+          "egolife_025",
+          "egolife_029",
+          "egolife_057",
+          "egolife_063",
+          "egolife_128",
+          "egolife_130",
+          "egolife_131",
+          "egolife_154",
+          "egolife_155",
+          "egolife_159",
+          "egolife_164",
+          "egolife_192",
+          "egolife_196",
+          "egolife_200"
+        ],
+        "loss_ids": [
+          "egolife_022",
+          "egolife_027",
+          "egolife_065",
+          "egolife_090",
+          "egolife_093",
+          "egolife_126",
+          "egolife_156",
+          "egolife_158",
+          "egolife_160",
+          "egolife_191",
+          "egolife_193",
+          "egolife_195"
+        ]
+      }
+    },
+    "idea4_fixed_warm20 vs full_ICL": {
+      "train": {
+        "gains": 70,
+        "losses": 3,
+        "net": 67,
+        "gain_ids": [
+          "egolife_003",
+          "egolife_004",
+          "egolife_006",
+          "egolife_008",
+          "egolife_009",
+          "egolife_010",
+          "egolife_011",
+          "egolife_013",
+          "egolife_014",
+          "egolife_015",
+          "egolife_016",
+          "egolife_018",
+          "egolife_030",
+          "egolife_031",
+          "egolife_034",
+          "egolife_035",
+          "egolife_036",
+          "egolife_037",
+          "egolife_038",
+          "egolife_041",
+          "egolife_043",
+          "egolife_044",
+          "egolife_045",
+          "egolife_047",
+          "egolife_048",
+          "egolife_066",
+          "egolife_067",
+          "egolife_068",
+          "egolife_071",
+          "egolife_072",
+          "egolife_073",
+          "egolife_075",
+          "egolife_076",
+          "egolife_078",
+          "egolife_079",
+          "egolife_080",
+          "egolife_081",
+          "egolife_082",
+          "egolife_083",
+          "egolife_100",
+          "egolife_101",
+          "egolife_102",
+          "egolife_107",
+          "egolife_108",
+          "egolife_109",
+          "egolife_110",
+          "egolife_112",
+          "egolife_113",
+          "egolife_114",
+          "egolife_115",
+          "egolife_116",
+          "egolife_132",
+          "egolife_133",
+          "egolife_135",
+          "egolife_136",
+          "egolife_138",
+          "egolife_141",
+          "egolife_142",
+          "egolife_144",
+          "egolife_146",
+          "egolife_166",
+          "egolife_167",
+          "egolife_169",
+          "egolife_173",
+          "egolife_174",
+          "egolife_177",
+          "egolife_178",
+          "egolife_181",
+          "egolife_184",
+          "egolife_185"
+        ],
+        "loss_ids": [
+          "egolife_017",
+          "egolife_140",
+          "egolife_168"
+        ]
+      },
+      "validation": {
+        "gains": 11,
+        "losses": 3,
+        "net": 8,
+        "gain_ids": [
+          "egolife_020",
+          "egolife_049",
+          "egolife_050",
+          "egolife_052",
+          "egolife_055",
+          "egolife_085",
+          "egolife_087",
+          "egolife_089",
+          "egolife_186",
+          "egolife_187",
+          "egolife_188"
+        ],
+        "loss_ids": [
+          "egolife_051",
+          "egolife_086",
+          "egolife_153"
+        ]
+      },
+      "test": {
+        "gains": 15,
+        "losses": 12,
+        "net": 3,
+        "gain_ids": [
+          "egolife_024",
+          "egolife_025",
+          "egolife_029",
+          "egolife_057",
+          "egolife_063",
+          "egolife_128",
+          "egolife_130",
+          "egolife_131",
+          "egolife_154",
+          "egolife_155",
+          "egolife_159",
+          "egolife_164",
+          "egolife_192",
+          "egolife_196",
+          "egolife_200"
+        ],
+        "loss_ids": [
+          "egolife_022",
+          "egolife_027",
+          "egolife_065",
+          "egolife_090",
+          "egolife_093",
+          "egolife_126",
+          "egolife_156",
+          "egolife_158",
+          "egolife_160",
+          "egolife_191",
+          "egolife_193",
+          "egolife_195"
+        ]
+      }
+    },
+    "idea4_conditioned_warm20 vs full_ICL": {
+      "train": {
+        "gains": 70,
+        "losses": 3,
+        "net": 67,
+        "gain_ids": [
+          "egolife_003",
+          "egolife_004",
+          "egolife_006",
+          "egolife_008",
+          "egolife_009",
+          "egolife_010",
+          "egolife_011",
+          "egolife_013",
+          "egolife_014",
+          "egolife_015",
+          "egolife_016",
+          "egolife_018",
+          "egolife_030",
+          "egolife_031",
+          "egolife_034",
+          "egolife_035",
+          "egolife_036",
+          "egolife_037",
+          "egolife_038",
+          "egolife_041",
+          "egolife_043",
+          "egolife_044",
+          "egolife_045",
+          "egolife_047",
+          "egolife_048",
+          "egolife_066",
+          "egolife_067",
+          "egolife_068",
+          "egolife_071",
+          "egolife_072",
+          "egolife_073",
+          "egolife_075",
+          "egolife_076",
+          "egolife_078",
+          "egolife_079",
+          "egolife_080",
+          "egolife_081",
+          "egolife_082",
+          "egolife_083",
+          "egolife_100",
+          "egolife_101",
+          "egolife_102",
+          "egolife_107",
+          "egolife_108",
+          "egolife_109",
+          "egolife_110",
+          "egolife_112",
+          "egolife_113",
+          "egolife_114",
+          "egolife_115",
+          "egolife_116",
+          "egolife_132",
+          "egolife_133",
+          "egolife_135",
+          "egolife_136",
+          "egolife_138",
+          "egolife_141",
+          "egolife_142",
+          "egolife_144",
+          "egolife_146",
+          "egolife_166",
+          "egolife_167",
+          "egolife_169",
+          "egolife_173",
+          "egolife_174",
+          "egolife_177",
+          "egolife_178",
+          "egolife_181",
+          "egolife_184",
+          "egolife_185"
+        ],
+        "loss_ids": [
+          "egolife_017",
+          "egolife_140",
+          "egolife_168"
+        ]
+      },
+      "validation": {
+        "gains": 11,
+        "losses": 3,
+        "net": 8,
+        "gain_ids": [
+          "egolife_020",
+          "egolife_049",
+          "egolife_050",
+          "egolife_052",
+          "egolife_055",
+          "egolife_085",
+          "egolife_087",
+          "egolife_089",
+          "egolife_186",
+          "egolife_187",
+          "egolife_188"
+        ],
+        "loss_ids": [
+          "egolife_051",
+          "egolife_086",
+          "egolife_153"
+        ]
+      },
+      "test": {
+        "gains": 15,
+        "losses": 12,
+        "net": 3,
+        "gain_ids": [
+          "egolife_024",
+          "egolife_025",
+          "egolife_029",
+          "egolife_057",
+          "egolife_063",
+          "egolife_128",
+          "egolife_130",
+          "egolife_131",
+          "egolife_154",
+          "egolife_155",
+          "egolife_159",
+          "egolife_164",
+          "egolife_192",
+          "egolife_196",
+          "egolife_200"
+        ],
+        "loss_ids": [
+          "egolife_022",
+          "egolife_027",
+          "egolife_065",
+          "egolife_090",
+          "egolife_093",
+          "egolife_126",
+          "egolife_156",
+          "egolife_158",
+          "egolife_160",
+          "egolife_191",
+          "egolife_193",
+          "egolife_195"
+        ]
+      }
+    },
+    "idea4_fixed_copy vs full_ICL": {
+      "train": {
+        "gains": 70,
+        "losses": 4,
+        "net": 66,
+        "gain_ids": [
+          "egolife_003",
+          "egolife_004",
+          "egolife_006",
+          "egolife_008",
+          "egolife_009",
+          "egolife_010",
+          "egolife_011",
+          "egolife_013",
+          "egolife_014",
+          "egolife_015",
+          "egolife_016",
+          "egolife_018",
+          "egolife_030",
+          "egolife_031",
+          "egolife_034",
+          "egolife_035",
+          "egolife_036",
+          "egolife_037",
+          "egolife_038",
+          "egolife_041",
+          "egolife_043",
+          "egolife_044",
+          "egolife_045",
+          "egolife_047",
+          "egolife_048",
+          "egolife_066",
+          "egolife_067",
+          "egolife_068",
+          "egolife_071",
+          "egolife_072",
+          "egolife_073",
+          "egolife_075",
+          "egolife_076",
+          "egolife_078",
+          "egolife_079",
+          "egolife_080",
+          "egolife_081",
+          "egolife_082",
+          "egolife_083",
+          "egolife_100",
+          "egolife_101",
+          "egolife_102",
+          "egolife_107",
+          "egolife_108",
+          "egolife_109",
+          "egolife_110",
+          "egolife_112",
+          "egolife_113",
+          "egolife_114",
+          "egolife_115",
+          "egolife_116",
+          "egolife_132",
+          "egolife_133",
+          "egolife_135",
+          "egolife_136",
+          "egolife_138",
+          "egolife_141",
+          "egolife_142",
+          "egolife_144",
+          "egolife_146",
+          "egolife_166",
+          "egolife_167",
+          "egolife_169",
+          "egolife_173",
+          "egolife_174",
+          "egolife_177",
+          "egolife_178",
+          "egolife_181",
+          "egolife_184",
+          "egolife_185"
+        ],
+        "loss_ids": [
+          "egolife_017",
+          "egolife_077",
+          "egolife_140",
+          "egolife_168"
+        ]
+      },
+      "validation": {
+        "gains": 11,
+        "losses": 3,
+        "net": 8,
+        "gain_ids": [
+          "egolife_020",
+          "egolife_049",
+          "egolife_050",
+          "egolife_052",
+          "egolife_055",
+          "egolife_085",
+          "egolife_087",
+          "egolife_089",
+          "egolife_186",
+          "egolife_187",
+          "egolife_188"
+        ],
+        "loss_ids": [
+          "egolife_051",
+          "egolife_086",
+          "egolife_153"
+        ]
+      },
+      "test": {
+        "gains": 15,
+        "losses": 12,
+        "net": 3,
+        "gain_ids": [
+          "egolife_024",
+          "egolife_025",
+          "egolife_029",
+          "egolife_057",
+          "egolife_063",
+          "egolife_128",
+          "egolife_130",
+          "egolife_131",
+          "egolife_154",
+          "egolife_155",
+          "egolife_159",
+          "egolife_164",
+          "egolife_192",
+          "egolife_196",
+          "egolife_200"
+        ],
+        "loss_ids": [
+          "egolife_022",
+          "egolife_027",
+          "egolife_065",
+          "egolife_090",
+          "egolife_093",
+          "egolife_126",
+          "egolife_156",
+          "egolife_158",
+          "egolife_160",
+          "egolife_191",
+          "egolife_193",
+          "egolife_195"
+        ]
+      }
+    },
+    "idea4_fixed_oracle vs full_ICL": {
+      "train": {
+        "gains": 70,
+        "losses": 3,
+        "net": 67,
+        "gain_ids": [
+          "egolife_003",
+          "egolife_004",
+          "egolife_006",
+          "egolife_008",
+          "egolife_009",
+          "egolife_010",
+          "egolife_011",
+          "egolife_013",
+          "egolife_014",
+          "egolife_015",
+          "egolife_016",
+          "egolife_018",
+          "egolife_030",
+          "egolife_031",
+          "egolife_034",
+          "egolife_035",
+          "egolife_036",
+          "egolife_037",
+          "egolife_038",
+          "egolife_041",
+          "egolife_043",
+          "egolife_044",
+          "egolife_045",
+          "egolife_047",
+          "egolife_048",
+          "egolife_066",
+          "egolife_067",
+          "egolife_068",
+          "egolife_071",
+          "egolife_072",
+          "egolife_073",
+          "egolife_075",
+          "egolife_076",
+          "egolife_078",
+          "egolife_079",
+          "egolife_080",
+          "egolife_081",
+          "egolife_082",
+          "egolife_083",
+          "egolife_100",
+          "egolife_101",
+          "egolife_102",
+          "egolife_107",
+          "egolife_108",
+          "egolife_109",
+          "egolife_110",
+          "egolife_112",
+          "egolife_113",
+          "egolife_114",
+          "egolife_115",
+          "egolife_116",
+          "egolife_132",
+          "egolife_133",
+          "egolife_135",
+          "egolife_136",
+          "egolife_138",
+          "egolife_141",
+          "egolife_142",
+          "egolife_144",
+          "egolife_146",
+          "egolife_166",
+          "egolife_167",
+          "egolife_169",
+          "egolife_173",
+          "egolife_174",
+          "egolife_177",
+          "egolife_178",
+          "egolife_181",
+          "egolife_184",
+          "egolife_185"
+        ],
+        "loss_ids": [
+          "egolife_017",
+          "egolife_140",
+          "egolife_168"
+        ]
+      },
+      "validation": {
+        "gains": 11,
+        "losses": 3,
+        "net": 8,
+        "gain_ids": [
+          "egolife_020",
+          "egolife_049",
+          "egolife_050",
+          "egolife_052",
+          "egolife_055",
+          "egolife_085",
+          "egolife_087",
+          "egolife_089",
+          "egolife_186",
+          "egolife_187",
+          "egolife_188"
+        ],
+        "loss_ids": [
+          "egolife_051",
+          "egolife_086",
+          "egolife_153"
+        ]
+      },
+      "test": {
+        "gains": 15,
+        "losses": 12,
+        "net": 3,
+        "gain_ids": [
+          "egolife_024",
+          "egolife_025",
+          "egolife_029",
+          "egolife_057",
+          "egolife_063",
+          "egolife_128",
+          "egolife_130",
+          "egolife_131",
+          "egolife_154",
+          "egolife_155",
+          "egolife_159",
+          "egolife_164",
+          "egolife_192",
+          "egolife_196",
+          "egolife_200"
+        ],
+        "loss_ids": [
+          "egolife_022",
+          "egolife_027",
+          "egolife_065",
+          "egolife_090",
+          "egolife_093",
+          "egolife_126",
+          "egolife_156",
+          "egolife_158",
+          "egolife_160",
+          "egolife_191",
+          "egolife_193",
+          "egolife_195"
+        ]
+      }
+    },
+    "idea5_low112 vs full_ICL": {
+      "train": {
+        "gains": 3,
+        "losses": 20,
+        "net": -17,
+        "gain_ids": [
+          "egolife_015",
+          "egolife_083",
+          "egolife_132"
+        ],
+        "loss_ids": [
+          "egolife_002",
+          "egolife_032",
+          "egolife_039",
+          "egolife_074",
+          "egolife_077",
+          "egolife_104",
+          "egolife_105",
+          "egolife_111",
+          "egolife_117",
+          "egolife_137",
+          "egolife_143",
+          "egolife_148",
+          "egolife_168",
+          "egolife_171",
+          "egolife_172",
+          "egolife_176",
+          "egolife_179",
+          "egolife_180",
+          "egolife_182",
+          "egolife_183"
+        ]
+      },
+      "validation": {
+        "gains": 1,
+        "losses": 3,
+        "net": -2,
+        "gain_ids": [
+          "egolife_123"
+        ],
+        "loss_ids": [
+          "egolife_019",
+          "egolife_051",
+          "egolife_084"
+        ]
+      },
+      "test": {
+        "gains": 5,
+        "losses": 11,
+        "net": -6,
+        "gain_ids": [
+          "egolife_024",
+          "egolife_094",
+          "egolife_095",
+          "egolife_162",
+          "egolife_197"
+        ],
+        "loss_ids": [
+          "egolife_027",
+          "egolife_065",
+          "egolife_093",
+          "egolife_096",
+          "egolife_097",
+          "egolife_156",
+          "egolife_158",
+          "egolife_160",
+          "egolife_191",
+          "egolife_193",
+          "egolife_198"
+        ]
+      }
+    },
+    "idea5_mid224 vs full_ICL": {
+      "train": {
+        "gains": 0,
+        "losses": 1,
+        "net": -1,
+        "gain_ids": [],
+        "loss_ids": [
+          "egolife_042"
+        ]
+      },
+      "validation": {
+        "gains": 0,
+        "losses": 0,
+        "net": 0,
+        "gain_ids": [],
+        "loss_ids": []
+      },
+      "test": {
+        "gains": 1,
+        "losses": 1,
+        "net": 0,
+        "gain_ids": [
+          "egolife_094"
+        ],
+        "loss_ids": [
+          "egolife_198"
+        ]
+      }
+    },
+    "idea5_high448 vs full_ICL": {
+      "train": {
+        "gains": 11,
+        "losses": 5,
+        "net": 6,
+        "gain_ids": [
+          "egolife_010",
+          "egolife_018",
+          "egolife_035",
+          "egolife_048",
+          "egolife_069",
+          "egolife_076",
+          "egolife_083",
+          "egolife_112",
+          "egolife_139",
+          "egolife_147",
+          "egolife_174"
+        ],
+        "loss_ids": [
+          "egolife_111",
+          "egolife_148",
+          "egolife_171",
+          "egolife_172",
+          "egolife_179"
+        ]
+      },
+      "validation": {
+        "gains": 2,
+        "losses": 0,
+        "net": 2,
+        "gain_ids": [
+          "egolife_052",
+          "egolife_089"
+        ],
+        "loss_ids": []
+      },
+      "test": {
+        "gains": 7,
+        "losses": 3,
+        "net": 4,
+        "gain_ids": [
+          "egolife_023",
+          "egolife_057",
+          "egolife_060",
+          "egolife_063",
+          "egolife_094",
+          "egolife_157",
+          "egolife_161"
+        ],
+        "loss_ids": [
+          "egolife_096",
+          "egolife_191",
+          "egolife_195"
+        ]
+      }
+    },
+    "idea5_uniform_high vs full_ICL": {
+      "train": {
+        "gains": 6,
+        "losses": 9,
+        "net": -3,
+        "gain_ids": [
+          "egolife_006",
+          "egolife_038",
+          "egolife_079",
+          "egolife_083",
+          "egolife_101",
+          "egolife_133"
+        ],
+        "loss_ids": [
+          "egolife_017",
+          "egolife_104",
+          "egolife_117",
+          "egolife_148",
+          "egolife_171",
+          "egolife_172",
+          "egolife_179",
+          "egolife_180",
+          "egolife_182"
+        ]
+      },
+      "validation": {
+        "gains": 4,
+        "losses": 1,
+        "net": 3,
+        "gain_ids": [
+          "egolife_089",
+          "egolife_122",
+          "egolife_149",
+          "egolife_189"
+        ],
+        "loss_ids": [
+          "egolife_019"
+        ]
+      },
+      "test": {
+        "gains": 2,
+        "losses": 7,
+        "net": -5,
+        "gain_ids": [
+          "egolife_157",
+          "egolife_161"
+        ],
+        "loss_ids": [
+          "egolife_027",
+          "egolife_065",
+          "egolife_124",
+          "egolife_160",
+          "egolife_191",
+          "egolife_195",
+          "egolife_198"
+        ]
+      }
+    },
+    "idea5_random_high vs full_ICL": {
+      "train": {
+        "gains": 8,
+        "losses": 7,
+        "net": 1,
+        "gain_ids": [
+          "egolife_010",
+          "egolife_015",
+          "egolife_035",
+          "egolife_069",
+          "egolife_079",
+          "egolife_083",
+          "egolife_147",
+          "egolife_174"
+        ],
+        "loss_ids": [
+          "egolife_017",
+          "egolife_032",
+          "egolife_111",
+          "egolife_117",
+          "egolife_172",
+          "egolife_179",
+          "egolife_183"
+        ]
+      },
+      "validation": {
+        "gains": 1,
+        "losses": 0,
+        "net": 1,
+        "gain_ids": [
+          "egolife_189"
+        ],
+        "loss_ids": []
+      },
+      "test": {
+        "gains": 3,
+        "losses": 7,
+        "net": -4,
+        "gain_ids": [
+          "egolife_094",
+          "egolife_095",
+          "egolife_157"
+        ],
+        "loss_ids": [
+          "egolife_027",
+          "egolife_065",
+          "egolife_096",
+          "egolife_124",
+          "egolife_129",
+          "egolife_193",
+          "egolife_195"
+        ]
+      }
+    },
+    "idea5_motion_high vs full_ICL": {
+      "train": {
+        "gains": 11,
+        "losses": 6,
+        "net": 5,
+        "gain_ids": [
+          "egolife_018",
+          "egolife_035",
+          "egolife_048",
+          "egolife_069",
+          "egolife_079",
+          "egolife_083",
+          "egolife_101",
+          "egolife_139",
+          "egolife_144",
+          "egolife_147",
+          "egolife_174"
+        ],
+        "loss_ids": [
+          "egolife_005",
+          "egolife_111",
+          "egolife_171",
+          "egolife_172",
+          "egolife_179",
+          "egolife_183"
+        ]
+      },
+      "validation": {
+        "gains": 2,
+        "losses": 0,
+        "net": 2,
+        "gain_ids": [
+          "egolife_089",
+          "egolife_187"
+        ],
+        "loss_ids": []
+      },
+      "test": {
+        "gains": 6,
+        "losses": 5,
+        "net": 1,
+        "gain_ids": [
+          "egolife_023",
+          "egolife_057",
+          "egolife_060",
+          "egolife_094",
+          "egolife_157",
+          "egolife_161"
+        ],
+        "loss_ids": [
+          "egolife_065",
+          "egolife_093",
+          "egolife_096",
+          "egolife_129",
+          "egolife_191"
+        ]
+      }
+    },
+    "idea5_deadline_high_posthoc vs full_ICL": {
+      "train": {
+        "gains": 9,
+        "losses": 4,
+        "net": 5,
+        "gain_ids": [
+          "egolife_006",
+          "egolife_018",
+          "egolife_035",
+          "egolife_048",
+          "egolife_067",
+          "egolife_069",
+          "egolife_079",
+          "egolife_139",
+          "egolife_147"
+        ],
+        "loss_ids": [
+          "egolife_111",
+          "egolife_171",
+          "egolife_172",
+          "egolife_179"
+        ]
+      },
+      "validation": {
+        "gains": 4,
+        "losses": 0,
+        "net": 4,
+        "gain_ids": [
+          "egolife_052",
+          "egolife_089",
+          "egolife_187",
+          "egolife_189"
+        ],
+        "loss_ids": []
+      },
+      "test": {
+        "gains": 8,
+        "losses": 5,
+        "net": 3,
+        "gain_ids": [
+          "egolife_023",
+          "egolife_024",
+          "egolife_057",
+          "egolife_060",
+          "egolife_094",
+          "egolife_095",
+          "egolife_157",
+          "egolife_161"
+        ],
+        "loss_ids": [
+          "egolife_065",
+          "egolife_096",
+          "egolife_129",
+          "egolife_191",
+          "egolife_195"
+        ]
+      }
+    },
+    "idea5_high448 vs idea5_low112": {
+      "train": {
+        "gains": 25,
+        "losses": 2,
+        "net": 23,
+        "gain_ids": [
+          "egolife_002",
+          "egolife_010",
+          "egolife_018",
+          "egolife_032",
+          "egolife_035",
+          "egolife_039",
+          "egolife_048",
+          "egolife_069",
+          "egolife_074",
+          "egolife_076",
+          "egolife_077",
+          "egolife_104",
+          "egolife_105",
+          "egolife_112",
+          "egolife_117",
+          "egolife_137",
+          "egolife_139",
+          "egolife_143",
+          "egolife_147",
+          "egolife_168",
+          "egolife_174",
+          "egolife_176",
+          "egolife_180",
+          "egolife_182",
+          "egolife_183"
+        ],
+        "loss_ids": [
+          "egolife_015",
+          "egolife_132"
+        ]
+      },
+      "validation": {
+        "gains": 5,
+        "losses": 1,
+        "net": 4,
+        "gain_ids": [
+          "egolife_019",
+          "egolife_051",
+          "egolife_052",
+          "egolife_084",
+          "egolife_089"
+        ],
+        "loss_ids": [
+          "egolife_123"
+        ]
+      },
+      "test": {
+        "gains": 15,
+        "losses": 5,
+        "net": 10,
+        "gain_ids": [
+          "egolife_023",
+          "egolife_027",
+          "egolife_057",
+          "egolife_060",
+          "egolife_063",
+          "egolife_065",
+          "egolife_093",
+          "egolife_097",
+          "egolife_156",
+          "egolife_157",
+          "egolife_158",
+          "egolife_160",
+          "egolife_161",
+          "egolife_193",
+          "egolife_198"
+        ],
+        "loss_ids": [
+          "egolife_024",
+          "egolife_095",
+          "egolife_162",
+          "egolife_195",
+          "egolife_197"
+        ]
+      }
+    },
+    "idea5_motion_high vs idea5_uniform_high": {
+      "train": {
+        "gains": 14,
+        "losses": 6,
+        "net": 8,
+        "gain_ids": [
+          "egolife_017",
+          "egolife_018",
+          "egolife_035",
+          "egolife_048",
+          "egolife_069",
+          "egolife_104",
+          "egolife_117",
+          "egolife_139",
+          "egolife_144",
+          "egolife_147",
+          "egolife_148",
+          "egolife_174",
+          "egolife_180",
+          "egolife_182"
+        ],
+        "loss_ids": [
+          "egolife_005",
+          "egolife_006",
+          "egolife_038",
+          "egolife_111",
+          "egolife_133",
+          "egolife_183"
+        ]
+      },
+      "validation": {
+        "gains": 2,
+        "losses": 3,
+        "net": -1,
+        "gain_ids": [
+          "egolife_019",
+          "egolife_187"
+        ],
+        "loss_ids": [
+          "egolife_122",
+          "egolife_149",
+          "egolife_189"
+        ]
+      },
+      "test": {
+        "gains": 9,
+        "losses": 3,
+        "net": 6,
+        "gain_ids": [
+          "egolife_023",
+          "egolife_027",
+          "egolife_057",
+          "egolife_060",
+          "egolife_094",
+          "egolife_124",
+          "egolife_160",
+          "egolife_195",
+          "egolife_198"
+        ],
+        "loss_ids": [
+          "egolife_093",
+          "egolife_096",
+          "egolife_129"
+        ]
+      }
+    },
+    "idea4_conditioned_full vs idea4_teacher": {
+      "train": {
+        "gains": 0,
+        "losses": 0,
+        "net": 0,
+        "gain_ids": [],
+        "loss_ids": []
+      },
+      "validation": {
+        "gains": 0,
+        "losses": 0,
+        "net": 0,
+        "gain_ids": [],
+        "loss_ids": []
+      },
+      "test": {
+        "gains": 0,
+        "losses": 0,
+        "net": 0,
+        "gain_ids": [],
+        "loss_ids": []
+      }
+    },
+    "idea3_search vs idea3_direct": {
+      "train": {
+        "gains": 3,
+        "losses": 10,
+        "net": -7,
+        "gain_ids": [
+          "egolife_005",
+          "egolife_006",
+          "egolife_015"
+        ],
+        "loss_ids": [
+          "egolife_012",
+          "egolife_035",
+          "egolife_079",
+          "egolife_099",
+          "egolife_102",
+          "egolife_111",
+          "egolife_135",
+          "egolife_138",
+          "egolife_176",
+          "egolife_180"
+        ]
+      },
+      "validation": {
+        "gains": 5,
+        "losses": 7,
+        "net": -2,
+        "gain_ids": [
+          "egolife_052",
+          "egolife_149",
+          "egolife_153",
+          "egolife_187",
+          "egolife_189"
+        ],
+        "loss_ids": [
+          "egolife_019",
+          "egolife_020",
+          "egolife_021",
+          "egolife_054",
+          "egolife_150",
+          "egolife_151",
+          "egolife_186"
+        ]
+      },
+      "test": {
+        "gains": 3,
+        "losses": 6,
+        "net": -3,
+        "gain_ids": [
+          "egolife_090",
+          "egolife_161",
+          "egolife_193"
+        ],
+        "loss_ids": [
+          "egolife_058",
+          "egolife_091",
+          "egolife_095",
+          "egolife_158",
+          "egolife_191",
+          "egolife_198"
+        ]
+      }
+    }
+  },
+  "example_ids": [
+    "egolife_023",
+    "egolife_024",
+    "egolife_027",
+    "egolife_093",
+    "egolife_090",
+    "egolife_058",
+    "egolife_026",
+    "egolife_022"
+  ],
+  "example_rule": "For each configured comparison: first lexicographic unused test ID for gain and loss; then all-correct/all-wrong; no inference or tuning uses these examples.",
+  "limitations": [
+    "Reused exploratory test57, silver labels, overlapping windows, two test days.",
+    "Answer text is the literal selected MCQ option, not a freely generated explanation.",
+    "Released distractor roles are metadata judgements, not independently human-verified error types.",
+    "Methods have different inputs, checkpoints, supervision, state and compute; consult individual reports."
+  ]
+}

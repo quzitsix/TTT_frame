@@ -1,0 +1,66 @@
+{
+  "schema": "ideax_summary_supplement_v1",
+  "core_manifest_sha256": "dfee2c28b2baf9a37b627bef382560b8641785d6649cf1601da6fb4d0e65a125",
+  "files": {
+    ".gitattributes": {
+      "sha256": "3e40442b2feed6c6aa774b90156628244e0a6fbb203164ef6d5c68621684b0ff",
+      "bytes": 115
+    },
+    "context_review/egolife_022.jpg": {
+      "sha256": "f7544393ec12d498fd91e9b739e14f3e0e481531ed8222dabdbd5630a7da70f1",
+      "bytes": 93364
+    },
+    "context_review/egolife_023.jpg": {
+      "sha256": "273b4f1faf071d5503b57dfe5a8b20427ce8476c30ac525f5ef4c1d9b8d87fdf",
+      "bytes": 76933
+    },
+    "context_review/egolife_024.jpg": {
+      "sha256": "73d495d8e0b50a02bc0a63b52cad814965532f3f0f7bcdb29531ea7c08dc642a",
+      "bytes": 95057
+    },
+    "context_review/egolife_026.jpg": {
+      "sha256": "4214e4ebea3d4c781654d92e722343ad972f0493d841b8a373fd26732c9ebaa1",
+      "bytes": 84213
+    },
+    "context_review/egolife_027.jpg": {
+      "sha256": "9013ab3cdadeb68c9cb765fc86792e5b972e673757790050319e069fa8ab0c6b",
+      "bytes": 91005
+    },
+    "context_review/egolife_058.jpg": {
+      "sha256": "1597d99f2408e0aa389912e8f3e8cd257102b7e418a3a30f45de95b299770b2f",
+      "bytes": 100088
+    },
+    "context_review/egolife_090.jpg": {
+      "sha256": "32dc29d3849c5dd9948c9222ac0a3dac97330c0885caf8568df6e9464d3caf08",
+      "bytes": 96631
+    },
+    "context_review/egolife_093.jpg": {
+      "sha256": "4a88e9e4b51327b960b555abaf51861b0f23a96712e9bd80679bc6e635ca69b9",
+      "bytes": 89012
+    },
+    "context_review/manifest.json": {
+      "sha256": "44990d1e182bd88c81fe34c1f51f1a7c5b45170ee67af45b7324ad5996ad3b5a",
+      "bytes": 16898
+    },
+    "context_review/review_notes.md": {
+      "sha256": "3b4dd2bd67f21f121457cd74c385997573364bb1fe58b80b17a408073f6ad135",
+      "bytes": 1765
+    },
+    "context_review/selection_examples.json": {
+      "sha256": "6eb5414cc14eef5785666f7ed3e0b4dfe2652d455a6d61ea81007b910633b1a4",
+      "bytes": 43610
+    },
+    "verification/pytest_final.log": {
+      "sha256": "50633781951388a9ebc497873a80149ca9f0465b30ff090c38353ddbcce91d60",
+      "bytes": 23185
+    },
+    "verification/pytest_offline_clip.log": {
+      "sha256": "7f0ace10eedfb07ace18a0ef6dc2ac8d19d6c6e0784eab34dbdb4dabdf58b44c",
+      "bytes": 98
+    },
+    "verification/pytest_offline_full.log": {
+      "sha256": "3be4ad662e802c034c1e6f5c6407e895960d4094673bf7dfe0753b7b0048678c",
+      "bytes": 821
+    }
+  }
+}

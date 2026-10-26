@@ -1,0 +1,19 @@
+{
+  "schema": "idea05_frozen_predictions_v1",
+  "cases": 200,
+  "arms": [
+    "low112",
+    "mid224",
+    "high448",
+    "uniform_high",
+    "random_high",
+    "motion_high"
+  ],
+  "answer_keys_read": false,
+  "configuration_selection": "none; all six fixed configurations reported",
+  "protocol_fingerprint": "8acdaec1a4c91336d9e0a7d4e62ed052daf559d07f4bb1e3403d93938d67aa7a",
+  "scores_sha256": "be60b01e500e3b146e08689af4d51c11135b0037f23d2d7f973e2376e5a2bd52",
+  "predictions_sha256": "3bb37096e06b2536d0c86fbed18ddb489ff7f3420313a244cd6d0edcab1746aa",
+  "evaluator_sha256": "88b8e2969aeeeda88f90f0eb2642d974ce9d25a592813a6c6ead9a391eeb10f7",
+  "created_at": "2026-10-26T10:15:47.609326+00:00"
+}

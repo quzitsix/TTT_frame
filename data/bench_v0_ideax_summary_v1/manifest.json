@@ -1,0 +1,112 @@
+{
+  "analysis_only": true,
+  "sources": [
+    {
+      "path": "/home/quzitsix/TTT_frame/runs/forecast_bench_v0/ideax_summary_v1/final_config.json",
+      "sha256": "97b0c290207b2c5e52d1d4e801af4e9e64711dcdf5bffa8c24301051ce78ae95",
+      "bytes": 6085
+    },
+    {
+      "path": "/data/share/raw/bench_v0/inputs_mcq.jsonl",
+      "sha256": "7a3b6eb61eef3111f409bd2781ec1634ce9f2bad3a66a2dd6919ef049bf29df8",
+      "bytes": 154172
+    },
+    {
+      "path": "/data/share/raw/bench_v0/answers.jsonl",
+      "sha256": "4c1c36e0ba137f921c009eceb64c6586829700bc183faae3cef7f8ffc6f20b6d",
+      "bytes": 172601
+    },
+    {
+      "path": "/home/quzitsix/TTT_frame/data/bench_v0_baseline_v1/research_day_split.json",
+      "sha256": "e23dfe7584e6a7268187a56e3997510281b576c3aab4892d3c25ae1b6e479603",
+      "bytes": 9739
+    },
+    {
+      "path": "/home/quzitsix/TTT_frame/scripts/summarize_ideax_answers.py",
+      "sha256": "e847e071dd4a304a0543b7475747fe03dd0a8a9632c131f27cd51087d417c935",
+      "bytes": 13261
+    },
+    {
+      "path": "/home/quzitsix/TTT_frame/data/bench_v0_baseline_v1/qwen_full_icl_predictions.jsonl",
+      "sha256": "585972ce9842fb0d9dfc8422d438c9dc77684daff231b7dba1dac16350e67cb3",
+      "bytes": 8200
+    },
+    {
+      "path": "/home/quzitsix/TTT_frame/data/bench_v0_baseline_v1/qwen_recent_icl_predictions.jsonl",
+      "sha256": "c4274155485bdc74af549f001c0d53c2087c0f8524cdd2fb5e25efe0cf71a308",
+      "bytes": 8200
+    },
+    {
+      "path": "/home/quzitsix/TTT_frame/data/bench_v0_idea01_v1/recent_only_predictions.jsonl",
+      "sha256": "f6365229b1ca498d743c8284cfc55157b99f025c658fabe6ae90a9f1deae43d2",
+      "bytes": 8200
+    },
+    {
+      "path": "/home/quzitsix/TTT_frame/data/bench_v0_idea01_v1/residual_predictions.jsonl",
+      "sha256": "e22ffcafbe5b9b4b987ba20191f4306b8d4eddb0950c43ccb5ca40d2ad9b88ba",
+      "bytes": 8200
+    },
+    {
+      "path": "/home/quzitsix/TTT_frame/data/bench_v0_idea01_v1/plain_delayed_predictions.jsonl",
+      "sha256": "62ff079a1f925fdd19ab877ee3a1a009c6136027567ef499be6b615beaacb514",
+      "bytes": 8200
+    },
+    {
+      "path": "/home/quzitsix/TTT_frame/data/bench_v0_idea01_v1/reset_residual_predictions.jsonl",
+      "sha256": "f6365229b1ca498d743c8284cfc55157b99f025c658fabe6ae90a9f1deae43d2",
+      "bytes": 8200
+    },
+    {
+      "path": "/home/quzitsix/TTT_frame/data/bench_v0_idea03_spatial_v1/per_case.jsonl",
+      "sha256": "30ca51eec41e0e81b29b613c5de1877474007290a73a8d890f20f7771b63ddef",
+      "bytes": 120710
+    },
+    {
+      "path": "/home/quzitsix/TTT_frame/data/bench_v0_idea04_v1/per_case.jsonl",
+      "sha256": "e035e9904c9f9d3602fe8b24f6d633a8d962dfa1ad65563a4a0c61549578dbbc",
+      "bytes": 400304
+    },
+    {
+      "path": "/home/quzitsix/TTT_frame/data/bench_v0_idea05_v1/per_case.jsonl",
+      "sha256": "692cb374ce3a96707d7f3c6a09112ef5c78cf7c2b0d7b03d8422a728d1d99164",
+      "bytes": 218900
+    },
+    {
+      "path": "/home/quzitsix/TTT_frame/data/bench_v0_idea05_v1/supplement/deadline/per_case.jsonl",
+      "sha256": "25b851bb1106f94343ad47e0d8609b455f80707347cae6e598998e89baecd11f",
+      "bytes": 236922
+    }
+  ],
+  "files": {
+    "answers.csv": {
+      "path": "/home/quzitsix/TTT_frame/data/bench_v0_ideax_summary_v1/answers.csv",
+      "sha256": "01c1e686bc6d70a8f9df11a883de0e29b922411c5ca2140887e9ce34de001aa7",
+      "bytes": 170428
+    },
+    "answers.jsonl": {
+      "path": "/home/quzitsix/TTT_frame/data/bench_v0_ideax_summary_v1/answers.jsonl",
+      "sha256": "439765a9106d647ad9abbc3ca113ff3a9bc0fdec4d31d8c8b50da74788505211",
+      "bytes": 813504
+    },
+    "concrete_answers.md": {
+      "path": "/home/quzitsix/TTT_frame/data/bench_v0_ideax_summary_v1/concrete_answers.md",
+      "sha256": "bea08b8d2e534c281fa9bf656147d79900933cf0b48112d95888b3f1bb0697b5",
+      "bytes": 12181
+    },
+    "config.json": {
+      "path": "/home/quzitsix/TTT_frame/data/bench_v0_ideax_summary_v1/config.json",
+      "sha256": "97b0c290207b2c5e52d1d4e801af4e9e64711dcdf5bffa8c24301051ce78ae95",
+      "bytes": 6085
+    },
+    "examples.json": {
+      "path": "/home/quzitsix/TTT_frame/data/bench_v0_ideax_summary_v1/examples.json",
+      "sha256": "929b223cae4e68419a2724152f246aeb8570c039577def61036bccaeae3f7c0b",
+      "bytes": 45120
+    },
+    "summary.json": {
+      "path": "/home/quzitsix/TTT_frame/data/bench_v0_ideax_summary_v1/summary.json",
+      "sha256": "aea9636bb184280e8b68a1c88fea35f14f0c9f36581ea93e18ac6a57ca500e8b",
+      "bytes": 81272
+    }
+  }
+}

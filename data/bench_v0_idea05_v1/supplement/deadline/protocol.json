@@ -1,0 +1,28 @@
+{
+  "payload": {
+    "base_protocol_fingerprint": "8acdaec1a4c91336d9e0a7d4e62ed052daf559d07f4bb1e3403d93938d67aa7a",
+    "resolutions": [
+      112,
+      112,
+      112,
+      448,
+      112,
+      112,
+      112,
+      448,
+      112,
+      112,
+      112,
+      448,
+      112,
+      112,
+      448
+    ],
+    "source_sha256": "86d02823450cc474b761e5c1b4508526b8317e48eb5d2601cb8c806f4dd24064",
+    "main_scores_sha256": "be60b01e500e3b146e08689af4d51c11135b0037f23d2d7f973e2376e5a2bd52",
+    "selection": "fixed latest chunk in each budget cell; added after six-arm scoring",
+    "test_status": "post-hoc exploratory attribution control, no threshold fitting",
+    "created_at": "2026-10-26T10:21:38.779064+00:00"
+  },
+  "protocol_fingerprint": "503de470b42fb8aee6e12783e1322af3b5a87cd3330f4a218b415b7cfef740d3"
+}

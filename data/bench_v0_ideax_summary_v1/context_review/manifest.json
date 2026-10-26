@@ -1,0 +1,547 @@
+{
+  "schema": "ideax_posthoc_context_v1",
+  "analysis_only": true,
+  "future_media_read": false,
+  "example_source": "runs/forecast_bench_v0/ideax_summary_v1/preliminary_answers/examples.json",
+  "example_source_sha256": "6eb5414cc14eef5785666f7ed3e0b4dfe2652d455a6d61ea81007b910633b1a4",
+  "renderer_sha256": "d5c85654af27bede5d331c12ebbab29cf118def94697563a3a1bdfc6a361a87e",
+  "cases": [
+    {
+      "id": "egolife_023",
+      "file": "egolife_023.jpg",
+      "sha256": "273b4f1faf071d5503b57dfe5a8b20427ce8476c30ac525f5ef4c1d9b8d87fdf",
+      "frames": [
+        {
+          "role": "context",
+          "requested_prefix_seconds": 1740.0,
+          "actual_prefix_seconds": 1740.0,
+          "decoded_pixel_sha256": "e56a5621106b25910eea1ea577aca1224b015bd424ad20453b95c7f99d9ae9c1",
+          "image_size": [
+            448,
+            448
+          ]
+        },
+        {
+          "role": "recent",
+          "requested_prefix_seconds": 1800.0,
+          "actual_prefix_seconds": 1800.0,
+          "decoded_pixel_sha256": "c0d802c5d0c29015a717b0996234a9837de7031a72c1a23e246c6b4c7d0804ee",
+          "image_size": [
+            448,
+            448
+          ]
+        },
+        {
+          "role": "recent",
+          "requested_prefix_seconds": 1810.0,
+          "actual_prefix_seconds": 1810.0,
+          "decoded_pixel_sha256": "23a0883d4bb7a160bb502b79f324af7c70a2bde3ce1935800dc443af55726eb6",
+          "image_size": [
+            448,
+            448
+          ]
+        },
+        {
+          "role": "recent",
+          "requested_prefix_seconds": 1820.0,
+          "actual_prefix_seconds": 1820.0,
+          "decoded_pixel_sha256": "b53735dec59f7d2aa88c2753d50e5960690e4214003c4577cf5fa53c08353dc2",
+          "image_size": [
+            448,
+            448
+          ]
+        },
+        {
+          "role": "recent",
+          "requested_prefix_seconds": 1825.0,
+          "actual_prefix_seconds": 1825.0,
+          "decoded_pixel_sha256": "edf398204ebb85686bf888eda484e3b5ea8d3ba2facdb8313e89ad2df5611529",
+          "image_size": [
+            448,
+            448
+          ]
+        },
+        {
+          "role": "recent",
+          "requested_prefix_seconds": 1829.5,
+          "actual_prefix_seconds": 1829.5,
+          "decoded_pixel_sha256": "6ce9dcda326f3ca68ca4e710945fd6dc947d21994e5fee1b09bbc2e707344a08",
+          "image_size": [
+            448,
+            448
+          ]
+        }
+      ]
+    },
+    {
+      "id": "egolife_024",
+      "file": "egolife_024.jpg",
+      "sha256": "73d495d8e0b50a02bc0a63b52cad814965532f3f0f7bcdb29531ea7c08dc642a",
+      "frames": [
+        {
+          "role": "context",
+          "requested_prefix_seconds": 1740.0,
+          "actual_prefix_seconds": 1740.0,
+          "decoded_pixel_sha256": "31e1ef16162cbbb73fe0c120bef2207f35d388abdb597307608b3eadf17a6dc6",
+          "image_size": [
+            448,
+            448
+          ]
+        },
+        {
+          "role": "recent",
+          "requested_prefix_seconds": 1800.0,
+          "actual_prefix_seconds": 1800.0,
+          "decoded_pixel_sha256": "a2d929a6d54a50a3936518fc1ca83fef4aff6b9639997ceb1ed1a44127d30c30",
+          "image_size": [
+            448,
+            448
+          ]
+        },
+        {
+          "role": "recent",
+          "requested_prefix_seconds": 1810.0,
+          "actual_prefix_seconds": 1810.0,
+          "decoded_pixel_sha256": "5ce95b99f331c465dd820e6a6a7d5ab7c64fee35ff16ba2142a206e77861069a",
+          "image_size": [
+            448,
+            448
+          ]
+        },
+        {
+          "role": "recent",
+          "requested_prefix_seconds": 1820.0,
+          "actual_prefix_seconds": 1820.0,
+          "decoded_pixel_sha256": "9ed65f742a416b6532a6431c30bd38b04c107cc2c5c6e445ef328681090d8c23",
+          "image_size": [
+            448,
+            448
+          ]
+        },
+        {
+          "role": "recent",
+          "requested_prefix_seconds": 1825.0,
+          "actual_prefix_seconds": 1825.0,
+          "decoded_pixel_sha256": "a39c2916f131a1e1ffab41ba3e6b725ed895c57196fa369e05b8da74914d88a1",
+          "image_size": [
+            448,
+            448
+          ]
+        },
+        {
+          "role": "recent",
+          "requested_prefix_seconds": 1829.5,
+          "actual_prefix_seconds": 1829.5,
+          "decoded_pixel_sha256": "b3a2c48d03ba90b323287010e3d146aa70fdaa2f12297c46cbd6421c64926788",
+          "image_size": [
+            448,
+            448
+          ]
+        }
+      ]
+    },
+    {
+      "id": "egolife_027",
+      "file": "egolife_027.jpg",
+      "sha256": "9013ab3cdadeb68c9cb765fc86792e5b972e673757790050319e069fa8ab0c6b",
+      "frames": [
+        {
+          "role": "context",
+          "requested_prefix_seconds": 1740.0,
+          "actual_prefix_seconds": 1740.0,
+          "decoded_pixel_sha256": "5f0033c6fe5c1c4b028015c6d34c725196cbe4cbee76ed7eb2470cc95aa99ee1",
+          "image_size": [
+            448,
+            448
+          ]
+        },
+        {
+          "role": "recent",
+          "requested_prefix_seconds": 1800.0,
+          "actual_prefix_seconds": 1800.0,
+          "decoded_pixel_sha256": "8915715929680a57ac5f8842a25002475f2368c3e6ab91b94583791f960e52f0",
+          "image_size": [
+            448,
+            448
+          ]
+        },
+        {
+          "role": "recent",
+          "requested_prefix_seconds": 1810.0,
+          "actual_prefix_seconds": 1810.0,
+          "decoded_pixel_sha256": "f74570d2b2162c5605e1d013c0e60d715cb91efa8bddc75c1fb7a90f2e2d68d4",
+          "image_size": [
+            448,
+            448
+          ]
+        },
+        {
+          "role": "recent",
+          "requested_prefix_seconds": 1820.0,
+          "actual_prefix_seconds": 1820.0,
+          "decoded_pixel_sha256": "748f2273aef4ad0964d7e45192f570e995ecee1a48e7bf01005ed5dd2b680c4a",
+          "image_size": [
+            448,
+            448
+          ]
+        },
+        {
+          "role": "recent",
+          "requested_prefix_seconds": 1825.0,
+          "actual_prefix_seconds": 1825.0,
+          "decoded_pixel_sha256": "7455da43c9dd844b19984a8e9e359e7541325a73aef956d319290ff5935e2960",
+          "image_size": [
+            448,
+            448
+          ]
+        },
+        {
+          "role": "recent",
+          "requested_prefix_seconds": 1829.5,
+          "actual_prefix_seconds": 1829.5,
+          "decoded_pixel_sha256": "73fe634e3c0a3bebea0c18b2ce900ddea29b6dbdbb9a33bcb2a3cb0905ff62f0",
+          "image_size": [
+            448,
+            448
+          ]
+        }
+      ]
+    },
+    {
+      "id": "egolife_093",
+      "file": "egolife_093.jpg",
+      "sha256": "4a88e9e4b51327b960b555abaf51861b0f23a96712e9bd80679bc6e635ca69b9",
+      "frames": [
+        {
+          "role": "context",
+          "requested_prefix_seconds": 1740.0,
+          "actual_prefix_seconds": 1740.0,
+          "decoded_pixel_sha256": "f6a9131e7eef8916a494729bcf051ed86bd75fdbfd748cd3ab182221d520b73b",
+          "image_size": [
+            448,
+            448
+          ]
+        },
+        {
+          "role": "recent",
+          "requested_prefix_seconds": 1800.0,
+          "actual_prefix_seconds": 1800.0,
+          "decoded_pixel_sha256": "9401db8ef70e6deb99905b94621ff645e403d5c06f0f14aa013b9c0f4d2d1506",
+          "image_size": [
+            448,
+            448
+          ]
+        },
+        {
+          "role": "recent",
+          "requested_prefix_seconds": 1810.0,
+          "actual_prefix_seconds": 1810.0,
+          "decoded_pixel_sha256": "eafa4fb9cc6b6d6e142cf8dd53a3d8a2447461555303eec904367f8cf1cd276e",
+          "image_size": [
+            448,
+            448
+          ]
+        },
+        {
+          "role": "recent",
+          "requested_prefix_seconds": 1820.0,
+          "actual_prefix_seconds": 1820.0,
+          "decoded_pixel_sha256": "73215fe27c149a273ae5e2b4cf2a1949fefa6815e4f4dd72667c2b70200a098f",
+          "image_size": [
+            448,
+            448
+          ]
+        },
+        {
+          "role": "recent",
+          "requested_prefix_seconds": 1825.0,
+          "actual_prefix_seconds": 1825.0,
+          "decoded_pixel_sha256": "fbbf9162871a015fdee383613d930f8dfe9f4990cfff1a90f01593543451c7f9",
+          "image_size": [
+            448,
+            448
+          ]
+        },
+        {
+          "role": "recent",
+          "requested_prefix_seconds": 1829.5,
+          "actual_prefix_seconds": 1829.5,
+          "decoded_pixel_sha256": "416567f4c4c9b315483693cf513993e23d226b4f130485c2d239dbd3018e9b7c",
+          "image_size": [
+            448,
+            448
+          ]
+        }
+      ]
+    },
+    {
+      "id": "egolife_090",
+      "file": "egolife_090.jpg",
+      "sha256": "32dc29d3849c5dd9948c9222ac0a3dac97330c0885caf8568df6e9464d3caf08",
+      "frames": [
+        {
+          "role": "context",
+          "requested_prefix_seconds": 1740.0,
+          "actual_prefix_seconds": 1740.0,
+          "decoded_pixel_sha256": "d2f35cc6a4af4ba209c25c7a23578be488c061e2b520d0a9dab136af4b70c6c3",
+          "image_size": [
+            448,
+            448
+          ]
+        },
+        {
+          "role": "recent",
+          "requested_prefix_seconds": 1800.0,
+          "actual_prefix_seconds": 1800.0,
+          "decoded_pixel_sha256": "148feb0efef9aea1f6e7793293c79f8399dd74b01f021d60763b94d646611970",
+          "image_size": [
+            448,
+            448
+          ]
+        },
+        {
+          "role": "recent",
+          "requested_prefix_seconds": 1810.0,
+          "actual_prefix_seconds": 1810.0,
+          "decoded_pixel_sha256": "36ec5d249343e0bca75354b2f72e4bcd6ce2229791d34b72b2ae48643d26fc08",
+          "image_size": [
+            448,
+            448
+          ]
+        },
+        {
+          "role": "recent",
+          "requested_prefix_seconds": 1820.0,
+          "actual_prefix_seconds": 1820.0,
+          "decoded_pixel_sha256": "737863d4635b704b7c7d996a0199fcd49d5b5b7e7f4659822bbc87fa7b1c6a97",
+          "image_size": [
+            448,
+            448
+          ]
+        },
+        {
+          "role": "recent",
+          "requested_prefix_seconds": 1825.0,
+          "actual_prefix_seconds": 1825.0,
+          "decoded_pixel_sha256": "61d465c921c3239733ee3ebe04299e7bd2b5a5ff562a2c7c0d967ff470dd82f2",
+          "image_size": [
+            448,
+            448
+          ]
+        },
+        {
+          "role": "recent",
+          "requested_prefix_seconds": 1829.5,
+          "actual_prefix_seconds": 1829.5,
+          "decoded_pixel_sha256": "5ffe737b02f992cc2acd395ce4336bd58ed9a0c005a1db014b9f343437a0e7ac",
+          "image_size": [
+            448,
+            448
+          ]
+        }
+      ]
+    },
+    {
+      "id": "egolife_058",
+      "file": "egolife_058.jpg",
+      "sha256": "1597d99f2408e0aa389912e8f3e8cd257102b7e418a3a30f45de95b299770b2f",
+      "frames": [
+        {
+          "role": "context",
+          "requested_prefix_seconds": 1740.0,
+          "actual_prefix_seconds": 1740.0,
+          "decoded_pixel_sha256": "7e6a3262a9e64a95324f5b6c77eeea301eb00d2044ab860400aefcca62673f3c",
+          "image_size": [
+            448,
+            448
+          ]
+        },
+        {
+          "role": "recent",
+          "requested_prefix_seconds": 1800.0,
+          "actual_prefix_seconds": 1800.0,
+          "decoded_pixel_sha256": "89f753619c131ce959d8a16df81d3d4d53c9f5a026b52b1d47c4eae9ce48a4b3",
+          "image_size": [
+            448,
+            448
+          ]
+        },
+        {
+          "role": "recent",
+          "requested_prefix_seconds": 1810.0,
+          "actual_prefix_seconds": 1810.0,
+          "decoded_pixel_sha256": "b410a7ef1d139daa5bb2ed745b939d1312f6eec23729f124962db2131f69d5bc",
+          "image_size": [
+            448,
+            448
+          ]
+        },
+        {
+          "role": "recent",
+          "requested_prefix_seconds": 1820.0,
+          "actual_prefix_seconds": 1820.0,
+          "decoded_pixel_sha256": "83f4b17e57e0f8d698a271c95d63ae4542ef150188dbc6a85c54c9e1dd6a5079",
+          "image_size": [
+            448,
+            448
+          ]
+        },
+        {
+          "role": "recent",
+          "requested_prefix_seconds": 1825.0,
+          "actual_prefix_seconds": 1825.0,
+          "decoded_pixel_sha256": "c351dedeb53c5cc5d2bb675c02989618d2f3e0c8bcfab20a72b3a3bed2263ac6",
+          "image_size": [
+            448,
+            448
+          ]
+        },
+        {
+          "role": "recent",
+          "requested_prefix_seconds": 1829.5,
+          "actual_prefix_seconds": 1829.5,
+          "decoded_pixel_sha256": "83fedce1ff488d4b0ad1393b974d9ed829338cc1da5068255f251b1e96439ae6",
+          "image_size": [
+            448,
+            448
+          ]
+        }
+      ]
+    },
+    {
+      "id": "egolife_026",
+      "file": "egolife_026.jpg",
+      "sha256": "4214e4ebea3d4c781654d92e722343ad972f0493d841b8a373fd26732c9ebaa1",
+      "frames": [
+        {
+          "role": "context",
+          "requested_prefix_seconds": 1740.0,
+          "actual_prefix_seconds": 1740.0,
+          "decoded_pixel_sha256": "5fc3c009c6042a4f7f76e762225bf4120d288e31433ba55c86ed6262fa024621",
+          "image_size": [
+            448,
+            448
+          ]
+        },
+        {
+          "role": "recent",
+          "requested_prefix_seconds": 1800.0,
+          "actual_prefix_seconds": 1800.0,
+          "decoded_pixel_sha256": "e140cf76a22efc8e83b4108c65040883d432115ca13a725f64f9d68ea9625f83",
+          "image_size": [
+            448,
+            448
+          ]
+        },
+        {
+          "role": "recent",
+          "requested_prefix_seconds": 1810.0,
+          "actual_prefix_seconds": 1810.0,
+          "decoded_pixel_sha256": "7379f807378460b78aa844d1db3fff96ab10ee922820f681c3c1a839e795405e",
+          "image_size": [
+            448,
+            448
+          ]
+        },
+        {
+          "role": "recent",
+          "requested_prefix_seconds": 1820.0,
+          "actual_prefix_seconds": 1820.0,
+          "decoded_pixel_sha256": "e2264e4c8b44f0956ea8fe0610ec2569ec01f80701977aca65e0ee63168eede4",
+          "image_size": [
+            448,
+            448
+          ]
+        },
+        {
+          "role": "recent",
+          "requested_prefix_seconds": 1825.0,
+          "actual_prefix_seconds": 1825.0,
+          "decoded_pixel_sha256": "0917b7f2939942f03f00699773af88b87c87d3e4cd619c0ff7c62d2b844fa817",
+          "image_size": [
+            448,
+            448
+          ]
+        },
+        {
+          "role": "recent",
+          "requested_prefix_seconds": 1829.5,
+          "actual_prefix_seconds": 1829.5,
+          "decoded_pixel_sha256": "1cb8621342eae2a1c3d731081102d52de8e873bbcf7ce461e8ca95fef18de279",
+          "image_size": [
+            448,
+            448
+          ]
+        }
+      ]
+    },
+    {
+      "id": "egolife_022",
+      "file": "egolife_022.jpg",
+      "sha256": "f7544393ec12d498fd91e9b739e14f3e0e481531ed8222dabdbd5630a7da70f1",
+      "frames": [
+        {
+          "role": "context",
+          "requested_prefix_seconds": 1740.0,
+          "actual_prefix_seconds": 1740.0,
+          "decoded_pixel_sha256": "c937f194179804464d7089a626cb21dc75092b60df8a0317a9875437c471b79a",
+          "image_size": [
+            448,
+            448
+          ]
+        },
+        {
+          "role": "recent",
+          "requested_prefix_seconds": 1800.0,
+          "actual_prefix_seconds": 1800.0,
+          "decoded_pixel_sha256": "e76bca21c7c4affbf11a41e91bf0b21fb87f9143c4c32063278d50169338ea02",
+          "image_size": [
+            448,
+            448
+          ]
+        },
+        {
+          "role": "recent",
+          "requested_prefix_seconds": 1810.0,
+          "actual_prefix_seconds": 1810.0,
+          "decoded_pixel_sha256": "7a318e38b342d7f5d92e83a24fbf1e31e3eb6bb5d30f9dd6eb57639f898fb634",
+          "image_size": [
+            448,
+            448
+          ]
+        },
+        {
+          "role": "recent",
+          "requested_prefix_seconds": 1820.0,
+          "actual_prefix_seconds": 1820.0,
+          "decoded_pixel_sha256": "846a83a213e26214fb0bbd3adedae5e40f0a65f04e6aa93f097988ea5ba2d486",
+          "image_size": [
+            448,
+            448
+          ]
+        },
+        {
+          "role": "recent",
+          "requested_prefix_seconds": 1825.0,
+          "actual_prefix_seconds": 1825.0,
+          "decoded_pixel_sha256": "91f3584ea94471d517d26780d15ee02afb84d420e47acb4a45e3bdd62242b1e0",
+          "image_size": [
+            448,
+            448
+          ]
+        },
+        {
+          "role": "recent",
+          "requested_prefix_seconds": 1829.5,
+          "actual_prefix_seconds": 1829.5,
+          "decoded_pixel_sha256": "e88d9fd9029a788c317419a24137c273c047ddea36989186fe071fb1cff84471",
+          "image_size": [
+            448,
+            448
+          ]
+        }
+      ]
+    }
+  ],
+  "warning": "Post-scoring example review, not extra model evidence or human verification of future labels."
+}

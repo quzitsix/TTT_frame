@@ -1,0 +1,1625 @@
+{
+  "audit_passed": true,
+  "stage_before": "score",
+  "cases": 200,
+  "answer_files_read": false,
+  "source_sha256": "71cda204dee9d87d8255776322a7d6564ac90d99adf7d076646a1fc33f519e73",
+  "dependencies": {
+    "protocol.json": "b9bc4088253f634a430c30146a1e66ed9d7504011c83fc3acbaf92c84e168370",
+    "teacher_completion.json": "eb2f4203c07ba1ca524fe9777fe80abe9a37dc45170d2e752a32f0c1dd2d363f",
+    "selection.json": "046d48087f5080be697f48e1adee70df296515e83d7496d5fa33de01c319a9a7",
+    "models/fixed_m32.pt": "021a805b196487f73a6db58c76024feaaee3bef63c84da2d3bf8c3911cc246b0",
+    "models/conditioned_m32.pt": "9df0f61d957959f1515ca1fb8ea80b481fe408e3136b866a892f26f47b99f3b7",
+    "models/fixed_m64.pt": "ef6add6cf4130ab3e8b6f4ba68924f974ad60e22cc6859110324d2a59301c6f0",
+    "models/conditioned_m64.pt": "75ee64cf37703bc9432334de3b084ed3aff645d588f7b67311a1cf3f608d2188",
+    "models/fixed_m128.pt": "045fdbe64ea6a04a37076f09b86d4718a5224e689b009c14eeee61c3d702d31e",
+    "models/conditioned_m128.pt": "8534afd642f2c549929aee418114461bcce1cc6e76cea381fbc679c2d6070501",
+    "forecast_completion.json": "cd5a71f7c510cdd8b5a00824668aee30210f3024a6fcdf49b4633a5bfc75a94b",
+    "predictions.jsonl": "1c3984dc232eddc891ff7087054aa86c0085d091b0a8936a8b318f8ad1c27c42"
+  },
+  "teacher_max_abs": 2.0265579223632812e-06,
+  "recent_max_abs": 2.0265579223632812e-06,
+  "all_predictions_equal": true,
+  "cases_parity": [
+    {
+      "id": "egolife_001",
+      "teacher_max_abs": 7.748603820800781e-07,
+      "recent_max_abs": 7.748603820800781e-07,
+      "prediction_equal": true,
+      "trajectory_sha256": "969eb5ad14487a0f471983aef0a4a0f8fbf7f32133a01a2f934584cbdf28aed4",
+      "old_forecast_sha256": "2cc8ac170c9e26b5482ac46e87064cd51185d4c1804c821a5d781c763871ab57"
+    },
+    {
+      "id": "egolife_002",
+      "teacher_max_abs": 1.0728836059570312e-06,
+      "recent_max_abs": 1.0728836059570312e-06,
+      "prediction_equal": true,
+      "trajectory_sha256": "9c83246699456648da6c7eeaba2b6f54e6b79e5160acf221f6b106164f081d24",
+      "old_forecast_sha256": "7d529c82f2bb72dc65a0608c107e9e046eab5d0ea0ba69c2d7af397d2bfb0d8d"
+    },
+    {
+      "id": "egolife_003",
+      "teacher_max_abs": 9.5367431640625e-07,
+      "recent_max_abs": 1.0728836059570312e-06,
+      "prediction_equal": true,
+      "trajectory_sha256": "cf4954c6925d24ad891c6e6a83366bdfebb43fe5cf97fbb7a5cd07f598d36e19",
+      "old_forecast_sha256": "909b4c78220293d95a32c2c0f66ed28200c900a27268f7b386d0fa967ee262e3"
+    },
+    {
+      "id": "egolife_004",
+      "teacher_max_abs": 9.5367431640625e-07,
+      "recent_max_abs": 9.5367431640625e-07,
+      "prediction_equal": true,
+      "trajectory_sha256": "c25a7f1040de654fb2dd50918b45eb999e0b4d2549edbdf51e427cd7f72a94d7",
+      "old_forecast_sha256": "83de0b283629f64e9de7d593e08c2033ee8a2c0739a41c47624d61760c10176f"
+    },
+    {
+      "id": "egolife_005",
+      "teacher_max_abs": 8.344650268554688e-07,
+      "recent_max_abs": 7.748603820800781e-07,
+      "prediction_equal": true,
+      "trajectory_sha256": "aefeb9753db8cc23937845f16bd3c37047f9d6d077ac4fc0433f95da5166e582",
+      "old_forecast_sha256": "b1cb89f4efaa3213822c98ca9385e93fbbe5992b7060166cf0fee9defec7287f"
+    },
+    {
+      "id": "egolife_006",
+      "teacher_max_abs": 8.344650268554688e-07,
+      "recent_max_abs": 8.344650268554688e-07,
+      "prediction_equal": true,
+      "trajectory_sha256": "2b971f80846912c4b5ef5201fad4325abf5f9411b11b0ecb29f0a0190d9d8049",
+      "old_forecast_sha256": "75a1859940efa10527029cc05decaa5947b128e15c074281a1d1915dc49b19ee"
+    },
+    {
+      "id": "egolife_007",
+      "teacher_max_abs": 9.5367431640625e-07,
+      "recent_max_abs": 9.5367431640625e-07,
+      "prediction_equal": true,
+      "trajectory_sha256": "6dee853bbbad42d95dbd5897d293549942a6e0c59195665cb45fa2120ce6b468",
+      "old_forecast_sha256": "82e895c774c8ca26c6047546f55d1d905d20c7c268abaeea7ebf7340d71e5a11"
+    },
+    {
+      "id": "egolife_008",
+      "teacher_max_abs": 9.5367431640625e-07,
+      "recent_max_abs": 9.5367431640625e-07,
+      "prediction_equal": true,
+      "trajectory_sha256": "c45b0be3517013e889e8d3a77b3468b41bbd0ad4cb8d904c3cf71ff040870f78",
+      "old_forecast_sha256": "10f304be2e0522e95b782ab0c42aed16d7daa4b5b03f3b611f0ea2cdbfd2ef36"
+    },
+    {
+      "id": "egolife_009",
+      "teacher_max_abs": 1.0728836059570312e-06,
+      "recent_max_abs": 1.0728836059570312e-06,
+      "prediction_equal": true,
+      "trajectory_sha256": "153031dd1f55db67f7998a438596797d4371bfd1eae8abe52b4c10bc72f5aced",
+      "old_forecast_sha256": "28b825ccbb241ecd052e73bc18cf6e70f53e2246399275a0a7fc803b427ca239"
+    },
+    {
+      "id": "egolife_010",
+      "teacher_max_abs": 9.5367431640625e-07,
+      "recent_max_abs": 7.152557373046875e-07,
+      "prediction_equal": true,
+      "trajectory_sha256": "8d4bfb625250bcd08275840abe783778cab9e4719b3f1c9744ba7a4b2179e496",
+      "old_forecast_sha256": "4adb1de512ce7f191c447389f2f6fe58bfaeedbeaf4d2f15dab328ce245e0acc"
+    },
+    {
+      "id": "egolife_011",
+      "teacher_max_abs": 9.5367431640625e-07,
+      "recent_max_abs": 9.5367431640625e-07,
+      "prediction_equal": true,
+      "trajectory_sha256": "eb505e8bd9d781a703160e7935a149354dd98c71e2ef3ad72b2f20707c0d221d",
+      "old_forecast_sha256": "74ac7fdf590efbd7b039c62299e5cd8866656f2adda4b123b246cf54afeea22b"
+    },
+    {
+      "id": "egolife_012",
+      "teacher_max_abs": 1.1920928955078125e-06,
+      "recent_max_abs": 1.1920928955078125e-06,
+      "prediction_equal": true,
+      "trajectory_sha256": "79d3bf84f52116d08f7f7daaf18c3a8c6f77674184f58b9534ae6a16d1862eda",
+      "old_forecast_sha256": "ac5aa01fe59fec30c8ae3cb04e6c7e929d8bd14123c7c318b5a33b72f6becb01"
+    },
+    {
+      "id": "egolife_013",
+      "teacher_max_abs": 1.1920928955078125e-06,
+      "recent_max_abs": 1.1920928955078125e-06,
+      "prediction_equal": true,
+      "trajectory_sha256": "dd2eb3aa9ac723fae042f31fccefc580870c1dcb8be241abcbc1c82488331559",
+      "old_forecast_sha256": "b896d73e20292c1c8c06b7b8b393c52276a0635e11d1b3c3d24cecb1451aace3"
+    },
+    {
+      "id": "egolife_014",
+      "teacher_max_abs": 1.430511474609375e-06,
+      "recent_max_abs": 1.1920928955078125e-06,
+      "prediction_equal": true,
+      "trajectory_sha256": "bcb3e3279f71a5c06a5f4c4573e5d5128b00df8113a0ea0a17ea3d354b0dd7e0",
+      "old_forecast_sha256": "36b0e640d84ed3533e0e5dddf22592704046008571d3a177f64f1b223a75fc2c"
+    },
+    {
+      "id": "egolife_015",
+      "teacher_max_abs": 9.5367431640625e-07,
+      "recent_max_abs": 9.5367431640625e-07,
+      "prediction_equal": true,
+      "trajectory_sha256": "f3ff3674ea0812cfb75edd9e8238e67ab635fe4555fd9aedaa74d855fa74f688",
+      "old_forecast_sha256": "e6095355a00b9c61890c2e50ff60898ae7e068ce12b941d042ebf8b0619085ba"
+    },
+    {
+      "id": "egolife_016",
+      "teacher_max_abs": 9.5367431640625e-07,
+      "recent_max_abs": 9.5367431640625e-07,
+      "prediction_equal": true,
+      "trajectory_sha256": "bae91700fe093ebf4174f9f9a3a56fb4f604c16874e733e9756172ec369c215c",
+      "old_forecast_sha256": "22813a22bf238b5141f7c8202b0fa36259f6cf5bbc4a5bcdc75c891d5098f0cc"
+    },
+    {
+      "id": "egolife_017",
+      "teacher_max_abs": 9.5367431640625e-07,
+      "recent_max_abs": 8.940696716308594e-07,
+      "prediction_equal": true,
+      "trajectory_sha256": "07a4546fcb262efbf8a7bc848602e2eba9de29562bef14c675b9c5e46a4a4152",
+      "old_forecast_sha256": "a9fbfca3600ab3fc29c2d81c40a0e93b5fce195da8f33c5b92fc92381c2d35ba"
+    },
+    {
+      "id": "egolife_018",
+      "teacher_max_abs": 7.152557373046875e-07,
+      "recent_max_abs": 7.152557373046875e-07,
+      "prediction_equal": true,
+      "trajectory_sha256": "eec4b7b516dee640dfc65cd3da6a4b24e9abf3011d0132f1498c15956a1a31c5",
+      "old_forecast_sha256": "5270cc24b4c7d74525fd82b42ee5ef3eae4d88b0c1983ba2b2174be9c7c405c8"
+    },
+    {
+      "id": "egolife_030",
+      "teacher_max_abs": 1.1920928955078125e-06,
+      "recent_max_abs": 1.1920928955078125e-06,
+      "prediction_equal": true,
+      "trajectory_sha256": "6076aaef699cfee610fd31112bfa5173e755f85bee45ffbe31295e339109ad5b",
+      "old_forecast_sha256": "6095510400e3b55db79953709fdda8874cf730517d1bf9b510ba70e7c5b27888"
+    },
+    {
+      "id": "egolife_031",
+      "teacher_max_abs": 1.1920928955078125e-06,
+      "recent_max_abs": 1.1920928955078125e-06,
+      "prediction_equal": true,
+      "trajectory_sha256": "a8911f60b76356baa97ac88b1aeb5c75ea3c0b44ee71a014b7682a58e75bbd0c",
+      "old_forecast_sha256": "eaa0d428a464b41b3f55a149e149ebe118305600352a5378851831051dfff7e2"
+    },
+    {
+      "id": "egolife_032",
+      "teacher_max_abs": 9.5367431640625e-07,
+      "recent_max_abs": 1.0728836059570312e-06,
+      "prediction_equal": true,
+      "trajectory_sha256": "f4400e871cebaaf74701035df881f71bfa72cd06a5c004b89d8606f65d66ca97",
+      "old_forecast_sha256": "c6abc9c0a10cc25ca342cf206a33b9cdd0157b61ecc158e7769b29ac32422ecf"
+    },
+    {
+      "id": "egolife_033",
+      "teacher_max_abs": 1.3113021850585938e-06,
+      "recent_max_abs": 1.3113021850585938e-06,
+      "prediction_equal": true,
+      "trajectory_sha256": "a674e19c1479b8ce3230f7d3cccb3ded9292844defd958931a70feb781713a7e",
+      "old_forecast_sha256": "a3400e3a02ca868d61fca4e15579813dea498d0749c24984379d29573b6e8023"
+    },
+    {
+      "id": "egolife_034",
+      "teacher_max_abs": 9.5367431640625e-07,
+      "recent_max_abs": 9.5367431640625e-07,
+      "prediction_equal": true,
+      "trajectory_sha256": "8ccf1d373dd1293832f8c55f3f53d2a96fe2a36209bd18e6a646ea20e3a8751d",
+      "old_forecast_sha256": "7c6338861d35d85ab84fdb7d68126ca149f0209a209110f6064b613f5bfcd4c3"
+    },
+    {
+      "id": "egolife_035",
+      "teacher_max_abs": 1.1920928955078125e-06,
+      "recent_max_abs": 1.1920928955078125e-06,
+      "prediction_equal": true,
+      "trajectory_sha256": "3bfba18a374731ef69f193d320cbd04fc897f7e9b00d4a507626429b6d2052de",
+      "old_forecast_sha256": "82705ab4082113a7c13bb65dca5b3fe30dfa25f691e318a5583c201c5fb73bc1"
+    },
+    {
+      "id": "egolife_036",
+      "teacher_max_abs": 8.344650268554688e-07,
+      "recent_max_abs": 7.152557373046875e-07,
+      "prediction_equal": true,
+      "trajectory_sha256": "53ea570583b7d85d96c28bc5860a37c8b7e9f4f16b3e34fe9a5fccfcadb4f1c8",
+      "old_forecast_sha256": "697d1b0ab7a1324a9142a84a721372ed5c704394925650c8ab09371f15a976cb"
+    },
+    {
+      "id": "egolife_037",
+      "teacher_max_abs": 1.0132789611816406e-06,
+      "recent_max_abs": 1.0132789611816406e-06,
+      "prediction_equal": true,
+      "trajectory_sha256": "a3e80ca1c78ed32fb68c48b247692510562ce58dcc47557afe7043df0b8300e0",
+      "old_forecast_sha256": "c5b624b68e53eb4e09a641648a6417e1d53e6b7b6bdb4523f175614bbe5e1dab"
+    },
+    {
+      "id": "egolife_038",
+      "teacher_max_abs": 8.344650268554688e-07,
+      "recent_max_abs": 8.940696716308594e-07,
+      "prediction_equal": true,
+      "trajectory_sha256": "74fbce0db807f103fd476c4c8f16adb4fb341d57bf67bedca2d38f58488a7549",
+      "old_forecast_sha256": "4f5cf5752d4cd43b95e52cc3a01f919041916ba924e62ca0d7b308921c27d52d"
+    },
+    {
+      "id": "egolife_039",
+      "teacher_max_abs": 1.0728836059570312e-06,
+      "recent_max_abs": 1.0728836059570312e-06,
+      "prediction_equal": true,
+      "trajectory_sha256": "c3b248a38ef88b410da71284a2eab3fb615a31224aade8d2bb9c2e25022faaba",
+      "old_forecast_sha256": "c75412b1b3d69ea78ed5bab8d5a252607235ee659807834b3f09e914d3f05c96"
+    },
+    {
+      "id": "egolife_040",
+      "teacher_max_abs": 1.0728836059570312e-06,
+      "recent_max_abs": 1.1920928955078125e-06,
+      "prediction_equal": true,
+      "trajectory_sha256": "efdde24b109ad46d90008d2982ba7782d85c7503d9caf53cc286095dd5ac4387",
+      "old_forecast_sha256": "20184b5db97d0237e73d3fa27fe7dce992ac13d663bf965493530381c39bfcf6"
+    },
+    {
+      "id": "egolife_041",
+      "teacher_max_abs": 8.344650268554688e-07,
+      "recent_max_abs": 9.5367431640625e-07,
+      "prediction_equal": true,
+      "trajectory_sha256": "924c8b41dab0d6350eb8e9b31e9e35234162e931abc79c53f0e3a3cc24a75655",
+      "old_forecast_sha256": "b38b51d8d0b770d04e9fbb6c1b7569de4a8105efc5694e09a75c6239f8decfd1"
+    },
+    {
+      "id": "egolife_042",
+      "teacher_max_abs": 1.0728836059570312e-06,
+      "recent_max_abs": 1.0728836059570312e-06,
+      "prediction_equal": true,
+      "trajectory_sha256": "dc9393eb0bbf51ab171d8a81f56354394eb22f3ac516bb9b9386cfdf9da406bf",
+      "old_forecast_sha256": "b504f5e296c97110ace936e067157ad5a962919edb1184c56e44a506039c2d89"
+    },
+    {
+      "id": "egolife_043",
+      "teacher_max_abs": 9.5367431640625e-07,
+      "recent_max_abs": 9.5367431640625e-07,
+      "prediction_equal": true,
+      "trajectory_sha256": "eeff312bd7512f7c578b86e98edce8cbfdebf4738fdfc0da72890891d2bfd6c2",
+      "old_forecast_sha256": "2fc146749264d3d149b67ebeb1190105657da75468ae6743a8c7882f1c18444e"
+    },
+    {
+      "id": "egolife_044",
+      "teacher_max_abs": 7.152557373046875e-07,
+      "recent_max_abs": 7.748603820800781e-07,
+      "prediction_equal": true,
+      "trajectory_sha256": "da96fdb967f892b2be27cbe8eb8632aff5a07685fa69ccd4bc47014aa22da51d",
+      "old_forecast_sha256": "f4fec0fc3522168d5eedb373ec0964a4dbb5bd31167e74e3508e00b23ece66b8"
+    },
+    {
+      "id": "egolife_045",
+      "teacher_max_abs": 9.5367431640625e-07,
+      "recent_max_abs": 1.1920928955078125e-06,
+      "prediction_equal": true,
+      "trajectory_sha256": "ea412d51539401660d2ab147a35946d717a7b5d0eb5f9211bce469de7b6ec52f",
+      "old_forecast_sha256": "2680970ee70a4b18d061ae565cc3fe60564b77fd85d83b748e6e512fffddba57"
+    },
+    {
+      "id": "egolife_046",
+      "teacher_max_abs": 7.748603820800781e-07,
+      "recent_max_abs": 7.748603820800781e-07,
+      "prediction_equal": true,
+      "trajectory_sha256": "d404842e8dad6370068a91baf3f6e2a3a619dcb853ebc63f7d7a1e6fee16dbcf",
+      "old_forecast_sha256": "8e99cf24b91d81cc3b7bda198cc169cded739b4da407d5317ebcf42255188de1"
+    },
+    {
+      "id": "egolife_047",
+      "teacher_max_abs": 1.1324882507324219e-06,
+      "recent_max_abs": 1.1324882507324219e-06,
+      "prediction_equal": true,
+      "trajectory_sha256": "4e0e717fc831cf4e257e94ac329749afd43899ea77f391d2785e95c2d32bf5ce",
+      "old_forecast_sha256": "d4f06412f5ac3e11fe2180f9103978a6b7667de0c31ab37dea6ba7386527fb6c"
+    },
+    {
+      "id": "egolife_048",
+      "teacher_max_abs": 1.1920928955078125e-06,
+      "recent_max_abs": 1.430511474609375e-06,
+      "prediction_equal": true,
+      "trajectory_sha256": "ad828a3c7347f89e40f2c4f0a958fd12f207a5b4d373bce4674d40db19cdeffa",
+      "old_forecast_sha256": "2253f3e9ec464892bbb2e1945978e5fca876a1c7cda3aecec95a16c47fbdb467"
+    },
+    {
+      "id": "egolife_066",
+      "teacher_max_abs": 7.152557373046875e-07,
+      "recent_max_abs": 7.748603820800781e-07,
+      "prediction_equal": true,
+      "trajectory_sha256": "2dc6fed6a0fc161318bc666f4f39f6fbb6528d82e8da90f2189dd659f1fdef63",
+      "old_forecast_sha256": "147fbd60dec37a88203b710f26aabb331d71c725c78cfe81bfaba04ec3d42856"
+    },
+    {
+      "id": "egolife_067",
+      "teacher_max_abs": 9.5367431640625e-07,
+      "recent_max_abs": 9.5367431640625e-07,
+      "prediction_equal": true,
+      "trajectory_sha256": "4f5189fb8ea7b2b1c241a929da4f05b213afa10a05c9a776d8800ec98addf056",
+      "old_forecast_sha256": "6d815fa550a1b3d78869aae32b9a696bcf79c3e183f5cd8e47228a2d05b49668"
+    },
+    {
+      "id": "egolife_068",
+      "teacher_max_abs": 1.0728836059570312e-06,
+      "recent_max_abs": 1.1920928955078125e-06,
+      "prediction_equal": true,
+      "trajectory_sha256": "831e9d0f0d2f9b42d1efcb2e25971ed7f2b3fff206a268a0c0398ea46764e09a",
+      "old_forecast_sha256": "c382b253aa0e93e917954514719cee5252f3d3835c0e7474e007a9977a6f4cb9"
+    },
+    {
+      "id": "egolife_069",
+      "teacher_max_abs": 1.0728836059570312e-06,
+      "recent_max_abs": 1.0728836059570312e-06,
+      "prediction_equal": true,
+      "trajectory_sha256": "aa34953cf66d93ae50ded9e32bc28db1462522ea5e3247491189cb879ae539c0",
+      "old_forecast_sha256": "dec5e70b2c4d85b73dd27c016211158bc155353cd4c6d924f59b911e694c69ef"
+    },
+    {
+      "id": "egolife_070",
+      "teacher_max_abs": 1.3113021850585938e-06,
+      "recent_max_abs": 1.3113021850585938e-06,
+      "prediction_equal": true,
+      "trajectory_sha256": "e48b2319120add2d12259ac9059c980089ff29cb72f098c8adc075ae89d3653c",
+      "old_forecast_sha256": "2060ecd4e719eba3ebe3f1491ec980e412bc814fb058df120cdce4e004c154dc"
+    },
+    {
+      "id": "egolife_071",
+      "teacher_max_abs": 1.0728836059570312e-06,
+      "recent_max_abs": 1.0728836059570312e-06,
+      "prediction_equal": true,
+      "trajectory_sha256": "f29c9b4d79b080ebcb664f44ca165111973e503ab2469661af9f8ccfdc252fa9",
+      "old_forecast_sha256": "9cb627fc73f4d1536f7de64f6798289d75a0ad9a2cfc2b904410e9c186d149a1"
+    },
+    {
+      "id": "egolife_072",
+      "teacher_max_abs": 9.5367431640625e-07,
+      "recent_max_abs": 9.5367431640625e-07,
+      "prediction_equal": true,
+      "trajectory_sha256": "9401677e1b3c59d830f02bc702ce5ae1d08d3fac85ee295f0b94e6604d6c74fc",
+      "old_forecast_sha256": "dc88ce652498ed7a5c6d2be5bae2c374d680453dcc7785c5eada474f3a87cf3a"
+    },
+    {
+      "id": "egolife_073",
+      "teacher_max_abs": 8.940696716308594e-07,
+      "recent_max_abs": 8.940696716308594e-07,
+      "prediction_equal": true,
+      "trajectory_sha256": "565ee79daeef67118b5fdeb4878530fc626cdd21c130c89a1a17f388d82cfd1a",
+      "old_forecast_sha256": "bfd4d994986bd62d916280dee7c42275e2eb25f799287cbe1ca44e0c837e20bd"
+    },
+    {
+      "id": "egolife_074",
+      "teacher_max_abs": 1.3709068298339844e-06,
+      "recent_max_abs": 1.3113021850585938e-06,
+      "prediction_equal": true,
+      "trajectory_sha256": "081c4b48f3af4781c6c00642b0b8d33340d8e10a33dbb7599ed2884233b5e2d7",
+      "old_forecast_sha256": "9342d8321d5662c93121069afa5cb734ffbdc37bb0fe63a61da66b226aebfb91"
+    },
+    {
+      "id": "egolife_075",
+      "teacher_max_abs": 9.5367431640625e-07,
+      "recent_max_abs": 8.344650268554688e-07,
+      "prediction_equal": true,
+      "trajectory_sha256": "b6cce1de5079e56a318662c09e064134f99e2c197d4cebbd6eb6447d3a0f87f7",
+      "old_forecast_sha256": "d30fba223a7c168510e06973c1de8388a84aebb84dee784071af6bf61556af31"
+    },
+    {
+      "id": "egolife_076",
+      "teacher_max_abs": 9.5367431640625e-07,
+      "recent_max_abs": 9.5367431640625e-07,
+      "prediction_equal": true,
+      "trajectory_sha256": "8e92ad4179ed1979984616cc65b719c5007cadca0a52c132462fe1ed10f45ffa",
+      "old_forecast_sha256": "119c35946aff94e3f10679d5bbbefeff1157bf8edc98c04d611c5f5237ea4b9e"
+    },
+    {
+      "id": "egolife_077",
+      "teacher_max_abs": 9.5367431640625e-07,
+      "recent_max_abs": 9.5367431640625e-07,
+      "prediction_equal": true,
+      "trajectory_sha256": "88f288edd3caec414d2697e10593f9649707f54e8ea7308c30372f0f44b11eb6",
+      "old_forecast_sha256": "8b204d5c9f77c2166c4645027b0e52f434b00910a8af994a627bf018267b2f6f"
+    },
+    {
+      "id": "egolife_078",
+      "teacher_max_abs": 9.5367431640625e-07,
+      "recent_max_abs": 9.5367431640625e-07,
+      "prediction_equal": true,
+      "trajectory_sha256": "cc73129b172dfc7efd9f4977af6ff6ec753d1dbe7ad80f7e4884dd701752d8c2",
+      "old_forecast_sha256": "cc2fb37e9b4be77d1b2780263d68a78acd43e5a5e18b610318832a16f514bbcd"
+    },
+    {
+      "id": "egolife_079",
+      "teacher_max_abs": 9.5367431640625e-07,
+      "recent_max_abs": 1.0728836059570312e-06,
+      "prediction_equal": true,
+      "trajectory_sha256": "85e272f96e2de00e8f45b3a886c99f048caa5098d6e527e3f396cc4966521883",
+      "old_forecast_sha256": "ea8e08915e3c2003b00a4a49617bd8a548104d3dffae404ab468bb118fd50d77"
+    },
+    {
+      "id": "egolife_080",
+      "teacher_max_abs": 1.3113021850585938e-06,
+      "recent_max_abs": 1.3113021850585938e-06,
+      "prediction_equal": true,
+      "trajectory_sha256": "3cf1c80cf6efa4b5ab564ffaf59472de716629c8086ad81e203bfaf7f2971dbc",
+      "old_forecast_sha256": "621484da662ea0cb8fa433656038c38e9100498c5272226f163ba81823848663"
+    },
+    {
+      "id": "egolife_081",
+      "teacher_max_abs": 8.344650268554688e-07,
+      "recent_max_abs": 8.344650268554688e-07,
+      "prediction_equal": true,
+      "trajectory_sha256": "4177a0db63d347f157fd3878b76ffac9c37d2e16722d12945db900ec3d808451",
+      "old_forecast_sha256": "545df22e0586e73a31ac69e5dd7325689feff5e144fb4cd3ba6dff8687568515"
+    },
+    {
+      "id": "egolife_082",
+      "teacher_max_abs": 1.430511474609375e-06,
+      "recent_max_abs": 1.5497207641601562e-06,
+      "prediction_equal": true,
+      "trajectory_sha256": "7d298c6a479b62a7d88023a21e39ed3638e7d7d231f2a7dfec6393c984bdaf5f",
+      "old_forecast_sha256": "62ad5c759ed59da3f0d84134dc63dc562a763d4d914988338d3402f7283205c9"
+    },
+    {
+      "id": "egolife_083",
+      "teacher_max_abs": 1.6689300537109375e-06,
+      "recent_max_abs": 1.6689300537109375e-06,
+      "prediction_equal": true,
+      "trajectory_sha256": "df5d44cdbfaa954a1345981d31b2654ad46884e26890f7215e9157ae0b0437da",
+      "old_forecast_sha256": "937530bd53ecba8399eded5f77f9086ca2c35852a3544062e21d80d2b46638aa"
+    },
+    {
+      "id": "egolife_099",
+      "teacher_max_abs": 8.344650268554688e-07,
+      "recent_max_abs": 8.344650268554688e-07,
+      "prediction_equal": true,
+      "trajectory_sha256": "b44b7fc744a2dbb624970774aa8a760f7211059139defc924fcfaefba6b075fc",
+      "old_forecast_sha256": "3a90e022f7aa44de84015ccc75d052e113712dbe8688ada2ad3d63e7df5042a1"
+    },
+    {
+      "id": "egolife_100",
+      "teacher_max_abs": 9.5367431640625e-07,
+      "recent_max_abs": 9.5367431640625e-07,
+      "prediction_equal": true,
+      "trajectory_sha256": "8083cc62931eb665b4e0b27cb1525e913825b285fd7333d025ec0941339eff35",
+      "old_forecast_sha256": "360f5f0476a0b7db22e65e6c53d36c59f274a39ce1ea2a375d80188c9c60714a"
+    },
+    {
+      "id": "egolife_101",
+      "teacher_max_abs": 7.152557373046875e-07,
+      "recent_max_abs": 9.5367431640625e-07,
+      "prediction_equal": true,
+      "trajectory_sha256": "0e06e9e489e3ba30c42db78412849d9433d0996604d9cd117735febcbe737ebe",
+      "old_forecast_sha256": "124f3e685f20f00efac2073c71a5b87138e1581fac947edec4c51c0dd130c085"
+    },
+    {
+      "id": "egolife_102",
+      "teacher_max_abs": 1.1920928955078125e-06,
+      "recent_max_abs": 1.0728836059570312e-06,
+      "prediction_equal": true,
+      "trajectory_sha256": "c6cc2d2f78625699f1ae61fdafe78943e217d10c6b18facf7cb0658fe5547a54",
+      "old_forecast_sha256": "f50b0cf1584af5c085fe3d35e8ded2aae28b873850b62a232333bc00cc32dcc8"
+    },
+    {
+      "id": "egolife_103",
+      "teacher_max_abs": 9.5367431640625e-07,
+      "recent_max_abs": 9.5367431640625e-07,
+      "prediction_equal": true,
+      "trajectory_sha256": "f21f10be2f25ecc9eaa2edef049884408a80bc52445a39d2949247f45f361898",
+      "old_forecast_sha256": "758598c8931bd040525ee4bc649cc73e773a2a114691e184c7eae0f0dd65752d"
+    },
+    {
+      "id": "egolife_104",
+      "teacher_max_abs": 9.5367431640625e-07,
+      "recent_max_abs": 1.0728836059570312e-06,
+      "prediction_equal": true,
+      "trajectory_sha256": "9611aeb970f70b0e9f567e440e701e843df9712f88a5af46bc47daa80a2b70ab",
+      "old_forecast_sha256": "4fd4fbeb629e86607655ebd4ab23a46821cbdcef54699fcb5ea874f16b5ecb1c"
+    },
+    {
+      "id": "egolife_105",
+      "teacher_max_abs": 8.344650268554688e-07,
+      "recent_max_abs": 7.748603820800781e-07,
+      "prediction_equal": true,
+      "trajectory_sha256": "c7b99056f87d35b40cc1ebe48dcd5889068c26b198a0ad89cb8d451150034405",
+      "old_forecast_sha256": "4a0965c6457916e0cbcde781791816f894f465d3a8437131b36ca28d9bd67d02"
+    },
+    {
+      "id": "egolife_106",
+      "teacher_max_abs": 1.3113021850585938e-06,
+      "recent_max_abs": 1.2516975402832031e-06,
+      "prediction_equal": true,
+      "trajectory_sha256": "ddf8e909b6daad6617dc5fc42d4a75ee1ce53ea228ed76c641f144db1b39518a",
+      "old_forecast_sha256": "73e4dc2061e4301256cbc48e837a78a98351cf1ad856b15df2e5dcd5953660f8"
+    },
+    {
+      "id": "egolife_107",
+      "teacher_max_abs": 9.5367431640625e-07,
+      "recent_max_abs": 9.5367431640625e-07,
+      "prediction_equal": true,
+      "trajectory_sha256": "52699b9cb31479849e673cf0eeb5bcdf503f61d908f1f290d73883757bd41400",
+      "old_forecast_sha256": "28b7e2ecde2d60bc1af73731ea1953177b2b86c17f5f59df2c92c24943c7cef4"
+    },
+    {
+      "id": "egolife_108",
+      "teacher_max_abs": 9.5367431640625e-07,
+      "recent_max_abs": 9.5367431640625e-07,
+      "prediction_equal": true,
+      "trajectory_sha256": "aad693774d82ec0255dee691cfbfa013b7676db4e5c86317ce653cee048d327a",
+      "old_forecast_sha256": "815d3321fb8a25d431855a846a6c93883ec2acada41bf20aa04b85663b6eda0e"
+    },
+    {
+      "id": "egolife_109",
+      "teacher_max_abs": 1.1920928955078125e-06,
+      "recent_max_abs": 1.0728836059570312e-06,
+      "prediction_equal": true,
+      "trajectory_sha256": "8524e2d824bd9b1a7984567d4ae283bd9af574eb17f5ff133cde1e126998ef91",
+      "old_forecast_sha256": "f20cf0c74fd1668c02e01bea04c4f10af9e8bdb1e1ebb99206154d9820863e27"
+    },
+    {
+      "id": "egolife_110",
+      "teacher_max_abs": 9.5367431640625e-07,
+      "recent_max_abs": 8.344650268554688e-07,
+      "prediction_equal": true,
+      "trajectory_sha256": "08a250f6e167381b1b7e0efa4c631a127092cbb8da98da1156c5e55a122b8f47",
+      "old_forecast_sha256": "be2086d1ed77fde7971eda78b3a73901602827aaf5d4eb05676183dbf84623d0"
+    },
+    {
+      "id": "egolife_111",
+      "teacher_max_abs": 9.5367431640625e-07,
+      "recent_max_abs": 9.5367431640625e-07,
+      "prediction_equal": true,
+      "trajectory_sha256": "1238f89734353dbcf5a5abc21a01157dd9e6f7358fbf854327792e1aa01bd57e",
+      "old_forecast_sha256": "3149097a4c6a7b7b68204437db9e625e976572248d02eb8f081083b57ec7043a"
+    },
+    {
+      "id": "egolife_112",
+      "teacher_max_abs": 9.5367431640625e-07,
+      "recent_max_abs": 1.0728836059570312e-06,
+      "prediction_equal": true,
+      "trajectory_sha256": "9aa861079cc4ee931a1322d3a79ba41d5788ca57bacb9d26a7e3edbe9f168bf8",
+      "old_forecast_sha256": "275aaa2c71145ae2248e543371bfc8e7e71b9c13cf5033caec5677cbb511d090"
+    },
+    {
+      "id": "egolife_113",
+      "teacher_max_abs": 1.3113021850585938e-06,
+      "recent_max_abs": 1.1920928955078125e-06,
+      "prediction_equal": true,
+      "trajectory_sha256": "b9775aa8160989731b1bba243aed9fbdbcf05b30201b89547a52a9afd79e5298",
+      "old_forecast_sha256": "a5747d9f2a8c8dadbb7c09db5b3313a95d73802ffccdc43875f5375c394f1f02"
+    },
+    {
+      "id": "egolife_114",
+      "teacher_max_abs": 1.0728836059570312e-06,
+      "recent_max_abs": 1.0728836059570312e-06,
+      "prediction_equal": true,
+      "trajectory_sha256": "315fc1bb4c1051a3aec2e09e0b5f469921275412bba4c87cebf4fc3a181894c4",
+      "old_forecast_sha256": "836f47c867c6bfc8d90c864a52742d0ea001e658b52d11ba095d74d0c5fb2246"
+    },
+    {
+      "id": "egolife_115",
+      "teacher_max_abs": 1.0132789611816406e-06,
+      "recent_max_abs": 1.0728836059570312e-06,
+      "prediction_equal": true,
+      "trajectory_sha256": "09ab4dcdeada9c3e3bf14ad5c07d003284ae22b898a52fef9cb4742de53f0d0c",
+      "old_forecast_sha256": "ed1a832f6e077444fc7f7ee149825e191739da7bc9c9d262a142ac85d639dde3"
+    },
+    {
+      "id": "egolife_116",
+      "teacher_max_abs": 8.344650268554688e-07,
+      "recent_max_abs": 7.152557373046875e-07,
+      "prediction_equal": true,
+      "trajectory_sha256": "4d77eba4dff142b8cf8b5b3bdae685f8de1c09d9644b00368d6fadb14c7925b0",
+      "old_forecast_sha256": "f03d3297cdc122780c79be08f38b5328b938beb6f8be6fd76ef1bc524c146d86"
+    },
+    {
+      "id": "egolife_117",
+      "teacher_max_abs": 1.0728836059570312e-06,
+      "recent_max_abs": 9.5367431640625e-07,
+      "prediction_equal": true,
+      "trajectory_sha256": "17fea6f13d61e31494c5131f181627ad81c2e1e1ac76e2e77ddc139a7ce1a13f",
+      "old_forecast_sha256": "b650ed3e91f3a16217b6bf5ee21ffa284053772c7d9697bbfcbef53cba76cc8f"
+    },
+    {
+      "id": "egolife_132",
+      "teacher_max_abs": 1.1920928955078125e-06,
+      "recent_max_abs": 1.3113021850585938e-06,
+      "prediction_equal": true,
+      "trajectory_sha256": "d6bc167e6697f3bbfd2a5d38c2a07099373acefd325d95a813b0a51b42b39b32",
+      "old_forecast_sha256": "36c167d4c1269263abba5b08f8d86cba7ef8036a0c63641d7a91340c268cb332"
+    },
+    {
+      "id": "egolife_133",
+      "teacher_max_abs": 9.5367431640625e-07,
+      "recent_max_abs": 9.5367431640625e-07,
+      "prediction_equal": true,
+      "trajectory_sha256": "9f5dc4c32561fe949a1ff86d9d38ab182f9ae150f45508c385deb389845b9f24",
+      "old_forecast_sha256": "2538484033f67f8776486783a8557fdce76a014db19275c4463cb263f4cd7629"
+    },
+    {
+      "id": "egolife_134",
+      "teacher_max_abs": 1.0728836059570312e-06,
+      "recent_max_abs": 1.1920928955078125e-06,
+      "prediction_equal": true,
+      "trajectory_sha256": "0f0c444fb940985de3af397eab300d4c20f885ab8887ec27e3c97768e981469f",
+      "old_forecast_sha256": "744a86a64ae33304aeffad98394d7e53356632679e1d0bb76ad47871ee5c39ff"
+    },
+    {
+      "id": "egolife_135",
+      "teacher_max_abs": 1.2516975402832031e-06,
+      "recent_max_abs": 1.3113021850585938e-06,
+      "prediction_equal": true,
+      "trajectory_sha256": "42a602daac75afe976392917fe03659bcbd9f5b50999da06ce5d18d9d7d87b48",
+      "old_forecast_sha256": "32d5247f8c94442a46fb886eb2e4a1cfdcb9145a4829a75ace05fc4147d9fdb3"
+    },
+    {
+      "id": "egolife_136",
+      "teacher_max_abs": 1.0728836059570312e-06,
+      "recent_max_abs": 1.0728836059570312e-06,
+      "prediction_equal": true,
+      "trajectory_sha256": "683bc053c8ebb5a0058b99a247f11dcbd8fe4870e7f93bce1e680223b67d9807",
+      "old_forecast_sha256": "ab6e2e16ec7a0885b450d66e2d427d62d5a2228cbc62b0d6521fb60a34bb0e55"
+    },
+    {
+      "id": "egolife_137",
+      "teacher_max_abs": 8.344650268554688e-07,
+      "recent_max_abs": 8.940696716308594e-07,
+      "prediction_equal": true,
+      "trajectory_sha256": "fd56ee07525abf595b9b431164598cb36bdbbbd443d5ecc987c1544a416f7219",
+      "old_forecast_sha256": "8bde2544efe123301e58b03158739307dc9be34dc726918db4f274a2bfb8bba9"
+    },
+    {
+      "id": "egolife_138",
+      "teacher_max_abs": 7.152557373046875e-07,
+      "recent_max_abs": 9.5367431640625e-07,
+      "prediction_equal": true,
+      "trajectory_sha256": "e594785b686d37ed44967fd1a37179da23e7db5c9a00dafceb3f1f0c6e310d91",
+      "old_forecast_sha256": "d35b655f7a5f361a14643a88648060d8ef87548764384d68fb0aa576d0bc3da6"
+    },
+    {
+      "id": "egolife_139",
+      "teacher_max_abs": 9.5367431640625e-07,
+      "recent_max_abs": 1.1920928955078125e-06,
+      "prediction_equal": true,
+      "trajectory_sha256": "c6a5650cf0fabd29ca83af492b85e7c28ded9ac180d4f127c32bf9bcbcdb69ea",
+      "old_forecast_sha256": "f144b1d7669f5adc7ae0763bf79b872e6c753524339ee4120d145339832d67fd"
+    },
+    {
+      "id": "egolife_140",
+      "teacher_max_abs": 7.748603820800781e-07,
+      "recent_max_abs": 7.748603820800781e-07,
+      "prediction_equal": true,
+      "trajectory_sha256": "53ded5122ef869872f8d2eec1082946a4f0f895baf40e9a7eed7da685a05b000",
+      "old_forecast_sha256": "c6f97560d7590491fea8c2bf2bf84091e7d9f848569c95ac3bb2886a660080f0"
+    },
+    {
+      "id": "egolife_141",
+      "teacher_max_abs": 1.1920928955078125e-06,
+      "recent_max_abs": 1.1920928955078125e-06,
+      "prediction_equal": true,
+      "trajectory_sha256": "6767bc18bba9d5d28ec22d7b7155e129f5e6e73bd95ba2ef849fd380aa7560f8",
+      "old_forecast_sha256": "d934b410ad6a360c3f8d6e87742b7905bd45b51e6862128a2e120dca8f5f54e0"
+    },
+    {
+      "id": "egolife_142",
+      "teacher_max_abs": 1.1920928955078125e-06,
+      "recent_max_abs": 1.3113021850585938e-06,
+      "prediction_equal": true,
+      "trajectory_sha256": "9b33faae0349982a7fabb87d67097d0a7cc47807410681ede893e0d2fb08e689",
+      "old_forecast_sha256": "433ae649a9394e35d3c29a7be0f5bbdca59ed395ea605cf9132e96f717cc92d1"
+    },
+    {
+      "id": "egolife_143",
+      "teacher_max_abs": 1.1920928955078125e-06,
+      "recent_max_abs": 1.1920928955078125e-06,
+      "prediction_equal": true,
+      "trajectory_sha256": "dda9099b1f9f676cc593affb0d91a306db562a063c7075e0c96caadb1d15c540",
+      "old_forecast_sha256": "786ba2afd2e55348fdeb533cb8fe844ff1327bd1b30dab58a0c6f25391e0d535"
+    },
+    {
+      "id": "egolife_144",
+      "teacher_max_abs": 1.430511474609375e-06,
+      "recent_max_abs": 1.1920928955078125e-06,
+      "prediction_equal": true,
+      "trajectory_sha256": "0f9e3f811badbfb31e7d1ab19832be9932efca215ea8c04c84aa364db3ea9ac5",
+      "old_forecast_sha256": "994412c132da4e3759fcd06272275a17521db37b8a27c639cc3a304d899fb0e4"
+    },
+    {
+      "id": "egolife_145",
+      "teacher_max_abs": 1.430511474609375e-06,
+      "recent_max_abs": 1.430511474609375e-06,
+      "prediction_equal": true,
+      "trajectory_sha256": "28a3e2a1efa776a8235a3b6ea19598b68b025eaca16a10b3e7c05bb261f3a4e1",
+      "old_forecast_sha256": "323d4af737ab386d04e9009b0b424d3040d4bc39e660e2ba35757843604a9b65"
+    },
+    {
+      "id": "egolife_146",
+      "teacher_max_abs": 8.344650268554688e-07,
+      "recent_max_abs": 8.344650268554688e-07,
+      "prediction_equal": true,
+      "trajectory_sha256": "67855244d1d30796fe424d1f96e75722d3778ae53afc4b7880c29e116a71d20e",
+      "old_forecast_sha256": "c5ed964dc8a29cec353d3961b27b83742a10240ddfe4b9e7d3160a7286e5a03f"
+    },
+    {
+      "id": "egolife_147",
+      "teacher_max_abs": 9.5367431640625e-07,
+      "recent_max_abs": 8.344650268554688e-07,
+      "prediction_equal": true,
+      "trajectory_sha256": "6a95c16f5f973a430bf4086ef4dc3ab604af0eeadc7f6cfe9bcf334c13d7eb67",
+      "old_forecast_sha256": "52a0a8a0909edc0034082d9785c781114619d90e9bded1fd59836310854681df"
+    },
+    {
+      "id": "egolife_148",
+      "teacher_max_abs": 9.5367431640625e-07,
+      "recent_max_abs": 1.0728836059570312e-06,
+      "prediction_equal": true,
+      "trajectory_sha256": "2a6331be04fcb8781d14267244f3a392eb41173cd22c5edb383729f95e218e42",
+      "old_forecast_sha256": "5387293a72f32afa179cd4bdb5995f4f77f0863ef63d7953ca19f8d8321cf981"
+    },
+    {
+      "id": "egolife_166",
+      "teacher_max_abs": 1.3113021850585938e-06,
+      "recent_max_abs": 1.3113021850585938e-06,
+      "prediction_equal": true,
+      "trajectory_sha256": "7d1d57bfc4ccdfdfaf10d7ff9ecb818925b245992a2490d7d507286e78f61f3e",
+      "old_forecast_sha256": "f51c94294e1b42919a99ef8d55c31aa275bec9f80e5a8f870e890784425039b5"
+    },
+    {
+      "id": "egolife_167",
+      "teacher_max_abs": 1.1920928955078125e-06,
+      "recent_max_abs": 1.0132789611816406e-06,
+      "prediction_equal": true,
+      "trajectory_sha256": "68bb49d0dc85ac22db2d0a22c8e64ab32cfb88411033122a477100fd64626d07",
+      "old_forecast_sha256": "15596861e0026cc11ee9034256f608296315c7e344a9e874cb90e5b5975ba79b"
+    },
+    {
+      "id": "egolife_168",
+      "teacher_max_abs": 1.1920928955078125e-06,
+      "recent_max_abs": 1.0728836059570312e-06,
+      "prediction_equal": true,
+      "trajectory_sha256": "690b461f01eb4441231eb7b0bc25cbd07fa6ecb64f30c34ff4eabc324698ee13",
+      "old_forecast_sha256": "eeb9fa8aa7284eab77ded6620de7c9956f9637b003348ed79cb6ed46a91a6987"
+    },
+    {
+      "id": "egolife_169",
+      "teacher_max_abs": 7.748603820800781e-07,
+      "recent_max_abs": 8.344650268554688e-07,
+      "prediction_equal": true,
+      "trajectory_sha256": "a3708d6c2019026a4c5beb0d18b26690d412ce541c5ef103883bd96d6cbc8778",
+      "old_forecast_sha256": "1001695b0d41ab3d9c642afee37c87d52283bf51bd2fa27883ad4d1a28304ba5"
+    },
+    {
+      "id": "egolife_170",
+      "teacher_max_abs": 1.1920928955078125e-06,
+      "recent_max_abs": 1.1920928955078125e-06,
+      "prediction_equal": true,
+      "trajectory_sha256": "ee69f7e8907b7dcb5490472813ee4952ebd0870bcde994fc9817d9b8905c59e0",
+      "old_forecast_sha256": "85a6e6d59afe93b9dce41b01206cc94755a5abc3d1e548ddeb5389ea543310d9"
+    },
+    {
+      "id": "egolife_171",
+      "teacher_max_abs": 9.5367431640625e-07,
+      "recent_max_abs": 9.5367431640625e-07,
+      "prediction_equal": true,
+      "trajectory_sha256": "7bdc28600be5c51e1a27a842126b7856e8ff206c157b8fa890bd40527dfd7f1f",
+      "old_forecast_sha256": "152bd8808b5fec0fd119941242425860831655ed1f59ffdfd98b13a25715480f"
+    },
+    {
+      "id": "egolife_172",
+      "teacher_max_abs": 1.9073486328125e-06,
+      "recent_max_abs": 1.9073486328125e-06,
+      "prediction_equal": true,
+      "trajectory_sha256": "3f33e8d4374217b4c28f063b9429c12797a573409e8855f03015978a0cb85daf",
+      "old_forecast_sha256": "919db35a938dcbfd6d78eaaf08c91aa56d1d546565b88ae96da3988bf35a0669"
+    },
+    {
+      "id": "egolife_173",
+      "teacher_max_abs": 9.5367431640625e-07,
+      "recent_max_abs": 1.1920928955078125e-06,
+      "prediction_equal": true,
+      "trajectory_sha256": "b81bfe8b95e3270847584487948f0a98f36c74bbf551f204f95e763758a793c2",
+      "old_forecast_sha256": "5f4efbaac3e2ba024220318bff3ae13e240f8f4be48f461b5aa1f80328341a9f"
+    },
+    {
+      "id": "egolife_174",
+      "teacher_max_abs": 7.748603820800781e-07,
+      "recent_max_abs": 8.344650268554688e-07,
+      "prediction_equal": true,
+      "trajectory_sha256": "4306418e1e5c2f9ecefb77baa7f1c412cebb6de32af466e49c657b1cf799d51d",
+      "old_forecast_sha256": "abe6255c780a7a52fec4d842e5e465342818d406bd6d705ff6b706f1d6a4bcca"
+    },
+    {
+      "id": "egolife_175",
+      "teacher_max_abs": 9.5367431640625e-07,
+      "recent_max_abs": 8.940696716308594e-07,
+      "prediction_equal": true,
+      "trajectory_sha256": "3afc0075943ff066251ce455b8758d41cb688105469894254504757dd10db33f",
+      "old_forecast_sha256": "83a3c043640ae9f15c96077decf147ee0a689b1c6eb7994c0e028a2a16f46201"
+    },
+    {
+      "id": "egolife_176",
+      "teacher_max_abs": 9.5367431640625e-07,
+      "recent_max_abs": 8.344650268554688e-07,
+      "prediction_equal": true,
+      "trajectory_sha256": "d58b268451d5115727c13688765da5faacdfd231953be8e05da1a2ee6ee7dfe5",
+      "old_forecast_sha256": "300c17a856ad5f4c8ede17a0d1410dc7c3541001800300e858fcd7de64f4467b"
+    },
+    {
+      "id": "egolife_177",
+      "teacher_max_abs": 1.6689300537109375e-06,
+      "recent_max_abs": 1.7881393432617188e-06,
+      "prediction_equal": true,
+      "trajectory_sha256": "e0a90b87ff7c0b503df3287af124ef4bb113d76701a922826b663507fd9adfa3",
+      "old_forecast_sha256": "e765f2e85f48e3819d0d4c362053be3dbbe43d771f601b6813380ac50ee93697"
+    },
+    {
+      "id": "egolife_178",
+      "teacher_max_abs": 1.3113021850585938e-06,
+      "recent_max_abs": 1.3113021850585938e-06,
+      "prediction_equal": true,
+      "trajectory_sha256": "683a5ccb62d438a8f72f2d9e3a452ef1df88df24342a45c0abfb3841078888d5",
+      "old_forecast_sha256": "a2f26ba8607a2aa0e5b8863f66c6e7641c91f447fbc971c9a06ecd999db5ab74"
+    },
+    {
+      "id": "egolife_179",
+      "teacher_max_abs": 1.3113021850585938e-06,
+      "recent_max_abs": 1.3113021850585938e-06,
+      "prediction_equal": true,
+      "trajectory_sha256": "e28bbd6ee28507373e44f14c82db8374e1c840c3e835c1b349e1eb342b119c08",
+      "old_forecast_sha256": "cd75dd9699a65307e84e166f84dc201171f6b7afee21679ee0fa3ce46009bffd"
+    },
+    {
+      "id": "egolife_180",
+      "teacher_max_abs": 2.0265579223632812e-06,
+      "recent_max_abs": 2.0265579223632812e-06,
+      "prediction_equal": true,
+      "trajectory_sha256": "38e2f7c3f53d98691e9e1a0136bef15ff17c63ffb5337af487ebf6baaa650d0f",
+      "old_forecast_sha256": "20ee7a484877949232fbfb057cd2c03750e2108ebb2ba9bcf7788a5b91534d5e"
+    },
+    {
+      "id": "egolife_181",
+      "teacher_max_abs": 1.1920928955078125e-06,
+      "recent_max_abs": 1.0728836059570312e-06,
+      "prediction_equal": true,
+      "trajectory_sha256": "185d7cd6b9191b7ee93ac8365a47f5bcaa683701689e1e173d3bf4a6802ef17e",
+      "old_forecast_sha256": "91ec757963becf82aa1d1bf4e2eac22966d78df2eab42e15d9d844459535e9f0"
+    },
+    {
+      "id": "egolife_182",
+      "teacher_max_abs": 8.344650268554688e-07,
+      "recent_max_abs": 8.344650268554688e-07,
+      "prediction_equal": true,
+      "trajectory_sha256": "4a53bbfccd22308715186f3a018129ee830f10d80ed1277b4b3ad8db8d7bb56f",
+      "old_forecast_sha256": "f8f1f6593699a6549d188b6fea2de2f15c50a93af839325ca44d97f4828a2737"
+    },
+    {
+      "id": "egolife_183",
+      "teacher_max_abs": 1.430511474609375e-06,
+      "recent_max_abs": 1.3113021850585938e-06,
+      "prediction_equal": true,
+      "trajectory_sha256": "f694040e16dbc447773a4856dbb2607dec7ddc8b39abd9352764fa02fc0f665b",
+      "old_forecast_sha256": "382c91863bbcb42ce262cb797226b58ede13cc45527b94bb071b8c699fde844a"
+    },
+    {
+      "id": "egolife_184",
+      "teacher_max_abs": 8.344650268554688e-07,
+      "recent_max_abs": 8.344650268554688e-07,
+      "prediction_equal": true,
+      "trajectory_sha256": "9a6124a5267816ab7fcdd8010f45a760af009e0d25944293913a0e72874eb90f",
+      "old_forecast_sha256": "bd966c6608b18b9014af3d89e310fdd5fb38735b05e04c37e20578472eb002f5"
+    },
+    {
+      "id": "egolife_185",
+      "teacher_max_abs": 7.152557373046875e-07,
+      "recent_max_abs": 7.152557373046875e-07,
+      "prediction_equal": true,
+      "trajectory_sha256": "a900ef752795cbe24953c2ab013daedd1f632a7988a9f6d45163cd459d058927",
+      "old_forecast_sha256": "0422d56428d702bd7c9e394e25b1f11382409c86c2bf79d8cf2e2f12d06a27b1"
+    },
+    {
+      "id": "egolife_019",
+      "teacher_max_abs": 1.1920928955078125e-06,
+      "recent_max_abs": 1.1920928955078125e-06,
+      "prediction_equal": true,
+      "trajectory_sha256": "2f765f72175a98d10e1cf7aeb4363aeb41091b20aa9978fe1673bec5754ddb62",
+      "old_forecast_sha256": "2018ff7b4d9f7a2e7007d0806f0db22f50c6fecd467f557432c0cb90f15df31c"
+    },
+    {
+      "id": "egolife_020",
+      "teacher_max_abs": 1.430511474609375e-06,
+      "recent_max_abs": 1.430511474609375e-06,
+      "prediction_equal": true,
+      "trajectory_sha256": "ae6a472b95c90933fbf91936d1fb3a005f91c3a7c492be66bb0bef703dcf57cf",
+      "old_forecast_sha256": "a04af74ad70db64adba373026f55379810f4661dff60ba25efce2f1d3065c3cc"
+    },
+    {
+      "id": "egolife_021",
+      "teacher_max_abs": 9.5367431640625e-07,
+      "recent_max_abs": 9.5367431640625e-07,
+      "prediction_equal": true,
+      "trajectory_sha256": "d8794005b6fc161073e88a210d84fb1b4819763b49e9abc7e76929c55eb758b8",
+      "old_forecast_sha256": "7d8091703cc20a9c102d6255b5733351b1eba1c071e434579c559a3764daaa8d"
+    },
+    {
+      "id": "egolife_049",
+      "teacher_max_abs": 9.5367431640625e-07,
+      "recent_max_abs": 9.5367431640625e-07,
+      "prediction_equal": true,
+      "trajectory_sha256": "e6b93aeb76392c11cd4b46e46fcd34d1ecf600ebfb36ae1bfa06bde95add6b29",
+      "old_forecast_sha256": "e43f7ce7d60c7b90c71297f4a0f35ba46ba8b414dbe277248e6053cc82e41c9c"
+    },
+    {
+      "id": "egolife_050",
+      "teacher_max_abs": 7.152557373046875e-07,
+      "recent_max_abs": 7.152557373046875e-07,
+      "prediction_equal": true,
+      "trajectory_sha256": "dd8545fc807948a24fbc028d7b5bb38e0c1f80448768b58a64f37deeff9bb5d4",
+      "old_forecast_sha256": "1763c7a5be6b2837fb8d723cacf9115d2534e3aa9c8635678c1d421da39fd17a"
+    },
+    {
+      "id": "egolife_051",
+      "teacher_max_abs": 8.344650268554688e-07,
+      "recent_max_abs": 8.344650268554688e-07,
+      "prediction_equal": true,
+      "trajectory_sha256": "0fc1fc646bfa133d4334e08f2ba11ece97037430892ab5fc286b04a5ebaf4b71",
+      "old_forecast_sha256": "f2f5184ecd6eb7d65b9367b85950faed0c42451f1cc07a9c3d929fe0d0ebb681"
+    },
+    {
+      "id": "egolife_052",
+      "teacher_max_abs": 8.344650268554688e-07,
+      "recent_max_abs": 8.940696716308594e-07,
+      "prediction_equal": true,
+      "trajectory_sha256": "6157372db46511166104b73c2e754f574779d7f4315db75fd80eedeaf77b5b2f",
+      "old_forecast_sha256": "07a4815896e7256d8ce815b1a6fe989851d50fe2d6d4c932e1f2abb402f12a60"
+    },
+    {
+      "id": "egolife_053",
+      "teacher_max_abs": 7.748603820800781e-07,
+      "recent_max_abs": 7.748603820800781e-07,
+      "prediction_equal": true,
+      "trajectory_sha256": "251915928ef16e5c9c63c9d6e09a59dbcd2dc630956b9deff09050382ca109bb",
+      "old_forecast_sha256": "1f4468d26e047e75d5d0bfc3bbd0857fb1aa075c5307ac4240622adc36280e0e"
+    },
+    {
+      "id": "egolife_054",
+      "teacher_max_abs": 1.0728836059570312e-06,
+      "recent_max_abs": 1.1920928955078125e-06,
+      "prediction_equal": true,
+      "trajectory_sha256": "bcbbb7b5075107edfa274beb8ca5869232c05789ea6caa52f84f1e211e54281f",
+      "old_forecast_sha256": "235c0341d1c618eaf2c1fe2a3cec1ecba471d3712d11d1e78b6beaf1a70264e3"
+    },
+    {
+      "id": "egolife_055",
+      "teacher_max_abs": 1.1920928955078125e-06,
+      "recent_max_abs": 1.2516975402832031e-06,
+      "prediction_equal": true,
+      "trajectory_sha256": "ebafd28a040b6234350bbfe47b338e92c59f7d1152a593fa22968262e1bca43a",
+      "old_forecast_sha256": "9858a3333557ca0b2445b9adaace78fc00a6bb2e0a7a00b6a882f154b7de0335"
+    },
+    {
+      "id": "egolife_084",
+      "teacher_max_abs": 8.046627044677734e-07,
+      "recent_max_abs": 8.046627044677734e-07,
+      "prediction_equal": true,
+      "trajectory_sha256": "4c1ee8183c3a9d32d281494e7f9ff58e9ee70d90e978a99baa87a9921d8e72ce",
+      "old_forecast_sha256": "6db571833f07989b23101b9c580f2c670ba08f60a7bb7abab3378fb9a506a864"
+    },
+    {
+      "id": "egolife_085",
+      "teacher_max_abs": 1.0728836059570312e-06,
+      "recent_max_abs": 9.5367431640625e-07,
+      "prediction_equal": true,
+      "trajectory_sha256": "1b3c3380ba48237bf52443c210e0434b4c552f8fe85e35b5e53c4dad29875b45",
+      "old_forecast_sha256": "199a97c871aca81ca3758bc728b7b59baa405b574089a678276592d656dc1173"
+    },
+    {
+      "id": "egolife_086",
+      "teacher_max_abs": 9.5367431640625e-07,
+      "recent_max_abs": 9.5367431640625e-07,
+      "prediction_equal": true,
+      "trajectory_sha256": "9252ccc4c25d4247c1021ce5caee0c53ff7b90fcf5abe6e0159b82132fe76ae9",
+      "old_forecast_sha256": "ec4fbc7a35358363b2f5bb6d573623766a844df599989513a6aa42ba411e702c"
+    },
+    {
+      "id": "egolife_087",
+      "teacher_max_abs": 7.152557373046875e-07,
+      "recent_max_abs": 7.152557373046875e-07,
+      "prediction_equal": true,
+      "trajectory_sha256": "a317b00c0ea955d0e6cdfc0f2ccebbf05df27166078ef66280e7bea2f369d042",
+      "old_forecast_sha256": "b3c4d04520a232a6b4fb52f0dc62dfeb676ba8a343e1426cb9941e6bd37b304f"
+    },
+    {
+      "id": "egolife_088",
+      "teacher_max_abs": 7.152557373046875e-07,
+      "recent_max_abs": 7.152557373046875e-07,
+      "prediction_equal": true,
+      "trajectory_sha256": "78947e8ce9c7b55893a59908522dc4d62d168505d8659a644ad50e951fc410f3",
+      "old_forecast_sha256": "9a7339f8adb7637ca8cdfeafee12414ea896ab8ed7ac4d2b25dc7b9376fbfde0"
+    },
+    {
+      "id": "egolife_089",
+      "teacher_max_abs": 1.0132789611816406e-06,
+      "recent_max_abs": 1.0728836059570312e-06,
+      "prediction_equal": true,
+      "trajectory_sha256": "39dee1147fa90004a2875caa70d34c5c4b79f2ac7a0dca9354eedb2863f15c36",
+      "old_forecast_sha256": "5a57a442a6c09cb552f2bc64ed15bb096a32939c032dac82547e244746124da7"
+    },
+    {
+      "id": "egolife_118",
+      "teacher_max_abs": 1.0728836059570312e-06,
+      "recent_max_abs": 1.0728836059570312e-06,
+      "prediction_equal": true,
+      "trajectory_sha256": "b9076a1bbd87fcbd45d2bcd587c98465f0b0c82eaf6ce8001db959377aeb1197",
+      "old_forecast_sha256": "271e0465a369a57827dc5d27359a13af4909d70596c1c1d9a80860b17cdd0240"
+    },
+    {
+      "id": "egolife_119",
+      "teacher_max_abs": 1.0728836059570312e-06,
+      "recent_max_abs": 1.0728836059570312e-06,
+      "prediction_equal": true,
+      "trajectory_sha256": "9007509b613a8349b834e5d199ba29da0c753926c646c1690c46750bbdbfeb61",
+      "old_forecast_sha256": "c9c04d9538aad3881284335149362d0abf81bfe0bbf9f1b6f0877367ec79bb9b"
+    },
+    {
+      "id": "egolife_120",
+      "teacher_max_abs": 9.5367431640625e-07,
+      "recent_max_abs": 9.5367431640625e-07,
+      "prediction_equal": true,
+      "trajectory_sha256": "17f39dbcf794ab51f9647cd548f0c561ff5813a1c1bd9d194a86418875463932",
+      "old_forecast_sha256": "cd12c41658cb483c1156978f10f0b1b17c5f4837672b1fa992c253033bcf6ad8"
+    },
+    {
+      "id": "egolife_121",
+      "teacher_max_abs": 9.5367431640625e-07,
+      "recent_max_abs": 9.5367431640625e-07,
+      "prediction_equal": true,
+      "trajectory_sha256": "565ac9991cce3d605dfa5efde5fe0944ddfbfea444a010a290046de3653abfc2",
+      "old_forecast_sha256": "f9038a55694a05767d4c34a4099cffeeabae70a0c8e1a83db402fab97c5af0cc"
+    },
+    {
+      "id": "egolife_122",
+      "teacher_max_abs": 8.344650268554688e-07,
+      "recent_max_abs": 8.344650268554688e-07,
+      "prediction_equal": true,
+      "trajectory_sha256": "d2aa9c84cf45e643a01bfb98ed6d3fdabe6ef3aefe46e0b1286d33c0cb374970",
+      "old_forecast_sha256": "3cb00f1ebce7fe7cc927b4686b00a3bbecd545f1c16807834c3cd89d8234bdf1"
+    },
+    {
+      "id": "egolife_123",
+      "teacher_max_abs": 1.0728836059570312e-06,
+      "recent_max_abs": 1.3113021850585938e-06,
+      "prediction_equal": true,
+      "trajectory_sha256": "ac96a82f2dc78286d787750c6117ac8d229098b0a8f1984da510b8de570e8a11",
+      "old_forecast_sha256": "36139de2abb6858b93fe298230ef144357776a5de4f67af39df28ca1952d28c2"
+    },
+    {
+      "id": "egolife_149",
+      "teacher_max_abs": 1.430511474609375e-06,
+      "recent_max_abs": 1.430511474609375e-06,
+      "prediction_equal": true,
+      "trajectory_sha256": "bfb06b740ebd1685871a18ab063c06388ed2e4a91607c5cd072991ad8f72ad8e",
+      "old_forecast_sha256": "9b0e57ed2039012f3f11a2a08a7582fd5a0427ccba4fbe16f9c970d0789c872a"
+    },
+    {
+      "id": "egolife_150",
+      "teacher_max_abs": 1.3113021850585938e-06,
+      "recent_max_abs": 1.1920928955078125e-06,
+      "prediction_equal": true,
+      "trajectory_sha256": "94e9ea83108f992e64cc6a419a32498d86a6aa35bfe32ce0fd6c26c646e2e1a7",
+      "old_forecast_sha256": "cc88df0e0717f5dd07e889c9381dbdc15b3c8b5d9446b745329cdac07f3d3556"
+    },
+    {
+      "id": "egolife_151",
+      "teacher_max_abs": 1.2516975402832031e-06,
+      "recent_max_abs": 1.2516975402832031e-06,
+      "prediction_equal": true,
+      "trajectory_sha256": "cc7ff2d977bdc8b719bc23e1f2f9b69af72cabe3c29cf7323114f0e08dc5b24b",
+      "old_forecast_sha256": "b702b3cc8bdf6a897f2c7af2ef733166c02f9d3b1741adc5e87378b6228f87c0"
+    },
+    {
+      "id": "egolife_152",
+      "teacher_max_abs": 1.0728836059570312e-06,
+      "recent_max_abs": 1.0728836059570312e-06,
+      "prediction_equal": true,
+      "trajectory_sha256": "816c49b71da79f7559534e5d2871b56ffcb3d5f8d6e4d1b889c9e3c5dd1c54c6",
+      "old_forecast_sha256": "766e5050594609bb22cf449b526b94a0242bcd534a042cccd00b55136696ec5a"
+    },
+    {
+      "id": "egolife_153",
+      "teacher_max_abs": 1.0728836059570312e-06,
+      "recent_max_abs": 1.0728836059570312e-06,
+      "prediction_equal": true,
+      "trajectory_sha256": "863918b255e38cee4f7b04a8c00a6841be508ef5f80276391159c4619efbef2d",
+      "old_forecast_sha256": "f0ce9d15e47bdb1819a1819b4af21e179482c54770f4e8c30d9f1395063e8e5e"
+    },
+    {
+      "id": "egolife_186",
+      "teacher_max_abs": 9.5367431640625e-07,
+      "recent_max_abs": 8.344650268554688e-07,
+      "prediction_equal": true,
+      "trajectory_sha256": "46b5a8edad7ec874a1d41f6331d3f175cddbb73cb868b0e41d3cb7b4c51c2c8e",
+      "old_forecast_sha256": "603dfb28ab7e3d15f7310d9ba9710ac9befaae4c081bed50127723851f1a4e0b"
+    },
+    {
+      "id": "egolife_187",
+      "teacher_max_abs": 7.152557373046875e-07,
+      "recent_max_abs": 7.152557373046875e-07,
+      "prediction_equal": true,
+      "trajectory_sha256": "326b980dd44249af42adff4fcac26fcd76968410098e1a3268a2838eb5554ab0",
+      "old_forecast_sha256": "3c170e95c0470fae1f5d457515189f69b544d1378e28704455427c2ee80e564d"
+    },
+    {
+      "id": "egolife_188",
+      "teacher_max_abs": 9.5367431640625e-07,
+      "recent_max_abs": 9.5367431640625e-07,
+      "prediction_equal": true,
+      "trajectory_sha256": "cdefc9067dcd862115116bf31698ca171933a91bbc7503839074b0fb9f3ef72a",
+      "old_forecast_sha256": "a9e993c7f04cb10e8b626c2544549597c73595b48fdd5f04f4a0141cfbea03fa"
+    },
+    {
+      "id": "egolife_189",
+      "teacher_max_abs": 9.5367431640625e-07,
+      "recent_max_abs": 9.5367431640625e-07,
+      "prediction_equal": true,
+      "trajectory_sha256": "13c167b4527fc884350a00ee80cbdf20ed99a5a8f6ea483f1e6e3f1f22fe8c7b",
+      "old_forecast_sha256": "3ac5a69f4837783f55b73a37e9f40062946e558b7171982148efca99bf35bfb6"
+    },
+    {
+      "id": "egolife_190",
+      "teacher_max_abs": 1.0728836059570312e-06,
+      "recent_max_abs": 1.1920928955078125e-06,
+      "prediction_equal": true,
+      "trajectory_sha256": "887eedccc18cbf79bcb9db8186f162f6265ff3eb192bac624a1f139e9e0c183b",
+      "old_forecast_sha256": "b7314c152a27faae36c6e3a75b51392275592dfca1fe73dcf549b4e065c16c79"
+    },
+    {
+      "id": "egolife_022",
+      "teacher_max_abs": 1.1920928955078125e-06,
+      "recent_max_abs": 1.3113021850585938e-06,
+      "prediction_equal": true,
+      "trajectory_sha256": "7ff4ce57afe5d984083bf635011c20c156dc41271cabe43db69ca060617c4c7c",
+      "old_forecast_sha256": "70fe39e3a1ce2478761576b6aaf1beb0b39e851f30ecfeb5494aca72da967a89"
+    },
+    {
+      "id": "egolife_023",
+      "teacher_max_abs": 1.6689300537109375e-06,
+      "recent_max_abs": 1.6689300537109375e-06,
+      "prediction_equal": true,
+      "trajectory_sha256": "f4175975f9c4c311009da0f7af9822a085fc6ab00ea9608478570f78b7bd31d7",
+      "old_forecast_sha256": "f1ed4ee836338b09e027212e2888bc502fb721f2bc009b84d745670ce3d655bf"
+    },
+    {
+      "id": "egolife_024",
+      "teacher_max_abs": 1.3113021850585938e-06,
+      "recent_max_abs": 1.2516975402832031e-06,
+      "prediction_equal": true,
+      "trajectory_sha256": "89ee6c67385e659026f79663d7bb8a64e1a75542cdc8ff6b01c329c897119316",
+      "old_forecast_sha256": "47bb6f9eabab624cc01dcd95ec5d74340548ed7627eb3eb583f0d0510204db08"
+    },
+    {
+      "id": "egolife_025",
+      "teacher_max_abs": 7.748603820800781e-07,
+      "recent_max_abs": 8.344650268554688e-07,
+      "prediction_equal": true,
+      "trajectory_sha256": "e712615630001efc6af0b35b1f3efb072f36bfa898d9a2918f4efb49e8d0b436",
+      "old_forecast_sha256": "133e887d217524d05c3217d5b94374e845dd961cd294d7859ea961c5f815fab6"
+    },
+    {
+      "id": "egolife_026",
+      "teacher_max_abs": 1.430511474609375e-06,
+      "recent_max_abs": 1.430511474609375e-06,
+      "prediction_equal": true,
+      "trajectory_sha256": "2afee3ff2cdf5475baaac3e416f7bef7799bdf656bedd6dc9c21309c9764fe87",
+      "old_forecast_sha256": "3e0febdf8669f25affad015bac87e637f8a08f52c0af5773653f699ba1c5fa2f"
+    },
+    {
+      "id": "egolife_027",
+      "teacher_max_abs": 1.1920928955078125e-06,
+      "recent_max_abs": 1.1920928955078125e-06,
+      "prediction_equal": true,
+      "trajectory_sha256": "132d2a4588d8c7682d25be0ebafea84ab7453095b0a28f1e4c66d035c39b7128",
+      "old_forecast_sha256": "65047e739aa999ab607d52e5d9eb634907e73aa0cdd29666150f0d9f3a84c9f6"
+    },
+    {
+      "id": "egolife_028",
+      "teacher_max_abs": 9.5367431640625e-07,
+      "recent_max_abs": 9.5367431640625e-07,
+      "prediction_equal": true,
+      "trajectory_sha256": "4a0b53b3f0aaf51b7c83bc26a37160ebf8567178fd2615e73f6ae68ff3d236af",
+      "old_forecast_sha256": "46c829f29919795141e8b853c7f079d965d5d768970713bee89fcfc8824a4283"
+    },
+    {
+      "id": "egolife_029",
+      "teacher_max_abs": 1.6689300537109375e-06,
+      "recent_max_abs": 1.6689300537109375e-06,
+      "prediction_equal": true,
+      "trajectory_sha256": "dd4a55af25f6f6c84bee29121254318dd84abb0b1981aed9ee1fb41365983fed",
+      "old_forecast_sha256": "2a4824f79d427b782c4555b2b65aad0398c4dc1f37b075f036b38268a3cad603"
+    },
+    {
+      "id": "egolife_056",
+      "teacher_max_abs": 9.5367431640625e-07,
+      "recent_max_abs": 9.5367431640625e-07,
+      "prediction_equal": true,
+      "trajectory_sha256": "9ca515b1d7f3993c6bcb7f2d33a6c91d55406343553799f218a5a85307d57ca9",
+      "old_forecast_sha256": "9d2006ab236f5fd012407adbea8eddbff63bafb5bf036f0e29f7de2efc89a33f"
+    },
+    {
+      "id": "egolife_057",
+      "teacher_max_abs": 7.152557373046875e-07,
+      "recent_max_abs": 7.450580596923828e-07,
+      "prediction_equal": true,
+      "trajectory_sha256": "ccbca9de0c07be35d384b3524be73cc8c3a0827e739e0e9329f8cc1169e82349",
+      "old_forecast_sha256": "4069465c3bc50fd20d78afc69ba983273a1b13891f5389cc1141cfe3432a027e"
+    },
+    {
+      "id": "egolife_058",
+      "teacher_max_abs": 8.344650268554688e-07,
+      "recent_max_abs": 8.344650268554688e-07,
+      "prediction_equal": true,
+      "trajectory_sha256": "0a101ccebb5bba4722146a32bfe8e8470b23264b16158cc0a05583cf7a9f9be6",
+      "old_forecast_sha256": "12b5f07b77cf39ee9757e0f15d650d62b37da9674bf71fad59bc7333833a2cbe"
+    },
+    {
+      "id": "egolife_059",
+      "teacher_max_abs": 9.5367431640625e-07,
+      "recent_max_abs": 9.5367431640625e-07,
+      "prediction_equal": true,
+      "trajectory_sha256": "0ab18a912030c73c8416e6b473069ad219f783abc8edce415624319e9c4ec200",
+      "old_forecast_sha256": "368ee7f521362ee0dfd2e14ebb3977e46d67bd02cd8c4ff37f2b362117cac088"
+    },
+    {
+      "id": "egolife_060",
+      "teacher_max_abs": 1.430511474609375e-06,
+      "recent_max_abs": 1.3113021850585938e-06,
+      "prediction_equal": true,
+      "trajectory_sha256": "d15bc7724723836ea8d48f0f5d04dff13d0139dd0054314464e8ebac24952c92",
+      "old_forecast_sha256": "39555596a811ae588bd3da19f6508ba78b7986d36d249871509c75d72be19cce"
+    },
+    {
+      "id": "egolife_061",
+      "teacher_max_abs": 8.344650268554688e-07,
+      "recent_max_abs": 1.0728836059570312e-06,
+      "prediction_equal": true,
+      "trajectory_sha256": "35e70565c8466097892be69a29a08d3d4daee37a9d8f60834ddc2a8674c30804",
+      "old_forecast_sha256": "4b293fe1fe95595b4301a8d55fb445c619eb121172df145f85370387ee83e558"
+    },
+    {
+      "id": "egolife_062",
+      "teacher_max_abs": 9.5367431640625e-07,
+      "recent_max_abs": 9.5367431640625e-07,
+      "prediction_equal": true,
+      "trajectory_sha256": "174d8e947df71bd21498e3d43e842d8bf133016f7e79839cce82814378c3646c",
+      "old_forecast_sha256": "eef8f562aa604db213eef2919454db60fca7919bf27279afdeb0c72c35acecff"
+    },
+    {
+      "id": "egolife_063",
+      "teacher_max_abs": 9.5367431640625e-07,
+      "recent_max_abs": 1.0728836059570312e-06,
+      "prediction_equal": true,
+      "trajectory_sha256": "bb6fe45ea020733da5a21eb2c96ef317f3360db733b9665270fd10b12155bad6",
+      "old_forecast_sha256": "5d782eaf41f1bac0d235823f70965852d180d4381510a7ddf2556940a24eb882"
+    },
+    {
+      "id": "egolife_064",
+      "teacher_max_abs": 1.0728836059570312e-06,
+      "recent_max_abs": 1.0132789611816406e-06,
+      "prediction_equal": true,
+      "trajectory_sha256": "d98cfa07d93bb0dc1e2fbb56754a8d08f397794a261deba352daa46dffc3b52a",
+      "old_forecast_sha256": "195eff76e15b52d71e32404ca977c7543f4e57cd2529009d892fb9d6dc31c690"
+    },
+    {
+      "id": "egolife_065",
+      "teacher_max_abs": 1.0728836059570312e-06,
+      "recent_max_abs": 1.0728836059570312e-06,
+      "prediction_equal": true,
+      "trajectory_sha256": "0ac588021b2137d9f27367795124b7214e7cfce4cdcc169955f3d67e8e4882f2",
+      "old_forecast_sha256": "35647cef4ce7400dc5a5cb993e8307de47f137cc3e32c18c506a18ba57bad3ba"
+    },
+    {
+      "id": "egolife_090",
+      "teacher_max_abs": 9.5367431640625e-07,
+      "recent_max_abs": 9.5367431640625e-07,
+      "prediction_equal": true,
+      "trajectory_sha256": "c339f22033f73aa642b1bfdd42f2077b941f3f493dc1f015dfbd5ac7b73d925f",
+      "old_forecast_sha256": "3fae3b790c2441cbba8c0e5e2a92c34ea63d301151e840e3b7994d57c5e7bf23"
+    },
+    {
+      "id": "egolife_091",
+      "teacher_max_abs": 1.1920928955078125e-06,
+      "recent_max_abs": 1.430511474609375e-06,
+      "prediction_equal": true,
+      "trajectory_sha256": "61b6a9cce14eb16c7b21e5c136c1ba32f628584e974aab1b51a18339ebff8746",
+      "old_forecast_sha256": "c77cc5f92e8dba92c5cc2463ecf2da1a6d44b1af69218242aea4ac4b55ea6e3a"
+    },
+    {
+      "id": "egolife_092",
+      "teacher_max_abs": 8.344650268554688e-07,
+      "recent_max_abs": 8.344650268554688e-07,
+      "prediction_equal": true,
+      "trajectory_sha256": "b3755492f94e2eec8fabab7a96d43b5748bdd9e697bb01a52f98dc29a1cc06c5",
+      "old_forecast_sha256": "740a6a3b37995472c719bb924b6a96ca372ae0ff9e4f371b28b92036d47461ed"
+    },
+    {
+      "id": "egolife_093",
+      "teacher_max_abs": 9.5367431640625e-07,
+      "recent_max_abs": 9.5367431640625e-07,
+      "prediction_equal": true,
+      "trajectory_sha256": "e78be1fb39fa02f0c5d1a284f657124c70607a1b84565252a97546e61d1fc77b",
+      "old_forecast_sha256": "57ed3ed024276a3ef3a8192c833845e67367f9abdcd0c10bd4c7b173bf75535f"
+    },
+    {
+      "id": "egolife_094",
+      "teacher_max_abs": 1.0728836059570312e-06,
+      "recent_max_abs": 1.1920928955078125e-06,
+      "prediction_equal": true,
+      "trajectory_sha256": "c55566810857dc27645ef069525e0b93a285c2e7560c3d9e5bb64f2f90dade13",
+      "old_forecast_sha256": "0a1f6c9d5edc675b894ff2cb4c75cbb438e84e3b6523e521f0e6c8353d45023d"
+    },
+    {
+      "id": "egolife_095",
+      "teacher_max_abs": 9.5367431640625e-07,
+      "recent_max_abs": 9.5367431640625e-07,
+      "prediction_equal": true,
+      "trajectory_sha256": "8bafa5c4b9de5731545020e88dae8c528087f5e7737ebba8dc32efdd2f2a9da5",
+      "old_forecast_sha256": "a1779335c87132f9bfbbf1e66cdcbe41cdeec4a3fc1896de0626fe265450ad3f"
+    },
+    {
+      "id": "egolife_096",
+      "teacher_max_abs": 1.1324882507324219e-06,
+      "recent_max_abs": 1.1920928955078125e-06,
+      "prediction_equal": true,
+      "trajectory_sha256": "d096e7c54fe65783102b75fbe1d25ccab3da388490c87e3875648aa0c05f58e8",
+      "old_forecast_sha256": "212ca6fa01f8ab2a17bd3ca83d99c2b9d586e1c42d1e282e8df73a62692adaa7"
+    },
+    {
+      "id": "egolife_097",
+      "teacher_max_abs": 9.5367431640625e-07,
+      "recent_max_abs": 9.5367431640625e-07,
+      "prediction_equal": true,
+      "trajectory_sha256": "60807735799acbceb25e3e1c156b22179d0a0ec2d0f647bdaa00e16fd97c096d",
+      "old_forecast_sha256": "8fc22d0ccd8497fd2cf8587fb183edec28b05b5b0d18df4859f399c58babcdc1"
+    },
+    {
+      "id": "egolife_098",
+      "teacher_max_abs": 7.152557373046875e-07,
+      "recent_max_abs": 7.152557373046875e-07,
+      "prediction_equal": true,
+      "trajectory_sha256": "cb0fb936903a1608449537983584757b73ff6eb1f50b5045857b5245b91a0cfb",
+      "old_forecast_sha256": "25d09d5d9f06024cf029bcc4cb004de06d1540730bf6f8a6b380cd608c1b4b01"
+    },
+    {
+      "id": "egolife_124",
+      "teacher_max_abs": 9.5367431640625e-07,
+      "recent_max_abs": 9.5367431640625e-07,
+      "prediction_equal": true,
+      "trajectory_sha256": "c9bfc1b55794d214a79248e583bf61226a8c5bfdd39989008be866717bc27de7",
+      "old_forecast_sha256": "89cf0600a9cad72c4e6551081cc52debcfd1d3483a25c707e37221a3d3cc34c2"
+    },
+    {
+      "id": "egolife_125",
+      "teacher_max_abs": 1.0132789611816406e-06,
+      "recent_max_abs": 1.0132789611816406e-06,
+      "prediction_equal": true,
+      "trajectory_sha256": "797778a5c4ce5f7ba799076da15f640db86c4c4d5a47b4ded4d3820169230bb2",
+      "old_forecast_sha256": "2771c066d5b6006598cb9660ce9d2332b0817a7123f128ee22723c800d250261"
+    },
+    {
+      "id": "egolife_126",
+      "teacher_max_abs": 8.940696716308594e-07,
+      "recent_max_abs": 8.940696716308594e-07,
+      "prediction_equal": true,
+      "trajectory_sha256": "9ef3cc62abfc2e02a3216ca5fb3cd2cd316d937119c045886202735e7df8d39a",
+      "old_forecast_sha256": "ca1d5ac84748dea3d05621ed50299b35de96181660f90ed502dd97bbdeaa6687"
+    },
+    {
+      "id": "egolife_127",
+      "teacher_max_abs": 1.1920928955078125e-06,
+      "recent_max_abs": 1.0728836059570312e-06,
+      "prediction_equal": true,
+      "trajectory_sha256": "63734e29a4ad13b5a30291fae2b943250bdf95fb782d6c7efe6373b385148444",
+      "old_forecast_sha256": "369b334ccbce52fa5b896ea21fb65d9497f7bcf5c503ada401145a1dadd9e3fd"
+    },
+    {
+      "id": "egolife_128",
+      "teacher_max_abs": 1.0728836059570312e-06,
+      "recent_max_abs": 9.5367431640625e-07,
+      "prediction_equal": true,
+      "trajectory_sha256": "847bf947349ae5bc17422336508a2133f8065c9078c9dae442e85aa1a806d775",
+      "old_forecast_sha256": "27871606e06a42560d3bdb05dcbf7f618cfc3ef2fc11f66f9bcb4ac48d5c7475"
+    },
+    {
+      "id": "egolife_129",
+      "teacher_max_abs": 9.5367431640625e-07,
+      "recent_max_abs": 8.344650268554688e-07,
+      "prediction_equal": true,
+      "trajectory_sha256": "dcc6fc772b6d68ac6495093c1f7b3cca8b01e631a9e89054bf35eb3e6d180970",
+      "old_forecast_sha256": "bdbf564c84cc43539e72e9a9976aced2a05a6f0e0a6155b75726daa520513583"
+    },
+    {
+      "id": "egolife_130",
+      "teacher_max_abs": 8.344650268554688e-07,
+      "recent_max_abs": 9.5367431640625e-07,
+      "prediction_equal": true,
+      "trajectory_sha256": "d6f7ba4f3cc6a17aa7ce75fd0f4c1bb195803b4b8f22b4aeeac75775e5d0f762",
+      "old_forecast_sha256": "9cb628419f097c6eb6dd07b86a33313809c621c2860f48b5a26f9c32982900d9"
+    },
+    {
+      "id": "egolife_131",
+      "teacher_max_abs": 1.6689300537109375e-06,
+      "recent_max_abs": 1.5497207641601562e-06,
+      "prediction_equal": true,
+      "trajectory_sha256": "0f52c9bef3886dc8820906dfe9132677003efc235c19ff123831bfd47ee7f05e",
+      "old_forecast_sha256": "2c62137fa895c8de4b20d4b431c1c1e1f5af576eaf1afd9bbb05c477e42d8afc"
+    },
+    {
+      "id": "egolife_154",
+      "teacher_max_abs": 8.344650268554688e-07,
+      "recent_max_abs": 9.5367431640625e-07,
+      "prediction_equal": true,
+      "trajectory_sha256": "d80ac1e5c62187f8392add7f7a1313aa7154bb7c0fe3f680677b4559f90ed70b",
+      "old_forecast_sha256": "291eefe262d62749636b4eb62927068f9e7dec8f99465fc2763f0c4305f50616"
+    },
+    {
+      "id": "egolife_155",
+      "teacher_max_abs": 9.5367431640625e-07,
+      "recent_max_abs": 9.5367431640625e-07,
+      "prediction_equal": true,
+      "trajectory_sha256": "839cce5461f11043985923a10daa65e592a89974439e563336aa47f1b3611a46",
+      "old_forecast_sha256": "42b527ae01741fd932173d5938e05d2b4921ad14a253281d197f391ba9c86ee7"
+    },
+    {
+      "id": "egolife_156",
+      "teacher_max_abs": 1.0132789611816406e-06,
+      "recent_max_abs": 1.0132789611816406e-06,
+      "prediction_equal": true,
+      "trajectory_sha256": "056321474182f30ab3dda694c839bd35beabf0b62cd020f11a5576cbe7df395c",
+      "old_forecast_sha256": "e0583ff8e4019eb24948586726bc766a5bed2b9768c6ddc0c48655ee68f8edcb"
+    },
+    {
+      "id": "egolife_157",
+      "teacher_max_abs": 9.5367431640625e-07,
+      "recent_max_abs": 9.5367431640625e-07,
+      "prediction_equal": true,
+      "trajectory_sha256": "1143d748733ffd6282ca9cbafe3c3d02a07e7e603a26086c785e6461269c24bd",
+      "old_forecast_sha256": "8d8d23fca242816da659a9bddc4bf2a35bd769c605328b33c87f5d49e1676aa2"
+    },
+    {
+      "id": "egolife_158",
+      "teacher_max_abs": 1.3709068298339844e-06,
+      "recent_max_abs": 1.430511474609375e-06,
+      "prediction_equal": true,
+      "trajectory_sha256": "380c28e1be5a7ec0e28e7bad645f4013e979f450d1cf98bb50bc6b605bdc31ef",
+      "old_forecast_sha256": "09497aec7dc311b4871b498d73b0840c58cadc173be4cf6b758a8fd5641e565e"
+    },
+    {
+      "id": "egolife_159",
+      "teacher_max_abs": 7.152557373046875e-07,
+      "recent_max_abs": 7.152557373046875e-07,
+      "prediction_equal": true,
+      "trajectory_sha256": "0b96904e5e2b76297c317d14ea237a6dbe174ace547900bde20f2e98390e7921",
+      "old_forecast_sha256": "2000439740205fc85fa7bf38bab055200252d036deb3615b569fe4ee01b5d3e1"
+    },
+    {
+      "id": "egolife_160",
+      "teacher_max_abs": 5.960464477539062e-07,
+      "recent_max_abs": 7.152557373046875e-07,
+      "prediction_equal": true,
+      "trajectory_sha256": "f90b21f85d2287d6e167491820796fe1daad6463e18fcdafdbacba5fc67c719e",
+      "old_forecast_sha256": "161b206b6038563ad1993ed5e3c3ab556cc87e19f209057bac52da0e8ff982cc"
+    },
+    {
+      "id": "egolife_161",
+      "teacher_max_abs": 9.5367431640625e-07,
+      "recent_max_abs": 9.5367431640625e-07,
+      "prediction_equal": true,
+      "trajectory_sha256": "451c0664e0ff236a45a5d6fa9b5f91b3218a6b93e54f7aec2bb4ff1ce621fb89",
+      "old_forecast_sha256": "20f9e7848e1cad4c1ae71e5b47245def387fc8c4bd3d98f335b05cddde6260c5"
+    },
+    {
+      "id": "egolife_162",
+      "teacher_max_abs": 1.1920928955078125e-06,
+      "recent_max_abs": 1.3113021850585938e-06,
+      "prediction_equal": true,
+      "trajectory_sha256": "05d0e1d1771b2f587023cd9dcbfd4712d0027a5a250a740c077d4e03f89cf2b7",
+      "old_forecast_sha256": "6801300d5d5986e05a448694f25dd2a906fb5e1207748f9abce53ee6788ed889"
+    },
+    {
+      "id": "egolife_163",
+      "teacher_max_abs": 7.748603820800781e-07,
+      "recent_max_abs": 8.344650268554688e-07,
+      "prediction_equal": true,
+      "trajectory_sha256": "bfdf35f41fad8a5c926c712f9cb57def5b1a1b37a26a8028181877fda6eb769f",
+      "old_forecast_sha256": "69a2e84e90becb53be0860178101d6a77528d74307f3df058ecc96fcfab981e1"
+    },
+    {
+      "id": "egolife_164",
+      "teacher_max_abs": 1.6689300537109375e-06,
+      "recent_max_abs": 1.430511474609375e-06,
+      "prediction_equal": true,
+      "trajectory_sha256": "4208979e9eff591867a1d47518371014eddcc3ae8a62191866537b0f5bb608fe",
+      "old_forecast_sha256": "ae424444e86288c15f6cb91c201ac8019fd85fd3b6e11e2e7fc16f47496ca12d"
+    },
+    {
+      "id": "egolife_165",
+      "teacher_max_abs": 1.1920928955078125e-06,
+      "recent_max_abs": 1.0728836059570312e-06,
+      "prediction_equal": true,
+      "trajectory_sha256": "a8d55ea91994187569db9bb208c52624e491637befb7db9ce6e03613cf46e853",
+      "old_forecast_sha256": "b9e5133f2df9b6f8b0b824a31dce88147fc2de2a2e15409c717e9c5c28b160a2"
+    },
+    {
+      "id": "egolife_191",
+      "teacher_max_abs": 9.5367431640625e-07,
+      "recent_max_abs": 9.5367431640625e-07,
+      "prediction_equal": true,
+      "trajectory_sha256": "1f082af6f80bbff2ec62ec999c0d891497358c6131b6b7a42d21503d66d01687",
+      "old_forecast_sha256": "79ff72ad90c6cf25cab2c0074ad81913e525cb0c98dcfb154548f4717a806cf8"
+    },
+    {
+      "id": "egolife_192",
+      "teacher_max_abs": 1.0728836059570312e-06,
+      "recent_max_abs": 1.0728836059570312e-06,
+      "prediction_equal": true,
+      "trajectory_sha256": "40a379f3bc22aea18fb9b458c57679916dd9b6ec59f55cbd6a5695c5ef85599b",
+      "old_forecast_sha256": "e527fdf40b19b8621c992e97a55329a3645981014f17d52eb8aa59cdf3f16b5a"
+    },
+    {
+      "id": "egolife_193",
+      "teacher_max_abs": 1.1920928955078125e-06,
+      "recent_max_abs": 1.1920928955078125e-06,
+      "prediction_equal": true,
+      "trajectory_sha256": "995fbf50f7e9e04d6386617d6379c1e845dc435575865e7b953a56861e58963a",
+      "old_forecast_sha256": "fb8f43985447a42ea8a1afc52421611463e9ec852567b8d1d003d165f44927f1"
+    },
+    {
+      "id": "egolife_194",
+      "teacher_max_abs": 1.5497207641601562e-06,
+      "recent_max_abs": 1.5497207641601562e-06,
+      "prediction_equal": true,
+      "trajectory_sha256": "1f52759485c48515983333be96388f4f26e52c19127542a0233d7b5d35d248bf",
+      "old_forecast_sha256": "473a79d171d515ab52540945aba7ca3db8d5efea0d907d46065193f9cbf7c659"
+    },
+    {
+      "id": "egolife_195",
+      "teacher_max_abs": 7.748603820800781e-07,
+      "recent_max_abs": 7.748603820800781e-07,
+      "prediction_equal": true,
+      "trajectory_sha256": "a74fee7d771e754634be11450dbd1b1727634469e86ca82173689760665adc4a",
+      "old_forecast_sha256": "b9b9a4578ee3fbca501f6ea467df4cf746db623502a7cde3b9d645b080088249"
+    },
+    {
+      "id": "egolife_196",
+      "teacher_max_abs": 9.5367431640625e-07,
+      "recent_max_abs": 9.5367431640625e-07,
+      "prediction_equal": true,
+      "trajectory_sha256": "9923b3c527063ce1e646b5dedc10545c99fdb69a997fe148ad1137170e6ac63d",
+      "old_forecast_sha256": "a60af805e74b1cfdbda4dc57256552164a212d49f6853ad32b28ec12d06bd621"
+    },
+    {
+      "id": "egolife_197",
+      "teacher_max_abs": 1.5497207641601562e-06,
+      "recent_max_abs": 1.430511474609375e-06,
+      "prediction_equal": true,
+      "trajectory_sha256": "de602bb353f6002bf571155dac1a81910f3f205fa5311ba43017873bdb0da15e",
+      "old_forecast_sha256": "9975f06268fb2f3cf288edf383d958589f76a3c558ae442eeb50e0ea81618d91"
+    },
+    {
+      "id": "egolife_198",
+      "teacher_max_abs": 9.5367431640625e-07,
+      "recent_max_abs": 9.5367431640625e-07,
+      "prediction_equal": true,
+      "trajectory_sha256": "b4f7192978f916049c7f1414d0b6ef0ff3e2b907bbd00623a336f1fb701ac3a8",
+      "old_forecast_sha256": "6c3fcdff84a850cc1a20822802f31d35c82a0b16cbdecd06b800f5fead6a0767"
+    },
+    {
+      "id": "egolife_199",
+      "teacher_max_abs": 1.3113021850585938e-06,
+      "recent_max_abs": 1.3113021850585938e-06,
+      "prediction_equal": true,
+      "trajectory_sha256": "5f4e1e686dfc8549ba692e2b1e13fd5d8be432bbbe2449bf91dc4dbc777bebf9",
+      "old_forecast_sha256": "6e50edf5ec2cd1bed2d0cf30d1a03ae16c57a776f26b6f13cb5d9ac23a0423ec"
+    },
+    {
+      "id": "egolife_200",
+      "teacher_max_abs": 1.0728836059570312e-06,
+      "recent_max_abs": 1.1920928955078125e-06,
+      "prediction_equal": true,
+      "trajectory_sha256": "3612851c5b8b4b826b57c73563b141d87e65714b89e573d0bfd3e1ea20af5977",
+      "old_forecast_sha256": "1eb77c62609dfd92af2eb1f96c99123aea6b099e9a951380e30fbe7b1a3e7bd0"
+    }
+  ]
+}

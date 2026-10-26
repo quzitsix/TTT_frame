@@ -1,0 +1,89 @@
+{
+  "workers": [
+    {
+      "index": 0,
+      "device": "cuda:4",
+      "command": [
+        "/home/quzitsix/miniconda3/envs/meowbench/bin/python",
+        "-u",
+        "/home/quzitsix/TTT_frame/scripts/run_idea5_acquisition.py",
+        "--protocol",
+        "runs/forecast_bench_v0/idea05_acquisition_v1/protocol.json",
+        "--output",
+        "runs/forecast_bench_v0/idea05_acquisition_v1/scores_0.jsonl",
+        "--device",
+        "cuda:4",
+        "--num-shards",
+        "4",
+        "--shard-index",
+        "0",
+        "--threads",
+        "2"
+      ]
+    },
+    {
+      "index": 1,
+      "device": "cuda:4",
+      "command": [
+        "/home/quzitsix/miniconda3/envs/meowbench/bin/python",
+        "-u",
+        "/home/quzitsix/TTT_frame/scripts/run_idea5_acquisition.py",
+        "--protocol",
+        "runs/forecast_bench_v0/idea05_acquisition_v1/protocol.json",
+        "--output",
+        "runs/forecast_bench_v0/idea05_acquisition_v1/scores_1.jsonl",
+        "--device",
+        "cuda:4",
+        "--num-shards",
+        "4",
+        "--shard-index",
+        "1",
+        "--threads",
+        "2"
+      ]
+    },
+    {
+      "index": 2,
+      "device": "cuda:5",
+      "command": [
+        "/home/quzitsix/miniconda3/envs/meowbench/bin/python",
+        "-u",
+        "/home/quzitsix/TTT_frame/scripts/run_idea5_acquisition.py",
+        "--protocol",
+        "runs/forecast_bench_v0/idea05_acquisition_v1/protocol.json",
+        "--output",
+        "runs/forecast_bench_v0/idea05_acquisition_v1/scores_2.jsonl",
+        "--device",
+        "cuda:5",
+        "--num-shards",
+        "4",
+        "--shard-index",
+        "2",
+        "--threads",
+        "2"
+      ]
+    },
+    {
+      "index": 3,
+      "device": "cuda:5",
+      "command": [
+        "/home/quzitsix/miniconda3/envs/meowbench/bin/python",
+        "-u",
+        "/home/quzitsix/TTT_frame/scripts/run_idea5_acquisition.py",
+        "--protocol",
+        "runs/forecast_bench_v0/idea05_acquisition_v1/protocol.json",
+        "--output",
+        "runs/forecast_bench_v0/idea05_acquisition_v1/scores_3.jsonl",
+        "--device",
+        "cuda:5",
+        "--num-shards",
+        "4",
+        "--shard-index",
+        "3",
+        "--threads",
+        "2"
+      ]
+    }
+  ],
+  "protocol_fingerprint": "8acdaec1a4c91336d9e0a7d4e62ed052daf559d07f4bb1e3403d93938d67aa7a"
+}
