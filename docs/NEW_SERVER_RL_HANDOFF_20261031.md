@@ -236,10 +236,25 @@ for key in ['splits', 'days', 'id_to_day', 'counts', 'inputs_manifest_sha256',
 print('same release and day split:', new['counts'])
 print('relocated root:', new['root'])
 PY
+
+# The split audit does not open answers.jsonl.  Protect the old re-scoring
+# reference separately before reusing frozen predictions.
+conda run --no-capture-output -n meowbench python - <<'PY'
+import hashlib
+import os
+from pathlib import Path
+path = Path(os.environ['TTT_BENCH_V0']) / 'answers.jsonl'
+digest = hashlib.sha256(path.read_bytes()).hexdigest()
+expected = '4c1c36e0ba137f921c009eceb64c6586829700bc183faae3cef7f8ffc6f20b6d'
+assert digest == expected, f'answer manifest differs: {path}'
+print('answers.jsonl SHA256 verified:', digest)
+PY
 ```
 
 预期为 train111 / validation32 / test57。断言不通过时保留日志并查明版本差异，
-不要调整旧结果或强行匹配；相同 case ID 不证明视频、选项或 cutoff 相同。
+不要调整旧结果或强行匹配；相同 case ID 不证明视频、选项或 cutoff 相同。上面的
+answers SHA 只保护旧评分文件；它不证明视频字节与旧缓存相同。若要复用特征，仍需
+对每个 source media 做字节 SHA/尺寸/时间戳审计，或在新 run 中重新提取。
 
 185 题 `bench_mixed_v1` 需要新数据适配器、旧新 ID 映射、选项及时间覆盖核验，
 再按原始录制日继承分组。**其 split 数量尚未核验，不能写成 111/32/57，也不能
